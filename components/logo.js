@@ -12,15 +12,20 @@ const LogoBox = styled.span`
   line-height: 20px;
   padding: 10px;
   opacity: 1;
+  transition: 500ms ease all;
 
   img {
-    transition: 300ms ease all;
+    transition: 500ms ease all;
+  }
+
+  &:hover {
+    opacity: 0.5;
+    transition: 500ms ease all;
   }
 
   &:hover img {
     transform: rotate(90deg);
-    opacity: 0.5;
-    transition: 300ms ease all;
+    transition: 500ms ease all;
   }
 `
 
@@ -33,10 +38,15 @@ const Logo = () => {
             <LogoBox>
               <Image src={logoImg} width={20} height={20} alt="logo" />
               <Text
-                color={useColorModeValue('gray.800', 'whiteAlpha.900')}
+                color={useColorModeValue('gray.800', 'whiteAlpha.700')}
                 fontFamily='"Inter", sans-serif'
-                fontWeight="bold"
-                ml={2}
+                fontWeight="500"
+                fontStyle="normal"
+                letterSpacing="0.19em"
+                lineHeight="25px"
+                fontSize={13}
+                textTransform="uppercase"
+                ml={3}
               >
                 Mayur Bhoi
               </Text>
