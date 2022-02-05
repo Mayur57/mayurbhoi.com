@@ -20,7 +20,7 @@ opacity: 0.6
 `
 
 const Logo = () => {
-    const logoImg = `/images/logo${useColorModeValue('', '-dark')}.png)`
+    const logoImg = `/images/logo${useColorModeValue('', '-dark')}.png`
 
       return (
         <Link href="/">
@@ -29,7 +29,7 @@ const Logo = () => {
               <Image src={logoImg} width={20} height={20} alt="logo" />
               <Text
                 color={useColorModeValue('gray.800', 'whiteAlpha.900')}
-                fontFamily='M PLUS Rounded 1c", sans-serif'
+                fontFamily='"Inter", sans-serif'
                 fontWeight="bold"
                 ml={3}
               >
