@@ -1,5 +1,6 @@
 import { extendTheme } from "@chakra-ui/react";
 import { mode } from '@chakra-ui/theme-tools'
+import '@fontsource/inter'
 
 const style = {
     global: props => ({
@@ -19,7 +20,7 @@ const components = {
                 textDecorationColor: '#525252',
                 textDecorationThickness: 4,
                 marginTop: 3,
-                marginBottom: 4
+                marginBottom: 4,
             }
         }
     },
@@ -32,7 +33,8 @@ const components = {
 }
 
 const fonts = {
-    heading: 'Inter'
+    heading: 'Inter',
+    body: 'Inter'
 }
 
 const colors = {
