@@ -15,6 +15,7 @@ import {
   useColorModeValue
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
+import ThemeButton from './theme-button'
 
 const LinkItem = ({ href, path, children }) => {
   const active = path == href
@@ -87,6 +88,7 @@ const Navbar = props => {
         </Stack>
 
         <Box flex={1} align="right">
+          <ThemeButton/>
           <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
             <Menu isLazy id="navbar-menu">
               <MenuButton
