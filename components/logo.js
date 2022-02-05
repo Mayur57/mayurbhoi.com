@@ -9,7 +9,6 @@ const LogoBox = styled.span`
   display: inline-flex;
   align-items: center;
   height: 30px;
-  line-height: 20px;
   padding: 10px;
   opacity: 1;
   transition: 500ms ease all;
@@ -36,7 +35,7 @@ const Logo = () => {
         <Link href="/">
           <a>
             <LogoBox>
-              <Image src={logoImg} width={20} height={20} alt="logo" />
+              <Image src={logoImg} width={25} height={25} alt="logo" />
               <Text
                 color={useColorModeValue('gray.800', 'whiteAlpha.700')}
                 fontFamily='"Inter", sans-serif'

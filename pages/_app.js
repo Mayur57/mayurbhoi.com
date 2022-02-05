@@ -9,6 +9,10 @@ const GlobalStyles = css`
     outline: none;
     box-shadow: none;
   }
+
+  * {
+    font-family: Inter;
+  }
 `
 
 const Website = ({ Component, pageProps, router }) => {

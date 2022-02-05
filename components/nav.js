@@ -26,6 +26,8 @@ const LinkItem = ({ href, path, children }) => {
         p={2}
         bg={active ? 'glassTeal' : undefined}
         color={active ? '#202023' : inactiveColor}
+        textUnderlineOffset={5}
+        fontSize={16}
       >
         {children}
       </Link>
