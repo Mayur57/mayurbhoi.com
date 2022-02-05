@@ -9,7 +9,7 @@ const LogoBox = styled.span`
   display: inline-flex;
   align-items: center;
   height: 30px;
-  padding: 10px;
+  padding-top: 15px;
   opacity: 1;
   transition: 500ms ease all;
 
@@ -18,7 +18,7 @@ const LogoBox = styled.span`
   }
 
   &:hover {
-    opacity: 0.5;
+    opacity: 0.7;
     transition: 500ms ease all;
   }
 
