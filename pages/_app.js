@@ -2,6 +2,7 @@ import { ChakraProvider } from '@chakra-ui/provider'
 import Layout from '../components/layouts/main'
 import { Global, css } from '@emotion/react'
 import 'focus-visible/dist/focus-visible'
+import theme from '../libs/theme'
 
 const GlobalStyles = css`
   .js-focus-visible :focus:not([data-focus-visible-added]) {
