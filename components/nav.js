@@ -76,21 +76,25 @@ const Navbar = props => {
           <LinkItem href="/posts" path={path}>
             Posts
           </LinkItem>
-          <LinkItem
+          <Link
             _target="_blank"
-            href="https://github.com/craftzdog/craftzdog-homepage"
+            href="https://github.com/Mayur57/portfolio-v2"
             path={path}
             display="inline-flex"
             alignItems="center"
             style={{ gap: 4 }}
             pl={2}
+            textUnderlineOffset={5}
+            fontSize={16}
+            p={2}
+            color={useColorModeValue('gray200', 'whiteAlpha.900')}
           >
             Source
-          </LinkItem>
+          </Link>
         </Stack>
 
         <Box flex={1} align="right">
-          <ThemeButton/>
+          <ThemeButton />
           <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
             <Menu isLazy id="navbar-menu">
               <MenuButton
