@@ -52,7 +52,11 @@ const Navbar = props => {
               align="center"
               justify="space-between"
           >
-              //TODO: add components
+              <Flex align="center" mr={5}>
+                  <Heading as="h1" size="lg" letterSpacing={'tighter'}>
+                      <Logo/>
+                  </Heading>
+              </Flex>
       </Container>
     </Box>
   )
