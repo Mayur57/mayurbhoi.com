@@ -7,7 +7,7 @@ font-weight: 600;
 `
 
 export const ExperienceSection = styled(Box)`
-padding-top: 1em;
+padding-top: 0.7em;
 `
 
 export const ExperienceYear = styled.span`

@@ -10,7 +10,10 @@ import {
 } from '@chakra-ui/react'
 import Paragraph from '../components/paragraph'
 import Section from '../components/section'
-import { ExperienceCompany, ExperienceSection, ExperienceYear } from '../components/experience'
+import {
+  ExperienceCompany,
+  ExperienceSection,
+} from '../components/experience'
 
 const Page = () => {
   //TODO: Remove placeholder text and add correct details and description
@@ -73,6 +76,7 @@ const Page = () => {
         <Heading
           as="h3"
           variant="section-title"
+          mt="45px"
           textDecorationColor={useColorModeValue(
             'rgba(121, 96, 206, 0.3)',
             'rgba(56,178,172, 0.3)'
@@ -86,7 +90,7 @@ const Page = () => {
           designed, responsive software to solve problems. I like writing
           scripts to automate my tasks and routine.
         </Paragraph>
-        <Box align="center" my={4}>
+        <Box align="center" my={4} mt="30px">
           <NextLink href="/works">
             <Button
               variant="new-tab-action"
@@ -100,7 +104,7 @@ const Page = () => {
                 'rgba(56,178,172, 0.4)'
               )}
             >
-              Portfolio
+              see projects
             </Button>
           </NextLink>
         </Box>
@@ -109,6 +113,7 @@ const Page = () => {
         <Heading
           as="h3"
           variant="section-title"
+          mt="45px"
           textDecorationColor={useColorModeValue(
             'rgba(121, 96, 206, 0.3)',
             'rgba(56,178,172, 0.3)'
@@ -139,7 +144,8 @@ const Page = () => {
         </ExperienceSection>
 
         <ExperienceSection>
-          <ExperienceCompany>The MIT Post</ExperienceCompany>&nbsp;- Head of App Development
+          <ExperienceCompany>The MIT Post</ExperienceCompany>&nbsp;- Head of App
+          Development
           <Heading
             variant="pronouns"
             color={useColorModeValue('purple', 'teal.400')}
