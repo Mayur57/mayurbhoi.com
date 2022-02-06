@@ -10,6 +10,7 @@ import {
 } from '@chakra-ui/react'
 import Paragraph from '../components/paragraph'
 import Section from '../components/section'
+import { ExperienceCompany, ExperienceSection, ExperienceYear } from '../components/experience'
 
 const Page = () => {
   //TODO: Remove placeholder text and add correct details and description
@@ -103,6 +104,49 @@ const Page = () => {
             </Button>
           </NextLink>
         </Box>
+      </Section>
+      <Section delay={0.2}>
+        <Heading
+          as="h3"
+          variant="section-title"
+          textDecorationColor={useColorModeValue(
+            'rgba(121, 96, 206, 0.3)',
+            'rgba(56,178,172, 0.3)'
+          )}
+        >
+          Experience
+        </Heading>
+        <ExperienceSection>
+          <ExperienceCompany>Authenticating.com</ExperienceCompany>&nbsp;-
+          Software Engineering Intern
+          <Heading
+            variant="pronouns"
+            color={useColorModeValue('purple', 'teal.400')}
+          >
+            Feb 2022 - Present
+          </Heading>
+        </ExperienceSection>
+
+        <ExperienceSection>
+          <ExperienceCompany>Sigma Tenant</ExperienceCompany>&nbsp;- Software
+          Engineering Intern
+          <Heading
+            variant="pronouns"
+            color={useColorModeValue('purple', 'teal.400')}
+          >
+            Apr 2021 - May 2021
+          </Heading>
+        </ExperienceSection>
+
+        <ExperienceSection>
+          <ExperienceCompany>The MIT Post</ExperienceCompany>&nbsp;- Head of App Development
+          <Heading
+            variant="pronouns"
+            color={useColorModeValue('purple', 'teal.400')}
+          >
+            Aug 2019 - jul 2021
+          </Heading>
+        </ExperienceSection>
       </Section>
     </Container>
   )

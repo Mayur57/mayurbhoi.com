@@ -21,6 +21,9 @@ const components = {
         fontStyle: 'normal',
         letterSpacing: '0.19em',
         borderWidth: 1,
+        marginBottom: "none",
+        marginTop: "none",
+        padding: "0px 30px",
       }
     }
   },
@@ -31,7 +34,7 @@ const components = {
         fontSize: 24,
         textDecorationColor: '#525252',
         textDecorationThickness: 2,
-        textUnderlineOffset: 6,
+        textUnderlineOffset: 5,
         marginTop: 3,
         marginBottom: 2,
         letterSpacing: '-0.05em'
@@ -42,7 +45,7 @@ const components = {
         fontStyle: 'normal',
         letterSpacing: '0.19em',
         lineHeight: '25px',
-        fontSize: 13,
+        fontSize: 12,
         textTransform: 'uppercase'
       }
     }
