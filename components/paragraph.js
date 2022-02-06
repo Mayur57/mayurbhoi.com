@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 
 const Paragraph = styled.p`
 text-align: justify;
-text-indent: 1em;
+opacity: 0.9;
 `
 
 export default Paragraph

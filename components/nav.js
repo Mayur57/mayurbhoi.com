@@ -20,14 +20,19 @@ import ThemeButton from './theme-button'
 const LinkItem = ({ href, path, children }) => {
   const active = path == href
   const inactiveColor = useColorModeValue('gray200', 'whiteAlpha.900')
+  const activeBackgroundColor = useColorModeValue(
+    'rgba(121, 96, 206, 0.3)',
+    'rgba(56,178,172, 0.3)'
+  )
   return (
     <NextLink href={href}>
       <Link
         p={2}
-        bg={active ? 'glassTeal' : undefined}
-        color={active ? '#202023' : inactiveColor}
+        bg={active ? activeBackgroundColor : undefined}
+        color={inactiveColor}
         textUnderlineOffset={5}
         fontSize={16}
+        borderRadius="4"
       >
         {children}
       </Link>
@@ -84,9 +89,9 @@ const Navbar = props => {
             alignItems="center"
             style={{ gap: 4 }}
             pl={2}
-            textUnderlineOffset={5}
             fontSize={16}
             p={2}
+            textUnderlineOffset={5}
             color={useColorModeValue('gray200', 'whiteAlpha.900')}
           >
             Source
