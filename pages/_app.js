@@ -5,6 +5,7 @@ import 'focus-visible/dist/focus-visible'
 import '@fontsource/inter'
 import theme from '../libs/theme'
 import Fonts from '../components/fonts'
+import { AnimatePresence } from 'framer-motion'
 
 const GlobalStyles = css`
   .js-focus-visible :focus:not([data-focus-visible-added]) {
@@ -17,9 +18,11 @@ const Website = ({ Component, pageProps, router }) => {
   return (
     <ChakraProvider theme={theme}>
       <Fonts />
-      <Global styles={ GlobalStyles } />
+      <Global styles={(GlobalStyles)} />
       <Layout router={router}>
-        <Component {...pageProps} key={router.route} />
+        <AnimatePresence exitBeforeEnter initial={true}>
+          <Component {...pageProps} key={router.route} />
+        </AnimatePresence>
       </Layout>
     </ChakraProvider>
   )

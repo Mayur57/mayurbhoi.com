@@ -1,11 +1,20 @@
+import { ChevronRightIcon } from '@chakra-ui/icons'
+import NextLink from 'next/link'
 import {
   Container,
   Heading,
   Box,
   Image,
+  Button,
   useColorModeValue
 } from '@chakra-ui/react'
+import Layout from '../components/layouts/article'
+import Paragraph from '../components/paragraph'
 import Section from '../components/section'
+import {
+  ExperienceCompany,
+  ExperienceSection,
+} from '../components/experience'
 
 const Page = () => {
   //TODO: Remove placeholder text and add correct details and description
@@ -24,14 +33,8 @@ const Page = () => {
           <p>Software Developer</p>
           <Heading
             as="h6"
+            variant="pronouns"
             color={useColorModeValue('purple', 'teal.400')}
-            fontFamily='"Inter", sans-serif'
-            fontWeight="500"
-            fontStyle="normal"
-            letterSpacing="0.19em"
-            lineHeight="25px"
-            fontSize={13}
-            textTransform="uppercase"
           >
             he/him/his
           </Heading>
@@ -74,38 +77,83 @@ const Page = () => {
         <Heading
           as="h3"
           variant="section-title"
-          textUnderlineOffset={5}
-          textDecorationThickness={2}
+          mt="45px"
           textDecorationColor={useColorModeValue(
             'rgba(121, 96, 206, 0.3)',
             'rgba(56,178,172, 0.3)'
           )}
-          letterSpacing="-0.05em"
         >
           About
         </Heading>
-        <p>
-          I am a self-taught full-stack developer with a rich background in developing
-          mobile apps. I have a knack for writing intricatly designed,
-          responsive software to solve problems. I like writing scripts to
-          automate my tasks and routine.
-        </p>
-        <Box
-          borderRadius="lg"
-          mt="25px"
-          bg={useColorModeValue(
+        <Paragraph>
+          I am a self-taught full-stack developer with a rich background in
+          developing mobile apps. I have a knack for writing intricatly
+          designed, responsive software to solve problems. I like writing
+          scripts to automate my tasks and routine.
+        </Paragraph>
+        <Box align="center" my={4} mt="30px">
+          <NextLink href="/works">
+            <Button
+              variant="new-tab-action"
+              rightIcon={<ChevronRightIcon />}
+              bgColor={useColorModeValue(
+                'rgba(121, 96, 206, 0.3)',
+                'rgba(56,178,172, 0.3)'
+              )}
+              borderColor={useColorModeValue(
+                'rgba(121, 96, 206, 0.4)',
+                'rgba(56,178,172, 0.4)'
+              )}
+            >
+              see projects
+            </Button>
+          </NextLink>
+        </Box>
+      </Section>
+      <Section delay={0.2}>
+        <Heading
+          as="h3"
+          variant="section-title"
+          mt="45px"
+          textDecorationColor={useColorModeValue(
             'rgba(121, 96, 206, 0.3)',
             'rgba(56,178,172, 0.3)'
           )}
-          fontSize={16}
-          p={3}
-          mb={6}
-          align="center"
-          text-align="justify"
-          text-justify="auto"
         >
-          lol
-        </Box>
+          Experience
+        </Heading>
+        <ExperienceSection>
+          <ExperienceCompany>Authenticating.com</ExperienceCompany>&nbsp;-
+          Software Engineering Intern
+          <Heading
+            variant="pronouns"
+            color={useColorModeValue('purple', 'teal.400')}
+          >
+            Feb 2022 - Present
+          </Heading>
+        </ExperienceSection>
+
+        <ExperienceSection>
+          <ExperienceCompany>Sigma Tenant</ExperienceCompany>&nbsp;- Software
+          Engineering Intern
+          <Heading
+            variant="pronouns"
+            color={useColorModeValue('purple', 'teal.400')}
+          >
+            Apr 2021 - May 2021
+          </Heading>
+        </ExperienceSection>
+
+        <ExperienceSection>
+          <ExperienceCompany>The MIT Post</ExperienceCompany>&nbsp;- Head of App
+          Development
+          <Heading
+            variant="pronouns"
+            color={useColorModeValue('purple', 'teal.400')}
+          >
+            Aug 2019 - jul 2021
+          </Heading>
+        </ExperienceSection>
       </Section>
     </Container>
   )
