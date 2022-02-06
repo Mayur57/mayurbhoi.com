@@ -37,7 +37,7 @@ const Logo = () => {
             <LogoBox>
               <Image src={logoImg} width={25} height={25} alt="logo" />
               <Text
-                color={useColorModeValue('gray.800', 'whiteAlpha.700')}
+                color={useColorModeValue('gray.800', 'whiteAlpha.800')}
                 fontFamily='"Inter", sans-serif'
                 fontWeight="500"
                 fontStyle="normal"
