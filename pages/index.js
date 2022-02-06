@@ -5,7 +5,7 @@ import {
   Image,
   useColorModeValue
 } from '@chakra-ui/react'
-import theme from '../libs/theme'
+import Section from '../components/section'
 
 const Page = () => {
   //TODO: Remove placeholder text and add correct details and description
@@ -13,7 +13,12 @@ const Page = () => {
     <Container>
       <Box display={{ md: 'flex' }} padding="55px 0px 0px 0px">
         <Box flexGrow={1}>
-          <Heading as="h2" variant="page-title" letterSpacing="-0.05em">
+          <Heading
+            as="h2"
+            variant="page-title"
+            fontSize={48}
+            letterSpacing="-0.05em"
+          >
             Mayur Bhoi
           </Heading>
           <p>Software Developer</p>
@@ -44,7 +49,7 @@ const Page = () => {
             maxWidth="100px"
             display="inline-block"
             borderRadius="lg"
-            src="/images/me.png"
+            src="/images/me.jpg"
             alt="Profile Picture"
           />
         </Box>
@@ -52,7 +57,10 @@ const Page = () => {
       <Box
         borderRadius="lg"
         mt="25px"
-        bg={useColorModeValue('rgba(121, 96, 206, 0.3)', 'rgba(56,178,172, 0.3)')}
+        bg={useColorModeValue(
+          'rgba(121, 96, 206, 0.3)',
+          'rgba(56,178,172, 0.3)'
+        )}
         fontSize={16}
         p={3}
         mb={6}
@@ -62,6 +70,43 @@ const Page = () => {
       >
         I make computers do stuff for me.
       </Box>
+      <Section delay={0.1}>
+        <Heading
+          as="h3"
+          variant="section-title"
+          textUnderlineOffset={5}
+          textDecorationThickness={2}
+          textDecorationColor={useColorModeValue(
+            'rgba(121, 96, 206, 0.3)',
+            'rgba(56,178,172, 0.3)'
+          )}
+          letterSpacing="-0.05em"
+        >
+          About
+        </Heading>
+        <p>
+          I am a full-stack developer with a rich background in developing
+          mobile apps. I have a knack for writing intricatly designed,
+          responsive software to solve problems. I like writing scripts to
+          automate my tasks and routine.
+        </p>
+        <Box
+          borderRadius="lg"
+          mt="25px"
+          bg={useColorModeValue(
+            'rgba(121, 96, 206, 0.3)',
+            'rgba(56,178,172, 0.3)'
+          )}
+          fontSize={16}
+          p={3}
+          mb={6}
+          align="center"
+          text-align="justify"
+          text-justify="auto"
+        >
+          lol
+        </Box>
+      </Section>
     </Container>
   )
 }
