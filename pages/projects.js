@@ -2,7 +2,6 @@ import { Container, Box, Heading, SimpleGrid, Divider } from "@chakra-ui/react";
 import Section from "../components/section";
 import { WorkGridItem } from "../components/grid-item";
 import Layout from "../components/layouts/article";
-
 import thumbPro1 from '../public/images/projects/blog-post-1.png'
 
 const Work = () => {
