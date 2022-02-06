@@ -85,7 +85,7 @@ const Page = () => {
           About
         </Heading>
         <p>
-          I am a full-stack developer with a rich background in developing
+          I am a self-taught full-stack developer with a rich background in developing
           mobile apps. I have a knack for writing intricatly designed,
           responsive software to solve problems. I like writing scripts to
           automate my tasks and routine.
