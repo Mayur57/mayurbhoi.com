@@ -6,7 +6,10 @@ import {
   Box,
   Image,
   Button,
-  useColorModeValue
+  UnorderedList,
+  ListItem,
+  useColorModeValue,
+  LinkBox
 } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
 import Paragraph from '../components/paragraph'
@@ -15,6 +18,7 @@ import {
   ExperienceCompany,
   ExperienceSection,
 } from '../components/experience'
+import LinkButton from '../components/linkButton'
 
 const Page = () => {
   //TODO: Remove placeholder text and add correct details and description
@@ -55,6 +59,7 @@ const Page = () => {
               borderRadius="lg"
               src="/images/me.jpg"
               alt="Profile Picture"
+              boxShadow="xl"
             />
           </Box>
         </Box>
@@ -82,7 +87,7 @@ const Page = () => {
           mt="45px"
           textDecorationColor={useColorModeValue(
             'rgba(121, 96, 206, 0.3)',
-            'rgba(56,178,172, 0.3)'
+            'rgba(56,178,172, 0.5)'
           )}
         >
           About
@@ -93,24 +98,7 @@ const Page = () => {
           designed, responsive software to solve problems. I like writing
           scripts to automate my tasks and routine.
         </Paragraph>
-        <Box align="center" my={4} mt="30px">
-          <NextLink href="/works">
-            <Button
-              variant="new-tab-action"
-              rightIcon={<ChevronRightIcon />}
-              bgColor={useColorModeValue(
-                'rgba(121, 96, 206, 0.3)',
-                'rgba(56,178,172, 0.3)'
-              )}
-              borderColor={useColorModeValue(
-                'rgba(121, 96, 206, 0.4)',
-                'rgba(56,178,172, 0.4)'
-              )}
-            >
-              see projects
-            </Button>
-          </NextLink>
-        </Box>
+        <LinkButton link="/projects">projects</LinkButton>
       </Section>
       <Section delay={0.3}>
         <Heading
@@ -119,7 +107,7 @@ const Page = () => {
           mt="45px"
           textDecorationColor={useColorModeValue(
             'rgba(121, 96, 206, 0.3)',
-            'rgba(56,178,172, 0.3)'
+            'rgba(56,178,172, 0.5)'
           )}
         >
           Experience
@@ -156,6 +144,7 @@ const Page = () => {
             Aug 2019 - jul 2021
           </Heading>
         </ExperienceSection>
+        <LinkButton link="/projects">Experience</LinkButton>
       </Section>
     </Container>
   )

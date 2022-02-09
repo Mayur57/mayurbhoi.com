@@ -6,21 +6,53 @@ import thumbPro1 from '../public/images/projects/blog-post-1.png'
 
 const Work = () => {
     return (
-        <Layout>
+      <Layout title="Projects">
         <Container>
-            <Heading as="h3" fontSize={28} mb={4}>
-                Projects
+          <Section delay={0.1}>
+            <Heading as="h3" fontSize={36} mb={4} mt={8}>
+              Projects
             </Heading>
-
-            <SimpleGrid columns={[1, 1, 2]} gap={6}>
-                <Section>
-                    <WorkGridItem id="project-1" thumbnail={thumbPro1}>
-                        This is about project one.
-                    </WorkGridItem>
-                </Section>
-            </SimpleGrid>
+          </Section>
+          <SimpleGrid columns={[1, 1, 2]} gap={6} mt={4}>
+            <Section delay={0.2}>
+              <WorkGridItem
+                id="project1"
+                title="Project1"
+                thumbnail={thumbPro1}
+              >
+                This is about project one.
+              </WorkGridItem>
+            </Section>
+            <Section delay={0.2}>
+              <WorkGridItem
+                id="project1"
+                title="Project1"
+                thumbnail={thumbPro1}
+              >
+                This is about project one.
+              </WorkGridItem>
+            </Section>
+            <Section delay={0.3}>
+              <WorkGridItem
+                id="project1"
+                title="Project1"
+                thumbnail={thumbPro1}
+              >
+                This is about project one.
+              </WorkGridItem>
+            </Section>
+            <Section delay={0.3}>
+              <WorkGridItem
+                id="project1"
+                title="Project1"
+                thumbnail={thumbPro1}
+              >
+                This is about project one.
+              </WorkGridItem>
+            </Section>
+          </SimpleGrid>
         </Container>
-        </Layout>
+      </Layout>
     )
 }
 
