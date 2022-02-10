@@ -16,3 +16,4 @@ const Posts = () => {
 }
 
 export default Posts
+export { getServerSideProps } from '../libs/cookies'

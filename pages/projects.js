@@ -57,3 +57,4 @@ const Work = () => {
 }
 
 export default Work
+export { getServerSideProps } from '../libs/cookies'
