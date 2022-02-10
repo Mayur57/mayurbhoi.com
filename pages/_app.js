@@ -20,9 +20,7 @@ const Website = ({ Component, pageProps, router }) => {
       <Fonts />
       <Global styles={(GlobalStyles)} />
       <Layout router={router}>
-        <AnimatePresence exitBeforeEnter initial={true}>
           <Component {...pageProps} key={router.route} />
-        </AnimatePresence>
       </Layout>
     </ChakraProvider>
   )

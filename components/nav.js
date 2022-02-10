@@ -32,7 +32,7 @@ const LinkItem = ({ href, path, children }) => {
         color={inactiveColor}
         textUnderlineOffset={5}
         fontSize={16}
-        borderRadius="4"
+        borderRadius="8"
       >
         {children}
       </Link>
@@ -74,6 +74,9 @@ const Navbar = props => {
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
         >
+          <LinkItem href="/exp" path={path}>
+            Experience
+          </LinkItem>
           <LinkItem href="/projects" path={path}>
             Projects
           </LinkItem>
@@ -108,8 +111,8 @@ const Navbar = props => {
                 aria-label="Options"
               />
               <MenuList>
-                <NextLink href="/" passHref>
-                  <MenuItem as={Link}>About</MenuItem>
+                <NextLink href="/exp" passHref>
+                  <MenuItem as={Link}>Experience</MenuItem>
                 </NextLink>
                 <NextLink href="/projects" passHref>
                   <MenuItem as={Link}>Projects</MenuItem>
