@@ -18,7 +18,7 @@ export default function CookiesProvider({ cookies, children }) {
   )
 }
 
-export function getServerSideProps({ req }) {
+export async function getServerSideProps({ req }) {
   return {
     props: {
       cookies: req.headers.cookie ?? ''
