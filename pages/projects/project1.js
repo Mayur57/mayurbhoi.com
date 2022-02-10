@@ -6,19 +6,20 @@ import Layout from '../../components/layouts/article'
 
 const Work = () => {
   return (
-    <Layout title="Project1">
+    <Layout title="Project Template">
       <Container>
         <Title>
-          Project 1 <Badge>2019-2022</Badge>
+          Project Template <Badge>2019-2022</Badge>
         </Title>
         <P>
-          This is a project lol.
+          Use this as a template for project pages but do not expose this URL.
         </P>
         <List ml={4} my={4}>
           <ListItem>
             <Meta>Website</Meta>
             <Link href="/">
-              https://dummy.website.com<ExternalLinkIcon ml="8px" mb="2px" fontSize={12}/>
+              https://dummy.website.com
+              <ExternalLinkIcon ml="8px" mb="2px" fontSize={12} />
             </Link>
           </ListItem>
         </List>
@@ -28,3 +29,4 @@ const Work = () => {
 }
 
 export default Work
+export { getServerSideProps } from '../../libs/cookies'

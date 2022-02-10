@@ -6,8 +6,9 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev -H 0.0.0.0",
+    "start": "next start",
     "lint": "next lint",
-    "prettier": "prettier -write .",
+    "prettier": "prettier --write .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

@@ -1,11 +1,9 @@
-import { ChakraProvider } from '@chakra-ui/provider'
 import Layout from '../components/layouts/main'
 import { Global, css } from '@emotion/react'
 import 'focus-visible/dist/focus-visible'
 import '@fontsource/inter'
-import theme from '../libs/theme'
 import Fonts from '../components/fonts'
-import { AnimatePresence } from 'framer-motion'
+import CookiesProvider from '../libs/cookies'
 
 const GlobalStyles = css`
   .js-focus-visible :focus:not([data-focus-visible-added]) {
@@ -16,15 +14,13 @@ const GlobalStyles = css`
 
 const Website = ({ Component, pageProps, router }) => {
   return (
-    <ChakraProvider theme={theme}>
+    <CookiesProvider cookies={pageProps.cookies}>
       <Fonts />
-      <Global styles={(GlobalStyles)} />
+      <Global styles={GlobalStyles} />
       <Layout router={router}>
-        <AnimatePresence exitBeforeEnter initial={true}>
-          <Component {...pageProps} key={router.route} />
-        </AnimatePresence>
+        <Component {...pageProps} key={router.route} />
       </Layout>
-    </ChakraProvider>
+    </CookiesProvider>
   )
 }
 

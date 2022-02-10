@@ -1,17 +1,10 @@
-import { ChevronRightIcon } from '@chakra-ui/icons'
-import NextLink from 'next/link'
 import {
   Container,
   Heading,
   Box,
   Image,
-  Button,
-  UnorderedList,
-  ListItem,
   useColorModeValue,
-  LinkBox
 } from '@chakra-ui/react'
-import Layout from '../components/layouts/article'
 import Paragraph from '../components/paragraph'
 import Section from '../components/section'
 import {
@@ -151,3 +144,4 @@ const Page = () => {
 }
 
 export default Page
+export { getServerSideProps } from '../libs/cookies'

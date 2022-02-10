@@ -40,3 +40,4 @@ const NotFound = () => {
 }
 
 export default NotFound
+export { getInitialProps } from '../libs/cookies'

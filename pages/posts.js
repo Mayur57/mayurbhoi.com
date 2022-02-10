@@ -1,6 +1,4 @@
-import { Container, Box, Heading, SimpleGrid, Divider } from '@chakra-ui/react'
-import Section from '../components/section'
-import { WorkGridItem } from '../components/grid-item'
+import { Container, Heading } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
 
 const Posts = () => {
@@ -16,3 +14,4 @@ const Posts = () => {
 }
 
 export default Posts
+export { getServerSideProps } from '../libs/cookies'
