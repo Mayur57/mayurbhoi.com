@@ -1,8 +1,8 @@
 import React from 'react'
 import { Container, Row, Column, FooterLink, Heading } from './stylesFooter'
 import Logo from './logo'
-import { Box, Divider, Icon, useColorModeValue } from '@chakra-ui/react'
-import { MdFavorite } from 'react-icons/md'
+import Social from './social'
+import { Box, Divider, useColorModeValue } from '@chakra-ui/react'
 
 const Footer = () => {
   return (
@@ -13,7 +13,7 @@ const Footer = () => {
       <Container>
         <Row>
           <Column>
-            <Logo fs="rem" />
+            <Logo />
           </Column>
           <Column>
             <Heading style={{ color: useColorModeValue('#000', '#fff') }}>
@@ -75,6 +75,7 @@ const Footer = () => {
           </Column>
         </Row>
       </Container>
+      <Social />
       <Box
         align="center"
         opacity={0.4}
