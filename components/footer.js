@@ -87,9 +87,7 @@ const Footer = () => {
             </FooterLink>
           </Column>
           <Column>
-            <Heading style={{ color: useColorModeValue('#000', '#fff') }}>
-              Specifics
-            </Heading>
+            <Heading style={{color: useColorModeValue("#000","#fff")}}>Specifics</Heading>
             <FooterLink
               href="#"
               style={{ color: useColorModeValue('#000', '#fff') }}

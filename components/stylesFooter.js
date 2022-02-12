@@ -17,11 +17,11 @@ export const Column = styled.div`
 
 export const Row = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, minmax(185px, 1fr));
+  grid-template-columns: repeat(2, minmax(85px, 1fr));
   grid-gap: 20px;
 
   @media (max-width: 1000px) {
-    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    grid-template-columns: repeat(2, minmax(85px, 1fr));
   }
 `
 
