@@ -74,7 +74,7 @@ const Page = () => {
         </Box>
       </Section>
       <Section delay={0.2}>
-        <Heading
+        {/* <Heading
           as="h3"
           variant="section-title"
           mt="45px"
@@ -84,14 +84,14 @@ const Page = () => {
           )}
         >
           About
-        </Heading>
+        </Heading> */}
         <Paragraph>
           I am a self-taught full-stack developer with a rich background in
           developing mobile apps. I have a knack for writing intricately
           designed, responsive software to solve problems. I like writing
           scripts to automate my tasks and routine.
         </Paragraph>
-        <LinkButton link="/projects">projects</LinkButton>
+        <LinkButton link="/about">about</LinkButton>
       </Section>
       <Section delay={0.3}>
         <Heading
@@ -144,4 +144,3 @@ const Page = () => {
 }
 
 export default Page
-export { getServerSideProps } from '../libs/cookies'

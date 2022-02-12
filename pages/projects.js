@@ -1,19 +1,20 @@
-import { Container, Heading, SimpleGrid } from "@chakra-ui/react";
+import { Container, SimpleGrid } from "@chakra-ui/react";
 import Section from "../components/section";
 import { WorkGridItem } from "../components/grid-item";
 import Layout from "../components/layouts/article";
 import thumbPro1 from '../public/images/projects/blog-post-1.png'
+import Subtitle from "../components/subtitle";
+import Title from "../components/title";
 
 const Work = () => {
     return (
       <Layout title="Projects">
         <Container>
           <Section delay={0.1}>
-            <Heading as="h3" fontSize={36} mb={4} mt={8}>
-              Projects
-            </Heading>
+            <Subtitle>Projects</Subtitle>
+            <Title>Past Work &amp; Personal Projects</Title>
           </Section>
-          <SimpleGrid columns={[1, 1, 2]} gap={6} mt={4}>
+          <SimpleGrid columns={[1, 2, 2]} gap={6} mt={4}>
             <Section delay={0.2}>
               <WorkGridItem
                 id="project1"
@@ -57,4 +58,3 @@ const Work = () => {
 }
 
 export default Work
-export { getServerSideProps } from '../libs/cookies'
