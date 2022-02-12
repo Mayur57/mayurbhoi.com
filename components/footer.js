@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Row, Column, FooterLink, Heading } from './stylesFooter'
+import { Container, Row, Column, FooterLink, Heading } from './footer-styles'
 import Logo from './logo'
 import Social from './social'
 import { Box, Divider, useColorModeValue } from '@chakra-ui/react'
@@ -78,6 +78,7 @@ const Footer = () => {
       <Social />
       <Box
         align="center"
+        justifyContent="center"
         opacity={0.4}
         fontSize="0.55rem"
         fontWeight={600}

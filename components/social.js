@@ -3,7 +3,7 @@ import {
   Grid,
   GridItem,
   Link,
-  IconButton,
+  Icon,
   useColorModeValue
 } from '@chakra-ui/react'
 import {
@@ -20,19 +20,21 @@ const SocialIcon = ({ icons, link }) => {
     <GridItem>
       <NextLink href={link} passHref>
         <Link>
-          <IconButton
-            icon={icons}
-            size="sm"
-            _hover={{
-              transition: '500ms',
-              opacity: 0.7,
-              bgColor: useColorModeValue('rgba(0,0,0,0.05)', 'rgba(256,256,256,0.05)')
-            }}
-            bgColor="transparent"
-            color={useColorModeValue('#000', '#fff')}
-            opacity={0.5}
-            transition="500ms"
-          ></IconButton>
+          <Center>
+            <Icon
+              fontSize={22}
+              _hover={{
+                transition: '500ms',
+                opacity: 0.7
+              }}
+              bgColor="transparent"
+              color={useColorModeValue('#000', '#fff')}
+              opacity={0.5}
+              transition="500ms"
+            >
+              {icons}
+            </Icon>
+          </Center>
         </Link>
       </NextLink>
     </GridItem>
@@ -42,7 +44,7 @@ const SocialIcon = ({ icons, link }) => {
 const Social = () => {
   return (
     <Center mt={10}>
-      <Grid templateColumns="repeat(5, 30px)" gap={2}>
+      <Grid templateColumns="repeat(5, 30px)" gap={6}>
         <SocialIcon
           icons={<BsLinkedin />}
           link="https://www.linkedin.com/in/mayur-bhoi/"

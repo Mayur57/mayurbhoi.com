@@ -29,8 +29,7 @@ const LogoBox = styled.span`
 `
 
 const Logo = () => {
-    const logoImg = `/images/logo${useColorModeValue('', '-dark')}.png`
-
+  const logoImg = `/images/logo${useColorModeValue('', '-dark')}.png`
       return (
         <Link href="/">
           <a>
@@ -47,7 +46,7 @@ const Logo = () => {
                 textTransform="uppercase"
                 ml={3}
               >
-                Mayur Bhoi
+              Mayur Bhoi
               </Text>
             </LogoBox>
           </a>

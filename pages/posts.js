@@ -8,7 +8,7 @@ const Posts = () => {
     <Layout title="Articles">
       <Container>
         <Subtitle>blog</Subtitle>
-        <Title>Articles, Opinions &amp; Showcases</Title>
+        <Title>Articles &amp; Opinions</Title>
       </Container>
     </Layout>
   )

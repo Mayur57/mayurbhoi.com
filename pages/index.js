@@ -12,6 +12,8 @@ import {
   ExperienceSection,
 } from '../components/experience'
 import LinkButton from '../components/linkButton'
+import Experience from '../components/exp-item'
+import TheMITPostImage from '../public/images/companies/mitpost.png'
 
 const Page = () => {
   //TODO: Remove placeholder text and add correct details and description
@@ -93,6 +95,7 @@ const Page = () => {
         </Paragraph>
         <LinkButton link="/about">about</LinkButton>
       </Section>
+
       <Section delay={0.3}>
         <Heading
           as="h3"
@@ -105,39 +108,35 @@ const Page = () => {
         >
           Experience
         </Heading>
-        <ExperienceSection>
-          <ExperienceCompany>Authenticating.com</ExperienceCompany>&nbsp;-
-          Software Engineering Intern
-          <Heading
-            variant="pronouns"
-            color={useColorModeValue('purple', 'teal.400')}
-          >
-            Feb 2022 - Present
-          </Heading>
-        </ExperienceSection>
+      </Section>
 
-        <ExperienceSection>
-          <ExperienceCompany>Sigma Tenant</ExperienceCompany>&nbsp;- Software
-          Engineering Intern
-          <Heading
-            variant="pronouns"
-            color={useColorModeValue('purple', 'teal.400')}
-          >
-            Apr 2021 - May 2021
-          </Heading>
-        </ExperienceSection>
+      <Section delay={0.3}>
+        <Heading
+          as="h3"
+          variant="section-title"
+          mt="45px"
+          textDecorationColor={useColorModeValue(
+            'rgba(121, 96, 206, 0.3)',
+            'rgba(56,178,172, 0.5)'
+          )}
+        >
+          Featured Projects
+        </Heading>
+      </Section>
 
-        <ExperienceSection>
-          <ExperienceCompany>The MIT Post</ExperienceCompany>&nbsp;- Head of App
-          Development
-          <Heading
-            variant="pronouns"
-            color={useColorModeValue('purple', 'teal.400')}
-          >
-            Aug 2019 - jul 2021
-          </Heading>
-        </ExperienceSection>
-        <LinkButton link="/projects">Experience</LinkButton>
+      <Section delay={0.4}>
+        <Heading
+          as="h3"
+          variant="section-title"
+          mt="45px"
+          mb="20px"
+          textDecorationColor={useColorModeValue(
+            'rgba(121, 96, 206, 0.3)',
+            'rgba(56,178,172, 0.5)'
+          )}
+        >
+          Get In Touch
+        </Heading>
       </Section>
     </Container>
   )
