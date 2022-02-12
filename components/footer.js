@@ -1,62 +1,20 @@
-// import { Box } from '@chakra-ui/react'
-// import styled from 'styled-components'
-
-// const Column = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   text-align: left;
-//   margin-left: 60px;
-// `
-
-// const Row = styled.div`
-//   display: grid;
-//   grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
-//   grid-gap: 20px;
-
-//   @media (max-width: 1000px) {
-//     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-//   }
-// `
-
-// const Footer = () => {
-//   return (
-//     <Box
-//       align="center"
-//       opacity={0.4}
-//       fontSize="0.55rem"
-//       fontWeight={600}
-//       paddingTop="50px"
-//       position="absolute"
-//       bottom={0}
-//       width="100%"
-//       letterSpacing={1.2}
-//     >
-//       v1.82 | UPDATED FEB 2022
-//       <br />
-//       &copy; {new Date().getFullYear()} MAYUR BHOI | ALL RIGHTS RESERVED
-//     </Box>
-//   )
-// }
-
-// export default Footer
-
-// <--------------------------->
-
 import React from 'react'
-import {
-  Container,
-  Row,
-  Column,
-  FooterLink,
-  Heading
-} from './stylesFooter'
-import { Box, useColorModeValue } from '@chakra-ui/react'
+import { Container, Row, Column, FooterLink, Heading } from './stylesFooter'
+import Logo from './logo'
+import Social from './social'
+import { Box, Divider, useColorModeValue } from '@chakra-ui/react'
 
 const Footer = () => {
   return (
-    <Box mt={20}>
+    <Box mt={10}>
+      <Box mb={10}>
+        <Divider />
+      </Box>
       <Container>
         <Row>
+          <Column>
+            <Logo />
+          </Column>
           <Column>
             <Heading style={{ color: useColorModeValue('#000', '#fff') }}>
               General
@@ -117,6 +75,7 @@ const Footer = () => {
           </Column>
         </Row>
       </Container>
+      <Social />
       <Box
         align="center"
         opacity={0.4}
@@ -125,9 +84,9 @@ const Footer = () => {
         paddingTop="30px"
         letterSpacing={1.2}
       >
-        MADE WITH ❤️ BY MAYUR BHOI
+        WRITTEN WITH ❤️ BY MAYUR BHOI
         <br />
-        &copy; {new Date().getFullYear()} MAYUR BHOI | ALL RIGHTS RESERVED
+        &copy; {new Date().getFullYear()} | ALL RIGHTS RESERVED
       </Box>
     </Box>
   )

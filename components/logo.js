@@ -41,9 +41,9 @@ const Logo = () => {
                 fontFamily='"Inter", sans-serif'
                 fontWeight="500"
                 fontStyle="normal"
-                letterSpacing="0.19em"
+                letterSpacing="1.2px"
                 lineHeight="25px"
-                fontSize={13}
+                fontSize={12}
                 textTransform="uppercase"
                 ml={3}
               >
