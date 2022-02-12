@@ -24,9 +24,8 @@ const SocialIcon = ({ icons, link }) => {
             icon={icons}
             size="sm"
             _hover={{
-            //   color: useColorModeValue('#9F7AEA', '#DD6B20'),
               transition: '500ms',
-              opacity: 0.2,
+              opacity: 0.7,
               bgColor: useColorModeValue('rgba(0,0,0,0.05)', 'rgba(256,256,256,0.05)')
             }}
             bgColor="transparent"
