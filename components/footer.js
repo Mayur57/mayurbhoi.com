@@ -5,6 +5,9 @@ import Social from './social'
 import { Box, Divider, useColorModeValue } from '@chakra-ui/react'
 
 const Footer = () => {
+  const email = 'mayur072000@gmail.com'
+  const subject = 'Hello There!'
+  const body = '<- Your message here ->'
   return (
     <Box mt={10}>
       <Box mb={10}>
@@ -38,7 +41,7 @@ const Footer = () => {
               Blog
             </FooterLink>
             <FooterLink
-              href="mailto:mayur072000@gmail.com"
+              href={`mailto:${email}?${subject}&${body}`}
               style={{ color: useColorModeValue('#000', '#fff') }}
             >
               Mail

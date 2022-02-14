@@ -4,19 +4,15 @@ import {
   Box,
   Image,
   useColorModeValue,
+  SimpleGrid
 } from '@chakra-ui/react'
 import Paragraph from '../components/paragraph'
 import Section from '../components/section'
-import {
-  ExperienceCompany,
-  ExperienceSection,
-} from '../components/experience'
+import { ProjectsGridItemIndex, GridItemStyle } from '../components/grid-item'
 import LinkButton from '../components/linkButton'
-import Experience from '../components/exp-item'
-import TheMITPostImage from '../public/images/companies/mitpost.png'
+import thumbPro1 from '../public/images/projects/blog-post-1.png'
 
 const Page = () => {
-  //TODO: Remove placeholder text and add correct details and description
   return (
     <Container>
       <Section delay={0.1}>
@@ -47,6 +43,7 @@ const Page = () => {
           >
             <Image
               borderColor="whiteAlpha.800"
+              backgroundColor="#64ffda"
               borderWidth={2}
               borderStyle="solid"
               maxWidth="100px"
@@ -95,7 +92,7 @@ const Page = () => {
         </Paragraph>
         <LinkButton link="/about">about</LinkButton>
       </Section>
-
+      <GridItemStyle />
       <Section delay={0.3}>
         <Heading
           as="h3"
@@ -122,6 +119,23 @@ const Page = () => {
         >
           Featured Projects
         </Heading>
+        <SimpleGrid columns={[1, 2, 2]} gap={6} mt={4}>
+          <ProjectsGridItemIndex
+            id="project1"
+            title="Dynamic Header"
+            thumbnail={thumbPro1}
+            sourcelink="https://github.com/mayur57"
+            desc="Changes Twitter header dynamically to update the latest followers and more."
+          />
+          <ProjectsGridItemIndex
+            id="project1"
+            title="Twitter Nuke"
+            thumbnail={thumbPro1}
+            sourcelink="https://github.com/mayur57"
+            bloglink="https://github.com/mayur57"
+            desc="Quickly and efficiently delete your entire tweet history using your Twitter archive."
+          />
+        </SimpleGrid>
       </Section>
 
       <Section delay={0.4}>
