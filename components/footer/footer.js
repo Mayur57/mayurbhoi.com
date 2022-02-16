@@ -47,13 +47,13 @@ const Footer = () => {
               Specifics
             </Heading>
             <FooterLink
-              href="#"
+              href="/resume/resume.pdf"
               style={{ color: useColorModeValue('#000', '#fff') }}
             >
               Resume
             </FooterLink>
             <FooterLink
-              href="#"
+              href="/certificates"
               style={{ color: useColorModeValue('#000', '#fff') }}
             >
               Certificates
@@ -65,7 +65,7 @@ const Footer = () => {
               Source
             </FooterLink>
             <FooterLink
-              href="#"
+              href="/meta"
               style={{ color: useColorModeValue('#000', '#fff') }}
             >
               About Website
