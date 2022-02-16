@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Row, Column, FooterLink, Heading } from './footer-styles'
-import Logo from './logo'
-import Social from './social'
+import Logo from '../logo'
+import Social from '../social'
 import { Box, Center, Divider, useColorModeValue } from '@chakra-ui/react'
 import Obfuscate from 'react-obfuscate'
 

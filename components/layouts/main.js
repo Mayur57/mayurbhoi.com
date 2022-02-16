@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { Box, Container } from '@chakra-ui/react'
 import Navbar from '../nav.js'
-import Footer from '../footer.js'
+import Footer from '../footer/footer.js'
 
 const Main = ({ children, router }) => {
   return (
