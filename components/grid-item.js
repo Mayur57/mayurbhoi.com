@@ -61,7 +61,18 @@ export const ProjectsGridItemIndex = ({
   sourcelink,
   bloglink
 }) => (
-  <Box w="100%" mt={4} p={4} borderRadius='lg' transition='400ms' _hover={{ transform: 'scale(1.025)', transition: '400ms', boxShadow: 'lg' }}>
+  <Box
+    w="100%"
+    mt={4}
+    p={4}
+    borderRadius="xl"
+    transition="400ms ease-in-out"
+    _hover={{
+      transform: 'scale(1.025)',
+      transition: '400ms ease-in-out',
+      boxShadow: 'lg'
+    }}
+  >
     <NextLink href={`/projects/${id}`}>
       <LinkBox cursor="pointer">
         <Image

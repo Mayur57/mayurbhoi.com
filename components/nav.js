@@ -33,6 +33,7 @@ const LinkItem = ({ href, path, children }) => {
         textUnderlineOffset={5}
         fontSize={14}
         borderRadius="8"
+        _hover={{ transform: 'scale(1.1)' }}
       >
         {children}
       </Link>

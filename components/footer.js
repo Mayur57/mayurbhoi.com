@@ -2,12 +2,10 @@ import React from 'react'
 import { Container, Row, Column, FooterLink, Heading } from './footer-styles'
 import Logo from './logo'
 import Social from './social'
-import { Box, Divider, useColorModeValue } from '@chakra-ui/react'
+import { Box, Center, Divider, useColorModeValue } from '@chakra-ui/react'
+import Obfuscate from 'react-obfuscate'
 
 const Footer = () => {
-  const email = 'mayur072000@gmail.com'
-  const subject = 'Hello There!'
-  const body = '<- Your message here ->'
   return (
     <Box mt={10}>
       <Box mb={10}>
@@ -40,11 +38,8 @@ const Footer = () => {
             >
               Blog
             </FooterLink>
-            <FooterLink
-              href={`mailto:${email}?${subject}&${body}`}
-              style={{ color: useColorModeValue('#000', '#fff') }}
-            >
-              Mail
+            <FooterLink style={{ color: useColorModeValue('#000', '#fff') }}>
+              <Obfuscate email="mayur072000@gmail.com">Mail</Obfuscate>
             </FooterLink>
           </Column>
           <Column>
@@ -78,7 +73,9 @@ const Footer = () => {
           </Column>
         </Row>
       </Container>
-      <Social />
+      <Center mt={10}>
+        <Social size={22} spacing='30px'/>
+      </Center>
       <Box
         align="center"
         justifyContent="center"
