@@ -3,15 +3,15 @@ import Layout from '../components/layouts/article'
 import Subtitle from '../components/subtitle'
 import Title from '../components/title'
 
-const Posts = () => {
+const About = () => {
   return (
-    <Layout title="Articles">
+    <Layout title="About">
       <Container>
-        <Subtitle>blog</Subtitle>
-        <Title>Articles &amp; Opinions</Title>
+        <Subtitle>Website</Subtitle>
+        <Title>About Website</Title>
       </Container>
     </Layout>
   )
 }
 
-export default Posts
+export default About

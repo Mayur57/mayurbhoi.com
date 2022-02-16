@@ -29,25 +29,30 @@ const LogoBox = styled.span`
 `
 
 const Logo = () => {
-    const logoImg = `/images/logo${useColorModeValue('', '-dark')}.png`
-
+  const logoImg = `/images/logo${useColorModeValue('', '-dark')}.png`
       return (
         <Link href="/">
           <a>
             <LogoBox>
-              <Image src={logoImg} width={25} height={25} alt="logo" />
+              <Image
+                src={logoImg}
+                width={25}
+                height={25}
+                alt="logo"
+              />
               <Text
                 color={useColorModeValue('gray.800', 'whiteAlpha.800')}
                 fontFamily='"Inter", sans-serif'
-                fontWeight="500"
+                fontWeight="700"
                 fontStyle="normal"
-                letterSpacing="1.2px"
+                letterSpacing="-1px"
                 lineHeight="25px"
-                fontSize={12}
-                textTransform="uppercase"
-                ml={3}
+                fontSize={16}
+                // textTransform="uppercase"
+                opacity={0.8}
+                ml={1}
               >
-                Mayur Bhoi
+                mb.
               </Text>
             </LogoBox>
           </a>

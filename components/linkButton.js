@@ -13,7 +13,9 @@ const LinkButton = ({ children, link }) => (
             'rgba(121, 96, 206, 0.5)',
             'rgba(56,178,172, 0.5)'
           ),
-          transition: '500ms'
+          // transition: '500ms',
+          transform: 'scale(1.05)',
+          boxShadow: 'lg'
         }}
         bgColor={useColorModeValue(
           'rgba(121, 96, 206, 0.3)',
@@ -23,7 +25,7 @@ const LinkButton = ({ children, link }) => (
           'rgba(121, 96, 206, 0.4)',
           'rgba(56,178,172, 0.4)'
         )}
-        transition='500ms'
+        // transition='500ms'
       >
         {children}
       </Button>

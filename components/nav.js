@@ -31,8 +31,9 @@ const LinkItem = ({ href, path, children }) => {
         bg={active ? activeBackgroundColor : undefined}
         color={inactiveColor}
         textUnderlineOffset={5}
-        fontSize={16}
+        fontSize={14}
         borderRadius="8"
+        _hover={{ transform: 'scale(1.1)' }}
       >
         {children}
       </Link>
@@ -42,6 +43,7 @@ const LinkItem = ({ href, path, children }) => {
 
 const Navbar = props => {
   const { path } = props
+  const resumeLink = 'https://github.com/Mayur57/portfolio-v2'
   return (
     <Box
       position="fixed"
@@ -85,18 +87,18 @@ const Navbar = props => {
           </LinkItem>
           <Link
             _target="_blank"
-            href="https://github.com/Mayur57/portfolio-v2"
+            href={resumeLink}
             path={path}
             display="inline-flex"
             alignItems="center"
             style={{ gap: 4 }}
             pl={2}
-            fontSize={16}
+            fontSize={14}
             p={2}
             textUnderlineOffset={5}
             color={useColorModeValue('gray200', 'whiteAlpha.900')}
           >
-            Source
+            Resume
           </Link>
         </Stack>
 
@@ -122,9 +124,9 @@ const Navbar = props => {
                 </NextLink>
                 <MenuItem
                   as={Link}
-                  href="https://github.com/Mayur57/portfolio-v2"
+                  href={resumeLink}
                 >
-                  Source
+                  Resume
                 </MenuItem>
               </MenuList>
             </Menu>

@@ -3,7 +3,7 @@ import {
   Grid,
   GridItem,
   Link,
-  IconButton,
+  Icon,
   useColorModeValue
 } from '@chakra-ui/react'
 import {
@@ -15,50 +15,63 @@ import {
 } from 'react-icons/bs'
 import NextLink from 'next/link'
 
-const SocialIcon = ({ icons, link }) => {
+const SocialIcon = ({ icons, link, size=16 }) => {
   return (
     <GridItem>
       <NextLink href={link} passHref>
         <Link>
-          <IconButton
-            icon={icons}
-            size="sm"
-            _hover={{
-              transition: '500ms',
-              opacity: 0.7,
-              bgColor: useColorModeValue('rgba(0,0,0,0.05)', 'rgba(256,256,256,0.05)')
-            }}
-            bgColor="transparent"
-            color={useColorModeValue('#000', '#fff')}
-            opacity={0.5}
-            transition="500ms"
-          ></IconButton>
+          <Center>
+            <Icon
+              fontSize={size}
+              _hover={{
+                transition: '500ms',
+                opacity: 0.7
+              }}
+              bgColor="transparent"
+              color={useColorModeValue('#000', '#fff')}
+              opacity={0.5}
+              transition="500ms"
+            >
+              {icons}
+            </Icon>
+          </Center>
         </Link>
       </NextLink>
     </GridItem>
   )
 }
 
-const Social = () => {
+const Social = ({ spacing, size }) => {
   return (
-    <Center mt={10}>
-      <Grid templateColumns="repeat(5, 30px)" gap={2}>
-        <SocialIcon
-          icons={<BsLinkedin />}
-          link="https://www.linkedin.com/in/mayur-bhoi/"
-        />
-        <SocialIcon icons={<BsGithub />} link="https://github.com/Mayur57" />
-        <SocialIcon
-          icons={<BsTwitter />}
-          link="https://twitter.com/mayurbhoii"
-        />
-        <SocialIcon icons={<BsMedium />} link="https://mayurbhoi.medium.com/" />
-        <SocialIcon
-          icons={<BsInstagram />}
-          link="https://www.instagram.com/mayurbhoii"
-        />
-      </Grid>
-    </Center>
+    // <Center mt={10}>
+    <Grid templateColumns={`repeat(5, ${spacing})`} gap={6}>
+      <SocialIcon
+        icons={<BsLinkedin />}
+        link="https://www.linkedin.com/in/mayur-bhoi/"
+        size={size}
+      />
+      <SocialIcon
+        icons={<BsGithub />}
+        link="https://github.com/Mayur57"
+        size={size}
+      />
+      <SocialIcon
+        icons={<BsTwitter />}
+        link="https://twitter.com/mayurbhoii"
+        size={size}
+      />
+      <SocialIcon
+        icons={<BsMedium />}
+        link="https://mayurbhoi.medium.com/"
+        size={size}
+      />
+      <SocialIcon
+        icons={<BsInstagram />}
+        link="https://www.instagram.com/mayurbhoii"
+        size={size}
+      />
+    </Grid>
+    // </Center>
   )
 }
 

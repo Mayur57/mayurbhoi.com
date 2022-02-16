@@ -1,8 +1,9 @@
 import React from 'react'
-import { Container, Row, Column, FooterLink, Heading } from './stylesFooter'
-import Logo from './logo'
-import Social from './social'
-import { Box, Divider, useColorModeValue } from '@chakra-ui/react'
+import { Container, Row, Column, FooterLink, Heading } from './footer-styles'
+import Logo from '../logo'
+import Social from '../social'
+import { Box, Center, Divider, useColorModeValue } from '@chakra-ui/react'
+import Obfuscate from 'react-obfuscate'
 
 const Footer = () => {
   return (
@@ -37,11 +38,8 @@ const Footer = () => {
             >
               Blog
             </FooterLink>
-            <FooterLink
-              href="mailto:mayur072000@gmail.com"
-              style={{ color: useColorModeValue('#000', '#fff') }}
-            >
-              Mail
+            <FooterLink style={{ color: useColorModeValue('#000', '#fff') }}>
+              <Obfuscate email="mayur072000@gmail.com">Mail</Obfuscate>
             </FooterLink>
           </Column>
           <Column>
@@ -49,13 +47,13 @@ const Footer = () => {
               Specifics
             </Heading>
             <FooterLink
-              href="#"
+              href="/resume/resume.pdf"
               style={{ color: useColorModeValue('#000', '#fff') }}
             >
               Resume
             </FooterLink>
             <FooterLink
-              href="#"
+              href="/certificates"
               style={{ color: useColorModeValue('#000', '#fff') }}
             >
               Certificates
@@ -67,7 +65,7 @@ const Footer = () => {
               Source
             </FooterLink>
             <FooterLink
-              href="#"
+              href="/meta"
               style={{ color: useColorModeValue('#000', '#fff') }}
             >
               About Website
@@ -75,9 +73,12 @@ const Footer = () => {
           </Column>
         </Row>
       </Container>
-      <Social />
+      <Center mt={10}>
+        <Social size={22} spacing='30px'/>
+      </Center>
       <Box
         align="center"
+        justifyContent="center"
         opacity={0.4}
         fontSize="0.55rem"
         fontWeight={600}
