@@ -12,6 +12,7 @@ import {
   useColorModeValue
 } from '@chakra-ui/react'
 import { Global } from '@emotion/react'
+import { ChevronRightIcon } from '@chakra-ui/icons'
 
 export const GridItemCustom = ({ children, href, title, thumbnail }) => (
   <Box w="100%" align="center">
@@ -60,7 +61,7 @@ export const ProjectsGridItemIndex = ({
   sourcelink,
   bloglink
 }) => (
-  <Box w="100%" mt={4}>
+  <Box w="100%" mt={4} p={4} borderRadius='lg' transition='400ms' _hover={{ transform: 'scale(1.025)', transition: '400ms', boxShadow: 'lg' }}>
     <NextLink href={`/projects/${id}`}>
       <LinkBox cursor="pointer">
         <Image
@@ -77,7 +78,7 @@ export const ProjectsGridItemIndex = ({
         </Text>
       </LinkBox>
     </NextLink>
-    <Grid templateColumns="repeat(2, 60px)" gap={4} mt={2}>
+    <Grid templateColumns="repeat(2, 80px)" gap={4} mt={2}>
       <GridItem fontSize={12} letterSpacing="1.2px">
         <NextLink href={sourcelink} passHref>
           <Link
@@ -91,6 +92,7 @@ export const ProjectsGridItemIndex = ({
               textUnderlineOffset: 3
             }}
           >
+            <ChevronRightIcon mr={1} mb={0.5} />
             SOURCE
           </Link>
         </NextLink>
@@ -110,6 +112,7 @@ export const ProjectsGridItemIndex = ({
                 textUnderlineOffset: 3
               }}
             >
+              <ChevronRightIcon mr={1} mb={0.5} />
               BLOG
             </Link>
           </NextLink>

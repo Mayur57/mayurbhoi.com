@@ -3,11 +3,11 @@ import { mode } from '@chakra-ui/theme-tools'
 import '@fontsource/inter'
 
 const style = {
-  global: props => ({
+  global: (props) => ({
     body: {
       bg: mode('#FFFFFF', '#202020')(props)
-    }
-  })
+    },
+  }),
 }
 
 const components = {
@@ -52,7 +52,7 @@ const components = {
   },
   Link: {
     baseStyle: props => ({
-      color: mode('#3D7AED', '#FF63C3')(props),
+      color: mode('#3D7AED', '#FF63C3')(props), //TODO: Change link colors here
       textUnderlinOffset: 3
     })
   }
@@ -69,7 +69,8 @@ const colors = {
 
 const config = {
   initialColorMode: 'light',
-  useSystemColorMode: false
+  useSystemColorMode: false,
+  cssVarPrefix: 'mb'
 }
 
 const theme = extendTheme({

@@ -16,7 +16,7 @@ const Page = () => {
   return (
     <Container>
       <Section delay={0.1}>
-        <Box display={{ md: 'flex' }} padding="55px 0px 0px 0px">
+        <Box display={{ md: 'flex' }} alignItems='flex-start' padding="55px 0px 0px 0px">
           <Box flexGrow={1}>
             <Heading
               as="h2"
@@ -30,7 +30,7 @@ const Page = () => {
             <Heading
               as="h6"
               variant="pronouns"
-              color={useColorModeValue('purple', 'teal.400')}
+              color={useColorModeValue('purple.400', 'teal.200')}
             >
               he/him/his
             </Heading>
@@ -46,12 +46,19 @@ const Page = () => {
               backgroundColor="#64ffda"
               borderWidth={2}
               borderStyle="solid"
-              maxWidth="100px"
+              maxWidth="120px"
               display="inline-block"
               borderRadius="lg"
               src="/images/me.jpg"
               alt="Profile Picture"
-              boxShadow="xl"
+              boxShadow="lg"
+              transition='250ms'
+              _hover={{
+                transform: 'scale(1.05)',
+                boxShadow: 'xl',
+                transition: '250ms',
+                borderColor: useColorModeValue('purple.200', 'teal.200')
+              }}
             />
           </Box>
         </Box>
