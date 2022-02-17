@@ -13,7 +13,6 @@ const LinkButton = ({ children, link }) => (
             'rgba(121, 96, 206, 0.5)',
             'rgba(56,178,172, 0.5)'
           ),
-          // transition: '500ms',
           transform: 'scale(1.05)',
           boxShadow: 'lg'
         }}
@@ -25,7 +24,6 @@ const LinkButton = ({ children, link }) => (
           'rgba(121, 96, 206, 0.4)',
           'rgba(56,178,172, 0.4)'
         )}
-        // transition='500ms'
       >
         {children}
       </Button>
@@ -34,22 +32,3 @@ const LinkButton = ({ children, link }) => (
 )
 
 export default LinkButton
-
-        // <Box align="center" my={4} mt="30px">
-        //   <NextLink href="/works">
-        //     <Button
-        //       variant="new-tab-action"
-        //       rightIcon={<ChevronRightIcon />}
-        //       bgColor={useColorModeValue(
-        //         'rgba(121, 96, 206, 0.3)',
-        //         'rgba(56,178,172, 0.3)'
-        //       )}
-        //       borderColor={useColorModeValue(
-        //         'rgba(121, 96, 206, 0.4)',
-        //         'rgba(56,178,172, 0.4)'
-        //       )}
-        //     >
-        //       all projects
-        //     </Button>
-        //   </NextLink>
-        // </Box>

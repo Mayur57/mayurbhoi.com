@@ -5,6 +5,7 @@ import {
 } from '@chakra-ui/react'
 import Section from '../section'
 import { ProjectsGridItemIndex } from '../grid-item'
+import LinkButton from '../linkButton'
 import thumbPro1 from '../../public/images/projects/blog-post-1.jpg'
 
 const FeaturedProjectSection = () => {
@@ -38,6 +39,7 @@ const FeaturedProjectSection = () => {
             desc="Quickly and efficiently delete your entire tweet history using your Twitter archive."
           />
         </SimpleGrid>
+        <LinkButton link="/projects">all projects</LinkButton>
       </Section>
     )
 }

@@ -85,9 +85,9 @@ const Footer = () => {
         paddingTop="30px"
         letterSpacing={1.2}
       >
-        WRITTEN WITH ❤️ BY MAYUR BHOI
+        {'</>'} WITH ❤️ BY MAYUR BHOI
         <br />
-        &copy; {new Date().getFullYear()} | ALL RIGHTS RESERVED
+        &copy; {new Date().getFullYear()} MAYUR BHOI | ALL RIGHTS RESERVED
       </Box>
     </Box>
   )

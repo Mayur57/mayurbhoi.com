@@ -1,5 +1,6 @@
 import {
   Heading,
+  Text,
   useColorModeValue
 } from '@chakra-ui/react'
 import Section from '../section'
@@ -19,6 +20,12 @@ const ContactSection = () => {
       >
         Get In Touch
       </Heading>
+      <Text>
+        {' '}
+        Want to build something cool or have questions? My inbox is always open! Whether you have a question, want to build
+        something together, or just want to say hi, I&apos;ll try my best to get
+        back to you!
+      </Text>
     </Section>
   )
 }

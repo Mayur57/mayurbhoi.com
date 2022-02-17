@@ -73,12 +73,6 @@ const HeaderSection = () => {
         mb={6}
         mt={8}
         align="center"
-        // fontWeight="bolder"
-        // color={useColorModeValue(
-        //   'purple.400',
-        //   'teal.300'
-        // )}
-        // opacity={0.7}
         text-align="justify"
         text-justify="auto"
       >

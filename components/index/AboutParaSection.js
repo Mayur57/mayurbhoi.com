@@ -11,7 +11,9 @@ const AboutParaSection = () => {
         responsive software to solve problems. I like writing scripts to
         automate my tasks and routine.
       </Paragraph>
-      <LinkButton link="/about">about</LinkButton>
+      <LinkButton link="/about">
+        about
+      </LinkButton>
     </Section>
   )
 }
