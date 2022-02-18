@@ -52,12 +52,12 @@ const Footer = () => {
             >
               Resume
             </FooterLink>
-            <FooterLink
+            {/* <FooterLink
               href="/certificates"
               style={{ color: useColorModeValue('#000', '#fff') }}
             >
               Certificates
-            </FooterLink>
+            </FooterLink> */}
             <FooterLink
               href="#"
               style={{ color: useColorModeValue('#000', '#fff') }}
