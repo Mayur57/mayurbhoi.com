@@ -1,6 +1,5 @@
 import Paragraph from '../paragraph'
 import Section from '../section'
-import LinkButton from '../linkButton'
 
 const AboutParaSection = () => {
   return (
@@ -11,9 +10,6 @@ const AboutParaSection = () => {
         responsive software to solve problems. I like writing scripts to
         automate my tasks and routine.
       </Paragraph>
-      <LinkButton link="/about">
-        about
-      </LinkButton>
     </Section>
   )
 }
