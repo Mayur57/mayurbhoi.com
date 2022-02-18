@@ -1,9 +1,18 @@
 import {
   Heading,
   Text,
+  List,
+  ListItem,
   useColorModeValue
 } from '@chakra-ui/react'
 import Section from '../section'
+import {
+  BsLinkedin,
+  BsGithub,
+  BsTwitter,
+  BsMedium,
+  BsInstagram
+} from 'react-icons/bs'
 
 const ContactSection = () => {
   return (
@@ -18,13 +27,16 @@ const ContactSection = () => {
           'rgba(56,178,172, 0.5)'
         )}
       >
-        Get In Touch
+        Socials
       </Heading>
+      <Text> Come say hi to me on these social media sites:</Text>
+      <List>
+        <ListItem><BsGithub/><Text>Github</Text></ListItem>
+      </List>
       <Text>
-        {' '}
-        Want to build something cool or have questions? My inbox is always open! Whether you have a question, want to build
-        something together, or just want to say hi, I&apos;ll try my best to get
-        back to you!
+        Want to build something cool or have questions? My inbox is always open!
+        Whether you have a question, want to build something together, or just
+        want to say hi, I&apos;ll try my best to get back to you!
       </Text>
     </Section>
   )
