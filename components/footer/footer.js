@@ -59,7 +59,7 @@ const Footer = () => {
               Certificates
             </FooterLink> */}
             <FooterLink
-              href="#"
+              href="https://github.com/Mayur57/portfolio-v2"
               style={{ color: useColorModeValue('#000', '#fff') }}
             >
               Source
@@ -74,7 +74,7 @@ const Footer = () => {
         </Row>
       </Container>
       <Center mt={10}>
-        <Social size={22} spacing='30px'/>
+        <Social size={22} spacing="30px" />
       </Center>
       <Box
         align="center"
