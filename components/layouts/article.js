@@ -3,9 +3,9 @@ import Head from 'next/head'
 import { GridItemStyle } from '../grid-item'
 
 const variants = {
-  hidden: { opacity: 0, x: 0, y: 20 },
+  hidden: { opacity: 0, x: 0, y: 5 },
   enter: { opacity: 1, x: 0, y: 0 },
-  exit: { opacity: 0, x: 0, y: 20 }
+  exit: { opacity: 0, x: 0, y: 5 }
 }
 
 const Layout = ({ children, title }) => (
@@ -14,7 +14,7 @@ const Layout = ({ children, title }) => (
     animate="enter"
     exit="exit"
     variants={variants}
-    transition={{ duration: 0.5, type: 'easeInOut' }}
+    transition={{ duration: 0.25, type: 'easeInOut' }}
     style={{ position: 'relative' }}
   >
     <>
@@ -26,7 +26,6 @@ const Layout = ({ children, title }) => (
         </Head>
       )}
       {children}
-
       <GridItemStyle />
     </>
   </motion.article>

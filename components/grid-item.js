@@ -66,10 +66,10 @@ export const ProjectsGridItemIndex = ({
     mt={4}
     p={4}
     borderRadius="xl"
-    transition="400ms ease-in-out"
+    transition="250ms ease-in-out"
     _hover={{
       transform: 'scale(1.025)',
-      transition: '400ms ease-in-out',
+      transition: '250ms ease-in-out',
       boxShadow: 'lg'
     }}
   >
@@ -80,7 +80,7 @@ export const ProjectsGridItemIndex = ({
           alt={title}
           className="grid-item-thumbnail"
           placeholder="blur"
-        ></Image>
+        />
         <Text fontWeight="600" fontSize="20" mt={1}>
           {title}
         </Text>

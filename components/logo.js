@@ -47,7 +47,7 @@ const Logo = () => {
                 fontStyle="normal"
                 letterSpacing="-1px"
                 lineHeight="25px"
-                fontSize={16}
+                fontSize={18}
                 // textTransform="uppercase"
                 opacity={0.8}
                 ml={1}

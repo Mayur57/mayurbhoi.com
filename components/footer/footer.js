@@ -52,14 +52,14 @@ const Footer = () => {
             >
               Resume
             </FooterLink>
-            <FooterLink
+            {/* <FooterLink
               href="/certificates"
               style={{ color: useColorModeValue('#000', '#fff') }}
             >
               Certificates
-            </FooterLink>
+            </FooterLink> */}
             <FooterLink
-              href="#"
+              href="https://github.com/Mayur57/portfolio-v2"
               style={{ color: useColorModeValue('#000', '#fff') }}
             >
               Source
@@ -74,7 +74,7 @@ const Footer = () => {
         </Row>
       </Container>
       <Center mt={10}>
-        <Social size={22} spacing='30px'/>
+        <Social size={22} spacing="30px" />
       </Center>
       <Box
         align="center"
@@ -85,9 +85,9 @@ const Footer = () => {
         paddingTop="30px"
         letterSpacing={1.2}
       >
-        WRITTEN WITH ❤️ BY MAYUR BHOI
+        {'</>'} WITH ❤️ BY MAYUR BHOI
         <br />
-        &copy; {new Date().getFullYear()} | ALL RIGHTS RESERVED
+        &copy; {new Date().getFullYear()} MAYUR BHOI | ALL RIGHTS RESERVED
       </Box>
     </Box>
   )

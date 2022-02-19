@@ -24,13 +24,14 @@ const SocialIcon = ({ icons, link, size=16 }) => {
             <Icon
               fontSize={size}
               _hover={{
-                transition: '500ms',
-                opacity: 0.7
+                transition: '250ms',
+                opacity: 0.7,
+                transform: 'translate(0px, -4px)',
               }}
               bgColor="transparent"
               color={useColorModeValue('#000', '#fff')}
               opacity={0.5}
-              transition="500ms"
+              transition="250ms"
             >
               {icons}
             </Icon>

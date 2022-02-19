@@ -10,12 +10,21 @@ const Work = () => {
     return (
       <Layout title="Projects">
         <Container>
-          <Section delay={0.1}>
+          <Section>
             <Subtitle>Projects</Subtitle>
             <Title>Past Work &amp; Personal Projects</Title>
           </Section>
           <SimpleGrid columns={[1, 2, 2]} gap={6} mt={4}>
-            <Section delay={0.2}>
+            <Section delay={0.1}>
+              <WorkGridItem
+                id="project1"
+                title="Project1"
+                thumbnail={thumbPro1}
+              >
+                This is about project one.
+              </WorkGridItem>
+            </Section>
+            <Section delay={0.1}>
               <WorkGridItem
                 id="project1"
                 title="Project1"
@@ -33,16 +42,7 @@ const Work = () => {
                 This is about project one.
               </WorkGridItem>
             </Section>
-            <Section delay={0.3}>
-              <WorkGridItem
-                id="project1"
-                title="Project1"
-                thumbnail={thumbPro1}
-              >
-                This is about project one.
-              </WorkGridItem>
-            </Section>
-            <Section delay={0.3}>
+            <Section delay={0.2}>
               <WorkGridItem
                 id="project1"
                 title="Project1"
