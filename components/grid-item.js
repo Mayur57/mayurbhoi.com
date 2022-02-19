@@ -33,7 +33,17 @@ export const GridItemCustom = ({ children, href, title, thumbnail }) => (
 )
 
 export const WorkGridItem = ({ children, id, title, thumbnail }) => (
-  <Box w="100%" textAlign="center">
+  <Box
+    w="100%"
+    borderRadius='lg'
+    transition='250ms ease-in-out'
+    _hover={{
+      transform: 'scale(1.025)',
+      transition: '250ms ease-in-out',
+      boxShadow: 'lg'
+    }}
+    p={4}
+  >
     <NextLink href={`/projects/${id}`}>
       <LinkBox cursor="pointer">
         <Image
@@ -43,11 +53,13 @@ export const WorkGridItem = ({ children, id, title, thumbnail }) => (
           placeholder="blur"
         />
         <LinkOverlay href={`/projects/${id}`}>
-          <Text mt={2} fontSize={20}>
+          <Text fontWeight="600" fontSize="20" mt={1.5} lineHeight={1.2}>
             {title}
           </Text>
         </LinkOverlay>
-        <Text fontSize={14}>{children}</Text>
+        <Text fontSize="12" opacity={0.7} mt={1.5}>
+          {children}
+        </Text>
       </LinkBox>
     </NextLink>
   </Box>

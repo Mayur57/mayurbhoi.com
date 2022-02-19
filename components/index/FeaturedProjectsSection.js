@@ -6,7 +6,7 @@ import {
 import Section from '../section'
 import { ProjectsGridItemIndex } from '../grid-item'
 import LinkButton from '../linkButton'
-import thumbPro1 from '../../public/images/projects/blog-post-1.jpg'
+import thumbPro1 from '../../public/images/projects/covid.jpg'
 
 const FeaturedProjectSection = () => {
     return (

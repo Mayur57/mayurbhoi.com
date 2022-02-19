@@ -108,14 +108,14 @@ const ContactSection = () => {
         want to say hi, I&apos;ll try my best to get back to you!
         <br />
         <br />I check my mailbox regularly, consider dropping a{' '}
-        <Obfuscate email="mayur072000@gmail.com">
           <Link
             transition="200ms"
             _hover={{ transition: '200ms', opacity: '0.5', textDecoration: 'underline', textUnderlineOffset: 2}}
-          >
+        >
+          <Obfuscate email="mayur072000@gmail.com">
             mail here
-          </Link>
-        </Obfuscate>
+            </Obfuscate>
+        </Link>
         .
       </Text>
     </Section>
