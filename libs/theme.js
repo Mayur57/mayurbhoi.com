@@ -3,11 +3,11 @@ import { mode } from '@chakra-ui/theme-tools'
 import '@fontsource/inter'
 
 const style = {
-  global: (props) => ({
+  global: props => ({
     body: {
       bg: mode('#FFFFFF', '#202020')(props)
-    },
-  }),
+    }
+  })
 }
 
 const components = {
@@ -21,9 +21,9 @@ const components = {
         fontStyle: 'normal',
         letterSpacing: '0.19em',
         borderWidth: 1,
-        marginBottom: "none",
-        marginTop: "none",
-        padding: "0px 30px",
+        marginBottom: 'none',
+        marginTop: 'none',
+        padding: '0px 30px'
       }
     }
   },

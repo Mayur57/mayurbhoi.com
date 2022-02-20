@@ -35,8 +35,8 @@ export const GridItemCustom = ({ children, href, title, thumbnail }) => (
 export const WorkGridItem = ({ children, id, title, thumbnail }) => (
   <Box
     w="100%"
-    borderRadius='lg'
-    transition='250ms ease-in-out'
+    borderRadius="lg"
+    transition="250ms ease-in-out"
     _hover={{
       transform: 'scale(1.025)',
       transition: '250ms ease-in-out',

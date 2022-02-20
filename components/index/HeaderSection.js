@@ -1,5 +1,11 @@
 import { CloseIcon } from '@chakra-ui/icons'
-import { Heading, Box, Image, keyframes, useColorModeValue } from '@chakra-ui/react'
+import {
+  Heading,
+  Box,
+  Image,
+  keyframes,
+  useColorModeValue
+} from '@chakra-ui/react'
 import Section from '../section'
 import Social from '../social'
 

@@ -18,7 +18,7 @@ import {
 } from 'react-icons/bs'
 import Obfuscate from 'react-obfuscate'
 
-const SocialLinks = ({icon, platform, href='#', id}) => {
+const SocialLinks = ({ icon, platform, href = '#', id }) => {
   return (
     <ListItem>
       <Flex my={2} alignItems="center">
@@ -108,13 +108,16 @@ const ContactSection = () => {
         want to say hi, I&apos;ll try my best to get back to you!
         <br />
         <br />I check my mailbox regularly, consider dropping a{' '}
-          <Link
-            transition="200ms"
-            _hover={{ transition: '200ms', opacity: '0.5', textDecoration: 'underline', textUnderlineOffset: 2}}
+        <Link
+          transition="200ms"
+          _hover={{
+            transition: '200ms',
+            opacity: '0.5',
+            textDecoration: 'underline',
+            textUnderlineOffset: 2
+          }}
         >
-          <Obfuscate email="mayur072000@gmail.com">
-            mail here
-            </Obfuscate>
+          <Obfuscate email="mayur072000@gmail.com">mail here</Obfuscate>
         </Link>
         .
       </Text>

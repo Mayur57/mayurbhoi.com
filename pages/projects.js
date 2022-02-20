@@ -1,9 +1,9 @@
-import { Container, SimpleGrid } from "@chakra-ui/react";
-import Section from "../components/section";
-import { WorkGridItem } from "../components/grid-item";
-import Layout from "../components/layouts/article";
-import Subtitle from "../components/subtitle";
-import Title from "../components/title";
+import { Container, SimpleGrid } from '@chakra-ui/react'
+import Section from '../components/section'
+import { WorkGridItem } from '../components/grid-item'
+import Layout from '../components/layouts/article'
+import Subtitle from '../components/subtitle'
+import Title from '../components/title'
 
 import covid from '../public/images/projects/covid.jpg'
 import themitpost from '../public/images/projects/themitpost.png'
@@ -11,11 +11,11 @@ import pride from '../public/images/projects/pride.png'
 import scalar from '../public/images/projects/scalar.png'
 
 const POS = {
-   TITLE: 0,
-   DESC: 1,
-   SLUG: 2,
-   IMAGE: 3
-};
+  TITLE: 0,
+  DESC: 1,
+  SLUG: 2,
+  IMAGE: 3
+}
 
 // [Title, Description, Slug, Image URI]
 const Projects = [
@@ -46,54 +46,54 @@ const Projects = [
 ]
 
 const Work = () => {
-    return (
-      <Layout title="Projects">
-        <Container>
-          <Section>
-            <Subtitle>Projects</Subtitle>
-            <Title>Past Work &amp; Personal Projects</Title>
+  return (
+    <Layout title="Projects">
+      <Container>
+        <Section>
+          <Subtitle>Projects</Subtitle>
+          <Title>Past Work &amp; Personal Projects</Title>
+        </Section>
+        <SimpleGrid columns={[1, 2, 2]} spacingX={1} spacingY={-1} mt={4}>
+          <Section delay={0.1}>
+            <WorkGridItem
+              id={Projects[0][POS.SLUG]}
+              title={Projects[0][POS.TITLE]}
+              thumbnail={Projects[0][POS.IMAGE]}
+            >
+              {Projects[0][POS.DESC]}
+            </WorkGridItem>
           </Section>
-          <SimpleGrid columns={[1, 2, 2]} spacingX={1} spacingY={-1} mt={4}>
-            <Section delay={0.1}>
-              <WorkGridItem
-                id={Projects[0][POS.SLUG]}
-                title={Projects[0][POS.TITLE]}
-                thumbnail={Projects[0][POS.IMAGE]}
-              >
-                {Projects[0][POS.DESC]}
-              </WorkGridItem>
-            </Section>
-            <Section delay={0.1}>
-              <WorkGridItem
-                id={Projects[1][POS.SLUG]}
-                title={Projects[1][POS.TITLE]}
-                thumbnail={Projects[1][POS.IMAGE]}
-              >
-                {Projects[1][POS.DESC]}
-              </WorkGridItem>
-            </Section>
-            <Section delay={0.2}>
-              <WorkGridItem
-                id={Projects[2][POS.SLUG]}
-                title={Projects[2][POS.TITLE]}
-                thumbnail={Projects[2][POS.IMAGE]}
-              >
-                {Projects[2][POS.DESC]}
-              </WorkGridItem>
-            </Section>
-            <Section delay={0.2}>
-              <WorkGridItem
-                id={Projects[3][POS.SLUG]}
-                title={Projects[3][POS.TITLE]}
-                thumbnail={Projects[3][POS.IMAGE]}
-              >
-                {Projects[3][POS.DESC]}
-              </WorkGridItem>
-            </Section>
-          </SimpleGrid>
-        </Container>
-      </Layout>
-    )
+          <Section delay={0.1}>
+            <WorkGridItem
+              id={Projects[1][POS.SLUG]}
+              title={Projects[1][POS.TITLE]}
+              thumbnail={Projects[1][POS.IMAGE]}
+            >
+              {Projects[1][POS.DESC]}
+            </WorkGridItem>
+          </Section>
+          <Section delay={0.2}>
+            <WorkGridItem
+              id={Projects[2][POS.SLUG]}
+              title={Projects[2][POS.TITLE]}
+              thumbnail={Projects[2][POS.IMAGE]}
+            >
+              {Projects[2][POS.DESC]}
+            </WorkGridItem>
+          </Section>
+          <Section delay={0.2}>
+            <WorkGridItem
+              id={Projects[3][POS.SLUG]}
+              title={Projects[3][POS.TITLE]}
+              thumbnail={Projects[3][POS.IMAGE]}
+            >
+              {Projects[3][POS.DESC]}
+            </WorkGridItem>
+          </Section>
+        </SimpleGrid>
+      </Container>
+    </Layout>
+  )
 }
 
 export default Work
