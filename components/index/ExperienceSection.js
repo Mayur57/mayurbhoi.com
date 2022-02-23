@@ -49,24 +49,7 @@ const ExItem = () => {
   const [index, setIndex] = useState(0)
   return (
     <>
-      <>
-        <ExpButton activeIndex={1} setIndex={setIndex}>
-          <IoLogoNodejs />
-        </ExpButton>
-        <ExpButton activeIndex={2} setIndex={setIndex}>
-          <IoLogoReact />
-        </ExpButton>
-        <ExpButton activeIndex={3} setIndex={setIndex}>
-          <FaAws />
-        </ExpButton>
-        <ExpButton activeIndex={4} setIndex={setIndex}>
-          <RiFlutterFill />
-        </ExpButton>
-        <ExpButton activeIndex={5} setIndex={setIndex}>
-          <FaDocker />
-        </ExpButton>
-      </>
-      <Center mt={8}>
+      <Center mt={2}>
         <ExpText
           activeIndex={index}
           testIndex={0}
@@ -98,6 +81,23 @@ const ExItem = () => {
           text="Docker and CI/CD Workflows"
         />
       </Center>
+      <Box mt={8}>
+        <ExpButton activeIndex={1} setIndex={setIndex}>
+          <IoLogoNodejs />
+        </ExpButton>
+        <ExpButton activeIndex={2} setIndex={setIndex}>
+          <IoLogoReact />
+        </ExpButton>
+        <ExpButton activeIndex={3} setIndex={setIndex}>
+          <FaAws />
+        </ExpButton>
+        <ExpButton activeIndex={4} setIndex={setIndex}>
+          <RiFlutterFill />
+        </ExpButton>
+        <ExpButton activeIndex={5} setIndex={setIndex}>
+          <FaDocker />
+        </ExpButton>
+      </Box>
     </>
   )
 }

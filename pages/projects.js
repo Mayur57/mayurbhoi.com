@@ -1,4 +1,4 @@
-import { Container, SimpleGrid, Input, InputGroup, InputLeftElement, useColorModeValue } from '@chakra-ui/react'
+import { Container, SimpleGrid } from '@chakra-ui/react'
 import Section from '../components/section'
 import { WorkGridItem } from '../components/grid-item'
 import Layout from '../components/layouts/article'
@@ -9,7 +9,6 @@ import covid from '../public/images/projects/covid.jpg'
 import themitpost from '../public/images/projects/themitpost.png'
 import pride from '../public/images/projects/pride.png'
 import scalar from '../public/images/projects/scalar.png'
-import { SearchIcon } from '@chakra-ui/icons'
 
 const POS = {
   TITLE: 0,
