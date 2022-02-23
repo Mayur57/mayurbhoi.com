@@ -14,11 +14,11 @@ import {
   IconButton,
   useColorModeValue,
   MenuDivider,
-  transition
+  Center
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
+import { FiArrowUpRight } from 'react-icons/fi'
 import ThemeButton from './theme-button'
-import { MdOutlineArticle } from 'react-icons/md'
 
 const LinkItem = ({ href, path, children }) => {
   const active = path == href
@@ -51,8 +51,8 @@ const LinkItem = ({ href, path, children }) => {
 
 const Navbar = props => {
   const { path } = props
-  const resumeLink = 'https://github.com/Mayur57/portfolio-v2'
   const sourceLink = 'https://github.com/Mayur57/portfolio-v2'
+  const resumeLink = 'resume/resume.pdf'
   return (
     <Box
       position="fixed"
@@ -134,25 +134,31 @@ const Navbar = props => {
               />
               <MenuList>
                 <NextLink href="/" passHref>
-                  <MenuItem as={Link}>Home</MenuItem>
+                  <MenuItem>Home</MenuItem>
                 </NextLink>
                 <NextLink href="/about" passHref>
-                  <MenuItem as={Link}>About</MenuItem>
+                  <MenuItem>About</MenuItem>
                 </NextLink>
                 <NextLink href="/projects" passHref>
-                  <MenuItem as={Link}>Projects</MenuItem>
+                  <MenuItem>Projects</MenuItem>
                 </NextLink>
                 <NextLink href="/posts" passHref>
-                  <MenuItem as={Link} icon={<MdOutlineArticle />}>
-                    Articles
-                  </MenuItem>
+                  <MenuItem>Articles</MenuItem>
                 </NextLink>
                 <MenuDivider />
                 <NextLink href={sourceLink} passHref>
-                  <MenuItem as={Link}>Source</MenuItem>
+                  <MenuItem>
+                    Source&nbsp;&nbsp;
+                    <FiArrowUpRight ml={3} size={14} opacity={0.4} />
+                  </MenuItem>
                 </NextLink>
                 <NextLink href={resumeLink} passHref>
-                  <MenuItem as={Link}>Resume</MenuItem>
+                  <MenuItem>
+                    <Center>
+                      Resume&nbsp;&nbsp;
+                      <FiArrowUpRight ml={3} size={14} opacity={0.4} />
+                    </Center>
+                  </MenuItem>
                 </NextLink>
               </MenuList>
             </Menu>
