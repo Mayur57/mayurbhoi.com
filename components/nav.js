@@ -12,10 +12,12 @@ import {
   MenuList,
   MenuButton,
   IconButton,
-  useColorModeValue
+  useColorModeValue,
+  MenuDivider
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import ThemeButton from './theme-button'
+import { MdOutlineArticle } from 'react-icons/md'
 
 const LinkItem = ({ href, path, children }) => {
   const active = path == href
@@ -44,11 +46,13 @@ const LinkItem = ({ href, path, children }) => {
 const Navbar = props => {
   const { path } = props
   const resumeLink = 'https://github.com/Mayur57/portfolio-v2'
+  const sourceLink = 'https://github.com/Mayur57/portfolio-v2'
   return (
     <Box
       position="fixed"
       as="nav"
       w="100%"
+      pl={4}
       bg={useColorModeValue('#ffffff40', '#20202020')}
       css={{ backdropFilter: 'blur(10px)' }}
       zIndex={1}
@@ -111,8 +115,13 @@ const Navbar = props => {
                 icon={<HamburgerIcon />}
                 variant="outline"
                 aria-label="Options"
+                transition="all 0.2s"
+                _hover={{ boxShadow: 'lg', transform: 'scale(1.05)' }}
               />
               <MenuList>
+                <NextLink href="/" passHref>
+                  <MenuItem as={Link}>Home</MenuItem>
+                </NextLink>
                 <NextLink href="/about" passHref>
                   <MenuItem as={Link}>About</MenuItem>
                 </NextLink>
@@ -120,14 +129,15 @@ const Navbar = props => {
                   <MenuItem as={Link}>Projects</MenuItem>
                 </NextLink>
                 <NextLink href="/posts" passHref>
-                  <MenuItem as={Link}>Articles</MenuItem>
+                  <MenuItem as={Link} icon={<MdOutlineArticle/>}>Articles</MenuItem>
                 </NextLink>
-                <MenuItem
-                  as={Link}
-                  href={resumeLink}
-                >
-                  Resume
-                </MenuItem>
+                <MenuDivider />
+                <NextLink href={sourceLink} passHref>
+                  <MenuItem as={Link}>Source</MenuItem>
+                </NextLink>
+                <NextLink href={resumeLink} passHref>
+                  <MenuItem as={Link}>Resume</MenuItem>
+                </NextLink>
               </MenuList>
             </Menu>
           </Box>

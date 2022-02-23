@@ -5,28 +5,30 @@ import {
   Text,
   useColorModeValue,
   IconButton,
-  Center,
+  Center
 } from '@chakra-ui/react'
 import Section from '../section'
 import LinkButton from '../linkButton'
 import { useState } from 'react'
 import { IoLogoNodejs } from 'react-icons/io'
 import { IoLogoReact } from 'react-icons/io5'
-import {RiFlutterFill} from 'react-icons/ri'
+import { RiFlutterFill } from 'react-icons/ri'
 import { FaAws, FaDocker } from 'react-icons/fa'
 
-const ExpButton = ({children, activeIndex, setIndex}) => {
+const ExpButton = ({ children, activeIndex, setIndex }) => {
   return (
     <IconButton
       mx={2}
-      transition='100ms'
+      transition="100ms"
       onMouseEnter={() => {
         setIndex(activeIndex)
       }}
       onMouseLeave={() => {
         setIndex(0)
       }}
-    >{children}</IconButton>
+    >
+      {children}
+    </IconButton>
   )
 }
 
@@ -36,7 +38,7 @@ const ExpText = ({ text, activeIndex, testIndex }) => {
       pos="absolute"
       opacity={activeIndex == testIndex ? '0.7' : '0'}
       transition="300ms"
-      fontSize={12} 
+      fontSize={12}
     >
       {text}
     </Text>
@@ -47,23 +49,12 @@ const ExItem = () => {
   const [index, setIndex] = useState(0)
   return (
     <>
-      <>
-        <ExpButton activeIndex={1} setIndex={setIndex}>
-          <IoLogoNodejs />
-        </ExpButton>
-        <ExpButton activeIndex={2} setIndex={setIndex}>
-          <IoLogoReact />
-        </ExpButton>
-        <ExpButton activeIndex={3} setIndex={setIndex}>
-          <FaAws />
-        </ExpButton>
-        <ExpButton activeIndex={4} setIndex={setIndex}>
-          <RiFlutterFill />
-        </ExpButton>
-        <ExpButton activeIndex={5} setIndex={setIndex}><FaDocker/></ExpButton>
-      </>
-      <Center mt={8}>
-        <ExpText activeIndex={index} testIndex={0} text="Hover icons for more" />
+      <Center mt={2}>
+        <ExpText
+          activeIndex={index}
+          testIndex={0}
+          text="Hover icons for more"
+        />
         <ExpText
           activeIndex={index}
           testIndex={1}
@@ -84,8 +75,29 @@ const ExItem = () => {
           testIndex={4}
           text="Cross Platform Mobile Apps Using Flutter"
         />
-        <ExpText activeIndex={index} testIndex={5} text="Docker and CI/CD Workflows" />
+        <ExpText
+          activeIndex={index}
+          testIndex={5}
+          text="Docker and CI/CD Workflows"
+        />
       </Center>
+      <Box mt={8}>
+        <ExpButton activeIndex={1} setIndex={setIndex}>
+          <IoLogoNodejs />
+        </ExpButton>
+        <ExpButton activeIndex={2} setIndex={setIndex}>
+          <IoLogoReact />
+        </ExpButton>
+        <ExpButton activeIndex={3} setIndex={setIndex}>
+          <FaAws />
+        </ExpButton>
+        <ExpButton activeIndex={4} setIndex={setIndex}>
+          <RiFlutterFill />
+        </ExpButton>
+        <ExpButton activeIndex={5} setIndex={setIndex}>
+          <FaDocker />
+        </ExpButton>
+      </Box>
     </>
   )
 }
@@ -109,7 +121,9 @@ export const ExperienceSection = () => {
       <Box textAlign="center" mt={8}>
         <ExItem />
       </Box>
-      <LinkButton mt={4} link="/about">LEARN MORE</LinkButton>
+      <LinkButton mt={4} link="/about">
+        LEARN MORE
+      </LinkButton>
     </Section>
   )
 }

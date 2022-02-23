@@ -10,7 +10,7 @@ const ThemeButton = () => {
       colorScheme={useColorModeValue('purple', 'orange')}
       icon={useColorModeValue(<MoonIcon />, <SunIcon />)}
       onClick={toggleColorMode}
-      _hover={{ boxShadow: 'xl', transform: 'scale(1.05)'}}
+      _hover={{ boxShadow: 'xl', transform: 'scale(1.05)' }}
     ></IconButton>
   )
 }

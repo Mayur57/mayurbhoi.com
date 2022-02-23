@@ -18,7 +18,7 @@ const NotFound = () => {
     <Container>
       <Section mb={0}>
         <Center mb={8}>
-          <Image src={image404} width="100px" alt="404 image" mt='6em'/>
+          <Image src={image404} width="100px" alt="404 image" mt="6em" />
         </Center>
       </Section>
       <Section delay={0.1} mb={0}>

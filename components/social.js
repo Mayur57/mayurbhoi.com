@@ -15,7 +15,7 @@ import {
 } from 'react-icons/bs'
 import NextLink from 'next/link'
 
-const SocialIcon = ({ icons, link, size=16 }) => {
+const SocialIcon = ({ icons, link, size = 16 }) => {
   return (
     <GridItem>
       <NextLink href={link} passHref>
@@ -26,7 +26,7 @@ const SocialIcon = ({ icons, link, size=16 }) => {
               _hover={{
                 transition: '250ms',
                 opacity: 0.7,
-                transform: 'translate(0px, -4px)',
+                transform: 'translate(0px, -4px)'
               }}
               bgColor="transparent"
               color={useColorModeValue('#000', '#fff')}

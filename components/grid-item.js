@@ -33,21 +33,34 @@ export const GridItemCustom = ({ children, href, title, thumbnail }) => (
 )
 
 export const WorkGridItem = ({ children, id, title, thumbnail }) => (
-  <Box w="100%" textAlign="center">
+  <Box
+    w="100%"
+    borderRadius="lg"
+    px={4}
+    pb={2}
+    transition="250ms ease-in-out"
+    _hover={{
+      transform: 'scale(1.025)',
+      transition: '250ms ease-in-out',
+      boxShadow: 'lg'
+    }}
+  >
     <NextLink href={`/projects/${id}`}>
       <LinkBox cursor="pointer">
         <Image
           src={thumbnail}
           alt={title}
-          className="grid-item-thumbnail"
+          className="project-item-thumbnail"
           placeholder="blur"
         />
         <LinkOverlay href={`/projects/${id}`}>
-          <Text mt={2} fontSize={20}>
+          <Text fontWeight="600" fontSize="20" mt={1.5} lineHeight={1.2}>
             {title}
           </Text>
         </LinkOverlay>
-        <Text fontSize={14}>{children}</Text>
+        <Text fontSize="12" opacity={0.7} mt={1.5} mr={2} pb={4}>
+          {children}
+        </Text>
       </LinkBox>
     </NextLink>
   </Box>
@@ -63,8 +76,6 @@ export const ProjectsGridItemIndex = ({
 }) => (
   <Box
     w="100%"
-    mt={4}
-    p={4}
     borderRadius="xl"
     transition="250ms ease-in-out"
     _hover={{
@@ -78,7 +89,7 @@ export const ProjectsGridItemIndex = ({
         <Image
           src={thumbnail}
           alt={title}
-          className="grid-item-thumbnail"
+          className="project-item-thumbnail"
           placeholder="blur"
         />
         <Text fontWeight="600" fontSize="20" mt={1}>
@@ -91,22 +102,26 @@ export const ProjectsGridItemIndex = ({
     </NextLink>
     <Grid templateColumns="repeat(2, 80px)" gap={4} mt={2}>
       <GridItem fontSize={12} letterSpacing="1.2px">
-        <NextLink href={sourcelink} passHref>
-          <Link
-            color={useColorModeValue('purple.500', 'teal.200')}
-            transitionDuration="500ms"
-            textDecoration="none"
-            _hover={{
-              color: useColorModeValue('purple.100', 'teal.100'),
-              transitionDuration: '500ms',
-              textDecoration: 'underline',
-              textUnderlineOffset: 3
-            }}
-          >
-            <ChevronRightIcon mr={1} mb={0.5} />
-            SOURCE
-          </Link>
-        </NextLink>
+        {sourcelink == null ? (
+          <></>
+        ) : (
+          <NextLink href={sourcelink} passHref>
+            <Link
+              color={useColorModeValue('purple.500', 'teal.200')}
+              transitionDuration="500ms"
+              textDecoration="none"
+              _hover={{
+                color: useColorModeValue('purple.100', 'teal.100'),
+                transitionDuration: '500ms',
+                textDecoration: 'underline',
+                textUnderlineOffset: 3
+              }}
+            >
+              <ChevronRightIcon mr={1} mb={0.5} />
+              SOURCE
+            </Link>
+          </NextLink>
+        )}
       </GridItem>
       <GridItem fontSize={12} letterSpacing="1.2px">
         {bloglink == null ? (
@@ -137,7 +152,12 @@ export const GridItemStyle = () => (
   <Global
     styles={`
       .grid-item-thumbnail {
-        border-radius: 12px;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+      }
+      
+      .project-item-thumbnail {
+        border-radius: 8px;
       }
     `}
   />

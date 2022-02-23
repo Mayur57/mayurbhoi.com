@@ -1,7 +1,7 @@
-import Link from "next/link";
-import Image from "next/image";
+import Link from 'next/link'
+import Image from 'next/image'
 import { Text, useColorModeValue } from '@chakra-ui/react'
-import styled from "@emotion/styled";
+import styled from '@emotion/styled'
 
 const LogoBox = styled.span`
   font-weight: bold;
@@ -30,35 +30,29 @@ const LogoBox = styled.span`
 
 const Logo = () => {
   const logoImg = `/images/logo${useColorModeValue('', '-dark')}.png`
-      return (
-        <Link href="/">
-          <a>
-            <LogoBox>
-              <Image
-                src={logoImg}
-                width={25}
-                height={25}
-                alt="logo"
-              />
-              <Text
-                color={useColorModeValue('gray.800', 'whiteAlpha.800')}
-                fontFamily='"Inter", sans-serif'
-                fontWeight="700"
-                fontStyle="normal"
-                letterSpacing="-1px"
-                lineHeight="25px"
-                fontSize={18}
-                // textTransform="uppercase"
-                opacity={0.8}
-                ml={1}
-              >
-                mb.
-              </Text>
-            </LogoBox>
-          </a>
-        </Link>
-      )
+  return (
+    <Link href="/">
+      <a>
+        <LogoBox>
+          <Image src={logoImg} width={25} height={25} alt="logo" />
+          <Text
+            color={useColorModeValue('gray.800', 'whiteAlpha.800')}
+            fontFamily='"Inter", sans-serif'
+            fontWeight="700"
+            fontStyle="normal"
+            letterSpacing="-1px"
+            lineHeight="25px"
+            fontSize={18}
+            // textTransform="uppercase"
+            opacity={0.8}
+            ml={1}
+          >
+            mb.
+          </Text>
+        </LogoBox>
+      </a>
+    </Link>
+  )
 }
 
 export default Logo
-
