@@ -20,6 +20,18 @@ const POS = {
 // [Title, Description, Slug, Image URI]
 const Projects = [
   [
+    'Twitter Nuke',
+    'A Twitter bot that connects people willing to help with those in need. Written in Python 3.',
+    'covid',
+    covid
+  ],
+  [
+    'Dynamic Header',
+    'A Twitter bot that connects people willing to help with those in need. Written in Python 3.',
+    'covid',
+    covid
+  ],
+  [
     'COVID-19 Resources Bot',
     'A Twitter bot that connects people willing to help with those in need. Written in Python 3.',
     'covid',
@@ -53,7 +65,7 @@ const Work = () => {
           <Subtitle>Projects</Subtitle>
           <Title>Past Work &amp; Personal Projects</Title>
         </Section>
-        <SimpleGrid columns={[1, 2, 2]} spacingX={1} spacingY={-1} mt={4}>
+        <SimpleGrid columns={[1, 2, 2]} spacingX={4} spacingY={-1} mt={4}>
           <Section delay={0.1}>
             <WorkGridItem
               id={Projects[0][POS.SLUG]}
@@ -90,6 +102,27 @@ const Work = () => {
               {Projects[3][POS.DESC]}
             </WorkGridItem>
           </Section>
+
+          <Section delay={0.3}>
+            <WorkGridItem
+              id={Projects[4][POS.SLUG]}
+              title={Projects[4][POS.TITLE]}
+              thumbnail={Projects[4][POS.IMAGE]}
+            >
+              {Projects[4][POS.DESC]}
+            </WorkGridItem>
+          </Section>
+
+          <Section delay={0.3}>
+            <WorkGridItem
+              id={Projects[5][POS.SLUG]}
+              title={Projects[5][POS.TITLE]}
+              thumbnail={Projects[5][POS.IMAGE]}
+            >
+              {Projects[5][POS.DESC]}
+            </WorkGridItem>
+          </Section>
+
         </SimpleGrid>
       </Container>
     </Layout>
