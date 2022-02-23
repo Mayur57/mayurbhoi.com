@@ -16,7 +16,7 @@ const components = {
       'new-tab-action': {
         textTransform: 'uppercase',
         fontSize: 12,
-        fontFamily: '"Inter", sans-serif',
+        fontFamily: 'Inter, sans-serif',
         fontWeight: '500',
         fontStyle: 'normal',
         letterSpacing: '0.19em',

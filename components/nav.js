@@ -13,7 +13,8 @@ import {
   MenuButton,
   IconButton,
   useColorModeValue,
-  MenuDivider
+  MenuDivider,
+  transition
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import ThemeButton from './theme-button'
@@ -29,13 +30,18 @@ const LinkItem = ({ href, path, children }) => {
   return (
     <NextLink href={href}>
       <Link
-        p={2}
+        px={2}
+        pt={1}
         bg={active ? activeBackgroundColor : undefined}
         color={inactiveColor}
         textUnderlineOffset={5}
         fontSize={14}
         borderRadius="8"
-        _hover={{ transform: 'scale(1.1)' }}
+        _hover={{
+          transform: 'scale(1.1)',
+          opacity: useColorModeValue(0.6, 1),
+          color: useColorModeValue('purple', 'teal.300')
+        }}
       >
         {children}
       </Link>
@@ -98,8 +104,16 @@ const Navbar = props => {
             style={{ gap: 4 }}
             pl={2}
             fontSize={14}
-            p={2}
+            px={2}
+            pt={1}
             textUnderlineOffset={5}
+            transition="250ms ease-in-out"
+            _hover={{
+              transform: 'scale(1.1)',
+              opacity: useColorModeValue(0.6, 1),
+              color: useColorModeValue('purple', 'teal.200'),
+              transition: '250ms ease-in-out'
+            }}
             color={useColorModeValue('gray200', 'whiteAlpha.900')}
           >
             Resume
@@ -129,7 +143,9 @@ const Navbar = props => {
                   <MenuItem as={Link}>Projects</MenuItem>
                 </NextLink>
                 <NextLink href="/posts" passHref>
-                  <MenuItem as={Link} icon={<MdOutlineArticle/>}>Articles</MenuItem>
+                  <MenuItem as={Link} icon={<MdOutlineArticle />}>
+                    Articles
+                  </MenuItem>
                 </NextLink>
                 <MenuDivider />
                 <NextLink href={sourceLink} passHref>
