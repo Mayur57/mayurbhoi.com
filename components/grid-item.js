@@ -36,6 +36,8 @@ export const WorkGridItem = ({ children, id, title, thumbnail }) => (
   <Box
     w="100%"
     borderRadius="lg"
+    px={4}
+    pb={2}
     transition="250ms ease-in-out"
     _hover={{
       transform: 'scale(1.025)',
@@ -52,11 +54,11 @@ export const WorkGridItem = ({ children, id, title, thumbnail }) => (
           placeholder="blur"
         />
         <LinkOverlay href={`/projects/${id}`}>
-          <Text fontWeight="600" fontSize="20" mt={1.5} lineHeight={1.2} mx={2}>
+          <Text fontWeight="600" fontSize="20" mt={1.5} lineHeight={1.2}>
             {title}
           </Text>
         </LinkOverlay>
-        <Text fontSize="12" opacity={0.7} mt={1.5} mx={2} pb={4}>
+        <Text fontSize="12" opacity={0.7} mt={1.5} mr={2} pb={4}>
           {children}
         </Text>
       </LinkBox>
@@ -74,8 +76,6 @@ export const ProjectsGridItemIndex = ({
 }) => (
   <Box
     w="100%"
-    mt={4}
-    p={4}
     borderRadius="xl"
     transition="250ms ease-in-out"
     _hover={{
@@ -157,7 +157,7 @@ export const GridItemStyle = () => (
       }
       
       .project-item-thumbnail {
-        border-radius: 12px;
+        border-radius: 8px;
       }
     `}
   />

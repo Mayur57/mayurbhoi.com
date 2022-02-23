@@ -1,4 +1,4 @@
-import { Container, SimpleGrid } from '@chakra-ui/react'
+import { Container, SimpleGrid, Input, InputGroup, InputLeftElement, useColorModeValue } from '@chakra-ui/react'
 import Section from '../components/section'
 import { WorkGridItem } from '../components/grid-item'
 import Layout from '../components/layouts/article'
@@ -9,6 +9,7 @@ import covid from '../public/images/projects/covid.jpg'
 import themitpost from '../public/images/projects/themitpost.png'
 import pride from '../public/images/projects/pride.png'
 import scalar from '../public/images/projects/scalar.png'
+import { SearchIcon } from '@chakra-ui/icons'
 
 const POS = {
   TITLE: 0,
@@ -32,7 +33,7 @@ const Projects = [
     covid
   ],
   [
-    'COVID-19 Resources Bot',
+    'COVID-19 Resources',
     'A Twitter bot that connects people willing to help with those in need. Written in Python 3.',
     'covid',
     covid
@@ -44,7 +45,7 @@ const Projects = [
     themitpost
   ],
   [
-    'The LGBTQ+ Community',
+    'The Pride Community',
     'A website created as an attempt to spread awareness about lesser-known sub-communities of the LGBTQ community.',
     'pride',
     pride
@@ -57,6 +58,21 @@ const Projects = [
   ]
 ]
 
+// const SearchBar = () => {
+//   return (
+//     <InputGroup>
+//       <InputLeftElement>
+//         <SearchIcon opacity={0.5} />
+//       </InputLeftElement>
+//       <Input
+//         variant="filled"
+//         placeholder="Search"
+//         focusBorderColor={useColorModeValue('purple.300', 'teal.300')}
+//       />
+//     </InputGroup>
+//   )
+// }
+
 const Work = () => {
   return (
     <Layout title="Projects">
@@ -65,7 +81,7 @@ const Work = () => {
           <Subtitle>Projects</Subtitle>
           <Title>Past Work &amp; Personal Projects</Title>
         </Section>
-        <SimpleGrid columns={[1, 2, 2]} spacingX={4} spacingY={-1} mt={4}>
+        <SimpleGrid columns={[1, 2, 2]} spacingX={-2} spacingY={-2} mt={4}>
           <Section delay={0.1}>
             <WorkGridItem
               id={Projects[0][POS.SLUG]}
@@ -122,7 +138,6 @@ const Work = () => {
               {Projects[5][POS.DESC]}
             </WorkGridItem>
           </Section>
-
         </SimpleGrid>
       </Container>
     </Layout>
