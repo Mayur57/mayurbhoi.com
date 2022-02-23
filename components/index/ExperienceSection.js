@@ -49,7 +49,7 @@ const ExItem = () => {
   const [index, setIndex] = useState(0)
   return (
     <>
-      <Box>
+      <Box p={2}>
         <Center>
           <ExpText
             activeIndex={index}
