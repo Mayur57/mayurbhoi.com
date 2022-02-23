@@ -49,39 +49,41 @@ const ExItem = () => {
   const [index, setIndex] = useState(0)
   return (
     <>
-      <Center mt={2}>
-        <ExpText
-          activeIndex={index}
-          testIndex={0}
-          text="Hover icons for more"
-        />
-        <ExpText
-          activeIndex={index}
-          testIndex={1}
-          text="Server Engineering and Backend Design Using Node.js"
-        />
-        <ExpText
-          activeIndex={index}
-          testIndex={2}
-          text="Web Apps Using React and React Native"
-        />
-        <ExpText
-          activeIndex={index}
-          testIndex={3}
-          text="AWS Platform: EC2, SNS, S3, Lambda and more"
-        />
-        <ExpText
-          activeIndex={index}
-          testIndex={4}
-          text="Cross Platform Mobile Apps Using Flutter"
-        />
-        <ExpText
-          activeIndex={index}
-          testIndex={5}
-          text="Docker and CI/CD Workflows"
-        />
-      </Center>
-      <Box mt={8}>
+      <Box>
+        <Center>
+          <ExpText
+            activeIndex={index}
+            testIndex={0}
+            text="Hover icons for more"
+          />
+          <ExpText
+            activeIndex={index}
+            testIndex={1}
+            text="Server Engineering and Backend Design Using Node.js"
+          />
+          <ExpText
+            activeIndex={index}
+            testIndex={2}
+            text="Web Apps Using React and React Native"
+          />
+          <ExpText
+            activeIndex={index}
+            testIndex={3}
+            text="AWS Platform: EC2, SNS, S3, Lambda and more"
+          />
+          <ExpText
+            activeIndex={index}
+            testIndex={4}
+            text="Cross Platform Mobile Apps Using Flutter"
+          />
+          <ExpText
+            activeIndex={index}
+            testIndex={5}
+            text="Docker and CI/CD Workflows"
+          />
+        </Center>
+      </Box>
+      <Box mt={4}>
         <ExpButton activeIndex={1} setIndex={setIndex}>
           <IoLogoNodejs />
         </ExpButton>
@@ -118,7 +120,7 @@ export const ExperienceSection = () => {
       >
         Skills
       </Heading>
-      <Box textAlign="center" mt={8}>
+      <Box textAlign="center" mt={4}>
         <ExItem />
       </Box>
       <LinkButton mt={4} link="/about">
