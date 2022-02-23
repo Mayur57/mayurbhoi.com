@@ -77,6 +77,7 @@ export const ProjectsGridItemIndex = ({
   <Box
     w="100%"
     borderRadius="xl"
+    p={4}
     transition="250ms ease-in-out"
     _hover={{
       transform: 'scale(1.025)',
