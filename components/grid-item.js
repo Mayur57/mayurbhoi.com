@@ -9,26 +9,57 @@ import {
   LinkOverlay,
   Grid,
   GridItem,
-  useColorModeValue
+  useColorModeValue,
+  Heading
 } from '@chakra-ui/react'
 import { Global } from '@emotion/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 
-export const GridItemCustom = ({ children, href, title, thumbnail }) => (
-  <Box w="100%" align="center">
-    <LinkBox cursor="pointer">
-      <Image
-        src={thumbnail}
-        alt={title}
-        className="grid-item-thumbnail"
-        placeholder="blur"
-        loading="lazy"
-      />
-      <LinkOverlay href={href} target="_blank">
-        <Text mt={2}>{title}</Text>
-      </LinkOverlay>
-      <Text fontSize={14}>{children}</Text>
-    </LinkBox>
+export const PostsGridItem = ({
+  desc,
+  id,
+  title,
+  thumbnail,
+  date = "01 jan 1900"
+}) => (
+  <Box
+    w="100%"
+    borderRadius="lg"
+    px={4}
+    pb={2}
+    transition="250ms ease-in-out"
+    _hover={{
+      transform: 'scale(1.02)',
+      transition: '250ms ease-in-out',
+      boxShadow: 'lg'
+    }}
+  >
+    <NextLink href={`/projects/${id}`}>
+      <LinkBox cursor="pointer">
+        <Image
+          src={thumbnail}
+          alt={title}
+          className="project-item-thumbnail"
+          placeholder="blur"
+        />
+        <LinkOverlay href={`/projects/${id}`}>
+          <Text fontWeight="600" fontSize="20" mt={1.5} lineHeight={1.2}>
+            {title}
+          </Text>
+        </LinkOverlay>
+        <Heading
+          variant="pronouns"
+          opacity={0.5}
+          letterSpacing="0.6px"
+          fontSize={11}
+        >
+          {date}
+        </Heading>
+        <Text fontSize="12" opacity={0.7} mt={0} mr={2}>
+          {desc}
+        </Text>
+      </LinkBox>
+    </NextLink>
   </Box>
 )
 
@@ -40,7 +71,7 @@ export const WorkGridItem = ({ children, id, title, thumbnail }) => (
     pb={2}
     transition="250ms ease-in-out"
     _hover={{
-      transform: 'scale(1.025)',
+      transform: 'scale(1.02)',
       transition: '250ms ease-in-out',
       boxShadow: 'lg'
     }}
