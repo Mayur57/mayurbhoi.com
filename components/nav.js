@@ -30,8 +30,8 @@ const LinkItem = ({ href, path, children }) => {
   return (
     <NextLink href={href}>
       <Link
-        px={2}
-        pt={1}
+        py={2}
+        px={4}
         bg={active ? activeBackgroundColor : undefined}
         color={inactiveColor}
         textUnderlineOffset={5}
@@ -104,8 +104,7 @@ const Navbar = props => {
             style={{ gap: 4 }}
             pl={2}
             fontSize={14}
-            px={2}
-            pt={1}
+            px={4}
             textUnderlineOffset={5}
             transition="250ms ease-in-out"
             _hover={{

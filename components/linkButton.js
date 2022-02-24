@@ -14,7 +14,7 @@ const LinkButton = ({ children, link }) => (
             'rgba(56,178,172, 0.5)'
           ),
           transform: 'scale(1.05)',
-          boxShadow: 'lg'
+          boxShadow: `lg`
         }}
         bgColor={useColorModeValue(
           'rgba(121, 96, 206, 0.3)',

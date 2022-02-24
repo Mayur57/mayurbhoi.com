@@ -22,13 +22,13 @@ const Projects = [
   [
     'Twitter Nuke',
     'A Twitter bot that connects people willing to help with those in need. Written in Python 3.',
-    'covid',
+    'twitter-nuke',
     covid
   ],
   [
     'Dynamic Header',
     'A Twitter bot that connects people willing to help with those in need. Written in Python 3.',
-    'covid',
+    'dynamic-header',
     covid
   ],
   [
