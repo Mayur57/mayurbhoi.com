@@ -1,24 +1,10 @@
-import {
-  Heading,
-  Text,
-  List,
-  Link,
-  ListItem,
-  useColorModeValue,
-  Flex
-} from '@chakra-ui/react'
-import Section from '../section'
+import { Heading, Text, List, Link, ListItem, useColorModeValue, Flex } from '@chakra-ui/react'
 import NextLink from 'next/link'
-import {
-  BsLinkedin,
-  BsGithub,
-  BsTwitter,
-  BsMedium,
-  BsInstagram
-} from 'react-icons/bs'
+import { BsLinkedin, BsGithub, BsTwitter, BsMedium, BsInstagram } from 'react-icons/bs'
 import Obfuscate from 'react-obfuscate'
+import Section from '../section'
 
-const SocialLinks = ({ icon, platform, href = '#', id }) => {
+function SocialLinks({ icon, platform, href = '#', id }) {
   return (
     <ListItem>
       <Flex my={2} alignItems="center">
@@ -43,7 +29,7 @@ const SocialLinks = ({ icon, platform, href = '#', id }) => {
               transition: '200ms',
               opacity: '0.5',
               textDecoration: 'underline',
-              textUnderlineOffset: 2
+              textUnderlineOffset: 2,
             }}
           >
             {id}
@@ -54,7 +40,7 @@ const SocialLinks = ({ icon, platform, href = '#', id }) => {
   )
 }
 
-const ContactSection = () => {
+function ContactSection() {
   return (
     <Section delay={0.4}>
       <Heading
@@ -62,10 +48,7 @@ const ContactSection = () => {
         variant="section-title"
         mt="45px"
         mb="20px"
-        textDecorationColor={useColorModeValue(
-          'rgba(121, 96, 206, 0.3)',
-          'rgba(56,178,172, 0.5)'
-        )}
+        textDecorationColor={useColorModeValue('rgba(121, 96, 206, 0.3)', 'rgba(56,178,172, 0.5)')}
       >
         Socials
       </Heading>
@@ -103,9 +86,9 @@ const ContactSection = () => {
         />
       </List>
       <Text>
-        Want to build something cool or have questions? My inbox is always open!
-        Whether you have a question, want to build something together, or just
-        want to say hi, I&apos;ll try my best to get back to you!
+        Want to build something cool or have questions? My inbox is always open! Whether you have a
+        question, want to build something together, or just want to say hi, I&apos;ll try my best to
+        get back to you!
         <br />
         <br />I check my mailbox regularly, consider dropping a{' '}
         <Link
@@ -114,7 +97,7 @@ const ContactSection = () => {
             transition: '200ms',
             opacity: '0.5',
             textDecoration: 'underline',
-            textUnderlineOffset: 2
+            textUnderlineOffset: 2,
           }}
         >
           <Obfuscate email="mayur072000@gmail.com">mail here</Obfuscate>

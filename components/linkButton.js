@@ -9,21 +9,12 @@ const LinkButton = ({ children, link }) => (
         variant="new-tab-action"
         rightIcon={<ChevronRightIcon />}
         _hover={{
-          bgColor: useColorModeValue(
-            'rgba(121, 96, 206, 0.5)',
-            'rgba(56,178,172, 0.5)'
-          ),
+          bgColor: useColorModeValue('rgba(121, 96, 206, 0.5)', 'rgba(56,178,172, 0.5)'),
           transform: 'scale(1.05)',
-          boxShadow: `lg`
+          boxShadow: `lg`,
         }}
-        bgColor={useColorModeValue(
-          'rgba(121, 96, 206, 0.3)',
-          'rgba(56,178,172, 0.3)'
-        )}
-        borderColor={useColorModeValue(
-          'rgba(121, 96, 206, 0.4)',
-          'rgba(56,178,172, 0.4)'
-        )}
+        bgColor={useColorModeValue('rgba(121, 96, 206, 0.3)', 'rgba(56,178,172, 0.3)')}
+        borderColor={useColorModeValue('rgba(121, 96, 206, 0.4)', 'rgba(56,178,172, 0.4)')}
       >
         {children}
       </Button>

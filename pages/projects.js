@@ -14,7 +14,7 @@ const POS = {
   TITLE: 0,
   DESC: 1,
   SLUG: 2,
-  IMAGE: 3
+  IMAGE: 3,
 }
 
 // [Title, Description, Slug, Image URI]
@@ -24,38 +24,38 @@ const Projects = [
     'Twitter Nuke',
     'A Twitter bot that connects people willing to help with those in need. Written in Python 3.',
     'twitter-nuke',
-    covid
+    covid,
   ],
   [
     'Dynamic Header',
     'A Twitter bot that connects people willing to help with those in need. Written in Python 3.',
     'dynamic-header',
-    covid
+    covid,
   ],
   [
     'COVID-19 Resources',
     'A Twitter bot that connects people willing to help with those in need. Written in Python 3.',
     'covid',
-    covid
+    covid,
   ],
   [
     'The MIT Post App',
     'A Flutter app for the official media body of MIT, Manipal to serve content and notify students of notices and events.',
     'themitpost',
-    themitpost
+    themitpost,
   ],
   [
     'The Pride Community',
     'A website created as an attempt to spread awareness about lesser-known sub-communities of the LGBTQ community.',
     'pride',
-    pride
+    pride,
   ],
   [
     'Dynamic Scaler',
     'A Flutter package that enables device dependent scaling of widgets using the built-in MediaQuery class.',
     'scalar',
-    scalar
-  ]
+    scalar,
+  ],
 ]
 
 // const SearchBar = () => {
@@ -73,7 +73,7 @@ const Projects = [
 //   )
 // }
 
-const Work = () => {
+function Work() {
   return (
     <Layout title="Projects">
       <Container>

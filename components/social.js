@@ -1,18 +1,5 @@
-import {
-  Center,
-  Grid,
-  GridItem,
-  Link,
-  Icon,
-  useColorModeValue
-} from '@chakra-ui/react'
-import {
-  BsLinkedin,
-  BsGithub,
-  BsTwitter,
-  BsMedium,
-  BsInstagram
-} from 'react-icons/bs'
+import { Center, Grid, GridItem, Link, Icon, useColorModeValue } from '@chakra-ui/react'
+import { BsLinkedin, BsGithub, BsTwitter, BsMedium, BsInstagram } from 'react-icons/bs'
 import NextLink from 'next/link'
 
 const SocialIcon = ({ icons, link, size = 16 }) => {
@@ -26,7 +13,7 @@ const SocialIcon = ({ icons, link, size = 16 }) => {
               _hover={{
                 transition: '250ms',
                 opacity: 0.7,
-                transform: 'translate(0px, -2px)'
+                transform: 'translate(0px, -2px)',
               }}
               bgColor="transparent"
               color={useColorModeValue('#000', '#fff')}
@@ -51,26 +38,10 @@ const Social = ({ spacing, size }) => {
         link="https://www.linkedin.com/in/mayur-bhoi/"
         size={size}
       />
-      <SocialIcon
-        icons={<BsGithub />}
-        link="https://github.com/Mayur57"
-        size={size}
-      />
-      <SocialIcon
-        icons={<BsTwitter />}
-        link="https://twitter.com/mayurbhoii"
-        size={size}
-      />
-      <SocialIcon
-        icons={<BsMedium />}
-        link="https://mayurbhoi.medium.com/"
-        size={size}
-      />
-      <SocialIcon
-        icons={<BsInstagram />}
-        link="https://www.instagram.com/mayurbhoii"
-        size={size}
-      />
+      <SocialIcon icons={<BsGithub />} link="https://github.com/Mayur57" size={size} />
+      <SocialIcon icons={<BsTwitter />} link="https://twitter.com/mayurbhoii" size={size} />
+      <SocialIcon icons={<BsMedium />} link="https://mayurbhoi.medium.com/" size={size} />
+      <SocialIcon icons={<BsInstagram />} link="https://www.instagram.com/mayurbhoii" size={size} />
     </Grid>
     // </Center>
   )

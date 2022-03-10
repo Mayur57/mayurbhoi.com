@@ -8,7 +8,7 @@ const mixins = {
     &:focus {
       box-shadow: 0 20px 30px -15px var(--navy-shadow);
     }
-  `
+  `,
 }
 
 export default mixins

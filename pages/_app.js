@@ -1,5 +1,6 @@
-import Layout from '../components/layouts/main'
+/* eslint-disable react/jsx-props-no-spreading */
 import { Global, css } from '@emotion/react'
+import Layout from '../components/layouts/main'
 import 'focus-visible/dist/focus-visible'
 import '@fontsource/inter'
 import Fonts from '../components/fonts'

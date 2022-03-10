@@ -1,9 +1,10 @@
+/* eslint-disable import/extensions */
 import Head from 'next/head'
 import { Box, Container } from '@chakra-ui/react'
 import Navbar from '../nav.js'
 import Footer from '../footer/footer.js'
 
-const Main = ({ children, router }) => {
+function Main({ children, router }) {
   return (
     <Box as="main" pb={8}>
       <Head>

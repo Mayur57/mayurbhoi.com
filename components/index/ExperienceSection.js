@@ -1,21 +1,14 @@
 /* eslint-disable react/jsx-key */
-import {
-  Box,
-  Heading,
-  Text,
-  useColorModeValue,
-  IconButton,
-  Center
-} from '@chakra-ui/react'
-import Section from '../section'
-import LinkButton from '../linkButton'
+import { Box, Heading, Text, useColorModeValue, IconButton, Center } from '@chakra-ui/react'
 import { useState } from 'react'
 import { IoLogoNodejs } from 'react-icons/io'
 import { IoLogoReact } from 'react-icons/io5'
 import { RiFlutterFill } from 'react-icons/ri'
 import { FaAws, FaDocker } from 'react-icons/fa'
+import LinkButton from '../linkButton'
+import Section from '../section'
 
-const ExpButton = ({ children, activeIndex, setIndex }) => {
+function ExpButton({ children, activeIndex, setIndex }) {
   return (
     <IconButton
       mx={2}
@@ -32,11 +25,11 @@ const ExpButton = ({ children, activeIndex, setIndex }) => {
   )
 }
 
-const ExpText = ({ text, activeIndex, testIndex }) => {
+function ExpText({ text, activeIndex, testIndex }) {
   return (
     <Text
       pos="absolute"
-      opacity={activeIndex == testIndex ? '0.7' : '0'}
+      opacity={activeIndex === testIndex ? '0.7' : '0'}
       transition="300ms"
       fontSize={12}
     >
@@ -45,27 +38,19 @@ const ExpText = ({ text, activeIndex, testIndex }) => {
   )
 }
 
-const ExItem = () => {
+function ExItem() {
   const [index, setIndex] = useState(0)
   return (
     <>
       <Box p={2}>
         <Center>
-          <ExpText
-            activeIndex={index}
-            testIndex={0}
-            text="Hover icons for more"
-          />
+          <ExpText activeIndex={index} testIndex={0} text="Hover icons for more" />
           <ExpText
             activeIndex={index}
             testIndex={1}
             text="Server Engineering and Backend Design Using Node.js"
           />
-          <ExpText
-            activeIndex={index}
-            testIndex={2}
-            text="Web Apps Using React and React Native"
-          />
+          <ExpText activeIndex={index} testIndex={2} text="Web Apps Using React and React Native" />
           <ExpText
             activeIndex={index}
             testIndex={3}
@@ -76,11 +61,7 @@ const ExItem = () => {
             testIndex={4}
             text="Cross Platform Mobile Apps Using Flutter"
           />
-          <ExpText
-            activeIndex={index}
-            testIndex={5}
-            text="Docker and CI/CD Workflows"
-          />
+          <ExpText activeIndex={index} testIndex={5} text="Docker and CI/CD Workflows" />
         </Center>
       </Box>
       <Box mt={4}>
@@ -104,17 +85,14 @@ const ExItem = () => {
   )
 }
 
-export const ExperienceSection = () => {
+export function ExperienceSection() {
   return (
     <Section delay={0.3}>
       <Heading
         variant="pronouns"
         textDecor="underline"
         textUnderlineOffset={4}
-        textDecorationColor={useColorModeValue(
-          'rgba(121, 96, 206, 0.3)',
-          'rgba(56,178,172, 0.5)'
-        )}
+        textDecorationColor={useColorModeValue('rgba(121, 96, 206, 0.3)', 'rgba(56,178,172, 0.5)')}
         textAlign="center"
         fontSize={14}
       >

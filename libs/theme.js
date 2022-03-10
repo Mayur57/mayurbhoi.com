@@ -6,9 +6,9 @@ const styles = {
   global: props => ({
     body: {
       bg: mode('#FAFAFA', '#191919')(props),
-      color: mode('#37352F', '#E1E1E1')(props)
-    }
-  })
+      color: mode('#37352F', '#E1E1E1')(props),
+    },
+  }),
 }
 
 const components = {
@@ -24,9 +24,9 @@ const components = {
         borderWidth: 1,
         marginBottom: 'none',
         marginTop: 'none',
-        padding: '0px 30px'
-      }
-    }
+        padding: '0px 30px',
+      },
+    },
   },
   Heading: {
     variants: {
@@ -38,7 +38,7 @@ const components = {
         textUnderlineOffset: 5,
         marginTop: 3,
         marginBottom: 2,
-        letterSpacing: '-0.05em'
+        letterSpacing: '-0.05em',
       },
       pronouns: {
         fontFamily: '"Inter", sans-serif',
@@ -47,31 +47,31 @@ const components = {
         letterSpacing: '0.19em',
         lineHeight: '25px',
         fontSize: 12,
-        textTransform: 'uppercase'
-      }
-    }
+        textTransform: 'uppercase',
+      },
+    },
   },
   Link: {
     baseStyle: props => ({
-      color: mode('#3D7AED', '#FF63C3')(props), //TODO: Change link colors here
-      textUnderlinOffset: 3
-    })
-  }
+      color: mode('#3D7AED', '#FF63C3')(props), // TODO: Change link colors here
+      textUnderlinOffset: 3,
+    }),
+  },
 }
 
 const fonts = {
   heading: 'Inter',
-  body: 'Inter'
+  body: 'Inter',
 }
 
 const colors = {
-  glassTeal: '#88CCCA'
+  glassTeal: '#88CCCA',
 }
 
 const config = {
   initialColorMode: 'light',
   useSystemColorMode: false,
-  cssVarPrefix: 'mb'
+  cssVarPrefix: 'mb',
 }
 
 const theme = extendTheme({
@@ -79,7 +79,7 @@ const theme = extendTheme({
   styles,
   components,
   colors,
-  fonts
+  fonts,
 })
 
 export default theme

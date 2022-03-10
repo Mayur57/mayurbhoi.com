@@ -16,6 +16,12 @@
       }
     ],
     "import/no-unresolved": "off",
+    "import/no-extraneous-dependencies": "off",
+    "react/react-in-jsx-scope": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "react/prop-types": "off",
+    "import/prefer-default-export": "off",
+    "react/function-component-definition": "off",
     "react/jsx-filename-extension": [
       1,
       {

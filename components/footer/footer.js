@@ -1,11 +1,11 @@
 import React from 'react'
+import { Box, Center, Divider, useColorModeValue } from '@chakra-ui/react'
+import Obfuscate from 'react-obfuscate'
 import { Container, Row, Column, FooterLink, Heading } from './footer-styles'
 import Logo from '../logo'
 import Social from '../social'
-import { Box, Center, Divider, useColorModeValue } from '@chakra-ui/react'
-import Obfuscate from 'react-obfuscate'
 
-const Footer = () => {
+function Footer() {
   return (
     <Box mt={10}>
       <Box mb={10}>
@@ -17,25 +17,14 @@ const Footer = () => {
             <Logo />
           </Column>
           <Column>
-            <Heading style={{ color: useColorModeValue('#000', '#fff') }}>
-              General
-            </Heading>
-            <FooterLink
-              href="/about"
-              style={{ color: useColorModeValue('#000', '#fff') }}
-            >
+            <Heading style={{ color: useColorModeValue('#000', '#fff') }}>General</Heading>
+            <FooterLink href="/about" style={{ color: useColorModeValue('#000', '#fff') }}>
               About
             </FooterLink>
-            <FooterLink
-              href="/projects"
-              style={{ color: useColorModeValue('#000', '#fff') }}
-            >
+            <FooterLink href="/projects" style={{ color: useColorModeValue('#000', '#fff') }}>
               Projects
             </FooterLink>
-            <FooterLink
-              href="/posts"
-              style={{ color: useColorModeValue('#000', '#fff') }}
-            >
+            <FooterLink href="/posts" style={{ color: useColorModeValue('#000', '#fff') }}>
               Blog
             </FooterLink>
             <FooterLink style={{ color: useColorModeValue('#000', '#fff') }}>
@@ -43,9 +32,7 @@ const Footer = () => {
             </FooterLink>
           </Column>
           <Column>
-            <Heading style={{ color: useColorModeValue('#000', '#fff') }}>
-              Specifics
-            </Heading>
+            <Heading style={{ color: useColorModeValue('#000', '#fff') }}>Specifics</Heading>
             <FooterLink
               href="/resume/resume.pdf"
               style={{ color: useColorModeValue('#000', '#fff') }}
@@ -64,10 +51,7 @@ const Footer = () => {
             >
               Source
             </FooterLink>
-            <FooterLink
-              href="/meta"
-              style={{ color: useColorModeValue('#000', '#fff') }}
-            >
+            <FooterLink href="/meta" style={{ color: useColorModeValue('#000', '#fff') }}>
               About Website
             </FooterLink>
           </Column>

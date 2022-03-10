@@ -15,7 +15,7 @@ const POS = {
   DESC: 1,
   SLUG: 2,
   IMAGE: 3,
-  DATE: 4
+  DATE: 4,
 }
 
 // [Title, Description, Slug, Image URI]
@@ -25,8 +25,8 @@ const Articles = [
     'A Twitter bot that connects people willing to help with those in need. Written in Python 3.',
     'twitter-nuke',
     covid,
-    '02 feb 2020'
-  ]
+    '02 feb 2020',
+  ],
 ]
 
 const Posts = () => {
