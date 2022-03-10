@@ -20,7 +20,7 @@ export const PostsGridItem = ({
   id,
   title,
   thumbnail,
-  date = "01 jan 1900"
+  date = '01 jan 1900'
 }) => (
   <Box
     w="100%"

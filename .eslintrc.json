@@ -2,7 +2,6 @@
   "root": true,
   "extends": "next",
   "rules": {
-    // TODO: Enable in final deployment
     "no-unused-vars": [
       "error",
       {

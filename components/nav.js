@@ -148,14 +148,14 @@ const Navbar = props => {
                 <NextLink href={sourceLink} passHref>
                   <MenuItem>
                     Source&nbsp;&nbsp;
-                    <FiArrowUpRight ml={3} size={14} opacity={0.4} />
+                    <FiArrowUpRight size={14} opacity={0.4} />
                   </MenuItem>
                 </NextLink>
                 <NextLink href={resumeLink} passHref>
                   <MenuItem>
                     <Center>
                       Resume&nbsp;&nbsp;
-                      <FiArrowUpRight ml={3} size={14} opacity={0.4} />
+                      <FiArrowUpRight size={14} opacity={0.4} />
                     </Center>
                   </MenuItem>
                 </NextLink>

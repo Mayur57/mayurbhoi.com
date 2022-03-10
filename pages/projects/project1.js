@@ -3,10 +3,14 @@ import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { Title, Meta } from '../../components/work'
 import P from '../../components/paragraph'
 import Layout from '../../components/layouts/article'
-import {Heading} from '@chakra-ui/react'
+import { Heading } from '@chakra-ui/react'
 
-const SectionTitle = ({children}) => {
-  return <Heading variant="pronouns" mt={4} mb={2}>{children}</Heading>
+const SectionTitle = ({ children }) => {
+  return (
+    <Heading variant="pronouns" mt={4} mb={2}>
+      {children}
+    </Heading>
+  )
 }
 
 const Work = () => {
