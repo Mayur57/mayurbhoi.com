@@ -18,6 +18,7 @@ const POS = {
 }
 
 // [Title, Description, Slug, Image URI]
+// TODO: Use .map() to generate the project posts
 const Projects = [
   [
     'Twitter Nuke',

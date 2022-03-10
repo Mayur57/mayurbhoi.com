@@ -13,8 +13,8 @@
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "*.{js,md,html}": [
-      "next lint"
+    "*.{js,md}": [
+      "eslint --cache --cache-location .next/cache/eslint/ --fix"
     ]
   },
   "keywords": [],
