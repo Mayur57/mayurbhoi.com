@@ -11,7 +11,7 @@ export default class Document extends NextDocument {
       <Html lang="en">
         <Head>
           {/* Metadata about the website for SEO */}
-          <meta charset="utf-8" />
+          <meta charSet="utf-8" />
           <meta name="description" content={DESCRIPTION} />
           <meta name="keywords" content="mayur, bhoi, HTML, CSS, JavaScript, Python, Java, C++, portfolio" />
           <meta name="author" content="Mayur Bhoi" />
