@@ -21,6 +21,7 @@
   "author": "Mayur Bhoi",
   "license": "MIT",
   "dependencies": {
+    "@babel/eslint-parser": "^7.17.0",
     "@chakra-ui/icons": "^1.1.1",
     "@chakra-ui/react": "^1.8.1",
     "@emotion/core": "^11.0.0",
@@ -39,11 +40,9 @@
     "react-obfuscate": "^3.6.8",
     "react-protected-mailto": "^1.0.3",
     "react-transition-group": "^4.4.2",
-    "styled-components": "^5.3.3",
-    "winston": "^3.6.0"
+    "styled-components": "^5.3.3"
   },
   "devDependencies": {
-    "babel-eslint": "^10.1.0",
     "eslint": "^8.10.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-base": "^15.0.0",
