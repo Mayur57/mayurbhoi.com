@@ -39,7 +39,8 @@
     "react-obfuscate": "^3.6.8",
     "react-protected-mailto": "^1.0.3",
     "react-transition-group": "^4.4.2",
-    "styled-components": "^5.3.3"
+    "styled-components": "^5.3.3",
+    "winston": "^3.6.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
