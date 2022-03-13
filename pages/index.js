@@ -1,4 +1,4 @@
-import { Container } from '@chakra-ui/react'
+import { Container, Box } from '@chakra-ui/react'
 import { GridItemStyle } from '../components/grid-item'
 import HeaderSection from '../components/index/HeaderSection'
 import AboutParaSection from '../components/index/AboutParaSection'
@@ -15,6 +15,7 @@ const Page = () => {
       <ExperienceSection />
       <FeaturedProjectSection />
       <ContactSection />
+      <Box></Box>
     </Container>
   )
 }
