@@ -107,11 +107,11 @@ export const ProjectsGridItemIndex = ({ id, title, desc, thumbnail, sourcelink, 
         ) : (
           <NextLink href={sourcelink} passHref>
             <Link
-              color={useColorModeValue('purple.500', 'teal.200')}
+              color={useColorModeValue('purple.500', 'red.300')}
               transitionDuration="500ms"
               textDecoration="none"
               _hover={{
-                color: useColorModeValue('purple.100', 'teal.100'),
+                color: useColorModeValue('purple.100', 'red.200'),
                 transitionDuration: '500ms',
                 textDecoration: 'underline',
                 textUnderlineOffset: 3,
@@ -129,10 +129,10 @@ export const ProjectsGridItemIndex = ({ id, title, desc, thumbnail, sourcelink, 
         ) : (
           <NextLink href={bloglink} passHref>
             <Link
-              color={useColorModeValue('purple.500', 'teal.200')}
+              color={useColorModeValue('purple.500', 'red.300')}
               textDecoration="none"
               _hover={{
-                color: useColorModeValue('purple.100', 'teal.100'),
+                color: useColorModeValue('purple.100', 'red.200'),
                 transitionDuration: '500ms',
                 textDecoration: 'underline',
                 textUnderlineOffset: 3,

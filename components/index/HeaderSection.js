@@ -27,7 +27,7 @@ function HeaderSection() {
             as="h6"
             variant="pronouns"
             opacity={0.9}
-            color={useColorModeValue('purple.600', 'teal.200')}
+            color={useColorModeValue('purple.600', '#FF7B82')}
             _hover={{ animation }}
           >
             he/him/his
@@ -38,9 +38,9 @@ function HeaderSection() {
         </Box>
         <Box flexShrink={0} mt={{ base: 4, md: 0 }} ml={{ md: 6 }} align="center">
           <Image
-            borderColor="whiteAlpha.800"
-            backgroundColor={useColorModeValue('purple.100', 'teal.100')}
-            borderWidth={4}
+            borderColor={useColorModeValue('white', "#FEF6E5")}
+            backgroundColor={useColorModeValue('purple.100', 'red.200')}
+            borderWidth={6}
             borderStyle="solid"
             maxWidth="160px"
             display="inline-block"
@@ -53,7 +53,7 @@ function HeaderSection() {
               transform: 'scale(1.05)',
               boxShadow: 'xl',
               transition: '250ms',
-              borderColor: useColorModeValue('purple.300', 'teal.400'),
+              borderColor: useColorModeValue('purple.300', 'red.300'),
             }}
           />
         </Box>
@@ -61,7 +61,7 @@ function HeaderSection() {
       <Box
         borderRadius="lg"
         // TODO: See if this is good
-        bg={useColorModeValue('rgba(121, 96, 206, 0.3)', 'rgba(56,178,172, 0.3)')}
+        bg={useColorModeValue('rgba(121, 96, 206, 0.3)', '#FEF6E511')}
         fontSize={16}
         p={3}
         mb={6}

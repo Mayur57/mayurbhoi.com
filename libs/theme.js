@@ -6,7 +6,7 @@ const styles = {
   global: props => ({
     body: {
       bg: mode('#FAFAFA', '#191919')(props),
-      color: mode('#37352F', '#E1E1E1')(props),
+      color: mode('#37352F', '#FEF6E5')(props),
     },
   }),
 }
@@ -53,7 +53,7 @@ const components = {
   },
   Link: {
     baseStyle: props => ({
-      color: mode('#3D7AED', '#FF63C3')(props), // TODO: Change link colors here
+      color: mode('#3D7AED', 'red.300')(props), // TODO: Change link colors here
       textUnderlinOffset: 3,
     }),
   },

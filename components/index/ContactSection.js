@@ -15,10 +15,9 @@ function SocialLinks({ icon, platform, href = '#', id }) {
           letterSpacing="1.2px"
           textTransform="uppercase"
           ml={2}
-          opacity={0.8}
-          color={useColorModeValue('purple.800', 'teal.200')}
+          color={useColorModeValue('#37352F', '#FEF6E5')}
         >
-          {platform}
+          {platform}:
         </Text>
         <NextLink href={href} passHref>
           <Link
@@ -48,7 +47,9 @@ function ContactSection() {
         variant="section-title"
         mt="45px"
         mb="20px"
-        textDecorationColor={useColorModeValue('rgba(121, 96, 206, 0.3)', 'rgba(56,178,172, 0.5)')}
+        textDecorationThickness={1.5}
+        textUnderlineOffset={3}
+        textDecorationColor={useColorModeValue('rgba(121, 96, 206, 0.3)', '#FE5B5E80')}
       >
         Socials
       </Heading>

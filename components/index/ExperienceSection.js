@@ -44,7 +44,7 @@ function ExItem() {
     <>
       <Box p={2}>
         <Center>
-          <ExpText activeIndex={index} testIndex={0} text="Hover icons for more" />
+          <ExpText activeIndex={index} testIndex={0} text="Click/Hover icons for more" />
           <ExpText
             activeIndex={index}
             testIndex={1}
@@ -92,7 +92,7 @@ export function ExperienceSection() {
         variant="pronouns"
         textDecor="underline"
         textUnderlineOffset={4}
-        textDecorationColor={useColorModeValue('rgba(121, 96, 206, 0.3)', 'rgba(56,178,172, 0.5)')}
+        textDecorationColor={useColorModeValue('rgba(121, 96, 206, 0.3)', '#FE5B5E80')}
         textAlign="center"
         fontSize={14}
       >

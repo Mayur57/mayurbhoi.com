@@ -23,10 +23,10 @@ import ThemeButton from './theme-button'
 
 function LinkItem({ href, path, children }) {
   const active = path === href
-  const inactiveColor = useColorModeValue('gray200', 'whiteAlpha.900')
+  const inactiveColor = useColorModeValue('gray200', '#FEF6E5')
   const activeBackgroundColor = useColorModeValue(
     'rgba(121, 96, 206, 0.3)',
-    'rgba(56,178,172, 0.3)'
+    '#FF7B8230'
   )
   return (
     <NextLink href={href}>
@@ -41,7 +41,7 @@ function LinkItem({ href, path, children }) {
         _hover={{
           transform: 'scale(1.1)',
           opacity: useColorModeValue(0.6, 1),
-          color: useColorModeValue('purple', 'teal.300'),
+          color: useColorModeValue('purple', '#FE5B5E'),
         }}
       >
         {children}
@@ -111,10 +111,10 @@ function Navbar(props) {
             _hover={{
               transform: 'scale(1.1)',
               opacity: useColorModeValue(0.6, 1),
-              color: useColorModeValue('purple', 'teal.200'),
+              color: useColorModeValue('purple', '#FE5B5E'),
               transition: '250ms ease-in-out',
             }}
-            color={useColorModeValue('gray200', 'whiteAlpha.900')}
+            color={useColorModeValue('gray200', '#FEF6E5')}
           >
             Resume
           </Link>

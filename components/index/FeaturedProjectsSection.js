@@ -11,7 +11,9 @@ function FeaturedProjectSection() {
         as="h3"
         variant="section-title"
         mt="45px"
-        textDecorationColor={useColorModeValue('rgba(121, 96, 206, 0.3)', 'rgba(56,178,172, 0.5)')}
+        textDecorationThickness={1.5}
+        textUnderlineOffset={3}
+        textDecorationColor={useColorModeValue('rgba(121, 96, 206, 0.3)', '#FE5B5E80')}
       >
         Featured Projects
       </Heading>
