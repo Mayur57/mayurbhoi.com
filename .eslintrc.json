@@ -22,6 +22,7 @@
     "react/prop-types": "off",
     "import/prefer-default-export": "off",
     "react/function-component-definition": "off",
+    "react/no-array-index-key": "off",
     "react/jsx-filename-extension": [
       1,
       {

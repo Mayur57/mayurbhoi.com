@@ -2,8 +2,7 @@ import { Center, Grid, GridItem, Link, Icon, useColorModeValue } from '@chakra-u
 import { BsLinkedin, BsGithub, BsTwitter, BsMedium, BsInstagram } from 'react-icons/bs'
 import NextLink from 'next/link'
 
-const SocialIcon = ({ icons, link, size = 16 }) => {
-  return (
+const SocialIcon = ({ icons, link, size = 16 }) => (
     <GridItem>
       <NextLink href={link} passHref>
         <Link>
@@ -27,10 +26,8 @@ const SocialIcon = ({ icons, link, size = 16 }) => {
       </NextLink>
     </GridItem>
   )
-}
 
-const Social = ({ spacing, size }) => {
-  return (
+const Social = ({ spacing, size }) => (
     // <Center mt={10}>
     <Grid templateColumns={`repeat(5, ${spacing})`} gap={6}>
       <SocialIcon
@@ -45,6 +42,5 @@ const Social = ({ spacing, size }) => {
     </Grid>
     // </Center>
   )
-}
 
 export default Social

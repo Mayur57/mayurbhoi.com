@@ -17,8 +17,7 @@ const GlobalStyles = css`
   }
 `
 
-const Website = ({ Component, pageProps, router }) => {
-  return (
+const Website = ({ Component, pageProps, router }) => (
     <CookiesProvider cookies={pageProps.cookies}>
       <Fonts />
       <Global styles={GlobalStyles} />
@@ -27,6 +26,5 @@ const Website = ({ Component, pageProps, router }) => {
       </Layout>
     </CookiesProvider>
   )
-}
 
 export default Website

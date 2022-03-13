@@ -16,15 +16,13 @@ function Work() {
           <Title>Past Work &amp; Personal Projects</Title>
         </Section>
         <SimpleGrid columns={[1, 2, 2]} spacingX={-2} spacingY={-2} mt={4}>
-          {projects.map(({ title, description, slug, image }, index) => {
-            return (
+          {projects.map(({ title, description, slug, image }, index) => (
               <Section key={index} delay={calculateAnimationDelay(index)}>
                 <WorkGridItem id={slug} title={title} thumbnail={image}>
                   {description}
                 </WorkGridItem>
               </Section>
-            )
-          })}
+            ))}
         </SimpleGrid>
       </Container>
     </Layout>

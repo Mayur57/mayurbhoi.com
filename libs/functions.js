@@ -1,3 +1,1 @@
-export const calculateAnimationDelay = index => {
-  return Math.round((index + 1) / 2) / 10
-}
+export const calculateAnimationDelay = index => Math.round((index + 1) / 2) / 10
