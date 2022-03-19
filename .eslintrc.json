@@ -1,14 +1,34 @@
 {
   "root": true,
-  "extends": "next",
+  "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
   "rules": {
-    // TODO: Enable in final deployment
     "no-unused-vars": [
       "error",
       {
         "argsIgnorePattern": "^_",
         "varsIgnorePattern": "^_"
       }
+    ],
+    "import/no-unresolved": "off",
+    "import/no-extraneous-dependencies": "off",
+    "react/react-in-jsx-scope": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "react/prop-types": "off",
+    "import/prefer-default-export": "off",
+    "react/function-component-definition": "off",
+    "react/no-array-index-key": "off",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js"]
+      }
     ]
-  }
+  },
+  "extends": ["next/core-web-vitals", "airbnb", "prettier"]
 }

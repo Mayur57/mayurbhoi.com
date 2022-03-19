@@ -4,17 +4,16 @@ import { ProjectsGridItemIndex } from '../grid-item'
 import LinkButton from '../linkButton'
 import thumbPro1 from '../../public/images/projects/covid.jpg'
 
-const FeaturedProjectSection = () => {
+function FeaturedProjectSection() {
   return (
     <Section delay={0.3}>
       <Heading
         as="h3"
         variant="section-title"
         mt="45px"
-        textDecorationColor={useColorModeValue(
-          'rgba(121, 96, 206, 0.3)',
-          'rgba(56,178,172, 0.5)'
-        )}
+        textDecorationThickness={1.5}
+        textUnderlineOffset={3}
+        textDecorationColor={useColorModeValue('rgba(121, 96, 206, 0.3)', '#FE5B5E80')}
       >
         Featured Projects
       </Heading>

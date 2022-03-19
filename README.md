@@ -1,18 +1,26 @@
 # mayurbhoi.com
 
+![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=portfolio-v2-plum-two)
+
 Complete rewrite of my [portfolio website](https://mayurbhoi.com). (New version not live yet)
 
 **//TODO:** Write documentation and dependencies/frameworks used.
 
-### Stack & Frameworks
+## Stack & Frameworks
 
 - Node
 - Next.js
 - Chakra UI
 
-### Repository Structure and Branches
+## TODOs
 
-Pushing features and changes follows a fixed step-wise process.
+- Fix touch targets for pronouns and footer links (SEO Audit Suggestion)
+- Add feature image to the website, readme and project repository
+- Add colors section to the readme
+
+## Repository Structure and Branches
+
+Pushing features and changes follows a predefined procedure.
 
 - `dev` - Active development happens in the branch and all the running changes are pushed to this branch. Consider this branch as the nightly builds. **Note: Builds of this branch may/may not pass tests, compile or maybe highly unstable**
 
@@ -22,10 +30,10 @@ Pushing features and changes follows a fixed step-wise process.
 
 - `hotfix-<issue>` (Optional) - Temporary branch that contains fixes to urgent issues and can be issued as a patch. Can be directly merged into master if the build passes all the tests. **Note: Delete the branch after the patch has been merged.**
 
-### References
+## References
 
 - devaslife
-  - Website: https://www.craftz.dog/
-  - YouTube: https://www.youtube.com/devaslife
+  - Website: <https://www.craftz.dog/>
+  - YouTube: <https://www.youtube.com/devaslife>
 
 Support Free and Open Source Software!

@@ -6,7 +6,7 @@ const Subtitle = ({ children }) => (
     mt={12}
     letterSpacing={1.4}
     fontWeight="bold"
-    color={useColorModeValue('#805AD5', '#ED64A6')}
+    color={useColorModeValue('#805AD5', '#FE5B5E')}
     textTransform="uppercase"
   >
     {children}

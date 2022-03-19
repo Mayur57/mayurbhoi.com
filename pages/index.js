@@ -6,8 +6,7 @@ import { ExperienceSection } from '../components/index/ExperienceSection'
 import FeaturedProjectSection from '../components/index/FeaturedProjectsSection'
 import ContactSection from '../components/index/ContactSection'
 
-const Page = () => {
-  return (
+const Page = () => (
     <Container>
       <HeaderSection />
       <AboutParaSection />
@@ -17,6 +16,5 @@ const Page = () => {
       <ContactSection />
     </Container>
   )
-}
 
 export default Page

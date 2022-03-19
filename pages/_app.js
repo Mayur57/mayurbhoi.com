@@ -1,5 +1,6 @@
-import Layout from '../components/layouts/main'
+/* eslint-disable react/jsx-props-no-spreading */
 import { Global, css } from '@emotion/react'
+import Layout from '../components/layouts/main'
 import 'focus-visible/dist/focus-visible'
 import '@fontsource/inter'
 import Fonts from '../components/fonts'
@@ -16,8 +17,7 @@ const GlobalStyles = css`
   }
 `
 
-const Website = ({ Component, pageProps, router }) => {
-  return (
+const Website = ({ Component, pageProps, router }) => (
     <CookiesProvider cookies={pageProps.cookies}>
       <Fonts />
       <Global styles={GlobalStyles} />
@@ -26,6 +26,5 @@ const Website = ({ Component, pageProps, router }) => {
       </Layout>
     </CookiesProvider>
   )
-}
 
 export default Website

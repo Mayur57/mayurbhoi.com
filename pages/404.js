@@ -1,18 +1,10 @@
-import {
-  Heading,
-  Text,
-  Center,
-  Image,
-  Link,
-  Container,
-  useColorModeValue
-} from '@chakra-ui/react'
-import Section from '../components/section'
+import { Heading, Text, Center, Image, Link, Container, useColorModeValue } from '@chakra-ui/react'
 import Obfuscate from 'react-obfuscate'
-import LinkButton from '../components/linkButton'
 import { EmailIcon } from '@chakra-ui/icons'
+import Section from '../components/section'
+import LinkButton from '../components/linkButton'
 
-const NotFound = () => {
+function NotFound() {
   const image404 = `/images/404/404${useColorModeValue('-01', '-02')}.png`
   return (
     <Container>
@@ -30,15 +22,9 @@ const NotFound = () => {
       </Section>
       <Section delay={0.2} mb={0}>
         <Center>
-          <Text
-            opacity={0.6}
-            fontSize={14}
-            maxW="360px"
-            textAlign="justify"
-            mt={4}
-          >
-            Oops! Looks like you{`'`}ve wandered off into the unknown. Click
-            below to go to the homepage or if you think this is a mistake:{' '}
+          <Text opacity={0.6} fontSize={14} maxW="360px" textAlign="justify" mt={4}>
+            Oops! Looks like you&apos;ve wandered off into the unknown. Click below to go to the
+            homepage or if you think this is a mistake:{' '}
             <Link href="#">
               <Obfuscate
                 email="mayur072000@gmail.com"

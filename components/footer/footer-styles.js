@@ -26,7 +26,7 @@ export const Row = styled.div`
 `
 
 export const FooterLink = styled.a`
-  color: #fff;
+  color: #FEF6E5;
   margin-bottom: 8px;
   font-size: 14px;
   opacity: 0.5;

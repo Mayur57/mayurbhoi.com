@@ -3,8 +3,7 @@ import Layout from '../components/layouts/article'
 import Subtitle from '../components/subtitle'
 import Title from '../components/title'
 
-const About = () => {
-  return (
+const About = () => (
     <Layout title="About">
       <Container>
         <Subtitle>Website</Subtitle>
@@ -12,6 +11,5 @@ const About = () => {
       </Container>
     </Layout>
   )
-}
 
 export default About

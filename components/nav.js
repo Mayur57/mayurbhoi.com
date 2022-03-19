@@ -1,4 +1,4 @@
-import Logo from './logo'
+/* eslint-disable react/jsx-props-no-spreading */
 import NextLink from 'next/link'
 import {
   Container,
@@ -14,18 +14,19 @@ import {
   IconButton,
   useColorModeValue,
   MenuDivider,
-  Center
+  Center,
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import { FiArrowUpRight } from 'react-icons/fi'
+import Logo from './logo'
 import ThemeButton from './theme-button'
 
-const LinkItem = ({ href, path, children }) => {
-  const active = path == href
-  const inactiveColor = useColorModeValue('gray200', 'whiteAlpha.900')
+function LinkItem({ href, path, children }) {
+  const active = path === href
+  const inactiveColor = useColorModeValue('gray200', '#FEF6E5')
   const activeBackgroundColor = useColorModeValue(
     'rgba(121, 96, 206, 0.3)',
-    'rgba(56,178,172, 0.3)'
+    '#FF7B8230'
   )
   return (
     <NextLink href={href}>
@@ -40,7 +41,7 @@ const LinkItem = ({ href, path, children }) => {
         _hover={{
           transform: 'scale(1.1)',
           opacity: useColorModeValue(0.6, 1),
-          color: useColorModeValue('purple', 'teal.300')
+          color: useColorModeValue('purple', '#FE5B5E'),
         }}
       >
         {children}
@@ -49,7 +50,7 @@ const LinkItem = ({ href, path, children }) => {
   )
 }
 
-const Navbar = props => {
+function Navbar(props) {
   const { path } = props
   const sourceLink = 'https://github.com/Mayur57/portfolio-v2'
   const resumeLink = 'resume/resume.pdf'
@@ -73,7 +74,7 @@ const Navbar = props => {
         justify="space-between"
       >
         <Flex align="center" mr={5}>
-          <Heading as="h1" size="lg" letterSpacing={'tighter'}>
+          <Heading as="h1" size="lg" letterSpacing="tighter">
             <Logo />
           </Heading>
         </Flex>
@@ -110,10 +111,10 @@ const Navbar = props => {
             _hover={{
               transform: 'scale(1.1)',
               opacity: useColorModeValue(0.6, 1),
-              color: useColorModeValue('purple', 'teal.200'),
-              transition: '250ms ease-in-out'
+              color: useColorModeValue('purple', '#FE5B5E'),
+              transition: '250ms ease-in-out',
             }}
-            color={useColorModeValue('gray200', 'whiteAlpha.900')}
+            color={useColorModeValue('gray200', '#FEF6E5')}
           >
             Resume
           </Link>
@@ -148,14 +149,14 @@ const Navbar = props => {
                 <NextLink href={sourceLink} passHref>
                   <MenuItem>
                     Source&nbsp;&nbsp;
-                    <FiArrowUpRight ml={3} size={14} opacity={0.4} />
+                    <FiArrowUpRight size={14} opacity={0.4} />
                   </MenuItem>
                 </NextLink>
                 <NextLink href={resumeLink} passHref>
                   <MenuItem>
                     <Center>
                       Resume&nbsp;&nbsp;
-                      <FiArrowUpRight ml={3} size={14} opacity={0.4} />
+                      <FiArrowUpRight size={14} opacity={0.4} />
                     </Center>
                   </MenuItem>
                 </NextLink>
