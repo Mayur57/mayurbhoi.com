@@ -17,25 +17,25 @@ function Footer() {
             <Logo />
           </Column>
           <Column>
-            <Heading style={{ color: useColorModeValue('#000', '#fff') }}>General</Heading>
-            <FooterLink href="/about" style={{ color: useColorModeValue('#000', '#fff') }}>
+            <Heading style={{ color: useColorModeValue('#000', '#FEF6E5') }}>General</Heading>
+            <FooterLink href="/about" style={{ color: useColorModeValue('#000', '#FEF6E5') }}>
               About
             </FooterLink>
-            <FooterLink href="/projects" style={{ color: useColorModeValue('#000', '#fff') }}>
+            <FooterLink href="/projects" style={{ color: useColorModeValue('#000', '#FEF6E5') }}>
               Projects
             </FooterLink>
-            <FooterLink href="/posts" style={{ color: useColorModeValue('#000', '#fff') }}>
+            <FooterLink href="/posts" style={{ color: useColorModeValue('#000', '#FEF6E5') }}>
               Blog
             </FooterLink>
-            <FooterLink style={{ color: useColorModeValue('#000', '#fff') }}>
+            <FooterLink style={{ color: useColorModeValue('#000', '#FEF6E5') }}>
               <Obfuscate email="mayur072000@gmail.com">Mail</Obfuscate>
             </FooterLink>
           </Column>
           <Column>
-            <Heading style={{ color: useColorModeValue('#000', '#fff') }}>Specifics</Heading>
+            <Heading style={{ color: useColorModeValue('#000', '#FEF6E5') }}>Specifics</Heading>
             <FooterLink
               href="/resume/resume.pdf"
-              style={{ color: useColorModeValue('#000', '#fff') }}
+              style={{ color: useColorModeValue('#000', '#FEF6E5') }}
             >
               Resume
             </FooterLink>
@@ -47,11 +47,11 @@ function Footer() {
             </FooterLink> */}
             <FooterLink
               href="https://github.com/Mayur57/portfolio-v2"
-              style={{ color: useColorModeValue('#000', '#fff') }}
+              style={{ color: useColorModeValue('#000', '#FEF6E5') }}
             >
               Source
             </FooterLink>
-            <FooterLink href="/meta" style={{ color: useColorModeValue('#000', '#fff') }}>
+            <FooterLink href="/meta" style={{ color: useColorModeValue('#000', '#FEF6E5') }}>
               About Website
             </FooterLink>
           </Column>
