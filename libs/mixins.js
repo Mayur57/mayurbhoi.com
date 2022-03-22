@@ -1,4 +1,4 @@
-import { css } from 'styled-components'
+import { css } from "styled-components";
 
 const mixins = {
   boxShadow: css`
@@ -9,6 +9,6 @@ const mixins = {
       box-shadow: 0 20px 30px -15px var(--navy-shadow);
     }
   `,
-}
+};
 
-export default mixins
+export default mixins;

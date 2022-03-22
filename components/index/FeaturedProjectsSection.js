@@ -1,8 +1,8 @@
-import { Heading, useColorModeValue, SimpleGrid } from '@chakra-ui/react'
-import Section from '../section'
-import { ProjectsGridItemIndex } from '../grid-item'
-import LinkButton from '../linkButton'
-import thumbPro1 from '../../public/images/projects/covid.jpg'
+import { Heading, useColorModeValue, SimpleGrid } from "@chakra-ui/react";
+import Section from "../section";
+import { ProjectsGridItemIndex } from "../grid-item";
+import LinkButton from "../linkButton";
+import thumbPro1 from "../../public/images/projects/covid.jpg";
 
 function FeaturedProjectSection() {
   return (
@@ -13,7 +13,10 @@ function FeaturedProjectSection() {
         mt="45px"
         textDecorationThickness={1.5}
         textUnderlineOffset={3}
-        textDecorationColor={useColorModeValue('rgba(121, 96, 206, 0.3)', '#FE5B5E80')}
+        textDecorationColor={useColorModeValue(
+          "rgba(121, 96, 206, 0.3)",
+          "#FE5B5E80"
+        )}
       >
         Featured Projects
       </Heading>
@@ -36,7 +39,7 @@ function FeaturedProjectSection() {
       </SimpleGrid>
       <LinkButton link="/projects">all projects</LinkButton>
     </Section>
-  )
+  );
 }
 
-export default FeaturedProjectSection
+export default FeaturedProjectSection;

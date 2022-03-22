@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import NextLink from 'next/link'
+import NextLink from "next/link";
 import {
   Container,
   Box,
@@ -15,19 +15,19 @@ import {
   useColorModeValue,
   MenuDivider,
   Center,
-} from '@chakra-ui/react'
-import { HamburgerIcon } from '@chakra-ui/icons'
-import { FiArrowUpRight } from 'react-icons/fi'
-import Logo from './logo'
-import ThemeButton from './theme-button'
+} from "@chakra-ui/react";
+import { HamburgerIcon } from "@chakra-ui/icons";
+import { FiArrowUpRight } from "react-icons/fi";
+import Logo from "./logo";
+import ThemeButton from "./theme-button";
 
 function LinkItem({ href, path, children }) {
-  const active = path === href
-  const inactiveColor = useColorModeValue('gray200', '#FEF6E5')
+  const active = path === href;
+  const inactiveColor = useColorModeValue("gray200", "#FEF6E5");
   const activeBackgroundColor = useColorModeValue(
-    'rgba(121, 96, 206, 0.3)',
-    '#FF7B8230'
-  )
+    "rgba(121, 96, 206, 0.3)",
+    "#FF7B8230"
+  );
   return (
     <NextLink href={href}>
       <Link
@@ -39,29 +39,29 @@ function LinkItem({ href, path, children }) {
         fontSize={14}
         borderRadius="8"
         _hover={{
-          transform: 'scale(1.1)',
+          transform: "scale(1.1)",
           opacity: useColorModeValue(0.6, 1),
-          color: useColorModeValue('purple', '#FE5B5E'),
+          color: useColorModeValue("purple", "#FE5B5E"),
         }}
       >
         {children}
       </Link>
     </NextLink>
-  )
+  );
 }
 
 function Navbar(props) {
-  const { path } = props
-  const sourceLink = 'https://github.com/Mayur57/portfolio-v2'
-  const resumeLink = 'resume/resume.pdf'
+  const { path } = props;
+  const sourceLink = "https://github.com/Mayur57/portfolio-v2";
+  const resumeLink = "resume/resume.pdf";
   return (
     <Box
       position="fixed"
       as="nav"
       w="100%"
       pl={4}
-      bg={useColorModeValue('#ffffff40', '#20202020')}
-      css={{ backdropFilter: 'blur(10px)' }}
+      bg={useColorModeValue("#ffffff40", "#20202020")}
+      css={{ backdropFilter: "blur(10px)" }}
       zIndex={1}
       {...props}
     >
@@ -80,9 +80,9 @@ function Navbar(props) {
         </Flex>
 
         <Stack
-          direction={{ base: 'column', md: 'row' }}
-          display={{ base: 'none', md: 'flex' }}
-          width={{ base: 'full', md: 'auto' }}
+          direction={{ base: "column", md: "row" }}
+          display={{ base: "none", md: "flex" }}
+          width={{ base: "full", md: "auto" }}
           alignItems="center"
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
@@ -109,12 +109,12 @@ function Navbar(props) {
             textUnderlineOffset={5}
             transition="250ms ease-in-out"
             _hover={{
-              transform: 'scale(1.1)',
+              transform: "scale(1.1)",
               opacity: useColorModeValue(0.6, 1),
-              color: useColorModeValue('purple', '#FE5B5E'),
-              transition: '250ms ease-in-out',
+              color: useColorModeValue("purple", "#FE5B5E"),
+              transition: "250ms ease-in-out",
             }}
-            color={useColorModeValue('gray200', '#FEF6E5')}
+            color={useColorModeValue("gray200", "#FEF6E5")}
           >
             Resume
           </Link>
@@ -122,7 +122,7 @@ function Navbar(props) {
 
         <Box flex={1} align="right">
           <ThemeButton />
-          <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
+          <Box ml={2} display={{ base: "inline-block", md: "none" }}>
             <Menu isLazy id="navbar-menu">
               <MenuButton
                 as={IconButton}
@@ -130,7 +130,7 @@ function Navbar(props) {
                 variant="outline"
                 aria-label="Options"
                 transition="all 0.2s"
-                _hover={{ boxShadow: 'lg', transform: 'scale(1.05)' }}
+                _hover={{ boxShadow: "lg", transform: "scale(1.05)" }}
               />
               <MenuList>
                 <NextLink href="/" passHref>
@@ -166,7 +166,7 @@ function Navbar(props) {
         </Box>
       </Container>
     </Box>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

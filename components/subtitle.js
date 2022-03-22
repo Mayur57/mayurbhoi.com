@@ -1,4 +1,4 @@
-import { Text, useColorModeValue } from '@chakra-ui/react'
+import { Text, useColorModeValue } from "@chakra-ui/react";
 
 const Subtitle = ({ children }) => (
   <Text
@@ -6,11 +6,11 @@ const Subtitle = ({ children }) => (
     mt={12}
     letterSpacing={1.4}
     fontWeight="bold"
-    color={useColorModeValue('#805AD5', '#FE5B5E')}
+    color={useColorModeValue("#805AD5", "#FE5B5E")}
     textTransform="uppercase"
   >
     {children}
   </Text>
-)
+);
 
-export default Subtitle
+export default Subtitle;

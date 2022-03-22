@@ -1,8 +1,10 @@
-import styled from '@emotion/styled'
+import styled from "@emotion/styled";
 
 const Paragraph = styled.p`
   text-align: justify;
-  opacity: 0.9;
-`
+  opacity: 0.75;
+  letter-spacing: -0.8px;
+  font-weight: 500;
+`;
 
-export default Paragraph
+export default Paragraph;

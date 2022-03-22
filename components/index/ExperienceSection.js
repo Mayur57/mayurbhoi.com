@@ -1,56 +1,72 @@
 /* eslint-disable react/jsx-key */
-import { Box, Heading, Text, useColorModeValue, IconButton, Center } from '@chakra-ui/react'
-import { useState } from 'react'
-import { IoLogoNodejs } from 'react-icons/io'
-import { IoLogoReact } from 'react-icons/io5'
-import { RiFlutterFill } from 'react-icons/ri'
-import { FaAws, FaDocker } from 'react-icons/fa'
-import LinkButton from '../linkButton'
-import Section from '../section'
+import {
+  Box,
+  Heading,
+  Text,
+  useColorModeValue,
+  IconButton,
+  Center,
+} from "@chakra-ui/react";
+import { useState } from "react";
+import { IoLogoNodejs } from "react-icons/io";
+import { IoLogoReact } from "react-icons/io5";
+import { RiFlutterFill } from "react-icons/ri";
+import { FaAws, FaDocker } from "react-icons/fa";
+import LinkButton from "../linkButton";
+import Section from "../section";
 
 function ExpButton({ children, activeIndex, setIndex }) {
   return (
     <IconButton
       mx={2}
+      aria-label="skills"
       transition="100ms"
       onMouseEnter={() => {
-        setIndex(activeIndex)
+        setIndex(activeIndex);
       }}
       onMouseLeave={() => {
-        setIndex(0)
+        setIndex(0);
       }}
     >
       {children}
     </IconButton>
-  )
+  );
 }
 
 function ExpText({ text, activeIndex, testIndex }) {
   return (
     <Text
       pos="absolute"
-      opacity={activeIndex === testIndex ? '0.7' : '0'}
+      opacity={activeIndex === testIndex ? "0.9" : "0"}
       transition="300ms"
       fontSize={12}
     >
       {text}
     </Text>
-  )
+  );
 }
 
 function ExItem() {
-  const [index, setIndex] = useState(0)
+  const [index, setIndex] = useState(0);
   return (
     <>
       <Box p={2}>
         <Center>
-          <ExpText activeIndex={index} testIndex={0} text="Click/Hover icons for more" />
+          <ExpText
+            activeIndex={index}
+            testIndex={0}
+            text="Click/Hover icons for more"
+          />
           <ExpText
             activeIndex={index}
             testIndex={1}
             text="Server Engineering and Backend Design Using Node.js"
           />
-          <ExpText activeIndex={index} testIndex={2} text="Web Apps Using React and React Native" />
+          <ExpText
+            activeIndex={index}
+            testIndex={2}
+            text="Web Apps Using React and React Native"
+          />
           <ExpText
             activeIndex={index}
             testIndex={3}
@@ -61,7 +77,11 @@ function ExItem() {
             testIndex={4}
             text="Cross Platform Mobile Apps Using Flutter"
           />
-          <ExpText activeIndex={index} testIndex={5} text="Docker and CI/CD Workflows" />
+          <ExpText
+            activeIndex={index}
+            testIndex={5}
+            text="Docker and CI/CD Workflows"
+          />
         </Center>
       </Box>
       <Box mt={4}>
@@ -82,7 +102,7 @@ function ExItem() {
         </ExpButton>
       </Box>
     </>
-  )
+  );
 }
 
 export function ExperienceSection() {
@@ -92,7 +112,10 @@ export function ExperienceSection() {
         variant="pronouns"
         textDecor="underline"
         textUnderlineOffset={4}
-        textDecorationColor={useColorModeValue('rgba(121, 96, 206, 0.3)', '#FE5B5E80')}
+        textDecorationColor={useColorModeValue(
+          "rgba(121, 96, 206, 0.3)",
+          "#FE5B5E80"
+        )}
         textAlign="center"
         fontSize={14}
       >
@@ -105,5 +128,5 @@ export function ExperienceSection() {
         LEARN MORE
       </LinkButton>
     </Section>
-  )
+  );
 }

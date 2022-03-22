@@ -1,12 +1,12 @@
-import { motion } from 'framer-motion'
-import Head from 'next/head'
-import { GridItemStyle } from '../grid-item'
+import { motion } from "framer-motion";
+import Head from "next/head";
+import { GridItemStyle } from "../grid-item";
 
 const variants = {
   hidden: { opacity: 0, x: 0, y: 5 },
   enter: { opacity: 1, x: 0, y: 0 },
   exit: { opacity: 0, x: 0, y: 5 },
-}
+};
 
 function Layout({ children, title }) {
   return (
@@ -15,8 +15,8 @@ function Layout({ children, title }) {
       animate="enter"
       exit="exit"
       variants={variants}
-      transition={{ duration: 0.25, type: 'easeInOut' }}
-      style={{ position: 'relative' }}
+      transition={{ duration: 0.25, type: "easeInOut" }}
+      style={{ position: "relative" }}
     >
       <>
         {title && (
@@ -30,7 +30,7 @@ function Layout({ children, title }) {
         <GridItemStyle />
       </>
     </motion.article>
-  )
+  );
 }
 
-export default Layout
+export default Layout;

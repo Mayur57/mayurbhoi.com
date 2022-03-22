@@ -1,11 +1,10 @@
+/* eslint-disable no-unused-vars */
 const options = {
-  arrowParens: 'avoid',
+  arrowParens: "avoid",
   singleQuote: true,
   bracketSpacing: true,
-  endOfLine: 'lf',
+  endOfLine: "lf",
   semi: true,
   tabWidth: 2,
-  trailingComma: 'none'
-}
-
-export default options
+  trailingComma: "none",
+};

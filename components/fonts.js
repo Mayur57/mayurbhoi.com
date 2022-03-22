@@ -1,4 +1,4 @@
-import { Global } from '@emotion/react'
+import { Global } from "@emotion/react";
 
 const Fonts = () => (
   <Global
@@ -6,6 +6,6 @@ const Fonts = () => (
         @import url('https://rsms.me/inter/inter.css');
         `}
   />
-)
+);
 
-export default Fonts
+export default Fonts;

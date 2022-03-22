@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-useless-fragment */
 /* eslint-disable react-hooks/rules-of-hooks */
-import NextLink from 'next/link'
-import Image from 'next/image'
+import NextLink from "next/link";
+import Image from "next/image";
 import {
   Box,
   Text,
@@ -12,11 +12,17 @@ import {
   GridItem,
   useColorModeValue,
   Heading,
-} from '@chakra-ui/react'
-import { Global } from '@emotion/react'
-import { ChevronRightIcon } from '@chakra-ui/icons'
+} from "@chakra-ui/react";
+import { Global } from "@emotion/react";
+import { ChevronRightIcon } from "@chakra-ui/icons";
 
-export const PostsGridItem = ({ desc, id, title, thumbnail, date = '01 jan 1900' }) => (
+export const PostsGridItem = ({
+  desc,
+  id,
+  title,
+  thumbnail,
+  date = "01 jan 1900",
+}) => (
   <Box
     w="100%"
     borderRadius="lg"
@@ -24,20 +30,30 @@ export const PostsGridItem = ({ desc, id, title, thumbnail, date = '01 jan 1900'
     pb={2}
     transition="250ms ease-in-out"
     _hover={{
-      transform: 'scale(1.02)',
-      transition: '250ms ease-in-out',
-      boxShadow: 'lg',
+      transform: "scale(1.02)",
+      transition: "250ms ease-in-out",
+      boxShadow: "lg",
     }}
   >
     <NextLink href={`/projects/${id}`}>
       <LinkBox cursor="pointer">
-        <Image src={thumbnail} alt={title} className="project-item-thumbnail" placeholder="blur" />
+        <Image
+          src={thumbnail}
+          alt={title}
+          className="project-item-thumbnail"
+          placeholder="blur"
+        />
         <LinkOverlay href={`/projects/${id}`}>
           <Text fontWeight="600" fontSize="20" mt={1.5} lineHeight={1.2}>
             {title}
           </Text>
         </LinkOverlay>
-        <Heading variant="pronouns" opacity={0.5} letterSpacing="0.6px" fontSize={11}>
+        <Heading
+          variant="pronouns"
+          opacity={0.5}
+          letterSpacing="0.6px"
+          fontSize={11}
+        >
           {date}
         </Heading>
         <Text fontSize="12" opacity={0.7} mt={0} mr={2}>
@@ -46,7 +62,7 @@ export const PostsGridItem = ({ desc, id, title, thumbnail, date = '01 jan 1900'
       </LinkBox>
     </NextLink>
   </Box>
-)
+);
 
 export const WorkGridItem = ({ children, id, title, thumbnail }) => (
   <Box
@@ -56,14 +72,19 @@ export const WorkGridItem = ({ children, id, title, thumbnail }) => (
     pb={2}
     transition="250ms ease-in-out"
     _hover={{
-      transform: 'scale(1.02)',
-      transition: '250ms ease-in-out',
-      boxShadow: 'lg',
+      transform: "scale(1.02)",
+      transition: "250ms ease-in-out",
+      boxShadow: "lg",
     }}
   >
     <NextLink href={`/projects/${id}`}>
       <LinkBox cursor="pointer">
-        <Image src={thumbnail} alt={title} className="project-item-thumbnail" placeholder="blur" />
+        <Image
+          src={thumbnail}
+          alt={title}
+          className="project-item-thumbnail"
+          placeholder="blur"
+        />
         <LinkOverlay href={`/projects/${id}`}>
           <Text fontWeight="600" fontSize="20" mt={1.5} lineHeight={1.2}>
             {title}
@@ -75,23 +96,35 @@ export const WorkGridItem = ({ children, id, title, thumbnail }) => (
       </LinkBox>
     </NextLink>
   </Box>
-)
+);
 
-export const ProjectsGridItemIndex = ({ id, title, desc, thumbnail, sourcelink, bloglink }) => (
+export const ProjectsGridItemIndex = ({
+  id,
+  title,
+  desc,
+  thumbnail,
+  sourcelink,
+  bloglink,
+}) => (
   <Box
     w="100%"
     borderRadius="xl"
     p={4}
     transition="250ms ease-in-out"
     _hover={{
-      transform: 'scale(1.025)',
-      transition: '250ms ease-in-out',
-      boxShadow: 'lg',
+      transform: "scale(1.025)",
+      transition: "250ms ease-in-out",
+      boxShadow: "lg",
     }}
   >
     <NextLink href={`/projects/${id}`}>
       <LinkBox cursor="pointer">
-        <Image src={thumbnail} alt={title} className="project-item-thumbnail" placeholder="blur" />
+        <Image
+          src={thumbnail}
+          alt={title}
+          className="project-item-thumbnail"
+          placeholder="blur"
+        />
         <Text fontWeight="600" fontSize="20" mt={1}>
           {title}
         </Text>
@@ -107,13 +140,13 @@ export const ProjectsGridItemIndex = ({ id, title, desc, thumbnail, sourcelink, 
         ) : (
           <NextLink href={sourcelink} passHref>
             <Link
-              color={useColorModeValue('purple.500', 'red.300')}
+              color={useColorModeValue("purple.500", "red.300")}
               transitionDuration="500ms"
               textDecoration="none"
               _hover={{
-                color: useColorModeValue('purple.100', 'red.200'),
-                transitionDuration: '500ms',
-                textDecoration: 'underline',
+                color: useColorModeValue("purple.100", "red.200"),
+                transitionDuration: "500ms",
+                textDecoration: "underline",
                 textUnderlineOffset: 3,
               }}
             >
@@ -129,12 +162,12 @@ export const ProjectsGridItemIndex = ({ id, title, desc, thumbnail, sourcelink, 
         ) : (
           <NextLink href={bloglink} passHref>
             <Link
-              color={useColorModeValue('purple.500', 'red.300')}
+              color={useColorModeValue("purple.500", "red.300")}
               textDecoration="none"
               _hover={{
-                color: useColorModeValue('purple.100', 'red.200'),
-                transitionDuration: '500ms',
-                textDecoration: 'underline',
+                color: useColorModeValue("purple.100", "red.200"),
+                transitionDuration: "500ms",
+                textDecoration: "underline",
                 textUnderlineOffset: 3,
               }}
             >
@@ -146,7 +179,7 @@ export const ProjectsGridItemIndex = ({ id, title, desc, thumbnail, sourcelink, 
       </GridItem>
     </Grid>
   </Box>
-)
+);
 
 export const GridItemStyle = () => (
   <Global
@@ -161,4 +194,4 @@ export const GridItemStyle = () => (
       }
     `}
   />
-)
+);

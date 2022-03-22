@@ -14,9 +14,10 @@ Complete rewrite of my [portfolio website](https://mayurbhoi.com). (New version 
 
 ## TODOs
 
-- Fix touch targets for pronouns and footer links (SEO Audit Suggestion)
-- Add feature image to the website, readme and project repository
-- Add colors section to the readme
+[] Navbar logo photo split into `srcset` so to use variants `1x` `2x` `3x` `4x` and `fallback` [Resource](https://html.com/attributes/img-srcset/)
+[] Fix touch targets for pronouns and footer links (SEO Audit Suggestion)
+[] Add feature image to the website, readme and project repository
+[] Add colors section to the readme
 
 ## Repository Structure and Branches
 
