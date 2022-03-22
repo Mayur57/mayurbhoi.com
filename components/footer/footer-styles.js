@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
@@ -6,14 +6,14 @@ export const Container = styled.div`
   justify-content: center;
   max-width: 1000px;
   margin: 0 auto;
-`
+`;
 
 export const Column = styled.div`
   display: flex;
   flex-direction: column;
   text-align: left;
   margin-left: 1em;
-`
+`;
 
 export const Row = styled.div`
   display: grid;
@@ -23,10 +23,10 @@ export const Row = styled.div`
   @media (max-width: 1000px) {
     grid-template-columns: 1fr 1fr 1fr;
   }
-`
+`;
 
 export const FooterLink = styled.a`
-  color: #FEF6E5;
+  color: #fef6e5;
   margin-bottom: 8px;
   font-size: 14px;
   opacity: 0.5;
@@ -37,7 +37,7 @@ export const FooterLink = styled.a`
     opacity: 1;
     transition: 200ms ease-in;
   }
-`
+`;
 
 export const Heading = styled.p`
   font-size: 14px;
@@ -47,4 +47,4 @@ export const Heading = styled.p`
   letter-spacing: 1.2px;
   margin-bottom: 10px;
   font-weight: 500;
-`
+`;

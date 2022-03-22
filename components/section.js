@@ -1,9 +1,9 @@
-import { motion } from 'framer-motion'
-import { chakra, shouldForwardProp } from '@chakra-ui/react'
+import { motion } from "framer-motion";
+import { chakra, shouldForwardProp } from "@chakra-ui/react";
 
 const StyledDiv = chakra(motion.div, {
-  shouldForwardProp: prop => shouldForwardProp(prop) || prop === 'transition',
-})
+  shouldForwardProp: (prop) => shouldForwardProp(prop) || prop === "transition",
+});
 
 const Section = ({ children, delay = 0, mb = 6 }) => (
   <StyledDiv
@@ -15,6 +15,6 @@ const Section = ({ children, delay = 0, mb = 6 }) => (
   >
     {children}
   </StyledDiv>
-)
+);
 
-export default Section
+export default Section;
