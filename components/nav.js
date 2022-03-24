@@ -5,8 +5,6 @@ import {
   Box,
   Link,
   Stack,
-  Heading,
-  Flex,
   Menu,
   MenuItem,
   MenuList,
@@ -21,7 +19,7 @@ import { FiArrowUpRight } from "react-icons/fi";
 import Logo from "./logo";
 import ThemeButton from "./theme-button";
 
-function LinkItem({ href, path, children }) {
+function LinkItem({ href, path, label }) {
   const active = path === href;
   const inactiveColor = useColorModeValue("gray200", "#FEF6E5");
   const activeBackgroundColor = useColorModeValue(
@@ -35,7 +33,6 @@ function LinkItem({ href, path, children }) {
         px={4}
         bg={active ? activeBackgroundColor : undefined}
         color={inactiveColor}
-        textUnderlineOffset={5}
         fontSize={14}
         borderRadius="8"
         _hover={{
@@ -44,7 +41,7 @@ function LinkItem({ href, path, children }) {
           color: useColorModeValue("purple", "#FE5B5E"),
         }}
       >
-        {children}
+        {label}
       </Link>
     </NextLink>
   );
@@ -73,12 +70,7 @@ function Navbar(props) {
         align="center"
         justify="space-between"
       >
-        <Flex align="center" mr={5}>
-          <Heading as="h1" size="lg" letterSpacing="tighter">
-            <Logo />
-          </Heading>
-        </Flex>
-
+        <Logo span={25} />
         <Stack
           direction={{ base: "column", md: "row" }}
           display={{ base: "none", md: "flex" }}
@@ -87,15 +79,9 @@ function Navbar(props) {
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
         >
-          <LinkItem href="/about" path={path}>
-            About
-          </LinkItem>
-          <LinkItem href="/projects" path={path}>
-            Projects
-          </LinkItem>
-          <LinkItem href="/posts" path={path}>
-            Posts
-          </LinkItem>
+          <LinkItem href="/about" path={path} label='About' />
+          <LinkItem href="/projects" path={path} label='Projects' />
+          <LinkItem href="/posts" path={path} label='Posts' />
           <Link
             _target="_blank"
             href={resumeLink}

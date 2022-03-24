@@ -1,4 +1,6 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import { ColorModeScript } from "@chakra-ui/react";
+import { ServerStyleSheet } from "styled-components";
 import NextDocument, { Html, Head, Main, NextScript } from "next/document";
 import theme from "../libs/theme";
 
@@ -6,10 +8,20 @@ const TITLE = "Mayur Bhoi";
 const DESCRIPTION = "I writing efficient and pragmatic software.";
 const CARD_IMAGE_URL = "https://i.ibb.co/QXF8FqG/banner.png";
 export default class Document extends NextDocument {
+  static getInitialProps({ renderPage }) {
+    const sheet = new ServerStyleSheet();
+    const page = renderPage(
+      (App) => (props) => sheet.collectStyles(<App {...props} />)
+    );
+    const styleTags = sheet.getStyleElement();
+    return { ...page, styleTags };
+  }
+
   render() {
     return (
       <Html lang="en">
         <Head>
+          {this.props.styleTags}
           {/* Metadata about the website for SEO */}
           <meta charSet="utf-8" />
           <meta name="description" content={DESCRIPTION} />

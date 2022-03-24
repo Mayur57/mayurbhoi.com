@@ -5,7 +5,7 @@ import "@fontsource/inter";
 const styles = {
   global: (props) => ({
     body: {
-      bg: mode("#FAFAFA", "#191919")(props),
+      bg: mode("#FFFFFF", "#191919")(props),
       color: mode("#37352F", "#FEF6E5")(props),
     },
   }),
@@ -31,8 +31,8 @@ const components = {
   Heading: {
     variants: {
       "section-title": {
-        textDecoration: "underline",
-        fontSize: 24,
+        textDecoration: "none",
+        fontSize: 28,
         textDecorationColor: "#525252",
         textDecorationThickness: 2,
         textUnderlineOffset: 5,
@@ -53,7 +53,7 @@ const components = {
   },
   Link: {
     baseStyle: (props) => ({
-      color: mode("blue.600", "red.300")(props), // TODO: Change link colors here
+      color: mode("blue.600", "red.300")(props),
       textUnderlinOffset: 3,
     }),
   },

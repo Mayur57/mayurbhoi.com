@@ -14,7 +14,7 @@ function Footer() {
       <Container>
         <Row>
           <Column>
-            <Logo />
+            <Logo span={25} />
           </Column>
           <Column>
             <Heading style={{ color: useColorModeValue("#000", "#FEF6E5") }}>
@@ -79,7 +79,7 @@ function Footer() {
       <Box
         align="center"
         justifyContent="center"
-        opacity={0.5}
+        opacity={0.7}
         fontSize="0.55rem"
         fontWeight={600}
         paddingTop="30px"

@@ -3,123 +3,124 @@ import {
   Text,
   Container,
   Heading,
-  chakra,
-  ListItem,
-  UnorderedList,
+  HStack,
+  SimpleGrid,
 } from "@chakra-ui/react";
+import Link from "next/link";
+import { FiArrowUpRight } from "react-icons/fi";
+import styled from 'styled-components'
 import Layout from "../components/layouts/article";
 import Subtitle from "../components/subtitle";
 import Title from "../components/title";
 import Paragraph from "../components/paragraph";
+import { experience } from "../data/experience";
+import Section from "../components/section";
 
-const experience = [
-  {
-    company: "Authenticating.com",
-    position: "Software Engineering Intern",
-    duration: "Feb 2022 - Present",
-    experiencePoints: [
-      "This is line one. This is line one. This is line one. This is line one. This is line one. This is line one. This is line one. This is line one. This is line one. This is line one.",
-      "This is line two.",
-      "This is line three.",
-      "This is line four.",
-      "This is line five.",
-    ],
-  },
-  {
-    company: "Sigma Tenant",
-    position: "Software Engineering Intern",
-    duration: "April 2021 - June 2021",
-    experiencePoints: [
-      "Compatibility and stability testing of Flutter based app with the native iOS platform using Swift",
-      "Developed industry standard unit tests for the app and deployed it to the iOS App Store",
-    ],
-  },
-  {
-    company: "Mobbypark Inc.",
-    position: "Flutter  Development Intern",
-    duration: "December 2020 - January 2021",
-    experiencePoints: [
-      "Two seperate Flutter applications, involving communication with company servers using RESTful requests including authentication of users using custom API.",
-      "Developed a QR based logging system for users to easily scan and generate QR codes.",
-      "Redesigned the apps for a better, easier-to-use and beautiful user interface, using Sketch.",
-    ],
-  },
-  {
-    company: "The MIT Post",
-    position: "Lead Developer - App Platform",
-    duration: "August 2019 - May 2021",
-    experiencePoints: [
-      "Maintained existing Kotlin based app and built the complete app from ground up using Flutter to replace the older version",
-      "Displays blogs from the website using HTML parsing and hosts PDF notices using the Firebase storage",
-      "Uses Puppeteer API and node.js for web scraping to log into the official student portal using headless browser automation",
-      "Push Notifications and real time event updates handling using GMS and custom API respectively",
-    ],
-  },
-];
+const Company = styled.h3`
+  & {
+    display: inline-block;
+    position: relative;
+    font-size: 22px;
+    letter-spacing: -1.25px;
+    font-weight: 700;
+    transition: all 0.35s ease-out;
+  }
+
+  &:hover {
+    color: #0087ca;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2.5px;
+    bottom: 0;
+    left: 0;
+    background-color: #0087ca;
+    opacity: 0.5;
+    border-radius: 25px;
+    transform-origin: bottom right;
+    transition: transform 0.35s ease-out;
+  }
+
+  &:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+`;
 
 const About = () => (
   <Layout title="About">
     <Container>
       <Subtitle>About</Subtitle>
       <Title>Experience &amp; Background</Title>
-      <Heading as="h2" fontSize={28} letterSpacing={-1}>
-        Work
-      </Heading>
-      <Box marginY={2}>
+      <Section delay={0.1}>
         <Paragraph>
-          These are the places I have worked for in the past recently. Checkout
-          my LinkedIn for more.
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry&apos;s standard dummy text
+          ever since the 1500s, when an unknown printer took a galley of type
+          and scrambled it to make a type specimen book.
+          <br />
+          <br />
+          It has survived not only five centuries, but also the leap into
+          electronic typesetting, remaining essentially unchanged. It was
+          popularised in the 1960s with the release of Letraset sheets
+          containing Lorem Ipsum passages, and more recently with desktop
+          publishing software like Aldus PageMaker including versions of Lorem
+          Ipsum.
         </Paragraph>
-      </Box>
-      {experience.map((experienceObject) => {
-        const { company, position, duration, experiencePoints } =
-          experienceObject;
-        return (
-          <>
-            <Heading
-              as="h3"
-              fontSize={26}
-              letterSpacing={-1.25}
-              fontWeight={700}
-              marginTop={6}
-            >
-              {company}
-            </Heading>
-            <Text
-              letterSpacing={-0.25}
-              fontWeight="bold"
-              opacity={1}
-              fontSize={16}
-              marginTop={1}
-              marginY={2}
-            >
-              {position} •{" "}
-              <chakra.span
-                letterSpacing={-0.25}
-                fontWeight={600}
-                opacity={0.75}
-                fontSize={14}
-                marginTop={1}
-                marginY={2}
-              >
-                {duration}
-              </chakra.span>
-            </Text>
-            <UnorderedList>
-              {experiencePoints.map((value, index) => (
-                <ListItem
-                  key={index}
-                  marginY={1}
-                  fontSize={14}
-                  letterSpacing={-0.55}
+      </Section>
+      <Section delay={0.2}>
+        <Heading as="h2" fontSize={28} letterSpacing={-1}>
+          Work
+        </Heading>
+        <Box marginY={2}>
+          <Paragraph>
+            These are the places I have worked for in the past recently.
+            Checkout my LinkedIn for more.
+          </Paragraph>
+        </Box>
+        <SimpleGrid columns={[1, 2, 2]}>
+          {experience.map((experienceObject, index) => {
+            const { company, position, duration, link } = experienceObject;
+            return (
+              <Section delay={Math.round((index + 3) / 2) / 10}>
+                <HStack align="center" mt={6}>
+                  <Company>
+                    <Link href={link}>{company}</Link>
+                  </Company>
+                  <FiArrowUpRight opacity={0.9} />
+                </HStack>
+                <Text
+                  letterSpacing={-0.25}
+                  fontWeight="600"
+                  opacity={1}
+                  fontSize={16}
+                  marginTop={1}
                 >
-                  {value}
-                </ListItem>
-              ))}
-            </UnorderedList>
-          </>
-        );
-      })}
+                  {position}
+                  <Text
+                    letterSpacing={-0.25}
+                    fontWeight={600}
+                    opacity={0.75}
+                    fontSize={14}
+                    marginTop={1}
+                  >
+                    {duration}
+                  </Text>
+                </Text>
+              </Section>
+            );
+          })}
+        </SimpleGrid>
+      </Section>
+      <Section>
+        <Heading as="h2" fontSize={28} letterSpacing={-1}>
+          Technical Repertoire
+        </Heading>
+      </Section>
     </Container>
   </Layout>
 );
