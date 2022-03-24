@@ -5,8 +5,6 @@ import {
   Box,
   Link,
   Stack,
-  Heading,
-  Flex,
   Menu,
   MenuItem,
   MenuList,
@@ -35,7 +33,6 @@ function LinkItem({ href, path, children }) {
         px={4}
         bg={active ? activeBackgroundColor : undefined}
         color={inactiveColor}
-        textUnderlineOffset={5}
         fontSize={14}
         borderRadius="8"
         _hover={{
@@ -73,12 +70,7 @@ function Navbar(props) {
         align="center"
         justify="space-between"
       >
-        <Flex align="center" mr={5}>
-          <Heading as="h1" size="lg" letterSpacing="tighter">
-            <Logo />
-          </Heading>
-        </Flex>
-
+        <Logo span={25} />
         <Stack
           direction={{ base: "column", md: "row" }}
           display={{ base: "none", md: "flex" }}

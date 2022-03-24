@@ -56,18 +56,7 @@ function SocialLinks({ icon, platform, href = "#", id }) {
 function ContactSection() {
   return (
     <Section delay={0.4}>
-      <Heading
-        as="h3"
-        variant="section-title"
-        mt="45px"
-        mb="20px"
-        textDecorationThickness={1.5}
-        textUnderlineOffset={3}
-        textDecorationColor={useColorModeValue(
-          "rgba(121, 96, 206, 0.3)",
-          "#FE5B5E80"
-        )}
-      >
+      <Heading as="h3" variant="section-title" mt="45px" mb="20px">
         Socials
       </Heading>
       <Paragraph>Consider following me on these platforms:</Paragraph>
@@ -111,9 +100,11 @@ function ContactSection() {
         <br />I check my mailbox regularly, consider dropping a{" "}
         <Link
           transition="200ms"
+          opacity={1}
+          color={useColorModeValue("blue.800", "red.400")}
           _hover={{
             transition: "200ms",
-            opacity: "0.5",
+            opacity: 0.5,
             textDecoration: "underline",
             textUnderlineOffset: 2,
           }}

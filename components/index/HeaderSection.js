@@ -38,15 +38,17 @@ function HeaderSection() {
             software engineer <CloseIcon fontSize={6} />
             {"  "}product designer
           </p>
-          <Heading
-            as="h2"
-            variant="pronouns"
-            opacity={0.9}
-            color={useColorModeValue("purple.600", "#FF7B82")}
-            _hover={{ animation }}
-          >
-            he/him/his
-          </Heading>
+          <Box width={32}>
+            <Heading
+              as="h2"
+              variant="pronouns"
+              opacity={0.9}
+              color={useColorModeValue("purple.600", "#FF7B82")}
+              _hover={{ animation }}
+            >
+              he/him/his
+            </Heading>
+          </Box>
           <Box mt={3} ml={1}>
             <Social spacing="10px" size={20} />
           </Box>
@@ -67,7 +69,7 @@ function HeaderSection() {
             maxWidth="160px"
             display="inline-block"
             borderRadius="100px"
-            src="/images/me.png"
+            src="/images/me.webp"
             alt="Profile Picture"
             boxShadow="lg"
             transition="all 250ms"
