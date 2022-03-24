@@ -8,13 +8,14 @@ import {
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
-import styled from 'styled-components'
+import styled from "styled-components";
 import Layout from "../components/layouts/article";
 import Subtitle from "../components/subtitle";
 import Title from "../components/title";
 import Paragraph from "../components/paragraph";
 import { experience } from "../data/experience";
 import Section from "../components/section";
+import LinkButton from "../components/linkButton";
 
 const Company = styled.h3`
   & {
@@ -23,7 +24,7 @@ const Company = styled.h3`
     font-size: 22px;
     letter-spacing: -1.25px;
     font-weight: 700;
-    transition: all 0.35s ease-out;
+    transition: all 0.25s ease-out;
   }
 
   &:hover {
@@ -35,14 +36,14 @@ const Company = styled.h3`
     position: absolute;
     width: 100%;
     transform: scaleX(0);
-    height: 2.5px;
+    height: 2px;
     bottom: 0;
     left: 0;
     background-color: #0087ca;
     opacity: 0.5;
     border-radius: 25px;
     transform-origin: bottom right;
-    transition: transform 0.35s ease-out;
+    transition: transform 0.25s ease-out;
   }
 
   &:hover:after {
@@ -74,6 +75,21 @@ const About = () => (
       </Section>
       <Section delay={0.2}>
         <Heading as="h2" fontSize={28} letterSpacing={-1}>
+          Technical Skillset
+        </Heading>
+        <Box marginY={2}>
+          <Paragraph>
+            It has survived not only five centuries, but also the leap into
+            electronic typesetting, remaining essentially unchanged. It was
+            popularised in the 1960s with the release of Letraset sheets
+            containing Lorem Ipsum passages, and more recently with desktop
+            publishing software like Aldus PageMaker including versions of Lorem
+            Ipsum.
+          </Paragraph>
+        </Box>
+      </Section>
+      <Section delay={0.3}>
+        <Heading as="h2" fontSize={28} letterSpacing={-1}>
           Work
         </Heading>
         <Box marginY={2}>
@@ -82,11 +98,11 @@ const About = () => (
             Checkout my LinkedIn for more.
           </Paragraph>
         </Box>
-        <SimpleGrid columns={[1, 2, 2]}>
+        <SimpleGrid columns={[1, 2, 2]} mb={4}>
           {experience.map((experienceObject, index) => {
             const { company, position, duration, link } = experienceObject;
             return (
-              <Section delay={Math.round((index + 3) / 2) / 10}>
+              <Section key={index} delay={Math.round((index + 3) / 2) / 10}>
                 <HStack align="center" mt={6}>
                   <Company>
                     <Link href={link}>{company}</Link>
@@ -115,11 +131,7 @@ const About = () => (
             );
           })}
         </SimpleGrid>
-      </Section>
-      <Section>
-        <Heading as="h2" fontSize={28} letterSpacing={-1}>
-          Technical Repertoire
-        </Heading>
+        <LinkButton link="resume.pdf">Resume</LinkButton>
       </Section>
     </Container>
   </Layout>

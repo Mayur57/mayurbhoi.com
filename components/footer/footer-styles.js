@@ -29,7 +29,7 @@ export const FooterLink = styled.a`
   color: #fef6e5;
   margin-bottom: 8px;
   font-size: 14px;
-  opacity: 0.5;
+  opacity: 0.7;
   text-decoration: none;
   transition: 200ms ease-in;
 

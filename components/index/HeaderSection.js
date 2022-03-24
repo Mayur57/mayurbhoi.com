@@ -17,7 +17,7 @@ const spin = keyframes`0%, 100% { color: #7ccdea; }
   80%      { color: #ff4136; }`;
 
 function HeaderSection() {
-  const animation = `${spin} 4s infinite ease-in-out;`;
+  const animation = `${spin} 4s infinite;`;
   return (
     <Section delay={0.1}>
       <Box

@@ -23,7 +23,7 @@ export const experience = [
     ],
   },
   {
-    company: "Mobbypark Inc.",
+    company: "MobbyPark Inc.",
     position: "Flutter  Development Intern",
     duration: "December 2020 - January 2021",
     link: "https://mobbypark.com/",

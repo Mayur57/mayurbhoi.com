@@ -50,7 +50,7 @@ function LinkItem({ href, path, label }) {
 function Navbar(props) {
   const { path } = props;
   const sourceLink = "https://github.com/Mayur57/portfolio-v2";
-  const resumeLink = "resume/resume.pdf";
+  const resumeLink = "resume.pdf";
   return (
     <Box
       position="fixed"
@@ -79,9 +79,9 @@ function Navbar(props) {
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
         >
-          <LinkItem href="/about" path={path} label='About' />
-          <LinkItem href="/projects" path={path} label='Projects' />
-          <LinkItem href="/posts" path={path} label='Posts' />
+          <LinkItem href="/about" path={path} label="About" />
+          <LinkItem href="/projects" path={path} label="Projects" />
+          <LinkItem href="/posts" path={path} label="Posts" />
           <Link
             _target="_blank"
             href={resumeLink}
@@ -108,7 +108,11 @@ function Navbar(props) {
 
         <Box flex={1} align="right">
           <ThemeButton />
-          <Box ml={2} display={{ base: "inline-block", md: "none" }}>
+          <Box
+            ml={2}
+            zIndex={100}
+            display={{ base: "inline-block", md: "none" }}
+          >
             <Menu isLazy id="navbar-menu">
               <MenuButton
                 as={IconButton}
