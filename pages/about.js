@@ -4,6 +4,7 @@ import {
   Container,
   Heading,
   HStack,
+  SimpleGrid,
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
@@ -81,38 +82,44 @@ const About = () => (
             Checkout my LinkedIn for more.
           </Paragraph>
         </Box>
-        {experience.map((experienceObject, index) => {
-          const { company, position, duration, link } =
-            experienceObject;
-          return (
-            <Section delay={0.2 + index / 10}>
-              <HStack align="center" mt={6}>
-                <Company>
-                  <Link href={link}>{company}</Link>
-                </Company>
-                <FiArrowUpRight opacity={0.7} />
-              </HStack>
-              <Text
-                letterSpacing={-0.25}
-                fontWeight="600"
-                opacity={1}
-                fontSize={16}
-                marginTop={1}
-              >
-                {position}
+        <SimpleGrid columns={[1, 2, 2]}>
+          {experience.map((experienceObject, index) => {
+            const { company, position, duration, link } = experienceObject;
+            return (
+              <Section delay={Math.round((index + 3) / 2) / 10}>
+                <HStack align="center" mt={6}>
+                  <Company>
+                    <Link href={link}>{company}</Link>
+                  </Company>
+                  <FiArrowUpRight opacity={0.9} />
+                </HStack>
                 <Text
                   letterSpacing={-0.25}
-                  fontWeight={600}
-                  opacity={0.75}
-                  fontSize={14}
+                  fontWeight="600"
+                  opacity={1}
+                  fontSize={16}
                   marginTop={1}
                 >
-                  {duration}
+                  {position}
+                  <Text
+                    letterSpacing={-0.25}
+                    fontWeight={600}
+                    opacity={0.75}
+                    fontSize={14}
+                    marginTop={1}
+                  >
+                    {duration}
+                  </Text>
                 </Text>
-              </Text>
-            </Section>
-          );
-        })}
+              </Section>
+            );
+          })}
+        </SimpleGrid>
+      </Section>
+      <Section>
+        <Heading as="h2" fontSize={28} letterSpacing={-1}>
+          Technical Repertoire
+        </Heading>
       </Section>
     </Container>
   </Layout>

@@ -1,7 +1,7 @@
 export const experience = [
   {
     company: "Authenticating.com",
-    position: "Software Engineering Intern",
+    position: "SWE Intern - Full Stack",
     duration: "Feb 2022 - Present",
     link: "https://authenticating.com/",
     experiencePoints: [
@@ -14,7 +14,7 @@ export const experience = [
   },
   {
     company: "Sigma Tenant",
-    position: "Software Engineering Intern",
+    position: "SWE Intern - Flutter",
     duration: "April 2021 - June 2021",
     link: "https://sigmatenant.com/",
     experiencePoints: [

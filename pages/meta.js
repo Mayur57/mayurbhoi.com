@@ -4,7 +4,7 @@ import Subtitle from "../components/subtitle";
 import Title from "../components/title";
 
 const About = () => (
-  <Layout title="About">
+  <Layout title="Website">
     <Container>
       <Subtitle>Website</Subtitle>
       <Title>About Website</Title>

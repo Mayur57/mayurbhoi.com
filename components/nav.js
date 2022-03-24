@@ -19,7 +19,7 @@ import { FiArrowUpRight } from "react-icons/fi";
 import Logo from "./logo";
 import ThemeButton from "./theme-button";
 
-function LinkItem({ href, path, children }) {
+function LinkItem({ href, path, label }) {
   const active = path === href;
   const inactiveColor = useColorModeValue("gray200", "#FEF6E5");
   const activeBackgroundColor = useColorModeValue(
@@ -41,7 +41,7 @@ function LinkItem({ href, path, children }) {
           color: useColorModeValue("purple", "#FE5B5E"),
         }}
       >
-        {children}
+        {label}
       </Link>
     </NextLink>
   );
@@ -79,15 +79,9 @@ function Navbar(props) {
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
         >
-          <LinkItem href="/about" path={path}>
-            About
-          </LinkItem>
-          <LinkItem href="/projects" path={path}>
-            Projects
-          </LinkItem>
-          <LinkItem href="/posts" path={path}>
-            Posts
-          </LinkItem>
+          <LinkItem href="/about" path={path} label='About' />
+          <LinkItem href="/projects" path={path} label='Projects' />
+          <LinkItem href="/posts" path={path} label='Posts' />
           <Link
             _target="_blank"
             href={resumeLink}
