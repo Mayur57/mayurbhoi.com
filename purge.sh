@@ -5,23 +5,21 @@ cd $DIRNAME
 FILES=$(mktemp)
 PACKAGES=$(mktemp)
 
-# use fd
-# https://github.com/sharkdp/fd
+find . \
+    -path ./node_modules -prune -or \
+    -path ./build -prune -or \
+    \( -name "*.ts" -or -name "*.js" -or -name "*.json" \) -print > $FILES
 
 function check {
     cat package.json \
         | jq "{} + .$1 | keys" \
-        | sed -n 's/."\(.\)".*/\1/p' > $PACKAGES
+        | sed -n 's/.*"\(.*\)".*/\1/p' > $PACKAGES
+
     echo "--------------------------"
     echo "Checking $1..."
-    fd '(js|ts|json)$' -t f > $FILES
     while read PACKAGE
     do
-        if [ -d "node_modules/${PACKAGE}" ]; then
-            fd  -t f '(js|ts|json)$' node_modules/${PACKAGE} >> $FILES
-        fi
-        RES=$(cat $FILES | xargs -I {} egrep -i "(import|require|loader|plugins|${PACKAGE}).*['\"](${PACKAGE}|.?\d+)[\"']" '{}' | wc -l)
-
+        RES=$(cat $FILES | xargs -I {} egrep -i "(import|require).*['\"]$PACKAGE[\"']" '{}' | wc -l)
         if [ $RES = 0 ]
         then
             echo -e "UNUSED\t\t $PACKAGE"

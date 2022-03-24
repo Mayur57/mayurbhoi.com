@@ -6,7 +6,7 @@ const Title = ({ children }) => (
     fontSize={36}
     color={useColorModeValue("#37352F", "#FEF6E5")}
     mt={2}
-    mb={8}
+    mb={6}
     letterSpacing={-2}
   >
     {children}

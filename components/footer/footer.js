@@ -14,7 +14,7 @@ function Footer() {
       <Container>
         <Row>
           <Column>
-            <Logo span={25} />
+            <Logo span={30} />
           </Column>
           <Column>
             <Heading style={{ color: useColorModeValue("#000", "#FEF6E5") }}>
