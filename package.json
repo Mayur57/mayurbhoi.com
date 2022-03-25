@@ -48,9 +48,9 @@
     "eslint-plugin-jest": "^24.0.1",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.29.3",
+    "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-security": "^1.4.0",
-    "husky": "^0.14.3",
+    "husky": "^7.0.4",
     "lint-staged": "^12.3.7",
     "prettier": "^2.5.1"
   }
