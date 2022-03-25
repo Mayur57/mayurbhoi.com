@@ -1,50 +1,38 @@
-import styled from "styled-components";
+import Link from "next/link";
+import { Box, Text, useColorModeValue } from "@chakra-ui/react";
 
-export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  max-width: 1000px;
-  margin: 0 auto;
-`;
+export const Container = ({ children }) => (
+  <Box display='flex' flexDir='column' justifyContent='center' maxW='1000px' margin='0 auto'>
+    {children}
+  </Box>
+);
 
-export const Column = styled.div`
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  margin-left: 1em;
-`;
+export const FooterLink = ({href, label}) => (
+  <Link href={href} passHref>
+    <Text
+      color={useColorModeValue('#000000', '#FEF6E5')}
+      mb={2}
+      fontSize={14}
+      opacity={0.7}
+      textDecoration="none"
+      transition="all 200ms ease-in"
+      cursor='pointer'
+      _hover={{ opacity: 1 }}
+    >
+      {label}
+    </Text>
+  </Link>
+);
 
-export const Row = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 20px;
-
-  @media (max-width: 1000px) {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-`;
-
-export const FooterLink = styled.a`
-  color: #fef6e5;
-  margin-bottom: 8px;
-  font-size: 14px;
-  opacity: 0.7;
-  text-decoration: none;
-  transition: 200ms ease-in;
-
-  &:hover {
-    opacity: 1;
-    transition: 200ms ease-in;
-  }
-`;
-
-export const Heading = styled.p`
-  font-size: 14px;
-  text-transform: uppercase;
-  color: #fff;
-  opacity: 0.7;
-  letter-spacing: 1.2px;
-  margin-bottom: 10px;
-  font-weight: 500;
-`;
+export const Heading = ({ label }) => (
+  <Text
+    fontSize={14}
+    textTransform="uppercase"
+    color={useColorModeValue("#303030", "#FEF6E5")}
+    letterSpacing={1.2}
+    fontWeight={500}
+    mb={1}
+  >
+    {label}
+  </Text>
+);
