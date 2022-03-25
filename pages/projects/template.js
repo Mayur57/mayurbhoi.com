@@ -1,6 +1,6 @@
 import {
+  Box,
   Container,
-  Badge,
   Link,
   List,
   ListItem,
@@ -12,17 +12,33 @@ import P from "../../components/paragraph";
 import Layout from "../../components/layouts/article";
 
 const SectionTitle = ({ children }) => (
-  <Heading variant="pronouns" mt={4} mb={2}>
+  <Heading variant="pronouns" fontWeight={500} fontSize={13} mt={4} mb={2}>
     {children}
   </Heading>
+);
+
+const DeveloperWarning = () => (
+  <Box
+    backgroundColor="red.100"
+    borderWidth={1.5}
+    fontSize={12}
+    color="#121212"
+    borderColor="red.200"
+    borderRadius="lg"
+    px={4}
+    py={6}
+  >
+    Well, you&apos;re a sneaky person! You aren&apos;t supposed to see this
+    template. Good job on finding it though. 👌
+  </Box>
 );
 
 const Work = () => (
   <Layout title="Project Template">
     <Container mt={4}>
-      <Title>
-        Project Template <Badge>2019-2022</Badge>
-      </Title>
+      <Title>Project Template</Title>
+      <DeveloperWarning />{" "}
+      {/** //! TODO: Do not use this in a real project doc */}
       <SectionTitle>About</SectionTitle>
       <P>
         In publishing and graphic design, Lorem ipsum is a placeholder text
@@ -37,7 +53,7 @@ const Work = () => (
         without relying on meaningful content. Lorem ipsum may be used as a
         placeholder before the final copy is available.
       </P>
-      <SectionTitle>Stack</SectionTitle>
+      <SectionTitle>Learnings</SectionTitle>
       <P>
         In publishing and graphic design, Lorem ipsum is a placeholder text
         commonly used to demonstrate the visual form of a document or a typeface
@@ -54,6 +70,7 @@ const Work = () => (
           </Link>
         </ListItem>
       </List>
+      <SectionTitle>Product Images</SectionTitle>
     </Container>
   </Layout>
 );
