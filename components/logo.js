@@ -13,7 +13,7 @@ const Logo = ({ span }) => {
           mr={6}
           ml={2}
           transition="500ms"
-          _hover={{ opacity: 0.5, transition: "500ms ease all" }}
+          _hover={{ opacity: 0.3, transition: "250ms ease all" }}
         >
           <Image src={logoImg} width={span} height={span} alt="logo" />
         </Box>

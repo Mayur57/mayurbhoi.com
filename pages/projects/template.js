@@ -36,8 +36,8 @@ const DeveloperWarning = () => (
 const Work = () => (
   <Layout title="Project Template">
     <Container mt={4}>
-      <Title>Project Template</Title>
-      <DeveloperWarning />{" "}
+      <Title>Project Page Template</Title>
+      <DeveloperWarning />
       {/** //! TODO: Do not use this in a real project doc */}
       <SectionTitle>About</SectionTitle>
       <P>

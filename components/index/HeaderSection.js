@@ -38,7 +38,7 @@ function HeaderSection() {
             software engineer <CloseIcon fontSize={6} />
             {"  "}product designer
           </p>
-          <Box width={32}>
+          <Box>
             <Heading
               as="h2"
               variant="pronouns"
@@ -78,7 +78,7 @@ function HeaderSection() {
               transform: "scale(1.05)",
               boxShadow: "xl",
               transition: "250ms",
-              borderColor: useColorModeValue("purple.300", "red.300"),
+              borderColor: useColorModeValue("purple.300", "red.400"),
             }}
           />
         </Box>

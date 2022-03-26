@@ -2,21 +2,27 @@ import Link from "next/link";
 import { Box, Text, useColorModeValue } from "@chakra-ui/react";
 
 export const Container = ({ children }) => (
-  <Box display='flex' flexDir='column' justifyContent='center' maxW='1000px' margin='0 auto'>
+  <Box
+    display="flex"
+    flexDir="column"
+    justifyContent="center"
+    maxW="1000px"
+    margin="0 auto"
+  >
     {children}
   </Box>
 );
 
-export const FooterLink = ({href, label}) => (
+export const FooterLink = ({ href, label }) => (
   <Link href={href} passHref>
     <Text
-      color={useColorModeValue('#000000', '#FEF6E5')}
+      color={useColorModeValue("#000000", "#FEF6E5")}
       mb={2}
       fontSize={14}
       opacity={0.7}
       textDecoration="none"
       transition="all 200ms ease-in"
-      cursor='pointer'
+      cursor="pointer"
       _hover={{ opacity: 1 }}
     >
       {label}
