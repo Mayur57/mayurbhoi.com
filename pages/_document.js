@@ -1,7 +1,9 @@
+/* eslint-disable react/no-danger */
 /* eslint-disable react/jsx-props-no-spreading */
 import { ColorModeScript } from "@chakra-ui/react";
 import NextDocument, { Html, Head, Main, NextScript } from "next/document";
 import theme from "../libs/theme";
+import { GTM_ID } from "../libs/trackers";
 
 const TITLE = "Mayur Bhoi";
 const DESCRIPTION = "I writing efficient and pragmatic software.";
@@ -112,6 +114,24 @@ export default class Document extends NextDocument {
             content="/meta/favicon/ms-icon-144x144.png"
           />
           <meta name="theme-color" content="#ffffff" />
+
+          {/* Global Site Tag (gtag.js) - Google Analytics */}
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${GTM_ID}`}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GTM_ID}', {
+              page_path: window.location.pathname,
+            });
+          `,
+            }}
+          />
         </Head>
         <body>
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />

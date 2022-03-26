@@ -2,3 +2,4 @@ node_modules/
 .devlogs
 .next
 private/
+.env.local

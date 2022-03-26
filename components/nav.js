@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react/jsx-props-no-spreading */
 import NextLink from "next/link";
 import {
@@ -18,6 +19,16 @@ import { HamburgerIcon } from "@chakra-ui/icons";
 import { FiArrowUpRight } from "react-icons/fi";
 import Logo from "./logo";
 import ThemeButton from "./theme-button";
+import { event } from "../libs/trackers";
+
+const LogResume = () => {
+  event({
+    action: "view_item",
+    params: {
+      message: "Viewed resume.",
+    },
+  });
+};
 
 function LinkItem({ href, path, label }) {
   const active = path === href;
@@ -47,10 +58,46 @@ function LinkItem({ href, path, label }) {
   );
 }
 
+function ResumeLink({ link, path, isMenu }) {
+  return (
+    <Box onClick={LogResume}>
+      {isMenu ? (
+        <Center>
+          Resume&nbsp;&nbsp;
+          <FiArrowUpRight size={14} opacity={0.4} />
+        </Center>
+      ) : (
+        <Link
+          _target="_blank"
+          href={link}
+          path={path}
+          display="inline-flex"
+          alignItems="center"
+          style={{ gap: 4 }}
+          pl={2}
+          fontSize={14}
+          px={4}
+          textUnderlineOffset={5}
+          transition="250ms ease-in-out"
+          _hover={{
+            transform: "scale(1.1)",
+            opacity: useColorModeValue(0.6, 1),
+            color: useColorModeValue("purple", "#FE5B5E"),
+            transition: "250ms ease-in-out",
+          }}
+          color={useColorModeValue("gray200", "#FEF6E5")}
+        >
+          Resume
+        </Link>
+      )}
+    </Box>
+  );
+}
+
 function Navbar(props) {
   const { path } = props;
   const sourceLink = "https://github.com/Mayur57/portfolio-v2";
-  const resumeLink = "resume.pdf";
+  const resumeLink = "/resume.pdf";
   return (
     <Box
       position="fixed"
@@ -82,28 +129,7 @@ function Navbar(props) {
           <LinkItem href="/about" path={path} label="About" />
           <LinkItem href="/projects" path={path} label="Projects" />
           <LinkItem href="/posts" path={path} label="Posts" />
-          <Link
-            _target="_blank"
-            href={resumeLink}
-            path={path}
-            display="inline-flex"
-            alignItems="center"
-            style={{ gap: 4 }}
-            pl={2}
-            fontSize={14}
-            px={4}
-            textUnderlineOffset={5}
-            transition="250ms ease-in-out"
-            _hover={{
-              transform: "scale(1.1)",
-              opacity: useColorModeValue(0.6, 1),
-              color: useColorModeValue("purple", "#FE5B5E"),
-              transition: "250ms ease-in-out",
-            }}
-            color={useColorModeValue("gray200", "#FEF6E5")}
-          >
-            Resume
-          </Link>
+          <ResumeLink link={resumeLink} path={path} />
         </Stack>
 
         <Box flex={1} align="right">
@@ -144,10 +170,7 @@ function Navbar(props) {
                 </NextLink>
                 <NextLink href={resumeLink} passHref>
                   <MenuItem>
-                    <Center>
-                      Resume&nbsp;&nbsp;
-                      <FiArrowUpRight size={14} opacity={0.4} />
-                    </Center>
+                    <ResumeLink isMenu />
                   </MenuItem>
                 </NextLink>
               </MenuList>
