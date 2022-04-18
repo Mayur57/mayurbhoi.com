@@ -4,7 +4,7 @@ import NextLink from "next/link";
 
 const LinkButton = ({ children, link }) => (
   <Box align="center" my={4} mt="30px">
-    <NextLink href={link}>
+    <NextLink href={link} passHref>
       <Button
         variant="new-tab-action"
         rightIcon={<ChevronRightIcon />}

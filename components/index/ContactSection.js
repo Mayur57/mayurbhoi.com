@@ -17,6 +17,9 @@ import {
 } from "react-icons/bs";
 import Paragraph from "../paragraph";
 import Section from "../section";
+import BrandColors from "../../libs/ColorHelper";
+
+const { textColorDark, textColorLight } = BrandColors;
 
 function SocialLinks({ icon, platform, href = "#", id }) {
   return (
@@ -29,7 +32,7 @@ function SocialLinks({ icon, platform, href = "#", id }) {
           letterSpacing="1.2px"
           textTransform="uppercase"
           ml={2}
-          color={useColorModeValue("#37352F", "#FEF6E5")}
+          color={useColorModeValue(textColorLight, textColorDark)}
         >
           {platform}:
         </Text>
@@ -56,11 +59,11 @@ function SocialLinks({ icon, platform, href = "#", id }) {
 function ContactSection() {
   return (
     <Section delay={0.4}>
-      <Heading as="h3" variant="section-title" mt="45px" mb="20px">
+      <Heading as="h3" variant="section-title" mt="45px" mb="12px">
         Socials
       </Heading>
       <Paragraph>Consider following me on these platforms:</Paragraph>
-      <List ml={8} my={6}>
+      <List ml={8} my={4}>
         <SocialLinks
           icon={<BsLinkedin />}
           platform="linkedin"

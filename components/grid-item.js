@@ -35,7 +35,7 @@ export const PostsGridItem = ({
       boxShadow: "lg",
     }}
   >
-    <NextLink href={`/projects/${id}`}>
+    <NextLink href={`/projects/${id}`} passHref>
       <LinkBox cursor="pointer">
         <Image
           src={thumbnail}
@@ -77,7 +77,7 @@ export const WorkGridItem = ({ children, id, title, thumbnail }) => (
       boxShadow: "lg",
     }}
   >
-    <NextLink href={`/projects/${id}`}>
+    <NextLink href={`/projects/${id}`} passHref>
       <LinkBox cursor="pointer">
         <Image
           src={thumbnail}
@@ -117,7 +117,7 @@ export const ProjectsGridItemIndex = ({
       boxShadow: "lg",
     }}
   >
-    <NextLink href={`/projects/${id}`}>
+    <NextLink href={`/projects/${id}`} passHref>
       <LinkBox cursor="pointer">
         <Image
           src={thumbnail}

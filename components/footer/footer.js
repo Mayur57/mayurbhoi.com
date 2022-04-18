@@ -3,12 +3,15 @@ import { Box, Center, Divider, HStack, VStack, Text } from "@chakra-ui/react";
 import { Container, FooterLink, Heading } from "./footer-styles";
 import Logo from "../logo";
 import Social from "../social";
+import { Links as HyperLinks } from "../../data/links";
 
 const Links = () => (
   <Container>
     <HStack align>
       <VStack width="33%" alignItems="flex-start">
-        <Logo span={30} />
+        <Box ml={30}>
+          <Logo span={30} />
+        </Box>
       </VStack>
       <VStack width="33%" alignItems="flex-start">
         <Heading label="General" />
@@ -19,7 +22,7 @@ const Links = () => (
       </VStack>
       <VStack width="33%" alignItems="flex-start">
         <Heading label="Specifics" />
-        <FooterLink href="resume.pdf" label="Resume" />
+        <FooterLink href={HyperLinks.resume} label="Resume" />
         <FooterLink
           href="https://github.com/Mayur57/portfolio-v2"
           label="Source"
@@ -32,7 +35,7 @@ const Links = () => (
 
 function Footer() {
   return (
-    <Box mt={10}>
+    <Box as="footer" mt={10} maxW="container.md" marginX="auto">
       <Divider mb={10} />
       <Links />
       <Center mt={10}>
@@ -47,11 +50,11 @@ function Footer() {
         letterSpacing={1.2}
         color="#808080"
         mt={2}
-        mb={4}
+        mb={12}
       >
         <Text fontSize="0.6rem">{"</>"} WITH 💖 IN 🇮🇳</Text>
         <Text fontSize="0.6rem" mt={0.8}>
-          &copy; {new Date().getFullYear()} MAYUR BHOI | ALL RIGHTS RESERVED
+          &copy; {new Date().getFullYear()} MAYUR BHOI | ALL RIGHTS RESERVED.
         </Text>
       </Box>
     </Box>

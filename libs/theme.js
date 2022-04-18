@@ -1,12 +1,15 @@
 import { extendTheme } from "@chakra-ui/react";
 import { mode } from "@chakra-ui/theme-tools";
+import BrandColors from "./ColorHelper";
 import "@fontsource/inter";
+
+const { textColorDark, textColorLight } = BrandColors;
 
 const styles = {
   global: (props) => ({
     body: {
-      bg: mode("#FFFFFF", "#191919")(props),
-      color: mode("#37352F", "#FEF6E5")(props),
+      bg: mode("#FFFFFF", "#1D1D1F")(props),
+      color: mode(textColorLight, textColorDark)(props),
     },
   }),
 };
@@ -71,7 +74,6 @@ const colors = {
 const config = {
   initialColorMode: "light",
   useSystemColorMode: false,
-  cssVarPrefix: "mb",
 };
 
 const theme = extendTheme({

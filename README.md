@@ -15,6 +15,7 @@ Complete rewrite of my [portfolio website](https://mayurbhoi.com). (New version 
 ## TODOs
 
 - [ ] Add feature image to the website, readme and project repository
+- [ ] Add traffic trackers
 - [ ] Add colors section to the readme
 
 ## Repository Structure and Branches

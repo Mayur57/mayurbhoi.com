@@ -11,24 +11,27 @@ find . \
     \( -name "*.ts" -or -name "*.js" -or -name "*.json" \) -print > $FILES
 
 function check {
+    RED='\033[0;31m'
+    GREEN='\033[0;32m'
+    NC='\033[0m'
     cat package.json \
         | jq "{} + .$1 | keys" \
         | sed -n 's/.*"\(.*\)".*/\1/p' > $PACKAGES
 
     echo "--------------------------"
-    echo "Checking $1..."
+    echo -e "\nChecking $1...\n"
     while read PACKAGE
     do
         RES=$(cat $FILES | xargs -I {} egrep -i "(import|require).*['\"]$PACKAGE[\"']" '{}' | wc -l)
         if [ $RES = 0 ]
         then
-            echo -e "UNUSED\t\t $PACKAGE"
+            echo -e "${RED}! UNUSED\t\t $PACKAGE${NC}"
         else
-            echo -e "USED ($RES)\t $PACKAGE"
+            echo -e "${GREEN}\xE2\x9C\x94 USED ($RES)\t $PACKAGE${NC}"
         fi
     done < $PACKAGES
 }
 
 check "dependencies"
-check "devDependencies"
-check "peerDependencies"
+
+echo -e "\nPurge complete."

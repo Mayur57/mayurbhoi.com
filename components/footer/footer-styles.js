@@ -20,7 +20,6 @@ export const FooterLink = ({ href, label }) => (
       mb={2}
       fontSize={14}
       opacity={0.7}
-      textDecoration="none"
       transition="all 200ms ease-in"
       cursor="pointer"
       _hover={{ opacity: 1 }}

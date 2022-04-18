@@ -16,6 +16,7 @@ import Paragraph from "../components/paragraph";
 import { experience } from "../data/experience";
 import Section from "../components/section";
 import LinkButton from "../components/linkButton";
+import { Links } from "../data/links";
 
 const Company = styled.h3`
   & {
@@ -131,7 +132,7 @@ const About = () => (
             );
           })}
         </SimpleGrid>
-        <LinkButton link="resume.pdf">Resume</LinkButton>
+        <LinkButton link={Links.resume}>Resume</LinkButton>
       </Section>
     </Container>
   </Layout>

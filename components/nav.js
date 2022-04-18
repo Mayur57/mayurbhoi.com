@@ -20,6 +20,7 @@ import { FiArrowUpRight } from "react-icons/fi";
 import Logo from "./logo";
 import ThemeButton from "./theme-button";
 import { event } from "../libs/trackers";
+import { Links } from "../data/links";
 
 const LogResume = () => {
   event({
@@ -38,14 +39,14 @@ function LinkItem({ href, path, label }) {
     "#FF7B8230"
   );
   return (
-    <NextLink href={href}>
+    <NextLink href={href} passHref>
       <Link
         py={2}
         px={4}
         bg={active ? activeBackgroundColor : undefined}
         color={inactiveColor}
         fontSize={14}
-        borderRadius="8"
+        borderRadius={6}
         _hover={{
           transform: "scale(1.1)",
           opacity: useColorModeValue(0.6, 1),
@@ -97,7 +98,7 @@ function ResumeLink({ link, path, isMenu }) {
 function Navbar(props) {
   const { path } = props;
   const sourceLink = "https://github.com/Mayur57/portfolio-v2";
-  const resumeLink = "/resume.pdf";
+  const resumeLink = Links.resume;
   return (
     <Box
       position="fixed"

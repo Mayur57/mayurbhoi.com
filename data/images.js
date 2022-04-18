@@ -9,4 +9,5 @@ const Images = Object.freeze({
   pride,
   dynamicScalar,
 });
+
 export default Images;
