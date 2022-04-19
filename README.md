@@ -1,8 +1,8 @@
-# mayurbhoi.com
+# Luna 
 
 ![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=portfolio-v2-plum-two)
 
-Complete rewrite of my [portfolio website](https://mayurbhoi.com). (New version not live yet)
+Luna is a super-fast, no-nonsense portfolio website built from scratch for performance. It is a complete redo of my previous portfolio [website](https://old.mayurbhoi.com).
 
 **//TODO:** Write documentation and dependencies/frameworks used.
 
