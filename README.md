@@ -1,8 +1,8 @@
-# Luna 
+# Mosaic
 
 ![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=portfolio-v2-plum-two)
 
-Luna is a super-fast, no-nonsense portfolio website built from scratch for performance. It is a complete redo of my previous portfolio [website](https://old.mayurbhoi.com).
+Mosaic is a super-fast, no-nonsense, and intricately desgined portfolio website built from scratch for performance. It is a complete redo of the previous portfolio [website](https://old.mayurbhoi.com).
 
 **//TODO:** Write documentation and dependencies/frameworks used.
 
