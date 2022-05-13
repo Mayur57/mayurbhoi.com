@@ -11,7 +11,8 @@
     "prettier": "prettier --write .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "precommit": "lint-staged",
-    "purge": "bash purge.sh"
+    "purge": "bash purge.sh",
+    "commit": "bash commit.sh"
   },
   "lint-staged": {
     "*.js": [
