@@ -55,31 +55,18 @@ const Company = styled.h3`
 
 const About = () => (
   <Layout title="About">
-    <Container>
+    <Container maxW="container.md">
       <Subtitle>About</Subtitle>
       <Title>Experience &amp; Background</Title>
-      <Section delay={0.1}>
-        <Paragraph>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry&apos;s standard dummy text
-          ever since the 1500s, when an unknown printer took a galley of type
-          and scrambled it to make a type specimen book.
-          <br />
-          <br />
-          It has survived not only five centuries, but also the leap into
-          electronic typesetting, remaining essentially unchanged. It was
-          popularised in the 1960s with the release of Letraset sheets
-          containing Lorem Ipsum passages, and more recently with desktop
-          publishing software like Aldus PageMaker including versions of Lorem
-          Ipsum.
-        </Paragraph>
-      </Section>
-      <Section delay={0.2}>
-        <Heading as="h2" fontSize={28} letterSpacing={-1}>
-          Technical Skillset
-        </Heading>
-        <Box marginY={2}>
+      <Box maxWidth="container.md" justifyItems="center">
+        <Section delay={0.1}>
           <Paragraph>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry&apos;s standard dummy
+            text ever since the 1500s, when an unknown printer took a galley of
+            type and scrambled it to make a type specimen book.
+            <br />
+            <br />
             It has survived not only five centuries, but also the leap into
             electronic typesetting, remaining essentially unchanged. It was
             popularised in the 1960s with the release of Letraset sheets
@@ -87,53 +74,68 @@ const About = () => (
             publishing software like Aldus PageMaker including versions of Lorem
             Ipsum.
           </Paragraph>
-        </Box>
-      </Section>
-      <Section delay={0.3}>
-        <Heading as="h2" fontSize={28} letterSpacing={-1}>
-          Work
-        </Heading>
-        <Box marginY={2}>
-          <Paragraph>
-            These are the places I have worked for in the past recently.
-            Checkout my LinkedIn for more.
-          </Paragraph>
-        </Box>
-        <SimpleGrid columns={[1, 2, 2]} mb={4}>
-          {experience.map((experienceObject, index) => {
-            const { company, position, duration, link } = experienceObject;
-            return (
-              <Section key={index} delay={Math.round((index + 3) / 2) / 10}>
-                <HStack align="center" mt={6}>
-                  <Company>
-                    <Link href={link}>{company}</Link>
-                  </Company>
-                  <FiArrowUpRight opacity={0.9} />
-                </HStack>
-                <Text
-                  letterSpacing={-0.25}
-                  fontWeight="600"
-                  opacity={1}
-                  fontSize={16}
-                  marginTop={1}
-                >
-                  {position}
+        </Section>
+        <Section delay={0.2}>
+          <Heading as="h2" fontSize={28} letterSpacing={-1}>
+            Technical Skillset
+          </Heading>
+          <Box marginY={2}>
+            <Paragraph>
+              It has survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged. It was
+              popularised in the 1960s with the release of Letraset sheets
+              containing Lorem Ipsum passages, and more recently with desktop
+              publishing software like Aldus PageMaker including versions of
+              Lorem Ipsum.
+            </Paragraph>
+          </Box>
+        </Section>
+        <Section delay={0.3}>
+          <Heading as="h2" fontSize={28} letterSpacing={-1}>
+            Work
+          </Heading>
+          <Box marginY={2}>
+            <Paragraph>
+              These are the places I have worked for in the past recently.
+              Checkout my LinkedIn for more.
+            </Paragraph>
+          </Box>
+          <SimpleGrid columns={[1, 2, 2]} mb={4}>
+            {experience.map((experienceObject, index) => {
+              const { company, position, duration, link } = experienceObject;
+              return (
+                <Section key={index} delay={Math.round((index + 3) / 2) / 10}>
+                  <HStack align="center" mt={6}>
+                    <Company>
+                      <Link href={link}>{company}</Link>
+                    </Company>
+                    <FiArrowUpRight opacity={0.9} />
+                  </HStack>
                   <Text
                     letterSpacing={-0.25}
-                    fontWeight={600}
-                    opacity={0.75}
-                    fontSize={14}
+                    fontWeight="600"
+                    opacity={1}
+                    fontSize={16}
                     marginTop={1}
                   >
-                    {duration}
+                    {position}
+                    <Text
+                      letterSpacing={-0.25}
+                      fontWeight={600}
+                      opacity={0.75}
+                      fontSize={14}
+                      marginTop={1}
+                    >
+                      {duration}
+                    </Text>
                   </Text>
-                </Text>
-              </Section>
-            );
-          })}
-        </SimpleGrid>
-        <LinkButton link={Links.resume}>Resume</LinkButton>
-      </Section>
+                </Section>
+              );
+            })}
+          </SimpleGrid>
+          <LinkButton link={Links.resume}>Resume</LinkButton>
+        </Section>
+      </Box>
     </Container>
   </Layout>
 );

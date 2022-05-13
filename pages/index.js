@@ -13,10 +13,6 @@ import { useEffect } from "react";
 import { InfoIcon } from "@chakra-ui/icons";
 import { GridItemStyle } from "../components/grid-item";
 import HeaderSection from "../components/index/HeaderSection";
-import AboutParaSection from "../components/index/AboutParaSection";
-import { ExperienceSection } from "../components/index/ExperienceSection";
-import FeaturedProjectSection from "../components/index/FeaturedProjectsSection";
-import ContactSection from "../components/index/ContactSection";
 
 const Page = () => {
   const toast = useToast();
@@ -29,11 +25,12 @@ const Page = () => {
             p={4}
             maxWidth="300px"
             borderRadius={8}
-            bg="red.500"
+            bg="#ff0000a0"
             filter="auto"
             borderWidth={1}
             borderColor="red.400"
             dropShadow="7px 7px 10px #00000050"
+            css={{ backdropFilter: "blur(10px)" }}
           >
             <IconButton
               icon={<CloseButton />}
@@ -63,20 +60,16 @@ const Page = () => {
             </HStack>
           </Box>
         ),
-        duration: 15000,
+        duration: 5000,
         position: "top-right",
       });
     }
   }, []);
 
   return (
-    <Container>
+    <Container maxW="container.lg">
       <HeaderSection />
-      <AboutParaSection />
       <GridItemStyle />
-      <ExperienceSection />
-      <FeaturedProjectSection />
-      <ContactSection />
     </Container>
   );
 };

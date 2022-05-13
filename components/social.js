@@ -41,36 +41,36 @@ const SocialIcon = ({ icons, link, size = 16 }) => (
   </GridItem>
 );
 
-const Social = ({ spacing, size }) => (
-  // <Center mt={10}>
-  <Grid templateColumns={`repeat(5, ${spacing})`} gap={6}>
-    <SocialIcon
-      icons={<BsLinkedin />}
-      link="https://www.linkedin.com/in/mayur-bhoi/"
-      size={size}
-    />
-    <SocialIcon
-      icons={<BsGithub />}
-      link="https://github.com/Mayur57"
-      size={size}
-    />
-    <SocialIcon
-      icons={<BsTwitter />}
-      link="https://twitter.com/mayurbhoii"
-      size={size}
-    />
-    <SocialIcon
-      icons={<BsMedium />}
-      link="https://mayurbhoi.medium.com/"
-      size={size}
-    />
-    <SocialIcon
-      icons={<BsInstagram />}
-      link="https://www.instagram.com/mayurbhoii"
-      size={size}
-    />
-  </Grid>
-  // </Center>
+const Social = ({ spacing, size, mt }) => (
+  <Center mt={mt}>
+    <Grid templateColumns={`repeat(5, ${spacing})`} gap={6}>
+      <SocialIcon
+        icons={<BsLinkedin />}
+        link="https://www.linkedin.com/in/mayur-bhoi/"
+        size={size}
+      />
+      <SocialIcon
+        icons={<BsGithub />}
+        link="https://github.com/Mayur57"
+        size={size}
+      />
+      <SocialIcon
+        icons={<BsTwitter />}
+        link="https://twitter.com/mayurbhoii"
+        size={size}
+      />
+      <SocialIcon
+        icons={<BsMedium />}
+        link="https://mayurbhoi.medium.com/"
+        size={size}
+      />
+      <SocialIcon
+        icons={<BsInstagram />}
+        link="https://www.instagram.com/mayurbhoii"
+        size={size}
+      />
+    </Grid>
+  </Center>
 );
 
 export default Social;

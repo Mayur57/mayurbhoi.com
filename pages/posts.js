@@ -9,7 +9,7 @@ import { calculateAnimationDelay } from "../libs/functions";
 
 const Posts = () => (
   <Layout title="Articles">
-    <Container>
+    <Container maxW="container.lg">
       <Subtitle>blog</Subtitle>
       <Title>Articles &amp; Opinions</Title>
       <SimpleGrid columns={[1, 2, 2]} spacingX={-2} spacingY={-2} mt={4}>

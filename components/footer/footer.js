@@ -35,7 +35,7 @@ const Links = () => (
 
 function Footer() {
   return (
-    <Box as="footer" mt={10} maxW="container.md" marginX="auto">
+    <Box as="footer" mt={10} maxW="container.lg" marginX="auto">
       <Divider mb={10} />
       <Links />
       <Center mt={10}>
@@ -52,9 +52,9 @@ function Footer() {
         mt={2}
         mb={12}
       >
-        <Text fontSize="0.6rem">{"</>"} WITH 💖 IN 🇮🇳</Text>
+        <Text fontSize="0.6rem">DESIGNED AND BUILT WITH ❤️ IN 🇮🇳</Text>
         <Text fontSize="0.6rem" mt={0.8}>
-          &copy; {new Date().getFullYear()} MAYUR BHOI | ALL RIGHTS RESERVED.
+          &copy; {new Date().getFullYear()} MAYUR BHOI | ALL RIGHTS RESERVED
         </Text>
       </Box>
     </Box>
