@@ -19,7 +19,17 @@ import { Meta } from "../../components/work";
 import P from "../../components/paragraph";
 import Layout from "../../components/layouts/article";
 import Images from "../../data/images";
-import articles from "../../data/blogs";
+
+const articles = [
+  {
+    title: "Twitter Nuke",
+    description:
+      "A Twitter bot that connects people willing to help with those in need. Written in Python 3.",
+    slug: "twitter-nuke",
+    image: Images.covid,
+    published: "02 feb 2020",
+  },
+];
 
 const SectionTitle = ({ children }) => (
   <Heading variant="pronouns" fontWeight={500} fontSize={13} mt={4} mb={2}>

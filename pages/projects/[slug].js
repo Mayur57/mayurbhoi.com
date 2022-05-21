@@ -19,7 +19,58 @@ import { Meta } from "../../components/work";
 import P from "../../components/paragraph";
 import Layout from "../../components/layouts/article";
 import Images from "../../data/images";
-import projects from "../../data/projects";
+
+const projects = [
+  {
+    title: "Project Bittchje",
+    description:
+      "A Twitter bot that connects people willing to help with those in need. Written in Python 3.",
+    slug: "twitter-nuke1",
+    image: Images.covid,
+  },
+  {
+    title: "Project 2",
+    description:
+      "A Twitter bot that connects people willing to help with those in need. Written in Python 3.",
+    slug: "twitter-nuke2",
+    image: Images.covid,
+  },
+  {
+    title: "Project 3",
+    description:
+      "A Twitter bot that connects people willing to help with those in need. Written in Python 3.",
+    slug: "twitter-nuke3",
+    image: Images.covid,
+  },
+  {
+    title: "Project 4",
+    description:
+      "A Twitter bot that connects people willing to help with those in need. Written in Python 3.",
+    slug: "twitter-nuke4",
+    image: Images.covid,
+  },
+  {
+    title: "Project 5",
+    description:
+      "A Twitter bot that connects people willing to help with those in need. Written in Python 3.",
+    slug: "twitter-nuke5",
+    image: Images.covid,
+  },
+  {
+    title: "Project 6",
+    description:
+      "A Twitter bot that connects people willing to help with those in need. Written in Python 3.",
+    slug: "twitter-nuke6",
+    image: Images.covid,
+  },
+  {
+    title: "Project 7",
+    description:
+      "A Twitter bot that connects people willing to help with those in need. Written in Python 3.",
+    slug: "twitter-nuke7",
+    image: Images.covid,
+  },
+];
 
 const SectionTitle = ({ children }) => (
   <Heading variant="pronouns" fontWeight={500} fontSize={13} mt={4} mb={2}>
