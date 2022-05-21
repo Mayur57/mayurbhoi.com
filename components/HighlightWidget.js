@@ -21,7 +21,11 @@ export default function HighlightWidget({
         placeholder="blur"
         transition="all 200ms ease"
         boxShadow="0 19px 60px -10px rgb(0 0 0 / 30%), 0 18px 36px -18px rgb(0 0 0 / 33%)"
-        _groupHover={{ transform: "scale(1.0125)" }}
+        _groupHover={{
+          transform: "scale(1.0125)",
+          boxShadow:
+            "0 19px 60px -10px rgb(0 0 0 / 40%), 0 18px 36px -18px rgb(0 0 0 / 43%)",
+        }}
       />
       <VStack
         alignItems="flex-start"

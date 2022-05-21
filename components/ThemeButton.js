@@ -3,7 +3,6 @@ import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 
 const ThemeButton = () => {
   const { toggleColorMode } = useColorMode();
-
   return (
     <IconButton
       aria-label="Theme toggle"

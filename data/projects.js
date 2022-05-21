@@ -2,52 +2,52 @@ import Images from "./images";
 
 const projects = [
   {
-    title: "Twitter Nuke",
+    title: "Project Bittchje",
     description:
       "A Twitter bot that connects people willing to help with those in need. Written in Python 3.",
-    slug: "twitter-nuke",
+    slug: "twitter-nuke1",
     image: Images.covid,
   },
   {
-    title: "Twitter Nuke",
+    title: "Project 2",
     description:
       "A Twitter bot that connects people willing to help with those in need. Written in Python 3.",
-    slug: "twitter-nuke",
+    slug: "twitter-nuke2",
     image: Images.covid,
   },
   {
-    title: "Twitter Nuke",
+    title: "Project 3",
     description:
       "A Twitter bot that connects people willing to help with those in need. Written in Python 3.",
-    slug: "twitter-nuke",
+    slug: "twitter-nuke3",
     image: Images.covid,
   },
   {
-    title: "Twitter Nuke",
+    title: "Project 4",
     description:
       "A Twitter bot that connects people willing to help with those in need. Written in Python 3.",
-    slug: "twitter-nuke",
+    slug: "twitter-nuke4",
     image: Images.covid,
   },
   {
-    title: "Twitter Nuke",
+    title: "Project 5",
     description:
       "A Twitter bot that connects people willing to help with those in need. Written in Python 3.",
-    slug: "twitter-nuke",
+    slug: "twitter-nuke5",
     image: Images.covid,
   },
   {
-    title: "Twitter Nuke",
+    title: "Project 6",
     description:
       "A Twitter bot that connects people willing to help with those in need. Written in Python 3.",
-    slug: "twitter-nuke",
+    slug: "twitter-nuke6",
     image: Images.covid,
   },
   {
-    title: "Twitter Nuke",
+    title: "Project 7",
     description:
       "A Twitter bot that connects people willing to help with those in need. Written in Python 3.",
-    slug: "twitter-nuke",
+    slug: "twitter-nuke7",
     image: Images.covid,
   },
 ];

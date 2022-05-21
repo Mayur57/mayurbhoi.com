@@ -18,7 +18,7 @@ import {
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { FiArrowUpRight } from "react-icons/fi";
 import Logo from "./logo";
-import ThemeButton from "./theme-button";
+import ThemeButton from "./ThemeButton";
 import { event } from "../libs/trackers";
 import { Links } from "../data/links";
 

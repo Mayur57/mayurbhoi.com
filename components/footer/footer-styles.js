@@ -22,7 +22,11 @@ export const FooterLink = ({ href, label }) => (
       opacity={0.7}
       transition="all 200ms ease-in"
       cursor="pointer"
-      _hover={{ opacity: 1 }}
+      _hover={{
+        opacity: 1,
+        textDecoration: "underline",
+        textUnderlineOffset: 2,
+      }}
     >
       {label}
     </Text>

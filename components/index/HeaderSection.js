@@ -71,14 +71,7 @@ function HeaderSection() {
 
       <Section delay={0.3}>
         <HighlightWidget
-          title="Projects"
-          description="Projects I have made lmao"
-        />
-      </Section>
-
-      <Section delay={0.4}>
-        <HighlightWidget
-          title="Projects"
+          title="Articles"
           description="Projects I have made lmao"
         />
       </Section>
