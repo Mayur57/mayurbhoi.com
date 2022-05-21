@@ -14,6 +14,7 @@ import Image from "next/image";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import { Global } from "@emotion/react";
 import { RiErrorWarningLine } from "react-icons/ri";
+import ErrorPage from "next/error";
 import { Meta } from "../../components/work";
 import P from "../../components/paragraph";
 import Layout from "../../components/layouts/article";
@@ -46,6 +47,9 @@ const DeveloperWarning = () => (
 
 const Work = () => {
   const router = useRouter();
+  if (!router.isFallback) {
+    return <ErrorPage statusCode={404} />;
+  }
   const { slug } = router.query;
   const filterResult = articles.filter((project) => project.slug === slug);
   const project = filterResult[0];
