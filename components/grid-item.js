@@ -35,7 +35,7 @@ export const PostsGridItem = ({
       boxShadow: "lg",
     }}
   >
-    <NextLink href={`/projects/${id}`} passHref>
+    <NextLink href={`/articles/${id}`} passHref>
       <LinkBox cursor="pointer">
         <Image
           src={thumbnail}

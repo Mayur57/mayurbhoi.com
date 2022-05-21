@@ -8,14 +8,15 @@ const Logo = ({ span }) => {
     <Link href="/" scroll={false}>
       <a>
         <Box
-          paddingTop={1.5}
-          height={30}
+          position="relative"
+          height={span}
+          width={span}
           mr={6}
-          ml={2}
+          mt={2}
           transition="500ms"
           _hover={{ opacity: 0.3, transition: "250ms ease all" }}
         >
-          <Image src={logoImg} width={span} height={span} alt="logo" />
+          <Image src={logoImg} layout="fill" alt="logo" />
         </Box>
       </a>
     </Link>

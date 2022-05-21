@@ -34,6 +34,7 @@ function HeaderSection() {
             variant="page-title"
             fontSize={46}
             letterSpacing="-0.05em"
+            pt={4}
           >
             Mayur Bhoi
           </Heading>
@@ -65,14 +66,16 @@ function HeaderSection() {
       <Section delay={0.2}>
         <HighlightWidget
           title="Projects"
-          description="Projects I have made lmao"
+          description="Stuff I have made ranging from mobile apps to fully featured web applications"
+          image="/images/projects/projects.jpeg"
         />
       </Section>
 
       <Section delay={0.3}>
         <HighlightWidget
           title="Articles"
-          description="Projects I have made lmao"
+          description="A few words about technical stuff, opinions, and other miscellaneous topics"
+          image="/images/blogs/blogs.jpeg"
         />
       </Section>
     </>

@@ -1,28 +1,36 @@
-import { Image, useColorModeValue } from "@chakra-ui/react";
+import { Box, useColorModeValue } from "@chakra-ui/react";
+import Image from "next/image";
+import { shimmer, toBase64 } from "../libs/Shimmer";
 
 export default function Headshot() {
   return (
-    <Image
-      w="auto"
-      h="auto"
+    <Box
+      height={200}
+      width={200}
+      position="relative"
+      borderRadius="100%"
       borderColor={useColorModeValue("white", "#FEF6E5")}
       backgroundColor={useColorModeValue("purple.100", "red.200")}
-      borderWidth={6}
+      borderWidth={8}
       borderStyle="solid"
-      maxWidth="180px"
-      display="inline-block"
-      borderRadius="100px"
-      src="/images/me.webp"
-      alt="Profile Picture"
       boxShadow="lg"
       transition="all 250ms"
-      placeholder="blur"
       _hover={{
         transform: "scale(1.05)",
         boxShadow: "xl",
         transition: "250ms",
         borderColor: useColorModeValue("purple.300", "red.400"),
       }}
-    />
+    >
+      <Image
+        priority
+        layout="fill"
+        display="inline-block"
+        src="/images/me.webp"
+        alt="Profile Picture"
+        placeholder="blur"
+        blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}
+      />
+    </Box>
   );
 }

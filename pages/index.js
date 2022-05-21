@@ -67,7 +67,7 @@ const Page = () => {
   }, []);
 
   return (
-    <Container maxW="container.lg">
+    <Container maxW="container.lg" alignContent="center">
       <HeaderSection />
       <GridItemStyle />
     </Container>
