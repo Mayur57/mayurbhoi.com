@@ -73,9 +73,9 @@ const Work = ({ project }) => {
         <DeveloperWarning />
         <Stack
           display="flex"
-          direction={{ sm: "column", md: "row", base: "row" }}
+          direction={{ sm: "column", md: "row", base: "column" }}
         >
-          <Box flex={2} mr={{ base: 40, sm: 0, md: 30, xl: 36 }}>
+          <Box flex={2} mr={{ base: 0, sm: 0, md: 30, lg: 36 }}>
             <Heading
               variant="pronouns"
               fontWeight={500}
@@ -138,7 +138,7 @@ const Work = ({ project }) => {
           mt={4}
         >
           {photos.map((photo) => (
-            <GridItem>
+            <GridItem key={Math.random()}>
               <AspectRatio ratio={1.5} position="relative">
                 <Image
                   src={photo}
