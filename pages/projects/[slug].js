@@ -133,7 +133,7 @@ const Work = ({ project }) => {
         </Stack>
         <SectionTitle>Product Images</SectionTitle>
         <Grid
-          templateColumns={{ sm: "1fr", md: "1fr 1fr", base: "1fr 1fr" }}
+          templateColumns={{ sm: "1fr", md: "1fr 1fr", base: "1fr" }}
           gap={8}
           mt={4}
         >
