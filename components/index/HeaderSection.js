@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-constructed-context-values */
 import { CloseIcon } from "@chakra-ui/icons";
 import {
   Heading,
@@ -6,7 +7,10 @@ import {
   keyframes,
   useColorModeValue,
   VStack,
+  HStack,
 } from "@chakra-ui/react";
+import { MdLocationPin } from "react-icons/md";
+import { IconContext } from "react-icons";
 import Section from "../section";
 import Social from "../social";
 import LinkButton from "../linkButton";
@@ -24,15 +28,21 @@ function HeaderSection() {
   const animation = `${spin} 4s infinite;`;
   return (
     <>
-      <Section delay={0}>
-        <VStack mt={12} align="center" spacing={1} cursor="default">
-          <Box mt={{ base: 4, md: 0 }} mb={4} ml={{ md: 6 }} align="center">
+      <Section delay={0} alignItems="center">
+        <VStack
+          mt={12}
+          align="center"
+          spacing={1}
+          cursor="default"
+          textAlign="center"
+        >
+          <Box mb={2} ml={{ md: 6 }} align="center">
             <Headshot />
           </Box>
           <Heading
             as="h1"
             variant="page-title"
-            fontSize={46}
+            fontSize="2.85em"
             letterSpacing="-0.05em"
             pt={4}
           >
@@ -42,6 +52,21 @@ function HeaderSection() {
             software engineer <CloseIcon fontSize={6} />
             {"  "}product designer
           </Text>
+          <HStack align="center" spacing={1.5}>
+            <IconContext.Provider
+              value={{
+                color: useColorModeValue("#9F7AEA", "#FF7B82"),
+                size: 18,
+              }}
+            >
+              <div>
+                <MdLocationPin />
+              </div>
+            </IconContext.Provider>
+            <Text opacity={0.9} marginTop={2}>
+              bengaluru, india
+            </Text>
+          </HStack>
           <Heading
             variant="pronouns"
             opacity={0.9}

@@ -11,6 +11,13 @@ const styles = {
       bg: mode("#FFFFFF", "#1D1D1F")(props),
       color: mode(textColorLight, textColorDark)(props),
     },
+    h1: {
+      fontSize: 42,
+    },
+    code: {
+      color: "purple.500",
+      fontFamily: "Jetbrains Mono",
+    },
   }),
 };
 

@@ -12,9 +12,11 @@ import {
   GridItem,
   useColorModeValue,
   Heading,
+  AspectRatio,
 } from "@chakra-ui/react";
 import { Global } from "@emotion/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
+import { shimmer, toBase64 } from "../libs/Shimmer";
 
 export const PostsGridItem = ({
   desc,
@@ -65,26 +67,32 @@ export const PostsGridItem = ({
 );
 
 export const WorkGridItem = ({ children, id, title, thumbnail }) => (
-  <Box
-    w="100%"
-    borderRadius="lg"
-    px={4}
-    pb={2}
-    transition="250ms ease-in-out"
-    _hover={{
-      transform: "scale(1.02)",
-      transition: "250ms ease-in-out",
-      boxShadow: "lg",
-    }}
-  >
+  <Box role="group" w="100%" borderRadius="lg" transition="250ms ease-in-out">
     <NextLink href={`/projects/${id}`} passHref>
       <LinkBox cursor="pointer">
-        <Image
-          src={thumbnail}
-          alt={title}
-          className="project-item-thumbnail"
-          placeholder="blur"
-        />
+        <AspectRatio
+          position="relative"
+          ratio={1.67}
+          transition="all 250ms ease"
+          borderRadius={40}
+          mb={4}
+          _groupHover={{
+            transition: "all 250ms ease",
+            transform: "translateY(-2px)",
+            boxShadow: "xl",
+          }}
+        >
+          <Image
+            src={thumbnail}
+            alt={title}
+            layout="fill"
+            className="project-item-thumbnail"
+            placeholder="blur"
+            blurDataURL={`data:image/svg+xml;base64,${toBase64(
+              shimmer(700, 475)
+            )}`}
+          />
+        </AspectRatio>
         <LinkOverlay href={`/projects/${id}`}>
           <Text fontWeight="600" fontSize="20" mt={1.5} lineHeight={1.2}>
             {title}

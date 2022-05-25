@@ -12,7 +12,6 @@ import styled from "styled-components";
 import Layout from "../components/layouts/article";
 import Subtitle from "../components/subtitle";
 import Title from "../components/title";
-import Paragraph from "../components/paragraph";
 import { experience } from "../data/experience";
 import Section from "../components/section";
 import LinkButton from "../components/linkButton";
@@ -60,7 +59,7 @@ const About = () => (
       <Title>Experience &amp; Background</Title>
       <Box maxWidth="container.md" justifyItems="center">
         <Section delay={0.1}>
-          <Paragraph>
+          <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry&apos;s standard dummy
             text ever since the 1500s, when an unknown printer took a galley of
@@ -73,21 +72,21 @@ const About = () => (
             containing Lorem Ipsum passages, and more recently with desktop
             publishing software like Aldus PageMaker including versions of Lorem
             Ipsum.
-          </Paragraph>
+          </p>
         </Section>
         <Section delay={0.2}>
           <Heading as="h2" fontSize={28} letterSpacing={-1}>
             Technical Skillset
           </Heading>
           <Box marginY={2}>
-            <Paragraph>
+            <p>
               It has survived not only five centuries, but also the leap into
               electronic typesetting, remaining essentially unchanged. It was
               popularised in the 1960s with the release of Letraset sheets
               containing Lorem Ipsum passages, and more recently with desktop
               publishing software like Aldus PageMaker including versions of
               Lorem Ipsum.
-            </Paragraph>
+            </p>
           </Box>
         </Section>
         <Section delay={0.3}>
@@ -95,10 +94,10 @@ const About = () => (
             Work
           </Heading>
           <Box marginY={2}>
-            <Paragraph>
+            <p>
               These are the places I have worked for in the past recently.
               Checkout my LinkedIn for more.
-            </Paragraph>
+            </p>
           </Box>
           <SimpleGrid columns={[1, 2, 2]} mb={4}>
             {experience.map((experienceObject, index) => {

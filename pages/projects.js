@@ -4,10 +4,28 @@ import { WorkGridItem } from "../components/grid-item";
 import Layout from "../components/layouts/article";
 import Subtitle from "../components/subtitle";
 import Title from "../components/title";
-import projects from "../data/projects";
 import { calculateAnimationDelay } from "../libs/functions";
 
-function Work() {
+async function getPosts() {
+  const response = await fetch(`http://localhost:1337/api/projects`).then(
+    (res) => res.json()
+  );
+
+  const { data } = response;
+
+  return data;
+}
+
+export const getStaticProps = async () => {
+  const posts = await getPosts();
+  return {
+    revalidate: 10,
+    props: { posts },
+  };
+};
+
+function Work(props) {
+  const { posts } = props;
   return (
     <Layout title="Projects">
       <Container maxWidth="container.lg">
@@ -15,11 +33,15 @@ function Work() {
           <Subtitle>Projects</Subtitle>
           <Title>Past Work &amp; Personal Projects</Title>
         </Section>
-        <SimpleGrid columns={[1, 2, 2]} spacingX={-2} spacingY={-2} mt={12}>
-          {projects.map(({ title, description, slug, images }, index) => (
+        <SimpleGrid columns={[1, 2, 2]} spacingX={10} spacingY={2} mt={12}>
+          {posts.map((post, index) => (
             <Section key={index} delay={calculateAnimationDelay(index)}>
-              <WorkGridItem id={slug} title={title} thumbnail={images[0]}>
-                {description}
+              <WorkGridItem
+                id={post.attributes.slug}
+                title={post.attributes.title}
+                thumbnail={post.attributes.thumbnail}
+              >
+                {post.attributes.description}
               </WorkGridItem>
             </Section>
           ))}

@@ -12,7 +12,7 @@ const Logo = ({ span }) => {
           height={span}
           width={span}
           mr={6}
-          mt={2}
+          mt={1.5}
           transition="500ms"
           _hover={{ opacity: 0.3, transition: "250ms ease all" }}
         >

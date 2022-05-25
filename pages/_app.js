@@ -13,10 +13,6 @@ const GlobalStyles = css`
     outline: none;
     box-shadow: none;
   }
-
-  p {
-    font-size: 16px;
-  }
 `;
 
 const Website = ({ Component, pageProps, router }) => {
