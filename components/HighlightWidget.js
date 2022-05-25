@@ -1,4 +1,11 @@
-import { Box, Stack, VStack, Text, AspectRatio } from "@chakra-ui/react";
+import {
+  Box,
+  Stack,
+  VStack,
+  Text,
+  AspectRatio,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import Image from "next/image";
 import { shimmer, toBase64 } from "../libs/Shimmer";
 
@@ -42,7 +49,7 @@ export default function HighlightWidget({
       <VStack
         alignItems="flex-start"
         transition="all 200ms ease"
-        _groupHover={{ color: "coral" }}
+        _groupHover={{ color: useColorModeValue("purple", "red.300") }}
       >
         <Text fontSize={24} fontWeight="bold">
           {title}

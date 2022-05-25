@@ -14,7 +14,7 @@ import Subtitle from "../components/subtitle";
 import Title from "../components/title";
 import { experience } from "../data/experience";
 import Section from "../components/section";
-import LinkButton from "../components/linkButton";
+import LinkButton from "../components/LinkButton";
 import { Links } from "../data/links";
 
 const Company = styled.h3`

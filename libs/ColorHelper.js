@@ -1,5 +1,5 @@
 const BrandColors = {
-  textColorDark: "#FEFEFE",
+  textColorDark: "#FEF6E5",
   textColorLight: "#37352F",
   linkColorDark: "",
   linkColorLight: "",

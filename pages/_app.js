@@ -2,7 +2,8 @@
 import { Global, css } from "@emotion/react";
 import "focus-visible/dist/focus-visible";
 import "@fontsource/inter";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { Box } from "@chakra-ui/react";
 import Layout from "../components/layouts/main";
 import Fonts from "../components/fonts";
 import CookiesProvider from "../libs/cookies";
@@ -16,10 +17,16 @@ const GlobalStyles = css`
 `;
 
 const Website = ({ Component, pageProps, router }) => {
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     const handleRouteChange = (url) => {
       ga.pageview(url);
     };
+    const handleStartLoading = () => setLoading(true);
+    const handleEndLoading = () => setLoading(false);
+    router.events.on("routeChangeStart", handleStartLoading);
+    router.events.on("routeChangeComplete", handleEndLoading);
+    router.events.on("routeChangeError", handleEndLoading);
     router.events.on("routeChangeComplete", handleRouteChange);
     return () => {
       router.events.off("routeChangeComplete", handleRouteChange);
@@ -30,7 +37,16 @@ const Website = ({ Component, pageProps, router }) => {
       <Fonts />
       <Global styles={GlobalStyles} />
       <Layout router={router}>
-        <Component {...pageProps} key={router.route} />
+        {loading ? (
+          <Box
+            width="100vw"
+            height="100vh"
+            backgroundColor="transparent"
+            align="center"
+          />
+        ) : (
+          <Component {...pageProps} key={router.route} />
+        )}
       </Layout>
     </CookiesProvider>
   );

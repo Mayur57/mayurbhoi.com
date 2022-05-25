@@ -14,7 +14,6 @@ import { ExternalLinkIcon } from "@chakra-ui/icons";
 import { Global } from "@emotion/react";
 import { RiErrorWarningLine } from "react-icons/ri";
 import { Meta } from "../../components/work";
-import P from "../../components/paragraph";
 import Layout from "../../components/layouts/article";
 import Images from "../../data/images";
 import articles from "../../data/blogs";
@@ -77,31 +76,31 @@ const Work = ({ article }) => (
           <Heading variant="pronouns" fontWeight={500} fontSize={13} mt={4}>
             Description
           </Heading>
-          <P>{article.description}</P>
+          <p>{article.description}</p>
         </Box>
         <Box flex={2}>
           {/** //! TODO: Do not use this in a real project doc */}
           <SectionTitle>About</SectionTitle>
-          <P>
+          <p>
             In publishing and graphic design, Lorem ipsum is a placeholder text
             commonly used to demonstrate the visual form of a document or a
             typeface without relying on meaningful content. Lorem ipsum may be
             used as a placeholder before the final copy is available.
-          </P>
+          </p>
           <SectionTitle>Stack</SectionTitle>
-          <P>
+          <p>
             In publishing and graphic design, Lorem ipsum is a placeholder text
             commonly used to demonstrate the visual form of a document or a
             typeface without relying on meaningful content. Lorem ipsum may be
             used as a placeholder before the final copy is available.
-          </P>
+          </p>
           <SectionTitle>Learnings</SectionTitle>
-          <P>
+          <p>
             In publishing and graphic design, Lorem ipsum is a placeholder text
             commonly used to demonstrate the visual form of a document or a
             typeface without relying on meaningful content. Lorem ipsum may be
             used as a placeholder before the final copy is available.
-          </P>
+          </p>
           <SectionTitle>Links</SectionTitle>
           <List ml={4} my={4}>
             <ListItem>
