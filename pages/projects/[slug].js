@@ -20,11 +20,10 @@ import { Meta } from "../../components/work";
 import Layout from "../../components/layouts/article";
 import { toBase64, shimmer } from "../../libs/Shimmer";
 import markdownToHtml from "../../libs/MDParser";
-// import projects from "../../data/projects";
 
 export const getStaticProps = async ({ params }) => {
   const res = await fetch(
-    `http://localhost:1337/api/projects?filters[slug]=${params.slug}`
+    `https://mosaic-cms-backend.herokuapp.com/api/projects?filters[slug]=${params.slug}`
   );
   const result = await res.json();
   const content = await markdownToHtml(result.data[0].attributes.body);
@@ -38,13 +37,15 @@ export const getStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths = async () => {
-  const res = await fetch(`http://localhost:1337/api/projects`);
+  const res = await fetch(
+    `https://mosaic-cms-backend.herokuapp.com/api/projects`
+  );
   const response = await res.json();
   const paths = response.data.map((project) => ({
     params: { slug: project.attributes.slug },
   }));
 
-  return { paths, fallback: true };
+  return { paths, fallback: false };
 };
 
 const SectionTitle = ({ children }) => (

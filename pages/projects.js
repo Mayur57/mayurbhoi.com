@@ -7,9 +7,9 @@ import Title from "../components/title";
 import { calculateAnimationDelay } from "../libs/functions";
 
 async function getPosts() {
-  const response = await fetch(`http://localhost:1337/api/projects`).then(
-    (res) => res.json()
-  );
+  const response = await fetch(
+    `https://mosaic-cms-backend.herokuapp.com/api/projects`
+  ).then((res) => res.json());
 
   const { data } = response;
 

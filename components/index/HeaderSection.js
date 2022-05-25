@@ -13,7 +13,7 @@ import { MdLocationPin } from "react-icons/md";
 import { IconContext } from "react-icons";
 import Section from "../section";
 import Social from "../social";
-import LinkButton from "../LinkButton";
+import LinkButton from "../linkButton";
 import HighlightWidget from "../HighlightWidget";
 import Headshot from "../Headshot";
 

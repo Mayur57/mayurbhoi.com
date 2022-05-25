@@ -15,7 +15,6 @@ import {
   BsMedium,
   BsInstagram,
 } from "react-icons/bs";
-import Paragraph from "../paragraph";
 import Section from "../section";
 import BrandColors from "../../libs/ColorHelper";
 
@@ -62,7 +61,7 @@ function ContactSection() {
       <Heading as="h3" variant="section-title" mt="45px" mb="12px">
         Socials
       </Heading>
-      <Paragraph>Consider following me on these platforms:</Paragraph>
+      <p>Consider following me on these platforms:</p>
       <List ml={8} my={4}>
         <SocialLinks
           icon={<BsLinkedin />}
@@ -95,7 +94,7 @@ function ContactSection() {
           id="Mayur Bhoi"
         />
       </List>
-      <Paragraph>
+      <p>
         Want to build something cool or have questions? My inbox is always open!
         Whether you have a question, want to build something together, or just
         want to say hi, I&apos;ll try my best to get back to you!
@@ -115,7 +114,7 @@ function ContactSection() {
           <NextLink href="mailto:mayur072000@gmail.com">mail here</NextLink>
         </Link>
         .
-      </Paragraph>
+      </p>
     </Section>
   );
 }
