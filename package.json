@@ -34,13 +34,18 @@
     "focus-visible": "^5.2.0",
     "framer-motion": "^6.2.8",
     "next": "^12.1.4",
+    "parameterize": "^1.0.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-icons": "^4.3.1",
     "react-obfuscate": "^3.6.8",
+    "rehype-parse": "^8.0.4",
+    "rehype-stringify": "^9.0.3",
     "remark": "^14.0.2",
     "remark-html": "^15.0.1",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.5",
+    "unified": "^10.1.2",
+    "unist-util-visit": "^4.1.0"
   },
   "devDependencies": {
     "eslint": "^8.11.0",

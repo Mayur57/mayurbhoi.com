@@ -1,6 +1,7 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import { Heading, useColorModeValue } from "@chakra-ui/react";
 
-const Title = ({ children }) => (
+const Title = (props) => (
   <Heading
     as="h1"
     fontSize={36}
@@ -8,9 +9,8 @@ const Title = ({ children }) => (
     mt={2}
     mb={6}
     letterSpacing={-2}
-  >
-    {children}
-  </Heading>
+    {...props}
+  />
 );
 
 export default Title;

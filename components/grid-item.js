@@ -22,7 +22,7 @@ export const PostsGridItem = ({
   desc,
   id,
   title,
-  thumbnail,
+  // thumbnail,
   date = "01 jan 1900",
 }) => (
   <Box
@@ -39,12 +39,12 @@ export const PostsGridItem = ({
   >
     <NextLink href={`/articles/${id}`} passHref>
       <LinkBox cursor="pointer">
-        <Image
+        {/* <Image
           src={thumbnail}
           alt={title}
           className="project-item-thumbnail"
           placeholder="blur"
-        />
+        /> */}
         <LinkOverlay href={`/projects/${id}`}>
           <Text fontWeight="600" fontSize="20" mt={1.5} lineHeight={1.2}>
             {title}

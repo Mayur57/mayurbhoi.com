@@ -21,33 +21,6 @@ import Layout from "../../components/layouts/article";
 import { toBase64, shimmer } from "../../libs/Shimmer";
 import markdownToHtml from "../../libs/MDParser";
 
-export const getStaticProps = async ({ params }) => {
-  const res = await fetch(
-    `https://mosaic-cms-backend.herokuapp.com/api/projects?filters[slug]=${params.slug}`
-  );
-  const result = await res.json();
-  const content = await markdownToHtml(result.data[0].attributes.body);
-  return {
-    props: {
-      project: result.data[0].attributes,
-      content,
-    },
-    revalidate: 15,
-  };
-};
-
-export const getStaticPaths = async () => {
-  const res = await fetch(
-    `https://mosaic-cms-backend.herokuapp.com/api/projects`
-  );
-  const response = await res.json();
-  const paths = response.data.map((project) => ({
-    params: { slug: project.attributes.slug },
-  }));
-
-  return { paths, fallback: false };
-};
-
 const SectionTitle = ({ children }) => (
   <Heading variant="pronouns" fontWeight={500} fontSize={13} mt={4} mb={2}>
     {children}
@@ -73,7 +46,6 @@ const DeveloperWarning = () => (
 );
 
 const Work = ({ project, content }) => (
-  // const photos = project.images;
   <Layout title={project.title}>
     <Container maxW="container.lg" mt={4}>
       <DeveloperWarning />
@@ -175,3 +147,30 @@ export const ProductImageStyle = () => (
     `}
   />
 );
+
+export const getStaticProps = async ({ params }) => {
+  const res = await fetch(
+    `https://mosaic-cms-backend.herokuapp.com/api/projects?filters[slug]=${params.slug}`
+  );
+  const result = await res.json();
+  const content = await markdownToHtml(result.data[0].attributes.body);
+  return {
+    props: {
+      project: result.data[0].attributes,
+      content,
+    },
+    revalidate: 15,
+  };
+};
+
+export const getStaticPaths = async () => {
+  const res = await fetch(
+    `https://mosaic-cms-backend.herokuapp.com/api/projects`
+  );
+  const response = await res.json();
+  const paths = response.data.map((project) => ({
+    params: { slug: project.attributes.slug },
+  }));
+
+  return { paths, fallback: false };
+};

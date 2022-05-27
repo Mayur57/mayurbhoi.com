@@ -14,9 +14,19 @@ const styles = {
     h1: {
       fontSize: 42,
     },
+    h2: {
+      fontSize: 24,
+      fontWeight: "bold",
+      letterSpacing: -1,
+    },
     code: {
       color: "purple.500",
-      fontFamily: "Jetbrains Mono",
+      fontFamily: "SF Mono",
+      fontSize: 12,
+    },
+    blockquote: {
+      fontStyle: "italic",
+      fontSize: 26,
     },
   }),
 };

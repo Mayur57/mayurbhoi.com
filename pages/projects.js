@@ -6,24 +6,6 @@ import Subtitle from "../components/subtitle";
 import Title from "../components/title";
 import { calculateAnimationDelay } from "../libs/functions";
 
-async function getPosts() {
-  const response = await fetch(
-    `https://mosaic-cms-backend.herokuapp.com/api/projects`
-  ).then((res) => res.json());
-
-  const { data } = response;
-
-  return data;
-}
-
-export const getStaticProps = async () => {
-  const posts = await getPosts();
-  return {
-    revalidate: 10,
-    props: { posts },
-  };
-};
-
 function Work(props) {
   const { posts } = props;
   return (
@@ -52,3 +34,21 @@ function Work(props) {
 }
 
 export default Work;
+
+async function getPosts() {
+  const response = await fetch(
+    `https://mosaic-cms-backend.herokuapp.com/api/projects`
+  ).then((res) => res.json());
+
+  const { data } = response;
+
+  return data;
+}
+
+export const getStaticProps = async () => {
+  const posts = await getPosts();
+  return {
+    revalidate: 10,
+    props: { posts },
+  };
+};

@@ -50,7 +50,7 @@ function Footer() {
         letterSpacing={1.2}
         color="#808080"
         mt={2}
-        mb={12}
+        pb={12}
       >
         <Text fontSize="0.6rem" mt={0.8}>
           &copy; {new Date().getFullYear()} MAYUR BHOI

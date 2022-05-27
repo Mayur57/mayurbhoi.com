@@ -1,47 +1,21 @@
-import {
-  Box,
-  Container,
-  Link,
-  List,
-  ListItem,
-  Text,
-  Heading,
-  Stack,
-  HStack,
-} from "@chakra-ui/react";
-import Image from "next/image";
-import { ExternalLinkIcon } from "@chakra-ui/icons";
+/* eslint-disable no-param-reassign */
+import { Box, Container, Text, HStack } from "@chakra-ui/react";
 import { Global } from "@emotion/react";
 import { RiErrorWarningLine } from "react-icons/ri";
-import { Meta } from "../../components/work";
+import { unified } from "unified";
+import rehypeParse from "rehype-parse";
+import rehypeStringify from "rehype-stringify";
+import { visit } from "unist-util-visit";
+import parameterize from "parameterize";
 import Layout from "../../components/layouts/article";
-import Images from "../../data/images";
-import articles from "../../data/blogs";
+import markdownToHtml from "../../libs/MDParser";
+import Title from "../../components/title";
 
-export const getStaticProps = async ({ params }) => {
-  const articlesList = articles.filter(
-    (article) => article.slug.toString() === params.slug
-  );
-  return {
-    props: {
-      article: articlesList[0],
-    },
-  };
-};
-
-export const getStaticPaths = async () => {
-  const paths = articles.map((article) => ({
-    params: { slug: article.slug.toString() },
-  }));
-
-  return { paths, fallback: false };
-};
-
-const SectionTitle = ({ children }) => (
-  <Heading variant="pronouns" fontWeight={500} fontSize={13} mt={4} mb={2}>
-    {children}
-  </Heading>
-);
+// const SectionTitle = ({ children }) => (
+//   <Heading variant="pronouns" fontWeight={500} fontSize={13} mt={4} mb={2}>
+//     {children}
+//   </Heading>
+// );
 
 const DeveloperWarning = () => (
   <Box
@@ -61,68 +35,44 @@ const DeveloperWarning = () => (
   </Box>
 );
 
-const Work = ({ article }) => (
-  <Layout title={article.title}>
-    <Container maxW="container.lg" mt={4}>
-      <DeveloperWarning />
-      <Stack display="flex" direction={{ md: "row", base: "column" }}>
-        <Box flex={2} mr={{ base: 40, sm: 0, md: 40, xl: 60 }}>
-          <Heading variant="pronouns" fontWeight={500} fontSize={13} mt={4}>
-            Project
-          </Heading>
-          <Text fontWeight={800} letterSpacing={-2} fontSize={48}>
-            {article.title}
-          </Text>
-          <Heading variant="pronouns" fontWeight={500} fontSize={13} mt={4}>
-            Description
-          </Heading>
-          <p>{article.description}</p>
-        </Box>
-        <Box flex={2}>
-          {/** //! TODO: Do not use this in a real project doc */}
-          <SectionTitle>About</SectionTitle>
-          <p>
-            In publishing and graphic design, Lorem ipsum is a placeholder text
-            commonly used to demonstrate the visual form of a document or a
-            typeface without relying on meaningful content. Lorem ipsum may be
-            used as a placeholder before the final copy is available.
-          </p>
-          <SectionTitle>Stack</SectionTitle>
-          <p>
-            In publishing and graphic design, Lorem ipsum is a placeholder text
-            commonly used to demonstrate the visual form of a document or a
-            typeface without relying on meaningful content. Lorem ipsum may be
-            used as a placeholder before the final copy is available.
-          </p>
-          <SectionTitle>Learnings</SectionTitle>
-          <p>
-            In publishing and graphic design, Lorem ipsum is a placeholder text
-            commonly used to demonstrate the visual form of a document or a
-            typeface without relying on meaningful content. Lorem ipsum may be
-            used as a placeholder before the final copy is available.
-          </p>
-          <SectionTitle>Links</SectionTitle>
-          <List ml={4} my={4}>
-            <ListItem>
-              <Meta>Website</Meta>
-              <Link href="/">
-                https://dummy.website.com
-                <ExternalLinkIcon ml="8px" mb="2px" fontSize={12} />
-              </Link>
-            </ListItem>
-          </List>
-        </Box>
-      </Stack>
-      <SectionTitle>Product Images</SectionTitle>
-      <Image
-        src={Images.covid}
-        alt="Product image"
-        className="pimage"
-        placeholder="blur"
-      />
-    </Container>
-  </Layout>
-);
+const Work = ({ post, content }) => {
+  const TOC = [];
+  const c = unified()
+    .use(rehypeParse, {
+      fragment: true,
+    })
+    .use(() => (tree) => {
+      visit(tree, "element", (node) => {
+        if (node.tagName === "h2") {
+          const id = parameterize(node.children[0].value);
+          node.properties.id = id;
+          TOC.push({ id, title: node.children[0].value });
+        }
+      });
+    })
+    .use(rehypeStringify)
+    .processSync(content)
+    .toString();
+  return (
+    <Layout title={post.title}>
+      <Container maxW="container.md" mt={4}>
+        <DeveloperWarning />
+        <Title style={{ marginTop: 70, marginBottom: 10 }}>{post.title}</Title>
+        <ul>
+          {TOC.map(({ id, title }) => (
+            <li key={id}>
+              <a href={`#${id}`}>{title}</a>
+            </li>
+          ))}
+        </ul>
+        <Text my={4} opacity={0.7}>
+          {post.description}
+        </Text>
+        <div dangerouslySetInnerHTML={{ __html: c }} />
+      </Container>
+    </Layout>
+  );
+};
 export default Work;
 
 export const ProductImageStyle = () => (
@@ -134,3 +84,29 @@ export const ProductImageStyle = () => (
     `}
   />
 );
+
+export const getStaticProps = async ({ params }) => {
+  const res = await fetch(
+    `https://mosaic-cms-backend.herokuapp.com/api/posts?filters[slug]=${params.slug}`
+  );
+  const result = await res.json();
+  const htmlContent = await markdownToHtml(result.data[0].attributes.body);
+  const content = htmlContent.replace(/\n/g, "<br />");
+  return {
+    props: {
+      post: result.data[0].attributes,
+      content,
+    },
+    revalidate: 15,
+  };
+};
+
+export const getStaticPaths = async () => {
+  const res = await fetch(`https://mosaic-cms-backend.herokuapp.com/api/posts`);
+  const response = await res.json();
+  const paths = response.data.map((post) => ({
+    params: { slug: post.attributes.slug },
+  }));
+
+  return { paths, fallback: false };
+};
