@@ -4,7 +4,7 @@ import Subtitle from "../components/subtitle";
 import Title from "../components/title";
 import Section from "../components/section";
 import { PostsGridItem } from "../components/grid-item";
-import { calculateAnimationDelay } from "../libs/functions";
+import { calculateAnimationDelay, getCMSBaseUrl } from "../libs/functions";
 
 const Posts = ({ posts }) => (
   <Layout title="Articles">
@@ -31,9 +31,9 @@ const Posts = ({ posts }) => (
 export default Posts;
 
 async function getPosts() {
-  const response = await fetch(
-    `https://mosaic-cms-backend.herokuapp.com/api/posts`
-  ).then((res) => res.json());
+  const response = await fetch(`${getCMSBaseUrl()}/posts`).then((res) =>
+    res.json()
+  );
 
   const { data } = response;
 

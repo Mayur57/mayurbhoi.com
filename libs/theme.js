@@ -19,6 +19,11 @@ const styles = {
       fontWeight: "bold",
       letterSpacing: -1,
     },
+    h3: {
+      fontSize: 20,
+      fontWeight: "bold",
+      letterSpacing: -0.6,
+    },
     code: {
       color: "purple.500",
       fontFamily: "SF Mono",
@@ -27,6 +32,9 @@ const styles = {
     blockquote: {
       fontStyle: "italic",
       fontSize: 26,
+    },
+    li: {
+      listStyle: "none",
     },
   }),
 };
@@ -91,6 +99,7 @@ const colors = {
 const config = {
   initialColorMode: "light",
   useSystemColorMode: false,
+  disableTransitionOnChange: true,
 };
 
 const theme = extendTheme({

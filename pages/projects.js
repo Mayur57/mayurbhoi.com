@@ -4,7 +4,7 @@ import { WorkGridItem } from "../components/grid-item";
 import Layout from "../components/layouts/article";
 import Subtitle from "../components/subtitle";
 import Title from "../components/title";
-import { calculateAnimationDelay } from "../libs/functions";
+import { calculateAnimationDelay, getCMSBaseUrl } from "../libs/functions";
 
 function Work(props) {
   const { posts } = props;
@@ -36,9 +36,9 @@ function Work(props) {
 export default Work;
 
 async function getPosts() {
-  const response = await fetch(
-    `https://mosaic-cms-backend.herokuapp.com/api/projects`
-  ).then((res) => res.json());
+  const response = await fetch(`${getCMSBaseUrl()}/projects`).then((res) =>
+    res.json()
+  );
 
   const { data } = response;
 

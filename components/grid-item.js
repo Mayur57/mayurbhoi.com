@@ -27,7 +27,6 @@ export const PostsGridItem = ({
 }) => (
   <Box
     w="100%"
-    borderRadius="lg"
     px={4}
     pb={2}
     transition="250ms ease-in-out"

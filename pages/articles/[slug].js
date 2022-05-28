@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import { Box, Container, Text, HStack } from "@chakra-ui/react";
+import { Box, Container, Text, HStack, VStack, Stack } from "@chakra-ui/react";
 import { Global } from "@emotion/react";
 import { RiErrorWarningLine } from "react-icons/ri";
 import { unified } from "unified";
@@ -10,12 +10,7 @@ import parameterize from "parameterize";
 import Layout from "../../components/layouts/article";
 import markdownToHtml from "../../libs/MDParser";
 import Title from "../../components/title";
-
-// const SectionTitle = ({ children }) => (
-//   <Heading variant="pronouns" fontWeight={500} fontSize={13} mt={4} mb={2}>
-//     {children}
-//   </Heading>
-// );
+import { getCMSBaseUrl } from "../../libs/functions";
 
 const DeveloperWarning = () => (
   <Box
@@ -25,6 +20,7 @@ const DeveloperWarning = () => (
     borderRadius="lg"
     px={4}
     py={4}
+    mb={8}
   >
     <HStack>
       <RiErrorWarningLine size={14} />
@@ -35,44 +31,60 @@ const DeveloperWarning = () => (
   </Box>
 );
 
-const Work = ({ post, content }) => {
-  const TOC = [];
-  const c = unified()
-    .use(rehypeParse, {
-      fragment: true,
-    })
-    .use(() => (tree) => {
-      visit(tree, "element", (node) => {
-        if (node.tagName === "h2") {
-          const id = parameterize(node.children[0].value);
-          node.properties.id = id;
-          TOC.push({ id, title: node.children[0].value });
-        }
-      });
-    })
-    .use(rehypeStringify)
-    .processSync(content)
-    .toString();
-  return (
-    <Layout title={post.title}>
-      <Container maxW="container.md" mt={4}>
-        <DeveloperWarning />
-        <Title style={{ marginTop: 70, marginBottom: 10 }}>{post.title}</Title>
-        <ul>
-          {TOC.map(({ id, title }) => (
-            <li key={id}>
-              <a href={`#${id}`}>{title}</a>
-            </li>
-          ))}
-        </ul>
-        <Text my={4} opacity={0.7}>
-          {post.description}
-        </Text>
-        <div dangerouslySetInnerHTML={{ __html: c }} />
-      </Container>
-    </Layout>
-  );
-};
+const TableOfContents = ({ TOC }) => (
+  <Box
+    borderRadius="lg"
+    borderWidth={1}
+    height="fit-content"
+    width="100%"
+    p={6}
+    flex={1}
+    position={{ base: "relative", md: "sticky" }}
+    top={{ base: 0, md: 16 }}
+  >
+    <h3>Contents</h3>
+    <ul>
+      {TOC.map(({ id, title }) => (
+        <li key={id}>
+          <a href={`#${id}`}>{title}</a>
+        </li>
+      ))}
+    </ul>
+  </Box>
+);
+
+const Work = ({ post, content, TOC }) => (
+  <Layout title={post.title}>
+    <Container maxW="container.lg" mt={4}>
+      <DeveloperWarning />
+      <Stack
+        direction={{ base: "column", md: "row" }}
+        flexDir="row"
+        spacing={10}
+      >
+        {/** TODO: I am sure there is a better way to do this */}
+        <Box
+          width="20vw"
+          height={0}
+          flex={{ base: 0, md: 1 }}
+          p={{ base: 0, md: 6 }}
+        />
+        <Title style={{ marginBottom: 10, flex: 3, justifyItems: "baseline" }}>
+          {post.title}
+        </Title>
+      </Stack>
+      <Stack direction={{ base: "column", md: "row" }} spacing={10}>
+        <TableOfContents TOC={TOC} />
+        <VStack align="baseline" flex={3}>
+          <Text my={4} opacity={0.7}>
+            {post.description}
+          </Text>
+          <div dangerouslySetInnerHTML={{ __html: content }} />
+        </VStack>
+      </Stack>
+    </Container>
+  </Layout>
+);
 export default Work;
 
 export const ProductImageStyle = () => (
@@ -87,22 +99,42 @@ export const ProductImageStyle = () => (
 
 export const getStaticProps = async ({ params }) => {
   const res = await fetch(
-    `https://mosaic-cms-backend.herokuapp.com/api/posts?filters[slug]=${params.slug}`
+    `${getCMSBaseUrl()}/posts?filters[slug]=${params.slug}`
   );
+  const TOC = [];
   const result = await res.json();
   const htmlContent = await markdownToHtml(result.data[0].attributes.body);
   const content = htmlContent.replace(/\n/g, "<br />");
+  const c = unified()
+    .use(rehypeParse, {
+      fragment: true,
+    })
+    .use(() => (tree) => {
+      visit(tree, "element", (node) => {
+        if (node.tagName === "h2") {
+          const id =
+            parameterize(node.children[0].value) +
+            Math.floor(Math.random() * 1000);
+          node.properties.id = id;
+          TOC.push({ id, title: node.children[0].value });
+        }
+      });
+    })
+    .use(rehypeStringify)
+    .processSync(content)
+    .toString();
   return {
     props: {
       post: result.data[0].attributes,
-      content,
+      content: c,
+      TOC,
     },
     revalidate: 15,
   };
 };
 
 export const getStaticPaths = async () => {
-  const res = await fetch(`https://mosaic-cms-backend.herokuapp.com/api/posts`);
+  const res = await fetch(`${getCMSBaseUrl()}/posts`);
   const response = await res.json();
   const paths = response.data.map((post) => ({
     params: { slug: post.attributes.slug },
