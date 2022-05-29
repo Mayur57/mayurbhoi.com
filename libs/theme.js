@@ -1,9 +1,16 @@
 import { extendTheme } from "@chakra-ui/react";
-import { mode } from "@chakra-ui/theme-tools";
+import { mode, createBreakpoints } from "@chakra-ui/theme-tools";
 import BrandColors from "./ColorHelper";
 import "@fontsource/inter";
 
 const { textColorDark, textColorLight } = BrandColors;
+
+const breakpoints = createBreakpoints({
+  sm: "40em",
+  md: "52em",
+  lg: "64em",
+  xl: "80em",
+});
 
 const styles = {
   global: (props) => ({
@@ -32,9 +39,17 @@ const styles = {
     blockquote: {
       fontStyle: "italic",
       fontSize: 26,
+      opacity: 0.4,
     },
     li: {
       listStyle: "none",
+      fontSize: 12,
+      paddingY: 1,
+      opacity: 0.6,
+      transition: "all 250ms ease",
+      _hover: {
+        color: "#f00",
+      },
     },
   }),
 };
@@ -88,8 +103,13 @@ const components = {
 };
 
 const fonts = {
-  heading: "Inter",
-  body: "Inter",
+  heading: `"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+      "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+      "Helvetica Neue", sans-serif`,
+  body: `"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+      "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+      "Helvetica Neue", sans-serif`,
+  mono: `"SF Mono", monospace`,
 };
 
 const colors = {
@@ -108,6 +128,7 @@ const theme = extendTheme({
   components,
   colors,
   fonts,
+  breakpoints,
 });
 
 export default theme;

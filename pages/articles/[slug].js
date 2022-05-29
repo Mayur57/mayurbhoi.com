@@ -37,12 +37,12 @@ const TableOfContents = ({ TOC }) => (
     borderWidth={1}
     height="fit-content"
     width="100%"
-    p={6}
+    p={5}
     flex={1}
     position={{ base: "relative", md: "sticky" }}
     top={{ base: 0, md: 16 }}
   >
-    <h3>Contents</h3>
+    <h3 style={{ marginBottom: 6 }}>Contents</h3>
     <ul>
       {TOC.map(({ id, title }) => (
         <li key={id}>
