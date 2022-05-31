@@ -105,8 +105,8 @@ function Navbar(props) {
       as="nav"
       w="100%"
       pl={4}
-      bg={useColorModeValue("#ffffff40", "#20202020")}
-      css={{ backdropFilter: "blur(10px)" }}
+      bg={useColorModeValue("#ffffff99", "#20202020")}
+      css={{ backdropFilter: " blur(20px)" }}
       zIndex={1}
       {...props}
     >
