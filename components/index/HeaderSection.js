@@ -93,6 +93,7 @@ function HeaderSection() {
           title="Projects"
           description="Stuff I have made ranging from mobile apps to fully featured web applications"
           image="/images/projects/projects.jpeg"
+          href="/projects"
         />
       </Section>
 
@@ -101,6 +102,7 @@ function HeaderSection() {
           title="Articles"
           description="A few words about technical stuff, opinions, and other miscellaneous topics"
           image="/images/blogs/blogs.jpeg"
+          href="/posts"
         />
       </Section>
     </>

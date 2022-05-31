@@ -73,7 +73,10 @@ const Work = ({ post, content, TOC }) => (
           {post.title}
         </Title>
       </Stack>
-      <Stack direction={{ base: "column", md: "row" }} spacing={10}>
+      <Stack
+        direction={{ base: "column", md: "row" }}
+        spacing={{ base: 0, md: 10 }}
+      >
         <TableOfContents TOC={TOC} />
         <VStack align="baseline" flex={3}>
           <Text my={4} opacity={0.7}>
