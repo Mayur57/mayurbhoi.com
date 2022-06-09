@@ -82,6 +82,9 @@ const Work = ({ post, content, TOC }) => (
           <Text my={4} opacity={0.7}>
             {post.description}
           </Text>
+          <Text my={4} opacity={0.7}>
+            {post.uploaded === null ? "UPLOAD_DATE" : post.uploaded}
+          </Text>
           <div dangerouslySetInnerHTML={{ __html: content }} />
         </VStack>
       </Stack>
@@ -132,7 +135,7 @@ export const getStaticProps = async ({ params }) => {
       content: c,
       TOC,
     },
-    revalidate: 15,
+    revalidate: 7200,
   };
 };
 

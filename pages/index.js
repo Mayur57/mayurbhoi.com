@@ -11,7 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { InfoIcon } from "@chakra-ui/icons";
-import { GridItemStyle } from "../components/grid-item";
+import { GridItemStyle } from "../components/GridItem";
 import HeaderSection from "../components/index/HeaderSection";
 
 const Page = () => {

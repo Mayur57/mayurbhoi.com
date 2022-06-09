@@ -1,6 +1,6 @@
 import { Heading, useColorModeValue, SimpleGrid } from "@chakra-ui/react";
 import Section from "../section";
-import { ProjectsGridItemIndex } from "../grid-item";
+import { ProjectsGridItemIndex } from "../GridItem";
 import LinkButton from "../linkButton";
 import thumbPro1 from "../../public/images/projects/covid.jpg";
 

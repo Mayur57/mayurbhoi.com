@@ -160,7 +160,7 @@ export const getStaticProps = async ({ params }) => {
       project: result.data[0].attributes,
       content,
     },
-    revalidate: 15,
+    revalidate: 7200,
   };
 };
 

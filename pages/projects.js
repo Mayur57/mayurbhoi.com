@@ -1,6 +1,6 @@
 import { Container, SimpleGrid } from "@chakra-ui/react";
 import Section from "../components/section";
-import { WorkGridItem } from "../components/grid-item";
+import { WorkGridItem } from "../components/GridItem";
 import Layout from "../components/layouts/article";
 import Subtitle from "../components/subtitle";
 import Title from "../components/title";
@@ -48,7 +48,7 @@ async function getPosts() {
 export const getStaticProps = async () => {
   const posts = await getPosts();
   return {
-    revalidate: 10,
+    revalidate: 7200,
     props: { posts },
   };
 };

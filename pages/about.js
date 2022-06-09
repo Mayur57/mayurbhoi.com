@@ -132,7 +132,7 @@ const About = () => (
               );
             })}
           </SimpleGrid>
-          <LinkButton link={Links.resume}>Resume</LinkButton>
+          <LinkButton link={Links.resume} label="Resume" />
         </Section>
       </Box>
     </Container>

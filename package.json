@@ -8,11 +8,14 @@
     "dev": "next dev -H 0.0.0.0",
     "start": "next start",
     "lint": "next lint",
-    "prettier": "prettier --write .",
+    "format": "prettier --write .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "precommit": "lint-staged",
     "purge": "bash purge.sh",
     "commit": "bash commit.sh"
+  },
+  "husky": {
+    "precommit": "lint-staged"
   },
   "lint-staged": {
     "*.js": [
@@ -33,6 +36,7 @@
     "@fontsource/inter": "^4.5.2",
     "focus-visible": "^5.2.0",
     "framer-motion": "^6.2.8",
+    "moment": "^2.29.3",
     "next": "^12.1.4",
     "next-themes": "^0.2.0",
     "parameterize": "^1.0.0",
@@ -62,6 +66,6 @@
     "eslint-plugin-security": "^1.4.0",
     "husky": "^8.0.1",
     "lint-staged": "^12.3.7",
-    "prettier": "^2.6.1"
+    "prettier": "^2.6.2"
   }
 }

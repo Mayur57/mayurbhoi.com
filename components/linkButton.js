@@ -1,22 +1,68 @@
-import { Box, Button, useColorModeValue } from "@chakra-ui/react";
-import { ChevronRightIcon } from "@chakra-ui/icons";
+import {
+  Box,
+  Button,
+  useColorModeValue,
+  keyframes,
+  Text,
+  HStack,
+} from "@chakra-ui/react";
 import NextLink from "next/link";
+import { FiArrowRight } from "react-icons/fi";
 
-const LinkButton = ({ children, link }) => (
-  <Box align="center" my={4} mt="30px">
+const anim = keyframes`
+50% {
+  background-position: 140% 50%;
+  transform: skew(-2deg);
+}`;
+
+const LinkButton = ({ label = "undefined", link }) => (
+  <Box align="center" mt="30px" role="group">
     <NextLink href={link} passHref>
       <Button
         variant="new-tab-action"
-        rightIcon={<ChevronRightIcon />}
+        borderColor="transparent"
+        px={2}
         _hover={{
-          bgColor: useColorModeValue("rgba(121, 96, 206, 0.5)", "#FE5B5E80"),
           transform: "scale(1.05)",
-          boxShadow: `lg`,
         }}
-        bgColor={useColorModeValue("rgba(121, 96, 206, 0.3)", "#FE5B5E4D")}
-        borderColor={useColorModeValue("rgba(121, 96, 206, 0.4)", "#FE5B5E66")}
       >
-        {children}
+        <HStack
+          opacity={0.5}
+          zIndex={2}
+          transition="all 200ms ease"
+          _groupHover={{ opacity: 1, transition: "all 200ms ease" }}
+        >
+          <Text top="0px" left="0px">
+            {label}
+          </Text>
+          <FiArrowRight />
+        </HStack>
+        <Box
+          pos="absolute"
+          bgColor={useColorModeValue("#FFFFFF", "#1D1D1F")}
+          zIndex={1}
+          height="100%"
+          width="100%"
+          top="0px"
+          left="0px"
+          display="inline-block"
+          borderRadius={4}
+        />
+        <Box
+          pos="absolute"
+          w="120%"
+          h="125%"
+          zIndex={0}
+          opacity="30%"
+          filter="blur(10px) saturate(100%)"
+          color="white"
+          background="linear-gradient(-90deg, #007CF0, #00DFD8, #FF0080, #007CF0)"
+          backgroundSize="400% 100%"
+          animation={`${anim} linear 12s infinite`}
+          _groupHover={{
+            animation: `${anim} linear 4s infinite`,
+          }}
+        />
       </Button>
     </NextLink>
   </Box>

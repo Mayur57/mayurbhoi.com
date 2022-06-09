@@ -18,55 +18,106 @@ import { Global } from "@emotion/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import { shimmer, toBase64 } from "../libs/Shimmer";
 
+const Tag = ({ children, color }) => (
+  <Box
+    position="absolute"
+    top="10px"
+    left="10px"
+    bgColor={color}
+    borderRadius={4}
+    backdropFilter="blur(15px)"
+    color="white"
+    paddingX={2}
+    paddingY={0.5}
+    fontSize={11}
+    opacity={1}
+    letterSpacing={0.7}
+    textTransform="uppercase"
+    fontFamily="Space Grotesk"
+    transition="all 200ms ease-in-out"
+    _groupHover={{
+      opacity: 0,
+      transition: "all 200ms ease-in-out",
+      transform: "translate(0px, -5px)",
+    }}
+  >
+    {children}
+  </Box>
+);
+
+const tagColors = (tag) => {
+  switch (tag.toUpperCase()) {
+    case "TECH":
+      return "#FF000033";
+    case "ABSTRACT":
+      return "#55FF5555";
+    case "MISC":
+      return "#0000FF33";
+    default:
+      return "#FFFFFF33";
+  }
+};
+
 export const PostsGridItem = ({
   desc,
   id,
   title,
-  // thumbnail,
-  date = "01 jan 1900",
+  thumbnail,
+  date,
+  tag = "none",
 }) => (
-  <Box
-    w="100%"
-    px={4}
-    pb={2}
-    transition="250ms ease-in-out"
-    _hover={{
-      transform: "scale(1.02)",
-      transition: "250ms ease-in-out",
-      boxShadow: "lg",
-    }}
-  >
+  <Box w="100%" px={4} pb={2} transition="250ms ease-in-out" role="group">
     <NextLink href={`/posts/${id}`} passHref>
       <LinkBox cursor="pointer">
-        {/* <Image
-          src={thumbnail}
-          alt={title}
-          className="project-item-thumbnail"
-          placeholder="blur"
-        /> */}
-        <LinkOverlay href={`/projects/${id}`}>
-          <Text fontWeight="600" fontSize="20" mt={1.5} lineHeight={1.2}>
-            {title}
+        <Box>
+          <AspectRatio
+            position="relative"
+            ratio={1.67}
+            transition="all 250ms ease"
+            borderRadius={40}
+            mb={4}
+            _groupHover={{
+              transition: "all 250ms ease",
+              transform: "translateY(-2px)",
+              boxShadow: "xl",
+            }}
+          >
+            <Image
+              src={thumbnail}
+              alt={title}
+              layout="fill"
+              className="project-item-thumbnail"
+              placeholder="blur"
+              blurDataURL={`data:image/svg+xml;base64,${toBase64(
+                shimmer(700, 475)
+              )}`}
+            />
+          </AspectRatio>
+          <Tag color={tagColors(tag)}>{tag}</Tag>
+          <LinkOverlay href={`/projects/${id}`}>
+            <Text fontWeight="600" fontSize="20" mt={1.5} lineHeight={1.2}>
+              {title}
+            </Text>
+          </LinkOverlay>
+          <Heading
+            variant="pronouns"
+            opacity={0.5}
+            letterSpacing="0.6px"
+            fontSize={11}
+          >
+            {date}
+          </Heading>
+          <Text fontSize="12" opacity={0.7} mt={0} mr={2}>
+            {desc}
           </Text>
-        </LinkOverlay>
-        <Heading
-          variant="pronouns"
-          opacity={0.5}
-          letterSpacing="0.6px"
-          fontSize={11}
-        >
-          {date}
-        </Heading>
-        <Text fontSize="12" opacity={0.7} mt={0} mr={2}>
-          {desc}
-        </Text>
+        </Box>
       </LinkBox>
     </NextLink>
   </Box>
 );
 
 export const WorkGridItem = ({ children, id, title, thumbnail }) => (
-  <Box role="group" w="100%" borderRadius="lg" transition="250ms ease-in-out">
+  <Box role="group" w="100%">
     <NextLink href={`/projects/${id}`} passHref>
       <LinkBox cursor="pointer">
         <AspectRatio

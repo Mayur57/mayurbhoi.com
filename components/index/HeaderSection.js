@@ -84,7 +84,7 @@ function HeaderSection() {
 
       <Section delay={0.1}>
         <Box mt={10}>
-          <LinkButton link="/about">LEARN MORE</LinkButton>
+          <LinkButton label="LEARN MORE" link="/about" />
         </Box>
       </Section>
 
