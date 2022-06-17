@@ -42,7 +42,7 @@ const Website = ({ Component, pageProps, router }) => {
     <CookiesProvider cookies={pageProps.cookies}>
       <Fonts />
       <Global styles={GlobalStyles} />
-      {process.env.NEXT_PUBLIC_ENV === "dev" ? (
+      {process.env.NEXT_PUBLIC_PHASE === "dev" ? (
         <DevelopmentMode />
       ) : (
         <Layout router={router}>

@@ -15,6 +15,16 @@
         "varsIgnorePattern": "^_"
       }
     ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
     "import/no-unresolved": "off",
     "import/no-extraneous-dependencies": "off",
     "react/react-in-jsx-scope": "off",
