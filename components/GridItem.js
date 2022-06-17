@@ -33,7 +33,7 @@ const Tag = ({ children, color }) => (
     opacity={1}
     letterSpacing={0.7}
     textTransform="uppercase"
-    fontFamily="Space Grotesk"
+    fontFamily="'Space Grotesk', sans-serif"
     transition="all 200ms ease-in-out"
     _groupHover={{
       opacity: 0,
@@ -65,6 +65,7 @@ export const PostsGridItem = ({
   thumbnail,
   date,
   tag = "none",
+  readingTime = "0 mins read",
 }) => (
   <Box w="100%" px={4} pb={2} transition="250ms ease-in-out" role="group">
     <NextLink href={`/posts/${id}`} passHref>
@@ -105,7 +106,7 @@ export const PostsGridItem = ({
             letterSpacing="0.6px"
             fontSize={11}
           >
-            {date}
+            {date} • {readingTime}
           </Heading>
           <Text fontSize="12" opacity={0.7} mt={0} mr={2}>
             {desc}

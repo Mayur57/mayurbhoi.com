@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import {
   Box,
   Button,
@@ -15,17 +16,10 @@ const anim = keyframes`
   transform: skew(-2deg);
 }`;
 
-const LinkButton = ({ label = "undefined", link }) => (
+const LinkButton = ({ label = "undefined", link, bg }) => (
   <Box align="center" mt="30px" role="group">
     <NextLink href={link} passHref>
-      <Button
-        variant="new-tab-action"
-        borderColor="transparent"
-        px={2}
-        _hover={{
-          transform: "scale(1.05)",
-        }}
-      >
+      <Button variant="new-tab-action" borderColor="transparent" px={2}>
         <HStack
           opacity={0.5}
           zIndex={2}
@@ -39,7 +33,7 @@ const LinkButton = ({ label = "undefined", link }) => (
         </HStack>
         <Box
           pos="absolute"
-          bgColor={useColorModeValue("#FFFFFF", "#1D1D1F")}
+          bgColor={bg ?? useColorModeValue("#FFFFFF", "#1D1D1F")}
           zIndex={1}
           height="100%"
           width="100%"
@@ -50,15 +44,15 @@ const LinkButton = ({ label = "undefined", link }) => (
         />
         <Box
           pos="absolute"
-          w="120%"
-          h="125%"
+          w="110%"
+          h="130%"
           zIndex={0}
           opacity="30%"
-          filter="blur(10px) saturate(100%)"
+          filter="blur(10px) saturate(150%)"
           color="white"
           background="linear-gradient(-90deg, #007CF0, #00DFD8, #FF0080, #007CF0)"
           backgroundSize="400% 100%"
-          animation={`${anim} linear 12s infinite`}
+          animation={`${anim} linear 8s infinite`}
           _groupHover={{
             animation: `${anim} linear 4s infinite`,
           }}

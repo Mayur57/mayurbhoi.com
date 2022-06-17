@@ -1,6 +1,7 @@
 /* eslint-disable no-param-reassign */
 import { Container, SimpleGrid } from "@chakra-ui/react";
 import moment from "moment";
+import readingTime from "reading-time";
 import Layout from "../components/layouts/article";
 import Subtitle from "../components/subtitle";
 import Title from "../components/title";
@@ -14,21 +15,19 @@ const Posts = ({ posts }) => (
       <Subtitle>blog</Subtitle>
       <Title>Articles &amp; Opinions</Title>
       <SimpleGrid columns={[1, 2, 2]} spacingX={-2} spacingY={-2} mt={4}>
-        {posts.map(({ attributes }, index) => {
-          console.log(attributes.sortId);
-          return (
-            <Section key={index} delay={calculateAnimationDelay(index)}>
-              <PostsGridItem
-                id={attributes.slug}
-                title={attributes.title}
-                date={attributes.uploaded}
-                thumbnail={attributes.thumbnail}
-                desc={attributes.description}
-                tag={attributes.tag}
-              />
-            </Section>
-          );
-        })}
+        {posts.map(({ attributes }, index) => (
+          <Section key={index} delay={calculateAnimationDelay(index)}>
+            <PostsGridItem
+              id={attributes.slug}
+              title={attributes.title}
+              date={attributes.uploaded}
+              thumbnail={attributes.thumbnail}
+              desc={attributes.description}
+              readingTime={attributes.readingTime.text}
+              tag={attributes.tag}
+            />
+          </Section>
+        ))}
       </SimpleGrid>
     </Container>
   </Layout>
@@ -53,6 +52,7 @@ export const getStaticProps = async () => {
     const formattedDate = moment(publishedDate).format("D MMMM YYYY");
     post.attributes.uploaded = formattedDate;
     post.attributes.sortId = moment(publishedDate).format("YYYYMMDD");
+    post.attributes.readingTime = readingTime(post.attributes.body);
   });
   // const publishedDate = posts.attributes
   return {

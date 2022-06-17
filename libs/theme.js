@@ -109,7 +109,7 @@ const fonts = {
   body: `"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
       "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
       "Helvetica Neue", sans-serif`,
-  mono: `"SF Mono", monospace`,
+  mono: `'Space Grotesk', "SF Mono", monospace`,
 };
 
 const colors = {
