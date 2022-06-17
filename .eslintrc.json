@@ -7,6 +7,14 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
+  "settings": {
+    "import/extensions": [".js"],
+    "import/resolver": {
+      "node": {
+        "extensions": [".js"]
+      }
+    }
+  },
   "rules": {
     "no-unused-vars": [
       "error",
@@ -15,6 +23,7 @@
         "varsIgnorePattern": "^_"
       }
     ],
+    "import/extensions": "off",
     "import/no-unresolved": "off",
     "import/no-extraneous-dependencies": "off",
     "react/react-in-jsx-scope": "off",

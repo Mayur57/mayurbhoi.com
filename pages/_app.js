@@ -3,11 +3,13 @@ import { Global, css } from "@emotion/react";
 import "focus-visible/dist/focus-visible";
 import "@fontsource/inter";
 import { useEffect, useState } from "react";
-import { Box } from "@chakra-ui/react";
+
 import Layout from "../components/layouts/main";
 import Fonts from "../components/fonts";
 import CookiesProvider from "../libs/cookies";
 import * as ga from "../libs/trackers";
+import { DevelopmentMode } from "../components/DevelopmentMode";
+import { Loading } from "../components/Loading";
 
 const GlobalStyles = css`
   .js-focus-visible :focus:not([data-focus-visible-added]) {
@@ -40,18 +42,17 @@ const Website = ({ Component, pageProps, router }) => {
     <CookiesProvider cookies={pageProps.cookies}>
       <Fonts />
       <Global styles={GlobalStyles} />
-      <Layout router={router}>
-        {loading ? (
-          <Box
-            width="100vw"
-            height="100vh"
-            backgroundColor="transparent"
-            align="center"
-          />
-        ) : (
-          <Component {...pageProps} key={router.route} />
-        )}
-      </Layout>
+      {process.env.NEXT_PUBLIC_PHASE === "dev" ? (
+        <DevelopmentMode />
+      ) : (
+        <Layout router={router}>
+          {loading ? (
+            <Loading />
+          ) : (
+            <Component {...pageProps} key={router.route} />
+          )}
+        </Layout>
+      )}
     </CookiesProvider>
   );
 };

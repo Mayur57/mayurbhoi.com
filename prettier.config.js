@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 const options = {
+  printWidth: 100,
   arrowParens: "avoid",
   singleQuote: true,
   bracketSpacing: true,
@@ -7,4 +8,5 @@ const options = {
   semi: true,
   tabWidth: 2,
   trailingComma: "none",
+  bracketSameLine: true,
 };
