@@ -9,6 +9,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { shimmer, toBase64 } from "../libs/Shimmer";
+import "@fontsource/epilogue";
 
 export default function HighlightWidget({
   title,
@@ -54,7 +55,11 @@ export default function HighlightWidget({
           transition="all 200ms ease"
           _groupHover={{ color: useColorModeValue("purple", "red.300") }}
         >
-          <Text fontSize={24} fontWeight="bold">
+          <Text
+            fontSize="1.65em"
+            fontWeight="900"
+            fontFamily="Epilogue, sans-serif"
+          >
             {title}
           </Text>
           <Text opacity={0.7} maxW={400}>

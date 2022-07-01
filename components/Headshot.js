@@ -5,8 +5,8 @@ import { shimmer, toBase64 } from "../libs/Shimmer";
 export default function Headshot() {
   return (
     <Box
-      height={200}
-      width={200}
+      height={195}
+      width={195}
       position="relative"
       borderRadius="100%"
       borderColor={useColorModeValue("white", "#FEF6E5")}

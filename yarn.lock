@@ -852,10 +852,20 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
+"@fontsource/epilogue@^4.5.8":
+  version "4.5.8"
+  resolved "https://registry.yarnpkg.com/@fontsource/epilogue/-/epilogue-4.5.8.tgz#143b179bd7ce192ff1c627276876aee8ee8f9166"
+  integrity sha512-jyq8/vHeCT7HdpHnm3w8DGGF6/wYNCHpQxayfIQJu+aVPd1LsTGDu5JfZ3GZI/j6tDtxacJfrGT02JsxlWCDMg==
+
 "@fontsource/inter@^4.5.2":
   version "4.5.10"
   resolved "https://registry.yarnpkg.com/@fontsource/inter/-/inter-4.5.10.tgz#c4e6839197dc4c77842eae9475ff0e036ff87fc9"
   integrity sha512-YOt2/K8yo25MVBjrTImHxVimmyZEt0GcrWp2w7O29sdFX9SJqbGlOqjFJ1wI5yBbP6AmTeimyPE0UC/jjFRoIA==
+
+"@fontsource/space-grotesk@^4.5.8":
+  version "4.5.8"
+  resolved "https://registry.yarnpkg.com/@fontsource/space-grotesk/-/space-grotesk-4.5.8.tgz#4f3c6a80bbd556e73338eadf2f19f214657580b5"
+  integrity sha512-2+eifFW1dlCGo/zq4xNFNEMrQEfX6rdC39S5t+jSrpRhBnocgr1m8QNBnaM6gok9c+78bUurJ3BjDgC/+WpIAQ==
 
 "@humanwhocodes/config-array@^0.9.2":
   version "0.9.5"

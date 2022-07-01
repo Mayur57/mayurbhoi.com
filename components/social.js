@@ -14,6 +14,7 @@ import {
   BsInstagram,
 } from "react-icons/bs";
 import NextLink from "next/link";
+import { Links } from "../data/links";
 
 const SocialIcon = ({ icons, link, size = 16 }) => (
   <GridItem>
@@ -44,31 +45,11 @@ const SocialIcon = ({ icons, link, size = 16 }) => (
 const Social = ({ spacing, size, mt }) => (
   <Center mt={mt}>
     <Grid templateColumns={`repeat(5, ${spacing})`} gap={6}>
-      <SocialIcon
-        icons={<BsLinkedin />}
-        link="https://www.linkedin.com/in/mayur-bhoi/"
-        size={size}
-      />
-      <SocialIcon
-        icons={<BsGithub />}
-        link="https://github.com/Mayur57"
-        size={size}
-      />
-      <SocialIcon
-        icons={<BsTwitter />}
-        link="https://twitter.com/mayurbhoii"
-        size={size}
-      />
-      <SocialIcon
-        icons={<BsMedium />}
-        link="https://mayurbhoi.medium.com/"
-        size={size}
-      />
-      <SocialIcon
-        icons={<BsInstagram />}
-        link="https://www.instagram.com/mayurbhoii"
-        size={size}
-      />
+      <SocialIcon icons={<BsLinkedin />} link={Links.linkedin} size={size} />
+      <SocialIcon icons={<BsGithub />} link={Links.github} size={size} />
+      <SocialIcon icons={<BsTwitter />} link={Links.twitter} size={size} />
+      <SocialIcon icons={<BsMedium />} link={Links.medium} size={size} />
+      <SocialIcon icons={<BsInstagram />} link={Links.instagram} size={size} />
     </Grid>
   </Center>
 );

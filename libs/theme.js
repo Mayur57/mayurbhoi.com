@@ -103,13 +103,13 @@ const components = {
 };
 
 const fonts = {
-  heading: `"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  heading: `Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
       "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
       "Helvetica Neue", sans-serif`,
   body: `"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
       "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
       "Helvetica Neue", sans-serif`,
-  mono: `'Space Grotesk', "SF Mono", monospace`,
+  mono: `'Space Grotesk', SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono,monospace`,
 };
 
 const colors = {

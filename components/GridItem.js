@@ -18,7 +18,7 @@ import { Global } from "@emotion/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import { shimmer, toBase64 } from "../libs/Shimmer";
 
-const Tag = ({ children, color }) => (
+export const Tag = ({ children, color }) => (
   <Box
     position="absolute"
     top="10px"
