@@ -31,10 +31,7 @@ const Links = () => (
       <VStack width="33%" alignItems="flex-start">
         <Heading label="Specifics" />
         <FooterLink href={HyperLinks.resume} label="Resume" />
-        <FooterLink
-          href="https://github.com/Mayur57/portfolio-v2"
-          label="Source"
-        />
+        <FooterLink href={HyperLinks.source} label="Source" disabled />
         <FooterLink href="/meta" label="About Website" />
       </VStack>
     </HStack>
@@ -53,17 +50,22 @@ function Footer() {
         align="center"
         justifyContent="center"
         fontSize="0.7rem"
-        fontWeight={500}
-        opacity={useColorModeValue(0.8, 0.6)}
+        fontWeight={700}
         letterSpacing={0.6}
         paddingTop="30px"
         fontFamily="Space Grotesk"
         mt={2}
         pb={12}
       >
-        <Text mt={0.8}>&copy; {new Date().getFullYear()} Mayur Bhoi</Text>
+        <Text mt={0.8} opacity={useColorModeValue(0.8, 0.6)}>
+          &copy; {new Date().getFullYear()} Mayur Bhoi
+        </Text>
         <Box>
-          <Text display="inline-block" verticalAlign="middle">
+          <Text
+            display="inline-block"
+            verticalAlign="middle"
+            opacity={useColorModeValue(0.8, 0.6)}
+          >
             Designed & Built with
           </Text>
           <Box display="inline-block" verticalAlign="middle" px={1.5}>
@@ -80,7 +82,11 @@ function Footer() {
               <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
             </svg>
           </Box>
-          <Text display="inline-block" verticalAlign="middle">
+          <Text
+            display="inline-block"
+            verticalAlign="middle"
+            opacity={useColorModeValue(0.8, 0.6)}
+          >
             in India
           </Text>
         </Box>

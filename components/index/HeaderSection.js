@@ -9,6 +9,7 @@ import {
   VStack,
   HStack,
 } from "@chakra-ui/react";
+import "@fontsource/epilogue";
 import { MdLocationPin } from "react-icons/md";
 import { IconContext } from "react-icons";
 import Section from "../section";
@@ -87,6 +88,8 @@ function HeaderSection() {
           <LinkButton label="LEARN MORE" link="/about" />
         </Box>
       </Section>
+
+      <Box h="50px" />
 
       <Section delay={0.2}>
         <HighlightWidget

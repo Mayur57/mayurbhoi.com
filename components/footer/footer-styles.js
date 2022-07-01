@@ -13,19 +13,20 @@ export const Container = ({ children }) => (
   </Box>
 );
 
-export const FooterLink = ({ href, label }) => (
+export const FooterLink = ({ href, label, disabled }) => (
   <Link href={href} passHref>
     <Text
       color={useColorModeValue("#000000", "#FEF6E5")}
       mb={2}
       fontSize={14}
-      opacity={0.7}
+      opacity={disabled ? 0.3 : 0.7}
       transition="all 200ms ease-in"
-      cursor="pointer"
+      cursor={disabled ? "default" : "pointer"}
+      pointerEvents={disabled ? "none" : "auto"}
       _hover={{
-        opacity: 1,
-        textDecoration: "underline",
-        textUnderlineOffset: 2,
+        opacity: disabled ? 0.3 : 1,
+        textDecoration: disabled ? "none" : "underline",
+        textUnderlineOffset: disabled ? 0 : 2,
       }}
     >
       {label}

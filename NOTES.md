@@ -1,0 +1,1 @@
+- Banner image of an article should be of the aspect ratio 3:1
