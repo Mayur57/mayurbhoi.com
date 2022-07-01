@@ -62,7 +62,7 @@ const Work = ({ post, content, TOC }) => (
         />
         <Box flex={3}>
           <AspectRatio
-            ratio={3}
+            ratio={2}
             width="100%"
             position="relative"
             borderRadius={8}
@@ -70,7 +70,7 @@ const Work = ({ post, content, TOC }) => (
             overflow="hidden"
           >
             <Image
-              src={post.thumbnail ?? "https://via.placeholder.com/300x100"}
+              src={post.banner ?? "https://via.placeholder.com/300x100"}
               priority
               layout="fill"
               display="inline-block"
