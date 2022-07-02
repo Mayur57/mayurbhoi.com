@@ -1,12 +1,5 @@
 /* eslint-disable no-param-reassign */
-import {
-  Box,
-  Container,
-  Text,
-  VStack,
-  Stack,
-  AspectRatio,
-} from "@chakra-ui/react";
+import { Box, Container, Text, Stack, AspectRatio } from "@chakra-ui/react";
 import { Global } from "@emotion/react";
 import { unified } from "unified";
 import rehypeParse from "rehype-parse";
@@ -37,9 +30,9 @@ const TableOfContents = ({ TOC }) => (
     <h3 style={{ marginBottom: 6 }}>Contents</h3>
     <ul>
       {TOC.map(({ id, title }) => (
-        <li key={id}>
+        <div className="toc-list-item" key={id}>
           <a href={`#${id}`}>{title}</a>
-        </li>
+        </div>
       ))}
     </ul>
   </Box>
@@ -52,15 +45,11 @@ const Work = ({ post, content, TOC }) => (
         direction={{ base: "column", md: "row" }}
         flexDir="row"
         spacing={10}
+        maxW="container.lg"
       >
         {/** TODO: I am sure there is a better way to do this */}
-        <Box
-          width="25vw"
-          height={0}
-          flex={{ base: 0, md: 1 }}
-          p={{ base: 0, md: 6 }}
-        />
-        <Box flex={3}>
+        <Box height={0} flex={{ base: 0, md: 1 }} />
+        <Box flex={4}>
           <AspectRatio
             ratio={2}
             width="100%"
@@ -95,12 +84,13 @@ const Work = ({ post, content, TOC }) => (
       </Stack>
       <Stack
         direction={{ base: "column", md: "row" }}
-        spacing={{ base: 0, md: 10 }}
+        spacing={{ base: 0, md: 12 }}
+        mt={{ base: 0, md: 42 }}
       >
         <TableOfContents TOC={TOC} />
-        <VStack align="baseline" flex={3} mt={12}>
+        <Box maxW="container.md">
           <div dangerouslySetInnerHTML={{ __html: content }} />
-        </VStack>
+        </Box>
       </Stack>
       {/** <------ Extract to ShareButton Component ------> */}
       {/* <Tooltip hasArrow label="Copy post link to clipboard">
