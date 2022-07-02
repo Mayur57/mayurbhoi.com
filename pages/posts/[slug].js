@@ -92,6 +92,9 @@ const Work = ({ post, content, TOC }) => (
           <div dangerouslySetInnerHTML={{ __html: content }} />
         </Box>
       </Stack>
+      <Text align="center" py="2.5em" opacity={0.25}>
+        • • •
+      </Text>
       {/** <------ Extract to ShareButton Component ------> */}
       {/* <Tooltip hasArrow label="Copy post link to clipboard">
           <Button
@@ -138,6 +141,9 @@ export const getStaticProps = async ({ params }) => {
             Math.floor(Math.random() * 1000);
           node.properties.id = id;
           TOC.push({ id, title: node.children[0].value });
+        }
+        if (node.tagName === "a") {
+          node.properties.className = "article-link";
         }
       });
     })

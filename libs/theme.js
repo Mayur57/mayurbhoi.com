@@ -25,16 +25,24 @@ const styles = {
       fontSize: 24,
       fontWeight: "bold",
       letterSpacing: -1,
+      marginTop: 4,
     },
     h3: {
       fontSize: 20,
       fontWeight: "bold",
       letterSpacing: -0.6,
     },
-    code: {
-      color: "purple.500",
-      fontFamily: "SF Mono",
+    h4: {
+      fontSize: 18,
+      fontWeight: "bold",
+      letterSpacing: -0.3,
+    },
+    pre: {
+      color: mode("purple.500", "red.300")(props),
+      fontFamily: "'JetBrains Mono', SF Mono, monospace",
       fontSize: 12,
+      wordWrap: "break-word",
+      whiteSpace: "pre-wrap",
     },
     blockquote: {
       fontStyle: "italic",
@@ -42,13 +50,26 @@ const styles = {
       opacity: 0.4,
     },
     li: {
-      listStyle: "none",
+      fontSize: 14,
+      opacity: 0.9,
+      marginLeft: 6,
+      marginY: -2,
+      transition: "all 250ms ease",
+    },
+    ".toc-list-item": {
       fontSize: 12,
-      paddingY: 1,
+      paddingY: 1.5,
       opacity: 0.6,
       transition: "all 250ms ease",
       _hover: {
-        color: "#f00",
+        opacity: 1,
+      },
+    },
+    ".article-link": {
+      color: mode("purple.400", "red.400")(props),
+      transition: "all 250ms ease",
+      _hover: {
+        opacity: 0.6,
       },
     },
   }),
