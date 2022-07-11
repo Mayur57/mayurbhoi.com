@@ -8,12 +8,20 @@ import { visit } from "unist-util-visit";
 import parameterize from "parameterize";
 import moment from "moment";
 import Image from "next/image";
+import remarkGfm from "remark-gfm";
+import ReactMarkdown from "react-markdown";
 
 import Layout from "../../components/layouts/article";
 import markdownToHtml from "../../libs/MDParser";
 import Title from "../../components/title";
 import { getCMSBaseUrl } from "../../libs/functions";
 import { shimmer, toBase64 } from "../../libs/Shimmer";
+import {
+  renderHyperlinks,
+  renderListItem,
+  renderQuotes,
+  renderUnorderedList,
+} from "../../components/ArticleCustomComponents";
 
 const TableOfContents = ({ TOC }) => (
   <Box
@@ -38,7 +46,7 @@ const TableOfContents = ({ TOC }) => (
   </Box>
 );
 
-const Work = ({ post, content, TOC }) => (
+const Work = ({ post, TOC, md }) => (
   <Layout title={post.title}>
     <Container maxW="container.lg" mt={4}>
       <Stack
@@ -89,11 +97,23 @@ const Work = ({ post, content, TOC }) => (
       >
         <TableOfContents TOC={TOC} />
         <Box maxW="container.md">
-          <div dangerouslySetInnerHTML={{ __html: content }} />
+          {/* <div dangerouslySetInnerHTML={{ __html: content }} /> */}
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            className="article"
+            components={{
+              li: renderListItem,
+              ul: renderUnorderedList,
+              blockquote: renderQuotes,
+              a: renderHyperlinks,
+            }}
+          >
+            {md}
+          </ReactMarkdown>
         </Box>
       </Stack>
       <Text align="center" py="2.5em" opacity={0.25}>
-        • • •
+        □ ○ △
       </Text>
       {/** <------ Extract to ShareButton Component ------> */}
       {/* <Tooltip hasArrow label="Copy post link to clipboard">
@@ -109,6 +129,7 @@ const Work = ({ post, content, TOC }) => (
     </Container>
   </Layout>
 );
+
 export default Work;
 
 export const ProductImageStyle = () => (
@@ -127,28 +148,23 @@ export const getStaticProps = async ({ params }) => {
   );
   const TOC = [];
   const result = await res.json();
-  const htmlContent = await markdownToHtml(result.data[0].attributes.body);
-  const content = htmlContent.replace(/\n/g, "<br />");
-  const c = unified()
+  const rawHtmlContent = await markdownToHtml(result.data[0].attributes.body);
+  const mdContent = result.data[0].attributes.body;
+  const htmlContent = unified()
     .use(rehypeParse, {
       fragment: true,
     })
     .use(() => (tree) => {
       visit(tree, "element", (node) => {
         if (node.tagName === "h2") {
-          const id =
-            parameterize(node.children[0].value) +
-            Math.floor(Math.random() * 1000);
+          const id = parameterize(node.children[0].value);
           node.properties.id = id;
           TOC.push({ id, title: node.children[0].value });
-        }
-        if (node.tagName === "a") {
-          node.properties.className = "article-link";
         }
       });
     })
     .use(rehypeStringify)
-    .processSync(content)
+    .processSync(rawHtmlContent)
     .toString();
   result.data[0].attributes.uploaded = moment(
     result.data[0].attributes.uploaded
@@ -156,7 +172,8 @@ export const getStaticProps = async ({ params }) => {
   return {
     props: {
       post: result.data[0].attributes,
-      content: c,
+      html: htmlContent,
+      md: mdContent,
       TOC,
     },
     revalidate: 7200,

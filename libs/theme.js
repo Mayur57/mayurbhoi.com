@@ -37,24 +37,28 @@ const styles = {
       fontWeight: "bold",
       letterSpacing: -0.3,
     },
+    code: {
+      color: mode("purple.600", "red.300")(props),
+      fontFamily: "'JetBrains Mono', SF Mono, monospace",
+      fontSize: 12,
+      padding: 1,
+      borderRadius: 4,
+      backgroundColor: mode("#f2f2f2", "#111")(props),
+    },
     pre: {
-      color: mode("purple.500", "red.300")(props),
+      color: mode("purple.600", "red.300")(props),
       fontFamily: "'JetBrains Mono', SF Mono, monospace",
       fontSize: 12,
       wordWrap: "break-word",
       whiteSpace: "pre-wrap",
+      borderRadius: 4,
+      padding: 2,
+      backgroundColor: mode("#f2f2f2", "#111")(props),
     },
     blockquote: {
       fontStyle: "italic",
       fontSize: 26,
       opacity: 0.4,
-    },
-    li: {
-      fontSize: 14,
-      opacity: 0.9,
-      marginLeft: 6,
-      marginY: -2,
-      transition: "all 250ms ease",
     },
     ".toc-list-item": {
       fontSize: 12,
@@ -71,6 +75,9 @@ const styles = {
       _hover: {
         opacity: 0.6,
       },
+    },
+    ".article": {
+      whiteSpace: "pre-wrap",
     },
   }),
 };

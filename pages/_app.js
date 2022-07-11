@@ -20,6 +20,7 @@ const GlobalStyles = css`
 
   html {
     scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
   }
 `;
 

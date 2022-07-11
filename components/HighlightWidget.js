@@ -53,13 +53,9 @@ export default function HighlightWidget({
         <VStack
           alignItems="flex-start"
           transition="all 200ms ease"
-          _groupHover={{ color: useColorModeValue("purple", "red.300") }}
+          _groupHover={{ color: useColorModeValue("purple.500", "red.400") }}
         >
-          <Text
-            fontSize="1.65em"
-            fontWeight="900"
-            fontFamily="Epilogue, sans-serif"
-          >
+          <Text fontSize="1.8em" fontWeight="800" letterSpacing={-1.25}>
             {title}
           </Text>
           <Text opacity={0.7} maxW={400}>

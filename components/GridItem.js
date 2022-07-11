@@ -96,7 +96,13 @@ export const PostsGridItem = ({
           </AspectRatio>
           <Tag color={tagColors(tag)}>{tag}</Tag>
           <LinkOverlay href={`/projects/${id}`}>
-            <Text fontWeight="600" fontSize="20" mt={1.5} lineHeight={1.2}>
+            <Text
+              fontWeight="700"
+              fontSize="24"
+              mt={1.5}
+              lineHeight={1.2}
+              letterSpacing={-1}
+            >
               {title}
             </Text>
           </LinkOverlay>
@@ -105,6 +111,7 @@ export const PostsGridItem = ({
             opacity={0.5}
             letterSpacing="0.6px"
             fontSize={11}
+            my={2}
           >
             {date} • {readingTime}
           </Heading>
