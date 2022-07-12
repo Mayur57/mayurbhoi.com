@@ -32,7 +32,7 @@ const Links = () => (
         <Heading label="Specifics" />
         <FooterLink href={HyperLinks.resume} label="Resume" />
         <FooterLink href={HyperLinks.source} label="Source" disabled />
-        <FooterLink href="/meta" label="About Website" />
+        <FooterLink href="/meta" label="About Website" disabled />
       </VStack>
     </HStack>
   </Container>

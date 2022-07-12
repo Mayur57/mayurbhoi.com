@@ -23,6 +23,7 @@ export const FooterLink = ({ href, label, disabled }) => (
       transition="all 200ms ease-in"
       cursor={disabled ? "default" : "pointer"}
       pointerEvents={disabled ? "none" : "auto"}
+      userSelect={disabled ? "none" : "auto"}
       _hover={{
         opacity: disabled ? 0.3 : 1,
         textDecoration: disabled ? "none" : "underline",
