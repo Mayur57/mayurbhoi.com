@@ -60,17 +60,22 @@ const About = () => (
       <Box maxWidth="container.md" justifyItems="center">
         <Section delay={0.1}>
           <p>
-            Hello there!
-
-            I’m Mayur Bhoi. I’m a designer and software tinkerer. I have a passion for writing intricately designed software that is reliable, efficient, and user-friendly.
-
+            <strong>Hello there!</strong>
+            <br />
+            <br />
+            I&apos;m Mayur Bhoi. I&apos;m a designer and software tinkerer. I have a passion for writing intricately designed software that is reliable, efficient, and user-friendly.
+            <br />
+            <br />
             I have been into development for almost 5 years. I started out as an App Developer to write and publish several mobile apps, circa 2017. Simultaneously, I also pursued Graphic Design as a hobby. A couple of years later, I pivoted into Server Engineering designing and writing servers for my hobby projects.
-
+            <br />
+            <br />
             Currently, I work on end-to-end full stack applications; leveraging both of my hobbies to design beautiful user interfaces, as well as, write robust backend systems. I also actively look for new and exciting technologies to explore and learn; presently, learning the AWS Platform and Next.js.
-
-            I currently write reliable software at NCR Corporation as Software Engineer I for the Digital Banking unit. I also have quite a few hobby projects that you can take a look at *here*.
-
-            I am an open source advocate and actively try to contribute to the open source community. OSS FTW!
+            <br />
+            <br />
+            I currently write reliable software at <strong>NCR Corporation</strong> as Software Engineer I for the Digital Banking unit. I also have quite a few hobby projects that you can take a look at <a href="/projects">here</a>.
+            <br />
+            <br />
+            I am an open source advocate and actively try to contribute to the open source community. <strong>OSS FTW!</strong>
           </p>
         </Section>
         {/* <Section delay={0.2}>
