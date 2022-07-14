@@ -72,7 +72,7 @@ const About = () => (
             Currently, I work on end-to-end full stack applications; leveraging both of my hobbies to design beautiful user interfaces, as well as, write robust backend systems. I also actively look for new and exciting technologies to explore and learn; presently, learning the AWS Platform and Next.js.
             <br />
             <br />
-            I currently write reliable software at <strong>NCR Corporation</strong> as Software Engineer I for the Digital Banking unit. I also have quite a few hobby projects that you can take a look at <a href="/projects">here</a>.
+            I currently write reliable software at <strong>NCR Corporation</strong> as Software Engineer I for the Digital Banking unit. I also have quite a few hobby projects that you can take a look at <Link href='/projects' passHref>here</Link>.
             <br />
             <br />
             I am an open source advocate and actively try to contribute to the open source community. <strong>OSS FTW!</strong>
