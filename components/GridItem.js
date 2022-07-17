@@ -111,7 +111,7 @@ export const PostsGridItem = ({
             opacity={0.5}
             letterSpacing="0.6px"
             fontSize={11}
-            my={2}
+            my={1}
           >
             {date} • {readingTime}
           </Heading>
@@ -130,7 +130,7 @@ export const WorkGridItem = ({ children, id, title, thumbnail }) => (
       <LinkBox cursor="pointer">
         <AspectRatio
           position="relative"
-          ratio={1.67}
+          ratio={5 / 3}
           transition="all 250ms ease"
           borderRadius={40}
           mb={4}
