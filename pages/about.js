@@ -16,6 +16,7 @@ import { experience } from "../data/experience";
 import Section from "../components/section";
 import LinkButton from "../components/linkButton";
 import { Links } from "../data/links";
+import Headshot from "../components/Headshot";
 
 const Company = styled.h3`
   & {
@@ -59,39 +60,46 @@ const About = () => (
       <Title>Experience &amp; Background</Title>
       <Box maxWidth="container.md" justifyItems="center">
         <Section delay={0.1}>
+          <Box maxWidth="container.md" py="3em" align="center">
+            <Headshot />
+          </Box>
+        </Section>
+        <Section delay={0.2}>
           <p>
             <strong>Hello there!</strong>
             <br />
             <br />
-            I&apos;m Mayur Bhoi. I&apos;m a designer and software tinkerer. I
-            have a passion for writing intricately designed software that is
-            reliable, efficient, and user-friendly.
+            I&apos;m Mayur Bhoi. I&apos;m a designer, software tinkerer, and a{" "}
+            <strong>Full Stack Developer</strong> by profession. I have a
+            passion for writing intricately designed software that is reliable,
+            efficient, and user-friendly. I am generally find me busy building
+            my projects, cooking food, and making coffee.
             <br />
-            <br />
-            I have been into development for almost 5 years. I started out as an
-            App Developer to write and publish several mobile apps, circa 2017.
-            Simultaneously, I also pursued Graphic Design as a hobby. A couple
-            of years later, I pivoted into Server Engineering designing and
-            writing servers for my hobby projects.
+            <br />I have been into writing software for almost 5 years. I
+            started out as an <strong>App Developer</strong> writing and
+            publishing several mobile apps around 2017. Simultaneously, I also
+            pursued <strong>Graphic Design</strong> as a hobby. A couple of
+            years later, I pivoted into <strong>Server Engineering</strong> to
+            design, write and maintain servers for my hobby projects and more.
             <br />
             <br />
             Currently, I work on end-to-end full stack applications; leveraging
             both of my hobbies to design beautiful user interfaces, as well as,
             write robust backend systems. I also actively look for new and
-            exciting technologies to explore and learn; presently, learning the
-            AWS Platform and Next.js.
+            exciting technologies to explore and learn; presently, learning the{" "}
+            <em>AWS Platform and Next.js</em>.
             <br />
             <br />I currently write reliable software at{" "}
-            <strong>NCR Corporation</strong> as Software Engineer I for the
-            Digital Banking unit. I also have quite a few hobby projects that
-            you can take a look at{" "}
+            <strong>NCR Corporation</strong> as{" "}
+            <strong>Software Engineer I</strong> for the Digital Banking Unit. I
+            also have quite a few hobby projects that you can take a look at{" "}
             <Link href="/projects" passHref>
               here
             </Link>
             .
             <br />
             <br />I am an open source advocate and actively try to contribute to
-            the open source community. <strong>OSS FTW!</strong>
+            the open source community.
           </p>
         </Section>
         {/* <Section delay={0.2}>
@@ -109,7 +117,7 @@ const About = () => (
             </p>
           </Box>
         </Section> */}
-        <Section delay={0.3}>
+        <Section delay={0.3} pt="1em">
           <Heading as="h2" fontSize={28} letterSpacing={-1}>
             Experience
           </Heading>
@@ -152,7 +160,7 @@ const About = () => (
               );
             })}
           </SimpleGrid>
-          <LinkButton link={Links.resume} label="Resume" />
+          <LinkButton link={Links.resume} label="Resume" py={12} />
         </Section>
       </Box>
     </Container>

@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react-hooks/rules-of-hooks */
 import {
   Box,
@@ -16,8 +17,8 @@ const anim = keyframes`
   transform: skew(-2deg);
 }`;
 
-const LinkButton = ({ label = "undefined", link, bg }) => (
-  <Box align="center" mt="30px" role="group">
+const LinkButton = ({ label = "undefined", link, bg, ...props }) => (
+  <Box align="center" mt="30px" role="group" {...props}>
     <NextLink href={link} passHref>
       <Button variant="new-tab-action" borderColor="transparent" px={2}>
         <HStack

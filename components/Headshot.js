@@ -2,7 +2,7 @@ import { Box, useColorModeValue } from "@chakra-ui/react";
 import Image from "next/image";
 import { shimmer, toBase64 } from "../libs/Shimmer";
 
-export default function Headshot() {
+export default function Headshot({ src = "/images/me.webp" }) {
   return (
     <Box
       height={195}
@@ -26,7 +26,7 @@ export default function Headshot() {
         priority
         layout="fill"
         display="inline-block"
-        src="/images/me.webp"
+        src={src}
         alt="Profile Picture"
         placeholder="blur"
         blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}
