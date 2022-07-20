@@ -1,39 +1,27 @@
+![banner.png](https://i.ibb.co/2W7M0Td/card.png)
 # Mosaic
 
 ![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=portfolio-v2-plum-two)
 
-Mosaic is a super-fast, no-nonsense, and intricately desgined portfolio website built from scratch for performance. It is a complete redo of the previous portfolio [website](https://old.mayurbhoi.com).
+Mosaic is a super-fast, no-nonsense, and intricately desgined portfolio website built from scratch for performance. A complete rewrite of the previous bare HTML/CSS [portfolio website](https://old.mayurbhoi.com) to Next.js.
 
-**//TODO:** Write documentation and dependencies/frameworks used.
+**Why name it Mosaic?**
+A person's portfolio is a culmination of several different experiences and their work. A mosaic of smaller bits, and this, is my **_mosaic_**.
 
-## Stack & Frameworks
+## TODO
 
-- Node
-- Next.js
-- Chakra UI
+1. Write about environment variables and other important development details (frameworks, packages, CMS) used in README
+2. Document colors for the light and dark color themes in README
+3. Define brand colors in a single file and use it
+4. Add support for Cloudinary and serve images via the CDN
+5. Split multiple components defined in a single file to their own files
+6. Clean up code and remove redundant, unused code
 
-## TODOs
+# Contribution
+Fork the repository and open a pull request with your suggested changes. Please include what you have changed so it can be reviewed easily. Refer to **BRANCHES** Markdown file to get help on the repository structure and how the branches work.
 
-- [ ] Add feature image to the website, readme and project repository
-- [ ] Add traffic trackers
-- [ ] Add colors section to the readme
-
-## Repository Structure and Branches
-
-Pushing features and changes follows a predefined procedure.
-
-- `dev` - Active development happens in the branch and all the running changes are pushed to this branch. Consider this branch as the nightly builds. **Note: Builds of this branch may/may not pass tests, compile or maybe highly unstable**
-
-- `version` - Aggregated commits are merged to this branch and represents a working version of the project. Represents a sub-version change (v1.1.2 → v1.1.3). No direct commits are to be made to this branch! **Note: Builds of this branch may/may not pass tests and work as expected but may compile just fine.**
-
-- `master` - Release branch. Includes the code that is currently live in production and is tested fully. Represents a sub-version change (v1.1.2 → v1.2.0). No direct commits are to be made to this branch! **Note: Builds of this branch pass all the tests and are live. DO NOT MAKE ANY CHANGES DIRECTLY!**
-
-- `hotfix-<issue>` (Optional) - Temporary branch that contains fixes to urgent issues and can be issued as a patch. Can be directly merged into master if the build passes all the tests. **Note: Delete the branch after the patch has been merged.**
-
-## References
-
-- devaslife
-  - Website: <https://www.craftz.dog/>
-  - YouTube: <https://www.youtube.com/devaslife>
+# Use
+The codebase is open for personal use. If you wish to use it for your own usecase, fork this repository and clone it to your machine. Please include credits to my name or GitHub username if you don't significantly change the look and feel of the website.
+**Example**: _"Designed by Mayur Bhoi [@mayur57](https://github.com/mayur57)"_
 
 Support Free and Open Source Software!

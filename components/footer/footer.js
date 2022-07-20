@@ -31,7 +31,7 @@ const Links = () => (
       <VStack width="33%" alignItems="flex-start">
         <Heading label="Specifics" />
         <FooterLink href={HyperLinks.resume} label="Resume" />
-        <FooterLink href={HyperLinks.source} label="Source" disabled />
+        <FooterLink href={HyperLinks.source} label="Source" />
         <FooterLink href="/meta" label="About Website" disabled />
       </VStack>
     </HStack>
