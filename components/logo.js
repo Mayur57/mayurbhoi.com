@@ -13,8 +13,10 @@ const Logo = ({ span }) => {
           width={span}
           mr={6}
           mt={1.5}
-          transition="500ms"
+          transition="250ms ease all"
           _hover={{ opacity: 0.3, transition: "250ms ease all" }}
+          cursor='pointer'
+          filter="grayscale(1)"
         >
           <Image src={logoImg} layout="fill" alt="logo" />
         </Box>

@@ -6,7 +6,7 @@ import Footer from "../footer/footer.js";
 
 function Main({ children, router }) {
   return (
-    <Box transition="all 2s ease" bg="#FFFFFF" _dark={{ bg: "#1D1D1F" }}>
+    <Box transition="all 2s ease" bg="#FFFFFF" _dark={{ bg: "#000" }}>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Mayur Bhoi | Software Developer</title>

@@ -98,7 +98,7 @@ export const PostsGridItem = ({
           <LinkOverlay href={`/projects/${id}`}>
             <Text
               fontWeight="700"
-              fontSize="24"
+              fontSize={24}
               mt={1.5}
               lineHeight={1.2}
               letterSpacing={-1}
@@ -152,7 +152,7 @@ export const WorkGridItem = ({ children, id, title, thumbnail }) => (
           />
         </AspectRatio>
         <LinkOverlay href={`/projects/${id}`}>
-          <Text fontWeight="600" fontSize="20" mt={1.5} lineHeight={1.2}>
+          <Text as="h4" fontWeight="700" fontSize="1.5em" mt={1.5}>
             {title}
           </Text>
         </LinkOverlay>
@@ -191,7 +191,7 @@ export const ProjectsGridItemIndex = ({
           className="project-item-thumbnail"
           placeholder="blur"
         />
-        <Text fontWeight="600" fontSize="20" mt={1}>
+        <Text fontWeight="600" fontSize="20" mt={1} as="h2">
           {title}
         </Text>
         <Text fontSize="14" opacity={0.7}>
@@ -250,11 +250,6 @@ export const ProjectsGridItemIndex = ({
 export const GridItemStyle = () => (
   <Global
     styles={`
-      .grid-item-thumbnail {
-        border-top-left-radius: 12px;
-        border-top-right-radius: 12px;
-      }
-      
       .project-item-thumbnail {
         border-radius: 8px;
       }

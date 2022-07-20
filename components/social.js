@@ -30,7 +30,7 @@ const SocialIcon = ({ icons, link, size = 16 }) => (
               transform: "translate(0px, -2px)",
             }}
             bgColor="transparent"
-            color={useColorModeValue("#000", "#FEF6E5")}
+            color={useColorModeValue("#000", "#EEE")}
             opacity={0.5}
             transition="250ms"
           >

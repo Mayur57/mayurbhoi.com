@@ -27,14 +27,14 @@ const LinkButton = ({ label = "undefined", link, bg, ...props }) => (
           transition="all 200ms ease"
           _groupHover={{ opacity: 1, transition: "all 200ms ease" }}
         >
-          <Text top="0px" left="0px">
+          <Text top="0px" left="0px" color={useColorModeValue("#121212", "#BBB")}>
             {label}
           </Text>
           <FiArrowRight />
         </HStack>
         <Box
           pos="absolute"
-          bgColor={bg ?? useColorModeValue("#FFFFFF", "#1D1D1F")}
+          bgColor={bg ?? useColorModeValue("#FFFFFF", "#000")}
           zIndex={1}
           height="100%"
           width="100%"

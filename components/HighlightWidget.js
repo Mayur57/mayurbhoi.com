@@ -55,7 +55,7 @@ export default function HighlightWidget({
           transition="all 200ms ease"
           _groupHover={{ color: useColorModeValue("purple.500", "red.400") }}
         >
-          <Text fontSize="1.8em" fontWeight="800" letterSpacing={-1.25}>
+          <Text as="h1" fontSize="1.8em" fontWeight="800" letterSpacing={-1.25}>
             {title}
           </Text>
           <Text opacity={0.7} maxW={400}>

@@ -50,7 +50,7 @@ function Footer() {
         align="center"
         justifyContent="center"
         fontSize="0.7rem"
-        fontWeight={400}
+        fontWeight={500}
         letterSpacing={0.1}
         paddingTop="30px"
         mt={2}

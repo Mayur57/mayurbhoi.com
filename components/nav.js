@@ -33,7 +33,7 @@ const LogResume = () => {
 
 function LinkItem({ href, path, label }) {
   const active = path === href;
-  const inactiveColor = useColorModeValue("gray200", "#FEF6E5");
+  const inactiveColor = useColorModeValue("gray200", "#CCC");
   const activeBackgroundColor = useColorModeValue(
     "rgba(121, 96, 206, 0.3)",
     "#FF7B8230"
@@ -86,7 +86,7 @@ function ResumeLink({ link, path, isMenu }) {
             color: useColorModeValue("purple", "#FE5B5E"),
             transition: "250ms ease-in-out",
           }}
-          color={useColorModeValue("gray200", "#FEF6E5")}
+          color={useColorModeValue("gray200", "#CCC")}
         >
           Resume
         </Link>

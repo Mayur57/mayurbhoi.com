@@ -16,7 +16,7 @@ export const Container = ({ children }) => (
 export const FooterLink = ({ href, label, disabled }) => (
   <Link href={href} passHref>
     <Text
-      color={useColorModeValue("#000000", "#FEF6E5")}
+      color={useColorModeValue("#000000", "#F5F5F5")}
       mb={2}
       fontSize={14}
       opacity={disabled ? 0.3 : 0.7}
@@ -39,7 +39,7 @@ export const Heading = ({ label }) => (
   <Text
     fontSize={14}
     textTransform="uppercase"
-    color={useColorModeValue("#303030", "#FEF6E5")}
+    color={useColorModeValue("#303030", "#EEE")}
     letterSpacing={1.2}
     fontWeight={500}
     mb={1}

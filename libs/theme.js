@@ -15,8 +15,8 @@ const breakpoints = createBreakpoints({
 const styles = {
   global: (props) => ({
     body: {
-      bg: mode("#FFFFFF", "#1D1D1F")(props),
-      color: mode(textColorLight, textColorDark)(props),
+      bg: mode("#FFFFFF", "#000")(props),
+      color: mode("#111", "#FFF")(props),
     },
     h1: {
       fontSize: 42,
@@ -39,7 +39,7 @@ const styles = {
     },
     code: {
       color: mode("purple.600", "red.300")(props),
-      fontFamily: "'JetBrains Mono', SF Mono, monospace",
+      fontFamily: "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace",
       fontSize: 12,
       padding: 1,
       borderRadius: 4,
@@ -47,7 +47,7 @@ const styles = {
     },
     pre: {
       color: mode("purple.600", "red.300")(props),
-      fontFamily: "'JetBrains Mono', SF Mono, monospace",
+      fontFamily: "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace",
       fontSize: 12,
       wordWrap: "break-word",
       whiteSpace: "pre-wrap",
@@ -60,6 +60,12 @@ const styles = {
       fontSize: 26,
       opacity: 0.4,
     },
+    p: {
+      color: mode(textColorLight, "#BBB")(props)
+    },
+    strong: {
+      color: mode("#121212", "#DDD")(props)
+    },
     ".toc-list-item": {
       fontSize: 12,
       paddingY: 1.5,
@@ -70,7 +76,7 @@ const styles = {
       },
     },
     ".article-link": {
-      color: mode("purple.400", "red.400")(props),
+      color: mode("purple.400", "red.300")(props),
       transition: "all 250ms ease",
       _hover: {
         opacity: 0.6,
@@ -147,7 +153,7 @@ const colors = {
 const config = {
   initialColorMode: "light",
   useSystemColorMode: false,
-  disableTransitionOnChange: true,
+  disableTransitionOnChange: false,
 };
 
 const theme = extendTheme({
