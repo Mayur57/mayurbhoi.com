@@ -35,7 +35,7 @@ export default class Document extends NextDocument {
           <meta name="twitter:creator" content="@mayurbhoii" />
           <meta name="twitter:title" content={TITLE} />
           <meta name="twitter:description" content={DESCRIPTION} />
-          <meta name="twitter:image" content={CARD_IMAGE_URL} />
+          <meta name="twitter:image" content="https://i.ibb.co/2W7M0Td/card.png" />
 
           {/* Favicons for popular platforms and browsers */}
           <link
