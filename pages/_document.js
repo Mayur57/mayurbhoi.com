@@ -6,7 +6,7 @@ import theme from "../libs/theme";
 import { GTM_ID } from "../libs/trackers";
 
 const TITLE = "Mayur Bhoi";
-const DESCRIPTION = "I writing efficient and pragmatic software.";
+const DESCRIPTION = "software engineer ✕ product designer";
 const CARD_IMAGE_URL = "https://i.ibb.co/2W7M0Td/card.png";
 export default class Document extends NextDocument {
   render() {
