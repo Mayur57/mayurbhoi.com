@@ -2,7 +2,7 @@ export const experience = [
   {
     company: "Authenticating.com",
     position: "SWE Intern - Full Stack",
-    duration: "Feb 2022 - Present",
+    duration: "Feb 2022 - June 2022",
     link: "https://authenticating.com/",
     experiencePoints: [
       "This is line one. This is line one. This is line one. This is line one. This is line one. This is line one. This is line one. This is line one. This is line one. This is line one.",
