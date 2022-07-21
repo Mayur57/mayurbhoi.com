@@ -72,7 +72,7 @@ const About = () => (
             I&apos;m Mayur Bhoi. I&apos;m a designer, software tinkerer, and a{" "}
             <strong>Full Stack Developer</strong> by profession. I have a
             passion for writing intricately designed software that is reliable,
-            efficient, and user-friendly. I am generally find me busy building
+            efficient, and user-friendly. You willl generally find me busy building
             my projects, cooking food, and making coffee.
             <br />
             <br />I have been into writing software for almost 5 years. I
