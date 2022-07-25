@@ -1,8 +1,9 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import { Box, useColorModeValue } from "@chakra-ui/react";
 import Image from "next/image";
 import { shimmer, toBase64 } from "../libs/Shimmer";
 
-export default function Headshot({ src = "/images/me.webp" }) {
+export default function Headshot({ src = "/images/me.webp", ...props }) {
   return (
     <Box
       height={195}
@@ -16,11 +17,11 @@ export default function Headshot({ src = "/images/me.webp" }) {
       boxShadow="lg"
       transition="all 250ms"
       _hover={{
-        transform: "scale(1.05)",
         boxShadow: "xl",
         transition: "250ms",
         borderColor: useColorModeValue("purple.300", "red.400"),
       }}
+      {...props}
     >
       <Image
         priority

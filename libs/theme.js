@@ -3,7 +3,7 @@ import { mode, createBreakpoints } from "@chakra-ui/theme-tools";
 import BrandColors from "./ColorHelper";
 import "@fontsource/inter";
 
-const { textColorDark, textColorLight } = BrandColors;
+const { textColorLight } = BrandColors;
 
 const breakpoints = createBreakpoints({
   sm: "40em",
@@ -39,7 +39,8 @@ const styles = {
     },
     code: {
       color: mode("purple.600", "red.300")(props),
-      fontFamily: "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace",
+      fontFamily:
+        "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace",
       fontSize: 12,
       padding: 1,
       borderRadius: 4,
@@ -47,7 +48,8 @@ const styles = {
     },
     pre: {
       color: mode("purple.600", "red.300")(props),
-      fontFamily: "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace",
+      fontFamily:
+        "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace",
       fontSize: 12,
       wordWrap: "break-word",
       whiteSpace: "pre-wrap",
@@ -61,10 +63,10 @@ const styles = {
       opacity: 0.4,
     },
     p: {
-      color: mode(textColorLight, "#BBB")(props)
+      color: mode(textColorLight, "#BBB")(props),
     },
     strong: {
-      color: mode("#121212", "#DDD")(props)
+      color: mode("#121212", "#DDD")(props),
     },
     ".toc-list-item": {
       fontSize: 12,

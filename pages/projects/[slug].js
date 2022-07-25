@@ -65,21 +65,15 @@ const Work = ({ project, content }) => (
             Project
           </Heading>
           <Text
+            as="h1"
             fontWeight={800}
             letterSpacing={-2}
             fontSize={48}
             lineHeight={1.1}
-            marginTop={4}
+            marginY={4}
           >
             {project.title}
           </Text>
-          <Heading variant="pronouns" fontWeight={500} fontSize={13} mt={12}>
-            Description
-          </Heading>
-          <p>{project.description}</p>
-          <Heading variant="pronouns" fontWeight={500} fontSize={13} mt={12}>
-            Description
-          </Heading>
           <p>{project.description}</p>
         </Box>
         <Box flex={3}>

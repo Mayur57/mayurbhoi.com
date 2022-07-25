@@ -1,4 +1,5 @@
 ![banner.png](https://i.ibb.co/2W7M0Td/card.png)
+
 # Mosaic
 
 ![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=portfolio-v2-plum-two)
@@ -17,10 +18,12 @@ A person's portfolio is a culmination of several different experiences and their
 5. Split multiple components defined in a single file to their own files
 6. Clean up code and remove redundant, unused code
 
-# Contribution
+## Contribution
+
 Fork the repository and open a pull request with your suggested changes. Please include what you have changed so it can be reviewed easily. Refer to **BRANCHES** Markdown file to get help on the repository structure and how the branches work.
 
-# Use
+## Use
+
 The codebase is open for personal use. If you wish to use it for your own usecase, fork this repository and clone it to your machine. Please include credits to my name or GitHub username if you don't significantly change the look and feel of the website.
 **Example**: _"Designed by Mayur Bhoi [@mayur57](https://github.com/mayur57)"_
 

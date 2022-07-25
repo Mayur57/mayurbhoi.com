@@ -55,6 +55,8 @@ function Footer() {
         paddingTop="30px"
         mt={2}
         pb={12}
+        userSelect="none"
+        pointerEvents="none"
       >
         <Text mt={0.8} opacity={useColorModeValue(0.8, 0.6)}>
           &copy; {new Date().getFullYear()} Mayur Bhoi
