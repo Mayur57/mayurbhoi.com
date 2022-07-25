@@ -15,7 +15,7 @@ const Logo = ({ span }) => {
           mt={1.5}
           transition="250ms ease all"
           _hover={{ opacity: 0.3, transition: "250ms ease all" }}
-          cursor='pointer'
+          cursor="pointer"
           filter="grayscale(1)"
         >
           <Image src={logoImg} layout="fill" alt="logo" />
