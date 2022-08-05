@@ -109,6 +109,8 @@ function Navbar(props) {
       bg={useColorModeValue("#ffffff88", "#20202020")}
       css={{ backdropFilter: "blur(20px) saturate(150%)" }}
       zIndex={5}
+      borderBottom="1px"
+      borderBottomColor={useColorModeValue("#00000000", "#ffffff20")}
       {...props}
     >
       <Container

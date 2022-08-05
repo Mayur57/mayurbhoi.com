@@ -61,7 +61,7 @@ const About = () => (
       <Box maxWidth="container.md" justifyItems="center">
         <Section delay={0.1}>
           <Box maxWidth="container.md" py="3em" align="center">
-            <Headshot />
+            <Headshot src="/images/me.png" />
           </Box>
         </Section>
         <Section delay={0.2}>

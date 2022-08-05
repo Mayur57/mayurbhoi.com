@@ -1,5 +1,18 @@
 export const experience = [
   {
+    company: "NCR Corporation",
+    position: "SW Engineer I",
+    duration: "July 2022 - Present",
+    link: "https://ncr.com/",
+    experiencePoints: [
+      "This is line one. This is line one. This is line one. This is line one. This is line one. This is line one. This is line one. This is line one. This is line one. This is line one.",
+      "This is line two.",
+      "This is line three.",
+      "This is line four.",
+      "This is line five.",
+    ],
+  },
+  {
     company: "Authenticating.com",
     position: "SWE Intern - Full Stack",
     duration: "Feb 2022 - June 2022",

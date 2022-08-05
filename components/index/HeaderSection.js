@@ -38,7 +38,7 @@ function HeaderSection() {
           textAlign="center"
         >
           <Box mb={2} ml={{ md: 6 }} align="center">
-            <Headshot />
+            <Headshot animate src="/images/me2.png" />
           </Box>
           <Heading
             as="h1"

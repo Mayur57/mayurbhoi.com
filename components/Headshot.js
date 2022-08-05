@@ -1,9 +1,14 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react/jsx-props-no-spreading */
 import { Box, useColorModeValue } from "@chakra-ui/react";
 import Image from "next/image";
 import { shimmer, toBase64 } from "../libs/Shimmer";
 
-export default function Headshot({ src = "/images/me.webp", ...props }) {
+export default function Headshot({
+  src = "/images/me.webp",
+  animate = false,
+  ...props
+}) {
   return (
     <Box
       height={195}
@@ -15,11 +20,16 @@ export default function Headshot({ src = "/images/me.webp", ...props }) {
       borderWidth={8}
       borderStyle="solid"
       boxShadow="lg"
+      overflow="hidden"
       transition="all 250ms"
       _hover={{
-        boxShadow: "xl",
+        boxShadow: animate ? "xl" : "lg",
         transition: "250ms",
-        borderColor: useColorModeValue("purple.300", "red.400"),
+        transform: animate ? "scale(1.1)" : null,
+        borderWidth: animate ? 4 : null,
+        borderColor: animate
+          ? useColorModeValue("purple.300", "red.400")
+          : null,
       }}
       {...props}
     >
