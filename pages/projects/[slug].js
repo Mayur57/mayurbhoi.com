@@ -1,55 +1,20 @@
-import {
-  Box,
-  Container,
-  Link,
-  List,
-  ListItem,
-  Text,
-  Heading,
-  Stack,
-  HStack,
-  Grid,
-  GridItem,
-  AspectRatio,
-} from "@chakra-ui/react";
-import { ExternalLinkIcon } from "@chakra-ui/icons";
+/* eslint-disable react/jsx-no-useless-fragment */
+import { Box, Container, Link, Text, Heading, Stack } from "@chakra-ui/react";
 import { Global } from "@emotion/react";
-import { RiErrorWarningLine } from "react-icons/ri";
-import Image from "next/image";
-import { Meta } from "../../components/work";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+
 import Layout from "../../components/layouts/article";
-import { toBase64, shimmer } from "../../libs/Shimmer";
-import markdownToHtml from "../../libs/MDParser";
 import { getCMSBaseUrl } from "../../libs/functions";
+import {
+  renderHeadingType6,
+  renderHyperlinks,
+  renderParagraph,
+} from "../../components/ArticleCustomComponents";
 
-const SectionTitle = ({ children }) => (
-  <Heading variant="pronouns" fontWeight={500} fontSize={13} mt={4} mb={2}>
-    {children}
-  </Heading>
-);
-
-const DeveloperWarning = () => (
-  <Box
-    backgroundColor="red.100"
-    fontSize={12}
-    color="red.500"
-    borderRadius="lg"
-    px={4}
-    py={4}
-  >
-    <HStack>
-      <RiErrorWarningLine size={14} />
-      <Text fontSize={12} color="gray.600">
-        Page content not final
-      </Text>
-    </HStack>
-  </Box>
-);
-
-const Work = ({ project, content }) => (
+const Work = ({ project }) => (
   <Layout title={project.title}>
     <Container maxW="container.lg" mt={4}>
-      <DeveloperWarning />
       <Stack
         display="flex"
         direction={{ sm: "column", md: "row", base: "column" }}
@@ -62,7 +27,7 @@ const Work = ({ project, content }) => (
             mt={4}
             opacity={0.6}
           >
-            Project
+            {project.slug}
           </Heading>
           <Text
             as="h1"
@@ -74,44 +39,48 @@ const Work = ({ project, content }) => (
           >
             {project.title}
           </Text>
-          <p>{project.description}</p>
+          <Text style={{ fontSize: "0.9em", opacity: 0.7 }}>
+            {project.description}
+          </Text>
         </Box>
-        <Box flex={3}>
-          <SectionTitle>About</SectionTitle>
-          <p>
-            In publishing and graphic design, Lorem ipsum is a placeholder text
-            commonly used to demonstrate the visual form of a document or a
-            typeface without relying on meaningful content. Lorem ipsum may be
-            used as a placeholder before the final copy is available.
-          </p>
-          <SectionTitle>Stack</SectionTitle>
-          <p>
-            In publishing and graphic design, Lorem ipsum is a placeholder text
-            commonly used to demonstrate the visual form of a document or a
-            typeface without relying on meaningful content. Lorem ipsum may be
-            used as a placeholder before the final copy is available.
-          </p>
-          <SectionTitle>Learnings</SectionTitle>
-          <p>
-            In publishing and graphic design, Lorem ipsum is a placeholder text
-            commonly used to demonstrate the visual form of a document or a
-            typeface without relying on meaningful content. Lorem ipsum may be
-            used as a placeholder before the final copy is available.
-          </p>
-          <div className="kn" dangerouslySetInnerHTML={{ __html: content }} />
-          <SectionTitle>Links</SectionTitle>
-          <List ml={4} my={4}>
-            <ListItem>
-              <Meta>Website</Meta>
-              <Link href="/">
-                https://dummy.website.com
-                <ExternalLinkIcon ml="8px" mb="2px" fontSize={12} />
-              </Link>
-            </ListItem>
-          </List>
+        <Box flex={3} pt={4}>
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            components={{
+              h6: renderHeadingType6,
+              p: renderParagraph,
+              a: renderHyperlinks,
+            }}
+          >
+            {project.body}
+          </ReactMarkdown>
+          <Text
+            style={{
+              fontWeight: 500,
+              letterSpacing: "0.19em",
+              lineHeight: "25px",
+              fontSize: 12,
+              textTransform: "uppercase",
+              opacity: 0.8,
+            }}
+          >
+            Links
+          </Text>
+          {project.links.length > 0 ? (
+            <Text mt={1} mb={8} fontSize={14}>
+              {project.links.map((link) => (
+                <Link marginRight={4} href={Object.values(link)[0]}>
+                  <a>{Object.keys(link)[0]}</a>
+                </Link>
+              ))}
+            </Text>
+          ) : (
+            <></>
+          )}
         </Box>
       </Stack>
-      <SectionTitle>Product Images</SectionTitle>
+      {/** TODO: Add images for all projects */}
+      {/* <SectionTitle>Product Images</SectionTitle>
       <Grid
         templateColumns={{ sm: "1fr", md: "1fr 1fr", base: "1fr" }}
         gap={8}
@@ -133,7 +102,7 @@ const Work = ({ project, content }) => (
             </AspectRatio>
           </GridItem>
         ))}
-      </Grid>
+      </Grid> */}
     </Container>
   </Layout>
 );
@@ -154,11 +123,9 @@ export const getStaticProps = async ({ params }) => {
     `${getCMSBaseUrl()}/projects?filters[slug]=${params.slug}`
   );
   const result = await res.json();
-  const content = await markdownToHtml(result.data[0].attributes.body);
   return {
     props: {
       project: result.data[0].attributes,
-      content,
     },
     revalidate: 7200,
   };
