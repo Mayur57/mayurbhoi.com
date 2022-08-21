@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/:match*",
+      "destination": "https://mayurbhoi.com/:match*"
+    },
+    {
+      "source": "/vault/:match*",
+      "destination": "https://vault.mayurbhoi.com/vault/:match*"
+    }
+  ]
+}

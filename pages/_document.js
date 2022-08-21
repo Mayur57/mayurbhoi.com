@@ -6,6 +6,7 @@ import { GTM_ID } from "../libs/trackers";
 const TITLE = "Mayur Bhoi";
 const DESCRIPTION = "software engineer ✕ product designer";
 const CARD_IMAGE_URL = "https://i.ibb.co/2W7M0Td/card.png";
+
 export default class Document extends NextDocument {
   render() {
     return (
@@ -123,8 +124,10 @@ export default class Document extends NextDocument {
           <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${GTM_ID}`}
+            defer
           />
           <script
+            defer
             dangerouslySetInnerHTML={{
               __html: `
             window.dataLayer = window.dataLayer || [];
