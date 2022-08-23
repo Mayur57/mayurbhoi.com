@@ -3,12 +3,9 @@
 import { Box, useColorModeValue } from "@chakra-ui/react";
 import Image from "next/image";
 import { shimmer, toBase64 } from "../libs/Shimmer";
+import profile from "../public/images/me.webp";
 
-export default function Headshot({
-  src = "/images/me.webp",
-  animate = false,
-  ...props
-}) {
+export default function Headshot({ src = profile, animate = false, ...props }) {
   return (
     <Box
       height={195}

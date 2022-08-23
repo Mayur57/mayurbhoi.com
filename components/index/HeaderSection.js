@@ -17,6 +17,8 @@ import Social from "../social";
 import LinkButton from "../linkButton";
 import HighlightWidget from "../HighlightWidget";
 import Headshot from "../Headshot";
+import articles from "../../public/header/articles.webp";
+import projects from "../../public/header/projects.webp";
 
 const spin = keyframes`0%, 100% { color: #7ccdea; }
   16%      { color: #0074d9; }
@@ -95,7 +97,7 @@ function HeaderSection() {
         <HighlightWidget
           title="Projects"
           description="Stuff I have made ranging from mobile apps to fully featured web applications"
-          image="/images/projects/projects.jpeg"
+          image={projects}
           href="/projects"
         />
       </Section>
@@ -104,8 +106,7 @@ function HeaderSection() {
         <HighlightWidget
           title="Articles"
           description="A few words about technical stuff, opinions, and other miscellaneous topics"
-          image="/images/blogs/blogs.jpeg"
-          href="/posts"
+          image={articles}
         />
       </Section>
     </>

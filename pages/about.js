@@ -17,6 +17,7 @@ import Section from "../components/section";
 import LinkButton from "../components/linkButton";
 import { Links } from "../data/links";
 import Headshot from "../components/Headshot";
+import profile from "../public/images/me.png";
 
 const Company = styled.h3`
   & {
@@ -61,7 +62,7 @@ const About = () => (
       <Box maxWidth="container.md" justifyItems="center">
         <Section delay={0.1}>
           <Box maxWidth="container.md" py="3em" align="center">
-            <Headshot src="/images/me.png" />
+            <Headshot src={profile} />
           </Box>
         </Section>
         <Section delay={0.2}>

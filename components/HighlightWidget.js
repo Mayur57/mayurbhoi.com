@@ -14,7 +14,7 @@ import "@fontsource/epilogue";
 export default function HighlightWidget({
   title,
   description,
-  image = "/images/projects/covid.jpg",
+  image,
   href = "/",
 }) {
   return (
