@@ -10,7 +10,10 @@ const About = () => (
       <Subtitle>Website</Subtitle>
       <Title>About Website</Title>
       <Section>
-        <p>Coming soon(-ish).</p>
+        <p>
+          An technical overview and an account of the journey building this
+          website. Coming soon(-ish).
+        </p>
       </Section>
     </Container>
   </Layout>
