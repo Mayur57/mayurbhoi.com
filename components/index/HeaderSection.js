@@ -107,6 +107,7 @@ function HeaderSection() {
           title="Articles"
           description="A few words about technical stuff, opinions, and other miscellaneous topics"
           image={articles}
+          href="/posts"
         />
       </Section>
     </>
