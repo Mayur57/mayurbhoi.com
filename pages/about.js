@@ -9,12 +9,12 @@ import {
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 import styled from "styled-components";
-import Layout from "../components/layouts/article";
-import Subtitle from "../components/subtitle";
-import Title from "../components/title";
+import Layout from "../components/layouts/Article";
+import Subtitle from "../components/Subtitle";
+import Title from "../components/Title";
 import { experience } from "../data/experience";
-import Section from "../components/section";
-import LinkButton from "../components/linkButton";
+import Section from "../components/Section";
+import LinkButton from "../components/LinkButton";
 import { Links } from "../data/links";
 import Headshot from "../components/Headshot";
 import profile from "../public/images/me.png";

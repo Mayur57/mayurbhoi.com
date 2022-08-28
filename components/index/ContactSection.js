@@ -15,7 +15,7 @@ import {
   BsMedium,
   BsInstagram,
 } from "react-icons/bs";
-import Section from "../section";
+import Section from "../Section";
 import BrandColors from "../../libs/ColorHelper";
 
 const { textColorDark, textColorLight } = BrandColors;

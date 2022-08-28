@@ -12,9 +12,9 @@ import {
 import "@fontsource/epilogue";
 import { MdLocationPin } from "react-icons/md";
 import { IconContext } from "react-icons";
-import Section from "../section";
-import Social from "../social";
-import LinkButton from "../linkButton";
+import Section from "../Section";
+import Social from "../Social";
+import LinkButton from "../LinkButton";
 import HighlightWidget from "../HighlightWidget";
 import Headshot from "../Headshot";
 import articles from "../../public/header/articles.webp";

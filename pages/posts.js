@@ -2,11 +2,11 @@
 import { Container, SimpleGrid } from "@chakra-ui/react";
 import moment from "moment";
 import readingTime from "reading-time";
-import Layout from "../components/layouts/article";
-import Subtitle from "../components/subtitle";
-import Title from "../components/title";
-import Section from "../components/section";
-import { PostsGridItem } from "../components/GridItem";
+import Layout from "../components/layouts/Article";
+import Subtitle from "../components/Subtitle";
+import Title from "../components/Title";
+import Section from "../components/Section";
+import { PostsGridItem } from "../components/grid/PostGridItem";
 import { calculateAnimationDelay, getCMSBaseUrl } from "../libs/functions";
 
 const Posts = ({ posts }) => (

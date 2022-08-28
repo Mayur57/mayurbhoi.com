@@ -1,8 +1,8 @@
 /* eslint-disable import/extensions */
 import Head from "next/head";
 import { Box, Container } from "@chakra-ui/react";
-import Navbar from "../nav.js";
-import Footer from "../footer/footer.js";
+import Navbar from "../navbar/Navbar";
+import Footer from "../footer/Footer";
 
 function Main({ children, router }) {
   return (

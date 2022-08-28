@@ -3,40 +3,11 @@ import {
   Box,
   Center,
   Divider,
-  HStack,
-  VStack,
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { Container, FooterLink, Heading } from "./footer-styles";
-import Logo from "../logo";
-import Social from "../social";
-import { Links as HyperLinks } from "../../data/links";
-
-const Links = () => (
-  <Container>
-    <HStack align>
-      <VStack width="33%" alignItems="flex-start">
-        <Box ml={30}>
-          <Logo span={30} />
-        </Box>
-      </VStack>
-      <VStack width="33%" alignItems="flex-start">
-        <Heading label="General" />
-        <FooterLink href="/about" label="About" />
-        <FooterLink href="/projects" label="Projects" />
-        <FooterLink href="/posts" label="Blog" />
-        <FooterLink href="mailto:mayur072000@gmail.com" label="Mail" />
-      </VStack>
-      <VStack width="33%" alignItems="flex-start">
-        <Heading label="Specifics" />
-        <FooterLink href={HyperLinks.resume} label="Resume" />
-        <FooterLink href={HyperLinks.source} label="Source" />
-        <FooterLink href="/meta" label="About Website" />
-      </VStack>
-    </HStack>
-  </Container>
-);
+import Social from "../Social";
+import Links from "./Links";
 
 function Footer() {
   return (

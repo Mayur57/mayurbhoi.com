@@ -1,6 +1,6 @@
 import { Box, Text } from "@chakra-ui/react";
 import { IoIosHammer } from "react-icons/io";
-import LinkButton from "./linkButton";
+import LinkButton from "./LinkButton";
 
 export const DevelopmentMode = () => (
   <Box

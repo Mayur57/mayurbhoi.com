@@ -4,13 +4,13 @@ import { Global } from "@emotion/react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
-import Layout from "../../components/layouts/article";
+import Layout from "../../components/layouts/Article";
 import { getCMSBaseUrl } from "../../libs/functions";
 import {
   renderHeadingType6,
   renderHyperlinks,
   renderParagraph,
-} from "../../components/ArticleCustomComponents";
+} from "../../components/ArticleCustomElements";
 
 const Work = ({ project }) => (
   <Layout title={project.title}>

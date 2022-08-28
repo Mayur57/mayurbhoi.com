@@ -1,9 +1,9 @@
 import { Container, SimpleGrid } from "@chakra-ui/react";
-import Section from "../components/section";
-import { WorkGridItem } from "../components/GridItem";
-import Layout from "../components/layouts/article";
-import Subtitle from "../components/subtitle";
-import Title from "../components/title";
+import Section from "../components/Section";
+import { ProjectsGridItem } from "../components/grid/ProjectGridItem";
+import Layout from "../components/layouts/Article";
+import Subtitle from "../components/Subtitle";
+import Title from "../components/Title";
 import { calculateAnimationDelay, getCMSBaseUrl } from "../libs/functions";
 
 function Work(props) {
@@ -18,13 +18,13 @@ function Work(props) {
         <SimpleGrid columns={[1, 2, 2]} spacingX={10} spacingY={2} mt={12}>
           {posts.map((post, index) => (
             <Section key={index} delay={calculateAnimationDelay(index)}>
-              <WorkGridItem
+              <ProjectsGridItem
                 id={post.attributes.slug}
                 title={post.attributes.title}
                 thumbnail={post.attributes.thumbnail}
               >
                 {post.attributes.description}
-              </WorkGridItem>
+              </ProjectsGridItem>
             </Section>
           ))}
         </SimpleGrid>

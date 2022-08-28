@@ -9,8 +9,8 @@ import {
 } from "@chakra-ui/react";
 import Obfuscate from "react-obfuscate";
 import { EmailIcon } from "@chakra-ui/icons";
-import Section from "../components/section";
-import LinkButton from "../components/linkButton";
+import Section from "../components/Section";
+import LinkButton from "../components/LinkButton";
 
 function NotFound() {
   const image404 = `/images/404/404${useColorModeValue("-01", "-02")}.png`;
@@ -41,7 +41,7 @@ function NotFound() {
             below to go to the homepage or if you think this is a mistake:{" "}
             <Link href="#">
               <Obfuscate
-                email="mayur072000@gmail.com"
+                email="mayur072000+error@gmail.com"
                 headers={{ subject: `I can't find this page!` }}
               >
                 send me an email

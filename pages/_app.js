@@ -5,12 +5,12 @@ import "@fontsource/inter";
 import "@fontsource/space-grotesk";
 import { useEffect, useState } from "react";
 
-import Layout from "../components/layouts/main";
-import Fonts from "../components/fonts";
+import Layout from "../components/layouts/Main";
+import Fonts from "../components/FontPreLoader";
 import CookiesProvider from "../libs/cookies";
 import * as ga from "../libs/trackers";
 import { DevelopmentMode } from "../components/DevelopmentMode";
-import { Loading } from "../components/Loading";
+import { Loading } from "../components/layouts/Loading";
 
 const GlobalStyles = css`
   .js-focus-visible :focus:not([data-focus-visible-added]) {

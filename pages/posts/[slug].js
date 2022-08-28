@@ -11,9 +11,9 @@ import Image from "next/image";
 import remarkGfm from "remark-gfm";
 import ReactMarkdown from "react-markdown";
 
-import Layout from "../../components/layouts/article";
+import Layout from "../../components/layouts/Article";
 import markdownToHtml from "../../libs/MDParser";
-import Title from "../../components/title";
+import Title from "../../components/Title";
 import { getCMSBaseUrl } from "../../libs/functions";
 import { shimmer, toBase64 } from "../../libs/Shimmer";
 import {
@@ -21,7 +21,7 @@ import {
   renderListItem,
   renderQuotes,
   renderUnorderedList,
-} from "../../components/ArticleCustomComponents";
+} from "../../components/ArticleCustomElements";
 
 const TableOfContents = ({ TOC }) => (
   <Box

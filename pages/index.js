@@ -1,6 +1,6 @@
 import { Container } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
-import { GridItemStyle } from "../components/GridItem";
+import { GridItemStyle } from "../components/grid/GridItemStyle";
 
 const DynamicHeaderComponent = dynamic(() =>
   import("../components/index/HeaderSection").then((module) => module.default)

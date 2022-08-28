@@ -1,8 +1,8 @@
 import { Container, Text } from "@chakra-ui/react";
-import Layout from "../components/layouts/article";
-import Section from "../components/section";
-import Subtitle from "../components/subtitle";
-import Title from "../components/title";
+import Layout from "../components/layouts/Article";
+import Section from "../components/Section";
+import Subtitle from "../components/Subtitle";
+import Title from "../components/Title";
 
 const Code = ({ children }) => (
   <>
