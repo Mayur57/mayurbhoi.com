@@ -1,5 +1,6 @@
 import { ColorModeScript } from "@chakra-ui/react";
 import NextDocument, { Html, Head, Main, NextScript } from "next/document";
+import Script from "next/script";
 import theme from "../libs/theme";
 import { GTM_ID } from "../libs/trackers";
 
@@ -121,13 +122,14 @@ export default class Document extends NextDocument {
           <meta name="theme-color" content="#ffffff" />
 
           {/* Global Site Tag (gtag.js) - Google Analytics */}
-          <script
-            async
+          <Script
+            strategy="afterInteractive"
             src={`https://www.googletagmanager.com/gtag/js?id=${GTM_ID}`}
             defer
           />
-          <script
-            defer
+          <Script
+            id="gtm"
+            strategy="afterInteractive"
             dangerouslySetInnerHTML={{
               __html: `
             window.dataLayer = window.dataLayer || [];
