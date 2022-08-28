@@ -44,10 +44,12 @@ export default function HighlightWidget({
               layout="fill"
               priority
               placeholder="blur"
+              sizes="320 640 750"
+              quality="40"
+              alt={`Hero image for ${title}`}
               blurDataURL={`data:image/svg+xml;base64,${toBase64(
                 shimmer(700, 475)
               )}`}
-              alt={`Hero image for ${title}`}
             />
           </Box>
         </AspectRatio>
