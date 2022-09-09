@@ -5,6 +5,7 @@ import {
   LinkBox,
   LinkOverlay,
   Text,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -14,7 +15,7 @@ import { Tag } from "./Tag";
 const getTagColor = (tag) => {
   switch (tag.toUpperCase()) {
     case "TECH":
-      return "#FF000033";
+      return "#FC818155";
     case "ABSTRACT":
       return "#55FF5555";
     case "MISC":
@@ -41,19 +42,16 @@ export const PostsGridItem = ({
             position="relative"
             ratio={1.67}
             transition="all 250ms ease"
-            borderRadius={40}
             mb={4}
             _groupHover={{
-              transition: "all 250ms ease",
-              transform: "translateY(-2px)",
-              boxShadow: "xl",
+              boxShadow: "2xl",
             }}
           >
             <Image
               src={thumbnail}
               alt={title}
               layout="fill"
-              className="project-item-thumbnail"
+              className="item-thumbnail"
               placeholder="blur"
               blurDataURL={`data:image/svg+xml;base64,${toBase64(
                 shimmer(700, 475)
@@ -68,6 +66,10 @@ export const PostsGridItem = ({
               mt={1.5}
               lineHeight={1.2}
               letterSpacing={-1}
+              transition="all 250ms ease"
+              _groupHover={{
+                color: useColorModeValue("purple.500", "red.400"),
+              }}
             >
               {title}
             </Text>

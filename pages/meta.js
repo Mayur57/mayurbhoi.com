@@ -40,9 +40,9 @@ const About = ({ commit }) => (
           website. Coming soon(-ish).
         </p>
         <Code>
-          {commit.commit.message} @ {commit.commit.author.date}
+          {`${commit.commit.message} @ ${commit.commit.author.date}`}
           <br />
-          {commit.sha}
+          {`sha: ${commit.sha}`}
         </Code>
       </Section>
     </Container>

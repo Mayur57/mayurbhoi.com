@@ -36,7 +36,7 @@ const NavbarMenu = () => (
         <MenuItem>Projects</MenuItem>
       </Link>
       <Link href="/posts" passHref>
-        <MenuItem>Articles</MenuItem>
+        <MenuItem>Posts</MenuItem>
       </Link>
       <MenuDivider />
       <Link href={sourceLink} passHref>

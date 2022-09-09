@@ -11,12 +11,12 @@ A person's portfolio is a culmination of several different experiences and their
 
 ## TODO
 
-1. Write about environment variables and other important development details (frameworks, packages, CMS) used in README
-2. Document colors for the light and dark color themes in README
-3. Define brand colors in a single file and use it
-4. Add support for Cloudinary and serve images via the CDN
-5. Split multiple components defined in a single file to their own files
-6. Clean up code and remove redundant, unused code
+- [ ] Write about environment variables and other important development details (frameworks, packages, CMS) used in README
+- [ ] Document colors for the light and dark color themes in README
+- [ ] Define brand colors in a single file and use it
+- [x] Add support for Cloudinary and serve images via the CDN
+- [x] Split multiple components defined in a single file to their own files
+- [x] Clean up code and remove redundant, unused code
 
 ## Contribution
 

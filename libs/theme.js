@@ -1,16 +1,16 @@
 import { extendTheme } from "@chakra-ui/react";
-import { mode, createBreakpoints } from "@chakra-ui/theme-tools";
+import { mode } from "@chakra-ui/theme-tools";
 import BrandColors from "./ColorHelper";
 import "@fontsource/inter";
 
 const { textColorLight } = BrandColors;
 
-const breakpoints = createBreakpoints({
+const breakpoints = {
   sm: "40em",
   md: "52em",
   lg: "64em",
   xl: "80em",
-});
+};
 
 const styles = {
   global: (props) => ({

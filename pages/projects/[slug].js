@@ -9,7 +9,10 @@ import { getCMSBaseUrl } from "../../libs/functions";
 import {
   renderHeadingType6,
   renderHyperlinks,
+  renderListItem,
+  renderUnorderedList,
   renderParagraph,
+  renderOrderedList,
 } from "../../components/ArticleCustomElements";
 
 const Work = ({ project }) => (
@@ -50,6 +53,9 @@ const Work = ({ project }) => (
               h6: renderHeadingType6,
               p: renderParagraph,
               a: renderHyperlinks,
+              ul: renderUnorderedList,
+              ol: renderOrderedList,
+              li: renderListItem,
             }}
           >
             {project.body}
