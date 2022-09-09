@@ -66,6 +66,7 @@ export const renderParagraph = ({ node, ...props }) => (
   <p
     className="content"
     style={{
+      paddingTop: "0.8em",
       paddingBottom: "2em",
       fontSize: "0.9em",
     }}
