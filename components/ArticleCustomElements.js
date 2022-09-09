@@ -19,7 +19,7 @@ export const renderUnorderedList = ({ node, ...props }) => (
   <ul
     style={{
       paddingLeft: 18,
-      whiteSpace: "pre",
+      whiteSpace: "pre-line",
     }}
     {...props}
   />
@@ -27,7 +27,7 @@ export const renderUnorderedList = ({ node, ...props }) => (
 
 /** Render <ol> */
 export const renderOrderedList = ({ node, ...props }) => (
-  <ol style={{ paddingLeft: 18, whiteSpace: "pre" }} {...props} />
+  <ol style={{ paddingLeft: 18, whiteSpace: "pre-line" }} {...props} />
 );
 
 /** Render <blockquote> */
