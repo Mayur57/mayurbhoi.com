@@ -38,6 +38,9 @@ const NavbarMenu = () => (
       <Link href="/posts" passHref>
         <MenuItem>Posts</MenuItem>
       </Link>
+      <Link href="/snippets" passHref>
+        <MenuItem>Snippets</MenuItem>
+      </Link>
       <MenuDivider />
       <Link href={sourceLink} passHref>
         <MenuItem>

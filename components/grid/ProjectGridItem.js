@@ -11,7 +11,6 @@ export const ProjectsGridItem = ({ children, id, title, thumbnail }) => (
           position="relative"
           ratio={5 / 3}
           transition="all 250ms ease"
-          borderRadius={40}
           mb={4}
           _groupHover={{
             transition: "all 250ms ease",
@@ -23,7 +22,7 @@ export const ProjectsGridItem = ({ children, id, title, thumbnail }) => (
             src={thumbnail}
             alt={title}
             layout="fill"
-            className="project-item-thumbnail"
+            className="item-thumbnail"
             placeholder="blur"
             blurDataURL={`data:image/svg+xml;base64,${toBase64(
               shimmer(700, 475)

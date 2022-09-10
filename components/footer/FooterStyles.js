@@ -26,7 +26,6 @@ export const FooterLink = ({ href, label, disabled }) => (
       userSelect={disabled ? "none" : "auto"}
       _hover={{
         opacity: disabled ? 0.3 : 1,
-        textDecoration: disabled ? "none" : "underline",
         textUnderlineOffset: disabled ? 0 : 2,
       }}
     >
