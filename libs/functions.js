@@ -4,6 +4,6 @@ export const calculateAnimationDelay = (index) =>
 export const getCMSBaseUrl = () => {
   const environmentMode = process.env.NEXT_PUBLIC_ENV;
   return environmentMode !== "dev"
-    ? "https://mosaic-cms-backend.herokuapp.com/api"
+    ? "https://mosaic-cms-handler.fly.dev/api"
     : "http://localhost:1337/api";
 };
