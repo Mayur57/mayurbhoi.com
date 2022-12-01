@@ -3,7 +3,7 @@ export const calculateAnimationDelay = (index) =>
 
 export const getCMSBaseUrl = () => {
   const environmentMode = process.env.NEXT_PUBLIC_ENV;
-  return environmentMode !== "dev"
-    ? "https://mosaic-cms-handler.fly.dev/api"
-    : "http://localhost:1337/api";
+  return environmentMode === "dev"
+    ? "http://localhost:1337/api"
+    : `${process.env.NEXT_PUBLIC_PROD_CMS}/api`;
 };
