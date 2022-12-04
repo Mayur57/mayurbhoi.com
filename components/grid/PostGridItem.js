@@ -1,5 +1,4 @@
 import {
-  AspectRatio,
   Box,
   Heading,
   LinkBox,
@@ -7,19 +6,16 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import Image from "next/image";
 import Link from "next/link";
-import { shimmer, toBase64 } from "../../libs/Shimmer";
-import { Tag } from "./Tag";
 
 const getTagColor = (tag) => {
   switch (tag.toUpperCase()) {
     case "TECH":
-      return "#FC818155";
+      return "#0ead00";
     case "ABSTRACT":
-      return "#55FF5555";
+      return "#b82525";
     case "MISC":
-      return "#0000FF33";
+      return "#2564b8";
     default:
       return "#FFFFFF33";
   }
@@ -29,7 +25,6 @@ export const PostsGridItem = ({
   desc,
   id,
   title,
-  thumbnail,
   date,
   tag = "none",
   readingTime = "0 mins read",
@@ -37,28 +32,7 @@ export const PostsGridItem = ({
   <Box w="100%" px={4} pb={2} transition="250ms ease-in-out" role="group">
     <Link href={`/posts/${id}`} passHref>
       <LinkBox cursor="pointer">
-        <Box>
-          <AspectRatio
-            position="relative"
-            ratio={1.67}
-            transition="all 250ms ease"
-            mb={4}
-            _groupHover={{
-              boxShadow: "2xl",
-            }}
-          >
-            <Image
-              src={thumbnail}
-              alt={title}
-              layout="fill"
-              className="item-thumbnail"
-              placeholder="blur"
-              blurDataURL={`data:image/svg+xml;base64,${toBase64(
-                shimmer(700, 475)
-              )}`}
-            />
-          </AspectRatio>
-          <Tag color={getTagColor(tag)}>{tag}</Tag>
+        <Box transform="translate(-16px)">
           <LinkOverlay href={`/projects/${id}`}>
             <Text
               fontWeight="700"
@@ -74,6 +48,9 @@ export const PostsGridItem = ({
               {title}
             </Text>
           </LinkOverlay>
+          <Text fontSize="12" opacity={0.7} mt={2} mr={2}>
+            {desc}
+          </Text>
           <Heading
             variant="pronouns"
             opacity={0.5}
@@ -81,11 +58,11 @@ export const PostsGridItem = ({
             fontSize={11}
             my={1}
           >
-            {date} • {readingTime}
+            <span style={{ color: getTagColor(tag), fontWeight: "bold" }}>
+              {tag}
+            </span>{" "}
+            • {date} • {readingTime}
           </Heading>
-          <Text fontSize="12" opacity={0.7} mt={0} mr={2}>
-            {desc}
-          </Text>
         </Box>
       </LinkBox>
     </Link>
