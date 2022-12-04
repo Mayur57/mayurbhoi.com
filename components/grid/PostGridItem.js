@@ -4,18 +4,19 @@ import {
   LinkBox,
   LinkOverlay,
   Text,
+  useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
 import Link from "next/link";
 
-const getTagColor = (tag) => {
+const getTagColor = (tag, colorMode) => {
   switch (tag.toUpperCase()) {
     case "TECH":
-      return "#0ead00";
+      return colorMode === 'light' ? "#0ead00" : '#a1ffde';
     case "ABSTRACT":
-      return "#b82525";
+      return colorMode === 'light' ? "#b82525" : "#ffa1a1";
     case "MISC":
-      return "#2564b8";
+      return colorMode === 'light' ? "#2564b8" : "#a1dbff";
     default:
       return "#FFFFFF33";
   }
@@ -28,7 +29,9 @@ export const PostsGridItem = ({
   date,
   tag = "none",
   readingTime = "0 mins read",
-}) => (
+}) => { 
+  const { colorMode } = useColorMode();
+  return (
   <Box w="100%" px={4} pb={2} transition="250ms ease-in-out" role="group">
     <Link href={`/posts/${id}`} passHref>
       <LinkBox cursor="pointer">
@@ -53,18 +56,19 @@ export const PostsGridItem = ({
           </Text>
           <Heading
             variant="pronouns"
-            opacity={0.5}
             letterSpacing="0.6px"
             fontSize={11}
             my={1}
           >
-            <span style={{ color: getTagColor(tag), fontWeight: "bold" }}>
+            <span style={{ color: getTagColor(tag, colorMode), fontWeight: "bold" }}>
               {tag}
             </span>{" "}
+            <span style={{ opacity: 0.5}}>
             • {date} • {readingTime}
+            </span>
           </Heading>
         </Box>
       </LinkBox>
     </Link>
   </Box>
-);
+)};

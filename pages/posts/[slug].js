@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import { Box, Container, Text, Stack, AspectRatio } from "@chakra-ui/react";
+import { Box, Container, Text, Stack } from "@chakra-ui/react";
 import { Global } from "@emotion/react";
 import { unified } from "unified";
 import rehypeParse from "rehype-parse";
@@ -7,15 +7,14 @@ import rehypeStringify from "rehype-stringify";
 import { visit } from "unist-util-visit";
 import parameterize from "parameterize";
 import moment from "moment";
-import Image from "next/image";
 import remarkGfm from "remark-gfm";
 import ReactMarkdown from "react-markdown";
 
+import readingTime from "reading-time";
 import Layout from "../../components/layouts/Article";
 import markdownToHtml from "../../libs/MDParser";
 import Title from "../../components/Title";
 import { getCMSBaseUrl } from "../../libs/functions";
-import { shimmer, toBase64 } from "../../libs/Shimmer";
 import {
   renderHyperlinks,
   renderListItem,
@@ -56,62 +55,64 @@ const Work = ({ post, TOC, md }) => (
         maxW="container.lg"
       >
         {/** TODO: I am sure there is a better way to do this */}
-        <Box height={0} flex={{ base: 0, md: 1 }} />
-        <Box flex={4}>
-          <AspectRatio
-            ratio={2}
-            width="100%"
-            position="relative"
-            borderRadius={8}
-            mb={8}
-            overflow="hidden"
-          >
-            <Image
-              src={post.banner ?? "https://via.placeholder.com/300x100"}
-              priority
-              layout="fill"
-              display="inline-block"
-              placeholder="blur"
-              blurDataURL={`data:image/svg+xml;base64,${toBase64(
-                shimmer(700, 475)
-              )}`}
-            />
-          </AspectRatio>
+        {/* <Box height={0} flex={{ base: 0, md: 1 }} bgColor='red' /> */}
+        <Box flex={4} align="center" mt={12} mb={6}>
           <Title
             style={{ marginBottom: 10, flex: 3, justifyItems: "baseline" }}
           >
             {post.title}
           </Title>
-          <Text my={4} opacity={0.6} fontWeight={500} fontSize={13}>
-            Published: {post.uploaded === null ? "UPLOAD_DATE" : post.uploaded}
-          </Text>
           <Text my={2} opacity={0.7} fontStyle="italic">
             {post.description}
           </Text>
+          <Text my={4} opacity={0.6} fontSize={13}>
+            {post.uploaded === null ? "UPLOAD_DATE" : post.uploaded} •{" "}
+            {`${readingTime(md).words} words`} •{" "}
+            {`${readingTime(md).text.split(" ")[0]} min read`}
+          </Text>
         </Box>
       </Stack>
-      <Stack
-        direction={{ base: "column", md: "row" }}
-        spacing={{ base: 0, md: 12 }}
-        mt={{ base: 0, md: 42 }}
-      >
-        <TableOfContents TOC={TOC} />
-        <Box maxW="container.md">
-          {/* <div dangerouslySetInnerHTML={{ __html: content }} /> */}
-          <ReactMarkdown
-            remarkPlugins={[remarkGfm]}
-            className="article"
-            components={{
-              li: renderListItem,
-              ul: renderUnorderedList,
-              blockquote: renderQuotes,
-              a: renderHyperlinks,
-            }}
-          >
-            {md}
-          </ReactMarkdown>
+      {TOC.length === 0 ? (
+        <Box width="100%" textAlign="start" align="center">
+          <Box width="container.sm" fontSize={14} height="auto" m="0 auto" pos="relative">
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              className="article"
+              components={{
+                li: renderListItem,
+                ul: renderUnorderedList,
+                blockquote: renderQuotes,
+                a: renderHyperlinks,
+              }}
+            >
+              {md}
+            </ReactMarkdown>
+          </Box>
         </Box>
-      </Stack>
+      ) : (
+        <Stack
+          direction={{ base: "column", md: "row" }}
+          spacing={{ base: 0, md: 12 }}
+          mt={{ base: 0, md: 42 }}
+        >
+          <TableOfContents TOC={TOC} />
+          <Box maxW="container.md" fontSize={14}>
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              className="article"
+              components={{
+                li: renderListItem,
+                ul: renderUnorderedList,
+                blockquote: renderQuotes,
+                a: renderHyperlinks,
+              }}
+            >
+              {md}
+            </ReactMarkdown>
+          </Box>
+        </Stack>
+      )}
+
       <Text align="center" py="2.5em" opacity={0.25}>
         □ ○ △
       </Text>
@@ -168,7 +169,7 @@ export const getStaticProps = async ({ params }) => {
     .toString();
   result.data[0].attributes.uploaded = moment(
     result.data[0].attributes.uploaded
-  ).format("DD MMMM YYYY");
+  ).format("DD MMM YYYY");
   return {
     props: {
       post: result.data[0].attributes,
