@@ -46,7 +46,7 @@ const TableOfContents = ({ TOC }) => (
 );
 
 const Work = ({ post, TOC, md }) => (
-  <Layout title={post.title}>
+  <Layout title={post.title} desc={post.description} img={post.thumbnail}>
     <Container maxW="container.lg" mt={4}>
       <Stack
         direction={{ base: "column", md: "row" }}
@@ -74,7 +74,7 @@ const Work = ({ post, TOC, md }) => (
       </Stack>
       {TOC.length === 0 ? (
         <Box width="100%" textAlign="start" align="center">
-          <Box width="container.sm" fontSize={14} height="auto" m="0 auto" pos="relative">
+          <Box maxWidth="container.sm" fontSize={14} height="auto" m="0 auto" pos="relative">
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               className="article"
