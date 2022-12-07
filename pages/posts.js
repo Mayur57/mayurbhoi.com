@@ -49,12 +49,12 @@ export const getStaticProps = async () => {
   const posts = await getPosts();
   posts.forEach((post) => {
     const publishedDate = post.attributes.uploaded;
-    const formattedDate = moment(publishedDate).format("D MMMM YYYY");
+    const formattedDate = moment(publishedDate).format("DD MMM YYYY");
     post.attributes.uploaded = formattedDate;
     post.attributes.sortId = moment(publishedDate).format("YYYYMMDD");
     post.attributes.readingTime = readingTime(post.attributes.body);
   });
-  // const publishedDate = posts.attributes
+  posts.sort((a, b) => b.attributes.sortId - a.attributes.sortId);
   return {
     revalidate: 7200,
     props: { posts },
