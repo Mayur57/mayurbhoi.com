@@ -1026,11 +1026,6 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@fontsource/abril-fatface@^4.5.9":
-  version "4.5.9"
-  resolved "https://registry.yarnpkg.com/@fontsource/abril-fatface/-/abril-fatface-4.5.9.tgz#a8e523d882e75fdd212275d5dd16b95493b7b87c"
-  integrity sha512-3q40X94isRtSFWFCaFtKW0nkYzmymVsqomiUTPGQuvlCq1A+RzT+39qtKWtuyJANOU5WhY/gI7ayszB5kYkupA==
-
 "@fontsource/bodoni-moda@^4.5.9":
   version "4.5.9"
   resolved "https://registry.yarnpkg.com/@fontsource/bodoni-moda/-/bodoni-moda-4.5.9.tgz#cd009d2e21f00ca922b7afef5618c77f20e69c77"
@@ -3828,6 +3823,13 @@ react-clientside-effect@^1.2.6:
   dependencies:
     "@babel/runtime" "^7.12.13"
 
+react-confetti@^6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/react-confetti/-/react-confetti-6.1.0.tgz#03dc4340d955acd10b174dbf301f374a06e29ce6"
+  integrity sha512-7Ypx4vz0+g8ECVxr88W9zhcQpbeujJAVqL14ZnXJ3I23mOI9/oBVTQ3dkJhUmB0D6XOtCZEM6N0Gm9PMngkORw==
+  dependencies:
+    tween-functions "^1.2.0"
+
 react-dom@^18.2.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-18.2.0.tgz#22aaf38708db2674ed9ada224ca4aa708d821e3d"
@@ -4447,6 +4449,11 @@ tsutils@^3.21.0:
   integrity sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==
   dependencies:
     tslib "^1.8.1"
+
+tween-functions@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/tween-functions/-/tween-functions-1.2.0.tgz#1ae3a50e7c60bb3def774eac707acbca73bbc3ff"
+  integrity sha512-PZBtLYcCLtEcjL14Fzb1gSxPBeL7nWvGhO5ZFPGqziCcr8uvHp0NDmdjBchp6KHL+tExcg0m3NISmKxhU394dA==
 
 type-check@^0.4.0, type-check@~0.4.0:
   version "0.4.0"

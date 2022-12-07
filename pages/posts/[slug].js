@@ -1,5 +1,16 @@
 /* eslint-disable no-param-reassign */
-import { Box, Container, Text, Stack } from "@chakra-ui/react";
+import {
+  Box,
+  Container,
+  Text,
+  Stack,
+  Tooltip,
+  Button,
+  HStack,
+  Flex,
+  Spacer,
+  Fade,
+} from "@chakra-ui/react";
 import { Global } from "@emotion/react";
 import { unified } from "unified";
 import rehypeParse from "rehype-parse";
@@ -21,6 +32,9 @@ import {
   renderQuotes,
   renderUnorderedList,
 } from "../../components/ArticleCustomElements";
+import { useState } from "react";
+import { FiAlertTriangle, FiArrowUpRight, FiCheck } from "react-icons/fi";
+import Confetti from "react-confetti";
 
 const TableOfContents = ({ TOC }) => (
   <Box
@@ -45,99 +59,119 @@ const TableOfContents = ({ TOC }) => (
   </Box>
 );
 
-const Work = ({ post, TOC, md }) => (
-  <Layout title={post.title} desc={post.description} img={post.thumbnail}>
-    <Container maxW="container.lg" mt={4}>
-      <Stack
-        direction={{ base: "column", md: "row" }}
-        flexDir="row"
-        spacing={10}
-        maxW="container.lg"
-      >
-        <Box flex={4} align="center" mt={12} mb={6}>
-          <Title
-            letterSpacing={-1}
-            fontWeight="bold"
-            fontFamily="Abril Fatface"
-            lineHeight={1.05}
-            style={{ marginBottom: 10, flex: 3, justifyItems: "baseline" }}
-          >
-            {post.title}
-          </Title>
-          <Text my={2} opacity={0.7} fontStyle="italic">
-            {post.description}
-          </Text>
-          <Text my={4} opacity={0.6} fontWeight='bold' fontSize={13} fontFamily='Space Grotesk'>
-            {post.uploaded === null ? "UPLOAD_DATE" : post.uploaded} •{" "}
-            {`${readingTime(md).words} words`} •{" "}
-            {`${readingTime(md).text.split(" ")[0]} min read`}
-          </Text>
-        </Box>
-      </Stack>
-      {TOC.length === 0 ? (
-        <Box width="100%" textAlign="start" align="center">
-          <Box
-            maxWidth="container.sm"
-            fontSize={14}
-            height="auto"
-            m="0 auto"
-            pos="relative"
-          >
-            <ReactMarkdown
-              remarkPlugins={[remarkGfm]}
-              className="article"
-              components={{
-                li: renderListItem,
-                ul: renderUnorderedList,
-                blockquote: renderQuotes,
-                a: renderHyperlinks,
-              }}
-            >
-              {md}
-            </ReactMarkdown>
-          </Box>
-        </Box>
-      ) : (
+const Work = ({ post, TOC, md }) => {
+  const [copied, setCopied] = useState(false);
+  return (
+    <Layout title={post.title} desc={post.description} img={post.thumbnail}>
+      <Container maxW="container.lg" mt={4}>
         <Stack
           direction={{ base: "column", md: "row" }}
-          spacing={{ base: 0, md: 12 }}
-          mt={{ base: 0, md: 42 }}
+          flexDir="row"
+          spacing={10}
+          maxW="container.lg"
         >
-          <TableOfContents TOC={TOC} />
-          <Box maxW="container.md" fontSize={14}>
-            <ReactMarkdown
-              remarkPlugins={[remarkGfm]}
-              className="article"
-              components={{
-                li: renderListItem,
-                ul: renderUnorderedList,
-                blockquote: renderQuotes,
-                a: renderHyperlinks,
-              }}
+          <Box flex={4} align="center" mt={12} mb={6}>
+            <Title
+              letterSpacing={-1}
+              fontWeight="bold"
+              fontFamily="Abril Fatface"
+              lineHeight={1.05}
+              style={{ marginBottom: 10, flex: 3, justifyItems: "baseline" }}
             >
-              {md}
-            </ReactMarkdown>
+              {post.title}
+            </Title>
+            <Text my={2} opacity={0.7} fontStyle="italic">
+              {post.description}
+            </Text>
+            <Text
+              my={4}
+              opacity={0.6}
+              fontWeight="bold"
+              fontSize={13}
+              fontFamily="Space Grotesk"
+            >
+              {post.uploaded === null ? "UPLOAD_DATE" : post.uploaded} •{" "}
+              {`${readingTime(md).words} words`} •{" "}
+              {`${readingTime(md).text.split(" ")[0]} min read`}
+            </Text>
           </Box>
         </Stack>
-      )}
-
-      <Text align="center" py="2.5em" opacity={0.25}>
-        □ ○ △
-      </Text>
-      {/** <------ Extract to ShareButton Component ------> */}
-      {/* <Tooltip hasArrow label="Copy post link to clipboard">
-          <Button
-            onClick={() => {
-              navigator.clipboard.writeText(location.href);
-              setCopied(true);
-            }}
+        {TOC.length === 0 ? (
+          <Box width="100%" textAlign="start" align="center">
+            <Box
+              maxWidth="container.sm"
+              fontSize={14}
+              height="auto"
+              m="0 auto"
+              pos="relative"
+            >
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                className="article"
+                components={{
+                  li: renderListItem,
+                  ul: renderUnorderedList,
+                  blockquote: renderQuotes,
+                  a: renderHyperlinks,
+                }}
+              >
+                {md}
+              </ReactMarkdown>
+            </Box>
+          </Box>
+        ) : (
+          <Stack
+            direction={{ base: "column", md: "row" }}
+            spacing={{ base: 0, md: 12 }}
+            mt={{ base: 0, md: 42 }}
           >
-            {copied ? "Link Copied" : "Share"}
-          </Button>
-        </Tooltip> */}
-    </Container>
-  </Layout>
-);
+            <TableOfContents TOC={TOC} />
+            <Box maxW="container.md" fontSize={14}>
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                className="article"
+                components={{
+                  li: renderListItem,
+                  ul: renderUnorderedList,
+                  blockquote: renderQuotes,
+                  a: renderHyperlinks,
+                }}
+              >
+                {md}
+              </ReactMarkdown>
+            </Box>
+          </Stack>
+        )}
+
+        <Text align="center" py="2.5em" opacity={0.25}>
+          □ ○ △
+        </Text>
+
+        <Box align="center" py={8}>
+          <Tooltip hasArrow label="Copy post link to clipboard">
+            <Button
+              backgroundColor="transparent"
+              fontSize={14}
+              fontWeight={500}
+              color={copied ? "green.500" : "gray.500"}
+              rightIcon={copied ? <FiCheck /> : <FiArrowUpRight />}
+              p={0}
+              _hover={{ backgroundColor: "transparent" }}
+              onClick={() => {
+                navigator.clipboard.writeText(location.href);
+                setCopied(true);
+                setTimeout(() => setCopied(false), 5000);
+              }}
+            >
+              <Text pr={2} color="#999">Liked it?</Text>
+              {copied ? "Link Copied" : "Share This Article"}
+            </Button>
+          </Tooltip>
+        </Box>
+      </Container>
+    </Layout>
+  );
+};
 
 export default Work;
 
