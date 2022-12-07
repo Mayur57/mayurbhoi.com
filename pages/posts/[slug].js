@@ -58,6 +58,10 @@ const Work = ({ post, TOC, md }) => (
         {/* <Box height={0} flex={{ base: 0, md: 1 }} bgColor='red' /> */}
         <Box flex={4} align="center" mt={12} mb={6}>
           <Title
+            letterSpacing={-1}
+            fontWeight="bold"
+            fontFamily="Abril Fatface"
+            lineHeight={1.05}
             style={{ marginBottom: 10, flex: 3, justifyItems: "baseline" }}
           >
             {post.title}
@@ -74,7 +78,13 @@ const Work = ({ post, TOC, md }) => (
       </Stack>
       {TOC.length === 0 ? (
         <Box width="100%" textAlign="start" align="center">
-          <Box maxWidth="container.sm" fontSize={14} height="auto" m="0 auto" pos="relative">
+          <Box
+            maxWidth="container.sm"
+            fontSize={14}
+            height="auto"
+            m="0 auto"
+            pos="relative"
+          >
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               className="article"

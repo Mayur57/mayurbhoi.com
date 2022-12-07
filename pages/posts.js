@@ -13,7 +13,7 @@ const Posts = ({ posts }) => (
   <Layout title="Articles">
     <Container maxW="container.lg">
       <Subtitle>blog</Subtitle>
-      <Title>Articles &amp; Opinions</Title>
+      <Title fontWeight={800} letterSpacing={-2}>Articles &amp; Opinions</Title>
       <SimpleGrid columns={[1, 2, 2]} spacingX={-2} spacingY={-2} mt={4}>
         {posts.map(({ attributes }, index) => (
           <Section key={index} delay={calculateAnimationDelay(index)}>

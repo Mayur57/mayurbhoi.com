@@ -1026,6 +1026,16 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
+"@fontsource/abril-fatface@^4.5.9":
+  version "4.5.9"
+  resolved "https://registry.yarnpkg.com/@fontsource/abril-fatface/-/abril-fatface-4.5.9.tgz#a8e523d882e75fdd212275d5dd16b95493b7b87c"
+  integrity sha512-3q40X94isRtSFWFCaFtKW0nkYzmymVsqomiUTPGQuvlCq1A+RzT+39qtKWtuyJANOU5WhY/gI7ayszB5kYkupA==
+
+"@fontsource/bodoni-moda@^4.5.9":
+  version "4.5.9"
+  resolved "https://registry.yarnpkg.com/@fontsource/bodoni-moda/-/bodoni-moda-4.5.9.tgz#cd009d2e21f00ca922b7afef5618c77f20e69c77"
+  integrity sha512-XjiQ053cI1NaZVH2ZdzF2uUPw3lJ6goqokDYTGoxuKNv6hFws0hSqLXLNasd9DT62gaEUKilT00VNeSF1b0VlA==
+
 "@fontsource/epilogue@^4.5.8":
   version "4.5.9"
   resolved "https://registry.yarnpkg.com/@fontsource/epilogue/-/epilogue-4.5.9.tgz#96562806baa5a04d08c59f519df4f7de22951813"

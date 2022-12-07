@@ -58,7 +58,7 @@ const About = () => (
   <Layout title="About">
     <Container maxW="container.md">
       <Subtitle>About</Subtitle>
-      <Title>Experience &amp; Background</Title>
+      <Title fontWeight={800} letterSpacing={-2}>Experience &amp; Background</Title>
       <Box maxWidth="container.md" justifyItems="center">
         <Section delay={0.1}>
           <Box maxWidth="container.md" py="3em" align="center">
