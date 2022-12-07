@@ -54,8 +54,6 @@ const Work = ({ post, TOC, md }) => (
         spacing={10}
         maxW="container.lg"
       >
-        {/** TODO: I am sure there is a better way to do this */}
-        {/* <Box height={0} flex={{ base: 0, md: 1 }} bgColor='red' /> */}
         <Box flex={4} align="center" mt={12} mb={6}>
           <Title
             letterSpacing={-1}
@@ -69,7 +67,7 @@ const Work = ({ post, TOC, md }) => (
           <Text my={2} opacity={0.7} fontStyle="italic">
             {post.description}
           </Text>
-          <Text my={4} opacity={0.6} fontSize={13}>
+          <Text my={4} opacity={0.6} fontWeight='bold' fontSize={13} fontFamily='Space Grotesk'>
             {post.uploaded === null ? "UPLOAD_DATE" : post.uploaded} •{" "}
             {`${readingTime(md).words} words`} •{" "}
             {`${readingTime(md).text.split(" ")[0]} min read`}
