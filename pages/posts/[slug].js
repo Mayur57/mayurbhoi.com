@@ -80,10 +80,8 @@ const Work = ({ post, TOC, md }) => {
             </Text>
             <Text
               my={4}
-              opacity={0.6}
-              fontWeight="bold"
+              opacity={0.6} 
               fontSize={13}
-              fontFamily="Space Grotesk"
             >
               {post.uploaded === null ? "UPLOAD_DATE" : post.uploaded} •{" "}
               {`${readingTime(md).words} words`} •{" "}
