@@ -5,11 +5,7 @@ import {
   Text,
   Stack,
   Tooltip,
-  Button,
-  HStack,
-  Flex,
-  Spacer,
-  Fade,
+  Button
 } from "@chakra-ui/react";
 import { Global } from "@emotion/react";
 import { unified } from "unified";
@@ -22,6 +18,8 @@ import remarkGfm from "remark-gfm";
 import ReactMarkdown from "react-markdown";
 
 import readingTime from "reading-time";
+import { useState } from "react";
+import { FiArrowUpRight, FiCheck } from "react-icons/fi";
 import Layout from "../../components/layouts/Article";
 import markdownToHtml from "../../libs/MDParser";
 import Title from "../../components/Title";
@@ -32,9 +30,6 @@ import {
   renderQuotes,
   renderUnorderedList,
 } from "../../components/ArticleCustomElements";
-import { useState } from "react";
-import { FiAlertTriangle, FiArrowUpRight, FiCheck } from "react-icons/fi";
-import Confetti from "react-confetti";
 
 const TableOfContents = ({ TOC }) => (
   <Box
@@ -158,6 +153,7 @@ const Work = ({ post, TOC, md }) => {
               p={0}
               _hover={{ backgroundColor: "transparent" }}
               onClick={() => {
+                // eslint-disable-next-line no-restricted-globals
                 navigator.clipboard.writeText(location.href);
                 setCopied(true);
                 setTimeout(() => setCopied(false), 5000);
