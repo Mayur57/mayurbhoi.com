@@ -67,7 +67,6 @@ const Work = ({ post, TOC, md, error }) => {
               fontWeight="bold"
               letterSpacing={-1.5}
               lineHeight={1}
-              
               style={{ marginBottom: 18, flex: 3, justifyItems: "baseline" }}
             >
               {post?.title}

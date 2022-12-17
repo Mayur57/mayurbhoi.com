@@ -32,7 +32,7 @@ const Navbar = (props) => {
         align="center"
         justify="space-between"
       >
-        <Logo span='26px' />
+        <Logo span="26px" />
         <Stack
           direction={{ base: "column", md: "row" }}
           display={{ base: "none", md: "flex" }}

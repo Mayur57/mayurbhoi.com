@@ -20,7 +20,7 @@ const Posts = ({ posts, error }) => {
           flexDirection="column"
           justifyContent="center"
           alignItems="center"
-          textAlign='center'
+          textAlign="center"
         >
           <Subtitle>Something went wrong</Subtitle>
           <Text>{error}</Text>
