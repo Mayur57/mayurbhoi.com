@@ -65,8 +65,10 @@ const Work = ({ post, TOC, md, error }) => {
           <Box flex={4} align="center" mt={12} mb={6}>
             <Title
               fontWeight="bold"
-              fontFamily="EB Garamond"
-              style={{ marginBottom: 10, flex: 3, justifyItems: "baseline" }}
+              letterSpacing={-1.5}
+              lineHeight={1}
+              
+              style={{ marginBottom: 18, flex: 3, justifyItems: "baseline" }}
             >
               {post?.title}
             </Title>
@@ -149,7 +151,7 @@ const Work = ({ post, TOC, md, error }) => {
               }}
             >
               <Text pr={2} color="#999">
-                Liked it?
+                {copied ? "" : "Liked it?"}
               </Text>
               {copied ? "Link Copied" : "Share This Article"}
             </Button>

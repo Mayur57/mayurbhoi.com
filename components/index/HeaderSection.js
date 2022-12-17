@@ -9,7 +9,6 @@ import {
   VStack,
   HStack,
 } from "@chakra-ui/react";
-import "@fontsource/epilogue";
 import { MdLocationPin } from "react-icons/md";
 import { IconContext } from "react-icons";
 import Section from "../Section";

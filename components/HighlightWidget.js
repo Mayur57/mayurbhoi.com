@@ -9,7 +9,6 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { shimmer, toBase64 } from "../libs/Shimmer";
-import "@fontsource/epilogue";
 
 export default function HighlightWidget({
   title,
