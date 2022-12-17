@@ -21,6 +21,7 @@
   },
   "lint-staged": {
     "*.js": [
+      "echo 'Linting codebase'",
       "prettier --write .",
       "eslint --cache --cache-location .next/cache/eslint/ --fix"
     ]
