@@ -12,7 +12,7 @@ function Main({ children, router }) {
         <title>Mayur Bhoi | Software Developer</title>
       </Head>
       <Navbar path={router.asPath} />
-      <Container maxW="container.xl" pt={14}>
+      <Container maxW="container.xl" pt={14} position='relative' minHeight='100vh'>
         {children}
       </Container>
       <Footer />
