@@ -1026,20 +1026,10 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@fontsource/bodoni-moda@^4.5.9":
-  version "4.5.9"
-  resolved "https://registry.yarnpkg.com/@fontsource/bodoni-moda/-/bodoni-moda-4.5.9.tgz#cd009d2e21f00ca922b7afef5618c77f20e69c77"
-  integrity sha512-XjiQ053cI1NaZVH2ZdzF2uUPw3lJ6goqokDYTGoxuKNv6hFws0hSqLXLNasd9DT62gaEUKilT00VNeSF1b0VlA==
-
 "@fontsource/eb-garamond@^4.5.10":
   version "4.5.10"
   resolved "https://registry.yarnpkg.com/@fontsource/eb-garamond/-/eb-garamond-4.5.10.tgz#4c75b2a0905ae9f2fdb572261a296af3a210833a"
   integrity sha512-smk/GMWjIN6+v/d1o+2GAtUh2OceHe4R7xrPX7UD8EZ36ndOaJWJlh48mwh+Yh6MN6Mr3QIu/LYOspVcUw2Zsg==
-
-"@fontsource/epilogue@^4.5.8":
-  version "4.5.9"
-  resolved "https://registry.yarnpkg.com/@fontsource/epilogue/-/epilogue-4.5.9.tgz#96562806baa5a04d08c59f519df4f7de22951813"
-  integrity sha512-MXjEcbRO8frzZcySc9WhsSTfIJ06KexU6K8CByhU3tp23zNsjsWER1BCKMztW5EEzaBID9/cD5zdTipjprDXEQ==
 
 "@fontsource/inter@^4.5.11":
   version "4.5.12"
@@ -1178,11 +1168,6 @@
   integrity sha512-VBjVbmqEzGiOTBq4+wpeVXt/KgknnGB6ahvC/AxiIGnN93/RCSyXhFRI4uSfftM2Ba3w7ZO7076bfKasZsA0fw==
   dependencies:
     glob "7.1.7"
-
-"@next/font@^13.0.7":
-  version "13.0.7"
-  resolved "https://registry.yarnpkg.com/@next/font/-/font-13.0.7.tgz#e0046376edb0ce592d9cfddea8f4ab321eb1515a"
-  integrity sha512-39SzuoMI6jbrIzPs3KtXdKX03OrVp6Y7kRHcoVmOg69spiBzruPJ5x5DQSfN+OXqznbvVBNZBXnmdnSqs3qXiA==
 
 "@next/swc-android-arm-eabi@12.3.4":
   version "12.3.4"
@@ -2672,10 +2657,10 @@ human-signals@^3.0.1:
   resolved "https://registry.yarnpkg.com/human-signals/-/human-signals-3.0.1.tgz#c740920859dafa50e5a3222da9d3bf4bb0e5eef5"
   integrity sha512-rQLskxnM/5OCldHo+wNXbpVgDn5A17CUoKX+7Sokwaknlq7CdSnphy0W39GU8dw59XiCXmFXDg4fRuckQRKewQ==
 
-husky@^8.0.1:
-  version "8.0.1"
-  resolved "https://registry.yarnpkg.com/husky/-/husky-8.0.1.tgz#511cb3e57de3e3190514ae49ed50f6bc3f50b3e9"
-  integrity sha512-xs7/chUH/CKdOCs7Zy0Aev9e/dKOMZf3K1Az1nar3tzlv0jfqnYtu235bstsWTmXOR0EfINrPa97yy4Lz6RiKw==
+husky@^8.0.2:
+  version "8.0.2"
+  resolved "https://registry.yarnpkg.com/husky/-/husky-8.0.2.tgz#5816a60db02650f1f22c8b69b928fd6bcd77a236"
+  integrity sha512-Tkv80jtvbnkK3mYWxPZePGFpQ/tT3HNSs/sasF9P2YfkMezDl3ON37YN6jUUI4eTg5LcyVynlb6r4eyvOmspvg==
 
 ignore@^5.2.0:
   version "5.2.0"
