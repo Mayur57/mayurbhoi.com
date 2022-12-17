@@ -23,6 +23,7 @@
         "varsIgnorePattern": "^_"
       }
     ],
+    "semi": "error",
     "import/extensions": "off",
     "import/no-unresolved": "off",
     "import/no-extraneous-dependencies": "off",
