@@ -1,12 +1,5 @@
 /* eslint-disable no-param-reassign */
-import {
-  Box,
-  Container,
-  Text,
-  Stack,
-  Tooltip,
-  Button
-} from "@chakra-ui/react";
+import { Box, Container, Text, Stack, Tooltip, Button } from "@chakra-ui/react";
 import { Global } from "@emotion/react";
 import { unified } from "unified";
 import rehypeParse from "rehype-parse";
@@ -20,6 +13,7 @@ import ReactMarkdown from "react-markdown";
 import readingTime from "reading-time";
 import { useState } from "react";
 import { FiArrowUpRight, FiCheck } from "react-icons/fi";
+import Error from "next/error";
 import Layout from "../../components/layouts/Article";
 import markdownToHtml from "../../libs/MDParser";
 import Title from "../../components/Title";
@@ -54,10 +48,13 @@ const TableOfContents = ({ TOC }) => (
   </Box>
 );
 
-const Work = ({ post, TOC, md }) => {
+const Work = ({ post, TOC, md, error }) => {
   const [copied, setCopied] = useState(false);
+  if (error) {
+    return <Error />;
+  }
   return (
-    <Layout title={post.title} desc={post.description} img={post.thumbnail}>
+    <Layout title={post?.title} desc={post?.description} img={post?.thumbnail}>
       <Container maxW="container.lg" mt={4}>
         <Stack
           direction={{ base: "column", md: "row" }}
@@ -67,25 +64,17 @@ const Work = ({ post, TOC, md }) => {
         >
           <Box flex={4} align="center" mt={12} mb={6}>
             <Title
-              letterSpacing={-1}
               fontWeight="bold"
-              fontFamily="Abril Fatface"
-              lineHeight={1.05}
+              fontFamily="EB Garamond"
               style={{ marginBottom: 10, flex: 3, justifyItems: "baseline" }}
             >
-              {post.title}
+              {post?.title}
             </Title>
             <Text my={2} opacity={0.7} fontStyle="italic">
-              {post.description}
+              {post?.description}
             </Text>
-            <Text
-              my={4}
-              opacity={0.6}
-              fontWeight="bold"
-              fontSize={13}
-              fontFamily="Space Grotesk"
-            >
-              {post.uploaded === null ? "UPLOAD_DATE" : post.uploaded} •{" "}
+            <Text my={4} opacity={0.6} fontSize={13}>
+              {post?.uploaded === null ? "UPLOAD_DATE" : post?.uploaded} •{" "}
               {`${readingTime(md).words} words`} •{" "}
               {`${readingTime(md).text.split(" ")[0]} min read`}
             </Text>
@@ -159,7 +148,9 @@ const Work = ({ post, TOC, md }) => {
                 setTimeout(() => setCopied(false), 5000);
               }}
             >
-              <Text pr={2} color="#999">Liked it?</Text>
+              <Text pr={2} color="#999">
+                Liked it?
+              </Text>
               {copied ? "Link Copied" : "Share This Article"}
             </Button>
           </Tooltip>

@@ -3,7 +3,7 @@ import { Global, css } from "@emotion/react";
 import "focus-visible/dist/focus-visible";
 import "@fontsource/inter";
 import "@fontsource/space-grotesk";
-import "@fontsource/bodoni-moda/variable.css";
+import "@fontsource/eb-garamond";
 import { useEffect, useState } from "react";
 
 import Layout from "../components/layouts/Main";
