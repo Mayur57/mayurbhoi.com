@@ -1,13 +1,13 @@
-/* eslint-disable react/no-danger */
-/* eslint-disable react/jsx-props-no-spreading */
 import { ColorModeScript } from "@chakra-ui/react";
 import NextDocument, { Html, Head, Main, NextScript } from "next/document";
+import Script from "next/script";
 import theme from "../libs/theme";
 import { GTM_ID } from "../libs/trackers";
 
 const TITLE = "Mayur Bhoi";
-const DESCRIPTION = "I writing efficient and pragmatic software.";
-const CARD_IMAGE_URL = "https://i.ibb.co/QXF8FqG/banner.png";
+const DESCRIPTION = "software engineer ✕ product designer";
+const CARD_IMAGE_URL = "https://i.ibb.co/2W7M0Td/card.png";
+
 export default class Document extends NextDocument {
   render() {
     return (
@@ -33,9 +33,15 @@ export default class Document extends NextDocument {
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:site" content="@mayurbhoii" />
           <meta name="twitter:creator" content="@mayurbhoii" />
-          <meta name="twitter:title" content={TITLE} />
-          <meta name="twitter:description" content={DESCRIPTION} />
-          <meta name="twitter:image" content={CARD_IMAGE_URL} />
+          <meta name="twitter:title" content="Mayur Bhoi" />
+          <meta
+            name="twitter:description"
+            content="software engineer ✕ product designer"
+          />
+          <meta
+            name="twitter:image"
+            content="https://i.ibb.co/2W7M0Td/card.png"
+          />
 
           {/* Favicons for popular platforms and browsers */}
           <link
@@ -116,11 +122,14 @@ export default class Document extends NextDocument {
           <meta name="theme-color" content="#ffffff" />
 
           {/* Global Site Tag (gtag.js) - Google Analytics */}
-          <script
-            async
+          <Script
+            strategy="afterInteractive"
             src={`https://www.googletagmanager.com/gtag/js?id=${GTM_ID}`}
+            defer
           />
-          <script
+          <Script
+            id="gtm"
+            strategy="afterInteractive"
             dangerouslySetInnerHTML={{
               __html: `
             window.dataLayer = window.dataLayer || [];

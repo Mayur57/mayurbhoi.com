@@ -1,32 +1,40 @@
+/* eslint-disable react-hooks/rules-of-hooks */
+/* eslint-disable react/jsx-props-no-spreading */
 import { Box, useColorModeValue } from "@chakra-ui/react";
 import Image from "next/image";
 import { shimmer, toBase64 } from "../libs/Shimmer";
+import profile from "../public/images/me.webp";
 
-export default function Headshot() {
+export default function Headshot({ src = profile, animate = false, ...props }) {
   return (
     <Box
-      height={200}
-      width={200}
+      height={195}
+      width={195}
       position="relative"
       borderRadius="100%"
-      borderColor={useColorModeValue("white", "#FEF6E5")}
+      borderColor={useColorModeValue("purple.50", "#FEF6E5")}
       backgroundColor={useColorModeValue("purple.100", "red.200")}
       borderWidth={8}
       borderStyle="solid"
       boxShadow="lg"
+      overflow="hidden"
       transition="all 250ms"
       _hover={{
-        transform: "scale(1.05)",
-        boxShadow: "xl",
+        boxShadow: animate ? "xl" : "lg",
         transition: "250ms",
-        borderColor: useColorModeValue("purple.300", "red.400"),
+        transform: animate ? "scale(1.1)" : null,
+        borderWidth: animate ? 4 : null,
+        borderColor: animate
+          ? useColorModeValue("purple.300", "red.400")
+          : null,
       }}
+      {...props}
     >
       <Image
         priority
         layout="fill"
         display="inline-block"
-        src="/images/me.webp"
+        src={src}
         alt="Profile Picture"
         placeholder="blur"
         blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}

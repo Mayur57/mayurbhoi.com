@@ -9,13 +9,13 @@ import {
 } from "@chakra-ui/react";
 import Obfuscate from "react-obfuscate";
 import { EmailIcon } from "@chakra-ui/icons";
-import Section from "../components/section";
-import LinkButton from "../components/linkButton";
+import Section from "../components/Section";
+import LinkButton from "../components/LinkButton";
 
 function NotFound() {
   const image404 = `/images/404/404${useColorModeValue("-01", "-02")}.png`;
   return (
-    <Container>
+    <Container pb={20}>
       <Section mb={0}>
         <Center mb={8}>
           <Image src={image404} width="100px" alt="404 image" mt="6em" />
@@ -24,7 +24,7 @@ function NotFound() {
       <Section delay={0.1} mb={0}>
         <Center>
           <Heading variant="pronouns" fontSize={16} opacity={0.6} mt={6}>
-            404: page Not Found
+            404: Page Not Found
           </Heading>
         </Center>
       </Section>
@@ -37,11 +37,10 @@ function NotFound() {
             textAlign="justify"
             mt={4}
           >
-            Oops! Looks like you&apos;ve wandered off into the unknown. Click
-            below to go to the homepage or if you think this is a mistake:{" "}
+            If you think this is a mistake:{" "}
             <Link href="#">
               <Obfuscate
-                email="mayur072000@gmail.com"
+                email="mayur072000+error@gmail.com"
                 headers={{ subject: `I can't find this page!` }}
               >
                 send me an email
@@ -53,7 +52,9 @@ function NotFound() {
       </Section>
       <Section delay={0.3} mb={0}>
         <Center>
-          <LinkButton link="/">Home</LinkButton>
+          <LinkButton label="Go Home" link="/">
+            Home
+          </LinkButton>
         </Center>
       </Section>
     </Container>

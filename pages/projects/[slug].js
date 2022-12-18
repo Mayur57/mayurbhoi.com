@@ -1,130 +1,117 @@
-import {
-  Box,
-  Container,
-  Link,
-  List,
-  ListItem,
-  Text,
-  Heading,
-  Stack,
-  HStack,
-} from "@chakra-ui/react";
-import { useRouter } from "next/router";
-import Image from "next/image";
-import { ExternalLinkIcon } from "@chakra-ui/icons";
+/* eslint-disable react/jsx-no-useless-fragment */
+import { Box, Container, Link, Text, Heading, Stack } from "@chakra-ui/react";
 import { Global } from "@emotion/react";
-import { RiErrorWarningLine } from "react-icons/ri";
-import ErrorPage from "next/error";
-import { Meta } from "../../components/work";
-import P from "../../components/paragraph";
-import Layout from "../../components/layouts/article";
-import Images from "../../data/images";
-import projects from "../../data/projects";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
-const SectionTitle = ({ children }) => (
-  <Heading variant="pronouns" fontWeight={500} fontSize={13} mt={4} mb={2}>
-    {children}
-  </Heading>
-);
+import Layout from "../../components/layouts/Article";
+import { getCMSBaseUrl } from "../../libs/functions";
+import {
+  renderHeadingType6,
+  renderHyperlinks,
+  renderListItem,
+  renderUnorderedList,
+  renderParagraph,
+  renderOrderedList,
+} from "../../components/ArticleCustomElements";
 
-const DeveloperWarning = () => (
-  <Box
-    backgroundColor="red.100"
-    fontSize={12}
-    color="red.500"
-    borderRadius="lg"
-    px={4}
-    py={4}
-  >
-    <HStack>
-      <RiErrorWarningLine size={14} />
-      <Text fontSize={12} color="gray.600">
-        Page content not final
-      </Text>
-    </HStack>
-  </Box>
-);
-
-const Work = () => {
-  const router = useRouter();
-  if (!router.isFallback) {
-    return <ErrorPage statusCode={404} />;
-  }
-  const { slug } = router.query;
-  const filterResult = projects.filter((project) => project.slug === slug);
-  const project = filterResult[0];
-  return (
-    <Layout title={project.title}>
-      <Container maxW="container.lg" mt={4}>
-        <DeveloperWarning />
-        <Stack display="flex" direction={{ md: "row", base: "column" }}>
-          <Box flex={2} mr={{ base: 40, sm: 0, md: 30, xl: 36 }}>
-            <Heading
-              variant="pronouns"
-              fontWeight={500}
-              fontSize={13}
-              mt={4}
-              opacity={0.6}
-            >
-              Project
-            </Heading>
-            <Text fontWeight={800} letterSpacing={-2} fontSize={48}>
-              {project.title}
-            </Text>
-            <Heading variant="pronouns" fontWeight={500} fontSize={13} mt={12}>
-              Description
-            </Heading>
-            <P>{project.description}</P>
-            <Heading variant="pronouns" fontWeight={500} fontSize={13} mt={12}>
-              Description
-            </Heading>
-            <P>{project.description}</P>
-          </Box>
-          <Box flex={3}>
-            <SectionTitle>About</SectionTitle>
-            <P>
-              In publishing and graphic design, Lorem ipsum is a placeholder
-              text commonly used to demonstrate the visual form of a document or
-              a typeface without relying on meaningful content. Lorem ipsum may
-              be used as a placeholder before the final copy is available.
-            </P>
-            <SectionTitle>Stack</SectionTitle>
-            <P>
-              In publishing and graphic design, Lorem ipsum is a placeholder
-              text commonly used to demonstrate the visual form of a document or
-              a typeface without relying on meaningful content. Lorem ipsum may
-              be used as a placeholder before the final copy is available.
-            </P>
-            <SectionTitle>Learnings</SectionTitle>
-            <P>
-              In publishing and graphic design, Lorem ipsum is a placeholder
-              text commonly used to demonstrate the visual form of a document or
-              a typeface without relying on meaningful content. Lorem ipsum may
-              be used as a placeholder before the final copy is available.
-            </P>
-            <SectionTitle>Links</SectionTitle>
-            <List ml={4} my={4}>
-              <ListItem>
-                <Meta>Website</Meta>
-                <Link href="/">
-                  https://dummy.website.com
-                  <ExternalLinkIcon ml="8px" mb="2px" fontSize={12} />
+const Work = ({ project }) => (
+  <Layout title={project.title}>
+    <Container maxW="container.lg" mt={4}>
+      <Stack
+        display="flex"
+        direction={{ sm: "column", md: "row", base: "column" }}
+      >
+        <Box flex={2} mr={{ base: 0, sm: 0, md: 30, lg: 36 }}>
+          <Heading
+            variant="pronouns"
+            fontWeight={500}
+            fontSize={13}
+            mt={4}
+            opacity={0.6}
+          >
+            {project.slug}
+          </Heading>
+          <Text
+            as="h1"
+            fontWeight={800}
+            letterSpacing={-2}
+            fontSize={48}
+            lineHeight={1.1}
+            marginY={4}
+          >
+            {project.title}
+          </Text>
+          <Text style={{ fontSize: "0.9em", opacity: 0.7 }}>
+            {project.description}
+          </Text>
+        </Box>
+        <Box flex={3} pt={4}>
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            components={{
+              h6: renderHeadingType6,
+              p: renderParagraph,
+              a: renderHyperlinks,
+              ul: renderUnorderedList,
+              ol: renderOrderedList,
+              li: renderListItem,
+            }}
+          >
+            {project.body}
+          </ReactMarkdown>
+          <Text
+            style={{
+              fontWeight: 500,
+              letterSpacing: "0.19em",
+              lineHeight: "25px",
+              fontSize: 12,
+              textTransform: "uppercase",
+              opacity: 0.8,
+            }}
+          >
+            Links
+          </Text>
+          {project.links.length > 0 ? (
+            <Text mt={1} mb={8} fontSize={14}>
+              {project.links.map((link) => (
+                <Link marginRight={4} href={Object.values(link)[0]}>
+                  <a>{Object.keys(link)[0]}</a>
                 </Link>
-              </ListItem>
-            </List>
-          </Box>
-        </Stack>
-        <SectionTitle>Product Images</SectionTitle>
-        <Image
-          src={Images.covid}
-          alt="Product image"
-          className="pimage"
-          placeholder="blur"
-        />
-      </Container>
-    </Layout>
-  );
-};
+              ))}
+            </Text>
+          ) : (
+            <></>
+          )}
+        </Box>
+      </Stack>
+      {/** TODO: Add images for all projects */}
+      {/* <SectionTitle>Product Images</SectionTitle>
+      <Grid
+        templateColumns={{ sm: "1fr", md: "1fr 1fr", base: "1fr" }}
+        gap={8}
+        mt={4}
+      >
+        {project.images.map(({ url }) => (
+          <GridItem key={Math.random()}>
+            <AspectRatio ratio={1.5} position="relative">
+              <Image
+                src={url}
+                layout="fill"
+                alt="Product image"
+                className="pimage"
+                placeholder="blur"
+                blurDataURL={`data:image/svg+xml;base64,${toBase64(
+                  shimmer(700, 475)
+                )}`}
+              />
+            </AspectRatio>
+          </GridItem>
+        ))}
+      </Grid> */}
+    </Container>
+  </Layout>
+);
 export default Work;
 
 export const ProductImageStyle = () => (
@@ -136,3 +123,26 @@ export const ProductImageStyle = () => (
     `}
   />
 );
+
+export const getStaticProps = async ({ params }) => {
+  const res = await fetch(
+    `${getCMSBaseUrl()}/projects?filters[slug]=${params.slug}`
+  );
+  const result = await res.json();
+  return {
+    props: {
+      project: result.data[0].attributes,
+    },
+    revalidate: 7200,
+  };
+};
+
+export const getStaticPaths = async () => {
+  const res = await fetch(`${getCMSBaseUrl()}/projects`);
+  const response = await res.json();
+  const paths = response.data.map((project) => ({
+    params: { slug: project.attributes.slug },
+  }));
+
+  return { paths, fallback: false };
+};
