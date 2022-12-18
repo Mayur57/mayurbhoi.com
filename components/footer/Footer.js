@@ -16,7 +16,7 @@ function Footer() {
           <Text fontSize="14px" fontWeight={500}>
             Mayur Bhoi
           </Text>
-          <Text fontSize="12px">rev 2.1.0</Text>
+          <Text fontSize="12px">rev {process.env.NEXT_PUBLIC_REVISION}</Text>
         </Box>
         <Spacer />
         <Box
