@@ -5,6 +5,7 @@ import {
   Link,
   Icon,
   useColorModeValue,
+  HStack,
 } from "@chakra-ui/react";
 import {
   BsLinkedin,
@@ -16,7 +17,7 @@ import {
 import NextLink from "next/link";
 import { Links } from "../data/links";
 
-const SocialIcon = ({ icons, link, size = 16 }) => (
+const SocialIcon = ({ icons, link, size = 16 }) => !link ? (null) :  (
   <GridItem>
     <NextLink href={link} passHref>
       <Link>
@@ -30,6 +31,7 @@ const SocialIcon = ({ icons, link, size = 16 }) => (
               transform: "translate(0px, -2px)",
             }}
             bgColor="transparent"
+            // eslint-disable-next-line react-hooks/rules-of-hooks
             color={useColorModeValue("#000", "#EEE")}
             opacity={0.5}
             transition="250ms"
@@ -42,15 +44,13 @@ const SocialIcon = ({ icons, link, size = 16 }) => (
   </GridItem>
 );
 
-const Social = ({ spacing, size, mt }) => (
-  <Center mt={mt}>
-    <Grid templateColumns={`repeat(5, ${spacing})`} gap={6}>
+const Social = ({ size, mt=0 }) => (
+  <Center mt={mt} display={{ base: 'none', sm: 'flex'}}>
+    <HStack gap={{base: 3, md: 6}}>
       <SocialIcon icons={<BsLinkedin />} link={Links.linkedin} size={size} />
       <SocialIcon icons={<BsGithub />} link={Links.github} size={size} />
       <SocialIcon icons={<BsTwitter />} link={Links.twitter} size={size} />
-      <SocialIcon icons={<BsMedium />} link={Links.medium} size={size} />
-      <SocialIcon icons={<BsInstagram />} link={Links.instagram} size={size} />
-    </Grid>
+    </HStack>
   </Center>
 );
 
