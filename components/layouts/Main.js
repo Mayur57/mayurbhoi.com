@@ -6,10 +6,10 @@ import Footer from "../footer/Footer";
 
 function Main({ children, router }) {
   return (
-    <Box transition="all 150ms ease-in-out" bg="#FFFFFF" _dark={{ bg: "#000" }}>
+    <Box transition="all 250ms ease-in-out" bg="#FFFFFF" _dark={{ bg: "#121212" }}>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Mayur Bhoi | Software Developer</title>
+        <title>Mayur Bhoi</title>
       </Head>
       <Navbar path={router.asPath} />
       <Container

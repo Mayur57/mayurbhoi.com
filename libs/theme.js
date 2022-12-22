@@ -15,7 +15,7 @@ const breakpoints = {
 const styles = {
   global: (props) => ({
     body: {
-      bg: mode("#FFFFFF", "#000")(props),
+      bg: mode("#FFFFFF", "#111")(props),
       color: mode("#111", "#FFF")(props),
     },
     h1: {
@@ -63,7 +63,7 @@ const styles = {
       opacity: 0.4,
     },
     p: {
-      color: mode(textColorLight, "#BBB")(props),
+      color: mode(textColorLight, "#E5E5E5")(props),
     },
     strong: {
       color: mode("#121212", "#DDD")(props),
