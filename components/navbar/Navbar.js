@@ -9,6 +9,7 @@ import ResumeLink from "./ResumeLink";
 
 const Navbar = (props) => {
   const { path } = props;
+  // if(path === "/") return null;
   const resumeLink = Links.resume;
   return (
     <Box
@@ -17,11 +18,9 @@ const Navbar = (props) => {
       w="100%"
       pl={4}
       pr={2}
-      bg={useColorModeValue("#ffffff88", "#20202020")}
+      bg={useColorModeValue("#ffffff88", "#20202000")}
       css={{ backdropFilter: "blur(20px) saturate(150%)" }}
       zIndex={5}
-      borderBottom="1px"
-      borderBottomColor={useColorModeValue("#00000000", "#ffffff20")}
       {...props}
     >
       <Container
@@ -32,6 +31,7 @@ const Navbar = (props) => {
         align="center"
         justify="space-between"
       >
+        <Box display={path === '/' ? 'none' : 'flex'}>
         <Logo span="26px" />
         <Stack
           direction={{ base: "column", md: "row" }}
@@ -47,7 +47,7 @@ const Navbar = (props) => {
           {/* <LinkItem href="/snippets" path={path} label="Snippets" /> */}
           <ResumeLink link={resumeLink} path={path} />
         </Stack>
-
+        </Box>
         <Box flex={1} align="right">
           <ThemeButton />
           <Box

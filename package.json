@@ -14,10 +14,17 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "precommit": "lint-staged",
     "purge": "bash purge.sh",
-    "commit": "bash commit.sh"
+    "commit": "bash commit.sh",
+    "find:unused": "next-unused"
   },
   "husky": {
     "precommit": "lint-staged"
+  },
+  "next-unused": {
+    "alias": {},
+    "include": ["components", "data", "libs"],
+    "exclude": [],
+    "entrypoints": []
   },
   "lint-staged": {
     "*.js": [
@@ -76,6 +83,7 @@
     "eslint-plugin-security": "^1.4.0",
     "husky": "^8.0.2",
     "lint-staged": "^13.0.3",
+    "next-unused": "^0.0.6",
     "prettier": "2.8.1"
   }
 }

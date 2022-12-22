@@ -1,6 +1,5 @@
 import {
   Center,
-  Grid,
   GridItem,
   Link,
   Icon,
@@ -10,9 +9,7 @@ import {
 import {
   BsLinkedin,
   BsGithub,
-  BsTwitter,
-  BsMedium,
-  BsInstagram,
+  BsTwitter
 } from "react-icons/bs";
 import NextLink from "next/link";
 import { Links } from "../data/links";
