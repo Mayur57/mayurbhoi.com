@@ -8,7 +8,6 @@ import {
   useColorModeValue,
   VStack,
   HStack,
-  Textarea,
 } from "@chakra-ui/react";
 import { MdLocationPin } from "react-icons/md";
 import { IconContext } from "react-icons";
@@ -84,10 +83,10 @@ function HeaderSection() {
           </Box>
         </VStack>
         <Text>
-        bhoi, mayur. creating software that makes people feel. full stack
-      engineer. unsatisfiably curious about systems and code. relentless about
-      polish, details and craft. always seeking cutting edge in my work.
-      currently at NCR Corporation.
+          bhoi, mayur. creating software that makes people feel. full stack
+          engineer. unsatisfiably curious about systems and code. relentless
+          about polish, details and craft. always seeking cutting edge in my
+          work. currently at NCR Corporation.
         </Text>
       </Section>
 
