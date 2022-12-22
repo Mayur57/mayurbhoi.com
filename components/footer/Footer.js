@@ -48,9 +48,14 @@ function Footer() {
           </Text>
           <Text fontSize="12px">rev {process.env.NEXT_PUBLIC_REVISION}</Text>
         </Box>
-        <Box display="flex" flexDir="column" flex={2} justifyContent="center" align='center'>
-          <Social size={20} mt='1.5px' />
-          {/* <BuiltWidget /> */}
+        <Box
+          display="flex"
+          flexDir="column"
+          flex={2}
+          justifyContent="center"
+          align="center"
+        >
+          <Social size={20} mt="1.5px" />
         </Box>
         <Box
           display="flex"

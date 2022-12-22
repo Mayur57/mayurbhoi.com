@@ -3,7 +3,7 @@ import { Global, css } from "@emotion/react";
 import "focus-visible/dist/focus-visible";
 import "@fontsource/inter";
 import "@fontsource/space-grotesk";
-import "@fontsource/eb-garamond";
+import "@fontsource/newsreader";
 import { useEffect, useState } from "react";
 
 import Layout from "../components/layouts/Main";
@@ -22,6 +22,9 @@ const GlobalStyles = css`
   html {
     scroll-behavior: smooth;
     text-rendering: optimizeLegibility;
+    font-feature-settings: "kern" 1;
+    font-kerning: normal;
+    -webkit-font-smoothing: antialiased;
   }
 `;
 

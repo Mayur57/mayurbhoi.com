@@ -37,6 +37,16 @@ const styles = {
       fontWeight: "bold",
       letterSpacing: -0.3,
     },
+    ".main-page-url": {
+      textDecoration: "underline",
+      textDecorationColor: mode('rgba(0, 0, 0, 0.4)', 'rgba(255, 255, 255, 0.4)')(props),
+      textUnderlineOffset: 3,
+      transition: "all 250ms ease",
+      _hover: {
+        textDecoration: "none",
+        color: mode("blue.600", "red.300")(props)
+      }
+    },
     code: {
       color: mode("purple.600", "red.300")(props),
       fontFamily:

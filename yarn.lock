@@ -1041,6 +1041,11 @@
   resolved "https://registry.yarnpkg.com/@fontsource/inter/-/inter-4.5.12.tgz#a6236379bf710658db048d7087ec588754962cb6"
   integrity sha512-bGKk4/8tube/nCk8hav0ZDBVbzJzc7m0Vt4xF5p15IN4YImwGdtKG38Oq5bU8xHNS+VfvbFFCepgQNj7Pr/Lvg==
 
+"@fontsource/newsreader@^4.5.9":
+  version "4.5.9"
+  resolved "https://registry.yarnpkg.com/@fontsource/newsreader/-/newsreader-4.5.9.tgz#3a48feb17efafbf13be0f2e6e857902a42f851d4"
+  integrity sha512-i8v/LAqkmZoWsjF2mi70aGWP+Rse7xu+1o80FgC9VYU++AgQGGYY4iK2f2gruwWbDXb4a80CVxuezjlzrHOLBA==
+
 "@fontsource/space-grotesk@^4.5.8":
   version "4.5.10"
   resolved "https://registry.yarnpkg.com/@fontsource/space-grotesk/-/space-grotesk-4.5.10.tgz#49c62a52e08c7c713ccf25ff58d9061d31048191"
