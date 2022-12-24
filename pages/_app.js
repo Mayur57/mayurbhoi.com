@@ -26,6 +26,10 @@ const GlobalStyles = css`
     font-kerning: normal;
     -webkit-font-smoothing: antialiased;
   }
+
+  body {
+    overflow-x: hidden;
+  }
 `;
 
 const Website = ({ Component, pageProps, router }) => {
