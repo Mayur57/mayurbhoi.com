@@ -7,6 +7,7 @@ import Footer from "../footer/Footer";
 function Main({ children, router }) {
   return (
     <Box
+    width= '100%'
       transition="all 250ms ease-in-out"
       _dark={{ bg: "#121212" }}
       _after={router.asPath === "/" && {
@@ -19,11 +20,11 @@ function Main({ children, router }) {
           transparent 360deg
         )`,
         top: '50px',
-        width: "340px",
+        width: {base: '100%', md: "340px"},
         height: "280px",
         zIndex: -1,
         content: '""',
-        left: {base: "-10%", md: "20%"},
+        left: {base: "-30%", md: "20%"},
         position: "absolute",
         filter: "blur(45px)",
         transform: "translateZ(0)",
@@ -36,12 +37,12 @@ function Main({ children, router }) {
           rgba(1, 65, 255, 0.3)
         )`,
         borderRadius: "50%",
-        width: "480px",
-        height: "360px",
+        width: {base: '100%', md: "340px"},
+        height: "280px",
         content: "''",
-        left: {base: "-15%", md: "20%"},
+        left: {base: "-55%", md: "20%"},
         position: "absolute",
-        transform: "translateZ(0) rotate(78deg)",
+        transform: "translateZ(0)",
         filter: "blur(45px)"
       }}
     >
