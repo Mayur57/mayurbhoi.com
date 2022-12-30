@@ -21,6 +21,8 @@ const NavbarMenu = () => (
       as={IconButton}
       icon={<HamburgerIcon />}
       variant="outline"
+      backgroundColor="transparent"
+      border="none"
       aria-label="Options"
       transition="all 0.2s"
       _hover={{ boxShadow: "lg", transform: "scale(1.05)" }}

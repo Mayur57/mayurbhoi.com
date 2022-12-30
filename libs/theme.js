@@ -15,7 +15,7 @@ const breakpoints = {
 const styles = {
   global: (props) => ({
     body: {
-      bg: mode("#FFFFFF", "#000")(props),
+      bg: mode("#FFFFFF", "#111")(props),
       color: mode("#111", "#FFF")(props),
     },
     h1: {
@@ -36,6 +36,19 @@ const styles = {
       fontSize: 18,
       fontWeight: "bold",
       letterSpacing: -0.3,
+    },
+    ".main-page-url": {
+      textDecoration: "underline",
+      textDecorationColor: mode(
+        "rgba(0, 0, 0, 0.4)",
+        "rgba(255, 255, 255, 0.4)"
+      )(props),
+      textUnderlineOffset: 3,
+      transition: "all 250ms ease",
+      _hover: {
+        textDecoration: "none",
+        color: mode("blue.600", "red.300")(props),
+      },
     },
     code: {
       color: mode("purple.600", "red.300")(props),
@@ -63,7 +76,7 @@ const styles = {
       opacity: 0.4,
     },
     p: {
-      color: mode(textColorLight, "#BBB")(props),
+      color: mode(textColorLight, "#E5E5E5")(props),
     },
     strong: {
       color: mode("#121212", "#DDD")(props),

@@ -5,5 +5,5 @@ export const getCMSBaseUrl = () => {
   const environmentMode = process.env.NEXT_PUBLIC_ENV;
   return environmentMode === "dev"
     ? "http://localhost:1337/api"
-    : "https://mosaic-handler-bk.fly.dev/api";
+    : "https://mosaic-backend-handler.fly.dev/api";
 };

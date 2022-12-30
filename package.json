@@ -1,6 +1,6 @@
 {
-  "name": "portfolio-v2",
-  "version": "1.0.0",
+  "name": "mosaic",
+  "version": "2.1.0",
   "description": "Portfolio website",
   "main": "index.js",
   "scripts": {
@@ -14,10 +14,21 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "precommit": "lint-staged",
     "purge": "bash purge.sh",
-    "commit": "bash commit.sh"
+    "commit": "bash commit.sh",
+    "find:unused": "next-unused"
   },
   "husky": {
     "precommit": "lint-staged"
+  },
+  "next-unused": {
+    "alias": {},
+    "include": [
+      "components",
+      "data",
+      "libs"
+    ],
+    "exclude": [],
+    "entrypoints": []
   },
   "lint-staged": {
     "*.js": [
@@ -36,18 +47,16 @@
     "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
-    "@fontsource/eb-garamond": "^4.5.10",
     "@fontsource/inter": "^4.5.11",
+    "@fontsource/newsreader": "^4.5.9",
     "@fontsource/space-grotesk": "^4.5.8",
     "@next/bundle-analyzer": "^12.2.5",
     "focus-visible": "^5.2.0",
     "framer-motion": "^6.5.1",
     "moment": "^2.29.4",
     "next": "^12.2.3",
-    "next-themes": "^0.2.0",
     "parameterize": "^1.0.0",
     "react": "^18.2.0",
-    "react-confetti": "^6.1.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
     "react-markdown": "^8.0.3",
@@ -76,6 +85,7 @@
     "eslint-plugin-security": "^1.4.0",
     "husky": "^8.0.2",
     "lint-staged": "^13.0.3",
+    "next-unused": "^0.0.6",
     "prettier": "2.8.1"
   }
 }

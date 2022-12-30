@@ -9,7 +9,6 @@ import {
   HStack,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
-import { FiArrowRight } from "react-icons/fi";
 
 const anim = keyframes`
 50% {
@@ -22,37 +21,34 @@ const LinkButton = ({ label = "undefined", link, bg, ...props }) => (
     <NextLink href={link} passHref>
       <Button variant="new-tab-action" borderColor="transparent" px={2}>
         <HStack
-          opacity={0.5}
+          opacity={1}
           zIndex={2}
           transition="all 200ms ease"
           _groupHover={{ opacity: 1, transition: "all 200ms ease" }}
         >
-          <Text
-            top="0px"
-            left="0px"
-            color={useColorModeValue("#121212", "#BBB")}
-          >
+          <Text top="0px" left="0px" color={useColorModeValue("#000", "#888")}>
             {label}
           </Text>
-          <FiArrowRight />
+          {/* <FiArrowRight /> */}
         </HStack>
         <Box
           pos="absolute"
-          bgColor={bg ?? useColorModeValue("#FFFFFF", "#000")}
+          bgColor={bg ?? useColorModeValue("#FFFFFF", "#121212")}
           zIndex={1}
           height="100%"
+          borderWidth="1px"
+          borderColor={useColorModeValue("#000", "#888")}
           width="100%"
           top="0px"
           left="0px"
           display="inline-block"
-          borderRadius={4}
         />
         <Box
           pos="absolute"
           w="110%"
           h="130%"
           zIndex={0}
-          opacity="30%"
+          opacity="25%"
           filter="blur(10px) saturate(150%)"
           color="white"
           background="linear-gradient(-90deg, #007CF0, #00DFD8, #FF0080, #007CF0)"
