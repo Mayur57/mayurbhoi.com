@@ -38,11 +38,8 @@ function Work(props) {
 export default Work;
 
 async function getPosts() {
-  const response = await fetch(`${getCMSBaseUrl()}/projects?sort=id`).then(
-    (res) => res.json()
-  );
-
-  const { data } = response;
+  const response = await fetch(`${getCMSBaseUrl()}/projects?sort[0]=featured:desc&sort[1]=id`);
+  const { data } = await response.json();
 
   return data;
 }
