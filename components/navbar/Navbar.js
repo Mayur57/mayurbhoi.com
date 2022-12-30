@@ -18,8 +18,12 @@ const Navbar = (props) => {
       w="100%"
       pl={4}
       pr={2}
-      bg={path === '/' ? "transparent" : useColorModeValue("#ffffff88", "#20202000")}
-      css={{ backdropFilter: path === '/' ? "" : "blur(20px) saturate(150%)" }}
+      bg={
+        path === "/"
+          ? "transparent"
+          : useColorModeValue("#ffffff88", "#20202000")
+      }
+      css={{ backdropFilter: path === "/" ? "" : "blur(20px) saturate(150%)" }}
       zIndex={5}
       {...props}
     >
