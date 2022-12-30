@@ -179,14 +179,21 @@ const Page = ({ post, project }) => (
                 animation: `${anim} linear 6s infinite`,
               }}
             />
-            <Box position="absolute" left="7.5rem" top="1.5rem">
+            <Box position="absolute" left="12px" top="12px">
               <Text
                 letterSpacing="0.1em"
-                fontSize="0.75em"
+                fontSize={{ base: "0.6em", sm: "0.65em" }}
                 textTransform="uppercase"
                 fontWeight={400}
               >
                 Resume
+              </Text>
+              <Text
+                letterSpacing="-0.03em"
+                fontSize={{ base: "0.8em", sm: "1em" }}
+                fontWeight={500}
+              >
+                Mayur Bhoi
               </Text>
             </Box>
           </Box>
