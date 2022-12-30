@@ -26,11 +26,7 @@ const LinkButton = ({ label = "undefined", link, bg, ...props }) => (
           transition="all 200ms ease"
           _groupHover={{ opacity: 1, transition: "all 200ms ease" }}
         >
-          <Text
-            top="0px"
-            left="0px"
-            color={useColorModeValue("#000", "#888")}
-          >
+          <Text top="0px" left="0px" color={useColorModeValue("#000", "#888")}>
             {label}
           </Text>
           {/* <FiArrowRight /> */}
