@@ -8,7 +8,6 @@ import { useEffect, useState } from "react";
 import Layout from "../components/layouts/Main";
 import Fonts from "../components/FontPreLoader";
 import CookiesProvider from "../libs/cookies";
-import * as ga from "../libs/trackers";
 import { Loading } from "../components/layouts/Loading";
 
 const GlobalStyles = css`
@@ -33,18 +32,11 @@ const GlobalStyles = css`
 const Website = ({ Component, pageProps, router }) => {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
-    const handleRouteChange = (url) => {
-      ga.pageview(url);
-    };
     const handleStartLoading = () => setLoading(true);
     const handleEndLoading = () => setLoading(false);
     router.events.on("routeChangeStart", handleStartLoading);
     router.events.on("routeChangeComplete", handleEndLoading);
     router.events.on("routeChangeError", handleEndLoading);
-    router.events.on("routeChangeComplete", handleRouteChange);
-    return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
-    };
   }, [router.events]);
   return (
     <CookiesProvider cookies={pageProps.cookies}>

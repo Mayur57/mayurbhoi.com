@@ -33,7 +33,7 @@ const About = () => (
         tweets you view while the Extension is enabled.
       </Text>
       <Heading>How is the collected information used?</Heading>
-      <Text mb='8em'>
+      <Text mb="8em">
         As the Extension does not collect any information, there is no
         information to use.
         <Heading>
@@ -53,8 +53,8 @@ const About = () => (
         informed about our information practices and the choices available to
         you.
         <Heading>Contact Us</Heading>
-        If you have any questions about this privacy policy, please reach out
-        at <a href='mailto:mayur072000@gmail.com'>mayur072000@gmail.com</a>.
+        If you have any questions about this privacy policy, please reach out at{" "}
+        <a href="mailto:mayur072000@gmail.com">mayur072000@gmail.com</a>.
       </Text>
     </Container>
   </Layout>

@@ -127,20 +127,14 @@ export default class Document extends NextDocument {
             src={`https://www.googletagmanager.com/gtag/js?id=${GTM_ID}`}
             defer
           />
-          <Script
-            id="gtm"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-              __html: `
+          <Script id="gtm" strategy="afterInteractive">{`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', '${GTM_ID}', {
               page_path: window.location.pathname,
             });
-          `,
-            }}
-          />
+          `}</Script>
         </Head>
         <body>
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
