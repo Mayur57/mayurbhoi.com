@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { Box, useColorModeValue } from "@chakra-ui/react";
 
 const Caret = () => (

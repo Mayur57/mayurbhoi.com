@@ -1,4 +1,4 @@
-module.exports = {
+const config = {
   reactStrictMode: true,
   swcMinify: true,
   compiler: {
@@ -8,3 +8,8 @@ module.exports = {
     domains: ["i.ibb.co", "via.placeholder.com"],
   },
 };
+
+const withBundleAnalyzer = require("@next/bundle-analyzer")(config);
+
+module.exports =
+  process.env.ANALYZE === "true" ? withBundleAnalyzer({}) : config;

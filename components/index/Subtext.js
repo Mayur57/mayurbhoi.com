@@ -1,6 +1,6 @@
 import { Box, Text } from "@chakra-ui/react";
 
-const Subtext = ({ children }) => (
+const Subtext = () => (
   <Box
     display="flex"
     dir="row"
@@ -35,7 +35,7 @@ const Subtext = ({ children }) => (
       />
     </svg>
     <Text fontSize="0.85em" ml="8px">
-      {children}
+      made using vercel, next.js, and chakraui
     </Text>
   </Box>
 );
