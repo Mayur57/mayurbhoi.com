@@ -34,12 +34,14 @@
     "import/prefer-default-export": "off",
     "react/function-component-definition": "off",
     "react/no-array-index-key": "off",
+    "react/jsx-no-useless-fragment": "off",
     "react/jsx-filename-extension": [
       1,
       {
         "extensions": [".js"]
       }
-    ]
+    ],
+    "@next/next/no-img-element": "off"
   },
   "extends": ["next/core-web-vitals", "airbnb", "prettier"]
 }

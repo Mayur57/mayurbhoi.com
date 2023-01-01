@@ -1,5 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
-/* eslint-disable react/jsx-no-useless-fragment */
 import { AspectRatio, Box, Text, useColorModeValue } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -78,7 +76,12 @@ const FeatureTile = ({
             mb="28px"
             mx="28px"
           >
-            <Image priority src={image} layout="fill" />
+            <Image
+              priority
+              src={image}
+              layout="fill"
+              alt={`${itemTitle} Hero Image`}
+            />
           </AspectRatio>
         ) : (
           <></>
