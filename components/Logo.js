@@ -4,7 +4,6 @@ import { Box, useColorModeValue } from "@chakra-ui/react";
 
 const Logo = ({ span }) => {
   const logoImg = `/images/logo${useColorModeValue("-dark", "-light")}.svg`;
-  // const logoImg = `/images/logo.png`;
   return (
     <Link href="/" scroll={false}>
       <a>

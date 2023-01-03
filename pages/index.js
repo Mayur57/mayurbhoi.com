@@ -1,15 +1,14 @@
-import dynamic from "next/dynamic";
 import { Box, Container } from "@chakra-ui/react";
 import { getFeaturedProject, getLatestPost } from "../libs/functions";
 
-const FeatureTile = dynamic(() => import("../components/index/FeatureTile"));
-const Subtext = dynamic(() => import("../components/index/Subtext"));
-const ArrowDown = dynamic(() => import("../components/index/ArrowDown"));
-const Contact = dynamic(() => import("../components/index/Contact"));
-const Prop = dynamic(() => import("../components/index/Prop"));
-const AboutButton = dynamic(() => import("../components/index/AboutButton"));
-const Prologue = dynamic(() => import("../components/index/Prologue"));
-const Header = dynamic(() => import("../components/index/Header"));
+import FeatureTile from"../components/index/FeatureTile";
+import Subtext from"../components/index/Subtext";
+import ArrowDown from"../components/index/ArrowDown";
+import Contact from"../components/index/Contact";
+import Prop from"../components/index/Prop";
+import AboutButton from"../components/index/AboutButton";
+import Prologue from"../components/index/Prologue";
+import Header from"../components/index/Header";
 
 const Page = ({ post, project }) => (
   <Container maxW="container.sm" alignContent="center">

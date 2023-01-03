@@ -5,3 +5,4 @@ private/
 .env.local
 yarn.lock
 package-lock.json
+analyze/

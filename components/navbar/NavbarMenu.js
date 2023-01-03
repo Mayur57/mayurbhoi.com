@@ -6,14 +6,14 @@ import {
   MenuDivider,
   MenuItem,
   MenuList,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 import { Links } from "../../data/links";
 import ResumeLink from "./ResumeLink";
 
-const sourceLink = "https://github.com/Mayur57/portfolio-v2";
-const resumeLink = Links.resume;
+const { source, resume } = Links;
 
 const NavbarMenu = () => (
   <Menu isLazy id="navbar-menu">
@@ -21,11 +21,9 @@ const NavbarMenu = () => (
       as={IconButton}
       icon={<HamburgerIcon />}
       variant="outline"
-      backgroundColor="transparent"
+      backgroundColor={useColorModeValue('white', '#111')}
       border="none"
       aria-label="Options"
-      transition="all 0.2s"
-      _hover={{ boxShadow: "lg", transform: "scale(1.05)" }}
     />
     <MenuList>
       <Link href="/" passHref>
@@ -44,13 +42,13 @@ const NavbarMenu = () => (
         <MenuItem>Snippets</MenuItem>
       </Link> */}
       <MenuDivider />
-      <Link href={sourceLink} passHref>
+      <Link href={source} passHref>
         <MenuItem>
           Source&nbsp;&nbsp;
           <FiArrowUpRight size={14} opacity={0.4} />
         </MenuItem>
       </Link>
-      <Link href={resumeLink} passHref>
+      <Link href={resume} passHref>
         <MenuItem>
           <ResumeLink isMenu />
         </MenuItem>
