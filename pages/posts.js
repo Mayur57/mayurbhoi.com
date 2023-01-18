@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable no-param-reassign */
 import { Container, SimpleGrid, Text } from "@chakra-ui/react";
 import moment from "moment";
@@ -31,9 +32,9 @@ const Posts = ({ posts, error }) => {
   return (
     <Layout title="Articles">
       <Container maxW="container.lg">
-        <Subtitle>blog</Subtitle>
+        <Subtitle>Posts</Subtitle>
         <Title fontWeight={800} letterSpacing={-2}>
-          Articles &amp; Opinions
+          Thoughts &amp; Findings
         </Title>
         <SimpleGrid columns={[1, 2, 2]} spacingX={-2} spacingY={-2} mt={4}>
           {posts.map(({ attributes }, index) => (

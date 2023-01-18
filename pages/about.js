@@ -105,21 +105,6 @@ const About = () => (
             the open source community.
           </p>
         </Section>
-        {/* <Section delay={0.2}>
-          <Heading as="h2" fontSize={28} letterSpacing={-1}>
-            Technical Skillset
-          </Heading>
-          <Box marginY={2}>
-            <p>
-              It has survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
-            </p>
-          </Box>
-        </Section> */}
         <Section delay={0.3} pt="1em">
           <Heading as="h2" fontSize={28} letterSpacing={-1}>
             Experience
@@ -137,7 +122,7 @@ const About = () => (
                 <Section key={index} delay={Math.round((index + 3) / 2) / 10}>
                   <HStack align="center" mt={6}>
                     <Company>
-                      <Link href={link}>{company}</Link>
+                      <a href={link} target='_blank' rel="noopener noreferrer">{company}</a>
                     </Company>
                     <FiArrowUpRight opacity={0.9} />
                   </HStack>

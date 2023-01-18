@@ -3,7 +3,7 @@ import { Box, Text, useColorModeValue } from "@chakra-ui/react";
 import Section from "../Section";
 
 const AboutButton = () => (
-  <Section y={2} delay={0.3} mb={0}>
+  <Section y={10} delay={0.3} mb={0}>
     <Link href="/about">
       <Box
         role="group"

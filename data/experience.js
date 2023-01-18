@@ -1,27 +1,15 @@
 export const experience = [
   {
-    company: "NCR Corporation",
-    position: "SW Engineer I",
+    company: "NCR Global",
+    position: "SWE I - Digital Banking",
     duration: "July 2022 - Present",
     link: "https://ncr.com/",
   },
   {
-    company: "Authenticating.com",
+    company: "Authenticate.com",
     position: "SWE Intern - Full Stack",
     duration: "Feb 2022 - June 2022",
-    link: "https://authenticating.com/",
-  },
-  {
-    company: "Sigma Tenant",
-    position: "SWE Intern - Flutter",
-    duration: "April 2021 - June 2021",
-    link: "https://sigmatenant.com/",
-  },
-  {
-    company: "MobbyPark Inc.",
-    position: "Flutter  Development Intern",
-    duration: "December 2020 - January 2021",
-    link: "https://mobbypark.com/",
+    link: "https://authenticate.com/",
   },
   {
     company: "The MIT Post",

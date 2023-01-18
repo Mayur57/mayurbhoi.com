@@ -6,3 +6,4 @@ private/
 yarn.lock
 package-lock.json
 analyze/
+bun.lockb

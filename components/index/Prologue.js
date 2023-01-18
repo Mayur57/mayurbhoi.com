@@ -3,12 +3,13 @@ import Link from "next/link";
 import Section from "../Section";
 
 const Prologue = () => (
-  <Section y={2} delay={0.2} mb={0}>
+  <Section y={10} delay={0.2} mb={0}>
     <Text
       mb={6}
       fontSize={16}
       letterSpacing="-0.01em"
       lineHeight={1.5}
+      fontWeight={300}
       textAlign="justify"
     >
       creating impactful & elegant software. full stack engineer. unsatisfiably
@@ -17,11 +18,11 @@ const Prologue = () => (
       detailed polish. always seeking out the cutting edge in my craft.
       currently at{" "}
       <Link href="https://ncr.com">
-        <a className="main-page-url">NCR</a>
+        <a className="main-page-url" style={{ cursor: 'ne-resize' }}>NCR</a>
       </Link>
       .
     </Text>
-    <Text mb={6}>based in bengaluru, india</Text>
+    <Text mb={6} fontWeight={300}>based in bengaluru, india</Text>
   </Section>
 );
 

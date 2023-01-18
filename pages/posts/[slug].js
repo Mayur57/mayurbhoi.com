@@ -19,6 +19,7 @@ import markdownToHtml from "../../libs/MDParser";
 import Title from "../../components/Title";
 import { getCMSBaseUrl } from "../../libs/functions";
 import {
+  renderHeadingType2,
   renderHyperlinks,
   renderListItem,
   renderQuotes,
@@ -116,6 +117,7 @@ const Work = ({ post, TOC, md, error }) => {
                 remarkPlugins={[remarkGfm]}
                 className="article"
                 components={{
+                  h2: renderHeadingType2,
                   li: renderListItem,
                   ul: renderUnorderedList,
                   blockquote: renderQuotes,

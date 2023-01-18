@@ -5,6 +5,20 @@
 /* eslint-disable react/jsx-props-no-spreading */
 
 import { useColorModeValue } from "@chakra-ui/react";
+import parameterize from "parameterize";
+
+/** Render <h2> */
+export const renderHeadingType2 = ({ node, ...props }) => (
+  <h2
+    id={parameterize(node.children[0].value)}
+    style={{
+      letterSpacing: "-1px",
+      fontSize: 24,
+      color: useColorModeValue("#37352F", "#FFF"),
+    }}
+    {...props}
+  />
+);
 
 /** Render <li> */
 export const renderListItem = ({ node, ...props }) => (
