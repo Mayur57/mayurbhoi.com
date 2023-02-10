@@ -51,6 +51,8 @@
     "@fontsource/newsreader": "^4.5.9",
     "@fontsource/space-grotesk": "^4.5.8",
     "@next/bundle-analyzer": "^13.1.1",
+    "@vercel/analytics": "^0.1.8",
+    "cmdk": "^0.1.21",
     "focus-visible": "^5.2.0",
     "framer-motion": "^6.5.1",
     "moment": "^2.29.4",
