@@ -4,7 +4,7 @@ export const GridItemStyle = () => (
   <Global
     styles={`
       .item-thumbnail {
-        border-radius: 8px;
+        border-radius: 16px;
       }
     `}
   />

@@ -13,7 +13,7 @@ function Work(props) {
       <Container maxWidth="container.lg">
         <Section>
           <Subtitle>Projects</Subtitle>
-          <Title fontWeight={800} letterSpacing={-2}>
+          <Title>
             Past Work &amp; Personal Projects
           </Title>
         </Section>

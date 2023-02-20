@@ -1,4 +1,11 @@
-import { AspectRatio, Box, LinkBox, LinkOverlay, Text } from "@chakra-ui/react";
+import {
+  AspectRatio,
+  Box,
+  LinkBox,
+  LinkOverlay,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
 import { shimmer, toBase64 } from "../../libs/Shimmer";
@@ -10,6 +17,7 @@ export const ProjectsGridItem = ({ children, id, title, thumbnail }) => (
         <AspectRatio
           position="relative"
           ratio={5 / 3}
+          borderRadius="16px"
           transition="all 250ms ease"
           mb={4}
           _groupHover={{
@@ -30,11 +38,27 @@ export const ProjectsGridItem = ({ children, id, title, thumbnail }) => (
           />
         </AspectRatio>
         <LinkOverlay href={`/projects/${id}`}>
-          <Text as="h4" fontWeight="700" fontSize="1.5em" mt={1.5}>
+          <Text
+            fontWeight={500}
+            fontSize={20}
+            lineHeight={1.4}
+            transition="all 250ms ease"
+            letterSpacing="-0.03em"
+            _groupHover={{
+              color: useColorModeValue("purple.500", "red.400"),
+            }}
+          >
             {title}
           </Text>
         </LinkOverlay>
-        <Text fontSize="12" opacity={0.7} mt={1.5} mr={2} pb={4}>
+        <Text
+          fontSize="12"
+          lineHeight={1.5}
+          fontWeight={400}
+          mt={1.5}
+          mr={2}
+          pb={4}
+        >
           {children}
         </Text>
       </LinkBox>

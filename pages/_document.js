@@ -1,8 +1,6 @@
 import { ColorModeScript } from "@chakra-ui/react";
 import NextDocument, { Html, Head, Main, NextScript } from "next/document";
-import Script from "next/script";
 import theme from "../libs/theme";
-import { GTM_ID } from "../libs/trackers";
 
 const TITLE = "Mayur Bhoi";
 const DESCRIPTION = "software engineer ✕ product designer";
@@ -121,20 +119,6 @@ export default class Document extends NextDocument {
           />
           <meta name="theme-color" content="#ffffff" />
 
-          {/* Global Site Tag (gtag.js) - Google Analytics */}
-          <Script
-            strategy="afterInteractive"
-            src={`https://www.googletagmanager.com/gtag/js?id=${GTM_ID}`}
-            defer
-          />
-          <Script id="gtm" strategy="afterInteractive">{`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GTM_ID}', {
-              page_path: window.location.pathname,
-            });
-          `}</Script>
         </Head>
         <body>
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
