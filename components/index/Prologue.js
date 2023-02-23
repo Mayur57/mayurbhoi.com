@@ -18,11 +18,15 @@ const Prologue = () => (
       detailed polish. always seeking out the cutting edge in my craft.
       currently at{" "}
       <Link href="https://ncr.com">
-        <a className="main-page-url" style={{ cursor: 'ne-resize' }}>NCR</a>
+        <a className="main-page-url" style={{ cursor: "ne-resize" }}>
+          NCR
+        </a>
       </Link>
       .
     </Text>
-    <Text mb={6} fontWeight={300}>based in bengaluru, india</Text>
+    <Text mb={6} fontWeight={300}>
+      based in bengaluru, india
+    </Text>
   </Section>
 );
 

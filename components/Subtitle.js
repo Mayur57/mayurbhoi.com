@@ -2,10 +2,11 @@ import { Text, useColorModeValue } from "@chakra-ui/react";
 
 const Subtitle = ({ children }) => (
   <Text
-    fontSize={14}
+    lineHeight={1.5}
+    fontWeight={500}
+    fontSize={12}
     mt={12}
     letterSpacing={1.4}
-    fontWeight="bold"
     color={useColorModeValue("#805AD5", "#FE5B5E")}
     textTransform="uppercase"
   >

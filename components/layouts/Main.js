@@ -63,7 +63,7 @@ function Main({ children, router }) {
       >
         {children}
       </Container>
-      <Footer />
+      {router.asPath !== "/" && <Footer />}
     </Box>
   );
 }

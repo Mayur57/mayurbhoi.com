@@ -4,11 +4,14 @@ import "focus-visible/dist/focus-visible";
 import "@fontsource/inter";
 import "@fontsource/space-grotesk";
 import { useEffect, useState } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 import Layout from "../components/layouts/Main";
 import Fonts from "../components/FontPreLoader";
 import CookiesProvider from "../libs/cookies";
 import { Loading } from "../components/layouts/Loading";
+
+import "../components/cmdk/cmd.css";
 
 const GlobalStyles = css`
   .js-focus-visible :focus:not([data-focus-visible-added]) {
@@ -46,7 +49,10 @@ const Website = ({ Component, pageProps, router }) => {
         {loading ? (
           <Loading />
         ) : (
-          <Component {...pageProps} key={router.route} />
+          <>
+            <Component {...pageProps} key={router.route} />
+            <Analytics />
+          </>
         )}
       </Layout>
     </CookiesProvider>

@@ -1,3 +1,6 @@
+/* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable react/no-unstable-nested-components */
 /* eslint-disable no-param-reassign */
 import { Box, Container, Text, Stack, Tooltip, Button } from "@chakra-ui/react";
 import { Global } from "@emotion/react";
@@ -9,11 +12,13 @@ import parameterize from "parameterize";
 import moment from "moment";
 import remarkGfm from "remark-gfm";
 import ReactMarkdown from "react-markdown";
-
 import readingTime from "reading-time";
 import { useState } from "react";
 import { FiArrowUpRight, FiCheck } from "react-icons/fi";
 import Error from "next/error";
+import rehypeRaw from "rehype-raw";
+import remarkImages from "remark-images";
+
 import Layout from "../../components/layouts/Article";
 import markdownToHtml from "../../libs/MDParser";
 import Title from "../../components/Title";
@@ -93,12 +98,33 @@ const Work = ({ post, TOC, md, error }) => {
             >
               <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
+                rehypePlugins={[rehypeRaw]}
                 className="article"
                 components={{
                   li: renderListItem,
                   ul: renderUnorderedList,
                   blockquote: renderQuotes,
                   a: renderHyperlinks,
+                  img: ({ node, ...props }) => (
+                    <Box
+                      my={4}
+                      display="flex"
+                      flexDir="column"
+                      alignItems="center"
+                    >
+                      <img {...props} />
+                      {node.properties.alt !== "" ? (
+                        <Text
+                          fontSize={12}
+                          mt={4}
+                          fontStyle="italic"
+                          opacity={0.6}
+                        >
+                          {node.properties.alt}
+                        </Text>
+                      ) : null}
+                    </Box>
+                  ),
                 }}
               >
                 {md}
@@ -115,6 +141,7 @@ const Work = ({ post, TOC, md, error }) => {
             <Box maxW="container.md" fontSize={14}>
               <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
+                rehypePlugins={[rehypeRaw]}
                 className="article"
                 components={{
                   h2: renderHeadingType2,
@@ -122,6 +149,12 @@ const Work = ({ post, TOC, md, error }) => {
                   ul: renderUnorderedList,
                   blockquote: renderQuotes,
                   a: renderHyperlinks,
+                  img: ({ node, ...props }) => (
+                    <>
+                      <img {...props} />
+                      <p>{node}</p>
+                    </>
+                  ),
                 }}
               >
                 {md}
@@ -184,6 +217,7 @@ export const getStaticProps = async ({ params }) => {
   const rawHtmlContent = await markdownToHtml(result.data[0].attributes.body);
   const mdContent = result.data[0].attributes.body;
   const htmlContent = unified()
+    .use(remarkImages)
     .use(rehypeParse, {
       fragment: true,
     })
