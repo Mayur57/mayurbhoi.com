@@ -29,7 +29,7 @@ const Page = () => (
     >
       <FiCommand size={10} />
       <Text fontSize={12} ml={2}>
-        Press CMD+K to see options.
+        Press CMD+K to see all options
       </Text>
     </Box>
     {/* <ArrowDown />
