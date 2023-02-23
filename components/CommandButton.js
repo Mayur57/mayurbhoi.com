@@ -6,10 +6,11 @@ const CommandButton = () => {
   const { toggle } = useKmenu();
   return (
     <Button
-      display={{ base: "none", md: "block" }}
+      display={{ base: "none", md: "flex" }}
       onClick={toggle}
       bg="transparent"
       p={0}
+      alignItems="center"
     >
       <FiCommand size={28} opacity={0.8} />
     </Button>
