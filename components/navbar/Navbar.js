@@ -8,6 +8,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { FiCommand } from "react-icons/fi";
+import { useKmenu } from "kmenu";
 import { Links } from "../../data/links";
 import Logo from "../Logo";
 import ThemeButton from "../ThemeButton";
@@ -18,6 +19,7 @@ import ResumeLink from "./ResumeLink";
 const Navbar = (props) => {
   const { path } = props;
   const resumeLink = Links.resume;
+  const { toggle } = useKmenu();
   return (
     <Box
       position="fixed"
@@ -66,7 +68,7 @@ const Navbar = (props) => {
             zIndex={100}
             display={{ base: "inline-block", md: "none" }}
           >
-            <Button p={0} bg="transparent">
+            <Button onClick={toggle} p={0} bg="transparent">
               <FiCommand />
             </Button>
           </Box>
