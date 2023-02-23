@@ -13,9 +13,7 @@ function Work(props) {
       <Container maxWidth="container.lg">
         <Section>
           <Subtitle>Projects</Subtitle>
-          <Title>
-            Past Work &amp; Personal Projects
-          </Title>
+          <Title>Past Work &amp; Personal Projects</Title>
         </Section>
         <SimpleGrid columns={[1, 2, 2]} spacingX={10} spacingY={2} mt={12}>
           {posts.map((post, index) => (

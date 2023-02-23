@@ -1,11 +1,18 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react/jsx-props-no-spreading */
-import { Box, Container, Stack, useColorModeValue } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Container,
+  Stack,
+  useColorModeValue,
+} from "@chakra-ui/react";
+import { FiCommand } from "react-icons/fi";
 import { Links } from "../../data/links";
 import Logo from "../Logo";
 import ThemeButton from "../ThemeButton";
 import LinkItem from "./MenuLink";
-import NavbarMenu from "./NavbarMenu";
+// import NavbarMenu from "./NavbarMenu";
 import ResumeLink from "./ResumeLink";
 
 const Navbar = (props) => {
@@ -59,7 +66,9 @@ const Navbar = (props) => {
             zIndex={100}
             display={{ base: "inline-block", md: "none" }}
           >
-            <NavbarMenu />
+            <Button p={0} bg="transparent">
+              <FiCommand />
+            </Button>
           </Box>
         </Box>
       </Container>

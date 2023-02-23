@@ -21,7 +21,7 @@ const NavbarMenu = () => (
       as={IconButton}
       icon={<HamburgerIcon />}
       variant="outline"
-      backgroundColor={useColorModeValue('white', '#111')}
+      backgroundColor={useColorModeValue("white", "#111")}
       border="none"
       aria-label="Options"
     />

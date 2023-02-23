@@ -33,9 +33,7 @@ const Posts = ({ posts, error }) => {
     <Layout title="Articles">
       <Container maxW="container.lg">
         <Subtitle>Posts</Subtitle>
-        <Title>
-          Thoughts &amp; Findings
-        </Title>
+        <Title>Thoughts &amp; Findings</Title>
         <SimpleGrid columns={[1, 2, 2]}>
           {posts.map(({ attributes }, index) => (
             <Section key={index} delay={calculateAnimationDelay(index)}>

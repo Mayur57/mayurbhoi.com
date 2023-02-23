@@ -1,6 +1,6 @@
 {
   "name": "mosaic",
-  "version": "2.1.0",
+  "version": "2.3.0",
   "description": "Portfolio website",
   "main": "index.js",
   "scripts": {
@@ -55,6 +55,7 @@
     "cmdk": "^0.1.21",
     "focus-visible": "^5.2.0",
     "framer-motion": "^6.5.1",
+    "kmenu": "^1.2.2-nightly-dev",
     "moment": "^2.29.4",
     "next": "^12.2.3",
     "parameterize": "^1.0.0",

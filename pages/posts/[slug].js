@@ -59,7 +59,6 @@ const Work = ({ post, TOC, md, error }) => {
   if (error) {
     return <Error />;
   }
-  console.log(md);
   return (
     <Layout title={post?.title} desc={post?.description} img={post?.thumbnail}>
       <Container maxW="container.lg" mt={4}>
@@ -114,7 +113,7 @@ const Work = ({ post, TOC, md, error }) => {
                       alignItems="center"
                     >
                       <img {...props} />
-                      {node.properties.alt !== '' ? (
+                      {node.properties.alt !== "" ? (
                         <Text
                           fontSize={12}
                           mt={4}

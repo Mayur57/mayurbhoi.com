@@ -11,6 +11,8 @@ import Fonts from "../components/FontPreLoader";
 import CookiesProvider from "../libs/cookies";
 import { Loading } from "../components/layouts/Loading";
 
+import "../components/cmdk/cmd.css";
+
 const GlobalStyles = css`
   .js-focus-visible :focus:not([data-focus-visible-added]) {
     outline: none;

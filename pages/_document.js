@@ -118,7 +118,6 @@ export default class Document extends NextDocument {
             content="/meta/favicon/ms-icon-144x144.png"
           />
           <meta name="theme-color" content="#ffffff" />
-
         </Head>
         <body>
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
