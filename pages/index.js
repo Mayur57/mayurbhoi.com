@@ -26,6 +26,7 @@ const Page = () => (
       alignItems="center"
       justifyContent="center"
       mt={8}
+      mb={12}
     >
       <FiCommand size={10} />
       <Text fontSize={12} ml={2}>
