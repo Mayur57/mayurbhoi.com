@@ -17,9 +17,6 @@ import "../components/cmdk/cmd.css";
 const GlobalStyles = css`
   @font-face {
     font-family: "Recoleta";
-    font-style: normal;
-    font-weight: regular;
-    font-display: swap;
     src: url(../fonts/Recoleta-Light.ttf) format("truetype");
   }
 
@@ -33,11 +30,12 @@ const GlobalStyles = css`
     text-rendering: optimizeLegibility;
     font-feature-settings: "kern" 1;
     font-kerning: normal;
-    -webkit-font-smoothing: antialiased;
   }
 
   body {
     overflow-x: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -webkit-text-stroke: 1px transparent;
   }
 `;
 

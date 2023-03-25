@@ -70,7 +70,6 @@ const Work = ({ post, TOC, md, error }) => {
           maxW="container.lg"
         >
           <Box flex={4} align="center" mt={12} mb={6}>
-            
             <Title
               fontFamily="Recoleta"
               letterSpacing={0}
