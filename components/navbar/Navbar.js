@@ -10,7 +10,6 @@ import {
 import { FiCommand } from "react-icons/fi";
 import { useKmenu } from "kmenu";
 import { Links } from "../../data/links";
-import Logo from "../Logo";
 import ThemeButton from "../ThemeButton";
 import LinkItem from "./MenuLink";
 // import NavbarMenu from "./NavbarMenu";
@@ -45,7 +44,7 @@ const Navbar = (props) => {
         justify="space-between"
       >
         <Box display={path === "/" ? "none" : "flex"}>
-          <Logo span="26px" />
+          {/* <Logo span="26px" /> */}
           <Stack
             direction={{ base: "column", md: "row" }}
             display={{ base: "none", md: "flex" }}

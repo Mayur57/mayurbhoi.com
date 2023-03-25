@@ -3,6 +3,7 @@ import Head from "next/head";
 import { Box, Container } from "@chakra-ui/react";
 import Navbar from "../navbar/Navbar";
 import Footer from "../footer/Footer";
+import ScrollToTop from "../ScrollToTop";
 
 function Main({ children, router }) {
   return (
@@ -62,6 +63,7 @@ function Main({ children, router }) {
         minHeight="100vh"
       >
         {children}
+        <ScrollToTop />
       </Container>
       {router.asPath !== "/" && <Footer />}
     </Box>

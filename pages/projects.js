@@ -1,4 +1,7 @@
-import { Container, SimpleGrid } from "@chakra-ui/react";
+import {
+  Container,
+  SimpleGrid,
+} from "@chakra-ui/react";
 import Section from "../components/Section";
 import { ProjectsGridItem } from "../components/grid/ProjectGridItem";
 import Layout from "../components/layouts/Article";
@@ -11,11 +14,13 @@ function Work(props) {
   return (
     <Layout title="Projects">
       <Container maxWidth="container.lg">
-        <Section>
+        <Section mb={0}>
           <Subtitle>Projects</Subtitle>
-          <Title>Past Work &amp; Personal Projects</Title>
+          <Title fontSize={38} fontWeight={600} mb={4}>
+            Past Work &amp; Personal Projects
+          </Title>
         </Section>
-        <SimpleGrid columns={[1, 2, 2]} spacingX={10} spacingY={2} mt={12}>
+        <SimpleGrid columns={[1, 2, 2]} spacingX={8} mt={12}>
           {posts.map((post, index) => (
             <Section key={index} delay={calculateAnimationDelay(index)}>
               <ProjectsGridItem
