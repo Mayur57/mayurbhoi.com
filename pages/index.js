@@ -13,7 +13,7 @@ import Prologue from "../components/index/Prologue";
 import Header from "../components/index/Header";
 
 const Page = () => (
-  <Container maxW="container.sm" alignContent="center">
+  <Container maxW="container.sm" overflow='hidden'>
     <Box height="15vh" />
     <Prop />
     <Header />
@@ -30,49 +30,10 @@ const Page = () => (
     >
       <FiCommand size={10} />
       <Text fontSize={12} ml={2}>
-        Press CMD+K to see all options
+        Press CMD+K to get started
       </Text>
     </Box>
-    {/* <ArrowDown />
-    <FeatureTile
-      sectionTitle="Projects"
-      sectionDescription="I make things."
-      header="Featured"
-      itemTitle={project?.title}
-      itemDescription={project?.description}
-      itemLink={`/projects/${project?.slug}`}
-      categoryLink="/projects"
-      action="see all projects"
-    />
-    <FeatureTile
-      sectionTitle="Articles"
-      sectionDescription="I write things."
-      header="Latest"
-      itemTitle={post?.title}
-      itemDescription={post?.description}
-      action="read all articles"
-      itemLink={`/posts/${post?.slug}`}
-      categoryLink="/posts"
-    />
-    <Contact />
-    <Subtext /> */}
   </Container>
 );
 
 export default Page;
-
-// export const getStaticProps = async () => {
-//   const post = await getLatestPost();
-//   const project = await getFeaturedProject();
-//   return post
-//     ? {
-//         props: { post: post.attributes, project: project.attributes },
-//       }
-//     : {
-//         props: {
-//           post: [],
-//           project: [],
-//           error: "Error retrieving articles. Server returned invalid response.",
-//         },
-//       };
-// };

@@ -1,3 +1,5 @@
+/* eslint-disable no-return-assign */
+/* eslint-disable no-param-reassign */
 import { CommandMenu, CommandWrapper, useCommands } from "kmenu";
 import { useRouter } from "next/router";
 import React from "react";
@@ -112,71 +114,23 @@ const Palette = () => {
     },
   ];
 
-  // const nested = [
+  // const articles = [
   //   {
-  //     category: 'Navigation',
-  //     commands: [
-  //       {
-  //         icon: <FiZap />,
-  //         text: 'Quickstart',
-  //         href: 'https://github.com/harshhhdev/kmenu#-quickstart',
-  //         newTab: true,
-  //       },
-  //       {
-  //         icon: <FiCommand />,
-  //         text: 'Using the Provider',
-  //         href: 'https://github.com/harshhhdev/kmenu/#using-the-provider',
-  //         newTab: true,
-  //       },
-  //       {
-  //         icon: <FiPlus />,
-  //         text: 'Adding Commands',
-  //         href: 'https://github.com/harshhhdev/kmenu#adding-commands',
-  //         newTab: true,
-  //       },
-  //       {
-  //         icon: <FiCode />,
-  //         text: 'useKmenu Hook',
-  //         href: 'https://github.com/harshhhdev/kmenu/#usekmenu-hook',
-  //         newTab: true,
-  //       },
-  //       {
-  //         icon: <FiCode />,
-  //         text: 'useCommands Hook',
-  //         href: 'https://github.com/harshhhdev/kmenu/#usecommands-hook',
-  //         newTab: true,
-  //       },
-  //       {
-  //         icon: <FiEdit2 />,
-  //         text: 'Customising the Menu',
-  //         href: 'https://github.com/harshhhdev/kmenu#customising-the-menu',
-  //         newTab: true,
-  //       },
-  //       {
-  //         icon: <FiSettings />,
-  //         text: 'Setting up the Menu',
-  //         href: 'https://github.com/harshhhdev/kmenu#setting-up-the-menu',
-  //         newTab: true,
-  //       },
-  //       {
-  //         icon: <FiCommand />,
-  //         text: 'Nested Menus',
-  //         href: 'https://github.com/harshhhdev/kmenu#nested-menus',
-  //         newTab: true,
-  //       },
-  //       {
-  //         icon: <FiCode />,
-  //         text: 'useShortcut Hook',
-  //         href: 'https://github.com/harshhhdev/kmenu#useshortcut-hook',
-  //         newTab: true,
-  //       },
-  //     ],
+  //     category: 'Articles',
+  //     commands: posts || {},
   //   },
   // ];
 
-  const [mainCommands] = useCommands(main);
-  // const [navigationCommands] = useCommands(nested);
+  // const projs = [
+  //   {
+  //     category: 'Projects',
+  //     commands: projects || {},
+  //   }
+  // ];
 
+  const [mainCommands] = useCommands(main);
+  // const [projectCommands] = useCommands(projs);
+  // const [postCommands] = useCommands(articles);
   return (
     <CommandWrapper>
       <CommandMenu
@@ -186,9 +140,14 @@ const Palette = () => {
         placeholder="Search"
       />
       {/* <CommandMenu
-        commands={navigationCommands}
-        crumbs={['Home', 'Search']}
+        commands={projectCommands}
+        crumbs={['Home', 'Projects']}
         index={2}
+      />
+      <CommandMenu
+        commands={postCommands}
+        crumbs={['Home', 'Articles']}
+        index={3}
       /> */}
     </CommandWrapper>
   );

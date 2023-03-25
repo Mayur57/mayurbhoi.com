@@ -6,14 +6,23 @@ import "@fontsource/space-grotesk";
 import { useEffect, useState } from "react";
 import { Analytics } from "@vercel/analytics/react";
 
+import { Provider } from "react-wrap-balancer";
 import Layout from "../components/layouts/Main";
 import Fonts from "../components/FontPreLoader";
-import CookiesProvider from "../libs/cookies";
 import { Loading } from "../components/layouts/Loading";
+import CookiesProvider from "../libs/cookies";
 
 import "../components/cmdk/cmd.css";
 
 const GlobalStyles = css`
+  @font-face {
+    font-family: "Recoleta";
+    font-style: normal;
+    font-weight: regular;
+    font-display: swap;
+    src: url(../fonts/Recoleta-Light.ttf) format("truetype");
+  }
+
   .js-focus-visible :focus:not([data-focus-visible-added]) {
     outline: none;
     box-shadow: none;
@@ -42,20 +51,22 @@ const Website = ({ Component, pageProps, router }) => {
     router.events.on("routeChangeError", handleEndLoading);
   }, [router.events]);
   return (
-    <CookiesProvider cookies={pageProps.cookies}>
-      <Fonts />
-      <Global styles={GlobalStyles} />
-      <Layout router={router}>
-        {loading ? (
-          <Loading />
-        ) : (
-          <>
-            <Component {...pageProps} key={router.route} />
-            <Analytics />
-          </>
-        )}
-      </Layout>
-    </CookiesProvider>
+    <Provider>
+      <CookiesProvider cookies={pageProps.cookies}>
+        <Fonts />
+        <Global styles={GlobalStyles} />
+        <Layout router={router}>
+          {loading ? (
+            <Loading />
+          ) : (
+            <>
+              <Component {...pageProps} key={router.route} />
+              <Analytics />
+            </>
+          )}
+        </Layout>
+      </CookiesProvider>
+    </Provider>
   );
 };
 

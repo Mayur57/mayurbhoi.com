@@ -31,12 +31,12 @@ const Posts = ({ posts, error }) => {
   }
   return (
     <Layout title="Articles">
-      <Container maxW="container.lg">
+      <Container maxW="container.md">
         <Subtitle>Posts</Subtitle>
-        <Title>Thoughts &amp; Findings</Title>
-        <SimpleGrid columns={[1, 2, 2]}>
+        <Title fontSize={38} fontWeight={600}>Thoughts &amp; Findings</Title>
+        <SimpleGrid columns={[1, 1, 1]}>
           {posts.map(({ attributes }, index) => (
-            <Section key={index} delay={calculateAnimationDelay(index)}>
+            <Section key={index} y={5} delay={calculateAnimationDelay(index)}>
               <PostsGridItem
                 id={attributes.slug}
                 index={index}

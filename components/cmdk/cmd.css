@@ -148,6 +148,11 @@ button.breadcrumb {
   .command_wrapper {
     height: 50% !important;
   }
+
+  input {
+    
+  }
+
 }
 
 [data-theme="light"] .dialog {

@@ -6,7 +6,7 @@ const Prologue = () => (
   <Section y={10} delay={0.2} mb={0}>
     <Text
       mb={6}
-      fontSize={16}
+      fontSize="1em"
       letterSpacing="-0.01em"
       lineHeight={1.5}
       fontWeight={300}

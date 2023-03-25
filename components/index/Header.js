@@ -28,11 +28,11 @@ const Checkmark = () => (
 
 const Header = () => (
   <Section y={10} mb={0} delay={0.1}>
-    <Text fontSize="48px" fontWeight={500} mt={6} letterSpacing="-0.04em">
+    <Text fontSize="3.5em" fontWeight={500} mt={6} letterSpacing="-0.04em">
       hey
     </Text>
     <Box display="flex" alignItems="center">
-      <Text my={6} fontSize="18px" fontWeight={500} letterSpacing="-0.03em">
+      <Text my={6} fontSize='1em' fontWeight={500} letterSpacing="-0.03em">
         mayur bhoi
       </Text>
       <Checkmark />

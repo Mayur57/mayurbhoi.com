@@ -18,6 +18,7 @@ import { FiArrowUpRight, FiCheck } from "react-icons/fi";
 import Error from "next/error";
 import rehypeRaw from "rehype-raw";
 import remarkImages from "remark-images";
+import Balancer from "react-wrap-balancer";
 
 import Layout from "../../components/layouts/Article";
 import markdownToHtml from "../../libs/MDParser";
@@ -69,13 +70,14 @@ const Work = ({ post, TOC, md, error }) => {
           maxW="container.lg"
         >
           <Box flex={4} align="center" mt={12} mb={6}>
+            
             <Title
-              fontWeight="bold"
-              letterSpacing={-1.5}
+              fontFamily="Recoleta"
+              letterSpacing={0}
               lineHeight={1}
               style={{ marginBottom: 18, flex: 3, justifyItems: "baseline" }}
             >
-              {post?.title}
+              <Balancer>{post?.title}</Balancer>
             </Title>
             <Text my={2} opacity={0.7} fontStyle="italic">
               {post?.description}
@@ -90,7 +92,7 @@ const Work = ({ post, TOC, md, error }) => {
         {TOC.length === 0 ? (
           <Box width="100%" textAlign="start" align="center">
             <Box
-              maxWidth="container.sm"
+              maxWidth="container.md"
               fontSize={14}
               height="auto"
               m="0 auto"
