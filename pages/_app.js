@@ -27,15 +27,11 @@ const GlobalStyles = css`
 
   html {
     scroll-behavior: smooth;
-    text-rendering: optimizeLegibility;
-    font-feature-settings: "kern" 1;
-    font-kerning: normal;
   }
 
   body {
     overflow-x: hidden;
     -webkit-font-smoothing: subpixel-antialiased;
-    -webkit-text-stroke: 1px transparent;
   }
 `;
 
