@@ -17,7 +17,8 @@ import "../components/cmdk/cmd.css";
 const GlobalStyles = css`
   @font-face {
     font-family: "Recoleta";
-    src: url(../fonts/Recoleta-Light.ttf) format("truetype");
+    font-weight: normal;
+    src: url(../fonts/Recoleta-Regular.ttf) format("truetype");
   }
 
   .js-focus-visible :focus:not([data-focus-visible-added]) {
@@ -25,13 +26,11 @@ const GlobalStyles = css`
     box-shadow: none;
   }
 
-  html {
-    scroll-behavior: smooth;
-  }
-
   body {
+    scroll-behavior: smooth;
     overflow-x: hidden;
-    -webkit-font-smoothing: subpixel-antialiased;
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
   }
 `;
 

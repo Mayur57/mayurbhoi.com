@@ -1,20 +1,12 @@
-import { Box } from "@chakra-ui/react";
+import { Box, useColorModeValue } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
 
   const toggleVisibility = () => {
-    if (window.pageYOffset > 300) {
-      let timer = null;
-      if (timer !== null) clearTimeout(timer);
-      setIsVisible(true);
-      timer = setTimeout(() => {
-        setIsVisible(false);
-      }, 5000);
-    } else {
-      setIsVisible(false);
-    }
+    if (window.pageYOffset > 300) setIsVisible(true);
+    else setIsVisible(false);
   };
 
   const scrollToTop = () => {
@@ -23,6 +15,8 @@ export default function ScrollToTop() {
       behavior: "smooth",
     });
   };
+
+  const blur = useColorModeValue('#281D1A', '#EDEDED');
 
   useEffect(() => {
     window.addEventListener("scroll", toggleVisibility);
@@ -35,6 +29,9 @@ export default function ScrollToTop() {
   return (
     <Box
       opacity={isVisible ? 1 : 0}
+      visibility={isVisible ? "visible" : "hidden"}
+      textShadow={isVisible ? "none" : `0 0 40px ${blur} `}
+      blur="3xl"
       zIndex={100}
       position="fixed"
       right="4"
@@ -45,7 +42,7 @@ export default function ScrollToTop() {
       transition="all 0.3s ease-in-out"
       onClick={scrollToTop}
       aria-label="Scroll to top"
-      filter={isVisible ? "drop-shadow(0 0 1rem #444)" : ""}
+      filter="auto"
     >
       ☝🏼
     </Box>

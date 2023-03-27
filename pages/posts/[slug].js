@@ -72,6 +72,7 @@ const Work = ({ post, TOC, md, error }) => {
           <Box flex={4} align="center" mt={12} mb={6}>
             <Title
               fontFamily="Recoleta"
+              fontWeight='normal'
               lineHeight={1}
               style={{ marginBottom: 18, flex: 3, justifyItems: "baseline" }}
             >

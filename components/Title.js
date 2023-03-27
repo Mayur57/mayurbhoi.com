@@ -4,7 +4,7 @@ import { Heading, useColorModeValue } from "@chakra-ui/react";
 const Title = (props) => (
   <Heading
     as="h1"
-    letterSpacing="-0.04em"
+    letterSpacing="-0.02em"
     fontSize="2.5em"
     color={useColorModeValue("#281D1A", "#EDEDED")}
     mt={2}
