@@ -6,7 +6,7 @@ const Prologue = () => (
   <Section y={10} delay={0.2} mb={0}>
     <Text
       mb={6}
-      fontSize="1em"
+      fontSize={["sm", "md", "md"]}
       letterSpacing="-0.01em"
       lineHeight={1.5}
       fontWeight={300}
@@ -22,7 +22,7 @@ const Prologue = () => (
       </Link>
       .
     </Text>
-    <Text mb={6} fontWeight={300}>
+    <Text fontSize={["sm", "md", "md"]} mb={6} fontWeight={300}>
       based in bengaluru, india
     </Text>
   </Section>

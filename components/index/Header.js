@@ -28,7 +28,7 @@ const Checkmark = () => (
 
 const Header = () => (
   <Section y={10} mb={0} delay={0.1}>
-    <Text fontSize="3.5em" fontWeight={500} mt={6} letterSpacing="-0.04em">
+    <Text fontSize={["2.25em", "3em", "3.5em"]} fontWeight={500} mt={6} letterSpacing="-0.04em">
       hey
     </Text>
     <Box display="flex" alignItems="center">

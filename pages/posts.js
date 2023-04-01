@@ -33,7 +33,7 @@ const Posts = ({ posts, error }) => {
     <Layout title="Articles">
       <Container maxW="container.sm">
         <Subtitle>Posts</Subtitle>
-        <Title fontSize={38} fontWeight={600}>
+        <Title>
           Thoughts &amp; Findings
         </Title>
         <SimpleGrid columns={[1, 1, 1]} spacing={2}>

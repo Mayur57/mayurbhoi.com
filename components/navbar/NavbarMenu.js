@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { HamburgerIcon } from "@chakra-ui/icons";
 import {
+  Box,
   IconButton,
   Menu,
   MenuButton,
@@ -8,6 +9,7 @@ import {
   MenuItem,
   MenuList,
   useColorModeValue,
+  Text,
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
@@ -23,7 +25,7 @@ const NavbarMenu = () => (
       icon={<HamburgerIcon />}
       variant="outline"
       ml={2}
-      display={{ base: "inline-flex", md: "none"}}
+      display={{ base: "inline-flex", md: "none" }}
       backgroundColor={useColorModeValue("white", "#111")}
       border="none"
       aria-label="Options"
@@ -45,6 +47,13 @@ const NavbarMenu = () => (
         <MenuItem>Snippets</MenuItem>
       </Link> */}
       <MenuDivider />
+      <Link href="/meta" passHref>
+        <MenuItem>About Website</MenuItem>
+      </Link>
+      <Link href="/privacy" passHref>
+        <MenuItem>Privacy Policy</MenuItem>
+      </Link>
+      <MenuDivider />
       <Link href={source} passHref>
         <MenuItem>
           Source&nbsp;&nbsp;
@@ -56,6 +65,10 @@ const NavbarMenu = () => (
           <ResumeLink isMenu />
         </MenuItem>
       </Link>
+      <MenuDivider />
+      <Box display="flex" alignItems="start">
+        <Text fontSize={10} ml={4} opacity={0.4}>rev {process.env.NEXT_PUBLIC_REVISION}</Text>
+      </Box>
     </MenuList>
   </Menu>
 );

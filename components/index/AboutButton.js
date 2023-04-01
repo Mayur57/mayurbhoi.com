@@ -22,7 +22,7 @@ const AboutButton = () => (
         py="1em"
         mt={12}
       >
-        <Text mr="12px">more</Text>
+        <Text  fontSize={["sm", "md", "md"]} mr="12px">more</Text>
         <Box
           transition="all 0.8s cubic-bezier(.08,.52,.52,1)"
           _groupHover={{ transform: "translateX(8px)" }}
