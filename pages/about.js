@@ -127,6 +127,7 @@ const About = () => (
                     <FiArrowUpRight opacity={0.9} />
                   </HStack>
                   <Text
+                  as='h6'
                     letterSpacing={-0.25}
                     fontWeight="600"
                     opacity={1}

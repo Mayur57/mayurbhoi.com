@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import { HamburgerIcon } from "@chakra-ui/icons";
 import {
   IconButton,
@@ -21,6 +22,8 @@ const NavbarMenu = () => (
       as={IconButton}
       icon={<HamburgerIcon />}
       variant="outline"
+      ml={2}
+      display={{ base: "inline-flex", md: "none"}}
       backgroundColor={useColorModeValue("white", "#111")}
       border="none"
       aria-label="Options"

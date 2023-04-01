@@ -99,6 +99,7 @@ const styles = {
     },
     ".article": {
       whiteSpace: "pre-wrap",
+      color: mode(textColorLight, "#E5E5E5")(props),
     },
   }),
 };

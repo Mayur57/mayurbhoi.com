@@ -23,7 +23,7 @@ export const ProjectsGridItem = ({ children, id, title, thumbnail }) => (
     _hover={{ backgroundColor: useColorModeValue("#f5f5f5", "#2a2a2a") }}
     border={`1px solid ${useColorModeValue("#eaeaea", "#2a2a2a")}`}
   >
-    <Link href={`/projects/${id}`} passHref>
+    <Link href={`/projects/${id}`} legacyBehavior passHref>
       <LinkBox cursor="pointer">
         <AspectRatio
           position="relative"

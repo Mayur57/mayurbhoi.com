@@ -2,23 +2,21 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import {
   Box,
-  Button,
   Container,
   Stack,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { FiCommand } from "react-icons/fi";
-import { useKmenu } from "kmenu";
 import { Links } from "../../data/links";
 import ThemeButton from "../ThemeButton";
 import LinkItem from "./MenuLink";
 // import NavbarMenu from "./NavbarMenu";
 import ResumeLink from "./ResumeLink";
+import NavbarMenu from "./NavbarMenu";
+import Logo from "../Logo";
 
 const Navbar = (props) => {
   const { path } = props;
   const resumeLink = Links.resume;
-  const { toggle } = useKmenu();
   return (
     <Box
       position="fixed"
@@ -43,8 +41,8 @@ const Navbar = (props) => {
         align="center"
         justify="space-between"
       >
-        <Box display={path === "/" ? "none" : "flex"}>
-          {/* <Logo span="26px" /> */}
+        <Box display={{ base: "flex", md: path === "/" ? "none" : "flex" }}>
+          <Logo span="26px" />
           <Stack
             direction={{ base: "column", md: "row" }}
             display={{ base: "none", md: "flex" }}
@@ -62,15 +60,16 @@ const Navbar = (props) => {
         </Box>
         <Box flex={1} align="right">
           <ThemeButton />
-          <Box
-            ml={2}
-            zIndex={100}
-            display={{ base: "inline-block", md: "none" }}
+          {/* <Button
+            mx={2}
+            display="none"
+            onClick={toggle}
+            p={0}
+            backgroundColor={useColorModeValue("white", "#111")}
           >
-            <Button onClick={toggle} p={0} bg="transparent">
-              <FiCommand />
-            </Button>
-          </Box>
+            <FiCommand />
+          </Button> */}
+          <NavbarMenu />
         </Box>
       </Container>
     </Box>

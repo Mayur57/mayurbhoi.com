@@ -9,7 +9,7 @@ const LinkItem = ({ href, path, label }) => {
     "#FF7B8230"
   );
   return (
-    <NextLink href={href} passHref>
+    <NextLink href={href} legacyBehavior passHref>
       <Link
         py={2}
         px={4}

@@ -36,7 +36,7 @@ export default function ScrollToTop() {
       position="fixed"
       right="4"
       bottom="4"
-      fontSize="3xl"
+      fontSize="2xl"
       cursor="pointer"
       _hover={{ transform: "translateY(-2px)" }}
       transition="all 0.3s ease-in-out"

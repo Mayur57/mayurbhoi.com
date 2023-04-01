@@ -13,7 +13,7 @@ import { Links } from "../data/links";
 const SocialIcon = ({ icons, link, size = 16 }) =>
   !link ? null : (
     <GridItem>
-      <NextLink href={link} passHref>
+      <NextLink href={link} legacyBehavior passHref>
         <Link>
           <Center>
             <Icon

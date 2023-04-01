@@ -2,7 +2,6 @@ import {
   Box,
   Heading,
   LinkBox,
-  LinkOverlay,
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
@@ -29,32 +28,30 @@ export const PostsGridItem = ({
   >
     <Link href={`/posts/${id}`} passHref>
       <LinkBox cursor="pointer">
-        <LinkOverlay href={`/projects/${id}`}>
-          <Text
-            pos="absolute"
-            opacity={0}
-            letterSpacing="0.1em"
-            fontWeight={400}
-            lineHeight={1.5}
-            textTransform="uppercase"
-            fontSize={20}
-            mt={3}
-            transition="all 250ms linear"
-            bottom={0}
-            right={0}
-            _groupHover={{ opacity: 1 }}
-          >
-            →
-          </Text>
-          <Text
-            fontWeight={500}
-            fontSize={22}
-            lineHeight={1.4}
-            letterSpacing="-0.03em"
-          >
-            {title}
-          </Text>
-        </LinkOverlay>
+        <Text
+          pos="absolute"
+          opacity={0}
+          letterSpacing="0.1em"
+          fontWeight={400}
+          lineHeight={1.5}
+          textTransform="uppercase"
+          fontSize={20}
+          mt={3}
+          transition="all 250ms linear"
+          bottom={0}
+          right={0}
+          _groupHover={{ opacity: 1 }}
+        >
+          →
+        </Text>
+        <Text
+          fontWeight={500}
+          fontSize={22}
+          lineHeight={1.4}
+          letterSpacing="-0.03em"
+        >
+          {title}
+        </Text>
         <Text fontSize="13" lineHeight={1.5} fontWeight={400} mt={2} mr={2}>
           {desc}
         </Text>

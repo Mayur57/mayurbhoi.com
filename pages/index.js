@@ -13,7 +13,7 @@ import Prologue from "../components/index/Prologue";
 import Header from "../components/index/Header";
 
 const Page = () => (
-  <Container maxW="container.sm" overflow='hidden'>
+  <Container maxW="container.sm" overflow="hidden">
     <Box height="15vh" />
     <Prop />
     <Header />
@@ -21,7 +21,7 @@ const Page = () => (
     <AboutButton />
     <Box
       opacity={0.7}
-      display="flex"
+      display={{base: "none", sm: "flex"}}
       width="100%"
       alignItems="center"
       justifyContent="center"

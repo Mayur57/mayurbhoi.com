@@ -18,9 +18,7 @@ const Prologue = () => (
       detailed polish. always seeking out the cutting edge in my craft.
       currently at{" "}
       <Link href="https://ncr.com">
-        <a className="main-page-url" style={{ cursor: "ne-resize" }}>
           NCR
-        </a>
       </Link>
       .
     </Text>

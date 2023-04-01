@@ -13,12 +13,13 @@ import moment from "moment";
 import remarkGfm from "remark-gfm";
 import ReactMarkdown from "react-markdown";
 import readingTime from "reading-time";
-import { useState } from "react";
+import React, { useState } from "react";
 import { FiArrowUpRight, FiCheck } from "react-icons/fi";
 import Error from "next/error";
 import rehypeRaw from "rehype-raw";
 import remarkImages from "remark-images";
 import Balancer from "react-wrap-balancer";
+import localFont from 'next/font/local';
 
 import Layout from "../../components/layouts/Article";
 import markdownToHtml from "../../libs/MDParser";
@@ -31,6 +32,13 @@ import {
   renderQuotes,
   renderUnorderedList,
 } from "../../components/ArticleCustomElements";
+
+const Recoleta = localFont({
+  fontFamily: 'Recoleta',
+  src: '../../public/fonts/Recoleta-Regular.ttf',
+  fontWeight: 'normal',
+  fontStyle: 'normal',
+});
 
 const TableOfContents = ({ TOC }) => (
   <Box
@@ -71,10 +79,11 @@ const Work = ({ post, TOC, md, error }) => {
         >
           <Box flex={4} align="center" mt={12} mb={6}>
             <Title
-              fontFamily="Recoleta"
-              fontWeight='normal'
+              fontSize={["2.5em", "2.75em"]}
+              letterSpacing={-0.5}
+              fontWeight="550"
               lineHeight={1}
-              style={{ marginBottom: 18, flex: 3, justifyItems: "baseline" }}
+              style={{ marginBottom: 18, flex: 3, justifyItems: "baseline", ...Recoleta.style }}
             >
               <Balancer>{post?.title}</Balancer>
             </Title>
@@ -91,7 +100,7 @@ const Work = ({ post, TOC, md, error }) => {
         {TOC.length === 0 ? (
           <Box width="100%" textAlign="start" align="center">
             <Box
-              maxWidth="container.md"
+              maxWidth="container.sm"
               fontSize={14}
               height="auto"
               m="0 auto"
@@ -102,6 +111,7 @@ const Work = ({ post, TOC, md, error }) => {
                 rehypePlugins={[rehypeRaw]}
                 className="article"
                 components={{
+                  p: "div",
                   li: renderListItem,
                   ul: renderUnorderedList,
                   blockquote: renderQuotes,
@@ -142,9 +152,9 @@ const Work = ({ post, TOC, md, error }) => {
             <Box maxW="container.md" fontSize={14}>
               <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
-                rehypePlugins={[rehypeRaw]}
                 className="article"
                 components={{
+                  p: ({ node }) => <span>{node}</span>,
                   h2: renderHeadingType2,
                   li: renderListItem,
                   ul: renderUnorderedList,
