@@ -154,7 +154,7 @@ const Work = ({ post, TOC, md, error }) => {
                 remarkPlugins={[remarkGfm]}
                 className="article"
                 components={{
-                  p: ({ node }) => <span>{node}</span>,
+                  p: "div",
                   h2: renderHeadingType2,
                   li: renderListItem,
                   ul: renderUnorderedList,
