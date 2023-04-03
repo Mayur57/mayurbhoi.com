@@ -1,11 +1,5 @@
 /* eslint-disable no-shadow */
 import { Box, Container, Text } from "@chakra-ui/react";
-
-// import { getFeaturedProject, getLatestPost } from "../libs/functions";
-// import FeatureTile from"../components/index/FeatureTile";
-// import Subtext from"../components/index/Subtext";
-// import ArrowDown from"../components/index/ArrowDown";
-// import Contact from"../components/index/Contact";
 import { FiCommand } from "react-icons/fi";
 import Prop from "../components/index/Prop";
 import AboutButton from "../components/index/AboutButton";
@@ -21,7 +15,7 @@ const Page = () => (
     <AboutButton />
     <Box
       opacity={0.7}
-      display={{base: "none", sm: "flex"}}
+      display={{ base: "none", sm: "flex" }}
       width="100%"
       alignItems="center"
       justifyContent="center"

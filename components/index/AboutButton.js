@@ -4,7 +4,7 @@ import Section from "../Section";
 
 const AboutButton = () => (
   <Section y={10} delay={0.3} mb={0}>
-    <Link href="/about">
+    <Link href="/about" aria-label="Link to about page">
       <Box
         role="group"
         display="flex"

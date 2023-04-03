@@ -8,7 +8,6 @@ const Checkmark = () => (
     <Box ml={1.5} my={6} h="16px" w="16px">
     <svg
       viewBox="0 0 24 24"
-      aria-label="Verified account"
       role="img"
       fill="#1D9BF0"
       data-testid="icon-verified"

@@ -56,14 +56,14 @@ export const PostsGridItem = ({
           {desc}
         </Text>
         <Heading
-          letterSpacing="0.1em"
+          letterSpacing="0.02em"
           fontWeight={400}
           lineHeight={1.5}
-          textTransform="uppercase"
-          fontSize={10}
+          fontSize={11}
+          opacity={0.5}
           mt={3}
         >
-          {tag} • {date} • {readingTime}
+          {tag.charAt(0).toUpperCase() + tag.substring(1)} • {date} • {readingTime}
         </Heading>
       </LinkBox>
     </Link>
