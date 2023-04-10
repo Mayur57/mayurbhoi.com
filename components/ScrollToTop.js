@@ -1,7 +1,23 @@
 import { Box, useColorModeValue } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
+import { FiArrowUp } from "react-icons/fi";
 
-export default function ScrollToTop() {
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
+
+export function ScrollToTop() {
+  return (
+    <Box display={{ base: "block", sm: "none" }} cursor="pointer" px={2} onClick={scrollToTop}>
+      <FiArrowUp />
+    </Box>
+  );
+}
+
+export function ScrollToTopEmoji() {
   const [isVisible, setIsVisible] = useState(false);
 
   const toggleVisibility = () => {
@@ -9,14 +25,7 @@ export default function ScrollToTop() {
     else setIsVisible(false);
   };
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
-  const blur = useColorModeValue('#281D1A', '#EDEDED');
+  const blur = useColorModeValue("#281D1A", "#EDEDED");
 
   useEffect(() => {
     window.addEventListener("scroll", toggleVisibility);
@@ -28,6 +37,7 @@ export default function ScrollToTop() {
 
   return (
     <Box
+      display={{ sm: "block", base: "none" }}
       opacity={isVisible ? 1 : 0}
       visibility={isVisible ? "visible" : "hidden"}
       textShadow={isVisible ? "none" : `0 0 40px ${blur} `}

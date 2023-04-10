@@ -5,9 +5,15 @@ import {
   Heading,
   HStack,
   SimpleGrid,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import Link from "next/link";
-import { FiArrowUpRight } from "react-icons/fi";
+import {
+  FiArrowUpRight,
+  FiGithub,
+  FiLinkedin,
+  FiTwitter,
+} from "react-icons/fi";
 import styled from "styled-components";
 import Layout from "../components/layouts/Article";
 import Subtitle from "../components/Subtitle";
@@ -53,6 +59,59 @@ const Company = styled.h3`
     transform-origin: bottom left;
   }
 `;
+
+const ExternalLinkData = [
+  {
+    icon: <FiGithub />,
+    title: "GitHub",
+    handle: "@mayur57",
+    href: Links.github,
+  },
+  {
+    icon: <FiLinkedin />,
+    title: "LinkedIn",
+    handle: "Mayur Bhoi",
+    href: Links.linkedin,
+  },
+  {
+    icon: <FiTwitter />,
+    title: "Twitter",
+    handle: "@mayurbhoii",
+    href: Links.twitter,
+  },
+];
+
+const ExternalLink = ({ title, href = "#", icon, handle = "@mayur57" }) => (
+  <Link href={href} passHref>
+    <Box
+      display="inline-flex"
+      w="100%"
+      h="100%"
+      border={`1px solid ${useColorModeValue("#00000020", "#FFFFFF20")}`}
+      borderRadius="0.5em"
+      py="1em"
+      px={4}
+      justifyContent="space-between"
+      alignItems="center"
+      gap={4}
+      transition="all 300ms ease-in-out"
+      _hover={{
+        backgroundColor: useColorModeValue("#f5f5f5", "#2a2a2a")
+      }}
+    >
+      <Box display="flex" alignItems="center" gap="0.75em">
+        {icon}
+        <Box display="flex" flexDir="column">
+          <Text>{title}</Text>
+          <Text fontSize={10} opacity={0.6} mt={-0.5}>
+            {handle}
+          </Text>
+        </Box>
+      </Box>
+      <FiArrowUpRight />
+    </Box>
+  </Link>
+);
 
 const About = () => (
   <Layout title="About">
@@ -102,6 +161,17 @@ const About = () => (
             <br />I am an open source advocate and actively try to contribute to
             the open source community.
           </p>
+          <SimpleGrid columns={[1, 1, 3]} gap={4} mt={12}>
+            {ExternalLinkData.map(({ title, handle, icon, href }, idx) => (
+              <ExternalLink
+                key={idx}
+                title={title}
+                handle={handle}
+                icon={icon}
+                href={href}
+              />
+            ))}
+          </SimpleGrid>
         </Section>
         <Section delay={0.3} pt="1em">
           <Heading as="h2" fontSize={28} letterSpacing={-1}>
@@ -127,7 +197,7 @@ const About = () => (
                     <FiArrowUpRight opacity={0.9} />
                   </HStack>
                   <Text
-                  as='h6'
+                    as="h6"
                     letterSpacing={-0.25}
                     fontWeight="600"
                     opacity={1}

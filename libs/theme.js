@@ -5,13 +5,6 @@ import "@fontsource/inter";
 
 const { textColorLight } = BrandColors;
 
-const breakpoints = {
-  sm: "40em",
-  md: "52em",
-  lg: "64em",
-  xl: "80em",
-};
-
 const styles = {
   global: (props) => ({
     body: {
@@ -162,10 +155,6 @@ const fonts = {
   mono: `'Space Grotesk', SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono,monospace`,
 };
 
-const colors = {
-  glassTeal: "#88CCCA",
-};
-
 const config = {
   initialColorMode: "light",
   useSystemColorMode: false,
@@ -176,9 +165,7 @@ const theme = extendTheme({
   config,
   styles,
   components,
-  colors,
-  fonts,
-  breakpoints,
+  fonts
 });
 
 export default theme;

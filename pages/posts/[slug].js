@@ -19,7 +19,8 @@ import Error from "next/error";
 import rehypeRaw from "rehype-raw";
 import remarkImages from "remark-images";
 import Balancer from "react-wrap-balancer";
-import localFont from 'next/font/local';
+// import localFont from 'next/font/local';
+import { Lora } from 'next/font/google';
 
 import Layout from "../../components/layouts/Article";
 import markdownToHtml from "../../libs/MDParser";
@@ -33,12 +34,14 @@ import {
   renderUnorderedList,
 } from "../../components/ArticleCustomElements";
 
-const Recoleta = localFont({
-  fontFamily: 'Recoleta',
-  src: '../../public/fonts/Recoleta-Regular.ttf',
-  fontWeight: 'normal',
-  fontStyle: 'normal',
-});
+// const Recoleta = localFont({
+//   fontFamily: 'Recoleta',
+//   src: '../../public/fonts/Recoleta-Regular.ttf',
+//   fontWeight: 'normal',
+//   fontStyle: 'normal',
+// });
+
+const lora = Lora({ subsets: ['latin']});
 
 const TableOfContents = ({ TOC }) => (
   <Box
@@ -80,10 +83,11 @@ const Work = ({ post, TOC, md, error }) => {
           <Box flex={4} align="center" mt={12} mb={6}>
             <Title
               fontSize={["2.5em", "2.75em"]}
-              letterSpacing={-0.5}
-              fontWeight="550"
+              letterSpacing="-0.03em"
+              fontTr
+              fontWeight="light"
               lineHeight={1}
-              style={{ marginBottom: 18, flex: 3, justifyItems: "baseline", ...Recoleta.style }}
+              style={{ marginBottom: 18, flex: 3, justifyItems: "baseline", ...lora.style }}
             >
               <Balancer>{post?.title}</Balancer>
             </Title>
@@ -92,7 +96,8 @@ const Work = ({ post, TOC, md, error }) => {
             </Text>
             <Text my={4} opacity={0.6} fontSize={13}>
               {post?.uploaded === null ? "UPLOAD_DATE" : post?.uploaded} •{" "}
-              {`${readingTime(md).words} words`} •{" "}
+              {`${readingTime(md).words} words`}
+              {" • "}
               {`${readingTime(md).text.split(" ")[0]} min read`}
             </Text>
           </Box>

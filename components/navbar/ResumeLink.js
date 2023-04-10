@@ -15,16 +15,14 @@ const ResumeLink = ({ link, path, isMenu }) => (
         _target="_blank"
         href={link}
         path={path}
-        display="inline-flex"
+        display="inline"
         alignItems="center"
-        style={{ gap: 4 }}
-        pl={2}
-        fontSize={14}
-        px={4}
-        textUnderlineOffset={5}
+        fontSize={11}
+        py={1}
+        px={2}
+        lineHeight={0}
         transition="250ms ease-in-out"
         _hover={{
-          transform: "scale(1.1)",
           opacity: useColorModeValue(0.6, 1),
           color: useColorModeValue("purple", "#FE5B5E"),
           transition: "250ms ease-in-out",
