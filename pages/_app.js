@@ -5,6 +5,7 @@ import "@fontsource/inter";
 import "@fontsource/space-grotesk";
 import { useEffect, useState } from "react";
 import { Analytics } from "@vercel/analytics/react";
+import { SessionProvider } from "next-auth/react";
 
 import { Provider } from "react-wrap-balancer";
 import Layout from "../components/layouts/Main";
@@ -34,7 +35,7 @@ const GlobalStyles = css`
   }
 `;
 
-const Website = ({ Component, pageProps, router }) => {
+const Website = ({ Component, session, pageProps, router }) => {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     const handleStartLoading = () => setLoading(true);
@@ -45,6 +46,7 @@ const Website = ({ Component, pageProps, router }) => {
   }, [router.events]);
   return (
     <Provider>
+      <SessionProvider session={session}>
       <CookiesProvider cookies={pageProps.cookies}>
         <Fonts />
         <Global styles={GlobalStyles} />
@@ -59,6 +61,7 @@ const Website = ({ Component, pageProps, router }) => {
           )}
         </Layout>
       </CookiesProvider>
+      </SessionProvider>
     </Provider>
   );
 };

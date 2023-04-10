@@ -19,7 +19,6 @@ import Error from "next/error";
 import rehypeRaw from "rehype-raw";
 import remarkImages from "remark-images";
 import Balancer from "react-wrap-balancer";
-// import localFont from 'next/font/local';
 import { Lora } from 'next/font/google';
 
 import Layout from "../../components/layouts/Article";
@@ -41,7 +40,7 @@ import {
 //   fontStyle: 'normal',
 // });
 
-const lora = Lora({ subsets: ['latin']});
+const lora = Lora({ variable: "--font-lora", subsets: ["latin"] });
 
 const TableOfContents = ({ TOC }) => (
   <Box
