@@ -5,7 +5,7 @@ import Section from "../Section";
 const Prologue = () => (
   <Section y={10} delay={0.2} mb={0}>
     <Text
-      mb={6}
+      mb={4}
       fontSize={["sm", "md", "md"]}
       letterSpacing="-0.01em"
       lineHeight={1.5}
@@ -17,13 +17,16 @@ const Prologue = () => (
       difference with code. relentlessly devoted to intricacy, efficiency, and
       detailed polish. always seeking out the cutting edge in my craft.
       currently at{" "}
-      <Link href="https://ncr.com">
+      <Link href="https://ncr.com" style={{ textDecoration: "underline", textDecorationThickness: 0.9 ,textUnderlineOffset: 3 }}>
           NCR
       </Link>
       .
     </Text>
-    <Text fontSize={["sm", "md", "md"]} mb={6} fontWeight={300}>
+    <Text fontSize={["sm", "md", "md"]} mb={4} fontWeight={300}>
       based in bengaluru, india
+    </Text>
+    <Text fontSize={["sm", "md", "md"]} mb={4} fontWeight={300}>
+      got something to say? write a note <Link href="/sign" style={{ textDecoration: "underline", textDecorationThickness: 0.9 ,textUnderlineOffset: 3 }}>here</Link>.
     </Text>
   </Section>
 );

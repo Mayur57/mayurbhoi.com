@@ -8,6 +8,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SessionProvider } from "next-auth/react";
 
 import { Provider } from "react-wrap-balancer";
+import { Toaster } from "sonner";
 import Layout from "../components/layouts/Main";
 import Fonts from "../components/FontPreLoader";
 import { Loading } from "../components/layouts/Loading";
@@ -47,20 +48,21 @@ const Website = ({ Component, session, pageProps, router }) => {
   return (
     <Provider>
       <SessionProvider session={session}>
-      <CookiesProvider cookies={pageProps.cookies}>
-        <Fonts />
-        <Global styles={GlobalStyles} />
-        <Layout router={router}>
-          {loading ? (
-            <Loading />
-          ) : (
-            <>
-              <Component {...pageProps} key={router.route} />
-              <Analytics />
-            </>
-          )}
-        </Layout>
-      </CookiesProvider>
+        <CookiesProvider cookies={pageProps.cookies}>
+          <Fonts />
+          <Global styles={GlobalStyles} />
+          <Layout router={router}>
+            {loading ? (
+              <Loading />
+            ) : (
+              <>
+                <Toaster richColors closeButton />
+                <Component {...pageProps} key={router.route} />
+                <Analytics />
+              </>
+            )}
+          </Layout>
+        </CookiesProvider>
       </SessionProvider>
     </Provider>
   );

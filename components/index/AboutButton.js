@@ -20,7 +20,7 @@ const AboutButton = () => (
           cursor: "pointer",
         }}
         py="1em"
-        mt={12}
+        mt={8}
       >
         <Text  fontSize={["sm", "md", "md"]} mr="12px">more</Text>
         <Box

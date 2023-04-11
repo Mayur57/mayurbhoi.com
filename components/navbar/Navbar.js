@@ -6,8 +6,6 @@ import Link from "next/link";
 import { Links } from "../../data/links";
 import ThemeButton from "../ThemeButton";
 import LinkItem from "./MenuLink";
-import ResumeLink from "./ResumeLink";
-// import { ScrollToTop } from "../ScrollToTop";
 
 const Navbar = (props) => {
   const { path } = props;
@@ -59,8 +57,8 @@ const Navbar = (props) => {
             <LinkItem href="/about" path={path} label="About" />
             <LinkItem href="/projects" path={path} label="Projects" />
             <LinkItem href="/posts" path={path} label="Posts" />
-            <LinkItem href="/scrap" path={path} label="Guestbook" />
-            <ResumeLink link={resumeLink} path={path} />
+            <LinkItem href="/sign" path={path} label="Sign" />
+            <LinkItem href={resumeLink} path={path} label="Resume" />
             <ThemeButton />
             {/* <ScrollToTop /> */}
           </Box>

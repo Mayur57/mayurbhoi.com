@@ -52,6 +52,7 @@
     "@fontsource/space-grotesk": "^4.5.8",
     "@next/bundle-analyzer": "^13.1.1",
     "@vercel/analytics": "^0.1.8",
+    "bad-words": "^3.0.4",
     "cmdk": "^0.1.21",
     "focus-visible": "^5.2.0",
     "framer-motion": "^6.5.1",
@@ -75,6 +76,7 @@
     "remark-gfm": "^3.0.1",
     "remark-html": "^15.0.1",
     "remark-images": "^3.1.0",
+    "sonner": "^0.3.0",
     "styled-components": "^5.3.5",
     "unified": "^10.1.2",
     "unist-util-visit": "^4.1.0"

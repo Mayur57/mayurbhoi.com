@@ -6,12 +6,11 @@ const LinkItem = ({ href, path, label }) => {
   const inactiveColor = useColorModeValue("gray200", "#CCC");
   return (
     <NextLink href={href} legacyBehavior passHref>
-      <Box display="inline" flexDir='column' py={2}>
+      <Box display="inline" flexDir='column' py={2} mb="1px">
         <Link
-          px={2}
-          m={0}
+          px="6px"
           color={inactiveColor}
-          fontSize={11}
+          fontSize={12}
           borderRadius={6}
           transition="all 250ms ease-in-out"
           lineHeight={0}
