@@ -36,7 +36,6 @@ export default async function handler(req, res) {
     try {
       await mongoose.connect(process.env.MONGO_URI);
       const result = await Sign.find().sort({ createdAt: 'descending' }).limit(50);
-      console.log(result);
       return res.status(200).json(result);
     } catch (e) {
       return res.status(500).json({ error: e.message });

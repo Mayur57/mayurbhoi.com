@@ -3,14 +3,12 @@
 "use client";
 
 import {
-  Box,
   Button,
   Container,
   Modal,
   ModalBody,
   ModalCloseButton,
   ModalContent,
-  ModalFooter,
   ModalHeader,
   ModalOverlay,
   Text,
@@ -58,7 +56,7 @@ const Guidelines = ({ isOpen, onClose }) => (
           actively moderated space.
         </Text>
         <Text fontSize={14} my={2}>
-          2. Do not post your or anyone else's personal/identifiable
+          2. Do not post your or anyone else&apos;s personal/identifiable
           information.
         </Text>
         <Text fontSize={14} my={2}>
