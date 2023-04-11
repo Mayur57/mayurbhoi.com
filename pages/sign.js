@@ -19,6 +19,7 @@ import { motion } from "framer-motion";
 import { FiGithub } from "react-icons/fi";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
+import { NextSeo } from "next-seo";
 import Layout from "../components/layouts/Article";
 import Title from "../components/Title";
 import Form from "../components/SignForm";
@@ -83,50 +84,95 @@ export default function Sign() {
         const data = await getSigns();
         setEntries(data);
       } catch (error) {
-        console.error(error);
+        // console.error(error);
       }
     }
     fetchEntries();
   }, []);
 
   return (
-    <Layout title="Sign">
-      <Container maxW="container.sm">
-        <Title mt="1.25em" mb={2}>
-          Sign
-        </Title>
-        <Text fontSize={12} opacity={0.6} mt={-1} display="inline-flex">
-          Sign with your words. Leave your mark.
-          <>
-            <Text
-              fontSize={12}
-              color={useColorModeValue("#000", "#DDD")}
-              textDecor="underline"
-              onClick={onOpen}
-              ml={1}
+    <>
+      <NextSeo
+        title="Sign - Mayur Bhoi"
+        description="Full stack developer, writer, creator."
+        canonical="https://mayurbhoi.com/"
+        openGraph={{
+          url: "https://mayurbhoi.com/",
+          title: "Sign - Mayur Bhoi",
+          description: "Full stack developer, writer, creator.",
+          images: [
+            {
+              url: "https://i.ibb.co/MC7Z6yw/800x600.png",
+              width: 800,
+              height: 600,
+              alt: "Sign - Mayur Bhoi",
+              type: "image/png",
+            },
+            {
+              url: "https://i.ibb.co/6PzDGhj/800x900.png",
+              width: 800,
+              height: 900,
+              alt: "Sign - Mayur Bhoi",
+              type: "image/png",
+            },
+            {
+              url: "https://i.ibb.co/b2LXZDX/800x418.png",
+              width: 800,
+              height: 418,
+              alt: "Sign - Mayur Bhoi",
+              type: "image/png",
+            },
+          ],
+          siteName: "Sign",
+        }}
+        twitter={{
+          handle: "@mayurbhoii",
+          site: "@mayurbhoii",
+          cardType: "summary_large_image",
+        }}
+      />
+      <Layout title="Sign">
+        <Container maxW="container.sm">
+          <Title mt="1.25em" mb={2}>
+            Sign
+          </Title>
+          <Text fontSize={12} opacity={0.6} mt={-1} display="inline-flex">
+            Sign with your words. Leave your mark.
+            <>
+              <Text
+                fontSize={12}
+                color={useColorModeValue("#000", "#DDD")}
+                textDecor="underline"
+                onClick={onOpen}
+                ml={1}
+              >
+                Guidelines
+              </Text>
+              <Guidelines isOpen={isOpen} onClose={onClose} />
+            </>
+          </Text>
+          {session?.user ? (
+            <Form session={session} signOut={signOut} />
+          ) : (
+            <LoginWidget />
+          )}
+          {entries?.map((message, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 2 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: (index * 50) / 1000 }}
             >
-              Guidelines
-            </Text>
-            <Guidelines isOpen={isOpen} onClose={onClose} />
-          </>
-        </Text>
-        {session?.user ? <Form session={session} signOut={signOut} /> : <LoginWidget />}
-        {entries?.map((message, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 2 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: (index * 50) / 1000 }}
-          >
-            <Text fontSize={14} fontWeight={450} mt={4}>
-              {message.name}:{" "}
-              <span style={{ opacity: 0.7, fontWeight: 400 }}>
-                {message.sign}
-              </span>
-            </Text>
-          </motion.div>
-        ))}
-      </Container>
-    </Layout>
+              <Text fontSize={14} fontWeight={450} mt={4}>
+                {message.name}:{" "}
+                <span style={{ opacity: 0.7, fontWeight: 400 }}>
+                  {message.sign}
+                </span>
+              </Text>
+            </motion.div>
+          ))}
+        </Container>
+      </Layout>
+    </>
   );
 }

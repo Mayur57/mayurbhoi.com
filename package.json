@@ -61,6 +61,7 @@
     "mongoose": "^7.0.3",
     "next": "latest",
     "next-auth": "^4.22.0",
+    "next-seo": "^6.0.0",
     "parameterize": "^1.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
