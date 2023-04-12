@@ -3,6 +3,7 @@
 "use client";
 
 import {
+  Box,
   Button,
   Container,
   Modal,
@@ -75,14 +76,17 @@ const Guidelines = ({ isOpen, onClose }) => (
 
 export default function Sign() {
   const [entries, setEntries] = useState([]);
+  const [loading, setLoading] = useState(false);
   const { data: session } = useSession();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   useEffect(() => {
     async function fetchEntries() {
+      setLoading(true);
       try {
         const data = await getSigns();
         setEntries(data);
+        setLoading(false);
       } catch (error) {
         // console.error(error);
       }
@@ -136,7 +140,13 @@ export default function Sign() {
           <Title mt="1.25em" mb={2}>
             Sign
           </Title>
-          <Text fontSize={12} opacity={0.6} mt={-1} display="inline-flex">
+          <Text
+            as="div"
+            fontSize={12}
+            opacity={0.6}
+            mt={-1}
+            display="inline-flex"
+          >
             Sign with your words. Leave your mark.
             <>
               <Text
@@ -156,21 +166,45 @@ export default function Sign() {
           ) : (
             <LoginWidget />
           )}
-          {entries?.map((message, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 2 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: (index * 50) / 1000 }}
-            >
-              <Text fontSize={14} fontWeight={450} mt={4}>
-                {message.name}:{" "}
-                <span style={{ opacity: 0.7, fontWeight: 400 }}>
-                  {message.sign}
-                </span>
-              </Text>
-            </motion.div>
-          ))}
+          {loading && (
+            <Box pt="2em" display="flex" width="full" justifyContent="center">
+              <motion.p
+                initial={{
+                  opacity: 0.5,
+                }}
+                animate={{
+                  opacity: 0.1,
+                }}
+                transition={{
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  duration: 1,
+                }}
+                style={{
+                  fontSize: 12,
+                }}
+              >
+                Loading messages...
+              </motion.p>
+            </Box>
+          )}
+          <Box h='1em'/>
+          {!loading &&
+            entries?.map((message, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 2 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: (index * 100) / 1000 }}
+              >
+                <Text fontSize={14} fontWeight={450} mt={4}>
+                  {message.name}:{" "}
+                  <span style={{ opacity: 0.7, fontWeight: 400 }}>
+                    {message.sign}
+                  </span>
+                </Text>
+              </motion.div>
+            ))}
         </Container>
       </Layout>
     </>
