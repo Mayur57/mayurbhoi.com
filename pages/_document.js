@@ -4,7 +4,7 @@ import theme from "../libs/theme";
 
 const TITLE = "Mayur Bhoi";
 const DESCRIPTION = "software engineer ✕ product designer";
-const CARD_IMAGE_URL = "https://i.ibb.co/2W7M0Td/card.png";
+const CARD_IMAGE_URL = "https://i.ibb.co/MC7Z6yw/800x600.png";
 
 export default class Document extends NextDocument {
   render() {
@@ -38,7 +38,7 @@ export default class Document extends NextDocument {
           />
           <meta
             name="twitter:image"
-            content="https://i.ibb.co/2W7M0Td/card.png"
+            content="https://i.ibb.co/b2LXZDX/800x418.png"
           />
 
           {/* Favicons for popular platforms and browsers */}
