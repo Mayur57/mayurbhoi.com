@@ -214,7 +214,7 @@ export default function Sign() {
                 key={index}
                 initial={{ opacity: 0, y: 2 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: (index * 100) / 1000 }}
+                transition={{ delay: (index * 50) / 1000 }}
               >
                 <Text fontSize={14} fontWeight={450} mt={4}>
                   {message.name}:{" "}
@@ -224,6 +224,7 @@ export default function Sign() {
                 </Text>
               </motion.div>
             ))}
+            <div style={{height:"5em"}} />
         </Container>
       </Layout>
     </>
