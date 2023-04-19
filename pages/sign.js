@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable react-hooks/rules-of-hooks */
 
 "use client";
@@ -17,6 +19,7 @@ import {
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { FiGithub } from "react-icons/fi";
+import { AiOutlineGoogle } from "react-icons/ai";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { NextSeo } from "next-seo";
@@ -33,12 +36,25 @@ async function getSigns() {
 const LoginWidget = () => (
   <motion.div initial={{ opacity: 0, y: 2 }} animate={{ opacity: 1, y: 0 }}>
     <Button
-      onClick={() => signIn()}
+      onClick={() => signIn('google')}
+      border={`1px solid ${useColorModeValue("#12121230", "#eaeaea30")}`}
+      fontSize={12}
+      fontWeight={400}
+      gap="0.75em"
+      mt="1em"
+      mb="0.5em"
+    >
+      <AiOutlineGoogle size={14} /> Login with Google
+    </Button>
+    <Button
+      onClick={() => signIn('github')}
       border={`1px solid ${useColorModeValue("#12121230", "#eaeaea30")}`}
       fontSize={12}
       fontWeight={400}
       gap="1em"
-      mt="2em"
+      mt="1em"
+      mb="0.5em"
+      ml="1em"
     >
       <FiGithub /> Login with GitHub
     </Button>
@@ -75,7 +91,7 @@ const Guidelines = ({ isOpen, onClose }) => (
 
 export default function Sign() {
   const [entries, setEntries] = useState([]);
-  const { data: session } = useSession();
+  const {data: session} = useSession();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   useEffect(() => {
@@ -139,15 +155,18 @@ export default function Sign() {
           <Text fontSize={12} opacity={0.6} mt={-1} display="inline-flex">
             Sign with your words. Leave your mark.
             <>
-              <Text
-                fontSize={12}
-                color={useColorModeValue("#000", "#DDD")}
-                textDecor="underline"
+              <span
+                style={{
+                  fontSize: 12,
+                  color: useColorModeValue("#000", "#DDD"),
+                  textDecoration: "underline",
+                  cursor: "pointer",
+                  marginLeft: 4,
+                }}
                 onClick={onOpen}
-                ml={1}
               >
                 Guidelines
-              </Text>
+              </span>
               <Guidelines isOpen={isOpen} onClose={onClose} />
             </>
           </Text>
@@ -171,6 +190,7 @@ export default function Sign() {
               </Text>
             </motion.div>
           ))}
+          <div style={{ height: "4em" }} />
         </Container>
       </Layout>
     </>

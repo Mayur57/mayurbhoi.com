@@ -45,7 +45,7 @@ export default function Form(props) {
     const res = await fetch("/api/sign", {
       body: JSON.stringify({
         name: session?.user?.name,
-        email: session?.user?.email,
+        email: "session?.user?.email",
         sign: input.value,
       }),
       headers: {
