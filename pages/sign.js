@@ -35,7 +35,7 @@ async function getSigns() {
 }
 
 const LoginWidget = () => (
-  <motion.div initial={{ opacity: 0, y: 2 }} animate={{ opacity: 1, y: 0 }}>
+  <motion.div initial={{ opacity: 0, y: 2 }} animate={{ opacity: 1, y: 0 }} style={{ display: 'flex' }}>
     <Button
       onClick={() => signIn('google')}
       border={`1px solid ${useColorModeValue("#12121230", "#eaeaea30")}`}
@@ -44,8 +44,10 @@ const LoginWidget = () => (
       gap="0.75em"
       mt="1em"
       mb="0.5em"
+      overflow="hidden"
+      textOverflow="ellipsis"
     >
-      <AiOutlineGoogle size={14} /> Login with Google
+      <AiOutlineGoogle size="14" /> Login with Google
     </Button>
     <Button
       onClick={() => signIn('github')}
@@ -56,6 +58,8 @@ const LoginWidget = () => (
       mt="1em"
       mb="0.5em"
       ml="1em"
+      overflow="hidden"
+      textOverflow="ellipsis"
     >
       <FiGithub /> Login with GitHub
     </Button>
@@ -224,7 +228,7 @@ export default function Sign() {
                 </Text>
               </motion.div>
             ))}
-            <div style={{height:"5em"}} />
+            <div style={{ height:"5em" }} />
         </Container>
       </Layout>
     </>
