@@ -218,7 +218,7 @@ export default function Sign() {
                 key={index}
                 initial={{ opacity: 0, y: 2 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: (index * 50) / 1000 }}
+                transition={{ delay: index * 0.075 }} // seconds
               >
                 <Text fontSize={14} fontWeight={450} mt={4}>
                   {message.name}:{" "}

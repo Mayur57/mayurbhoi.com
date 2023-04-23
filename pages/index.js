@@ -7,8 +7,8 @@ import Prologue from "../components/index/Prologue";
 import Header from "../components/index/Header";
 
 const Page = () => (
-  <Container maxW="container.sm" overflow="hidden">
-    <Box height="15vh" />
+  <Container maxW="540px" overflow="hidden">
+    <Box height={{ base:"12vh", md:"15vh" }} />
     <Prop />
     <Header />
     <Prologue />

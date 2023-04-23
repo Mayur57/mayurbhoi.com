@@ -22,10 +22,13 @@ const AboutButton = () => (
         py="1em"
         mt={8}
       >
-        <Text  fontSize={["sm", "md", "md"]} mr="12px">more</Text>
+        <Text fontSize={[12, 14]} mr="12px">
+          more
+        </Text>
         <Box
+          transform="scale(0.8)"
           transition="all 0.8s cubic-bezier(.08,.52,.52,1)"
-          _groupHover={{ transform: "translateX(8px)" }}
+          _groupHover={{ transform: "translateX(4px) scale(0.8)" }}
         >
           <img
             src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzciIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAzNyAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTI4LjcyMDggMUwzNiA5TTM2IDlMMjguNzIwOCAxN00zNiA5SDAiIHN0cm9rZT0iY3VycmVudENvbG9yIi8+Cjwvc3ZnPgo="

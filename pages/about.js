@@ -125,7 +125,7 @@ const About = () => (
           </Box>
         </Section>
         <Section delay={0.2}>
-          <p>
+          <p style={{ fontSize: 14 }}>
             <strong>Hello there!</strong>
             <br />
             <br />
@@ -178,7 +178,7 @@ const About = () => (
             Experience
           </Heading>
           <Box marginY={2}>
-            <p>
+            <p style={{ fontSize: 14 }}>
               These are the places I have worked for in the past recently.
               Checkout my LinkedIn for more.
             </p>
@@ -199,17 +199,17 @@ const About = () => (
                   <Text
                     as="h6"
                     letterSpacing={-0.25}
-                    fontWeight="600"
+                    fontWeight="500"
                     opacity={1}
-                    fontSize={16}
-                    marginTop={1}
+                    fontSize={14}
+                    marginTop="0.2em"
                   >
                     {position}
                     <Text
-                      letterSpacing={-0.25}
-                      fontWeight={600}
+                      letterSpacing={0}
+                      fontWeight={400}
                       opacity={0.75}
-                      fontSize={14}
+                      fontSize={12}
                       marginTop={1}
                     >
                       {duration}

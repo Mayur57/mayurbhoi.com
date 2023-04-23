@@ -8,8 +8,8 @@ const StyledDiv = chakra(motion.div, {
 
 const Section = ({ children, delay = 0, mb = 6, y = 10, ...props }) => (
   <StyledDiv
-    initial={{ y, opacity: 0 }}
-    animate={{ y: 0, opacity: 1 }}
+    initial={{ y, opacity: 0, scale: 0.975 }}
+    animate={{ y: 0, opacity: 1, scale: 1 }}
     transition={{ duration: 0.25, delay }}
     transitionTimingFunction="cubic-bezier(.4,0,.2,1)"
     exit={{ y: 0 }}

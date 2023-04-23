@@ -66,6 +66,7 @@ const Posts = ({ posts, error }) => {
             </Text>
           </Box>
         </SimpleGrid>
+        <Box height={{ base:"12vh", md:"15vh" }} />
       </Container>
     </Layout>
   );

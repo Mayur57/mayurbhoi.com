@@ -19,7 +19,7 @@ const Navbar = (props) => {
       justifyContent="center"
       align="center"
       zIndex={5}
-      bottom={{ base: 4, sm: undefined }}
+      bottom={{ base: 6, sm: undefined }}
       top={{ base: undefined, sm: 2 }}
       {...props}
     >
@@ -37,7 +37,7 @@ const Navbar = (props) => {
             justifyContent="space-between"
             padding="4px 12px"
             borderRadius="0.75rem"
-            width={{ base: "95%", sm: "auto" }}
+            width={{ base: "90%", sm: "auto" }}
             boxShadow='0 20px 25px -5px rgba(0,0,0,.05),0 8px 10px -6px rgba(0,0,0,.05)'
             background={useColorModeValue("#FFFFFF99", "#12121299")}
             border={`1px solid ${useColorModeValue("#00000020", "#FFFFFF20")}`}

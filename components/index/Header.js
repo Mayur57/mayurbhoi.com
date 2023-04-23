@@ -18,7 +18,7 @@ const Checkmark = () => (
     </svg>
   </Box>
     </PopoverTrigger>
-    <PopoverContent p={2} bg='rgba(255,255,255,0.1)' backdropFilter='blur(24px)'>
+    <PopoverContent p={2} backdropFilter='blur(24px)'>
     <PopoverHeader fontWeight='bold' border='0'>Verified account</PopoverHeader>
     <PopoverBody fontSize={14} pt={0}>This is a legacy verified account. It may or may not be notable. <Link href='https://twitter.com/Reddit/status/1603458895934099456'><span style={{ color: '#1D9BF0', textDecoration: 'underline', cursor: "pointer" }}>Learn more</span></Link></PopoverBody>
   </PopoverContent>

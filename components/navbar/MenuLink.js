@@ -2,7 +2,7 @@ import NextLink from "next/link";
 import { Box, Link, Text, useColorModeValue } from "@chakra-ui/react";
 
 const LinkItem = ({ href, path, label }) => {
-  const active = path === href;
+  const active = path.includes(href);
   const inactiveColor = useColorModeValue("gray200", "#CCC");
   return (
     <NextLink href={href} legacyBehavior passHref>

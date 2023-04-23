@@ -1,4 +1,5 @@
 import {
+  Box,
   Container,
   SimpleGrid,
 } from "@chakra-ui/react";
@@ -20,7 +21,7 @@ function Work(props) {
             Past Work &amp; Personal Projects
           </Title>
         </Section>
-        <SimpleGrid columns={[1, 2, 2]} spacingX={8} mt={12}>
+        <SimpleGrid columns={[1, 1, 2]} spacingX={8} mt={12}>
           {posts.map((post, index) => (
             <Section key={index} delay={calculateAnimationDelay(index)}>
               <ProjectsGridItem
@@ -33,6 +34,7 @@ function Work(props) {
             </Section>
           ))}
         </SimpleGrid>
+        <Box height={{ base:"12vh", md:"15vh" }} />
       </Container>
     </Layout>
   );
