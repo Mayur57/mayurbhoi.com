@@ -57,8 +57,7 @@ const styles = {
       fontFamily:
         "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace",
       fontSize: 12,
-      wordWrap: "break-word",
-      whiteSpace: "pre-wrap",
+      overflowX: "scroll",
       borderRadius: 4,
       padding: 2,
       backgroundColor: mode("#f2f2f2", "#111")(props),
