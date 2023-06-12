@@ -24,7 +24,7 @@ import remarkGfm from "remark-gfm";
 import ReactMarkdown from "react-markdown";
 import readingTime from "reading-time";
 import React, { useState } from "react";
-import { FiArrowUpRight, FiCheck, FiClock, FiInfo } from "react-icons/fi";
+import { FiAlertCircle, FiAlertOctagon, FiAlertTriangle, FiArrowUpRight, FiCheck, FiClock, FiInfo } from "react-icons/fi";
 import Error from "next/error";
 import rehypeRaw from "rehype-raw";
 import remarkImages from "remark-images";
@@ -113,6 +113,32 @@ const TableOfContents = ({ TOC }) => (
   </Box>
 );
 
+const Opinion = () => (
+  <Box
+    borderRadius="0.5rem"
+    bg={useColorModeValue("#FF888822", "#55111122")}
+    border={`1px solid ${useColorModeValue(
+      "#FF333344",
+      "#FFAAAA66"
+    )}`}
+    paddingY="0.5em"
+    paddingX="1em"
+    mb={4}
+    color={useColorModeValue("#AA1111CC", "#CC6666")}
+    alignItems="center"
+    gap={2}
+    fontSize={12}
+    boxShadow="0 4px 6px -1px #0000000A, 0 2px 4px -1px #0000000A"
+  >
+    <Box display="flex" alignItems="center" gap={2} mt={1} fontSize={14}>
+      <FiAlertOctagon size={13} /> Opinion Piece
+    </Box>
+    <Box fontSize={12} opacity={0.8} mt={2} mb={2}>
+      Lots of opinions ahead. Opinions are always extremely personal—read, ponder, and form your own.
+    </Box>
+  </Box>
+);
+
 const OutOfDate = () => (
   <Box
     borderRadius="0.5rem"
@@ -146,7 +172,7 @@ const Note = ({ title = "Author's Note", content }) => (
     )}`}
     paddingY="0.5em"
     paddingX="1em"
-    mb={8}
+    mb={4}
     color={useColorModeValue("#27272a", "#F4F4F5")}
     boxShadow="0 4px 6px -1px #0000000A, 0 2px 4px -1px #0000000A"
   >
@@ -221,6 +247,7 @@ const PostExpanded = ({
               m="0 auto"
               pos="relative"
             >
+              {post?.tag === "misc" && <Opinion />}
               {timeSensitive && timeCriteria && <OutOfDate />}
               <MdProcessorWrapper>{md}</MdProcessorWrapper>
             </Box>
@@ -234,6 +261,7 @@ const PostExpanded = ({
             <TableOfContents TOC={TOC} />
             <Box maxW="container.md" fontSize={14}>
               {timeSensitive && timeCriteria && <OutOfDate />}
+              {post?.tag === "misc" && <Opinion />}
               {hasNote && <Note content={note} />}
               <MdProcessorWrapper>{md}</MdProcessorWrapper>
             </Box>
@@ -302,7 +330,7 @@ export const getStaticProps = async ({ params }) => {
     .toString();
   result.data[0].attributes.uploaded = moment(
     result.data[0].attributes.uploaded
-  ).format("DD MMM YYYY");
+  ).format("DD MMMM YYYY");
   return {
     props: {
       post: result.data[0].attributes,

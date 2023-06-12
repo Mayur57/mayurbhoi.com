@@ -20,6 +20,7 @@ const TextWrapper = ({ children }) => (
 
 const LinkWrapper = ({ children }) => (
   <Box
+    as="span"
     display="inline-block"
     textDecoration="underline"
     textDecorationThickness={0.9}

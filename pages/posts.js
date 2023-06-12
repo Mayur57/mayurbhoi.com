@@ -56,7 +56,6 @@ const Posts = ({ posts, error }) => {
               letterSpacing="0.02em"
               fontWeight={400}
               lineHeight={1.5}
-              // textTransform="uppercase"
               opacity={0.5}
               fontSize={11}
               mt="5em"
