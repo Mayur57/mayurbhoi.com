@@ -10,6 +10,7 @@ import LinkItem from "./MenuLink";
 const Navbar = (props) => {
   const { path } = props;
   const resumeLink = Links.resume;
+  const { toggle } = useKmenu();
   return (
     <Box
       position="fixed"

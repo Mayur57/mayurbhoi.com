@@ -131,6 +131,7 @@ const Palette = () => {
   const [mainCommands] = useCommands(main);
   // const [projectCommands] = useCommands(projs);
   // const [postCommands] = useCommands(articles);
+
   return (
     <CommandWrapper>
       <CommandMenu
@@ -139,16 +140,6 @@ const Palette = () => {
         index={1}
         placeholder="Search"
       />
-      {/* <CommandMenu
-        commands={projectCommands}
-        crumbs={['Home', 'Projects']}
-        index={2}
-      />
-      <CommandMenu
-        commands={postCommands}
-        crumbs={['Home', 'Articles']}
-        index={3}
-      /> */}
     </CommandWrapper>
   );
 };

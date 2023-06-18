@@ -16,6 +16,8 @@ import CookiesProvider from "../libs/cookies";
 
 import "../components/cmdk/cmd.css";
 
+import "../components/cmdk/cmd.css";
+
 const GlobalStyles = css`
   @font-face {
     font-family: "Recoleta";
