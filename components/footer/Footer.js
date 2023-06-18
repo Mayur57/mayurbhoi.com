@@ -1,7 +1,6 @@
 import React from "react";
 import { Box, Divider, Flex, Text } from "@chakra-ui/react";
 import Social from "../Social";
-import Logo from "../Logo";
 
 function Footer() {
   return (
@@ -43,7 +42,7 @@ function Footer() {
           textAlign="right"
           marginTop={-2}
         >
-          <Logo span="32px" />
+          {/* <Logo span="32px" /> */}
         </Box>
       </Flex>
     </Box>

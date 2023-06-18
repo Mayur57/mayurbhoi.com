@@ -5,8 +5,10 @@ import {
 } from "@chakra-ui/react";
 import { MenuProvider } from "kmenu";
 
+import dynamic from "next/dynamic";
 import theme from "./theme";
-import Palette from "../components/cmdk/Command";
+
+const Palette = dynamic(() => import("../components/cmdk/Command"));
 
 const darkThemeConfigs = {
   backdropColor: "#00000099",

@@ -11,6 +11,7 @@ const CommandButton = () => {
       bg="transparent"
       p={0}
       alignItems="center"
+      title="Open Command Palette"
     >
       <FiCommand size={28} opacity={0.8} />
     </Button>

@@ -1,79 +1,68 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react/jsx-props-no-spreading */
-import {
-  Box,
-  Button,
-  Container,
-  Stack,
-  useColorModeValue,
-} from "@chakra-ui/react";
-import { FiCommand } from "react-icons/fi";
-import { useKmenu } from "kmenu";
+import { Box, useColorModeValue } from "@chakra-ui/react";
+import { motion } from "framer-motion";
+import Link from "next/link";
 import { Links } from "../../data/links";
-import Logo from "../Logo";
 import ThemeButton from "../ThemeButton";
 import LinkItem from "./MenuLink";
-// import NavbarMenu from "./NavbarMenu";
-import ResumeLink from "./ResumeLink";
 
 const Navbar = (props) => {
   const { path } = props;
   const resumeLink = Links.resume;
-  const { toggle } = useKmenu();
   return (
     <Box
       position="fixed"
       as="nav"
       w="100%"
-      pl={4}
-      pr={2}
-      bg={
-        path === "/"
-          ? "transparent"
-          : useColorModeValue("#ffffff88", "#20202000")
-      }
-      css={{ backdropFilter: path === "/" ? "" : "blur(20px) saturate(150%)" }}
+      h="max-content"
+      justifyContent="center"
+      align="center"
       zIndex={5}
+      bottom={{ base: 6, sm: undefined }}
+      top={{ base: undefined, sm: 2 }}
       {...props}
     >
-      <Container
-        display="flex"
-        p={2}
-        maxW="container.lg"
-        wrap="wrap"
-        align="center"
-        justify="space-between"
-      >
-        <Box display={path === "/" ? "none" : "flex"}>
-          <Logo span="26px" />
-          <Stack
-            direction={{ base: "column", md: "row" }}
-            display={{ base: "none", md: "flex" }}
-            width={{ base: "full", md: "auto" }}
+      {path !== "/" && (
+        <motion.div
+          initial={{ opacity: 0, y: -2, scale: 1.025 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.3 }}
+          width="100%"
+        >
+          <Box
+            display="inline-flex"
+            overflowX="scroll"
             alignItems="center"
-            flexGrow={1}
-            mt={{ base: 4, md: 0 }}
+            justifyContent="space-between"
+            padding="4px 12px"
+            borderRadius="0.75rem"
+            width={{ base: "90%", sm: "auto" }}
+            boxShadow='0 20px 25px -5px rgba(0,0,0,.05),0 8px 10px -6px rgba(0,0,0,.05)'
+            background={useColorModeValue("#FFFFFF99", "#12121299")}
+            border={`1px solid ${useColorModeValue("#00000020", "#FFFFFF20")}`}
+            backdropFilter={path === "/" ? "" : "blur(16px) saturate(150%)"}
           >
+            <Link href="/" passHref>
+              <Box
+                mt="2px"
+                mx="0.5em"
+                height="0.7em"
+                width="0.7em"
+                bgColor={useColorModeValue("#FF5C00", "#FFB346")}
+                borderRadius="50%"
+                cursor="pointer"
+              />
+            </Link>
             <LinkItem href="/about" path={path} label="About" />
             <LinkItem href="/projects" path={path} label="Projects" />
             <LinkItem href="/posts" path={path} label="Posts" />
-            {/* <LinkItem href="/snippets" path={path} label="Snippets" /> */}
-            <ResumeLink link={resumeLink} path={path} />
-          </Stack>
-        </Box>
-        <Box flex={1} align="right">
-          <ThemeButton />
-          <Box
-            ml={2}
-            zIndex={100}
-            display={{ base: "inline-block", md: "none" }}
-          >
-            <Button onClick={toggle} p={0} bg="transparent">
-              <FiCommand />
-            </Button>
+            <LinkItem href="/sign" path={path} label="Sign" />
+            <LinkItem href={resumeLink} path={path} label="Resume" />
+            <ThemeButton />
           </Box>
-        </Box>
-      </Container>
+        </motion.div>
+      )}
     </Box>
   );
 };

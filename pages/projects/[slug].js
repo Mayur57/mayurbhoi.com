@@ -17,7 +17,7 @@ import {
 
 const Work = ({ project }) => (
   <Layout title={project.title}>
-    <Container maxW="container.lg" mt={4}>
+    <Container maxW="container.lg" mt={4} mb={36}>
       <Stack
         display="flex"
         direction={{ sm: "column", md: "row", base: "column" }}
@@ -72,6 +72,7 @@ const Work = ({ project }) => (
           >
             Links
           </Text>
+          TBD
           {project.links.length > 0 ? (
             <Text mt={1} mb={8} fontSize={14}>
               {project.links.map((link) => (

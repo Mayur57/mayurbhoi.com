@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable no-param-reassign */
-import { Container, SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, Container, SimpleGrid, Text } from "@chakra-ui/react";
 import moment from "moment";
 import readingTime from "reading-time";
 import Layout from "../components/layouts/Article";
@@ -31,12 +31,14 @@ const Posts = ({ posts, error }) => {
   }
   return (
     <Layout title="Articles">
-      <Container maxW="container.lg">
+      <Container maxW="container.sm">
         <Subtitle>Posts</Subtitle>
-        <Title>Thoughts &amp; Findings</Title>
-        <SimpleGrid columns={[1, 2, 2]}>
+        <Title>
+          Thoughts &amp; Findings
+        </Title>
+        <SimpleGrid columns={[1, 1, 1]} spacing={2}>
           {posts.map(({ attributes }, index) => (
-            <Section key={index} delay={calculateAnimationDelay(index)}>
+            <Section key={index} mb={0} delay={calculateAnimationDelay(index)}>
               <PostsGridItem
                 id={attributes.slug}
                 index={index}
@@ -49,7 +51,21 @@ const Posts = ({ posts, error }) => {
               />
             </Section>
           ))}
+          <Box w="100%" align="center">
+            <Text
+              letterSpacing="0.02em"
+              fontWeight={400}
+              lineHeight={1.5}
+              opacity={0.5}
+              fontSize={11}
+              mt="5em"
+              mb="2em"
+            >
+              That&apos;s all! More to come soon.
+            </Text>
+          </Box>
         </SimpleGrid>
+        <Box height={{ base:"12vh", md:"15vh" }} />
       </Container>
     </Layout>
   );

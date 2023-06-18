@@ -8,7 +8,6 @@ const Checkmark = () => (
     <Box ml={1.5} my={6} h="16px" w="16px">
     <svg
       viewBox="0 0 24 24"
-      aria-label="Verified account"
       role="img"
       fill="#1D9BF0"
       data-testid="icon-verified"
@@ -19,7 +18,7 @@ const Checkmark = () => (
     </svg>
   </Box>
     </PopoverTrigger>
-    <PopoverContent p={2} bg='rgba(255,255,255,0.1)' backdropFilter='blur(24px)'>
+    <PopoverContent p={2} backdropFilter='blur(24px)'>
     <PopoverHeader fontWeight='bold' border='0'>Verified account</PopoverHeader>
     <PopoverBody fontSize={14} pt={0}>This is a legacy verified account. It may or may not be notable. <Link href='https://twitter.com/Reddit/status/1603458895934099456'><span style={{ color: '#1D9BF0', textDecoration: 'underline', cursor: "pointer" }}>Learn more</span></Link></PopoverBody>
   </PopoverContent>
@@ -27,12 +26,12 @@ const Checkmark = () => (
 );
 
 const Header = () => (
-  <Section y={10} mb={0} delay={0.1}>
-    <Text fontSize="48px" fontWeight={500} mt={6} letterSpacing="-0.04em">
+  <Section y={4} mb={0} delay={0.1}>
+    <Text fontSize={["3em", "3em", "3.5em"]} fontWeight={500} mt={6} letterSpacing="-0.04em">
       hey
     </Text>
     <Box display="flex" alignItems="center">
-      <Text my={6} fontSize="18px" fontWeight={500} letterSpacing="-0.03em">
+      <Text my={6} fontSize='1em' fontWeight={500} letterSpacing="-0.03em">
         mayur bhoi
       </Text>
       <Checkmark />

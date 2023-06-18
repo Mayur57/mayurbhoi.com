@@ -19,7 +19,7 @@ const anim = keyframes`
 const LinkButton = ({ label = "undefined", link, bg, ...props }) => (
   <Box align="center" mt="30px" role="group" {...props}>
     <NextLink href={link} passHref>
-      <Button variant="new-tab-action" borderColor="transparent" px={2}>
+      <Button variant="new-tab-action" borderColor="transparent" px={6}>
         <HStack
           opacity={1}
           zIndex={2}

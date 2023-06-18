@@ -5,9 +5,15 @@ import {
   Heading,
   HStack,
   SimpleGrid,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import Link from "next/link";
-import { FiArrowUpRight } from "react-icons/fi";
+import {
+  FiArrowUpRight,
+  FiGithub,
+  FiLinkedin,
+  FiTwitter,
+} from "react-icons/fi";
 import styled from "styled-components";
 import Layout from "../components/layouts/Article";
 import Subtitle from "../components/Subtitle";
@@ -54,6 +60,59 @@ const Company = styled.h3`
   }
 `;
 
+const ExternalLinkData = [
+  {
+    icon: <FiGithub />,
+    title: "GitHub",
+    handle: "@mayur57",
+    href: Links.github,
+  },
+  {
+    icon: <FiLinkedin />,
+    title: "LinkedIn",
+    handle: "Mayur Bhoi",
+    href: Links.linkedin,
+  },
+  {
+    icon: <FiTwitter />,
+    title: "Twitter",
+    handle: "@mayurbhoii",
+    href: Links.twitter,
+  },
+];
+
+const ExternalLink = ({ title, href = "#", icon, handle = "@mayur57" }) => (
+  <Link href={href} passHref>
+    <Box
+      display="inline-flex"
+      w="100%"
+      h="100%"
+      border={`1px solid ${useColorModeValue("#00000020", "#FFFFFF20")}`}
+      borderRadius="0.5em"
+      py="1em"
+      px={4}
+      justifyContent="space-between"
+      alignItems="center"
+      gap={4}
+      transition="all 300ms ease-in-out"
+      _hover={{
+        backgroundColor: useColorModeValue("#f5f5f5", "#2a2a2a")
+      }}
+    >
+      <Box display="flex" alignItems="center" gap="0.75em">
+        {icon}
+        <Box display="flex" flexDir="column">
+          <Text>{title}</Text>
+          <Text fontSize={10} opacity={0.6} mt={-0.5}>
+            {handle}
+          </Text>
+        </Box>
+      </Box>
+      <FiArrowUpRight />
+    </Box>
+  </Link>
+);
+
 const About = () => (
   <Layout title="About">
     <Container maxW="container.md">
@@ -61,12 +120,12 @@ const About = () => (
       <Title>Experience &amp; Background</Title>
       <Box maxWidth="container.md" justifyItems="center">
         <Section delay={0.1}>
-          <Box maxWidth="container.md" py="3em" align="center">
+          <Box maxWidth="container.md" py={{base: "0.5em", sm: "3em"}} align="center">
             <Headshot src={profile} />
           </Box>
         </Section>
         <Section delay={0.2}>
-          <p>
+          <p style={{ fontSize: 14 }}>
             <strong>Hello there!</strong>
             <br />
             <br />
@@ -102,13 +161,24 @@ const About = () => (
             <br />I am an open source advocate and actively try to contribute to
             the open source community.
           </p>
+          <SimpleGrid columns={[1, 1, 3]} gap={4} mt={12}>
+            {ExternalLinkData.map(({ title, handle, icon, href }, idx) => (
+              <ExternalLink
+                key={idx}
+                title={title}
+                handle={handle}
+                icon={icon}
+                href={href}
+              />
+            ))}
+          </SimpleGrid>
         </Section>
         <Section delay={0.3} pt="1em">
           <Heading as="h2" fontSize={28} letterSpacing={-1}>
             Experience
           </Heading>
           <Box marginY={2}>
-            <p>
+            <p style={{ fontSize: 14 }}>
               These are the places I have worked for in the past recently.
               Checkout my LinkedIn for more.
             </p>
@@ -127,18 +197,19 @@ const About = () => (
                     <FiArrowUpRight opacity={0.9} />
                   </HStack>
                   <Text
+                    as="h6"
                     letterSpacing={-0.25}
-                    fontWeight="600"
+                    fontWeight="500"
                     opacity={1}
-                    fontSize={16}
-                    marginTop={1}
+                    fontSize={14}
+                    marginTop="0.2em"
                   >
                     {position}
                     <Text
-                      letterSpacing={-0.25}
-                      fontWeight={600}
+                      letterSpacing={0}
+                      fontWeight={400}
                       opacity={0.75}
-                      fontSize={14}
+                      fontSize={12}
                       marginTop={1}
                     >
                       {duration}

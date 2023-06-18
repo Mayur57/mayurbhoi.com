@@ -1,7 +1,8 @@
 import { keyframes } from "@emotion/react";
 
 export const calculateAnimationDelay = (index) =>
-  Math.round((index + 1) / 2) / 10;
+  // Math.round((index + 1) / 2) / 10;
+  index * 0.15;
 
 export const getCMSBaseUrl = () => {
   const environmentMode = process.env.NEXT_PUBLIC_ENV;
