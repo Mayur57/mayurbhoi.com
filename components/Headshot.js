@@ -5,11 +5,11 @@ import Image from "next/image";
 import { shimmer, toBase64 } from "../libs/Shimmer";
 import profile from "../public/images/me.webp";
 
-export default function Headshot({ src = profile, animate = false, ...props }) {
+export default function Headshot({ src = profile, ...props }) {
   return (
     <Box
-      height={195}
-      width={195}
+      height={{ base: 150, sm: 195 }}
+      width={{ base: 150, sm: 195 }}
       position="relative"
       borderRadius="100%"
       borderColor={useColorModeValue("purple.50", "#FEF6E5")}
@@ -20,13 +20,9 @@ export default function Headshot({ src = profile, animate = false, ...props }) {
       overflow="hidden"
       transition="all 250ms"
       _hover={{
-        boxShadow: animate ? "xl" : "lg",
+        boxShadow: "lg",
         transition: "250ms",
-        transform: animate ? "scale(1.1)" : null,
-        borderWidth: animate ? 4 : null,
-        borderColor: animate
-          ? useColorModeValue("purple.300", "red.400")
-          : null,
+        transform: null,
       }}
       {...props}
     >

@@ -120,7 +120,7 @@ const About = () => (
       <Title>Experience &amp; Background</Title>
       <Box maxWidth="container.md" justifyItems="center">
         <Section delay={0.1}>
-          <Box maxWidth="container.md" py="3em" align="center">
+          <Box maxWidth="container.md" py={{base: "0.5em", sm: "3em"}} align="center">
             <Headshot src={profile} />
           </Box>
         </Section>

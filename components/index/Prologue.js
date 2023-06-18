@@ -5,7 +5,7 @@ import Section from "../Section";
 const TextWrapper = ({ children }) => (
   <Text
     mt="1rem"
-    fontSize={[12, 14, 14]}
+    fontSize={14}
     letterSpacing="-0.005em"
     lineHeight={1.75}
     fontWeight={300}
@@ -33,7 +33,7 @@ const LinkWrapper = ({ children }) => (
 );
 
 const Prologue = () => (
-  <Section y={10} delay={0.2} mb={0}>
+  <Section y={4} delay={0.2} mb={0}>
     <TextWrapper>
       creating impactful & elegant software. full stack engineer. unsatisfiably
       curious about design and high performance systems. trying to make a
