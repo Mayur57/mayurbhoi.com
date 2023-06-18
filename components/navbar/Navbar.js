@@ -10,7 +10,6 @@ import LinkItem from "./MenuLink";
 const Navbar = (props) => {
   const { path } = props;
   const resumeLink = Links.resume;
-  const { toggle } = useKmenu();
   return (
     <Box
       position="fixed"
@@ -61,7 +60,6 @@ const Navbar = (props) => {
             <LinkItem href="/sign" path={path} label="Sign" />
             <LinkItem href={resumeLink} path={path} label="Resume" />
             <ThemeButton />
-            {/* <ScrollToTop /> */}
           </Box>
         </motion.div>
       )}

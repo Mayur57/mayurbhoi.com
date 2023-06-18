@@ -13,9 +13,6 @@ import Layout from "../components/layouts/Main";
 import Fonts from "../components/FontPreLoader";
 import { Loading } from "../components/layouts/Loading";
 import CookiesProvider from "../libs/cookies";
-
-import "../components/cmdk/cmd.css";
-
 import "../components/cmdk/cmd.css";
 
 const GlobalStyles = css`

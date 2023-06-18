@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable react/no-unstable-nested-components */
@@ -21,7 +23,7 @@ import remarkGfm from "remark-gfm";
 import ReactMarkdown from "react-markdown";
 import readingTime from "reading-time";
 import React, { useState } from "react";
-import { FiAlertCircle, FiAlertOctagon, FiAlertTriangle, FiArrowUpRight, FiCheck, FiClock, FiInfo } from "react-icons/fi";
+import { FiAlertOctagon, FiArrowUpRight, FiCheck, FiClock, FiInfo } from "react-icons/fi";
 import Error from "next/error";
 import rehypeRaw from "rehype-raw";
 import remarkImages from "remark-images";

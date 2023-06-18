@@ -7,20 +7,6 @@ import { MenuProvider } from "kmenu";
 
 import dynamic from "next/dynamic";
 import theme from "./theme";
-import Palette from "../components/cmdk/Command";
-
-const darkThemeConfigs = {
-  backdropColor: "#00000099",
-  backgroundColor: "#171717",
-  backdropBlur: 4,
-  borderWidth: 1,
-  borderColor: "#333333",
-  inputBorder: "#333333",
-  inputColor: "#ffffff",
-  barBackground: "#FFFFFF10",
-  headingColor: "#696969",
-  breadcrumbColor: "#ffffff",
-};
 
 const Palette = dynamic(() => import("../components/cmdk/Command"));
 

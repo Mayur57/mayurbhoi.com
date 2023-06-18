@@ -17,7 +17,7 @@ import {
 
 const Work = ({ project }) => (
   <Layout title={project.title}>
-    <Container maxW="container.lg" mt={4}>
+    <Container maxW="container.lg" mt={4} mb={36}>
       <Stack
         display="flex"
         direction={{ sm: "column", md: "row", base: "column" }}
