@@ -10,9 +10,9 @@ const Heading = ({ children }) => (
 );
 
 const About = () => (
-  <Layout title="About Website">
+  <Layout title="Privacy">
     <Container maxW="container.md">
-      <Title mt="1.25em" mb={2}>Privacy Policy</Title>
+      <Title>Privacy Policy</Title>
       <Text fontSize={18} fontWeight='medium' mt={8}>The Website</Text>
       <Text fontSize={13} fontWeight={500} opacity={0.6} mb={4}>
         Effective as of 3 February 2022

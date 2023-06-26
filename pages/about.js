@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import {
   Box,
   Text,
@@ -16,14 +17,13 @@ import {
 } from "react-icons/fi";
 import styled from "styled-components";
 import Layout from "../components/layouts/Article";
-import Subtitle from "../components/Subtitle";
-import Title from "../components/Title";
 import { experience } from "../data/experience";
 import Section from "../components/Section";
 import LinkButton from "../components/LinkButton";
 import { Links } from "../data/links";
 import Headshot from "../components/Headshot";
 import profile from "../public/images/me.png";
+import Title from "../components/Title";
 
 const Company = styled.h3`
   & {
@@ -96,7 +96,7 @@ const ExternalLink = ({ title, href = "#", icon, handle = "@mayur57" }) => (
       gap={4}
       transition="all 300ms ease-in-out"
       _hover={{
-        backgroundColor: useColorModeValue("#f5f5f5", "#2a2a2a")
+        backgroundColor: useColorModeValue("#f5f5f5", "#2a2a2a"),
       }}
     >
       <Box display="flex" alignItems="center" gap="0.75em">
@@ -116,11 +116,14 @@ const ExternalLink = ({ title, href = "#", icon, handle = "@mayur57" }) => (
 const About = () => (
   <Layout title="About">
     <Container maxW="container.md">
-      <Subtitle>About</Subtitle>
-      <Title>Experience &amp; Background</Title>
+      <Title>about</Title>
       <Box maxWidth="container.md" justifyItems="center">
         <Section delay={0.1}>
-          <Box maxWidth="container.md" py={{base: "0.5em", sm: "3em"}} align="center">
+          <Box
+            maxWidth="container.md"
+            py={{ base: "0.25em", sm: "3em" }}
+            align="center"
+          >
             <Headshot src={profile} />
           </Box>
         </Section>
@@ -219,7 +222,7 @@ const About = () => (
               );
             })}
           </SimpleGrid>
-          <LinkButton link={Links.resume} label="Resume" py={12} />
+          <LinkButton link={Links.resume} label="Resume" py={12} mb={12} />
         </Section>
       </Box>
     </Container>

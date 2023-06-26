@@ -31,12 +31,11 @@ const Posts = ({ posts, error }) => {
   }
   return (
     <Layout title="Articles">
-      <Container maxW="container.sm">
-        <Subtitle>Posts</Subtitle>
-        <Title>
-          Thoughts &amp; Findings
+      <Container maxW="container.md">
+        <Title mb={2}>
+          thoughts
         </Title>
-        <SimpleGrid columns={[1, 1, 1]} spacing={2}>
+        <SimpleGrid columns={[1, 1, 1]} spacing={0}>
           {posts.map(({ attributes }, index) => (
             <Section key={index} mb={0} delay={calculateAnimationDelay(index)}>
               <PostsGridItem

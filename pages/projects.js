@@ -6,7 +6,6 @@ import {
 import Section from "../components/Section";
 import { ProjectsGridItem } from "../components/grid/ProjectGridItem";
 import Layout from "../components/layouts/Article";
-import Subtitle from "../components/Subtitle";
 import Title from "../components/Title";
 import { calculateAnimationDelay, getCMSBaseUrl } from "../libs/functions";
 
@@ -16,12 +15,11 @@ function Work(props) {
     <Layout title="Projects">
       <Container maxWidth="container.lg">
         <Section mb={0}>
-          <Subtitle>Projects</Subtitle>
-          <Title mb={4}>
-            Past Work &amp; Personal Projects
+          <Title mb={0}>
+            projects
           </Title>
         </Section>
-        <SimpleGrid columns={[1, 1, 2]} spacingX={8} mt={12}>
+        <SimpleGrid columns={[1, 1, 2]} spacingX={8} mt={8}>
           {posts.map((post, index) => (
             <Section key={index} delay={calculateAnimationDelay(index)}>
               <ProjectsGridItem
