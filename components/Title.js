@@ -13,7 +13,6 @@ const Title = (props) => (
   <Heading
   as="h1"
   letterSpacing="-0.05em"
-  fontWeight={700}
   fontSize={[36, 48]}
   color={useColorModeValue("#281D1A", "#EDEDED")}
   mt={{ base: 0, sm: 12 }}
