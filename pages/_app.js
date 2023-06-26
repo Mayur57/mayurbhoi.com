@@ -16,12 +16,6 @@ import CookiesProvider from "../libs/cookies";
 import "../components/cmdk/cmd.css";
 
 const GlobalStyles = css`
-  @font-face {
-    font-family: "Recoleta";
-    font-weight: normal;
-    src: url(../fonts/Recoleta-Regular.ttf) format("truetype");
-  }
-
   .js-focus-visible :focus:not([data-focus-visible-added]) {
     outline: none;
     box-shadow: none;
@@ -30,8 +24,6 @@ const GlobalStyles = css`
   body {
     scroll-behavior: smooth;
     overflow-x: hidden;
-    -webkit-font-smoothing: auto;
-    -moz-osx-font-smoothing: auto;
   }
 `;
 
