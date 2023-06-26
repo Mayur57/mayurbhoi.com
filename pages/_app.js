@@ -1,3 +1,4 @@
+/* eslint-disable no-dupe-keys */
 /* eslint-disable react/jsx-props-no-spreading */
 import { Global, css } from "@emotion/react";
 import "focus-visible/dist/focus-visible";
