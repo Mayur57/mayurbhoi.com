@@ -211,7 +211,7 @@ const PostExpanded = ({
         >
           <Box flex={4} align="center" mt={0} mb={6}>
             <Title
-              fontSize={["2em", "2.5em", "2.75em"]}
+              fontSize={["2.25em", "2.5em", "2.75em"]}
               letterSpacing="tight"
               fontWeight="regular"
               lineHeight={1.2}
