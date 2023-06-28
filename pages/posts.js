@@ -35,7 +35,7 @@ const Posts = ({ posts, error }) => {
         <Title mb={2}>
           thoughts
         </Title>
-        <SimpleGrid columns={[1, 1, 1]} spacing={0}>
+        <SimpleGrid columns={[1, 1, 1]} spacing={0} mt={{base:4, md: 8}}>
           {posts.map(({ attributes }, index) => (
             <Section key={index} mb={0} delay={calculateAnimationDelay(index)}>
               <PostsGridItem
@@ -87,7 +87,7 @@ export const getStaticProps = async () => {
   if (posts) {
     posts.forEach((post) => {
       const publishedDate = post.attributes.uploaded;
-      const formattedDate = moment(publishedDate).format("DD MMM YYYY");
+      const formattedDate = moment(publishedDate).format("DD MMMM YYYY");
       post.attributes.uploaded = formattedDate;
       post.attributes.sortId = moment(publishedDate).format("YYYYMMDD");
       post.attributes.readingTime = readingTime(post.attributes.body);

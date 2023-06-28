@@ -1,8 +1,4 @@
-import {
-  Box,
-  Container,
-  SimpleGrid,
-} from "@chakra-ui/react";
+import { Box, Container, Divider, SimpleGrid } from "@chakra-ui/react";
 import Section from "../components/Section";
 import { ProjectsGridItem } from "../components/grid/ProjectGridItem";
 import Layout from "../components/layouts/Article";
@@ -13,26 +9,25 @@ function Work(props) {
   const { posts } = props;
   return (
     <Layout title="Projects">
-      <Container maxWidth="container.lg">
+      <Container maxWidth="container.md">
         <Section mb={0}>
-          <Title mb={0}>
-            projects
-          </Title>
+          <Title mb={0}>projects</Title>
         </Section>
-        <SimpleGrid columns={[1, 1, 2]} spacingX={8} mt={8}>
+        <SimpleGrid display="relative" spacing="1em" mt={{base: 8, md: 16}}>
           {posts.map((post, index) => (
-            <Section key={index} delay={calculateAnimationDelay(index)}>
-              <ProjectsGridItem
-                id={post.attributes.slug}
-                title={post.attributes.title}
-                thumbnail={post.attributes.thumbnail}
-              >
-                {post.attributes.description}
-              </ProjectsGridItem>
+            <Section
+              key={index}
+              delay={calculateAnimationDelay(index)}
+              overflow="hidden"
+            >
+              <ProjectsGridItem post={post} />
+              {posts.length - 1 !== index && (
+                <Divider ml="5em" mt="0.5em" />
+              )}
             </Section>
           ))}
         </SimpleGrid>
-        <Box height={{ base:"12vh", md:"15vh" }} />
+        <Box height={{ base: "12vh", md: "15vh" }} />
       </Container>
     </Layout>
   );
@@ -45,7 +40,6 @@ async function getPosts() {
     `${getCMSBaseUrl()}/projects?sort[0]=featured:desc&sort[1]=id`
   );
   const { data } = await response.json();
-
   return data;
 }
 
