@@ -11,12 +11,11 @@ export default function Headshot({ src = profile, ...props }) {
     <Box
       role="group"
       pos="relative"
-      height={{ base: 150, sm: 195 }}
-      width={{ base: 150, sm: 195 }}
+      height={{ base: 150, sm: 205 }}
+      width={{ base: 150, sm: 205 }}
       borderRadius="10px"
-      // overflow="hidden"
-      boxShadow="2xl"
-      transition="all 0.35s ease-in-out"
+      boxShadow="xl"
+      transition="all 0.5s ease-out"
       zIndex={2}
       {...props}
     >
@@ -29,7 +28,12 @@ export default function Headshot({ src = profile, ...props }) {
         overflow="hidden"
         userSelect="none"
         pointerEvents="none"
-        transition="all 0.35s ease-in-out"
+        transition="all 0.5s ease-out"
+        filter="saturate(0) brightness(0.95) contrast(1.05)"
+        _groupHover={{
+          transition: "all 0.5s ease-out",
+          filter: "saturate(1) brightness(1) contrast(1)",
+        }}
         {...props}
       >
         <Image
@@ -48,19 +52,19 @@ export default function Headshot({ src = profile, ...props }) {
       <Box
         className="overlay"
         pos="absolute"
-        height={{ base: 150, sm: 195 }}
-        width={{ base: 150, sm: 195 }}
+        height={{ base: 150, sm: 205 }}
+        width={{ base: 150, sm: 205 }}
         top={0}
         left={0}
         borderRadius="10px"
         bgColor="#00000099"
         bgImage={`url(${noise.src})`}
-        opacity={0.75}
+        opacity={0.9}
         mixBlendMode="overlay"
         filter="contrast(1)"
         zIndex={10}
         willChange="opacity"
-        transition="all 0.35s ease-in-out"
+        transition="all 0.5s ease-out"
         _groupHover={{
           opacity: 0,
         }}

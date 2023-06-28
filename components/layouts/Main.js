@@ -29,7 +29,6 @@ function Main({ children, router }) {
         {children}
         <ScrollToTopEmoji />
       </Container>
-      {/* {router.asPath !== "/" && <Footer />} */}
     </Box>
   );
 }

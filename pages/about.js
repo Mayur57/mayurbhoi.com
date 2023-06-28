@@ -120,7 +120,7 @@ const About = () => (
         <Section delay={0.1}>
           <Box
             maxWidth="container.md"
-            py={{ base: "0.25em", sm: "3em" }}
+            py={{ base: "0.2em", sm: "2em" }}
             align="center"
           >
             <Headshot />
@@ -131,37 +131,31 @@ const About = () => (
             <strong>Hello there!</strong>
             <br />
             <br />
-            I&apos;m Mayur Bhoi. I&apos;m a designer, software tinkerer, and a{" "}
+            I&apos;m Mayur Bhoi and welcome to my cozy little place on the internet. I&apos;m a designer, software tinkerer, and a{" "}
             <strong>Full Stack Developer</strong> by profession. I have a
             passion for writing intricately designed software that is reliable,
-            efficient, and user-friendly. You willl generally find me busy
-            building my projects, cooking food, and making coffee.
+            efficient, and user-friendly.
             <br />
-            <br />I have been into writing software for almost 5 years. I
-            started out as an <strong>App Developer</strong> writing and
-            publishing several mobile apps around 2017. Simultaneously, I also
-            pursued <strong>Graphic Design</strong> as a hobby. A couple of
-            years later, I pivoted into <strong>Server Engineering</strong> to
-            design, write and maintain servers for my hobby projects and more.
+            <br />I have been into writing software for almost five years. I
+            started with <strong>App Developement</strong> writing and
+            publishing several mobile apps during 2017–2021. Around 2021, I started getting into <strong>Server Engineering</strong> while
+            designing and maintaining servers for my hobby projects.
             <br />
             <br />
-            Currently, I work on end-to-end full stack applications; leveraging
-            both of my hobbies to design beautiful user interfaces, as well as,
-            write robust backend systems. I also actively look for new and
-            exciting technologies to explore and learn; presently, learning the{" "}
-            <em>AWS Platform and Next.js</em>.
+            Currently, I work on end-to-end full stack applications; leverage
+            both of my hobbies to design beautiful user interfaces and
+            writing robust backend systems. I also actively look for new and
+            exciting technologies to explore and learn.
             <br />
             <br />I currently write reliable software at{" "}
             <strong>NCR Corporation</strong> as{" "}
-            <strong>Software Engineer I</strong> for the Digital Banking Unit. I
+            <strong>Software Engineer I</strong>. I
             also have quite a few hobby projects that you can take a look at{" "}
-            <Link href="/projects" passHref>
+            <Link className="main-page-url" href="/projects" passHref>
               here
             </Link>
             .
             <br />
-            <br />I am an open source advocate and actively try to contribute to
-            the open source community.
           </p>
           <SimpleGrid columns={[1, 1, 3]} gap={4} mt={12}>
             {ExternalLinkData.map(({ title, handle, icon, href }, idx) => (
