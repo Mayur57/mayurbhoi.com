@@ -1,9 +1,4 @@
-import {
-  Box,
-  Heading,
-  LinkBox,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Heading, LinkBox, Text } from "@chakra-ui/react";
 import Link from "next/link";
 
 export const PostsGridItem = ({
@@ -25,7 +20,7 @@ export const PostsGridItem = ({
       <LinkBox cursor="pointer">
         <Text
           fontWeight={500}
-          fontSize='1.2em'
+          fontSize="1.2em"
           lineHeight={1.4}
           letterSpacing="-0.03em"
         >
@@ -45,7 +40,14 @@ export const PostsGridItem = ({
             →
           </Text>
         </Text>
-        <Text fontSize="13" opacity={0.6} lineHeight={1.5} fontWeight={400} mt={2} mr={2}>
+        <Text
+          fontSize="13"
+          opacity={0.6}
+          lineHeight={1.5}
+          fontWeight={400}
+          mt={2}
+          mr={2}
+        >
           {desc}
         </Text>
         <Heading
