@@ -131,7 +131,7 @@ const About = () => (
             <strong>Hello there!</strong>
             <br />
             <br />
-            I&apos;m Mayur Bhoi and welcome to my cozy little place on the internet. I&apos;m a designer, software tinkerer, and a{" "}
+            I&apos;m Mayur Bhoi. I&apos;m a designer, software tinkerer, and a{" "}
             <strong>Full Stack Developer</strong> by profession. I have a
             passion for writing intricately designed software that is reliable,
             efficient, and user-friendly.
