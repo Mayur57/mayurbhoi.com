@@ -20,6 +20,8 @@ function Main({ children, router }) {
       </Head>
       <Navbar path={router.asPath} />
       <Container
+        as="main"
+        pt={router.asPath === "/" ? "0" : 14}
         maxW="container.xl"
         position="relative"
         minHeight="100vh"
