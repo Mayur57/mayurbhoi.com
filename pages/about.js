@@ -22,7 +22,6 @@ import Section from "../components/Section";
 import LinkButton from "../components/LinkButton";
 import { Links } from "../data/links";
 import Headshot from "../components/Headshot";
-import profile from "../public/images/me.png";
 import Title from "../components/Title";
 
 const Company = styled.h3`
@@ -124,7 +123,7 @@ const About = () => (
             py={{ base: "0.25em", sm: "3em" }}
             align="center"
           >
-            <Headshot src={profile} />
+            <Headshot />
           </Box>
         </Section>
         <Section delay={0.2}>

@@ -59,7 +59,14 @@ const Grads = () => (
 );
 
 const HomePage = () => (
-  <Container maxW="540px" overflow="hidden" pt="10vh">
+  <Container
+    display="flex"
+    minH="100vh"
+    flexDir="column"
+    justifyContent="center"
+    maxW="540px"
+    overflow="hidden"
+  >
     <Grads />
     <Prop />
     <Header />
@@ -77,7 +84,6 @@ const HomePage = () => (
         alignItems="center"
         justifyContent="center"
         mt={6}
-        mb={12}
       >
         <FiCommand size={10} />
         <Text fontSize={12} ml={2}>
