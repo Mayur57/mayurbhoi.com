@@ -8,8 +8,8 @@ const variants = {
   exit: { opacity: 0, x: 0, y: 5 },
 };
 
-function Layout({ children, type, title, desc }) {
-  const img = `https://mayur.wtf/api/images?${title}`;
+function Layout({ children, type, title, desc, slug }) {
+  const img = `https://mayur.wtf/api/images?title=${title}`;
   return (
     <>
       <NextSeo
@@ -19,7 +19,7 @@ function Layout({ children, type, title, desc }) {
           title,
           description: desc,
           type: "website",
-          url: `https://mayur.wtf/${title.toLowerCase()}`,
+          url: `https://mayur.wtf/${slug}`,
           images: [{ url: img }]
         }}
         twitter={{

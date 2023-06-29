@@ -192,12 +192,12 @@ const PostExpanded = ({
   timeSensitive,
 }) => {
   const [copied, setCopied] = useState(false);
-  if (error) {
+  if (error || !post) {
     return <Error />;
   }
   const timeCriteria = moment().diff(moment(post?.uploaded), "years") >= 2;
   return (
-    <Layout type='post' title={post?.title} desc={post?.description}>
+    <Layout type='post' title={post?.title} desc={post?.description} slug={post?.slug}>
       <Container
         maxW="container.lg"
         mt={{ base: 0, sm: 4 }}
