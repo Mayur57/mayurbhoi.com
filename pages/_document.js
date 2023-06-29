@@ -2,45 +2,11 @@ import { ColorModeScript } from "@chakra-ui/react";
 import NextDocument, { Html, Head, Main, NextScript } from "next/document";
 import theme from "../libs/theme";
 
-const TITLE = "Mayur Bhoi";
-const DESCRIPTION = "software engineer ✕ product designer";
-const CARD_IMAGE_URL = "https://i.ibb.co/MC7Z6yw/800x600.png";
-
 export default class Document extends NextDocument {
   render() {
     return (
       <Html lang="en">
         <Head>
-          {/* Metadata about the website for SEO */}
-          <meta charSet="utf-8" />
-          <meta name="description" content={DESCRIPTION} />
-          <meta
-            name="keywords"
-            content="mayur, bhoi, HTML, CSS, JavaScript, Python, Java, C++, portfolio"
-          />
-          <meta name="author" content="Mayur Bhoi" />
-
-          {/* Metadata for OpenGraph */}
-          <meta property="og:image" content={CARD_IMAGE_URL} />
-          <meta property="og:title" content={TITLE} />
-          <meta property="og:description" content={DESCRIPTION} />
-          <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://mayurbhoi.com" />
-
-          {/* Metadata for Twitter */}
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:site" content="@mayurbhoii" />
-          <meta name="twitter:creator" content="@mayurbhoii" />
-          <meta name="twitter:title" content="Mayur Bhoi" />
-          <meta
-            name="twitter:description"
-            content="software engineer ✕ product designer"
-          />
-          <meta
-            name="twitter:image"
-            content="https://i.ibb.co/b2LXZDX/800x418.png"
-          />
-
           {/* Favicons for popular platforms and browsers */}
           <link
             rel="apple-touch-icon"
@@ -118,6 +84,10 @@ export default class Document extends NextDocument {
             content="/meta/favicon/ms-icon-144x144.png"
           />
           <meta name="theme-color" content="#ffffff" />
+          <meta
+            content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+            name="robots"
+          />
         </Head>
         <body>
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />

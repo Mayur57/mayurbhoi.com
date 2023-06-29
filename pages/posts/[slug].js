@@ -197,7 +197,7 @@ const PostExpanded = ({
   }
   const timeCriteria = moment().diff(moment(post?.uploaded), "years") >= 2;
   return (
-    <Layout title={post?.title} desc={post?.description} img={post?.thumbnail}>
+    <Layout type='post' title={post?.title} desc={post?.description}>
       <Container
         maxW="container.lg"
         mt={{ base: 0, sm: 4 }}

@@ -52,6 +52,7 @@
     "@fontsource/space-grotesk": "^4.5.8",
     "@next/bundle-analyzer": "^13.1.1",
     "@vercel/analytics": "^0.1.8",
+    "@vercel/og": "^0.5.8",
     "bad-words": "^3.0.4",
     "cmdk": "^0.1.21",
     "focus-visible": "^5.2.0",
