@@ -1,7 +1,5 @@
 import { ImageResponse } from '@vercel/og';
 
-export const runtime = 'edge';
-
 export default async function GET(req) {
   const { searchParams } = req.nextUrl;
   const postTitle = searchParams.get('title');
