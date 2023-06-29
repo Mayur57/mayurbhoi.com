@@ -5,8 +5,6 @@ export const runtime = 'edge';
 export default async function GET(req) {
   const { searchParams } = req.nextUrl;
   const title = searchParams.get('title');
-  const desc = searchParams.get('desc');
-  const type = searchParams.get('type');
   const font = fetch(
     new URL('../../public/fonts/KaiseiTokumin-B-Min.ttf', import.meta.url)
   ).then((res) => res.arrayBuffer());
@@ -40,22 +38,6 @@ export default async function GET(req) {
           }}
         >
           {title}
-        </div>
-        <div
-          style={{
-            marginLeft: 140,
-            marginRight: 190,
-            display: 'flex',
-            fontSize: 130,
-            fontFamily: 'Kaisei Tokumin',
-            letterSpacing: '-0.05em',
-            fontStyle: 'normal',
-            color: 'white',
-            lineHeight: '120px',
-            whiteSpace: 'pre-wrap',
-          }}
-        >
-          {desc}
         </div>
       </div>
     ),

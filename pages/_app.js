@@ -62,21 +62,12 @@ const Website = ({ Component, session, pageProps, router }) => {
                     description: "Developer, designer, creator.",
                     images: [
                       {
-                        url: "https://www.example.ie/og-image-01.jpg",
-                        width: 800,
-                        height: 600,
+                        url: 'https://www.mayur.wtf/images/main.jpeg',
+                        width: 1920,
+                        height: 1080,
                         alt: "Og Image Alt",
                         type: "image/jpeg",
-                      },
-                      {
-                        url: "https://www.example.ie/og-image-02.jpg",
-                        width: 900,
-                        height: 800,
-                        alt: "Og Image Alt Second",
-                        type: "image/jpeg",
-                      },
-                      { url: "https://www.example.ie/og-image-03.jpg" },
-                      { url: "https://www.example.ie/og-image-04.jpg" },
+                      }
                     ],
                   }}
                   twitter={{
