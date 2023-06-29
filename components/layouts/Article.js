@@ -9,6 +9,7 @@ const variants = {
 };
 
 function Layout({ children, type, title, desc }) {
+  const img = `https://mayur.wtf/api/images?${title}`;
   return (
     <>
       <NextSeo
@@ -19,6 +20,7 @@ function Layout({ children, type, title, desc }) {
           description: desc,
           type: "website",
           url: `https://mayur.wtf/${title.toLowerCase()}`,
+          images: [{ url: img }]
         }}
         twitter={{
           title,
