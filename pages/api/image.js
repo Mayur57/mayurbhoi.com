@@ -20,7 +20,7 @@ export default async function GET(req) {
           flexDirection: 'column',
           alignItems: 'flex-start',
           justifyContent: 'center',
-          backgroundImage: 'url(https://mayur.wtf/images/post.png)',
+          backgroundImage: 'url(https://mayur.wtf/images/post.jpg)',
         }}
       >
         <div
