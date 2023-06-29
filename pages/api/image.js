@@ -25,7 +25,7 @@ export default async function GET(req) {
       >
         <div
           style={{
-            marginLeft: 190,
+            marginLeft: 140,
             marginRight: 190,
             display: 'flex',
             fontSize: 130,
