@@ -4,7 +4,7 @@ export default async function GET(req) {
   const { searchParams } = req.nextUrl;
   const postTitle = searchParams.get('title');
   const font = fetch(
-    new URL('../../public/fonts/KaiseiTokumin-Bold.ttf', import.meta.url)
+    new URL('../../public/fonts/KaiseiTokumin-Bold.woff2', import.meta.url)
   ).then((res) => res.arrayBuffer());
   const fontData = await font;
 
