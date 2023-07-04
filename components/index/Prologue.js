@@ -1,5 +1,4 @@
-import { Box, Text } from "@chakra-ui/react";
-import Link from "next/link";
+import { Text } from "@chakra-ui/react";
 import Section from "../Section";
 
 const TextWrapper = ({ children }) => (
@@ -7,7 +6,7 @@ const TextWrapper = ({ children }) => (
     mt="1rem"
     fontSize={14}
     letterSpacing="-0.005em"
-    lineHeight={1.75}
+    lineHeight={1.65}
     fontWeight={300}
     textAlign="justify"
     _first={{
@@ -18,20 +17,6 @@ const TextWrapper = ({ children }) => (
   </Text>
 );
 
-const LinkWrapper = ({ children }) => (
-  <Box
-    as="span"
-    display="inline-block"
-    textDecoration="underline"
-    textDecorationThickness={0.9}
-    textUnderlineOffset={3}
-    transition="all 250ms ease-in-out"
-    _hover={{ opacity: 0.6, textUnderlineOffset: 5 }}
-  >
-    {children}
-  </Box>
-);
-
 const Prologue = () => (
   <Section y={4} delay={0.2} mb={0}>
     <TextWrapper>
@@ -39,27 +24,9 @@ const Prologue = () => (
       curious about design and high performance systems. trying to make a
       difference with code. relentlessly devoted to intricacy, efficiency, and
       detailed polish. always seeking out the cutting edge in my craft.
-      currently at{" "}
-      <Link href="https://ncr.com">
-        <LinkWrapper>NCR</LinkWrapper>
-      </Link>
-      .
+      welcome to my little place on the internet.
     </TextWrapper>
     <TextWrapper>based in bengaluru, india</TextWrapper>
-    <TextWrapper>
-      got something to say? write a note{" "}
-      <Link
-        href="/sign"
-        style={{
-          textDecoration: "underline",
-          textDecorationThickness: 0.9,
-          textUnderlineOffset: 3,
-        }}
-      >
-        <LinkWrapper>here</LinkWrapper>
-      </Link>
-      .
-    </TextWrapper>
   </Section>
 );
 

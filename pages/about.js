@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import {
   Box,
   Text,
@@ -16,14 +17,12 @@ import {
 } from "react-icons/fi";
 import styled from "styled-components";
 import Layout from "../components/layouts/Article";
-import Subtitle from "../components/Subtitle";
-import Title from "../components/Title";
 import { experience } from "../data/experience";
 import Section from "../components/Section";
 import LinkButton from "../components/LinkButton";
 import { Links } from "../data/links";
 import Headshot from "../components/Headshot";
-import profile from "../public/images/me.png";
+import Title from "../components/Title";
 
 const Company = styled.h3`
   & {
@@ -96,7 +95,7 @@ const ExternalLink = ({ title, href = "#", icon, handle = "@mayur57" }) => (
       gap={4}
       transition="all 300ms ease-in-out"
       _hover={{
-        backgroundColor: useColorModeValue("#f5f5f5", "#2a2a2a")
+        backgroundColor: useColorModeValue("#f5f5f5", "#2a2a2a"),
       }}
     >
       <Box display="flex" alignItems="center" gap="0.75em">
@@ -116,12 +115,15 @@ const ExternalLink = ({ title, href = "#", icon, handle = "@mayur57" }) => (
 const About = () => (
   <Layout title="About">
     <Container maxW="container.md">
-      <Subtitle>About</Subtitle>
-      <Title>Experience &amp; Background</Title>
+      <Title>about</Title>
       <Box maxWidth="container.md" justifyItems="center">
         <Section delay={0.1}>
-          <Box maxWidth="container.md" py={{base: "0.5em", sm: "3em"}} align="center">
-            <Headshot src={profile} />
+          <Box
+            maxWidth="container.md"
+            py={{ base: "0.2em", sm: "2em" }}
+            align="center"
+          >
+            <Headshot />
           </Box>
         </Section>
         <Section delay={0.2}>
@@ -132,34 +134,28 @@ const About = () => (
             I&apos;m Mayur Bhoi. I&apos;m a designer, software tinkerer, and a{" "}
             <strong>Full Stack Developer</strong> by profession. I have a
             passion for writing intricately designed software that is reliable,
-            efficient, and user-friendly. You willl generally find me busy
-            building my projects, cooking food, and making coffee.
+            efficient, and user-friendly.
             <br />
-            <br />I have been into writing software for almost 5 years. I
-            started out as an <strong>App Developer</strong> writing and
-            publishing several mobile apps around 2017. Simultaneously, I also
-            pursued <strong>Graphic Design</strong> as a hobby. A couple of
-            years later, I pivoted into <strong>Server Engineering</strong> to
-            design, write and maintain servers for my hobby projects and more.
+            <br />I have been into writing software for almost five years. I
+            started with <strong>App Developement</strong> writing and
+            publishing several mobile apps during 2017–2021. Around 2021, I started getting into <strong>Server Engineering</strong> while
+            designing and maintaining servers for my hobby projects.
             <br />
             <br />
-            Currently, I work on end-to-end full stack applications; leveraging
-            both of my hobbies to design beautiful user interfaces, as well as,
-            write robust backend systems. I also actively look for new and
-            exciting technologies to explore and learn; presently, learning the{" "}
-            <em>AWS Platform and Next.js</em>.
+            Currently, I work on end-to-end full stack applications; leverage
+            both of my hobbies to design beautiful user interfaces and
+            writing robust backend systems. I also actively look for new and
+            exciting technologies to explore and learn.
             <br />
             <br />I currently write reliable software at{" "}
             <strong>NCR Corporation</strong> as{" "}
-            <strong>Software Engineer I</strong> for the Digital Banking Unit. I
+            <strong>Software Engineer I</strong>. I
             also have quite a few hobby projects that you can take a look at{" "}
-            <Link href="/projects" passHref>
+            <Link className="main-page-url" href="/projects" passHref>
               here
             </Link>
             .
             <br />
-            <br />I am an open source advocate and actively try to contribute to
-            the open source community.
           </p>
           <SimpleGrid columns={[1, 1, 3]} gap={4} mt={12}>
             {ExternalLinkData.map(({ title, handle, icon, href }, idx) => (
@@ -219,7 +215,7 @@ const About = () => (
               );
             })}
           </SimpleGrid>
-          <LinkButton link={Links.resume} label="Resume" py={12} />
+          <LinkButton link={Links.resume} label="Resume" py={12} mb={12} />
         </Section>
       </Box>
     </Container>

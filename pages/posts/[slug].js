@@ -28,7 +28,7 @@ import Error from "next/error";
 import rehypeRaw from "rehype-raw";
 import remarkImages from "remark-images";
 import Balancer from "react-wrap-balancer";
-import { Lora } from "next/font/google";
+import localFont from "next/font/local"; 
 
 import Layout from "../../components/layouts/Article";
 import markdownToHtml from "../../libs/MDParser";
@@ -42,14 +42,12 @@ import {
   renderUnorderedList,
 } from "../../components/ArticleCustomElements";
 
-// const Recoleta = localFont({
-//   fontFamily: 'Recoleta',
-//   src: '../../public/fonts/Recoleta-Regular.ttf',
-//   fontWeight: 'normal',
-//   fontStyle: 'normal',
-// });
-
-const lora = Lora({ variable: "--font-lora", subsets: ["latin"] });
+const Editorial = localFont({
+  fontFamily: 'Editorial',
+  src: '../../public/fonts/Editorial-Regular.otf',
+  fontWeight: 'normal',
+  fontStyle: 'normal',
+});
 
 const MdProcessorWrapper = ({ children, type = "article" }) => (
   <ReactMarkdown
@@ -194,15 +192,15 @@ const PostExpanded = ({
   timeSensitive,
 }) => {
   const [copied, setCopied] = useState(false);
-  if (error) {
+  if (error || !post) {
     return <Error />;
   }
   const timeCriteria = moment().diff(moment(post?.uploaded), "years") >= 2;
   return (
-    <Layout title={post?.title} desc={post?.description} img={post?.thumbnail}>
+    <Layout type='post' title={post?.title} desc={post?.description} slug={post?.slug}>
       <Container
         maxW="container.lg"
-        mt={{ base: 0, sm: 12 }}
+        mt={{ base: 0, sm: 4 }}
         px={{ base: 1, sm: 4 }}
       >
         <Stack
@@ -211,17 +209,17 @@ const PostExpanded = ({
           spacing={10}
           maxW="container.lg"
         >
-          <Box flex={4} align="center" mt={{ base: 0, sm: 12 }} mb={6}>
+          <Box flex={4} align="center" mt={0} mb={6}>
             <Title
-              fontSize={["2.5em", "2.75em"]}
-              letterSpacing="-0.03em"
-              fontWeight="light"
-              lineHeight={1}
+              fontSize={["2.25em", "2.5em", "2.75em"]}
+              letterSpacing="tight"
+              fontWeight="regular"
+              lineHeight={1.2}
               style={{
                 marginBottom: 18,
                 flex: 3,
                 justifyItems: "baseline",
-                ...lora.style,
+                ...Editorial.style,
               }}
             >
               <Balancer>{post?.title}</Balancer>
@@ -255,7 +253,7 @@ const PostExpanded = ({
           <Stack
             direction={{ base: "column", md: "row" }}
             spacing={{ base: 0, md: 12 }}
-            mt={{ base: 0, md: 42 }}
+            mt={0}
           >
             <TableOfContents TOC={TOC} />
             <Box maxW="container.md" fontSize={14}>

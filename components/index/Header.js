@@ -1,11 +1,11 @@
-import { Box, Popover, PopoverBody, PopoverContent, PopoverHeader, PopoverTrigger, Text } from "@chakra-ui/react";
-import Link from "next/link";
+import {
+  Box,
+  Text,
+} from "@chakra-ui/react";
 import Section from "../Section";
 
 const Checkmark = () => (
-  <Popover isLazy>
-    <PopoverTrigger>
-    <Box ml={1.5} my={6} h="16px" w="16px">
+  <Box ml={1.5} my={6} h="16px" w="16px">
     <svg
       viewBox="0 0 24 24"
       role="img"
@@ -17,21 +17,20 @@ const Checkmark = () => (
       </g>
     </svg>
   </Box>
-    </PopoverTrigger>
-    <PopoverContent p={2} backdropFilter='blur(24px)'>
-    <PopoverHeader fontWeight='bold' border='0'>Verified account</PopoverHeader>
-    <PopoverBody fontSize={14} pt={0}>This is a legacy verified account. It may or may not be notable. <Link href='https://twitter.com/Reddit/status/1603458895934099456'><span style={{ color: '#1D9BF0', textDecoration: 'underline', cursor: "pointer" }}>Learn more</span></Link></PopoverBody>
-  </PopoverContent>
-  </Popover>
 );
 
 const Header = () => (
   <Section y={4} mb={0} delay={0.1}>
-    <Text fontSize={["3em", "3em", "3.5em"]} fontWeight={500} mt={6} letterSpacing="-0.04em">
+    <Text
+      fontSize={["3em", "3.25em", "3.5em"]}
+      fontWeight={500}
+      mt={6}
+      letterSpacing="-0.04em"
+    >
       hey
     </Text>
     <Box display="flex" alignItems="center">
-      <Text my={6} fontSize='1em' fontWeight={500} letterSpacing="-0.03em">
+      <Text my={6} fontSize="1em" fontWeight={500} letterSpacing="-0.03em">
         mayur bhoi
       </Text>
       <Checkmark />
@@ -40,5 +39,3 @@ const Header = () => (
 );
 
 export default Header;
-
-// https://twitter.com/Reddit/status/1603458895934099456

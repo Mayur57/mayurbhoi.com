@@ -1,8 +1,9 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable import/extensions */
-import Head from "next/head";
 import { Box, Container } from "@chakra-ui/react";
 import Navbar from "../navbar/Navbar";
 import { ScrollToTopEmoji } from "../ScrollToTop";
+import GridBackdrop from "../GridBackdrop";
 
 function Main({ children, router }) {
   return (
@@ -11,21 +12,18 @@ function Main({ children, router }) {
       transition="all 250ms ease-in-out"
       _dark={{ bg: "#121212" }}
     >
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Mayur Bhoi</title>
-      </Head>
+      {router.asPath !== "/" && <GridBackdrop />}
       <Navbar path={router.asPath} />
       <Container
+        as="main"
+        pt={router.asPath === "/" ? "0" : 14}
         maxW="container.xl"
-        pt={14}
         position="relative"
         minHeight="100vh"
       >
         {children}
         <ScrollToTopEmoji />
       </Container>
-      {/* {router.asPath !== "/" && <Footer />} */}
     </Box>
   );
 }

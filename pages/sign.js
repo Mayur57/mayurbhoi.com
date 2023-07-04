@@ -157,8 +157,8 @@ export default function Sign() {
       />
       <Layout title="Sign">
         <Container maxW="container.sm">
-          <Title mt="1.25em" mb={2}>
-            Sign
+          <Title mt={0} mb={2}>
+            sign
           </Title>
           <Text
             as="div"
