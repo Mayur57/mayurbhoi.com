@@ -16,6 +16,7 @@ import Fonts from "../components/FontPreLoader";
 import { Loading } from "../components/layouts/Loading";
 import CookiesProvider from "../libs/cookies";
 import "../components/cmdk/cmd.css";
+import { seoData } from "../libs/SeoData";
 
 const GlobalStyles = css`
   .js-focus-visible :focus:not([data-focus-visible-added]) {
@@ -50,31 +51,7 @@ const Website = ({ Component, session, pageProps, router }) => {
             ) : (
               <>
                 <Toaster richColors closeButton />
-                <DefaultSeo
-                  titleTemplate="%s | Mayur Bhoi"
-                  defaultTitle="Mayur Bhoi"
-                  description="Developer, designer, creator."
-                  openGraph={{
-                    type: "website",
-                    locale: "en_IN",
-                    url: "https://www.mayur.wtf/",
-                    title: "Mayur Bhoi",
-                    description: "Developer, designer, creator.",
-                    images: [
-                      {
-                        url: 'https://www.mayur.wtf/images/main.jpeg',
-                        width: 1920,
-                        height: 1080,
-                        alt: "Og Image Alt",
-                        type: "image/jpeg",
-                      }
-                    ],
-                  }}
-                  twitter={{
-                    handle: "@mayurbhoii",
-                    cardType: "summary_large_image",
-                  }}
-                />
+                <DefaultSeo {...seoData} />
                 <Component {...pageProps} key={router.route} />
                 <Analytics />
               </>

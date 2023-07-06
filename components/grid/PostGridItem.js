@@ -20,7 +20,7 @@ export const PostsGridItem = ({
       <LinkBox cursor="pointer">
         <Text
           fontWeight={500}
-          fontSize="1.2em"
+          fontSize={["1em", "1.2em"]}
           lineHeight={1.4}
           letterSpacing="-0.03em"
         >
@@ -41,11 +41,11 @@ export const PostsGridItem = ({
           </Text>
         </Text>
         <Text
-          fontSize="13"
+          fontSize="0.75em"
           opacity={0.6}
           lineHeight={1.5}
           fontWeight={400}
-          mt={2}
+          mt="0.4rem"
           mr={2}
         >
           {desc}
@@ -54,9 +54,9 @@ export const PostsGridItem = ({
           letterSpacing="0.02em"
           fontWeight={400}
           lineHeight={1.5}
-          fontSize={11}
+          fontSize="0.65em"
           opacity={0.4}
-          mt={2}
+          mt='0.4rem'
         >
           {tag.charAt(0).toUpperCase() + tag.substring(1)} • {date} •{" "}
           {readingTime}

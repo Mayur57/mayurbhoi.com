@@ -1,9 +1,6 @@
 import { extendTheme } from "@chakra-ui/react";
 import { mode } from "@chakra-ui/theme-tools";
-import BrandColors from "./ColorHelper";
 import "@fontsource/inter";
-
-const { textColorLight } = BrandColors;
 
 const styles = {
   global: (props) => ({
@@ -68,7 +65,7 @@ const styles = {
       opacity: 0.4,
     },
     p: {
-      color: mode(textColorLight, "#E5E5E5")(props),
+      color: mode("#37352F", "#E5E5E5")(props),
     },
     strong: {
       color: mode("#121212", "#DDD")(props),
@@ -91,7 +88,7 @@ const styles = {
     },
     ".article": {
       whiteSpace: "pre-wrap",
-      color: mode(textColorLight, "#E5E5E5")(props),
+      color: mode("#37352F", "#E5E5E5")(props),
     },
   }),
 };
