@@ -20,10 +20,9 @@ const TextWrapper = ({ children }) => (
 const Prologue = () => (
   <Section y={4} delay={0.2} mb={0}>
     <TextWrapper>
-      creating impactful & elegant software. full stack engineer. unsatisfiably
-      curious about design and high performance systems. trying to make a
-      difference with code. relentlessly devoted to intricacy, efficiency, and
-      detailed polish. always seeking out the cutting edge in my craft.
+      creating impactful & elegant software. unsatisfiably
+      curious about design and high performance systems. relentlessly devoted to intricacy, efficiency, and
+      detailed polish. always seeking the cutting edge in my craft.
       welcome to my little place on the internet.
     </TextWrapper>
     <TextWrapper>based in bengaluru, india</TextWrapper>
