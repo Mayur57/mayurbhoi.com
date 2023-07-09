@@ -8,12 +8,12 @@ import { calculateAnimationDelay, getCMSBaseUrl } from "../libs/functions";
 function Work(props) {
   const { posts } = props;
   return (
-    <Layout title="Projects">
+    <Layout title="Projects" section>
       <Container maxWidth="container.md">
         <Section mb={0}>
           <Title mb={0}>projects</Title>
         </Section>
-        <SimpleGrid display="relative" spacing="1em" mt={{base: 8, md: 16}}>
+        <SimpleGrid display="relative" spacing="1em" mt={{ base: 8, md: 16 }}>
           {posts.map((post, index) => (
             <Section
               key={index}
@@ -21,9 +21,7 @@ function Work(props) {
               overflow="hidden"
             >
               <ProjectsGridItem post={post} />
-              {posts.length - 1 !== index && (
-                <Divider ml="5em" mt="0.5em" />
-              )}
+              {posts.length - 1 !== index && <Divider ml="5em" mt="0.5em" />}
             </Section>
           ))}
         </SimpleGrid>

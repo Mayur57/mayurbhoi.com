@@ -12,7 +12,7 @@ const Section = ({ children, delay = 0, mb = 6, y = 10, ...props }) => (
     animate={{ y: 0, opacity: 1, scale: 1, rotate: "0deg" }}
     transition={{ duration: 0.25, delay }}
     transitionTimingFunction="cubic-bezier(.4,0,.2,1)"
-    transformOrigin='0 0'
+    transformOrigin="0 0"
     exit={{ y: 0 }}
     mb={mb}
     {...props}

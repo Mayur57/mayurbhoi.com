@@ -23,12 +23,18 @@ import remarkGfm from "remark-gfm";
 import ReactMarkdown from "react-markdown";
 import readingTime from "reading-time";
 import React, { useState } from "react";
-import { FiAlertOctagon, FiArrowUpRight, FiCheck, FiClock, FiInfo } from "react-icons/fi";
+import {
+  FiAlertOctagon,
+  FiArrowUpRight,
+  FiCheck,
+  FiClock,
+  FiInfo,
+} from "react-icons/fi";
 import Error from "next/error";
 import rehypeRaw from "rehype-raw";
 import remarkImages from "remark-images";
 import Balancer from "react-wrap-balancer";
-import localFont from "next/font/local"; 
+import localFont from "next/font/local";
 
 import Layout from "../../components/layouts/Article";
 import markdownToHtml from "../../libs/MDParser";
@@ -43,10 +49,10 @@ import {
 } from "../../components/ArticleCustomElements";
 
 const Editorial = localFont({
-  fontFamily: 'Editorial',
-  src: '../../public/fonts/Editorial-Regular.otf',
-  fontWeight: 'normal',
-  fontStyle: 'normal',
+  fontFamily: "Editorial",
+  src: "../../public/fonts/Editorial-Regular.otf",
+  fontWeight: "normal",
+  fontStyle: "normal",
 });
 
 const MdProcessorWrapper = ({ children, type = "article" }) => (
@@ -114,10 +120,7 @@ const Opinion = () => (
   <Box
     borderRadius="0.5rem"
     bg={useColorModeValue("#FF888822", "#55111122")}
-    border={`1px solid ${useColorModeValue(
-      "#FF333344",
-      "#FFAAAA66"
-    )}`}
+    border={`1px solid ${useColorModeValue("#FF333344", "#FFAAAA66")}`}
     paddingY="0.5em"
     paddingX="1em"
     mb={4}
@@ -131,7 +134,8 @@ const Opinion = () => (
       <FiAlertOctagon size={13} /> Opinion Piece
     </Box>
     <Box fontSize={12} opacity={0.8} mt={2} mb={2}>
-      Lots of opinions ahead. Opinions are always extremely personal—read, ponder, and form your own.
+      Lots of opinions ahead. Opinions are always extremely personal—read,
+      ponder, and form your own.
     </Box>
   </Box>
 );
@@ -197,7 +201,12 @@ const PostExpanded = ({
   }
   const timeCriteria = moment().diff(moment(post?.uploaded), "years") >= 2;
   return (
-    <Layout type='post' title={post?.title} desc={post?.description} slug={post?.slug}>
+    <Layout
+      type="post"
+      title={post?.title}
+      desc={post?.description}
+      slug={post?.slug}
+    >
       <Container
         maxW="container.lg"
         mt={{ base: 0, sm: 4 }}

@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable react-hooks/rules-of-hooks */
@@ -24,7 +25,6 @@ import { FiGithub } from "react-icons/fi";
 import { AiOutlineGoogle } from "react-icons/ai";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
-import { NextSeo } from "next-seo";
 import Layout from "../components/layouts/Article";
 import Title from "../components/Title";
 import Form from "../components/SignForm";
@@ -120,105 +120,62 @@ export default function Sign() {
   }, []);
 
   return (
-    <>
-      <NextSeo
-        title="Sign - Mayur Bhoi"
-        description="Full stack developer, writer, creator."
-        canonical="https://mayurbhoi.com/"
-        openGraph={{
-          url: "https://mayurbhoi.com/",
-          title: "Sign - Mayur Bhoi",
-          description: "Full stack developer, writer, creator.",
-          images: [
-            {
-              url: "https://i.ibb.co/MC7Z6yw/800x600.png",
-              width: 800,
-              height: 600,
-              alt: "Sign - Mayur Bhoi",
-              type: "image/png",
-            },
-            {
-              url: "https://i.ibb.co/6PzDGhj/800x900.png",
-              width: 800,
-              height: 900,
-              alt: "Sign - Mayur Bhoi",
-              type: "image/png",
-            },
-            {
-              url: "https://i.ibb.co/b2LXZDX/800x418.png",
-              width: 800,
-              height: 418,
-              alt: "Sign - Mayur Bhoi",
-              type: "image/png",
-            },
-          ],
-          siteName: "Sign",
-        }}
-        twitter={{
-          handle: "@mayurbhoii",
-          site: "@mayurbhoii",
-          cardType: "summary_large_image",
-        }}
-      />
-      <Layout title="Sign">
-        <Container maxW="container.sm">
-          <Title mb={2}>
-            sign
-          </Title>
-          <Text
-            as="div"
-            fontSize={12}
-            opacity={0.6}
-            mt={-1}
-            display="inline-flex"
-          >
-            Sign with your words. Leave your mark.
-            <>
-              <span
-                style={{
-                  fontSize: 12,
-                  color: useColorModeValue("#000", "#DDD"),
-                  textDecoration: "underline",
-                  cursor: "pointer",
-                  marginLeft: 4,
-                }}
-                onClick={onOpen}
-              >
-                Guidelines
-              </span>
-              <Guidelines isOpen={isOpen} onClose={onClose} />
-            </>
-          </Text>
-          {session?.user ? (
-            <Form session={session} signOut={signOut} />
-          ) : (
-            <LoginWidget />
-          )}
-          {loading && (
-            <Box pt="2em" display="flex" width="full" justifyContent="center">
-              <Spinner size="lg" speed="0.75s" />
-            </Box>
-          )}
-          <Box h="1em" />
-          {!loading &&
-            entries?.map((message, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 2 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.075 }} // seconds
-              >
-                <Text fontSize={14} fontWeight={450} mt={4}>
-                  {message.name}:{" "}
-                  <span style={{ opacity: 0.7, fontWeight: 400 }}>
-                    {message.sign}
-                  </span>
-                </Text>
-              </motion.div>
-            ))}
-          <div style={{ height: "5em" }} />
-        </Container>
-      </Layout>
-    </>
+    <Layout title="Sign" section>
+      <Container maxW="container.sm">
+        <Title mb={2}>sign</Title>
+        <Text
+          as="div"
+          fontSize={12}
+          opacity={0.6}
+          mt={-1}
+          display="inline-flex"
+        >
+          Sign with your words. Leave your mark.
+          <>
+            <span
+              style={{
+                fontSize: 12,
+                color: useColorModeValue("#000", "#DDD"),
+                textDecoration: "underline",
+                cursor: "pointer",
+                marginLeft: 4,
+              }}
+              onClick={onOpen}
+            >
+              Guidelines
+            </span>
+            <Guidelines isOpen={isOpen} onClose={onClose} />
+          </>
+        </Text>
+        {session?.user ? (
+          <Form session={session} signOut={signOut} />
+        ) : (
+          <LoginWidget />
+        )}
+        {loading && (
+          <Box pt="2em" display="flex" width="full" justifyContent="center">
+            <Spinner size="lg" speed="0.75s" />
+          </Box>
+        )}
+        <Box h="1em" />
+        {!loading &&
+          entries?.map((message, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 2 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.035 }} // seconds
+            >
+              <Text fontSize={14} fontWeight={450} mt={4}>
+                {message.name}:{" "}
+                <span style={{ opacity: 0.7, fontWeight: 400 }}>
+                  {message.sign}
+                </span>
+              </Text>
+            </motion.div>
+          ))}
+        <div style={{ height: "5em" }} />
+      </Container>
+    </Layout>
   );
 }

@@ -148,7 +148,6 @@ button.breadcrumb {
   .command_wrapper {
     height: 50% !important;
   }
-
 }
 
 [data-theme="light"] .dialog {
@@ -186,11 +185,11 @@ button.breadcrumb {
 }
 
 nav > div > div::-webkit-scrollbar {
-  display: none; 
+  display: none;
 }
 
 nav > div > div {
-  -ms-overflow-style: none; 
-  scrollbar-width: none; 
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
 }

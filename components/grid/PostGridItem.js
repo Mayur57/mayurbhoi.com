@@ -56,7 +56,7 @@ export const PostsGridItem = ({
           lineHeight={1.5}
           fontSize="0.65em"
           opacity={0.4}
-          mt='0.4rem'
+          mt="0.4rem"
         >
           {tag.charAt(0).toUpperCase() + tag.substring(1)} • {date} •{" "}
           {readingTime}

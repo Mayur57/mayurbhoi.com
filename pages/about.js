@@ -113,7 +113,7 @@ const ExternalLink = ({ title, href = "#", icon, handle = "@mayur57" }) => (
 );
 
 const About = () => (
-  <Layout title="About">
+  <Layout title="About" section>
     <Container maxW="container.md">
       <Title>about</Title>
       <Box maxWidth="container.md" justifyItems="center">
@@ -138,19 +138,20 @@ const About = () => (
             <br />
             <br />I have been into writing software for almost five years. I
             started with <strong>App Developement</strong> writing and
-            publishing several mobile apps during 2017–2021. Around 2021, I started getting into <strong>Server Engineering</strong> while
+            publishing several mobile apps during 2017–2021. Around 2021, I
+            started getting into <strong>Server Engineering</strong> while
             designing and maintaining servers for my hobby projects.
             <br />
             <br />
             Currently, I work on end-to-end full stack applications; leverage
-            both of my hobbies to design beautiful user interfaces and
-            writing robust backend systems. I also actively look for new and
-            exciting technologies to explore and learn.
+            both of my hobbies to design beautiful user interfaces and writing
+            robust backend systems. I also actively look for new and exciting
+            technologies to explore and learn.
             <br />
             <br />I currently write reliable software at{" "}
             <strong>NCR Corporation</strong> as{" "}
-            <strong>Software Engineer I</strong>. I
-            also have quite a few hobby projects that you can take a look at{" "}
+            <strong>Software Engineer I</strong>. I also have quite a few hobby
+            projects that you can take a look at{" "}
             <Link className="main-page-url" href="/projects" passHref>
               here
             </Link>

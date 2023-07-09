@@ -30,12 +30,10 @@ const Posts = ({ posts, error }) => {
     );
   }
   return (
-    <Layout title="Articles">
+    <Layout title="Articles" section>
       <Container maxW="container.md">
-        <Title mb={2}>
-          thoughts
-        </Title>
-        <SimpleGrid columns={[1, 1, 1]} spacing={0} mt={{base:4, md: 8}}>
+        <Title mb={2}>thoughts</Title>
+        <SimpleGrid columns={[1, 1, 1]} spacing={0} mt={{ base: 4, md: 8 }}>
           {posts.map(({ attributes }, index) => (
             <Section key={index} mb={0} delay={calculateAnimationDelay(index)}>
               <PostsGridItem
@@ -64,7 +62,7 @@ const Posts = ({ posts, error }) => {
             </Text>
           </Box>
         </SimpleGrid>
-        <Box height={{ base:"12vh", md:"15vh" }} />
+        <Box height={{ base: "12vh", md: "15vh" }} />
       </Container>
     </Layout>
   );

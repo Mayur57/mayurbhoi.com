@@ -67,7 +67,9 @@ const NavbarMenu = () => (
       </Link>
       <MenuDivider />
       <Box display="flex" alignItems="start">
-        <Text fontSize={10} ml={4} opacity={0.4}>rev {process.env.NEXT_PUBLIC_REVISION}</Text>
+        <Text fontSize={10} ml={4} opacity={0.4}>
+          rev {process.env.NEXT_PUBLIC_REVISION}
+        </Text>
       </Box>
     </MenuList>
   </Menu>

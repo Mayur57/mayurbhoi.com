@@ -154,7 +154,12 @@ export default function Form(props) {
               Log out
             </Text>
           </Box>
-          <Text fontSize={10} mr={1} color={getSubtextColor()} pointerEvents='none'>
+          <Text
+            fontSize={10}
+            mr={1}
+            color={getSubtextColor()}
+            pointerEvents="none"
+          >
             {`${value.length}/${MESSAGE_LENGTH_LIMIT}`}
           </Text>
         </Box>

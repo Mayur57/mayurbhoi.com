@@ -8,7 +8,7 @@ const variants = {
   exit: { opacity: 0, x: 0, y: 5 },
 };
 
-const Layout = ({ children, type, title, desc, slug }) => (
+const Layout = ({ children, type, section, title, desc, slug }) => (
   <>
     <NextSeo
       title={title}
@@ -18,7 +18,11 @@ const Layout = ({ children, type, title, desc, slug }) => (
         description: desc,
         type: "website",
         url: `https://mayur.wtf/${slug}`,
-        images: [{ url: `https://mayur.wtf/api/images?title=${title}` }],
+        images: [
+          {
+            url: `https://mayur.wtf/api/images?title=${title}&section=${section}`,
+          },
+        ],
       }}
       twitter={{
         title,

@@ -161,7 +161,7 @@ const theme = extendTheme({
   config,
   styles,
   components,
-  fonts
+  fonts,
 });
 
 export default theme;

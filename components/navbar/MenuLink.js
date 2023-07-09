@@ -6,7 +6,7 @@ const LinkItem = ({ href, path, label }) => {
   const inactiveColor = useColorModeValue("gray200", "#CCC");
   return (
     <NextLink href={href} legacyBehavior passHref>
-      <Box display="inline" flexDir='column' py={2} mb="1px">
+      <Box display="inline" flexDir="column" py={2} mb="1px">
         <Link
           px="6px"
           color={inactiveColor}
@@ -21,9 +21,18 @@ const LinkItem = ({ href, path, label }) => {
         >
           {label}
         </Link>
-        {active && <Text lineHeight={0} transform="translateY(0em)" opacity={0.5} pointerEvents='none' userSelect="none" fontWeight="bold">
-          .
-        </Text>}
+        {active && (
+          <Text
+            lineHeight={0}
+            transform="translateY(0em)"
+            opacity={0.5}
+            pointerEvents="none"
+            userSelect="none"
+            fontWeight="bold"
+          >
+            .
+          </Text>
+        )}
       </Box>
     </NextLink>
   );

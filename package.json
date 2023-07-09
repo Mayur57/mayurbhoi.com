@@ -84,6 +84,7 @@
     "unist-util-visit": "^4.1.0"
   },
   "devDependencies": {
+    "@faker-js/faker": "^8.0.2",
     "eslint": "8.30.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-base": "^15.0.0",

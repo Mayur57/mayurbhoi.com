@@ -23,8 +23,8 @@ const Prologue = () => (
       creating impactful & elegant software. full stack engineer. unsatisfiably
       curious about design and high performance systems. trying to make a
       difference with code. relentlessly devoted to intricacy, efficiency, and
-      detailed polish. always seeking out the cutting edge in my craft.
-      welcome to my little place on the internet.
+      detailed polish. always seeking out the cutting edge in my craft. welcome
+      to my little place on the internet.
     </TextWrapper>
     <TextWrapper>based in bengaluru, india</TextWrapper>
   </Section>

@@ -11,7 +11,12 @@ const scrollToTop = () => {
 
 export function ScrollToTop() {
   return (
-    <Box display={{ base: "block", sm: "none" }} cursor="pointer" px={2} onClick={scrollToTop}>
+    <Box
+      display={{ base: "block", sm: "none" }}
+      cursor="pointer"
+      px={2}
+      onClick={scrollToTop}
+    >
       <FiArrowUp />
     </Box>
   );

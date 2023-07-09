@@ -35,7 +35,7 @@ export const ProjectsGridItem = ({ post }) => {
               borderRadius="16px"
               overflow="clip"
               ratio={1}
-              ml={{base: "3px", md: "0px"}}
+              ml={{ base: "3px", md: "0px" }}
             >
               <Image src={thumbnail} fill />
             </Box>
