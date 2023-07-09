@@ -14,6 +14,7 @@ import {
   ModalContent,
   ModalHeader,
   ModalOverlay,
+  Spinner,
   Text,
   useColorModeValue,
   useDisclosure,
@@ -35,9 +36,13 @@ async function getSigns() {
 }
 
 const LoginWidget = () => (
-  <motion.div initial={{ opacity: 0, y: 2 }} animate={{ opacity: 1, y: 0 }} style={{ display: 'flex' }}>
+  <motion.div
+    initial={{ opacity: 0, y: 2 }}
+    animate={{ opacity: 1, y: 0 }}
+    style={{ display: "flex" }}
+  >
     <Button
-      onClick={() => signIn('google')}
+      onClick={() => signIn("google")}
       border={`1px solid ${useColorModeValue("#12121230", "#eaeaea30")}`}
       fontSize={12}
       fontWeight={400}
@@ -50,7 +55,7 @@ const LoginWidget = () => (
       <AiOutlineGoogle size="14" /> Login with Google
     </Button>
     <Button
-      onClick={() => signIn('github')}
+      onClick={() => signIn("github")}
       border={`1px solid ${useColorModeValue("#12121230", "#eaeaea30")}`}
       fontSize={12}
       fontWeight={400}
@@ -97,7 +102,7 @@ const Guidelines = ({ isOpen, onClose }) => (
 export default function Sign() {
   const [entries, setEntries] = useState([]);
   const [loading, setLoading] = useState(false);
-  const {data: session} = useSession();
+  const { data: session } = useSession();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   useEffect(() => {
@@ -157,7 +162,7 @@ export default function Sign() {
       />
       <Layout title="Sign">
         <Container maxW="container.sm">
-          <Title mt={0} mb={2}>
+          <Title mb={2}>
             sign
           </Title>
           <Text
@@ -191,27 +196,10 @@ export default function Sign() {
           )}
           {loading && (
             <Box pt="2em" display="flex" width="full" justifyContent="center">
-              <motion.p
-                initial={{
-                  opacity: 0.5,
-                }}
-                animate={{
-                  opacity: 0.1,
-                }}
-                transition={{
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                  duration: 1,
-                }}
-                style={{
-                  fontSize: 12,
-                }}
-              >
-                Loading messages...
-              </motion.p>
+              <Spinner size="lg" speed="0.75s" />
             </Box>
           )}
-          <Box h='1em'/>
+          <Box h="1em" />
           {!loading &&
             entries?.map((message, index) => (
               <motion.div
@@ -228,7 +216,7 @@ export default function Sign() {
                 </Text>
               </motion.div>
             ))}
-            <div style={{ height:"5em" }} />
+          <div style={{ height: "5em" }} />
         </Container>
       </Layout>
     </>

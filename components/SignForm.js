@@ -18,6 +18,12 @@ export default function Form(props) {
   const [value, setValue] = useState("");
   const MESSAGE_LENGTH_LIMIT = 140;
 
+  function getSubtextColor() {
+    return value.length > MESSAGE_LENGTH_LIMIT
+      ? useColorModeValue("red.500", "red.300")
+      : useColorModeValue("#0005", "#DDD5");
+  }
+
   async function onSubmit(e) {
     e.preventDefault();
     setIsFetching(true);
@@ -28,24 +34,24 @@ export default function Form(props) {
 
     if (bw.isProfane(sign)) {
       toast.error("Error", {
-        description: "Please refrain from using profane language",
+        description: "Please stick to using civil language",
       });
       setIsFetching(false);
       return;
     }
 
     if (sign.length > MESSAGE_LENGTH_LIMIT) {
-        toast.error("Error", {
-          description: "Please write a shorter message",
-        });
-        setIsFetching(false);
-        return;
-      }
+      toast.error("Error", {
+        description: "Please write a shorter message",
+      });
+      setIsFetching(false);
+      return;
+    }
 
     const res = await fetch("/api/sign", {
       body: JSON.stringify({
         name: session?.user?.name,
-        email: "session?.user?.email",
+        email: session?.user?.email,
         sign: input.value,
       }),
       headers: {
@@ -70,7 +76,6 @@ export default function Form(props) {
         style={{
           fontSize: "14px",
           position: "relative",
-          maxWidth: "500px",
           marginTop: "1.5em",
           opacity: !isMutating ? 1 : 0.7,
         }}
@@ -78,7 +83,7 @@ export default function Form(props) {
       >
         <input
           style={{
-            display: "block",
+            display: "flex",
             paddingTop: "0.5rem",
             paddingBottom: "0.5rem",
             paddingLeft: "1rem",
@@ -121,7 +126,6 @@ export default function Form(props) {
       </form>
       {session?.user && (
         <Box
-          maxW="500px"
           fontSize={12}
           display="flex"
           justifyContent="space-between"
@@ -150,7 +154,7 @@ export default function Form(props) {
               Log out
             </Text>
           </Box>
-          <Text fontSize={10} mr={1} color={useColorModeValue("#0005", "#DDD5")}>
+          <Text fontSize={10} mr={1} color={getSubtextColor()} pointerEvents='none'>
             {`${value.length}/${MESSAGE_LENGTH_LIMIT}`}
           </Text>
         </Box>

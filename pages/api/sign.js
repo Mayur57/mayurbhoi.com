@@ -16,15 +16,17 @@ const Sign = models.Sign || model("Sign", signSchema);
 
 export default async function handler(req, res) {
   const { name, email } = req.body;
+  const payload = {
+    email,
+    name,
+    sign: (req.body.sign || "").slice(0, 500),
+  };
   if (req.method === "POST") {
     try {
       await mongoose.connect(process.env.MONGO_URI);
       // eslint-disable-next-line no-unused-vars
-      const result = Sign.create({
-        email,
-        name,
-        sign: (req.body.sign || "").slice(0, 500),
-      });
+      const result = Sign.create(payload);
+      console.log("Message logged!", payload);
       return res.status(200).json("Success", result);
     } catch (e) {
       return res.status(500).json({ error: e.message });
@@ -35,7 +37,7 @@ export default async function handler(req, res) {
   if (req.method === "GET") {
     try {
       await mongoose.connect(process.env.MONGO_URI);
-      const result = await Sign.find().sort({ createdAt: 'descending' }).limit(50);
+      const result = await Sign.find().sort({ createdAt: 'descending' }).limit(100);
       return res.status(200).json(result);
     } catch (e) {
       return res.status(500).json({ error: e.message });
