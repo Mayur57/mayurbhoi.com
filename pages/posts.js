@@ -15,7 +15,6 @@ const Posts = ({ posts }) => (
   <Layout title="Articles" section>
     <Container maxW="container.sm">
       <Title mb={2}>thoughts</Title>
-      <Text>Latest</Text>
       <SimpleGrid columns={[1, 1, 1]} spacing={0} mt={{ base: 4, md: 8 }}>
         <Section mb={0}>
           {posts.map(({ attributes }) => (
