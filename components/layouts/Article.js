@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { NextSeo } from "next-seo";
-import { GridItemStyle } from "../grid/GridItemStyle";
 
 const variants = {
   hidden: { opacity: 0, x: 0, y: 5 },
@@ -8,7 +7,7 @@ const variants = {
   exit: { opacity: 0, x: 0, y: 5 },
 };
 
-const Layout = ({ children, type, section, title, desc, slug }) => (
+const Layout = ({ children, section, title, desc, slug }) => (
   <>
     <NextSeo
       title={title}
@@ -41,7 +40,6 @@ const Layout = ({ children, type, section, title, desc, slug }) => (
     >
       <>
         {children}
-        <GridItemStyle type={type} />
       </>
     </motion.article>
   </>

@@ -3,51 +3,38 @@
 import { Box, Container, SimpleGrid, Text } from "@chakra-ui/react";
 import moment from "moment";
 import readingTime from "reading-time";
+import { motion } from "framer-motion";
 import Layout from "../components/layouts/Article";
-import Subtitle from "../components/Subtitle";
 import Title from "../components/Title";
 import Section from "../components/Section";
 import { PostsGridItem } from "../components/grid/PostGridItem";
-import { calculateAnimationDelay, getCMSBaseUrl } from "../libs/functions";
+import { getCMSBaseUrl } from "../libs/functions";
+import Scribble from "../components/Scribble";
 
-const Posts = ({ posts, error }) => {
-  if (error) {
-    return (
-      <Layout title="Articles">
-        <Container
-          maxW="container.md"
-          height="100vh"
-          display="flex"
-          flexDirection="column"
-          justifyContent="center"
-          alignItems="center"
-          textAlign="center"
-        >
-          <Subtitle>Something went wrong</Subtitle>
-          <Text>{error}</Text>
-        </Container>
-      </Layout>
-    );
-  }
-  return (
-    <Layout title="Articles" section>
-      <Container maxW="container.md">
-        <Title mb={2}>thoughts</Title>
-        <SimpleGrid columns={[1, 1, 1]} spacing={0} mt={{ base: 4, md: 8 }}>
-          {posts.map(({ attributes }, index) => (
-            <Section key={index} mb={0} delay={calculateAnimationDelay(index)}>
-              <PostsGridItem
-                id={attributes.slug}
-                index={index}
-                title={attributes.title}
-                date={attributes.uploaded}
-                thumbnail={attributes.thumbnail}
-                desc={attributes.description}
-                readingTime={attributes.readingTime.text}
-                tag={attributes.tag}
-              />
-            </Section>
+const Posts = ({ posts }) => (
+  <Layout title="Articles" section>
+    <Container maxW="container.sm">
+      <Title mb={2}>thoughts</Title>
+      <Text>Latest</Text>
+      <SimpleGrid columns={[1, 1, 1]} spacing={0} mt={{ base: 4, md: 8 }}>
+        <Section mb={0}>
+          {posts.map(({ attributes }) => (
+            <PostsGridItem
+              id={attributes.slug}
+              title={attributes.title}
+              date={attributes.uploaded}
+              desc={attributes.description}
+              readingTime={attributes.readingTime.text}
+              tag={attributes.tag}
+            />
           ))}
+        </Section>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
+        >
+          <Scribble />
           <Box w="100%" align="center">
             <Text
               letterSpacing="0.02em"
@@ -55,18 +42,18 @@ const Posts = ({ posts, error }) => {
               lineHeight={1.5}
               opacity={0.5}
               fontSize={11}
-              mt="5em"
+              mt="3em"
               mb="2em"
             >
               That&apos;s all! More to come soon.
             </Text>
           </Box>
-        </SimpleGrid>
-        <Box height={{ base: "12vh", md: "15vh" }} />
-      </Container>
-    </Layout>
-  );
-};
+        </motion.div>
+      </SimpleGrid>
+      <Box height={{ base: "12vh", md: "2vh" }} />
+    </Container>
+  </Layout>
+);
 
 export default Posts;
 
@@ -74,9 +61,7 @@ async function getPosts() {
   const response = await fetch(`${getCMSBaseUrl()}/posts`).then((res) =>
     res.json()
   );
-
   const { data } = response;
-
   return data;
 }
 
@@ -93,7 +78,7 @@ export const getStaticProps = async () => {
 
     posts.sort((a, b) => b.attributes.sortId - a.attributes.sortId);
     return {
-      revalidate: 7200,
+      revalidate: 90,
       props: { posts },
     };
   }

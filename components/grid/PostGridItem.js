@@ -1,4 +1,4 @@
-import { Box, Heading, LinkBox, Text } from "@chakra-ui/react";
+import { Box, Heading, LinkBox, Text, useColorModeValue } from "@chakra-ui/react";
 import Link from "next/link";
 
 export const PostsGridItem = ({
@@ -11,10 +11,14 @@ export const PostsGridItem = ({
 }) => (
   <Box
     w="100%"
-    my={5}
     transition="background-color 250ms ease-in-out"
     borderRadius="8px"
     role="group"
+    p="1.2em"
+    transform='translate(-1.2em)'
+    _hover={{
+      bg: useColorModeValue("#12121212", "#FFFFFF0A")
+    }}
   >
     <Link href={`/posts/${id}`} passHref>
       <LinkBox cursor="pointer">

@@ -37,7 +37,6 @@ export default function Headshot({ src = profile, ...props }) {
         {...props}
       >
         <Image
-          priority
           className="noise"
           display="inline-block"
           quality={100}
