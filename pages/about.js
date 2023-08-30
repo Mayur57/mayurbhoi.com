@@ -216,7 +216,7 @@ const About = () => (
               );
             })}
           </SimpleGrid>
-          <LinkButton link={Links.resume} label="Resume" py={12} mb={12} />
+          <LinkButton link="/resume.pdf" label="Resume" py={12} mb={12} />
         </Section>
       </Box>
     </Container>

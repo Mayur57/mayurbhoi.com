@@ -46,7 +46,7 @@ const Palette = () => {
         {
           icon: <FiSearch />,
           text: "Resumé",
-          href: "https://vault.mayurbhoi.com/resume/resume.pdf",
+          perform: () => router.push("/resume.pdf"),
           newTab: true,
         },
       ],
@@ -114,24 +114,8 @@ const Palette = () => {
     },
   ];
 
-  // const articles = [
-  //   {
-  //     category: 'Articles',
-  //     commands: posts || {},
-  //   },
-  // ];
-
-  // const projs = [
-  //   {
-  //     category: 'Projects',
-  //     commands: projects || {},
-  //   }
-  // ];
-
   const [mainCommands] = useCommands(main);
-  // const [projectCommands] = useCommands(projs);
-  // const [postCommands] = useCommands(articles);
-
+  
   return (
     <CommandWrapper>
       <CommandMenu

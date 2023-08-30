@@ -3,13 +3,11 @@
 import { Box, useColorModeValue } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Links } from "../../data/links";
 import ThemeButton from "../ThemeButton";
 import LinkItem from "./MenuLink";
 
 const Navbar = (props) => {
   const { path } = props;
-  const resumeLink = Links.resume;
   return (
     <Box
       position="fixed"
@@ -58,7 +56,7 @@ const Navbar = (props) => {
             <LinkItem href="/projects" path={path} label="Projects" />
             <LinkItem href="/posts" path={path} label="Posts" />
             <LinkItem href="/sign" path={path} label="Sign" />
-            <LinkItem href={resumeLink} path={path} label="Resume" />
+            <LinkItem href="/resume.pdf" path={path} label="Resume" />
             <ThemeButton />
           </Box>
         </motion.div>
