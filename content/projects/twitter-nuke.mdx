@@ -1,0 +1,24 @@
+---
+title: Twitter Nuke
+description: Tool to delete all user tweets using Twitter Archive to bypass rate limits.
+slug: twtrnk
+featured: true
+status: archived
+thumbnail: https://i.ibb.co/Pr1ctg9/nuke.png
+---
+
+If you're looking for a solution to delete all your tweets on Twitter, you might want to consider using a utility that utilizes multithreading to speed up the process. This script is designed to help users delete their tweets using the Twitter Archive, while avoiding rate limits and leveraging multithreading to make the process faster.
+
+This script uses multithreading to speed up the deletion process by running multiple instances of the Twitter API simultaneously. This modification results in a significant improvement in speed, up to ~50-60 times faster than single-threaded performance. This means that the deletion process can be completed in a fraction of the time it would take with a single-threaded approach.
+
+One of the main advantages of using multithreading is that it can help you avoid rate limits. Twitter has set limits on how many requests can be made within a certain period of time. If you exceed these limits, you will be blocked from accessing Twitter. However, by running multiple instances of the Twitter API, you can distribute the requests across multiple threads, which means that you are less likely to hit these limits.
+
+To use this script, you'll need to have a Twitter Archive of your tweets. This archive is a collection of all your tweets in a format that can be easily downloaded from Twitter. Once you have your archive, you can run the script to delete all your tweets. The script will automatically use multithreading to speed up the process and avoid rate limits.
+
+In summary, this utility provides a simple and efficient way to delete all your tweets on Twitter. By leveraging multithreading, it can significantly speed up the deletion process while avoiding rate limits. If you're looking for a way to clean up your Twitter account and start fresh, this script might be just what you need.
+
+## Features
+
+- Set the number of likes and retweets as threshold above which the tweets will not be deleted
+- Set the batch size for threads
+- Your deleted tweets and skipped tweets will be stored in respective files
