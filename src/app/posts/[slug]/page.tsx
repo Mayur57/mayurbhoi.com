@@ -9,6 +9,7 @@ import Backlink from 'src/components/backlink'
 import Navigator from 'src/components/navigator'
 import Note from 'src/components/notes'
 import Opinion from 'src/components/opinion'
+import { Metadata } from 'next'
 
 const mono = localFont({ src: './../../fonts/SFMono-Regular.otf' })
 
@@ -28,7 +29,25 @@ export const generateStaticParams = async () => allPosts.map(post => ({ slug: po
 export const generateMetadata = ({ params }: { params: { slug: string } }) => {
   const post = allPosts.find(post => post.slug === params.slug)
   if (!post) throw new Error(`Post not found for slug: ${params.slug}`)
-  return { title: post.title }
+  const metadata: Metadata = {
+    title: post.title,
+    description: post.description,
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      url: 'https://mayurbhoi.com/posts/' + post.slug,
+      type: 'website',
+      images: [
+        {
+          url: `https://mayurbhoi.com/og?title=${post.title}`,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+  }
+  return metadata
 }
 
 export default function ExpandedPost({ params }: { params: { slug: string } }) {

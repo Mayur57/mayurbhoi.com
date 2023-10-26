@@ -7,6 +7,21 @@ import ProjectTile from './project-tile'
 
 export const metadata: Metadata = {
   title: 'Projects',
+  description: 'Some stuff made by Mayur Bhoi',
+  openGraph: {
+    title: 'Projects',
+    description: 'Some stuff made by Mayur Bhoi',
+    url: 'https://mayurbhoi.com/projects',
+    type: 'website',
+    images: [
+      {
+        url: 'https://mayurbhoi.com/og?title=Projects&section=true',
+        width: 1200,
+        height: 630,
+        alt: 'Mayur Bhoi',
+      },
+    ],
+  },
 }
 
 export default function ProjectsPage() {
