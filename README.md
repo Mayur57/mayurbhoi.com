@@ -1,3 +1,5 @@
-# v2.5
+# mayurbhoi.com
 
-ChakraUI + Strapi CMS -> Tailwind + Contentlayer transition intermediate repository
+Personal website for showcase and blogs.
+
+Read about it [here](https://amyurbhoi.com/posts/redesign).
