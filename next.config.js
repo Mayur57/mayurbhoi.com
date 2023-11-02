@@ -1,15 +1,16 @@
-const config = {
-  reactStrictMode: true,
-  swcMinify: true,
-  compiler: {
-    removeConsole: true,
-  },
+/** @type {import('next').NextConfig} */
+const { withContentlayer } = require('next-contentlayer')
+const nextConfig = {
   images: {
-    domains: ["i.ibb.co", "via.placeholder.com"],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'i.ibb.co',
+      },
+      { protocol: 'https', hostname: 'pbs.twimg.com' },
+      { protocol: 'https', hostname: 'abs.twimg.com' },
+    ],
   },
-};
+}
 
-const withBundleAnalyzer = require("@next/bundle-analyzer")(config);
-
-module.exports =
-  process.env.ANALYZE === "true" ? withBundleAnalyzer({}) : config;
+module.exports = withContentlayer(nextConfig)
