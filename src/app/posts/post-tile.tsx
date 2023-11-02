@@ -12,7 +12,7 @@ const mono = localFont({ src: './../fonts/SFMono-Regular.otf', preload: true })
 const PostTile = ({ post, index }: { post: Post; index: number }) => (
   <Link href={`/posts/${post.slug}`}>
     <motion.div
-      {...staggerRank(index > 3 ? 3 : index)}
+      {...staggerRank(index > 7 ? 7 : index)}
       className='flex items-center justify-start px-2 py-4 gap-6 border-b dark:border-[#343434] border-b-[#EAEAEA] dark:hover:bg-[#232323] hover:bg-[#EAEAEA] cursor-ne-resize'>
       <div>
         <p className={`${mono.className} font-mono text-xs opacity-50`}>{post.tag}</p>

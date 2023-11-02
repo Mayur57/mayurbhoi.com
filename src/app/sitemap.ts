@@ -11,7 +11,7 @@ export default async function sitemap() {
     lastModified: new Date().toISOString().split('T')[0],
   }))
 
-  const routes = ['', '/posts', '/projects', '/about'].map(route => ({
+  const routes = ['', '/posts', '/projects', '/privacy'].map(route => ({
     url: `https://mayurbhoi.com${route}`,
     lastModified: new Date().toISOString().split('T')[0],
   }))

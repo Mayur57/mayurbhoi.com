@@ -90,9 +90,17 @@ const Paragraphs = () => {
         <p className='font-semibold pt-4'>Now</p>
         <p className='pb-6'>
           Figuring out how to be the best in the room, trying to improve by iterating and perfecting
-          my craft every day while keeping in mind the highest quality.
+          my craft every day—all while keeping in mind the highest quality of work.
         </p>
         <Venn />
+        <p className='pt-6'>
+          The culmination of these three skills is what I strive for in my work and, in my opinion, set me apart from the rest of the crowd.
+        </p>
+        <p>
+          I love solving problems and building things. I am obsessed with servers, design, performance, typography, and software that makes an impact. I learn new things every day to enable me to do what I do better.
+          The web is a blank canvas I have only started to explore and paint.
+        </p>
+        <p className='underline decoration-from-font underline-offset-2'>I am looking for new opportunities!</p>
       </motion.div>
 
       <motion.div {...staggerRank(7)}>

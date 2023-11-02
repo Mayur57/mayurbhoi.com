@@ -55,7 +55,7 @@ export default function ExpandedPost({ params }: { params: { slug: string } }) {
   if (!post) throw new Error(`Post not found for slug: ${params.slug}`)
   const MDX = useMDXComponent(post.body.code)
   return (
-    <article className='mx-auto max-w-3xl pt-8 sm:pt-[7rem] py-8 px-6 xs:px-0'>
+    <article className='mx-auto max-w-2xl py-8 px-6 xs:px-0 pt-8 sm:pt-[3rem]'>
       <Navigator />
       <Backlink href='/posts' />
       <div className='prose prose-sm sm:prose dark:prose-invert prose-img:m-0 prose-img:rounded-lg max-w-none prose-h1:mb-0 prose-h6:my-0 pb-[7rem] prose-h1:font-medium prose-h1:tracking-tight prose-h1:text-3xl sm:prose-h1:text-4xl prose-h2:tracking-tight prose-a:dark:text-[#D1D5DB] prose-a:underline prose-a:decoration-[#AAA] dark:prose-a:decoration-[#444] prose-a:underline-offset-2'>
