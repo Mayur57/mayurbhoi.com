@@ -100,7 +100,7 @@ const Paragraphs = () => {
           I love solving problems and building things. I am obsessed with servers, design, performance, typography, and software that makes an impact. I learn new things every day to enable me to do what I do better.
           The web is a blank canvas I have only started to explore and paint.
         </p>
-        <p className='underline decoration-from-font underline-offset-2'>I am looking for new opportunities!</p>
+        {/* <p className='underline decoration-from-font underline-offset-2'>I am looking for new opportunities!</p> */}
       </motion.div>
 
       <motion.div {...staggerRank(7)}>
