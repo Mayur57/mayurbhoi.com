@@ -46,6 +46,12 @@ export const generateMetadata = ({ params }: { params: { slug: string } }) => {
         },
       ],
     },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.description,
+      images: [`https://mayurbhoi.com/og?title=${post.title}`]
+    }
   }
   return metadata
 }
@@ -64,11 +70,10 @@ export default function ExpandedPost({ params }: { params: { slug: string } }) {
 
         <h6 className={`${mono.className} opacity-70 text-xs font-mono pb-4`}>
           {format(new Date(post?.uploaded), 'MMMM dd, yyyy')} •{' '}
-          {`${
-            readingTime(post?.body.raw).minutes.toFixed() === '0'
+          {`${readingTime(post?.body.raw).minutes.toFixed() === '0'
               ? '<1'
               : readingTime(post?.body.raw).minutes.toFixed()
-          } minute read`}
+            } minute read`}
         </h6>
         <MDX components={mdxComponents} />
       </div>
