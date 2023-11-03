@@ -139,7 +139,7 @@ const Paragraphs = () => {
             <Link href='/privacy' title='view privacy statement'>
               Privacy
             </Link>
-            <a title='source code' href='https://github.com/mayur57/v2'>
+            <a title='source code' href='https://github.com/mayur57/mayurbhoi.com'>
               Source
             </a>
             <Theme />
