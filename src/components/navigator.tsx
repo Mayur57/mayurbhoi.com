@@ -14,8 +14,9 @@ const NavigatorItem = ({
 }) => (
   <Link
     href={href}
-    className={`font-medium text-sm sm:text-base tracking-tight ${active ? `underline decoration-from-font underline-offset-2` : `opacity-40`
-      }`}>
+    className={`font-medium text-sm sm:text-base tracking-tight ${
+      active ? `underline decoration-from-font underline-offset-2` : `opacity-40`
+    }`}>
     <p>{label}</p>
   </Link>
 )

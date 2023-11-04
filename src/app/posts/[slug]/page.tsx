@@ -1,4 +1,4 @@
-import localFont from 'next/font/local'
+import { Metadata } from 'next'
 import { allPosts, Post } from 'contentlayer/generated'
 import { format } from 'date-fns'
 import { MDXComponents } from 'mdx/types'
@@ -9,9 +9,6 @@ import Backlink from 'src/components/backlink'
 import Navigator from 'src/components/navigator'
 import Note from 'src/components/notes'
 import Opinion from 'src/components/opinion'
-import { Metadata } from 'next'
-
-const mono = localFont({ src: './../../fonts/SFMono-Regular.otf' })
 
 const mdxComponents: MDXComponents = {
   Tweet: ({ id, caption }) => (
@@ -50,8 +47,8 @@ export const generateMetadata = ({ params }: { params: { slug: string } }) => {
       card: 'summary_large_image',
       title: post.title,
       description: post.description,
-      images: [`https://mayurbhoi.com/og?title=${post.title}`]
-    }
+      images: [`https://mayurbhoi.com/og?title=${post.title}`],
+    },
   }
   return metadata
 }
@@ -67,8 +64,7 @@ export default function ExpandedPost({ params }: { params: { slug: string } }) {
       <div className='prose prose-sm sm:prose dark:prose-invert prose-img:m-0 prose-img:rounded-lg max-w-none prose-h1:mb-0 prose-h6:my-0 pb-[7rem] prose-h1:font-medium prose-h1:tracking-tight prose-h1:text-3xl sm:prose-h1:text-4xl prose-h2:tracking-tight prose-a:dark:text-[#D1D5DB] prose-a:underline prose-a:decoration-[#AAA] dark:prose-a:decoration-[#444] prose-a:underline-offset-2'>
         <h1>{post.title}</h1>
         <h6 className='opacity-70 text-sm pt-3 pb-2'>{post.description}</h6>
-
-        <h6 className={`${mono.className} opacity-70 text-xs font-mono pb-4`}>
+        <h6 className='opacity-70 text-xs font-mono font-medium pb-4'>
           {format(new Date(post?.uploaded), 'MMMM dd, yyyy')} •{' '}
           {`${
             readingTime(post?.body.raw).minutes.toFixed() === '0'

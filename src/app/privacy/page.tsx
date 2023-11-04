@@ -1,6 +1,6 @@
-import { Metadata } from "next";
-import MainLayout from "src/components/main-layout";
-import Title from "src/components/title";
+import { Metadata } from 'next'
+import MainLayout from 'src/components/main-layout'
+import Title from 'src/components/title'
 
 export const metadata: Metadata = {
   title: 'Privacy Statements',

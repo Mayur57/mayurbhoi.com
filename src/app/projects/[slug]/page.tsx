@@ -1,7 +1,7 @@
+import { Metadata } from 'next'
 import Image from 'next/image'
 import { allProjects, Project } from 'contentlayer/generated'
 import { useMDXComponent } from 'next-contentlayer/hooks'
-import { Metadata } from 'next'
 
 export const generateStaticParams = async () =>
   allProjects.map((project: Project) => ({
@@ -32,8 +32,8 @@ export const generateMetadata = ({ params }: { params: Project }) => {
       card: 'summary_large_image',
       title: project.title,
       description: project.description,
-      images: [`https://mayurbhoi.com/og?title=${project.title}`]
-    }
+      images: [`https://mayurbhoi.com/og?title=${project.title}`],
+    },
   }
   return metadata
 }

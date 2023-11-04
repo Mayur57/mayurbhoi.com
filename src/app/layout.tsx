@@ -1,7 +1,10 @@
+import { Newsreader } from 'next/font/google'
+
 import './globals.css'
 
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
+import { GeistMono } from 'geist/font'
 import GridBackdrop from 'src/components/backdrop'
 import { Providers } from 'src/utils/providers'
 
@@ -9,6 +12,14 @@ const inter = localFont({
   src: './fonts/Inter-Variable.ttf',
   display: 'swap',
   weight: '400 600',
+  variable: '--font-inter-var',
+})
+
+const newsreader = Newsreader({
+  subsets: ['latin'],
+  style: ['normal', 'italic'],
+  display: 'swap',
+  variable: '--font-newsreader',
 })
 
 export const metadata: Metadata = {
@@ -48,9 +59,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang='en' suppressHydrationWarning>
+    <html
+      lang='en'
+      suppressHydrationWarning
+      className={`${inter.variable} ${newsreader.variable} ${GeistMono.variable}`}>
       <body
-        className={`w-full bg-[#F8F8F8] dark:bg-[#121212] transition-all duration-300 ${inter.className} antialiased`}>
+        className={`w-full bg-[#F8F8F8] dark:bg-[#121212] transition-all duration-300 antialiased`}>
         <Providers>
           <GridBackdrop />
           <main className='max-w-7xl relative min-w-full scroll-smooth'>{children}</main>

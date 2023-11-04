@@ -6,5 +6,14 @@ module.exports = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['var(--font-inter-var)'],
+        mono: ['var(--font-geist-mono)'],
+        serif: ['var(--font-newsreader)'],
+      },
+    },
+  },
   plugins: [require('@tailwindcss/typography')],
 }

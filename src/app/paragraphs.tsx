@@ -5,11 +5,11 @@ import { allPosts, allProjects } from 'contentlayer/generated'
 import { motion } from 'framer-motion'
 import me from 'public/me.webp'
 import { Photo } from 'src/components/photo'
+import { Signature } from 'src/components/signature'
 import { Theme } from 'src/components/theme'
 import { LocalTime } from 'src/components/time'
 import { Venn } from 'src/components/venn'
 import { staggerRank } from 'src/utils/functions'
-import { Signature } from 'src/components/signature'
 
 const featuredProjects = allProjects.filter(project => project.featured).slice(0, 2)
 const featuredPosts = allPosts.sort((a, b) => (a.uploaded > b.uploaded ? -1 : 1)).slice(0, 2)
@@ -94,11 +94,14 @@ const Paragraphs = () => {
         </p>
         <Venn />
         <p className='pt-6'>
-          The culmination of these three skills is what I strive for in my work and, in my opinion, set me apart from the rest of the crowd.
+          The culmination of these three skills is what I strive for in my work and, in my opinion,
+          set me apart from the rest of the crowd.
         </p>
         <p>
-          I love solving problems and building things. I am obsessed with servers, design, performance, typography, and software that makes an impact. I learn new things every day to enable me to do what I do better.
-          The web is a blank canvas I have only started to explore and paint.
+          I love solving problems and building things. I am obsessed with servers, design,
+          performance, typography, and software that makes an impact. I learn new things every day
+          to enable me to do what I do better. The web is a blank canvas I have only started to
+          explore and paint.
         </p>
         {/* <p className='underline decoration-from-font underline-offset-2'>I am looking for new opportunities!</p> */}
       </motion.div>
@@ -125,7 +128,7 @@ const Paragraphs = () => {
           <LocalTime />
         </p>
         <div className='flex flex-col-reverse sm:flex-row items-center justify-between pt-6 sm:pt-2'>
-          <p className='text-xs opacity-40 pt-2 m-0 sm:pt-6'>
+          <p className='text-xs opacity-40 pt-2 m-0 sm:pt-6 font-medium'>
             <abbr
               title='free for non-commercial use only'
               className='underline decoration-dotted underline-offset-2 cursor-help'>
@@ -145,7 +148,7 @@ const Paragraphs = () => {
             <Theme />
           </div>
         </div>
-          <Signature />
+        <Signature />
       </motion.div>
     </div>
   )

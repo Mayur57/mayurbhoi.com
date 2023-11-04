@@ -1,10 +1,7 @@
 'use client'
 
-import { Newsreader } from 'next/font/google'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-
-const serif = Newsreader({ subsets: ['latin'], style: 'italic' })
 
 const Backlink = ({ href }: { href: string }) => (
   <Link href={href}>
@@ -20,7 +17,7 @@ const Backlink = ({ href }: { href: string }) => (
           />
         </svg>
       </span>
-      <p className={`${serif.className} text-sm italic`}>Index</p>
+      <p className='font-serif text-sm italic'>Index</p>
     </motion.div>
   </Link>
 )

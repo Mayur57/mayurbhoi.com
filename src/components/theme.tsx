@@ -20,13 +20,13 @@ export const Theme = () => {
 
   return (
     <button
-      className='flex flex-row gap-1 items-center'
+      className='flex flex-row gap-1 items-center font-medium'
       title='change theme'
       onClick={() =>
         setTheme(theme == 'system' || theme == '' ? 'dark' : theme === 'dark' ? 'light' : 'system')
       }>
-        Theme: 
-      <span className='underline-offset-2 decoration-dotted'>{capitalised(theme)}</span>
+      Theme:
+      <span className='underline-offset-2 decoration-dotted underline'>{capitalised(theme)}</span>
     </button>
   )
 }
