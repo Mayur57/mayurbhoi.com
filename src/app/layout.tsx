@@ -4,7 +4,6 @@ import './globals.css'
 
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
-import { GeistMono } from 'geist/font'
 import GridBackdrop from 'src/components/backdrop'
 import { Providers } from 'src/utils/providers'
 
