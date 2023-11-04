@@ -28,6 +28,12 @@ export const generateMetadata = ({ params }: { params: Project }) => {
         },
       ],
     },
+    twitter: {
+      card: 'summary_large_image',
+      title: project.title,
+      description: project.description,
+      images: [`https://mayurbhoi.com/og?title=${project.title}`]
+    }
   }
   return metadata
 }

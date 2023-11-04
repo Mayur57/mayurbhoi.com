@@ -22,18 +22,20 @@ const ProjectTile = ({ project, index }: { project: Project; index: number }) =>
       break
   }
   return (
-    <motion.div
-      {...staggerRank(index + 1)}
-      className='px-5 py-5 mb-4 rounded-2xl bg-white dark:bg-[#161616] dark:hover:bg-[#232323] hover:bg-[#EAEAEA] cursor-ne-resize'>
-      <div className='text-ellipsis'>
-        <div className='flex flex-row justify-between'>
-          <p className='font-medium text-md'>{project.title}</p>
-          <div title={title} className={`h-2 w-2 rounded-full ${indColor}`} />
+    <a href={project.repo} target='_blank' className='cursor-ne-resize'>
+      <motion.div
+        {...staggerRank(index + 1)}
+        className='px-5 py-5 mb-4 rounded-2xl bg-white dark:bg-[#161616] dark:hover:bg-[#232323] hover:bg-[#EAEAEA] cursor-ne-resize'>
+        <div className='text-ellipsis'>
+          <div className='flex flex-row justify-between'>
+            <p className='font-medium text-md'>{project.title}</p>
+            <div title={title} className={`h-2 w-2 rounded-full ${indColor}`} />
+          </div>
+          <p className='opacity-60 text-sm pt-2'>{project.description}</p>
+          <p className='opacity-40 text-xs pt-2 font-mono'>Flutter</p>
         </div>
-        <p className='opacity-60 text-sm pt-2'>{project.description}</p>
-        <p className='opacity-40 text-xs pt-2 font-mono'>Flutter</p>
-      </div>
-    </motion.div>
+      </motion.div>
+    </a>
   )
 }
 

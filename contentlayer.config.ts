@@ -12,7 +12,6 @@ export const Post = defineDocumentType(() => ({
     tag: { type: 'string', required: true },
     slug: { type: 'string', required: true },
     uploaded: { type: 'date', required: true },
-    timeSensitive: { type: 'boolean', required: true },
   },
   computedFields: {
     url: { type: 'string', resolve: post => `/posts/${post.slug}` },
@@ -30,6 +29,7 @@ export const Project = defineDocumentType(() => ({
     slug: { type: 'string', required: true },
     status: { type: 'string', required: true },
     thumbnail: { type: 'string', required: true },
+    repo: { type: 'string', required: true },
   },
   computedFields: {
     url: { type: 'string', resolve: project => `/projects/${project.slug}` },
