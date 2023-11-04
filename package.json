@@ -19,6 +19,7 @@
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.12",
     "framer-motion": "^10.16.0",
+    "geist": "^1.0.0",
     "lucide-react": "^0.268.0",
     "mongoose": "^7.4.5",
     "next": "^14.0.1",
