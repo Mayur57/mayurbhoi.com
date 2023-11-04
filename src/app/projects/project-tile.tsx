@@ -32,7 +32,7 @@ const ProjectTile = ({ project, index }: { project: Project; index: number }) =>
             <div title={title} className={`h-2 w-2 rounded-full ${indColor}`} />
           </div>
           <p className='opacity-60 text-sm pt-2'>{project.description}</p>
-          <p className='opacity-40 text-xs pt-2 font-mono'>Flutter</p>
+          <p className='opacity-40 text-xs pt-2 font-mono'>{project.stack.join(' * ')}</p>
         </div>
       </motion.div>
     </a>

@@ -30,6 +30,7 @@ export const Project = defineDocumentType(() => ({
     status: { type: 'string', required: true },
     thumbnail: { type: 'string', required: true },
     repo: { type: 'string', required: true },
+    stack: { type: 'list', of: { type: 'string' }, required: true },
   },
   computedFields: {
     url: { type: 'string', resolve: project => `/projects/${project.slug}` },
