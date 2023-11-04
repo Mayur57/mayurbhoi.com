@@ -44,7 +44,7 @@ const Paragraphs = () => {
 
       <motion.p {...staggerRank(4)} className='pt-4'>
         Based in Bengaluru, India, for the past year I have been working as Software Engineer I at{' '}
-        <a href='https://ncr.com'>NCR Corporation.</a>
+        <a href='https://ncr.com'>NCR</a>.
       </motion.p>
 
       <motion.div
@@ -56,7 +56,7 @@ const Paragraphs = () => {
             {featuredProjects?.map((project, index) => (
               <div key={index} className='pr-4'>
                 <a
-                  href={project.url}
+                  href={project.repo}
                   className='underline decoration-from-font underline-offset-2 tracking-tight'>
                   {project.title}
                 </a>

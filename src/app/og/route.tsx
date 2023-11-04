@@ -22,7 +22,7 @@ export async function GET(req: NextRequest): Promise<any> {
           flexDirection: 'column',
           alignItems: 'flex-start',
           justifyContent: 'center',
-          backgroundImage: 'url(https://mayur.wtf/images/post.jpg)',
+          backgroundImage: 'url(https://mayurbhoi.com/images/post.jpg)',
         }}>
         <div
           style={{

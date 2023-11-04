@@ -4,7 +4,7 @@ const kaisei = Kaisei_Tokumin({ subsets: ['latin'], weight: '700', preload: true
 
 const Title = ({ children }: any) => (
   <h1
-    className={`leading-tight tracking-tighter text-[#281D1A] dark:text-[#EDEDED] text-3xl sm:text-4xl ${kaisei.className}`}>
+    className={`leading-tight tracking-tighter text-[#281D1A] dark:text-[#EDEDED] text-4xl sm:text-5xl ${kaisei.className}`}>
     {children}
   </h1>
 )
