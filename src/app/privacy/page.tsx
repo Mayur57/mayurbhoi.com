@@ -27,49 +27,66 @@ export default function PrivacyPolicy() {
       <Title>privacy statements</Title>
       <div className='pt-6 prose-sm dark:prose-invert sm:prose'>
         <h2 className='font-medium tracking-tight pt-4'>Countless</h2>
-        <p className="not-prose text-sm mt-1 mb-4">
-          This privacy policy applies to the countless extension (the "Extension"). The Extension is
-          provided by Mayur Bhoi and is intended for use as is. By using the Extension, you consent
-          to the collection, use, and sharing of your information as described in this privacy
-          policy.
+        <p className='not-prose text-sm mt-1 mb-4'>
+          This privacy policy applies to the countless extension (the &quot;Extension&quot;). The
+          Extension is provided by Mayur Bhoi and is intended for use as is. By using the Extension,
+          you consent to the collection, use, and sharing of your information as described in this
+          privacy policy.
         </p>
-        <strong className="not-prose font-medium tracking-tight">What information is collected by the Extension?</strong>
-        <p className="not-prose text-sm mt-1 mb-4">
+        <strong className='not-prose font-medium tracking-tight'>
+          What information is collected by the Extension?
+        </strong>
+        <p className='not-prose text-sm mt-1 mb-4'>
           The Extension does not collect any personal information about you or the tweets you view
           while the Extension is enabled.
         </p>
-        <strong className="not-prose font-medium tracking-tight">How is the collected information used?</strong>
-        <p className="not-prose text-sm mt-1 mb-4">As the Extension does not collect any information, there is no information to use.</p>
-        <strong className="not-prose font-medium tracking-tight">Is the collected information shared with third parties?</strong>
-        <p className="not-prose text-sm mt-1 mb-4">
+        <strong className='not-prose font-medium tracking-tight'>
+          How is the collected information used?
+        </strong>
+        <p className='not-prose text-sm mt-1 mb-4'>
+          As the Extension does not collect any information, there is no information to use.
+        </p>
+        <strong className='not-prose font-medium tracking-tight'>
+          Is the collected information shared with third parties?
+        </strong>
+        <p className='not-prose text-sm mt-1 mb-4'>
           As the Extension does not collect any information, there is no information to share with
           third parties.
         </p>
-        <strong className="not-prose font-medium tracking-tight">How is the collected information stored?</strong>
-        <p className="not-prose text-sm mt-1 mb-4">As the Extension does not collect any information, there is no information to store.</p>
-        <strong className="not-prose font-medium tracking-tight">Your Choices</strong>
-        <p className="not-prose text-sm mt-1 mb-4">
+        <strong className='not-prose font-medium tracking-tight'>
+          How is the collected information stored?
+        </strong>
+        <p className='not-prose text-sm mt-1 mb-4'>
+          As the Extension does not collect any information, there is no information to store.
+        </p>
+        <strong className='not-prose font-medium tracking-tight'>Your Choices</strong>
+        <p className='not-prose text-sm mt-1 mb-4'>
           You can choose to disable the Extension at any time by accessing the Extension settings in
           your Chrome browser and turning it off.
         </p>
-        <strong className="not-prose font-medium tracking-tight">Changes to this Privacy Policy</strong>
-        <p className="not-prose text-sm mt-1 mb-4">
+        <strong className='not-prose font-medium tracking-tight'>
+          Changes to this Privacy Policy
+        </strong>
+        <p className='not-prose text-sm mt-1 mb-4'>
           We may update this privacy policy from time to time. We encourage you to review the
           privacy policy whenever you access the Extension to stay informed about our information
           practices and the choices available to you.
         </p>
-        <strong className="not-prose font-medium tracking-tight">Contact Me</strong>
-        <p className="not-prose text-sm mt-1 mb-4">
-          If you have any questions about this privacy policy, please reach out at{" "}
-          <code className='bg-yellow-100'>mayur072000 at [Google's Mailing Service] dot com</code>.
+        <strong className='not-prose font-medium tracking-tight'>Contact Me</strong>
+        <p className='not-prose text-sm mt-1 mb-4'>
+          If you have any questions about this privacy policy, please reach out at{' '}
+          <code className='bg-yellow-100'>
+            mayur072000 at [Google&apos;s Mailing Service] dot com
+          </code>
+          .
         </p>
         <hr />
         <h2 className='font-medium tracking-tight pt-4'>mayurbhoi.com</h2>
-        <strong className="not-prose font-medium tracking-tight">Anonymized Analytics</strong>
-        <p className="not-prose text-sm mt-1 mb-4">
+        <strong className='not-prose font-medium tracking-tight'>Anonymized Analytics</strong>
+        <p className='not-prose text-sm mt-1 mb-4'>
           <u>This website does not collect any personal information about you.</u>
         </p>
-        <p className="not-prose text-sm mt-1 mb-4">
+        <p className='not-prose text-sm mt-1 mb-4'>
           The website is hosted on Vercel. Vercel Analytics (
           <a className='not-prose underline' href='https://vercel.com/docs/analytics'>
             read more
