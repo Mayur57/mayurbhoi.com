@@ -4,11 +4,11 @@ import './globals.css'
 
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import { GeistMono } from 'geist/font'
 import GridBackdrop from 'src/components/backdrop'
 import { Providers } from 'src/utils/providers'
-import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const inter = localFont({
   src: './fonts/Inter-Variable.ttf',
@@ -68,7 +68,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body
         className={`w-full bg-[#F8F8F8] dark:bg-[#121212] transition-all duration-300 antialiased`}>
         <Providers>
-        <Analytics mode={'production'} />
+          <Analytics mode={'production'} />
           <GridBackdrop />
           <SpeedInsights />
           <main className='max-w-7xl relative min-w-full scroll-smooth'>{children}</main>

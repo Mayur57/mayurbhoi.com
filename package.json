@@ -44,9 +44,9 @@
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "latest",
     "@tailwindcss/typography": "^0.5.9",
-    "@typescript-eslint/eslint-plugin": "latest",
-    "@typescript-eslint/parser": "latest",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
     "eslint-config-prettier": "^9.0.0",
-    "prettier": "latest"
+    "prettier": "^3.1.1"
   }
 }
