@@ -8,6 +8,7 @@ import { GeistMono } from 'geist/font'
 import GridBackdrop from 'src/components/backdrop'
 import { Providers } from 'src/utils/providers'
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const inter = localFont({
   src: './fonts/Inter-Variable.ttf',
@@ -69,6 +70,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Providers>
         <Analytics mode={'production'} />
           <GridBackdrop />
+          <SpeedInsights />
           <main className='max-w-7xl relative min-w-full scroll-smooth'>{children}</main>
         </Providers>
       </body>
