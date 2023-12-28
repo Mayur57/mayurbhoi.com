@@ -136,13 +136,13 @@ export default function Home() {
             <a title='mayur57' href='https://github.com/mayur57'>
               Github
             </a>
-            <p className='mt-4'>
+            <div className='mt-4'>
               Reach out at{' '}
               <a title='me@mayurbhoi.com' href='mailto:me@mayurbhoi.com'>
                 me@mayurbhoi.com
               </a>
               <LocalTime />
-            </p>
+            </div>
             <div className='flex flex-col-reverse sm:flex-row items-center justify-between pt-6 sm:pt-2'>
               <p className='text-xs opacity-40 pt-2 m-0 sm:pt-6 font-medium'>
                 <abbr

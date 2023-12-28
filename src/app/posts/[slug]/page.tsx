@@ -63,15 +63,15 @@ export default function ExpandedPost({ params }: { params: { slug: string } }) {
       <Backlink href='/posts' />
       <div className='prose prose-sm sm:prose dark:prose-invert prose-img:m-0 prose-img:rounded-lg max-w-none prose-h1:mb-0 prose-h6:my-0 pb-[7rem] prose-h1:font-medium prose-h1:tracking-tight prose-h1:text-3xl sm:prose-h1:text-4xl prose-h2:tracking-tight prose-a:dark:text-[#D1D5DB] prose-a:underline prose-a:decoration-[#AAA] dark:prose-a:decoration-[#444] prose-a:underline-offset-2'>
         <h1>{post.title}</h1>
-        <h6 className='opacity-70 text-sm pt-3 pb-2'>{post.description}</h6>
-        <h6 className='opacity-70 text-xs font-mono font-medium pb-4'>
+        <p className='not-prose opacity-70 text-sm pt-3 pb-2'>{post.description}</p>
+        <p className='not-prose opacity-70 text-xs font-mono font-medium pb-4'>
           {format(new Date(post?.uploaded), 'MMMM dd, yyyy')} •{' '}
           {`${
             readingTime(post?.body.raw).minutes.toFixed() === '0'
               ? '<1'
               : readingTime(post?.body.raw).minutes.toFixed()
           } minute read`}
-        </h6>
+        </p>
         <MDX components={mdxComponents} />
       </div>
     </article>
