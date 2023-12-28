@@ -28,7 +28,7 @@ const Navigator = () => {
     <nav className='flex w-full gap-4 pb-8 justify-end'>
       <NavigatorItem active={path === '/'} label='home' href='/' />
       <NavigatorItem
-        active={path === '/posts' || path.includes('/posts')}
+        active={path.includes('/posts')}
         label='posts'
         href='/posts'
       />
