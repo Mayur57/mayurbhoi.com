@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
-import { allPosts } from 'contentlayer/generated'
 import MainLayout from 'src/components/main-layout'
 import Title from 'src/components/title'
+import { getPosts } from 'src/processor/posts'
 
 import PostTile from './post-tile'
 
@@ -25,16 +25,16 @@ export const metadata: Metadata = {
 }
 
 export default function PostsPage() {
-  const sortedPosts = allPosts.sort((a, b) => {
-    return a.uploaded > b.uploaded ? -1 : 1
+  const blogs = getPosts().sort((a, b) => {
+    return new Date(a.metadata.uploaded) > new Date(b.metadata.uploaded) ? -1 : 1
   })
   return (
     <MainLayout>
       <Title>posts</Title>
       <div className='pt-4'>
         <div className='pt-2'>
-          {sortedPosts.map((post, index) => (
-            <PostTile key={index} post={post} index={index} />
+          {blogs.map((post, index) => (
+            <PostTile key={index} post={post.metadata} index={index} />
           ))}
         </div>
       </div>

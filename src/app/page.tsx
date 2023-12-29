@@ -1,6 +1,5 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { allPosts, allProjects } from 'contentlayer/generated'
 import me from 'public/me.webp'
 import MainLayout from 'src/components/main-layout'
 import { Photo } from 'src/components/photo'
@@ -8,12 +7,27 @@ import { Signature } from 'src/components/signature'
 import { Theme } from 'src/components/theme'
 import { LocalTime } from 'src/components/time'
 import { Venn } from 'src/components/venn'
+import { getPosts } from 'src/processor/posts'
 import { stagger } from 'src/utils/functions'
 
-const featuredProjects = allProjects.filter(project => project.featured).slice(0, 2)
-const featuredPosts = allPosts.sort((a, b) => (a.uploaded > b.uploaded ? -1 : 1)).slice(0, 2)
-
 export const metadata: Metadata = {}
+
+const featuredProjects = [
+  {
+    title: 'Countless',
+    description: "A Chrome extension to disable Tweet View counts across the platform",
+    repo: 'https://github.com/Mayur57/countless',
+  },
+  {
+    title: 'Twitter Nuke',
+    description: "Tool to delete all user tweets using Twitter Archive to bypass rate limits",
+    repo: 'https://github.com/Mayur57/twitter-nuke',
+  }
+]
+
+const featuredPosts = getPosts().sort((a, b) => {
+  return new Date(a.metadata.uploaded) > new Date(b.metadata.uploaded) ? -1 : 1
+}).slice(0, 2)
 
 export default function Home() {
   return (
@@ -79,7 +93,7 @@ export default function Home() {
                     </p>
                   </div>
                 ))}
-                <Link href='/projects'>All projects -&gt;</Link>
+                <a href='https://github.com/mayur57'>All projects -&gt;</a>
               </div>
             </div>
             <div className='w-[260px] sm:[304px] flex-shrink-0 mr-8 sm:m-0'>
@@ -88,12 +102,12 @@ export default function Home() {
                 {featuredPosts?.map((post, index) => (
                   <div key={index} className='pr-4'>
                     <a
-                      href={'/posts/' + post.slug}
+                      href={'/posts/' + post.metadata.slug}
                       className='underline decoration-from-font underline-offset-2 tracking-tight'>
-                      {post.title}
+                      {post.metadata.title}
                     </a>
                     <p className='mt-1 opacity-60 not-prose leading-snug text-sm'>
-                      {post.description}
+                      {post.metadata.description}
                     </p>
                   </div>
                 ))}

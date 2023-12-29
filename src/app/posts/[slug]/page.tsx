@@ -1,78 +1,60 @@
 import { Metadata } from 'next'
-import { allPosts, Post } from 'contentlayer/generated'
-import { format } from 'date-fns'
-import { MDXComponents } from 'mdx/types'
-import { useMDXComponent } from 'next-contentlayer/hooks'
-import { Tweet } from 'react-tweet'
 import readingTime from 'reading-time'
 import Backlink from 'src/components/backlink'
+import { MDX } from 'src/components/mdx'
 import Navigator from 'src/components/navigator'
-import Note from 'src/components/notes'
-import Opinion from 'src/components/opinion'
+import { getPosts } from 'src/processor/posts'
+import { formatDate } from 'src/utils/functions'
 
-const mdxComponents: MDXComponents = {
-  Tweet: ({ id, caption }) => (
-    <div className='flex not-prose flex-col justify-center items-center'>
-      <Tweet id={id} />
-      {caption && <p className='text-xs opacity-50 -mt-1 pb-4'>{caption}</p>}
-    </div>
-  ),
-  Opinion: () => <Opinion />,
-  Note: ({ title, body }) => <Note title={title} body={body} />,
-}
-
-export const generateStaticParams = async () => allPosts.map(post => ({ slug: post.slug }))
-
-export const generateMetadata = ({ params }: { params: { slug: string } }) => {
-  const post = allPosts.find(post => post.slug === params.slug)
-  if (!post) throw new Error(`Post not found for slug: ${params.slug}`)
+export const generateMetadata = ({ params }: any) => {
+  const post = getPosts().find(post => post.metadata.slug === params.slug)
+  if (!post) return
   const metadata: Metadata = {
-    title: post.title,
-    description: post.description,
+    title: post.metadata.title,
+    description: post.metadata.description,
     openGraph: {
-      title: post.title,
-      description: post.description,
-      url: 'https://mayurbhoi.com/posts/' + post.slug,
+      title: post.metadata.title,
+      description: post.metadata.description,
+      url: 'https://mayurbhoi.com/posts/' + post.metadata.slug,
       type: 'website',
       images: [
         {
-          url: `https://mayurbhoi.com/og?title=${post.title}`,
+          url: `https://mayurbhoi.com/og?title=${post.metadata.title}`,
           width: 1200,
           height: 630,
-          alt: post.title,
+          alt: post.metadata.title,
         },
       ],
     },
     twitter: {
       card: 'summary_large_image',
-      title: post.title,
-      description: post.description,
-      images: [`https://mayurbhoi.com/og?title=${post.title}`],
+      title: post.metadata.title,
+      description: post.metadata.description,
+      images: [`https://mayurbhoi.com/og?title=${post.metadata.title}`],
     },
   }
   return metadata
 }
 
-export default function ExpandedPost({ params }: { params: { slug: string } }) {
-  const post: Post | undefined = allPosts.find((post: Post) => post.slug === params.slug.toString())
-  if (!post) throw new Error(`Post not found for slug: ${params.slug}`)
-  const MDX = useMDXComponent(post.body.code)
+export default function ExpandedPost({ params }: any) {
+  const post = getPosts().find(post => post.metadata.slug === params.slug)
+  if (!post) return
   return (
-    <article className='mx-auto max-w-2xl py-8 px-6 xs:px-0 pt-8 sm:pt-[3rem]'>
+    <article className='mx-auto max-w-2xl py-8 px-6 xs:px-0 pt-8 sm:pt-[3rem] pb-[16rem]'>
       <Navigator />
       <Backlink href='/posts' />
-      <div className='prose prose-sm sm:prose dark:prose-invert prose-img:m-0 prose-img:rounded-lg max-w-none prose-h1:mb-0 prose-h6:my-0 pb-[7rem] prose-h1:font-medium prose-h1:tracking-tight prose-h1:text-3xl sm:prose-h1:text-4xl prose-h2:tracking-tight prose-a:dark:text-[#D1D5DB] prose-a:underline prose-a:decoration-[#AAA] dark:prose-a:decoration-[#444] prose-a:underline-offset-2'>
-        <h1>{post.title}</h1>
-        <p className='not-prose opacity-70 text-sm pt-3 pb-2'>{post.description}</p>
-        <p className='not-prose opacity-70 text-xs font-mono font-medium pb-4'>
-          {format(new Date(post?.uploaded), 'MMMM dd, yyyy')} •{' '}
-          {`${
-            readingTime(post?.body.raw).minutes.toFixed() === '0'
-              ? '<1'
-              : readingTime(post?.body.raw).minutes.toFixed()
+      <div className='prose prose-sm sm:prose dark:prose-invert'>
+        <h1>{post?.metadata.title}</h1>
+        <p className='not-prose opacity-70 text-sm pt-3 pb-2'>{post?.metadata.description}</p>
+        <div className='not-prose flex justify-between opacity-70 text-xs font-mono font-medium pb-4'>
+          {`${formatDate(post?.metadata.uploaded)} • ${
+            readingTime(post.content).minutes.toFixed() === '0'
+            ? '<1'
+            : readingTime(post.content).minutes.toFixed()
           } minute read`}
-        </p>
-        <MDX components={mdxComponents} />
+          </div>
+        <MDX source={post.content} />
+        <div className='h-[1px] w-full bg-black opacity-10 dark:bg-white' />
       </div>
     </article>
   )
