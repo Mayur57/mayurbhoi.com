@@ -7,7 +7,7 @@ import { getPosts } from 'src/processor/posts'
 import { formatDate } from 'src/utils/functions'
 
 export const generateMetadata = ({ params }: any) => {
-  let post = getPosts().find(post => post.slug === params.slug)
+  const post = getPosts().find(post => post.metadata.slug === params.slug)
   if (!post) return
   const metadata: Metadata = {
     title: post.metadata.title,
@@ -15,7 +15,7 @@ export const generateMetadata = ({ params }: any) => {
     openGraph: {
       title: post.metadata.title,
       description: post.metadata.description,
-      url: 'https://mayurbhoi.com/posts/' + post.slug,
+      url: 'https://mayurbhoi.com/posts/' + post.metadata.slug,
       type: 'website',
       images: [
         {
@@ -37,7 +37,7 @@ export const generateMetadata = ({ params }: any) => {
 }
 
 export default function ExpandedPost({ params }: any) {
-  let post = getPosts().find(post => post.metadata.slug === params.slug)
+  const post = getPosts().find(post => post.metadata.slug === params.slug)
   if (!post) return
   return (
     <article className='mx-auto max-w-2xl py-8 px-6 xs:px-0 pt-8 sm:pt-[3rem] pb-[16rem]'>

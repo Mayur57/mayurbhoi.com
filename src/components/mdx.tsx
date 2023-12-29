@@ -7,8 +7,8 @@ import rehypeHighlight from 'rehype-highlight';
 import 'src/app/marker.css'
 
 function Table({ data } : any) {
-  let headers = data.headers.map((header: any, index: any) => <th key={index}>{header}</th>)
-  let rows = data.rows.map((row: any, index: number) => (
+  const headers = data.headers.map((header: any, index: any) => <th key={index}>{header}</th>)
+  const rows = data.rows.map((row: any, index: number) => (
     <tr key={index}>
       {row.map((cell: string, cellIndex: number) => (
         <td key={cellIndex}>{cell}</td>
@@ -27,8 +27,7 @@ function Table({ data } : any) {
 }
 
 function CustomLink(props: any) {
-  let href = props.href
-
+  const href = props.href
   if (href.startsWith('/')) {
     return (
       <Link href={href} {...props}>
@@ -36,11 +35,7 @@ function CustomLink(props: any) {
       </Link>
     )
   }
-
-  if (href.startsWith('#')) {
-    return <a {...props} />
-  }
-
+  if (href.startsWith('#')) return <a {...props} />
   return <a target='_blank' rel='noopener noreferrer' {...props} />
 }
 
@@ -69,8 +64,9 @@ function slugify(str: any) {
 }
 
 function createHeading(level: number) {
+  /* eslint-disable-next-line react/display-name */
   return ({ children } : any) => {
-    let slug = slugify(children)
+    const slug = slugify(children)
     return React.createElement(
       `h${level}`,
       { id: slug },
@@ -86,7 +82,7 @@ function createHeading(level: number) {
   }
 }
 
-let components = {
+const components = {
   h1: createHeading(1),
   h2: createHeading(2),
   h3: createHeading(3),
