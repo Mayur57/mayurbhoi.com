@@ -1,6 +1,5 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { allPosts, allProjects } from 'contentlayer/generated'
 import me from 'public/me.webp'
 import MainLayout from 'src/components/main-layout'
 import { Photo } from 'src/components/photo'
@@ -8,12 +7,14 @@ import { Signature } from 'src/components/signature'
 import { Theme } from 'src/components/theme'
 import { LocalTime } from 'src/components/time'
 import { Venn } from 'src/components/venn'
+import { getPosts } from 'src/processor/posts'
 import { stagger } from 'src/utils/functions'
 
-const featuredProjects = allProjects.filter(project => project.featured).slice(0, 2)
-const featuredPosts = allPosts.sort((a, b) => (a.uploaded > b.uploaded ? -1 : 1)).slice(0, 2)
-
 export const metadata: Metadata = {}
+
+const featuredPosts = getPosts().sort((a, b) => {
+  return new Date(a.metadata.uploaded) > new Date(b.metadata.uploaded) ? -1 : 1
+}).slice(0, 2)
 
 export default function Home() {
   return (
@@ -67,7 +68,7 @@ export default function Home() {
             <div className='w-[260px] sm:w-[304px] pr-6 flex-shrink-0'>
               <p className='opacity-60 text-sm font-medium tracking-tight'>Projects</p>
               <div className='flex flex-col gap-6'>
-                {featuredProjects?.map((project, index) => (
+                {/* {featuredProjects?.map((project, index) => (
                   <div key={index} className='pr-4'>
                     <a
                       href={project.repo}
@@ -78,7 +79,7 @@ export default function Home() {
                       {project.description}
                     </p>
                   </div>
-                ))}
+                ))} */}
                 <Link href='/projects'>All projects -&gt;</Link>
               </div>
             </div>
@@ -88,12 +89,12 @@ export default function Home() {
                 {featuredPosts?.map((post, index) => (
                   <div key={index} className='pr-4'>
                     <a
-                      href={'/posts/' + post.slug}
+                      href={'/posts/' + post.metadata.slug}
                       className='underline decoration-from-font underline-offset-2 tracking-tight'>
-                      {post.title}
+                      {post.metadata.title}
                     </a>
                     <p className='mt-1 opacity-60 not-prose leading-snug text-sm'>
-                      {post.description}
+                      {post.metadata.description}
                     </p>
                   </div>
                 ))}
