@@ -45,11 +45,9 @@ function getMDXData(dir: any) {
   let mdxFiles = getMDXFiles(dir);
   return mdxFiles.map((file) => {
     let { metadata, content } = readMDXFile(path.join(dir, file));
-    let slug = path.basename(file, path.extname(file));
     let tweetIds = extractTweetIds(content);
     return {
       metadata,
-      slug,
       tweetIds,
       content,
     };

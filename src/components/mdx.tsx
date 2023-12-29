@@ -2,8 +2,6 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { MDXRemote } from 'next-mdx-remote/rsc'
-import Note from 'src/components/notes'
-import Opinion from 'src/components/opinion'
 import { TweetComponent } from './tweet'
 import rehypeHighlight from 'rehype-highlight';
 import 'src/app/marker.css'
@@ -99,9 +97,7 @@ let components = {
   a: CustomLink,
   Callout,
   Tweet: TweetComponent,
-  Table,
-  Note,
-  Opinion
+  Table
 }
 
 const options = {
