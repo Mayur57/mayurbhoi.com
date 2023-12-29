@@ -12,6 +12,19 @@ import { stagger } from 'src/utils/functions'
 
 export const metadata: Metadata = {}
 
+const featuredProjects = [
+  {
+    title: 'Countless',
+    description: "A Chrome extension to disable Tweet View counts across the platform",
+    repo: 'https://github.com/Mayur57/countless',
+  },
+  {
+    title: 'Twitter Nuke',
+    description: "Tool to delete all user tweets using Twitter Archive to bypass rate limits",
+    repo: 'https://github.com/Mayur57/twitter-nuke',
+  }
+]
+
 const featuredPosts = getPosts().sort((a, b) => {
   return new Date(a.metadata.uploaded) > new Date(b.metadata.uploaded) ? -1 : 1
 }).slice(0, 2)
@@ -68,7 +81,7 @@ export default function Home() {
             <div className='w-[260px] sm:w-[304px] pr-6 flex-shrink-0'>
               <p className='opacity-60 text-sm font-medium tracking-tight'>Projects</p>
               <div className='flex flex-col gap-6'>
-                {/* {featuredProjects?.map((project, index) => (
+                {featuredProjects?.map((project, index) => (
                   <div key={index} className='pr-4'>
                     <a
                       href={project.repo}
@@ -79,8 +92,8 @@ export default function Home() {
                       {project.description}
                     </p>
                   </div>
-                ))} */}
-                <Link href='/projects'>All projects -&gt;</Link>
+                ))}
+                <a href='https://github.com/mayur57'>All projects -&gt;</a>
               </div>
             </div>
             <div className='w-[260px] sm:[304px] flex-shrink-0 mr-8 sm:m-0'>
