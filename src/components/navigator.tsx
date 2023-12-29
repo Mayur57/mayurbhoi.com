@@ -14,6 +14,7 @@ const NavigatorItem = ({
 }) => (
   <Link
     href={href}
+    as={href}
     className={`font-medium text-sm sm:text-base tracking-tight ${
       active ? `underline decoration-from-font underline-offset-2` : `opacity-40`
     }`}>
@@ -27,7 +28,7 @@ const Navigator = () => {
     <nav className='flex w-full gap-4 pb-8 justify-end'>
       <NavigatorItem active={path === '/'} label='home' href='/' />
       <NavigatorItem
-        active={path === '/posts' || path.includes('/posts')}
+        active={path.includes('/posts')}
         label='posts'
         href='/posts'
       />
