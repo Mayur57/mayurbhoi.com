@@ -40,7 +40,7 @@ export default function NotFound() {
           />
         </defs>
       </svg>
-      <h2 className='not-prose text-2xl font-semibold tracking-tight py-4'>Not Found: Unreachable Page</h2>
+      <h2 className='not-prose text-2xl font-medium tracking-tight py-4'>Not Found—Unreachable Page</h2>
       <p className='opacity-70 text-xs sm:text-sm'>
         What was this page that couldn&apos;t be found? An unfinished design, a half-written blog,
         an abandoned thought, or perhaps a private note to self? A stroll into the unknown for sure.
