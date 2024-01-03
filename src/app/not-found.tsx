@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: '404',
+  title: 'Not Found',
 }
 
 export default function NotFound() {
@@ -40,15 +40,15 @@ export default function NotFound() {
           />
         </defs>
       </svg>
-      <h2 className='not-prose text-2xl font-semibold tracking-tight py-4'>Page not found</h2>
-      <p className='opacity-70 text-sm sm:text-base'>
+      <h2 className='not-prose text-2xl font-semibold tracking-tight py-4'>Not Found: Unreachable Page</h2>
+      <p className='opacity-70 text-xs sm:text-sm'>
         What was this page that couldn&apos;t be found? An unfinished design, a half-written blog,
-        an abandoned thought, or perhaps a private note? A stroll into the unknown for sure.
+        an abandoned thought, or perhaps a private note to self? A stroll into the unknown for sure.
       </p>
       <Link className='pt-6 text-sm' href='/'>
         {'<- '}
         <span className='underline underline-offset-2 decoration-from-font'>
-          go back to the known
+          go back
         </span>
       </Link>
     </div>
