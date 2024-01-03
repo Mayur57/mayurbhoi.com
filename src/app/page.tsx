@@ -34,7 +34,7 @@ export default function Home() {
     <MainLayout>
       <div className='sm:prose dark:prose-invert prose prose-sm prose-a:dark:text-[#D1D5DB] prose-a:underline prose-a:decoration-[#AAA] dark:prose-a:decoration-[#444] prose-a:underline-offset-2'>
         <div>
-          <div className={`appear ${stagger(1)} w-full flex justify-start items-center`}>
+          <div className={`appear ${stagger(1)} w-full flex justify-start items-center pb-5`}>
             <Photo src={me} />
           </div>
 
