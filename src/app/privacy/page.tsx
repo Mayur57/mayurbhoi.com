@@ -75,7 +75,7 @@ export default function PrivacyPolicy() {
         <strong className='not-prose font-medium tracking-tight'>Contact Me</strong>
         <p className='not-prose text-sm mt-1 mb-4'>
           If you have any questions about this privacy policy, please reach out at{' '}
-          <code className='bg-yellow-100'>
+          <code className='bg-yellow-200 dark:bg-orange-400 dark:bg-opacity-30'>
             mayur072000 at [Google&apos;s Mailing Service] dot com
           </code>
           .
