@@ -21,6 +21,11 @@
   .dark ::selection {
     background-color: #ff5c0077;
   }
+
+  * {
+    font-feature-settings: "cpsp" 1,"dlig" 1,"cv01" 1,"cv02","cv03" 1,"cv04" 1,"liga","clig","calt" !important;
+    letter-spacing: -.02em;
+  }
 }
 
 @layer base {
@@ -31,7 +36,7 @@
     --tweet-color-blue-secondary: #657786;
     --tweet-body-font-size: 1rem;
     --tweet-actions-font-weight: 500;
-    --tweet-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    --tweet-font-family: 'Inter var', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
       Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   }
 
@@ -43,7 +48,7 @@
     --tweet-font-color-secondary: #777;
     --tweet-body-font-size: 1rem;
     --tweet-actions-font-weight: 500;
-    --tweet-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    --tweet-font-family: 'Inter var', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
       Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   }
 }
@@ -95,13 +100,8 @@ html {
 }
 
 :root {
-  --sh-class: #2d5e9d;
-  --sh-identifier: #354150;
-  --sh-sign: #8996a3;
-  --sh-string: #007f7a;
-  --sh-keyword: #e02518;
-  --sh-comment: #a19595;
-  --sh-jsxliterals: #6266d1;
+  max-width: 100%;
+  display: block;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -110,6 +110,10 @@ html {
     --sh-identifier: white;
     --sh-keyword: #f47067;
     --sh-string: #0fa295;
+  }
+
+  .prose p {
+    font-variation-settings: "wght" 400 !important;
   }
 }
 
@@ -135,6 +139,10 @@ html {
 
 .prose a {
   @apply transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em];
+}
+
+.prose a:hover {
+  @apply transition-all opacity-40;
 }
 
 .prose .anchor:after {
@@ -166,7 +174,7 @@ html {
 
 .prose img {
   /* Don't apply styles to next/image */
-  @apply m-0;
+  @apply m-0 rounded-lg;
 }
 
 .prose h1 {
@@ -215,6 +223,13 @@ table {
 
 .prose .callout > p {
   margin: 0 !important;
+}
+
+.prose p {
+  word-spacing: -0.04em !important;
+  font-variation-settings: "wght" 450 !important;
+  font-variant: common-ligatures contextual !important;
+  line-height: 1.6 !important;
 }
 
 .title {

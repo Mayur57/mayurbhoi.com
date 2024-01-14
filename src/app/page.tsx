@@ -32,14 +32,14 @@ const featuredPosts = getPosts().sort((a, b) => {
 export default function Home() {
   return (
     <MainLayout>
-      <div className='sm:prose dark:prose-invert prose prose-sm prose-a:dark:text-[#D1D5DB] prose-a:underline prose-a:decoration-[#AAA] dark:prose-a:decoration-[#444] prose-a:underline-offset-2'>
+      <div className='sm:prose dark:prose-invert prose prose-sm'>
         <div>
           <div className={`appear ${stagger(1)} w-full flex justify-start items-center pb-5`}>
             <Photo src={me} />
           </div>
 
           <div className={`appear ${stagger(2)} not-prose pt-3`}>
-            <p className='tracking-tight font-semibold flex flex-row items-center'>
+            <strong className='tracking-tight flex flex-row items-center'>
               Mayur Bhoi
               <span
                 className='h-[0.9rem] w-[0.9rem] ml-1'
@@ -50,7 +50,7 @@ export default function Home() {
                   </g>
                 </svg>
               </span>
-            </p>
+            </strong>
             <p className='tracking-tight -mt-1 opacity-70'>Full Stack Developer</p>
 
             {/*
