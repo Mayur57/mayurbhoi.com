@@ -2,8 +2,6 @@ import { Suspense } from 'react'
 import { EmbeddedTweet, TweetNotFound, TweetSkeleton, type TweetProps } from 'react-tweet'
 import { getTweet } from 'react-tweet/api'
 
-import './tweet.css'
-
 const TweetContent = async ({ id, components, onError }: any) => {
   let error
   const tweet = id
@@ -16,7 +14,6 @@ const TweetContent = async ({ id, components, onError }: any) => {
         }
       })
     : undefined
-    console.log(tweet)
   if (!tweet) {
     const NotFound = components?.TweetNotFound || TweetNotFound
     return <NotFound error={error} />
