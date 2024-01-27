@@ -15,19 +15,21 @@ export const metadata: Metadata = {}
 const featuredProjects = [
   {
     title: 'Countless',
-    description: "A Chrome extension to disable Tweet View counts across the platform",
+    description: 'A Chrome extension to disable Tweet View counts across the platform',
     repo: 'https://github.com/Mayur57/countless',
   },
   {
     title: 'Twitter Nuke',
-    description: "Tool to delete all user tweets using Twitter Archive to bypass rate limits",
+    description: 'Tool to delete all user tweets using Twitter Archive to bypass rate limits',
     repo: 'https://github.com/Mayur57/twitter-nuke',
-  }
+  },
 ]
 
-const featuredPosts = getPosts().sort((a, b) => {
-  return new Date(a.metadata.uploaded) > new Date(b.metadata.uploaded) ? -1 : 1
-}).slice(0, 2)
+const featuredPosts = getPosts()
+  .sort((a, b) => {
+    return new Date(a.metadata.uploaded) > new Date(b.metadata.uploaded) ? -1 : 1
+  })
+  .slice(0, 2)
 
 export default function Home() {
   return (
@@ -60,7 +62,6 @@ export default function Home() {
               <p className='text-[10px] pl-[6px]'>Open to new opportunities!</p>
             </div>
             */}
-            
           </div>
 
           <p className={`appear ${stagger(3)} pt-4`}>
@@ -117,7 +118,7 @@ export default function Home() {
           </div>
 
           <div className={`appear ${stagger(6)}`}>
-            <p className='font-semibold pt-4'>Now</p>
+            <strong>Now</strong>
             <p className='pb-6'>
               Figuring out how to be the best in the room, trying to improve by iterating and
               perfecting my craft every day—all while keeping in mind the highest quality of work.
@@ -137,19 +138,21 @@ export default function Home() {
           </div>
 
           <div className={`appear ${stagger(7)}`}>
-            <p className='font-semibold pt-10'>Connect</p>
-            Find me on these sites:{' '}
-            <a title='@mayurbhoii' href='https://twitter.com/mayurbhoii'>
-              Twitter
-            </a>
-            ,{' '}
-            <a title='Mayur Bhoi on LinkedIn' href='https://linked.com/in/mayur-bhoi'>
-              LinkedIn
-            </a>
-            ,{' '}
-            <a title='mayur57' href='https://github.com/mayur57'>
-              Github
-            </a>
+            <strong>Connect</strong>
+            <p>
+              Find me on these sites:{' '}
+              <a title='@mayurbhoii' href='https://twitter.com/mayurbhoii'>
+                Twitter
+              </a>
+              ,{' '}
+              <a title='Mayur Bhoi on LinkedIn' href='https://linked.com/in/mayur-bhoi'>
+                LinkedIn
+              </a>
+              ,{' '}
+              <a title='mayur57' href='https://github.com/mayur57'>
+                Github
+              </a>
+            </p>
             <div className='mt-4'>
               Reach out at{' '}
               <a title='me@mayurbhoi.com' href='mailto:me@mayurbhoi.com'>
