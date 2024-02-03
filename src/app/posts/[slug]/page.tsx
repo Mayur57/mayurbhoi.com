@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import readingTime from 'reading-time'
-import Backlink from 'src/components/backlink'
+import MainLayout from 'src/components/main-layout'
 import { MDX } from 'src/components/mdx'
 import Navigator from 'src/components/navigator'
 import { getPosts } from 'src/processor/posts'
@@ -36,13 +36,22 @@ export const generateMetadata = ({ params }: any) => {
   return metadata
 }
 
+const Socials = () => (
+  <div className='flex gap-1 text-sm items-center mt-12'>
+    <div className='h-2 w-2 rounded-full bg-[#EC672C]' />
+    <a href="https://github.com/mayur57" className='pl-2'>Github</a>·
+    <a href="https://twitter.com/mayurbhoii">Twitter</a>·
+    <a href="https://linked.com/in/mayur-bhoi">LinkedIn</a>·
+    <a href="mailto:me@mayurbhoi.com">me@mayurbhoi.com</a>
+  </div>
+)
+
 export default function ExpandedPost({ params }: any) {
   const post = getPosts().find(post => post.metadata.slug === params.slug)
   if (!post) return
   return (
-    <article className='mx-auto max-w-2xl py-8 px-6 xs:px-0 pt-8 sm:pt-[3rem] pb-[16rem]'>
-      <Navigator />
-      <Backlink href='/posts' />
+    <MainLayout>
+
       <div className='prose prose-sm sm:prose dark:prose-invert'>
         <h1>{post?.metadata.title}</h1>
         <p className='not-prose opacity-70 text-sm pt-3 pb-2'>{post?.metadata.description}</p>
@@ -54,8 +63,9 @@ export default function ExpandedPost({ params }: any) {
           } minute read`}
           </div>
         <MDX source={post.content} />
-        <div className='h-[1px] w-full bg-black opacity-10 dark:bg-white' />
+        <div className='h-[1px] w-full bg-black opacity-10 dark:bg-white my-8' />
+        <Socials />
       </div>
-    </article>
+    </MainLayout>
   )
 }
