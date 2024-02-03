@@ -2,7 +2,6 @@ import { Metadata } from 'next'
 import readingTime from 'reading-time'
 import MainLayout from 'src/components/main-layout'
 import { MDX } from 'src/components/mdx'
-import Navigator from 'src/components/navigator'
 import { getPosts } from 'src/processor/posts'
 import { formatDate } from 'src/utils/functions'
 
