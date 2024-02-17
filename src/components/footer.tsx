@@ -2,7 +2,7 @@ import Link from "next/link"
 import { Theme } from "./theme"
 
 const Footer = () => (
-  <footer className='flex flex-col-reverse sm:flex-row items-center justify-between pt-32'>
+  <footer className='flex flex-col-reverse sm:flex-row items-center justify-between py-4'>
     <p className='text-xs opacity-40 pt-2 m-0 sm:pt-6 font-medium'>
       <abbr
         title='free for non-commercial use only'

@@ -24,7 +24,7 @@
 
   * {
     font-feature-settings: "cpsp" 1,"dlig" 1,"cv01" 1,"cv02","cv03" 1,"cv04" 1,"liga","clig","calt" !important;
-    letter-spacing: -.02em;
+    letter-spacing: -.01em;
   }
 }
 

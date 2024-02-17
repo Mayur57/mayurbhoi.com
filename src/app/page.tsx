@@ -149,7 +149,10 @@ export default function Home() {
               </a>
               ,{' '}
               <a title='mayur57' href='https://github.com/mayur57'>
-                Github
+                GitHub
+              </a>,{" "}
+              <a title="Mayur Bhoi on Peerlist" href="https://peerlist.io/mayurbhoi">
+                Peerlist
               </a>
             </p>
             <div className='mt-4'>
@@ -159,7 +162,6 @@ export default function Home() {
               </a>
               <LocalTime />
             </div>
-            <Signature />
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import Footer from './footer'
 import Navigator from './navigator'
+import { Signature } from './signature'
 
 type LayoutProps = {
   children?: React.ReactNode
@@ -10,6 +11,7 @@ const MainLayout = ({ children }: LayoutProps) => (
     <Navigator />
     {children}
     <Footer />
+    <Signature />
   </div>
 )
 

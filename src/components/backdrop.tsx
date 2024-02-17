@@ -7,7 +7,7 @@ const GridBackdrop = () => {
   return (
     path !== '/' && (
       <div>
-        <div className='absolute inset-0 h-60 w-full bg-white dark:bg-[#121212] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#80808025_1px,transparent_1px),linear-gradient(to_bottom,#80808025_1px,transparent_1px)] bg-[size:36px_36px] [mask-image:linear-gradient(to_bottom,#FFF,transparent)]' />
+        <div className='absolute inset-0 h-60 w-full bg-[#F7FCFE] dark:bg-[#2B2B2B] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#80808025_1px,transparent_1px),linear-gradient(to_bottom,#80808025_1px,transparent_1px)] bg-[size:36px_36px] [mask-image:linear-gradient(to_bottom,#FFF,transparent)]' />
       </div>
     )
   )
