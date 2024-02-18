@@ -2,11 +2,13 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { MDXRemote } from 'next-mdx-remote/rsc'
+import rehypeHighlight from 'rehype-highlight'
+
 import { TweetComponent } from './tweet'
-import rehypeHighlight from 'rehype-highlight';
+
 import 'src/app/marker.css'
 
-function Table({ data } : any) {
+function Table({ data }: any) {
   const headers = data.headers.map((header: any, index: any) => <th key={index}>{header}</th>)
   const rows = data.rows.map((row: any, index: number) => (
     <tr key={index}>
@@ -40,7 +42,12 @@ function CustomLink(props: any) {
 }
 
 function RoundedImage(props: any) {
-  return <Image alt={props.alt} className='rounded-lg' {...props} />
+  return (
+    <div className='flex flex-col items-center pt-4'>
+      <Image alt={props.alt} className='rounded-lg' {...props} />
+      <p className='opacity-50 italic text-xs text-center sm:px-16'>{props.alt}</p>
+    </div>
+  )
 }
 
 function Callout(props: any) {
@@ -65,7 +72,7 @@ function slugify(str: any) {
 
 function createHeading(level: number) {
   /* eslint-disable-next-line react/display-name */
-  return ({ children } : any) => {
+  return ({ children }: any) => {
     const slug = slugify(children)
     return React.createElement(
       `h${level}`,
@@ -93,16 +100,22 @@ const components = {
   a: CustomLink,
   Callout,
   Tweet: TweetComponent,
-  Table
+  Table,
 }
 
 const options = {
   mdxOptions: {
-      remarkPlugins: [],
-      rehypePlugins: [rehypeHighlight],
-  }
+    remarkPlugins: [],
+    rehypePlugins: [rehypeHighlight],
+  },
 }
 
 export function MDX(props: any) {
-  return <MDXRemote {...props} components={{ ...components, ...(props.components || {}) }} options={options} />
+  return (
+    <MDXRemote
+      {...props}
+      components={{ ...components, ...(props.components || {}) }}
+      options={options}
+    />
+  )
 }

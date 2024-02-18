@@ -29,7 +29,7 @@ export async function GET(req: NextRequest): Promise<any> {
             marginLeft: 140,
             marginRight: 190,
             display: 'flex',
-            fontSize: isSection ? 165 : 130,
+            fontSize: isSection === 'true' ? 165 : 130,
             fontFamily: 'Kaisei Tokumin',
             letterSpacing: '-0.05em',
             fontStyle: 'normal',
