@@ -41,7 +41,7 @@ export default function ExpandedPost({ params }: any) {
   if (!post) return
   return (
     <MainLayout>
-      <div className='prose prose-sm sm:prose dark:prose-invert'>
+      <div className='prose prose-sm sm:prose dark:prose-invert pt-4'>
         <h1>{post?.metadata.title}</h1>
         <p className='not-prose opacity-70 text-sm pt-3 pb-2'>{post?.metadata.description}</p>
         <div className='not-prose flex justify-between opacity-70 text-xs font-mono font-medium pb-4'>
@@ -51,6 +51,7 @@ export default function ExpandedPost({ params }: any) {
             : readingTime(post.content).minutes.toFixed()
           } minute read`}
           </div>
+        <div className='h-[1px] w-full bg-black opacity-10 dark:bg-white mt-2 mb-8' />
         <MDX source={post.content} />
         <div className='h-[1px] w-full bg-black opacity-10 dark:bg-white my-8' />
         <Socials />
