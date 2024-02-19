@@ -30,7 +30,7 @@
 
 @layer base {
   .light .react-tweet-theme {
-    --tweet-bg-color: #fff;
+    --tweet-bg-color: #FCFFFF;
     --tweet-bg-color-hover: #f5f8fa;
     --tweet-border: 1px solid #e6ecf0;
     --tweet-color-blue-secondary: #657786;
@@ -174,7 +174,7 @@ html {
 
 .prose img {
   /* Don't apply styles to next/image */
-  @apply m-0 rounded-lg;
+  @apply m-0 rounded-xl;
 }
 
 .prose h1 {
@@ -234,4 +234,9 @@ table {
 
 .title {
   text-wrap: balance;
+}
+
+blockquote > p {
+  font-family: serif;
+  font-size: 25px;
 }

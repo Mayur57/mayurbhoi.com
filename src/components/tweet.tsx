@@ -24,12 +24,13 @@ const TweetContent = async ({ id, components, onError }: any) => {
 
 export const ReactTweet = (props: TweetProps) => <TweetContent {...props} />
 
-export async function TweetComponent({ id }: { id: string }) {
+export async function TweetComponent({ id, caption }: { id: string, caption: string }) {
   return (
     <div className='tweet my-6'>
-      <div className={`flex justify-center`}>
+      <div className={`flex flex-col items-center`}>
         <Suspense fallback={<TweetSkeleton />}>
           <ReactTweet id={id} />
+          <p className='not-prose opacity-50 italic text-xs text-center sm:px-16'>{caption}</p>
         </Suspense>
       </div>
     </div>
