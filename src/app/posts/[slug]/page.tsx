@@ -6,6 +6,10 @@ import { Socials } from 'src/components/socials'
 import { getPosts } from 'src/processor/posts'
 import { formatDate } from 'src/utils/functions'
 
+function urlSafe(str: string) {
+  return encodeURIComponent(str).replace(/[!'()*]/g, (c) => '%' + c.charCodeAt(0).toString(16))
+}
+
 export const generateMetadata = ({ params }: any) => {
   const post = getPosts().find(post => post.metadata.slug === params.slug)
   if (!post) return
@@ -19,7 +23,7 @@ export const generateMetadata = ({ params }: any) => {
       type: 'website',
       images: [
         {
-          url: `https://mayurbhoi.com/og?title=${post.metadata.title}`,
+          url: `https://mayurbhoi.com/og?title=${urlSafe(post.metadata.title)}`,
           width: 1200,
           height: 630,
           alt: post.metadata.title,
@@ -30,7 +34,7 @@ export const generateMetadata = ({ params }: any) => {
       card: 'summary_large_image',
       title: post.metadata.title,
       description: post.metadata.description,
-      images: [`https://mayurbhoi.com/og?title=${post.metadata.title}`],
+      images: [`https://mayurbhoi.com/og?title=${urlSafe(post.metadata.title)}`],
     },
   }
   return metadata
