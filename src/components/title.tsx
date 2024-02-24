@@ -1,6 +1,6 @@
-import { Kaisei_Tokumin } from 'next/font/google'
+// import { Kaisei_Tokumin } from 'next/font/google'
 
-const kaisei = Kaisei_Tokumin({ subsets: ['latin'], weight: '700', preload: true, display: 'swap' })
+// const kaisei = Kaisei_Tokumin({ subsets: ['latin'], weight: '700', preload: true, display: 'swap' })
 
 const Title = ({ children }: any) => (
   <h1
