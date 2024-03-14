@@ -69,7 +69,7 @@ export default function Home() {
           </p>
 
           <p className={`appear ${stagger(4)} pt-4`}>
-            Based in Bengaluru, India, for the past year I have been working as Software Engineer I
+            Based in Bengaluru, India, for the past year I have been working as Software Engineer II
             at <a href='https://ncr.com'>NCR</a>.
           </p>
 
