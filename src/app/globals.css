@@ -58,8 +58,12 @@ html {
 }
 
 @keyframes fadeInTranslate {
+  from {
+    filter: blur(8px);
+  }
   to {
       opacity: 1;
+      filter: blur(0px);
       transform: translateY(0);
   }
 }

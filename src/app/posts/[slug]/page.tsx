@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 import readingTime from 'reading-time'
 import MainLayout from 'src/components/main-layout'
 import { MDX } from 'src/components/mdx'
@@ -8,6 +9,13 @@ import { formatDate } from 'src/utils/functions'
 
 function urlSafe(str: string) {
   return encodeURIComponent(str).replace(/[!'()*]/g, (c) => '%' + c.charCodeAt(0).toString(16))
+}
+
+export async function generateStaticParams() {
+  let posts = getPosts()
+  return posts.map((post) => ({
+    slug: post.metadata.slug,
+  }))
 }
 
 export const generateMetadata = ({ params }: any) => {
@@ -42,7 +50,9 @@ export const generateMetadata = ({ params }: any) => {
 
 export default function ExpandedPost({ params }: any) {
   const post = getPosts().find(post => post.metadata.slug === params.slug)
-  if (!post) return
+  if (!post) {
+    notFound()
+  }
   return (
     <MainLayout>
       <div className='prose prose-sm sm:prose dark:prose-invert pt-4'>
