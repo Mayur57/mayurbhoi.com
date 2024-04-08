@@ -12,7 +12,7 @@ function urlSafe(str: string) {
 }
 
 export async function generateStaticParams() {
-  let posts = getPosts()
+  const posts = getPosts()
   return posts.map((post) => ({
     slug: post.metadata.slug,
   }))
