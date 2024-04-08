@@ -69,8 +69,9 @@ export default function Home() {
           </p>
 
           <p className={`appear ${stagger(4)} pt-4`}>
-            Based in Bengaluru, India, for the past year I have been working as Software Engineer I
-            at <a href='https://ncr.com'>NCR</a>.
+            Based in{' '}
+            <a href='https://www.google.com/maps/place/Bengaluru,+Karnataka'>Bengaluru, India</a>, I
+            have been working as Software Engineer II for <a href='https://ncrvoyix.com'>NCR</a>.
           </p>
 
           <div
@@ -149,8 +150,9 @@ export default function Home() {
               ,{' '}
               <a title='mayur57' href='https://github.com/mayur57'>
                 GitHub
-              </a>,{" "}
-              <a title="Mayur Bhoi on Peerlist" href="https://peerlist.io/mayurbhoi">
+              </a>
+              ,{' '}
+              <a title='Mayur Bhoi on Peerlist' href='https://peerlist.io/mayurbhoi'>
                 Peerlist
               </a>
             </p>
