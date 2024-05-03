@@ -38,7 +38,7 @@ export const getLocalTime = () => {
     : formatter.format(new Date())
 }
 
-//
+// Get string from timestamp to string from timestamp
 export function formatDate(date: string) {
   const currentDate = new Date();
   if (!date.includes('T')) {
