@@ -128,7 +128,7 @@ export default function Home() {
               opinion, set me apart from the rest of the crowd.
             </p>
             <p>
-              I am the product guy and I like to ship fast. I love solving problems and building
+              I like to ship fast. I love solving problems and building
               things. I am obsessed with servers, design, performance, typography, and software that
               makes an impact. I learn new things every day to enable me to do what I do better. The
               web is a blank canvas I have only started to paint.
