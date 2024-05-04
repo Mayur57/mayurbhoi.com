@@ -19,12 +19,14 @@ function Table({ data }: any) {
   ))
 
   return (
+    <div className='flex items-center justify-center'>
     <table>
       <thead>
         <tr>{headers}</tr>
       </thead>
       <tbody>{rows}</tbody>
     </table>
+    </div>
   )
 }
 
