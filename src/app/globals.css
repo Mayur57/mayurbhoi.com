@@ -69,7 +69,7 @@ html {
 }
 
 .fade-in-translate {
-  animation: fadeInTranslate 0.8s ease forwards;
+  animation: fadeInTranslate 0.5s ease forwards;
 }
 
 .stagger-1 {
@@ -123,7 +123,7 @@ html {
 
 @layer components {
   .appear {
-      @apply fade-in-translate transform opacity-0 translate-y-5;
+      @apply fade-in-translate transform opacity-0 translate-y-[12px];
   }
 }
 
@@ -183,7 +183,7 @@ html {
 
 .prose h1 {
   /* mb-0 prose-h6:my-0 pb-[7rem] prose-h1:font-medium prose-h1:tracking-tight prose-h1:text-3xl sm:prose-h1:text-4xl */
-  @apply m-0 font-medium tracking-tight text-3xl sm:text-4xl !important;
+  @apply m-0 font-medium tracking-tight text-[2.125rem] sm:text-[2.5rem] !important;
 }
 
 .prose h2,
@@ -227,6 +227,10 @@ table {
 
 .prose .callout > p {
   margin: 0 !important;
+}
+
+.prose .callout a {
+  @apply transition-all decoration-neutral-400 dark:decoration-neutral-600 underline underline-offset-2 decoration-[0.1em];
 }
 
 .prose p {
