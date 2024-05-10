@@ -6,9 +6,11 @@ export const runtime = 'edge'
 export async function GET(req: NextRequest): Promise<any> {
   const { searchParams } = req.nextUrl
   const title = searchParams.get('title')
-  const isSection = searchParams.get('section')
   const font = fetch(
-    new URL('./../../../public/fonts/KaiseiTokumin-B-Min.ttf', import.meta.url)
+    new URL(
+      './../../../node_modules/@fontsource/inter/files/inter-latin-500-normal.woff',
+      import.meta.url
+    )
   ).then(res => res.arrayBuffer())
   const fontData = await font
 
@@ -19,34 +21,39 @@ export async function GET(req: NextRequest): Promise<any> {
           height: '100%',
           width: '100%',
           display: 'flex',
+          paddingLeft: '4.5rem',
+          paddingTop: '4.5rem',
+          color: '#423939',
           flexDirection: 'column',
           alignItems: 'flex-start',
-          justifyContent: 'center',
-          backgroundImage: 'url(https://mayurbhoi.com/images/post.jpg)',
+          justifyContent: 'flex-start',
+          fontFamily: 'Inter',
+          backgroundImage: 'url(https://www.mayurbhoi.com/images/og.png)',
         }}>
         <div
           style={{
-            marginLeft: 140,
-            marginRight: 190,
             display: 'flex',
-            fontSize: isSection === 'true' ? 165 : 130,
-            fontFamily: 'Kaisei Tokumin',
-            letterSpacing: '-0.05em',
+            fontSize: 88,
+            letterSpacing: '-0.07em',
+            paddingBottom: '1rem',
             fontStyle: 'normal',
-            color: 'white',
-            lineHeight: '120px',
+            lineHeight: '100px',
             whiteSpace: 'pre-wrap',
+            maxWidth: '789px',
+            maxHeight: '420px',
+            fontWeight: '500',
+            overflow: 'hidden',
           }}>
           {title}
         </div>
       </div>
     ),
     {
-      width: 1920,
-      height: 1080,
+      width: 1200,
+      height: 630,
       fonts: [
         {
-          name: 'Kaisei Tokumin',
+          name: 'Inter',
           data: fontData,
           style: 'normal',
         },
