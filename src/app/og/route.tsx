@@ -39,14 +39,14 @@ export async function GET(req: NextRequest): Promise<any> {
         <div
           style={{
             display: 'flex',
-            fontSize: isForTwitter ? 70 : 88,
+            fontSize: 88,
             letterSpacing: '-0.07em',
             paddingBottom: '1rem',
             fontStyle: 'normal',
-            lineHeight: isForTwitter ? '85px' : '100px',
+            lineHeight: '100px',
             whiteSpace: 'pre-wrap',
-            maxWidth: isForTwitter ? '701px' : '789px',
-            maxHeight: isForTwitter ? '289px' : '420px',
+            maxWidth: '789px',
+            maxHeight: '420px',
             fontWeight: '500',
             overflow: 'hidden',
           }}>
@@ -55,8 +55,8 @@ export async function GET(req: NextRequest): Promise<any> {
       </div>
     ),
     {
-      width: isForTwitter ? 1024 : 1200,
-      height: isForTwitter ? 512 : 630,
+      width: 1200,
+      height: 630,
       fonts: [
         {
           name: 'Inter',
