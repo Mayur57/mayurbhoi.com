@@ -30,10 +30,10 @@ export const metadata: Metadata = {
     default: 'Mayur Bhoi',
     template: '%s • Mayur Bhoi',
   },
-  description: 'Developer, designer, creator.',
+  description: 'Full-stack developer; doing what I love.',
   openGraph: {
     title: 'Mayur Bhoi',
-    description: 'Developer, designer, creator.',
+    description: 'Full-stack developer; doing what I love.',
     url: 'https://mayurbhoi.com',
     siteName: 'Mayur Bhoi',
     locale: 'en_IN',
