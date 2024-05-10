@@ -68,7 +68,7 @@ export const generateMetadata = ({ params }: any) => {
       card: 'summary_large_image',
       title: post.metadata.title,
       description: post.metadata.description,
-      images: [`https://mayurbhoi.com/og?title=${urlSafe(post.metadata.title)}`],
+      images: [`https://mayurbhoi.com/og?title=${urlSafe(post.metadata.title)}&twitter=true`],
     },
   }
   return metadata

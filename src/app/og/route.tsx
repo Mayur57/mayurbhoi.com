@@ -6,6 +6,10 @@ export const runtime = 'edge'
 export async function GET(req: NextRequest): Promise<any> {
   const { searchParams } = req.nextUrl
   const title = searchParams.get('title')
+  const twitter = searchParams.get('twitter')
+  const imageUrl = twitter !== ""
+    ? 'https://www.mayurbhoi.com/images/og-t.png'
+    : 'https://www.mayurbhoi.com/images/og.png'
   const font = fetch(
     new URL(
       './../../../node_modules/@fontsource/inter/files/inter-latin-500-normal.woff',
@@ -28,7 +32,7 @@ export async function GET(req: NextRequest): Promise<any> {
           alignItems: 'flex-start',
           justifyContent: 'flex-start',
           fontFamily: 'Inter',
-          backgroundImage: 'url(https://www.mayurbhoi.com/images/og.png)',
+          backgroundImage: `url(${imageUrl})`,
         }}>
         <div
           style={{
