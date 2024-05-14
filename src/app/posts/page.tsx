@@ -3,7 +3,7 @@ import MainLayout from 'src/components/main-layout'
 import Title from 'src/components/title'
 import { getPosts } from 'src/processor/posts'
 
-import PostTile from './post-tile'
+import PostTile from './PostTile'
 import { Socials } from 'src/components/socials'
 
 export const metadata: Metadata = {
@@ -32,8 +32,8 @@ export default function PostsPage() {
   return (
     <MainLayout>
       <Title>posts</Title>
-      <div className='pt-4 pb-32'>
-        <div className='pt-2'>
+      <div className='pt-4 pb-24'>
+        <div className='pt-4'>
           {blogs.map((post, index) => (
             <PostTile key={index} post={post.metadata} index={index} />
           ))}

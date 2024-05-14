@@ -248,3 +248,7 @@ blockquote > p {
   font-family: serif;
   font-size: 25px;
 }
+
+.nums {
+  font-variant-numeric: tabular-nums;
+}

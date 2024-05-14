@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import readingTime from 'reading-time'
 import MainLayout from 'src/components/main-layout'
@@ -8,29 +9,62 @@ import { getPosts } from 'src/processor/posts'
 import { formatDate } from 'src/utils/functions'
 
 function urlSafe(str: string) {
-  return encodeURIComponent(str).replace(/[!'()*]/g, (c) => '%' + c.charCodeAt(0).toString(16))
+  return encodeURIComponent(str).replace(/[!'()*]/g, c => '%' + c.charCodeAt(0).toString(16))
 }
 
+const PostNavigator = ({ p, n }: any) => (
+  <div className='not-prose flex flex-row items-start pt-3 justify-between'>
+    {p ? (
+      <div className='flex flex-col w-1/2 max-w-1/2 p-1 items-start justify-center cursor-pointer'>
+        <Link href={`/posts/${p?.metadata.slug}`}>
+          <p className='opacity-50 text-sm'>← Previous</p>
+          <p>{p?.metadata.title}</p>
+        </Link>
+      </div>
+    ) : (
+      <div className='pointer-events-none select-none'>
+        <p> </p>
+        <p> </p>
+      </div>
+    )}
+    {n && (
+      <div className='flex flex-col w-1/2 max-w-1/2 p-1 justify-center cursor-pointer'>
+        <Link href={`/posts/${n.metadata.slug}`}>
+          <p className='opacity-50 text-sm text-right'>Next →</p>
+          <p className='text-right'>{n.metadata.title}</p>
+        </Link>
+      </div>
+    )}
+  </div>
+)
+
 export default function ExpandedPost({ params }: any) {
-  const post = getPosts().find(post => post.metadata.slug === params.slug)
+  const sortedPosts = getPosts().sort((a, b) => {
+    return new Date(a.metadata.uploaded) < new Date(b.metadata.uploaded) ? -1 : 1
+  })
+  const post = sortedPosts.find(post => post.metadata.slug === params.slug)
   if (!post) {
     notFound()
   }
+  const idx = sortedPosts.indexOf(post)
+  const nextPost = idx === sortedPosts.length - 1 ? undefined : sortedPosts[idx + 1]
+  const prevPost = sortedPosts[idx - 1]
   return (
     <MainLayout>
       <div className='prose prose-sm sm:prose dark:prose-invert pt-4'>
         <h1>{post?.metadata.title}</h1>
-        <p className='not-prose opacity-70 text-sm pt-3 pb-2'>{post?.metadata.description}</p>
-        <div className='not-prose flex justify-between opacity-70 text-xs font-mono font-medium pb-4'>
+        <p className='not-prose opacity-70 text-sm py-2'>{post?.metadata.description}</p>
+        <div className='not-prose flex justify-between opacity-70 text-xs font-mono font-medium pb-3'>
           {`${formatDate(post?.metadata.uploaded)} • ${
             readingTime(post.content).minutes.toFixed() === '0'
-            ? '<1'
-            : readingTime(post.content).minutes.toFixed()
+              ? '<1'
+              : readingTime(post.content).minutes.toFixed()
           } minute read`}
-          </div>
-        <div className='h-[1px] w-full bg-black opacity-10 dark:bg-white mt-2 mb-8' />
+        </div>
+        {/* <div className='h-[1px] w-full bg-black opacity-10 dark:bg-white mt-2 mb-8' /> */}
         <MDX source={post.content} />
-        <div className='h-[1px] w-full bg-black opacity-10 dark:bg-white my-8' />
+        <div className='h-[1px] w-full bg-black opacity-10 dark:bg-white mt-8' />
+        <PostNavigator p={prevPost} n={nextPost} />
         <Socials />
       </div>
     </MainLayout>
@@ -39,7 +73,7 @@ export default function ExpandedPost({ params }: any) {
 
 export async function generateStaticParams() {
   const posts = getPosts()
-  return posts.map((post) => ({
+  return posts.map(post => ({
     slug: post.metadata.slug,
   }))
 }
