@@ -7,8 +7,8 @@ export const Suggestions = ({ suggestions }: any) => {
       {previous ? (
         <div className='flex flex-col w-1/2 max-w-1/2 p-1 items-start justify-center'>
           <Link className='cursor-pointer' href={`/posts/${previous?.metadata.slug}`}>
-            <p className='opacity-50 text-sm'>← Previous</p>
-            <p>{previous?.metadata.title}</p>
+            <p className='opacity-50 text-[12px]'>← Previous</p>
+            <p className='text-[15px]'>{previous?.metadata.title}</p>
           </Link>
         </div>
       ) : (
@@ -20,8 +20,8 @@ export const Suggestions = ({ suggestions }: any) => {
       {next && (
         <div className='flex flex-col w-1/2 max-w-1/2 p-1 justify-center'>
           <Link className='cursor-pointer' href={`/posts/${next.metadata.slug}`}>
-            <p className='opacity-50 text-sm text-right'>Next →</p>
-            <p className='text-right'>{next.metadata.title}</p>
+            <p className='opacity-50 text-[12px] text-right'>Next →</p>
+            <p className='text-right text-[15px]'>{next.metadata.title}</p>
           </Link>
         </div>
       )}

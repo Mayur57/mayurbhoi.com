@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/** TODO: Please just use Tailwind styles everywhere and uncomplicate things to the minimum **/
+
 @layer utilities {
   /* Hide scrollbar for Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
@@ -24,7 +26,7 @@
 
   * {
     font-feature-settings: "cpsp" 1,"dlig" 1,"cv01" 1,"cv02","cv03" 1,"cv04" 1,"liga","clig","calt" !important;
-    letter-spacing: -.01em;
+    letter-spacing: -.005em;
   }
 }
 
@@ -150,7 +152,7 @@ html {
 }
 
 .prose .anchor:after {
-  @apply text-neutral-300 dark:text-neutral-700;
+  @apply text-neutral-400 dark:text-neutral-600 !important;
   content: '#';
 }
 
@@ -237,7 +239,7 @@ table {
   word-spacing: -0.04em !important;
   font-variation-settings: "wght" 450 !important;
   font-variant: common-ligatures contextual !important;
-  line-height: 1.6 !important;
+  line-height: 1.8 !important;
 }
 
 .title {

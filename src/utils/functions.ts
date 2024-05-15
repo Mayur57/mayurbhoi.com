@@ -70,3 +70,17 @@ export function formatDate(date: string) {
 
   return `${fullDate} (${formattedDate})`;
 }
+
+// Custom function to make a string URL safe
+export function urlSafe(str: string) {
+  return encodeURIComponent(str).replace(/[!'()*]/g, c => '%' + c.charCodeAt(0).toString(16))
+}
+
+// Return suggestions object for a give post
+export function generateSuggestions(sortedPosts:any, currPost:any) {
+  const curr = sortedPosts.indexOf(currPost)
+  return {
+    next: curr === sortedPosts.length - 1 ? undefined : sortedPosts[curr + 1],
+    previous: sortedPosts[curr - 1],
+  }
+}
