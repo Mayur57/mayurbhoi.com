@@ -144,7 +144,7 @@ export default function Home() {
                 Twitter
               </a>
               ,{' '}
-              <a title='Mayur Bhoi on LinkedIn' href='https://linked.com/in/mayur-bhoi'>
+              <a title='Mayur Bhoi on LinkedIn' href='https://linkedin.com/in/mayur-bhoi'>
                 LinkedIn
               </a>
               ,{' '}
