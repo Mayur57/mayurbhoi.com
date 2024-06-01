@@ -20,12 +20,12 @@ function Table({ data }: any) {
 
   return (
     <div className='flex items-center justify-center'>
-    <table>
-      <thead>
-        <tr>{headers}</tr>
-      </thead>
-      <tbody>{rows}</tbody>
-    </table>
+      <table>
+        <thead>
+          <tr>{headers}</tr>
+        </thead>
+        <tbody>{rows}</tbody>
+      </table>
     </div>
   )
 }
@@ -55,7 +55,10 @@ function RoundedImage(props: any) {
 function Callout(props: any) {
   return (
     <div className='not-prose px-4 py-3 border border-neutral-200 dark:border-neutral-700 bg-[#F3F2F5] dark:bg-neutral-800 rounded-lg p-1 text-sm items-start text-neutral-900 dark:text-neutral-100 mb-8'>
-      <div className='leading-0 flex mt-1 mr-2 gap-2'>{props.emoji}<strong>{props.title}</strong></div>
+      <div className='leading-0 flex mt-1 mr-2 gap-2'>
+        {props.emoji}
+        <strong>{props.title}</strong>
+      </div>
       <div className='w-full mt-1 callout'>{props.children}</div>
     </div>
   )
@@ -92,7 +95,7 @@ function createHeading(level: number) {
 }
 
 function Divider() {
-  return <div className='h-[1px] w-full bg-black opacity-10 dark:bg-white my-8' /> 
+  return <div className='h-[1px] w-full bg-black opacity-10 dark:bg-white my-8' />
 }
 
 const components = {

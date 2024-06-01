@@ -24,7 +24,7 @@ const TweetContent = async ({ id, components, onError }: any) => {
 
 export const ReactTweet = (props: TweetProps) => <TweetContent {...props} />
 
-export async function TweetComponent({ id, caption }: { id: string, caption: string }) {
+export async function TweetComponent({ id, caption }: { id: string; caption: string }) {
   return (
     <div className='tweet my-6'>
       <div className={`flex flex-col items-center`}>

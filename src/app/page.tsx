@@ -128,10 +128,10 @@ export default function Home() {
               opinion, set me apart from the rest of the crowd.
             </p>
             <p>
-              I like to ship fast. I love solving problems and building
-              things. I am obsessed with servers, design, performance, typography, and software that
-              makes an impact. I learn new things every day to enable me to do what I do better. The
-              web is a blank canvas I have only started to paint.
+              I like to ship fast. I love solving problems and building things. I am obsessed with
+              servers, design, performance, typography, and software that makes an impact. I learn
+              new things every day to enable me to do what I do better. The web is a blank canvas I
+              have only started to paint.
             </p>
             {/* <p className='underline decoration-from-font underline-offset-2'>I am looking for new opportunities!</p> */}
           </div>

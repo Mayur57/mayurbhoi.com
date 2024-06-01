@@ -34,8 +34,8 @@ export const Signature = () => {
           strokeDasharray='0 1'
           fill='none'
           stroke='black'
-          stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeLinecap='round'
+          strokeLinejoin='round'
         />
       </motion.svg>
     </motion.div>

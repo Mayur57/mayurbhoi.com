@@ -1,5 +1,6 @@
-import Link from "next/link"
-import { Theme } from "./theme"
+import Link from 'next/link'
+
+import { Theme } from './theme'
 
 const Footer = () => (
   <footer className='flex flex-col-reverse sm:flex-row items-center justify-between py-4'>

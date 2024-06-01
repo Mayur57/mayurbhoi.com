@@ -40,35 +40,35 @@ export const getLocalTime = () => {
 
 // Get string from timestamp to string from timestamp
 export function formatDate(date: string) {
-  const currentDate = new Date();
+  const currentDate = new Date()
   if (!date.includes('T')) {
-    date = `${date}T00:00:00`;
+    date = `${date}T00:00:00`
   }
-  const targetDate = new Date(date);
+  const targetDate = new Date(date)
 
-  const yearsAgo = currentDate.getFullYear() - targetDate.getFullYear();
-  const monthsAgo = currentDate.getMonth() - targetDate.getMonth();
-  const daysAgo = currentDate.getDate() - targetDate.getDate();
+  const yearsAgo = currentDate.getFullYear() - targetDate.getFullYear()
+  const monthsAgo = currentDate.getMonth() - targetDate.getMonth()
+  const daysAgo = currentDate.getDate() - targetDate.getDate()
 
-  let formattedDate = '';
+  let formattedDate = ''
 
   if (yearsAgo > 0) {
-    formattedDate = `${yearsAgo}y ago`;
+    formattedDate = `${yearsAgo}y ago`
   } else if (monthsAgo > 0) {
-    formattedDate = `${monthsAgo}mo ago`;
+    formattedDate = `${monthsAgo}mo ago`
   } else if (daysAgo > 0) {
-    formattedDate = `${daysAgo}d ago`;
+    formattedDate = `${daysAgo}d ago`
   } else {
-    formattedDate = 'Today';
+    formattedDate = 'Today'
   }
 
   const fullDate = targetDate.toLocaleString('en-us', {
     month: 'long',
     day: 'numeric',
     year: 'numeric',
-  });
+  })
 
-  return `${fullDate} (${formattedDate})`;
+  return `${fullDate} (${formattedDate})`
 }
 
 // Custom function to make a string URL safe
@@ -77,7 +77,7 @@ export function urlSafe(str: string) {
 }
 
 // Return suggestions object for a give post
-export function generateSuggestions(sortedPosts:any, currPost:any) {
+export function generateSuggestions(sortedPosts: any, currPost: any) {
   const curr = sortedPosts.indexOf(currPost)
   return {
     next: curr === sortedPosts.length - 1 ? undefined : sortedPosts[curr + 1],

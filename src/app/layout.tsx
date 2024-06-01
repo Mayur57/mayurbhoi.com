@@ -71,7 +71,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Analytics mode={'production'} />
           <GridBackdrop />
           <SpeedInsights />
-          <main className='max-w-7xl bg-[#F7FCFE] dark:bg-[#18181A] relative min-w-full scroll-smooth'>{children}</main>
+          <main className='max-w-7xl bg-[#F7FCFE] dark:bg-[#18181A] relative min-w-full scroll-smooth'>
+            {children}
+          </main>
         </Providers>
       </body>
     </html>
