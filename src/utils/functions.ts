@@ -38,37 +38,53 @@ export const getLocalTime = () => {
     : formatter.format(new Date())
 }
 
-// Get string from timestamp to string from timestamp
-export function formatDate(date: string) {
-  const currentDate = new Date()
-  if (!date.includes('T')) {
-    date = `${date}T00:00:00`
-  }
-  const targetDate = new Date(date)
+// Get formatted date and relative period passed
+export function formatDate(dateString: string) {
+  const parsedDate = new Date(dateString);
+  const currentDate = new Date();
+  const timeDiff = currentDate.getTime() - parsedDate.getTime();
 
-  const yearsAgo = currentDate.getFullYear() - targetDate.getFullYear()
-  const monthsAgo = currentDate.getMonth() - targetDate.getMonth()
-  const daysAgo = currentDate.getDate() - targetDate.getDate()
+  // Format date
+  const formatFullDate = (date: Date) => {
+    return date.toLocaleString('en-us', {
+      month: 'long',
+      day: 'numeric',
+      year: 'numeric',
+    });
+  };
 
-  let formattedDate = ''
+  // Calculate relative time
+  const getRelativeTimeExpression = (diff: number) => {
+    const secondsInYear = 31536000000; // Y
+    const secondsInMonth = 2628000000; // M
+    const secondsInDay = 86400000; // D
+    const secondsInHour = 3600000; // H
+    const secondsInMinute = 60000; // m
 
-  if (yearsAgo > 0) {
-    formattedDate = `${yearsAgo}y ago`
-  } else if (monthsAgo > 0) {
-    formattedDate = `${monthsAgo}mo ago`
-  } else if (daysAgo > 0) {
-    formattedDate = `${daysAgo}d ago`
-  } else {
-    formattedDate = 'Today'
-  }
+    if (diff >= secondsInYear) {
+      const years = Math.floor(diff / secondsInYear);
+      return `${years}y ago`;
+    } else if (diff >= secondsInMonth) {
+      const months = Math.floor(diff / secondsInMonth);
+      return `${months}mo ago`;
+    } else if (diff >= secondsInDay) {
+      const days = Math.floor(diff / secondsInDay);
+      return `${days}d ago`;
+    } else if (diff >= secondsInHour) {
+      const hours = Math.floor(diff / secondsInHour);
+      return `${hours}h ago`;
+    } else if (diff >= secondsInMinute) {
+      const minutes = Math.floor(diff / secondsInMinute);
+      return `${minutes}m ago`;
+    } else {
+      return 'Just now';
+    }
+  };
 
-  const fullDate = targetDate.toLocaleString('en-us', {
-    month: 'long',
-    day: 'numeric',
-    year: 'numeric',
-  })
+  const fullDate = formatFullDate(parsedDate);
+  const relativeTimeExpression = getRelativeTimeExpression(timeDiff);
 
-  return `${fullDate} (${formattedDate})`
+  return `${fullDate} (${relativeTimeExpression})`;
 }
 
 // Custom function to make a string URL safe
