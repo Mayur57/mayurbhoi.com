@@ -1,0 +1,11 @@
+{
+    "functions": {
+      "vercel-cron/fetch-strava-data-3pm.js": {
+        "schedule": "0 9 * * *"
+      },
+      "vercel-cron/fetch-strava-data-1am.js": {
+        "schedule": "30 19 * * *"
+      }
+    }
+  }
+  
