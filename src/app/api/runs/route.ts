@@ -5,7 +5,7 @@ export async function GET(req: Request) {
   try {
     if (req.headers.get('Authorization') === `Bearer ${process.env['CRON']}`) {
       const activities = await getActivities()
-      return NextResponse.json({ activities })
+      return NextResponse.json({ data: activities })
     } else {
       return NextResponse.json({ error: 'Unauthorised mate' })
     }
