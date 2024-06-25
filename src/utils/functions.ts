@@ -100,3 +100,46 @@ export function generateSuggestions(sortedPosts: any, currPost: any) {
     previous: sortedPosts[curr - 1],
   }
 }
+
+// Date Converter -- From "0716" to "July, 16th"
+export function toLongDate(mmdd: string) {
+  // Ensure input is a string of length 4
+  // if (typeof mmdd !== 'string' || mmdd.length !== 4) {
+  //     throw new Error('Input must be a string of format MMDD');
+  // }
+
+  // Extract month and day from the input
+  const month = parseInt(mmdd.substring(0, 2), 10);
+  const day = parseInt(mmdd.substring(2, 4), 10);
+
+  // Validate month and day
+  if (month < 1 || month > 12 || day < 1 || day > 31) {
+      throw new Error('Invalid month or day');
+  }
+
+  // Array of month names
+  const monthNames = [
+      'January', 'February', 'March', 'April', 'May', 'June',
+      'July', 'August', 'September', 'October', 'November', 'December'
+  ];
+
+  // Function to get the suffix for a day
+  function getDaySuffix(day: number) {
+      if (day >= 11 && day <= 13) {
+          return 'th';
+      }
+      switch (day % 10) {
+          case 1: return 'st';
+          case 2: return 'nd';
+          case 3: return 'rd';
+          default: return 'th';
+      }
+  }
+
+  // Construct the date string
+  const monthName = monthNames[month - 1];
+  const daySuffix = getDaySuffix(day);
+  const dateString = `${monthName} ${day}${daySuffix}`;
+
+  return dateString;
+}

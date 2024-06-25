@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@fontsource/inter": "^5.0.18",
+    "@radix-ui/react-tooltip": "^1.1.1",
     "@types/node": "20.4.8",
     "@types/react": "18.2.18",
     "@types/react-dom": "18.2.7",
@@ -16,11 +17,14 @@
     "@vercel/og": "^0.5.11",
     "@vercel/speed-insights": "^1.0.2",
     "autoprefixer": "10.4.14",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
     "date-fns": "^3.6.0",
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.12",
     "framer-motion": "^10.16.0",
     "geist": "^1.2.0",
+    "lucide-react": "^0.396.0",
     "next": "^14.2.3",
     "next-mdx-remote": "^4.4.1",
     "next-themes": "^0.2.1",
@@ -32,7 +36,9 @@
     "reading-time": "^1.5.0",
     "rehype-highlight": "^7.0.0",
     "sharp": "^0.33.1",
+    "tailwind-merge": "^2.3.0",
     "tailwindcss": "3.3.3",
+    "tailwindcss-animate": "^1.0.7",
     "typescript": "5.1.6"
   },
   "devDependencies": {
