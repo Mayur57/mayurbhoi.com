@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 import { getActivities } from 'src/processor/strava'
 import { headers } from 'next/headers'
 
-export async function GET(req: Request) {
+export async function GET() {
   try {
     const headerList = headers()
     if (headerList.get('Authorization') !== `Bearer ${process.env['CRON']}`)
