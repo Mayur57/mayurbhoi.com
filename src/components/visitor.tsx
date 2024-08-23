@@ -1,41 +1,42 @@
 'use client'
 
-import { createContext, useContext, useEffect, useState } from 'react'
-import { kv } from '@vercel/kv'
-
-interface LocationContextType {
-  location: string | null
-}
-
-const LocationContext = createContext<LocationContextType>({
-  location: null,
-})
+import { useEffect, useState } from 'react';
 
 export const LastVisitor = () => {
-  const [location, setLocation] = useState<any>(null)
+  const [location, setLocation] = useState('Loading...');
+
   useEffect(() => {
     const fetchLocation = async () => {
       try {
-        let prevLocation = await kv.get('user_location')
-        prevLocation = prevLocation || 'somewhere on Earth'
-        setLocation(prevLocation)
+        // Fetch the previous location from your API route
+        const res = await fetch('/api/location');
+        const { location } = await res.json();
+        setLocation(location);
 
-        const response = await fetch('http://ip-api.com/json')
-        const data = await response.json()
-        if (data.status === 'success') {
-          const { city, country } = data
-          await kv.set('user_location', `${city}, ${country}`)
+        // Fetch current location from IP API and update it on the server
+        const ipRes = await fetch('http://ip-api.com/json');
+        const ipData = await ipRes.json();
+        if (ipData.status === 'success') {
+          const { city, country } = ipData;
+          await fetch('/api/location', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ city, country }),
+          });
         }
-      } catch (err) {}
-    }
+      } catch (error) {
+        console.error('Error fetching or updating location:', error);
+      }
+    };
 
-    fetchLocation()
-  }, [])
+    fetchLocation();
+  }, []);
+
   return (
-    // <LocationContext.Provider value={{ location }}>
-    <p className='text-sm opacity-50 select-none'>Last visit from {location || 'pop'}</p>
-    // </LocationContext.Provider>
-  )
-}
-
-export const useLocation = () => useContext(LocationContext)
+    <p className='text-sm opacity-50 select-none'>
+      Last visit from {location}
+    </p>
+  );
+};
