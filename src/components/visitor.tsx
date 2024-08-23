@@ -1,41 +1,40 @@
 'use client'
 
 import { createContext, useContext, useEffect, useState } from 'react'
+import { kv } from '@vercel/kv'
 
 interface LocationContextType {
   location: string | null
 }
 
 const LocationContext = createContext<LocationContextType>({
-  location: 'somewhere on Earth',
+  location: null,
 })
 
 export const LastVisitor = () => {
   const [location, setLocation] = useState<any>(null)
-  const [error, setError] = useState('')
   useEffect(() => {
     const fetchLocation = async () => {
       try {
+        let prevLocation = await kv.get('user_location')
+        prevLocation = prevLocation || 'somewhere on Earth'
+        setLocation(prevLocation)
+
         const response = await fetch('http://ip-api.com/json')
         const data = await response.json()
-
         if (data.status === 'success') {
           const { city, country } = data
-          setLocation(`${city}, ${country}`)
-        } else {
-          setLocation('somewhere on Earth')
+          await kv.set('user_location', `${city}, ${country}`)
         }
-      } catch (err) {
-        setError('Error fetching location.')
-      }
+      } catch (err) {}
     }
 
     fetchLocation()
   }, [])
   return (
-    <LocationContext.Provider value={{ location }}>
-      <p className='text-sm opacity-50 select-none'>Last visit from {location}</p>
-    </LocationContext.Provider>
+    // <LocationContext.Provider value={{ location }}>
+    <p className='text-sm opacity-50 select-none'>Last visit from {location || 'pop'}</p>
+    // </LocationContext.Provider>
   )
 }
 
