@@ -26,7 +26,7 @@ export const Theme = () => {
         setTheme(theme == 'system' || theme == '' ? 'dark' : theme === 'dark' ? 'light' : 'system')
       }>
       Theme:
-      <span className='underline-offset-2 decoration-dotted underline'>{capitalised(theme)}</span>
+      <span className='underline-offset-2 underline'>{capitalised(theme)}</span>
     </button>
   )
 }

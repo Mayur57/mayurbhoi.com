@@ -82,18 +82,28 @@ export default function PrivacyPolicy() {
         </p>
         <hr />
         <h2 className='font-medium tracking-tight pt-4'>mayurbhoi.com</h2>
-        <strong className='not-prose font-medium tracking-tight'>Anonymized Analytics</strong>
-        <p className='not-prose text-sm mt-1 mb-4'>
+        <p className='not-prose text-sm mt-1 mb-8'>
           <u>This website does not collect any personal information about you.</u>
         </p>
+        <strong className='not-prose font-medium tracking-tight'>Anonymous Analytics and Visitor Information</strong>
+        <p className='not-prose text-sm mt-1 mb-8'>
+          This website is hosted on Vercel, and Vercel Analytics is enabled to collect anonymous
+          data about visitor interactions, such as the number of visits to each page. The data
+          collected does not include any personally identifiable information. The analytics are used
+          solely to understand how visitors engage with the website and to improve user experience.
+          No information that can be used to identify individual visitors is tracked, stored, or
+          shared with third parties.
+        </p>
+        <strong className='not-prose font-medium tracking-tight'>Location Record Disclaimer</strong>
         <p className='not-prose text-sm mt-1 mb-4'>
-          The website is hosted on Vercel. Vercel Analytics (
-          <a className='not-prose underline' href='https://vercel.com/docs/analytics'>
-            read more
-          </a>
-          ) is enabled on this website which is used to collect anonymous information about the
-          visitors to the website like number of visits on each page. No information that can be
-          used to identify any visiter is tracked or stored.
+          This website utilizes an IP geolocation feature that records and displays the general
+          location of the previous visitor to the current visitor. Please note that no personal
+          information is collected or stored. The location data displayed is derived solely from the
+          IP address of the visitor, which provides non-specific location details such as city and
+          country. This is publically available information. The website does not collect or retain
+          any additional identifiable information, nor does it store IP addresses beyond their
+          location data. All location information is stored temporarily for the purpose of enhancing
+          user experience and is not shared with other third parties either.
         </p>
       </div>
     </MainLayout>

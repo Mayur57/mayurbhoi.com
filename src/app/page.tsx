@@ -5,6 +5,7 @@ import MainLayout from 'src/components/main-layout'
 import { Photo } from 'src/components/photo'
 import { LocalTime } from 'src/components/time'
 import { Venn } from 'src/components/venn'
+import { LastVisitor } from 'src/components/visitor'
 import { getPosts } from 'src/processor/posts'
 import { stagger } from 'src/utils/functions'
 
@@ -162,6 +163,9 @@ export default function Home() {
                 me@mayurbhoi.com
               </a>
               <LocalTime />
+            </div>
+            <div className='thin'>
+              <LastVisitor />
             </div>
           </div>
         </div>

@@ -246,7 +246,7 @@ table {
 
 .prose p {
   word-spacing: -0.04em !important;
-  font-variation-settings: 'wght' 450 !important;
+  font-variation-settings: 'wght' 400;
   font-variant: common-ligatures contextual !important;
   line-height: 1.8;
 }
@@ -267,4 +267,8 @@ blockquote > p {
 
 .nums {
   font-variant-numeric: tabular-nums;
+}
+
+.thin {
+  font-weight: 300 !important;
 }
