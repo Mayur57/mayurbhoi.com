@@ -8,12 +8,12 @@ export const LastVisitor = () => {
   useEffect(() => {
     const fetchLocation = async () => {
       try {
-        // Fetch the previous location from your API route
+        // Fetch the previous location
         const res = await fetch('/api/location');
         const { location } = await res.json();
         setLocation(location);
 
-        // Fetch current location from IP API and update it on the server
+        // Fetch current location and store in KV
         const ipRes = await fetch('http://ip-api.com/json');
         const ipData = await ipRes.json();
         if (ipData.status === 'success') {
