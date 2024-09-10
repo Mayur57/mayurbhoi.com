@@ -42,3 +42,6 @@ next-env.d.ts
 yarn.lock
 .yarn
 .pnp.*
+
+# Personal files that remain local
+._*
