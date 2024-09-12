@@ -3,6 +3,8 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 
+export const revalidate = 0;
+
 interface Song {
   title: string
   artist: string
