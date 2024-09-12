@@ -1,4 +1,3 @@
-//@ts-ignore
 import { NextResponse } from 'next/server';
 
 const client_id = process.env['SPOTIFY_CLIENT_ID'];
@@ -32,7 +31,7 @@ function convertDateFormat(inputDate: string) {
   const month = months[date.getUTCMonth()]
   const day = date.getUTCDate()
 
-  let hours = date.getUTCHours()
+  const hours = date.getUTCHours()
   const minutes = date.getUTCMinutes().toString().padStart(2, '0')
 
   return `${month} ${day}, ${hours}:${minutes} IST`
@@ -45,7 +44,7 @@ const getAccessToken = async () => {
       'Content-Type': 'application/x-www-form-urlencoded',
       Authorization: `Basic ${Buffer.from(`${client_id}:${client_secret}`).toString('base64')}`,
     },
-    //@ts-ignore
+    //@ts-expect-error idk why typescipt is mad
     body: new URLSearchParams({
       grant_type: 'refresh_token',
       refresh_token,
