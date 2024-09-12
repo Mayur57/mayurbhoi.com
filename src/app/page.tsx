@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import me from 'public/me.webp'
 import MainLayout from 'src/components/main-layout'
+import SpotifyWidget from 'src/components/now-playing'
 import { Photo } from 'src/components/photo'
 import { LocalTime } from 'src/components/time'
 import { Venn } from 'src/components/venn'
@@ -135,8 +136,10 @@ export default function Home() {
               have only started to paint.
             </p>
             {/* <p className='underline decoration-from-font underline-offset-2'>I am looking for new opportunities!</p> */}
-          </div>
 
+            <SpotifyWidget />
+          </div>
+          
           <div className={`appear ${stagger(7)}`}>
             <strong>Connect</strong>
             <p>

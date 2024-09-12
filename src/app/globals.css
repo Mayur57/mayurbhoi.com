@@ -187,11 +187,6 @@ html {
   @apply font-medium;
 }
 
-.prose img {
-  /* Don't apply styles to next/image */
-  @apply m-0 rounded-xl;
-}
-
 .prose h1 {
   /* mb-0 prose-h6:my-0 pb-[7rem] prose-h1:font-medium prose-h1:tracking-tight prose-h1:text-3xl sm:prose-h1:text-4xl */
   @apply m-0 font-medium tracking-tight text-[2.125rem] sm:text-[2.5rem] !important;
@@ -245,7 +240,7 @@ table {
 }
 
 .prose p {
-  word-spacing: -0.04em !important;
+  word-spacing: -0.05em !important;
   font-variation-settings: 'wght' 400;
   font-variant: common-ligatures contextual !important;
   line-height: 1.8;
@@ -271,4 +266,8 @@ blockquote > p {
 
 .thin {
   font-weight: 300 !important;
+}
+
+.player p, h3 {
+  @apply leading-[18px] tracking-normal
 }
