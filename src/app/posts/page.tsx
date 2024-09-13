@@ -5,7 +5,7 @@ import Title from 'src/components/title'
 import { getPosts } from 'src/processor/posts'
 import { stagger } from 'src/utils/functions'
 
-import PostTile from './PostTile'
+import PostTile from './post'
 
 export const metadata: Metadata = {
   title: 'Posts',

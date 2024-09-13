@@ -36,11 +36,11 @@ export default function Home() {
     <MainLayout>
       <div className='sm:prose dark:prose-invert prose prose-sm'>
         <div>
-          <div className={`appear ${stagger(1)} w-full flex justify-start items-center pb-5`}>
+          <div className={`appear ${stagger(1)} w-full flex justify-start items-center pb-4`}>
             <Photo src={me} />
           </div>
 
-          <div className={`appear ${stagger(2)} not-prose pt-3`}>
+          <div className={`appear ${stagger(2)} not-prose`}>
             <strong className='tracking-tight flex flex-row items-center'>
               Mayur Bhoi
               <span
