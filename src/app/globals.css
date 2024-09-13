@@ -246,6 +246,14 @@ table {
   line-height: 1.8;
 }
 
+.prose img {
+  @apply m-0 !important;
+}
+
+.article-img {
+  @apply rounded-xl !important;
+}
+
 .suggestion {
   line-height: 1.375 !important;
 }
