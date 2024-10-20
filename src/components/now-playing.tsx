@@ -43,9 +43,9 @@ function SpotifyWidgetLoading() {
 
 function SpotifyWidgetError() {
   return (
-    <div className='player not-prose flex flex-col bg-red-100 dark:bg-red-900 border border-red-500 dark:border-red-700 p-1 rounded-2xl my-10'>
+    <div className='player not-prose flex flex-col bg-[#ff00000f] dark:bg-[#77222233] border border-[#ff000028] dark:border-[#ff000021] p-1 rounded-2xl my-10'>
       <div className='flex flex-row gap-4 p-2 bg-[#F7FCFE] dark:bg-[#18181A] rounded-xl shadow-sm'>
-        <div className='w-14 h-14 rounded-md bg-red-400 dark:bg-red-600' />
+        <div className='w-14 h-14 rounded-md bg-[#e4c1c1] dark:bg-[#342121]' />
         <div className='flex flex-col justify-center'>
           <h3 className='text-sm font-medium text-red-700 dark:text-red-300'>Error</h3>
           <p className='text-xs opacity-70 text-red-500'>Failed to load Spotify data</p>
@@ -53,8 +53,8 @@ function SpotifyWidgetError() {
       </div>
       <div>
         <span className='flex items-center gap-2 pt-[6px] pb-[2px] pl-1.5 text-xs leading-normal text-gray-500'>
-          <div className='h-2 w-2 bg-red-500 dark:bg-red-400 rounded-full' />
-          Could not retrieve last played time
+          <div className='h-2 w-2 bg-red-400 dark:bg-red-500 rounded-full' />
+          Could not fetch data
         </span>
       </div>
     </div>
