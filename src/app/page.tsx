@@ -1,11 +1,13 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import me from 'public/me.webp'
+import ActivityGrid from 'src/components/activity'
 import MainLayout from 'src/components/main-layout'
 import { Photo } from 'src/components/photo'
 import { LocalTime } from 'src/components/time'
 import { Venn } from 'src/components/venn'
 import { getPosts } from 'src/processor/posts'
+import { getActivities } from 'src/processor/strava'
 import { stagger } from 'src/utils/functions'
 
 export const metadata: Metadata = {}
@@ -29,7 +31,8 @@ const featuredPosts = getPosts()
   })
   .slice(0, 2)
 
-export default function Home() {
+export default async function Home() {
+  const activities = await getActivities()
   return (
     <MainLayout>
       <div className='sm:prose dark:prose-invert prose prose-sm'>
@@ -134,6 +137,10 @@ export default function Home() {
               have only started to paint.
             </p>
             {/* <p className='underline decoration-from-font underline-offset-2'>I am looking for new opportunities!</p> */}
+          </div>
+
+          <div className='py-6'>
+          <ActivityGrid data={activities} />
           </div>
 
           <div className={`appear ${stagger(7)}`}>
