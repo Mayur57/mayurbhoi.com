@@ -6,7 +6,7 @@ const Footer = () => (
   <footer className='flex flex-col sm:flex-row gap-2 sm:gap-0 items-center justify-between pt-8 pb-4 text-xs opacity-40 font-medium'>
     <p className=''>
       <abbr
-        title='free for non-commercial use only'
+        title='free for non-commercial use only. applicable internationally, perpetually.'
         className='underline decoration-dotted underline-offset-2 cursor-help'>
         CC BY-NC 4.0
       </abbr>
