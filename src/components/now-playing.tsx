@@ -25,7 +25,7 @@ function SpotifyWidgetLoading() {
   return (
     <div className='player not-prose flex flex-col bg-[#EAEEEA] dark:bg-[#0E0E0E] border dark:border-[#131313] p-1 rounded-2xl my-10'>
       <a className='flex flex-row gap-4 p-2 bg-[#F7FCFE] dark:bg-[#18181A] rounded-xl shadow-sm'>
-        <div className='w-14 h-14 rounded-md'>
+        <div className='w-16 h-14 rounded-md'>
           <Shimmer />
         </div>
         <div className='flex flex-col justify-center w-full'>
@@ -63,13 +63,13 @@ function SpotifyWidgetError() {
 
 function SpotifyWidgetLoaded({ data, error }: { data: Song, error?: boolean }) {
   return (
-    <div className={`player not-prose flex flex-col p-1 rounded-2xl my-10 ${error ?
+    <div className={`player not-prose flex flex-col p-1 rounded-[18px] my-10 ${error ?
       'bg-red-100 dark:bg-red-900 border border-red-500 dark:border-red-700' :
       'bg-[#EAEEEA] dark:bg-[#0E0E0E] border dark:border-[#131313]'}`
     }>
       <a
         href={data.url}
-        className='flex flex-row gap-4 p-2 bg-[#F7FCFE] dark:bg-[#18181A] rounded-xl shadow-sm'>
+        className='flex flex-row gap-4 p-2 mt-1 mx-1 bg-[#F7FCFE] dark:bg-[#18181A] rounded-xl shadow-sm'>
         <Image
           src={data.cover}
           height={56}
