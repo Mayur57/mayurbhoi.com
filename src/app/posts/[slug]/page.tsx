@@ -18,7 +18,7 @@ export default function ExpandedPost({ params }: any) {
   return (
     <MainLayout>
       <div className='prose prose-sm sm:prose dark:prose-invert pt-4'>
-        <h1>{post?.metadata.title}</h1>
+        <h1 className='sm:pt-8'>{post?.metadata.title}</h1>
         <p className='not-prose opacity-70 text-sm py-2'>{post?.metadata.description}</p>
         <div className='not-prose flex justify-between opacity-70 text-xs font-mono font-medium pb-3'>
           {`${formatDate(post?.metadata.uploaded)} • ${

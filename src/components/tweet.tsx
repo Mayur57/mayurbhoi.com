@@ -30,7 +30,7 @@ export async function TweetComponent({ id, caption }: { id: string; caption: str
       <div className={`flex flex-col items-center`}>
         <Suspense fallback={<TweetSkeleton />}>
           <ReactTweet id={id} />
-          <p className='not-prose opacity-50 italic text-xs text-center sm:px-16'>{caption}</p>
+          <p className='not-prose opacity-70 text-xs text-center sm:px-16'>{caption}</p>
         </Suspense>
       </div>
     </div>
