@@ -95,7 +95,7 @@ export default function Home() {
                     </p>
                   </div>
                 ))}
-                <a href='https://github.com/mayur57'>All projects -&gt;</a>
+                <a href='https://github.com/mayur57' className='opacity-60 text-sm font-light tracking-tight'>All projects -&gt;</a>
               </div>
             </div>
             <div className='w-[260px] sm:[304px] flex-shrink-0 mr-8 sm:m-0'>
@@ -113,7 +113,7 @@ export default function Home() {
                     </p>
                   </div>
                 ))}
-                <Link href='/posts'>All posts -&gt;</Link>
+                <Link href='/posts' className='opacity-60 text-sm font-medium tracking-tight'>All posts -&gt;</Link>
               </div>
             </div>
           </div>
