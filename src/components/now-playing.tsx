@@ -25,7 +25,8 @@ function SpotifyWidgetLoading() {
   return (
     <div className='player not-prose flex flex-col bg-[#EAEEEA] dark:bg-[#0E0E0E] border dark:border-[#131313] p-1 rounded-2xl my-10'>
       <a className='flex flex-row gap-4 p-2 bg-[#F7FCFE] dark:bg-[#18181A] rounded-xl shadow-sm'>
-        <div className='w-16 h-14 rounded-md'>
+        {/** TODO: what the fuck is wrong with this width **/}
+        <div className='w-[74px] h-16 rounded-md'>
           <Shimmer />
         </div>
         <div className='flex flex-col justify-center w-full'>
@@ -34,7 +35,7 @@ function SpotifyWidgetLoading() {
           <div className="h-3 w-16"><Shimmer /></div>
         </div>
       </a>
-      <div className="pt-[6px] pb-[2px] pl-1.5">
+      <div className="pt-[12px] pb-[6px] pl-1.5 items-center">
         <div className="h-2 w-32"><Shimmer /></div>
       </div>
     </div>
