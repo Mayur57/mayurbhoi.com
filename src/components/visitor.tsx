@@ -12,7 +12,7 @@ const LocationContext = createContext<LocationContextType>({
 })
 
 export const LastVisitor = () => {
-  const [location, setLocation] = useState('Loading...')
+  const [location, setLocation] = useState('somewhere on Earth')
 
   useEffect(() => {
     const fetchLocation = async () => {

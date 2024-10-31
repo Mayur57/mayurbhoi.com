@@ -69,13 +69,13 @@ function SpotifyWidgetLoaded({ data, error }: { data: Song, error?: boolean }) {
     }>
       <a
         href={data.url}
-        className='flex flex-row gap-4 p-2 mt-1 mx-1 bg-[#F7FCFE] dark:bg-[#18181A] rounded-xl shadow-sm'>
+        className='flex flex-row gap-4 p-2 bg-[#F7FCFE] dark:bg-[#18181A] rounded-[14px] shadow-sm'>
         <Image
           src={data.cover}
-          height={56}
-          width={56}
+          height={64}
+          width={64}
           alt='Album Cover'
-          className='w-14 h-14 rounded-md'
+          className='w-16 h-16 rounded-md'
         />
         <div className='flex flex-col justify-center'>
           <h3 className='text-sm font-medium'>{data.title}</h3>
