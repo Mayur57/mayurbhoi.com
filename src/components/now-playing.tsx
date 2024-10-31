@@ -76,7 +76,7 @@ function SpotifyWidgetLoaded({ data, error }: { data: Song, error?: boolean }) {
           height={64}
           width={64}
           alt='Album Cover'
-          className='w-16 h-16 rounded-md'
+          className='w-16 h-16 rounded-[8px]'
         />
         <div className='flex flex-col justify-center'>
           <h3 className='text-sm font-medium'>{data.title}</h3>
