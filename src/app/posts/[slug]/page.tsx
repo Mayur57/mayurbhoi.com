@@ -23,14 +23,14 @@ export default function ExpandedPost({ params }: any) {
   return (
     <MainLayout>
       <div className='prose prose-sm sm:prose dark:prose-invert pt-4'>
-        <h1 className='sm:pt-8'>{title}</h1>
+        <h1 className='sm:pt-6'>{title}</h1>
         <p className='not-prose opacity-70 text-sm py-2'>{description}</p>
-        <div className='not-prose flex justify-between opacity-70 text-xs font-mono font-medium pb-3'>
+        <div className='not-prose flex justify-between opacity-70 text-xs font-medium pb-3'>
           {byline}
         </div>
-        {/* <div className='h-[1px] w-full bg-black opacity-10 dark:bg-white mt-2 mb-8' /> */}
+        {/* <Divider /> */}
         <MDX source={post.content} />
-        <div className='h-[1px] w-full bg-black opacity-10 dark:bg-white mt-12' />
+        <Divider />
         <Suggestions suggestions={suggestions} />
         <Socials />
       </div>
@@ -39,7 +39,7 @@ export default function ExpandedPost({ params }: any) {
 }
 
 function generateByline(uploadDate: string, updateDate: string, readingMinutes: string): string {
-  const readingText: string = ' • ' + (readingMinutes || '<1') + ' minute read'
+  const readingText: string = ' • ' + (readingMinutes || '<1') + ' min read'
   const updateText: string = updateDate === uploadDate ? '' : ` • Updated ${updateDate || 'now'}`
   return uploadDate + readingText + updateText
 }
@@ -79,4 +79,8 @@ export const generateMetadata = ({ params }: any) => {
     },
   }
   return metadata
+}
+
+function Divider() {
+  return <div className='h-[1px] w-full bg-black opacity-10 dark:bg-white mt-12' />
 }
