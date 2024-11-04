@@ -41,7 +41,9 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    ".contentlayer/generated"
-, "src/components/now-playing.tsx", "src/app/api/spotify/route.ts"  ],
+    ".contentlayer/generated",
+    "src/components/now-playing.tsx",
+    "src/app/api/spotify/route.ts"
+  ],
   "exclude": ["node_modules"]
 }

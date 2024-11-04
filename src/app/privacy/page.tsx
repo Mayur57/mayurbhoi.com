@@ -85,7 +85,9 @@ export default function PrivacyPolicy() {
         <p className='not-prose text-sm mt-1 mb-8'>
           <u>This website does not collect any personal information about you.</u>
         </p>
-        <strong className='not-prose font-medium tracking-tight'>Anonymous Analytics and Visitor Information</strong>
+        <strong className='not-prose font-medium tracking-tight'>
+          Anonymous Analytics and Visitor Information
+        </strong>
         <p className='not-prose text-sm mt-1 mb-8'>
           This website is hosted on Vercel, and Vercel Analytics is enabled to collect anonymous
           data about visitor interactions, such as the number of visits to each page. The data

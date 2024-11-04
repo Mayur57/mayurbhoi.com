@@ -276,6 +276,7 @@ blockquote > p {
   font-weight: 300 !important;
 }
 
-.player p, h3 {
-  @apply leading-[18px] tracking-normal
+.player p,
+h3 {
+  @apply leading-[18px] tracking-normal;
 }

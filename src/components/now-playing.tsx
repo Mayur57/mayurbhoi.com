@@ -16,9 +16,7 @@ interface Song {
 }
 
 function Shimmer() {
-  return (
-    <div className="animate-pulse bg-gray-300 dark:bg-gray-700 h-full w-full rounded-md" />
-  )
+  return <div className='animate-pulse bg-gray-300 dark:bg-gray-700 h-full w-full rounded-md' />
 }
 
 function SpotifyWidgetLoading() {
@@ -30,13 +28,21 @@ function SpotifyWidgetLoading() {
           <Shimmer />
         </div>
         <div className='flex flex-col justify-center w-full'>
-          <div className="h-4 w-24 mb-2"><Shimmer /></div>
-          <div className="h-3 w-20 mb-1"><Shimmer /></div>
-          <div className="h-3 w-16"><Shimmer /></div>
+          <div className='h-4 w-24 mb-2'>
+            <Shimmer />
+          </div>
+          <div className='h-3 w-20 mb-1'>
+            <Shimmer />
+          </div>
+          <div className='h-3 w-16'>
+            <Shimmer />
+          </div>
         </div>
       </a>
-      <div className="pt-[12px] pb-[6px] pl-1.5 items-center">
-        <div className="h-2 w-32"><Shimmer /></div>
+      <div className='pt-[12px] pb-[6px] pl-1.5 items-center'>
+        <div className='h-2 w-32'>
+          <Shimmer />
+        </div>
       </div>
     </div>
   )
@@ -62,12 +68,14 @@ function SpotifyWidgetError() {
   )
 }
 
-function SpotifyWidgetLoaded({ data, error }: { data: Song, error?: boolean }) {
+function SpotifyWidgetLoaded({ data, error }: { data: Song; error?: boolean }) {
   return (
-    <div className={`player not-prose flex flex-col p-1 rounded-[18px] my-10 ${error ?
-      'bg-red-100 dark:bg-red-900 border border-red-500 dark:border-red-700' :
-      'bg-[#EAEEEA] dark:bg-[#0E0E0E] border dark:border-[#131313]'}`
-    }>
+    <div
+      className={`player not-prose flex flex-col p-1 rounded-[18px] my-10 ${
+        error
+          ? 'bg-red-100 dark:bg-red-900 border border-red-500 dark:border-red-700'
+          : 'bg-[#EAEEEA] dark:bg-[#0E0E0E] border dark:border-[#131313]'
+      }`}>
       <a
         href={data.url}
         className='flex flex-row gap-4 p-2 bg-[#F7FCFE] dark:bg-[#18181A] rounded-[14px] shadow-sm'>

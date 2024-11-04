@@ -6,7 +6,7 @@ import { MDX } from 'src/components/mdx'
 import { Socials } from 'src/components/socials'
 import { Suggestions } from 'src/components/suggestions'
 import { getPosts } from 'src/processor/posts'
-import { formatDate, generateSuggestions, urlSafe } from 'src/utils/functions'
+import { formatDate, formatFullDate, generateSuggestions, urlSafe } from 'src/utils/functions'
 
 export default function ExpandedPost({ params }: any) {
   const sortedPosts = getPosts().sort((a, b) => {
@@ -14,18 +14,19 @@ export default function ExpandedPost({ params }: any) {
   })
   const post = sortedPosts.find(post => post.metadata.slug === params.slug)
   if (!post) notFound()
+  const { title, description, uploaded, updated } = post?.metadata
   const suggestions = generateSuggestions(sortedPosts, post)
+  const uploadDate = formatDate(uploaded)
+  const updateDate = formatFullDate(new Date(updated))
+  const readingMinutes = readingTime(post.content).minutes.toFixed()
+  const byline = generateByline(uploadDate, updateDate, readingMinutes)
   return (
     <MainLayout>
       <div className='prose prose-sm sm:prose dark:prose-invert pt-4'>
-        <h1 className='sm:pt-8'>{post?.metadata.title}</h1>
-        <p className='not-prose opacity-70 text-sm py-2'>{post?.metadata.description}</p>
+        <h1 className='sm:pt-8'>{title}</h1>
+        <p className='not-prose opacity-70 text-sm py-2'>{description}</p>
         <div className='not-prose flex justify-between opacity-70 text-xs font-mono font-medium pb-3'>
-          {`${formatDate(post?.metadata.uploaded)} • ${
-            readingTime(post.content).minutes.toFixed() === '0'
-              ? '<1'
-              : readingTime(post.content).minutes.toFixed()
-          } minute read`}
+          {byline}
         </div>
         {/* <div className='h-[1px] w-full bg-black opacity-10 dark:bg-white mt-2 mb-8' /> */}
         <MDX source={post.content} />
@@ -35,6 +36,12 @@ export default function ExpandedPost({ params }: any) {
       </div>
     </MainLayout>
   )
+}
+
+function generateByline(uploadDate: string, updateDate: string, readingMinutes: string): string {
+  const readingText: string = ' • ' + (readingMinutes || '<1') + ' minute read'
+  const updateText: string = updateDate === uploadDate ? '' : ` • Updated ${updateDate || 'now'}`
+  return uploadDate + readingText + updateText
 }
 
 export async function generateStaticParams() {

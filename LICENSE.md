@@ -30,6 +30,7 @@ No warranties are given. The license may not give you all of the permissions nec
 If you use any piece of code from this project, you must provide attribution in one of the following ways:
 
 1. If your project is open-source and hosted in a public repository:
+
    - Include a clear attribution notice in your project's README.md file, mentioning Mayur Bhoi as the original author and providing a link to this repository.
 
 2. If your project's repository is private or if you're using the code on a website without a public repository:

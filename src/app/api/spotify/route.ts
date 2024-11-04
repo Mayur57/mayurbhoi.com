@@ -1,14 +1,14 @@
-import { NextResponse } from 'next/server';
+import { NextResponse } from 'next/server'
 
-export const revalidate = 0;
+export const revalidate = 0
 
-const client_id = process.env['SPOTIFY_CLIENT_ID'];
-const client_secret = process.env['SPOTIFY_CLIENT_SECRET'];
-const refresh_token = process.env['SPOTIFY_REFRESH'];
+const client_id = process.env['SPOTIFY_CLIENT_ID']
+const client_secret = process.env['SPOTIFY_CLIENT_SECRET']
+const refresh_token = process.env['SPOTIFY_REFRESH']
 
-const TOKEN_ENDPOINT = 'https://accounts.spotify.com/api/token';
-const NOW_PLAYING_ENDPOINT = 'https://api.spotify.com/v1/me/player/currently-playing';
-const RECENTLY_PLAYED_ENDPOINT = 'https://api.spotify.com/v1/me/player/recently-played?limit=1';
+const TOKEN_ENDPOINT = 'https://accounts.spotify.com/api/token'
+const NOW_PLAYING_ENDPOINT = 'https://api.spotify.com/v1/me/player/currently-playing'
+const RECENTLY_PLAYED_ENDPOINT = 'https://api.spotify.com/v1/me/player/recently-played?limit=1'
 
 function convertDateFormat(inputDate: string) {
   const date = new Date(inputDate)
@@ -51,57 +51,57 @@ const getAccessToken = async () => {
       grant_type: 'refresh_token',
       refresh_token,
     }),
-  });
-  const data = await response.json();
+  })
+  const data = await response.json()
   // console.log({data})
-  return data.access_token;
-};
+  return data.access_token
+}
 
 const getNowPlaying = async () => {
-  const accessToken = await getAccessToken();
+  const accessToken = await getAccessToken()
 
   const response = await fetch(NOW_PLAYING_ENDPOINT, {
     headers: {
       Authorization: `Bearer ${accessToken}`,
     },
-  });
+  })
 
   if (response.status === 204 || response.status > 400) {
-    return null;
+    return null
   }
 
-  const data = await response.json();
+  const data = await response.json()
   // console.log("currently_playing", {data})
-  return data;
-};
+  return data
+}
 
 const getRecentlyPlayed = async () => {
-  const accessToken = await getAccessToken();
+  const accessToken = await getAccessToken()
 
   const response = await fetch(RECENTLY_PLAYED_ENDPOINT, {
     headers: {
       Authorization: `Bearer ${accessToken}`,
     },
-  });
+  })
 
   if (!response.ok) {
-    return null;
+    return null
   }
 
-  const data = await response.json();
+  const data = await response.json()
 
   if (!data.items || data.items.length === 0) {
-    return null;
+    return null
   }
   // console.log("recently_playing", {data})
-  return data.items[0];
-};
+  return data.items[0]
+}
 
 export async function GET() {
-  const nowPlaying = await getNowPlaying();
+  const nowPlaying = await getNowPlaying()
 
   if (nowPlaying && nowPlaying.is_playing) {
-    const { item } = nowPlaying;
+    const { item } = nowPlaying
     return NextResponse.json({
       title: item.name,
       artist: item.artists.map((artist: any) => artist.name).join(', '),
@@ -110,13 +110,13 @@ export async function GET() {
       isPlaying: true,
       lastPlayed: null,
       url: item.external_urls.spotify || '',
-    });
+    })
   }
 
-  const recentlyPlayed = await getRecentlyPlayed();
+  const recentlyPlayed = await getRecentlyPlayed()
 
   if (recentlyPlayed) {
-    const { track, played_at } = recentlyPlayed;
+    const { track, played_at } = recentlyPlayed
     return NextResponse.json({
       title: track.name,
       artist: track.artists.map((artist: any) => artist.name).join(', '),
@@ -125,15 +125,18 @@ export async function GET() {
       isPlaying: false,
       lastPlayed: convertDateFormat(played_at),
       url: track.external_urls.spotify || '',
-    });
+    })
   }
 
-  return NextResponse.json({
-    title: null,
-    artist: null,
-    album: null,
-    isPlaying: false,
-    cover: null,
-    lastPlayed: null,
-  }, {status: 500});
+  return NextResponse.json(
+    {
+      title: null,
+      artist: null,
+      album: null,
+      isPlaying: false,
+      cover: null,
+      lastPlayed: null,
+    },
+    { status: 500 }
+  )
 }

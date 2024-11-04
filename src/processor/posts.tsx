@@ -7,6 +7,7 @@ type Metadata = {
   slug: string
   uploaded: string
   tag: string
+  updated: string
 }
 
 function parseFrontmatter(fileContent: string) {
