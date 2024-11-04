@@ -142,7 +142,6 @@ export default function Home() {
               have only started to paint.
             </p>
             {/* <p className='underline decoration-from-font underline-offset-2'>I am looking for new opportunities!</p> */}
-
             <SpotifyWidget />
           </div>
 
@@ -150,16 +149,16 @@ export default function Home() {
             <strong>Connect</strong>
             <p>
               Find me on these sites:{' '}
+              <a title='mayur57' href='https://github.com/mayur57'>
+                GitHub
+              </a>
+              ,{' '}
               <a title='@mayurbhoii' href='https://twitter.com/mayurbhoii'>
                 Twitter
               </a>
               ,{' '}
               <a title='Mayur Bhoi on LinkedIn' href='https://linkedin.com/in/mayur-bhoi'>
                 LinkedIn
-              </a>
-              ,{' '}
-              <a title='mayur57' href='https://github.com/mayur57'>
-                GitHub
               </a>
               ,{' '}
               <a title='Mayur Bhoi on Peerlist' href='https://peerlist.io/mayurbhoi'>

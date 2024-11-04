@@ -24,8 +24,8 @@ export default function ExpandedPost({ params }: any) {
     <MainLayout>
       <div className='prose prose-sm sm:prose dark:prose-invert pt-4'>
         <h1 className='sm:pt-6'>{title}</h1>
-        <p className='not-prose opacity-70 text-sm py-2'>{description}</p>
-        <div className='not-prose flex justify-between opacity-70 text-xs font-medium pb-3'>
+        <p className='not-prose opacity-70 text-sm pt-2 pb-1'>{description}</p>
+        <div className='not-prose flex justify-between opacity-50 text-[11px] font-mono font-medium pb-3'>
           {byline}
         </div>
         {/* <Divider /> */}
@@ -39,8 +39,8 @@ export default function ExpandedPost({ params }: any) {
 }
 
 function generateByline(uploadDate: string, updateDate: string, readingMinutes: string): string {
-  const readingText: string = ' • ' + (readingMinutes || '<1') + ' min read'
-  const updateText: string = updateDate === uploadDate ? '' : ` • Updated ${updateDate || 'now'}`
+  const readingText: string = ' • ' + (readingMinutes === '0' ? '<1' : readingMinutes) + ' min read'
+  const updateText: string = updateDate.split(" (")[0] === uploadDate ? '' : ` • Updated ${updateDate || 'now'}`
   return uploadDate + readingText + updateText
 }
 
