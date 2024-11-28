@@ -153,7 +153,7 @@ export default function Home() {
                 GitHub
               </a>
               ,{' '}
-              <a title='@mayurbhoii' href='https://twitter.com/mayurbhoii'>
+              <a title='@mayurbhoii' href='https://x.com/mayurbhoii'>
                 Twitter
               </a>
               ,{' '}
@@ -163,6 +163,10 @@ export default function Home() {
               ,{' '}
               <a title='Mayur Bhoi on Peerlist' href='https://peerlist.io/mayurbhoi'>
                 Peerlist
+              </a>
+              ,{' '}
+              <a title='Mayur Bhoi on Bluesky' href='https://bsky.app/profile/mayurbhoi.com'>
+                Bluesky
               </a>
             </p>
             <div className='mt-4'>
