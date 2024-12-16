@@ -48,20 +48,20 @@ function SpotifyWidgetLoading() {
   )
 }
 
-function SpotifyWidgetError() {
+function SpotifyWidgetError({message="Could not fetch data"}) {
   return (
     <div className='player not-prose flex flex-col bg-[#ff00000f] dark:bg-[#77222233] border border-[#ff000028] dark:border-[#ff000021] p-1 rounded-2xl my-10'>
       <div className='flex flex-row gap-4 p-2 bg-[#F7FCFE] dark:bg-[#18181A] rounded-xl shadow-sm'>
         <div className='w-14 h-14 rounded-md bg-[#e4c1c1] dark:bg-[#342121]' />
         <div className='flex flex-col justify-center'>
           <h3 className='text-sm font-medium text-red-700 dark:text-red-300'>Error</h3>
-          <p className='text-xs opacity-70 text-red-500'>Failed to load Spotify data</p>
+          <p className='text-xs opacity-70 text-red-500'>Failed to load data</p>
         </div>
       </div>
       <div>
         <span className='flex items-center gap-2 pt-[6px] pb-[2px] pl-1.5 text-xs leading-normal text-gray-500'>
           <div className='h-2 w-2 bg-red-400 dark:bg-red-500 rounded-full' />
-          Could not fetch data
+          {message}
         </span>
       </div>
     </div>
@@ -119,7 +119,7 @@ function SpotifyWidgetLoaded({ data, error }: { data: Song; error?: boolean }) {
 export default function SpotifyWidget() {
   const [data, setData] = useState<Song | null>(null)
   const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(false)
+  const [error, setError] = useState({status: false, message: null})
 
   useEffect(() => {
     const fetchSpotifyData = async () => {
@@ -130,10 +130,10 @@ export default function SpotifyWidget() {
         }
         const result: Song = await res.json()
         setData(result)
-        setError(false)
-      } catch (err) {
+        setError({status: false, message: null})
+      } catch (err: any) {
         console.error(err)
-        setError(true)
+        setError({status: true, message: err.message})
       } finally {
         setLoading(false)
       }
@@ -143,7 +143,8 @@ export default function SpotifyWidget() {
   }, [])
 
   if (loading) return <SpotifyWidgetLoading />
-  if (error || !data) return <SpotifyWidgetError />
+  if (error) return <SpotifyWidgetError message='Spotify service unavailable' />
+  if (!data) return <SpotifyWidgetError />
 
   return <SpotifyWidgetLoaded data={data} error={error} />
 }
