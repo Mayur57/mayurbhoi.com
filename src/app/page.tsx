@@ -73,7 +73,7 @@ export default function Home() {
           <p className={`appear ${stagger(4)} pt-4`}>
             Based in{' '}
             <a href='https://www.google.com/maps/place/Bengaluru,+Karnataka'>Bengaluru, India</a>, I
-            have been working as Software Engineer at <a href='https://ncrvoyix.com'>NCR</a>.
+            have been working as Software Engineer at <a href='https://candescent.com'>Candescent</a>.
           </p>
 
           <div
