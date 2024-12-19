@@ -52,9 +52,9 @@ const getAccessToken = async () => {
       refresh_token,
     }),
   })
-  console.log("get_token", {response})
+  // console.log("get_token", {response})
   const data = await response.json()
-  console.log({data, response})
+  // console.log({data, response})
   return data.access_token
 }
 
@@ -63,7 +63,7 @@ const getNowPlaying = async () => {
   try{
     accessToken = await getAccessToken()
   } catch (err) {
-    console.error("Error getting access token. Spotify service may not be available.")
+    // console.error("Error getting access token. Spotify service may not be available.")
     throw new Error("Cannot get authentication token.")
   }
   const response = await fetch(NOW_PLAYING_ENDPOINT, {
@@ -72,14 +72,14 @@ const getNowPlaying = async () => {
     },
   })
 
-  console.log("currently_playing", {response})
+  // console.log("currently_playing", {response})
 
   if (response.status === 204 || response.status > 400) {
     return null
   }
 
   const data = await response.json()
-  console.log("currently_playing", {data})
+  // console.log("currently_playing", {data})
   return data
 }
 
@@ -95,14 +95,14 @@ const getRecentlyPlayed = async () => {
   if (!response.ok) {
     return null
   }
-  console.log("recently_playing", {response})
+  // console.log("recently_playing", {response})
 
   const data = await response.json()
 
   if (!data.items || data.items.length === 0) {
     return null
   }
-  console.log("recently_playing", {data})
+  // console.log("recently_playing", {data})
   return data.items[0]
 }
 
@@ -111,7 +111,7 @@ export async function GET() {
   try {
     nowPlaying = await getNowPlaying()
   } catch (err : any) {
-    console.log("Internal service error", err)
+    // console.log("Internal service error", err)
     return NextResponse.json(
       {
         error: "No healthy upstream. Spotify services are unavailable."

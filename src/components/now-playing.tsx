@@ -142,9 +142,10 @@ export default function SpotifyWidget() {
     fetchSpotifyData()
   }, [])
 
+
   if (loading) return <SpotifyWidgetLoading />
-  if (error) return <SpotifyWidgetError message='Spotify service unavailable' />
+  if (error.status) return <SpotifyWidgetError message={error.message ?? ""} />
   if (!data) return <SpotifyWidgetError />
 
-  return <SpotifyWidgetLoaded data={data} error={error} />
+  return <SpotifyWidgetLoaded data={data ?? { title: '', artist: '', cover: '', album: '', isPlaying: false, url: '' }} error={error.status} />
 }
