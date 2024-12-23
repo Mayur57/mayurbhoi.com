@@ -1,0 +1,199 @@
+---
+title: Advent of Code '24
+description: Some mind-bending problems from AOC'24
+slug: advent-2024
+uploaded: 2024-12-23
+updated: 2024-12-23
+tag: tech
+---
+
+## Day 23: LAN Party
+
+Today the puzzle was about graphs. The puzzle presents a network of computers, modeled as a graph, where each line specifies a connection between two nodes. The task is twofold as usual:
+
+1. Identify all triangles in the graph—sets of three nodes where each pair is directly connected—and count those containing at least one node whose name starts with the letter 't.'
+2. Find the largest set of fully interconnected nodes (the largest clique) and derive a password by concatenating their names in alphabetical order.
+
+This challenge delves deeply into graph theory, showcasing the utility of the Bron-Kerbosch algorithm for finding cliques in a graph. Below, we explore the workings of this algorithm and its application to solving the puzzle.
+
+### Reading the Graph
+
+Graphs are a fundamental structure in computer science and mathematics, defined by a set of nodes (or vertices) and edges (connections between nodes). In this problem:
+
+- Each computer corresponds to a node.
+- Each connection between two computers corresponds to an edge.
+
+The input is provided as a list of edges, such as kh-tc and qp-kh. To process this efficiently, we construct an adjacency list, a data structure that maps each node to a set of its neighbors. This representation enables quick lookup of adjacent nodes and is computationally efficient for sparse graphs.
+Now, adjacency lists of the form of key value pairs where the keys are the nodes and the values are the lists that contain every other node that connects with the key node.
+
+To explain with an example, for a input like:
+
+```text
+kh-tc
+qp-kh
+de-cg
+```
+
+The adjacency list becomes:
+```json
+{
+  "kh": ["tc", "qp"],
+  "tc": ["kh"],
+  "qp": ["kh"],
+  "de": ["cg"],
+  "cg": ["de"]
+}
+```
+If you count the number of unique nodes, we see there are five of them and hence the number keys in a adjacency list is five too. `kh` appears as a neighbour for `tc` and `qp` therefore, the list for `kh` has two members.
+
+Here’s the function to parse the input into an adjacency list:
+
+```js
+function parseNetworkMap(connections) {
+  const graph = {};
+  connections.forEach(connection => {
+      const [a, b] = connection.split('-');
+      if (!graph[a]) graph[a] = new Set();
+      if (!graph[b]) graph[b] = new Set();
+      graph[a].add(b);
+      graph[b].add(a);
+  });
+  return graph;
+}
+```
+
+Adjacency lists serves as one of the most common and easy ways to work with graphs.
+
+### Part 1: Counting Triangles
+
+A triangle in a graph is a set of three nodes where each pair is connected by an edge. To identify triangles in the network, we implemented an iterative approach. This approach leverages the adjacency list to check for shared neighbors among nodes. Let’s explore how this is achieved:
+
+Iterate over all nodes: For each node, retrieve its neighbors from the adjacency list.
+
+Pairwise neighbor comparison: For each pair of neighbors, check if they are connected to each other.
+
+Record triangles: If two neighbors are connected, a triangle is formed with the current node. To avoid duplicates, we sort and store triangles as comma-separated strings in a set.
+
+Here’s the JavaScript implementation:
+
+```js
+function findTriangles(graph) {
+  const triangles = new Set()
+
+  for (const node in graph) {
+    const neighbors = Array.from(graph[node])
+
+    for (let i = 0; i < neighbors.length; i++) {
+      for (let j = i + 1; j < neighbors.length; j++) {
+        const neighbor1 = neighbors[i]
+        const neighbor2 = neighbors[j]
+
+        if (graph[neighbor1].has(neighbor2)) {
+          const triangle = [node, neighbor1, neighbor2].sort()
+          triangles.add(triangle.join(','))
+        }
+      }
+    }
+  }
+
+  return Array.from(triangles).map(triangle => triangle.split(','))
+}
+```
+
+#### Complexity Analysis
+
+Time Complexity: Let  be the number of nodes and  the number of edges. For each node, we compare its neighbors pairwise. If a node has  neighbors, this involves  comparisons, leading to a worst-case complexity of , where  is the degree of each node. This is approximately  for sparse graphs.
+
+Space Complexity: The adjacency list requires  space, and the set to store triangles requires additional space proportional to the number of triangles, .
+
+#### Filtering by Prefix
+
+Once triangles are identified, we filter those containing at least one node whose name starts with 't':
+
+```js
+function main(str) {
+  const connections = str.split('\n')
+  const graph = parseNetworkMap(connections)
+  const triangles = findTriangles(graph)
+  const result = triangles.filter(triangle => triangle.some(name => name.startsWith('t')))
+  return result.length
+}
+```
+
+This completes Part 1, counting all relevant triangles.
+
+### Part 2: Finding the Largest Clique
+
+A clique or a complete graph (as I learned it in grad school graph theory) is a subset of nodes where every pair of nodes is connected by an edge. The largest clique (or max clique) is the one with the most nodes in a graph. To identify the largest clique, we use a recursive implementation of the Bron-Kerbosch algorithm, optimized with pivoting.
+
+The algorithm explores all maximal cliques by recursively adding nodes to a potential clique, pruning the search space using two sets:  [possible candidates] and  [already considered nodes].
+
+#### Bron-Kerbosch with Pivoting
+
+The Bron-Kerbosch algorithm is a recursive method for finding all maximal cliques in an undirected graph. A clique is a subset of nodes such that every pair of nodes within the subset is connected by an edge. The algorithm identifies maximal cliques, which are cliques that cannot be extended by adding any other adjacent nodes. The maximum clique is the largest possible clique in terms of the number of nodes.
+
+The Bron-Kerbosch algorithm operates by exploring all potential maximal cliques. The recursion proceeds by adding nodes to a potential clique and pruning the search space using two sets:
+
+- R (the current clique being formed)
+- P (the set of potential candidates that can extend the current clique)
+- X (the set of nodes already processed and excluded)
+
+The pivoting optimization reduces the number of recursive calls by choosing a pivot node from the union of P and X. This pivot node helps avoid redundant work by excluding certain nodes from further exploration.
+
+Pseudo code for the above algorithm is as follows:
+
+```pseudo
+Function BronKerbosch(R, P, X):
+    if P is empty and X is empty:
+        output R
+    else:
+        u = a pivot node in P ∪ X
+        for each v in P \ N(u):
+            BronKerbosch(R ∪ {v}, P ∩ N(v), X ∩ N(v))
+            P = P \ {v}
+            X = X ∪ {v}
+```
+
+### Implementation for Maximum Clique
+
+Here’s the implementation for finding the largest clique:
+
+```js
+function findCliques(graph, minSize = 1, maxSize = Infinity) {
+  const nodes = Object.keys(graph)
+  const cliques = []
+
+  function bronKerbosch(R, P, X) {
+    if (P.length === 0 && X.length === 0) {
+      if (R.length >= minSize && R.length <= maxSize) {
+        cliques.push([...R])
+      }
+      return
+    }
+
+    const pivot = P.concat(X)[0]
+    const pivotNeighbors = graph[pivot]
+
+    for (const node of P.filter(n => !pivotNeighbors.has(n))) {
+      bronKerbosch(
+        [...R, node],
+        P.filter(n => graph[node].has(n)),
+        X.filter(n => graph[node].has(n))
+      )
+      P = P.filter(n => n !== node)
+      X.push(node)
+    }
+  }
+
+  bronKerbosch([], nodes, [])
+  return cliques
+}
+```
+Once we get the cliques, we can determine the largest clique. Sorting the largest clique lexicographically and converting it to a string using comma-seperation will give us the password which the desired answer.
+
+- **Time Complexity**: Bron-Kerbosch with pivoting is exponential in the size of the graph because it explores all maximal cliques. In the worst case, where the graph is dense, the complexity is , where  is the number of nodes.
+- **Space Complexity**: The recursive stack and temporary lists used in each recursion step require  space in the worst case for dense graphs.
+
+I did not know about the Bron-Kerbosch algorithm before this puzzle but reading about it and implementation was quite fun. Turns out it is a cornerstone of graph theory and is preferred for determining max cliques for a given network. Its recursive nature and the introduction of pivoting make it effective for practical applications, such as the LAN party puzzle.
+
+Once you know the algorithm, you will realise that Day 23 was relatively easier as compared to problems from few previous days.

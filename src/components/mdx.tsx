@@ -102,6 +102,10 @@ function Divider() {
   return <div className='h-[1px] w-full bg-black opacity-10 dark:bg-white my-8' />
 }
 
+function Strong(props: any) {
+  return <strong className='font-bold'>{props.children}</strong>
+}
+
 const components = {
   h1: createHeading(1),
   h2: createHeading(2),
@@ -110,6 +114,7 @@ const components = {
   h5: createHeading(5),
   h6: createHeading(6),
   hr: Divider,
+  strong: Strong,
   Image: RoundedImage,
   a: CustomLink,
   Callout,

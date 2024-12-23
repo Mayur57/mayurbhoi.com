@@ -126,10 +126,6 @@ html {
     --sh-keyword: #f47067;
     --sh-string: #0fa295;
   }
-
-  .prose p {
-    font-variation-settings: 'wght' 400 !important;
-  }
 }
 
 @layer components {
@@ -195,7 +191,7 @@ html {
 .prose h2,
 h3,
 h4 {
-  @apply font-medium tracking-tighter !important;
+  @apply font-semibold tracking-tighter !important;
 }
 
 .prose strong {
@@ -241,7 +237,6 @@ table {
 
 .prose p {
   word-spacing: -0.05em !important;
-  font-variation-settings: 'wght' 400;
   font-variant: common-ligatures contextual !important;
   line-height: 1.8;
 }
