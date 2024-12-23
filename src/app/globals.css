@@ -166,7 +166,7 @@ html {
 }
 
 .prose pre {
-  @apply bg-neutral-50 dark:bg-neutral-900 rounded-lg overflow-x-auto border border-neutral-200 dark:border-neutral-900;
+  @apply bg-neutral-50 dark:bg-neutral-900 rounded-b-xl overflow-x-auto;
 }
 
 .prose code {
@@ -274,4 +274,12 @@ blockquote > p {
 .player p,
 h3 {
   @apply leading-[18px] tracking-normal;
+}
+
+.katex-html {
+  @apply hidden !important;
+}
+
+.katex {
+  @apply text-xl !important;
 }

@@ -25,10 +25,10 @@ export default function ExpandedPost({ params }: any) {
       <div className='prose prose-sm sm:prose dark:prose-invert pt-4'>
         <h1 className='sm:pt-6'>{title}</h1>
         <p className='not-prose opacity-70 text-sm pt-2 pb-1'>{description}</p>
-        <div className='not-prose flex justify-between opacity-50 text-[11px] font-mono font-medium pb-3'>
+        <div className='not-prose flex justify-between opacity-50 text-[11px] font-mono font-medium'>
           {byline}
         </div>
-        {/* <Divider /> */}
+        <Divider />
         <MDX source={post.content} />
         <Divider />
         <Suggestions suggestions={suggestions} />

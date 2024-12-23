@@ -45,6 +45,7 @@ yarn.lock
 
 # Personal files that remain local
 ._*
+cache.json
 
 # Draft articles
 *.draft.mdx

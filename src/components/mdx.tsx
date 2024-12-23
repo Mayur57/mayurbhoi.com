@@ -3,6 +3,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import rehypeHighlight from 'rehype-highlight'
+import remarkMath from 'remark-math'
+import rehypeKatex from 'rehype-katex'
 
 import { TweetComponent } from './tweet'
 
@@ -106,6 +108,23 @@ function Strong(props: any) {
   return <strong className='font-bold'>{props.children}</strong>
 }
 
+function Code({ children }: any) {
+  const language = children.props.className.replace('language-', '')
+  const displayLanguage = language.split(' ')[1] === '' ? 'text' : language.split(' ')[1]
+  return (
+    <div className=''>
+      {
+        <div className='text-xs px-3 py-1.5 rounded-t-xl bg-[] dark:bg-[#37415144]  text-gray-400 border border-b-0 border-neutral-200 dark:border-gray-800'>
+          {displayLanguage}
+        </div>
+      }
+      <pre className='not-prose py-2 px-3 border border-neutral-200 dark:border-gray-800'>
+        {children}
+      </pre>
+    </div>
+  )
+}
+
 const components = {
   h1: createHeading(1),
   h2: createHeading(2),
@@ -117,6 +136,7 @@ const components = {
   strong: Strong,
   Image: RoundedImage,
   a: CustomLink,
+  pre: Code,
   Callout,
   Tweet: TweetComponent,
   Table,
@@ -124,8 +144,8 @@ const components = {
 
 const options = {
   mdxOptions: {
-    remarkPlugins: [],
-    rehypePlugins: [rehypeHighlight],
+    remarkPlugins: [remarkMath],
+    rehypePlugins: [rehypeHighlight, rehypeKatex],
   },
 }
 
