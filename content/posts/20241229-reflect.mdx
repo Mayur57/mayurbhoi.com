@@ -2,7 +2,74 @@
 title: Introducing Reflect
 description: Take a look back at your year
 slug: reflect
-uploaded: 2024-12-29
+uploaded: 2024-12-27
 tag: tech
 ---
 
+_**"An unexamined life is not worth living"**_ - _Socrates_
+
+As much of my activity in the past few days must’ve indicated, I was quite busy every day of this December doing [Advent of Code](https://adventofcode.com/). It was a good habit to wake up and code every morning, except it ended on Christmas Day. I was upset since I wanted to keep this momentum going, and I am anyway on vacation with an unsatiated itch to code. I wanted something to occupy my time and challenge me.
+
+<Image
+  src='/images/posts/reflect/ss.jpeg'
+  alt='You are welcome to Reflect.'
+  width={1280}
+  height={727}
+  quality={100}
+/>
+
+As this thought was at the back of my head, I sat down for one of my end-of-the-year rituals—answering a fixed set of questions that make me think and reflect on the year that has passed. By comparing what I answered last year to my answers now, I am able to gauge how well I have done to grow myself in every aspect. I have been doing it for the past two years, and it has been working out extremely well.
+
+## An Idea
+
+Now, this idea of reflecting on the past is not a novel one. Specifically, I found out about answering same set of question every year from [this](https://stephango.com/40-questions) post by **Steph Ango** ([@kepano](https://x.com/kepano) on Twitter). Back then, I answered the question set by them. However, I felt that a few questions were really a misfit for the kind of life I am living. For example, no one in my close circle is getting married or giving birth to a baby, so question related to such events do not apply to me. At that point, I modified the questions for my own self.
+
+While I was answering, I got a thought: was there an easy way to track my progress over the years deduced from my answers? I tried ChatGPT, but the results were underwhelming and kind of _*eh*_. Copy-pasting answers to an LLM works, but I thought, what if there was a place to do al this in one place. So, why not try to make a web app out of this? I wanted to make something, had a problem at hand, and it was a good idea for a quick execution.
+
+## Building and Execution
+
+So I began building it. Two days, all of my free time went into formalizing the features and writing the web app. The site had to be a simple inlet for answers to the questions it asks you. Something that doesn’t distract you while you are busy with your thoughts. So I decided for it to be just that, a simple form.
+
+The site will greet you with a simple welcome screen and ask if you want to start the process of answering the questions. After you click the start button, questions start appearing one by one so that it doesn’t overwhelm the user and lets them think about each answer. Once all questions are answered, you get an option to save answers as a PDF and an option to generate an AI-based overview of the answers.
+
+## Features
+
+As I was making it, I kept getting more ideas for features to add. But I settled on it being a simple form and optionally adding some AI flair to make it easy to grasp how one had answered. I reckoned this might also help with people finding the whole process a bit like a game they were playing and the generated content as a bit of a payoff for the process.
+
+The AI content contains three things: a determination of your personality type, a summary of how your year has been, and some predictive stuff about how your future will be.
+
+My intended payoff is, of course, positive life change. To make users go through an internal, personal process of answering questions. This makes you think about your thinking. And thinking about your thinking changes your thinking, which ultimately leads to positive life change.
+
+## Tech Stack
+
+The web app is built with a focus on simplicity and seamless user experience. The frontend is written using **[React](https://react.dev)** and uses **[Next.js](https://nextjs.org)**, with animations handled using **[Framer Motion](https://www.framer.com/motion/)** to create smooth transitions between questions. For styling, it relies on **[Tailwind CSS](https://tailwindcss.com)** since I find it the best for prototyping and hyper-quick project releases.
+
+When I was thinking about the design, I wanted it to be focused on simplicity. There are enough things online to overload your senses; I didn't want to make one more. Hence, it follows a minimal design that is an extension of brutalism with sharp corners and a monotone color scheme.
+
+<Image
+  src='/images/posts/reflect/ui.jpeg'
+  alt='An attempt at clean minimal design'
+  width={1280}
+  height={728}
+  quality={100}
+/>
+
+There is no backend. Everything from PDF generation to AI generation to saving progress is done on the client side. The progress is saved in-browser, and AI-based insights are generated using an integration with the **[Groq API](https://www.groq.com)**. Groq provides a very easy experience with respect to interfacing with various large language models. I chose **[Llama 2 70B](https://ai.meta.com/llama/)** because it is a good balance of being fast and useful _(and it is open-source too!)_. The language model analyzes user responses to provide summaries and personality insights.
+
+The app is hosted on **[Vercel](https://vercel.com)** for fast and reliable performance, and the entire system is optimized for scalability to handle a growing user base. Every decision in the tech stack was guided by the need for responsiveness, simplicity, and ease of use.
+
+All of the code for this site will be open sourced at some point after my new year break. Shipping software quickly comes at a cost. This cost is the quality of the code. The quality of code at the time of writing this post is not up to the mark where it might be useful for anybody. Hence, in some time, the code will be cleaned up and released for public.
+
+<Callout emoji='🚨' title='Note'>
+  There is a good chance the site might run into API rate limits as it uses a free plan from Groq.
+</Callout>
+
+## Closing Thoughts
+
+Try it out here: [Reflect](https://reflectly.vercel.app?ref=mayurbhoi.com)
+
+I’ve always believed that small rituals and habits can have profound impacts on personal growth. Building this web app felt like an extension of that philosophy—not just for myself but for anyone who wants to take a step back and reflect. If this can help even a few people grow and bring about positive change in their lives, I’ll consider it a success.
+
+Will you use the app? What features would make you want to share it with others? I’d love to hear your thoughts—and who knows, maybe your feedback will inspire the next version. Tweet at me [@mayurbhoii](https://x.com/mayurbhoii) if you use the app or have any feedback to share.
+
+Whether you use the app or not, I hope you sit down to answer these questions for yourself as it has proven helpful as an year-in-review exercise. Many questions persist in our lives and I hope you find some answers by answering.

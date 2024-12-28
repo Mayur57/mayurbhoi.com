@@ -80,5 +80,5 @@ export const generateMetadata = ({ params }: any) => {
 }
 
 function Divider() {
-  return <div className='h-[1px] w-full bg-black opacity-10 dark:bg-white mt-12' />
+  return <div className='h-[1px] w-full bg-black opacity-10 dark:bg-white mt-4' />
 }

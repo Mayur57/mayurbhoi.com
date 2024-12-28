@@ -3,8 +3,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import rehypeHighlight from 'rehype-highlight'
-import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
+import remarkMath from 'remark-math'
 
 import { TweetComponent } from './tweet'
 
@@ -47,7 +47,7 @@ function CustomLink(props: any) {
 
 function RoundedImage(props: any) {
   return (
-    <div className='flex flex-col items-center pt-4'>
+    <div className={`flex flex-col items-center pt-4 ${props.className}`}>
       <Image
         alt={props.alt}
         className='article-img border rounded-xl dark:border-[#222]'
@@ -68,6 +68,10 @@ function Callout(props: any) {
       <div className='w-full mt-1 callout'>{props.children}</div>
     </div>
   )
+}
+
+function emphasis(props: any) {
+  return <em className='font-serif text-lg'>{props.children}</em>
 }
 
 function slugify(str: any) {
@@ -132,13 +136,14 @@ const components = {
   h4: createHeading(4),
   h5: createHeading(5),
   h6: createHeading(6),
+  em: emphasis,
   hr: Divider,
   strong: Strong,
   Image: RoundedImage,
   a: CustomLink,
   pre: Code,
-  Callout,
   Tweet: TweetComponent,
+  Callout,
   Table,
 }
 
