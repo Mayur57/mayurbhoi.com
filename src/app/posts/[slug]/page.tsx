@@ -6,7 +6,7 @@ import { MDX } from 'src/components/mdx'
 import { Socials } from 'src/components/socials'
 import { Suggestions } from 'src/components/suggestions'
 import { getPosts } from 'src/processor/posts'
-import { formatDate, formatFullDate, generateSuggestions, urlSafe } from 'src/utils/functions'
+import { formatDate, generateSuggestions, urlSafe } from 'src/utils/functions'
 
 export default function ExpandedPost({ params }: any) {
   const sortedPosts = getPosts().sort((a, b) => {
@@ -14,12 +14,11 @@ export default function ExpandedPost({ params }: any) {
   })
   const post = sortedPosts.find(post => post.metadata.slug === params.slug)
   if (!post) notFound()
-  const { title, description, uploaded, updated } = post?.metadata
+  const { title, description, uploaded } = post?.metadata
   const suggestions = generateSuggestions(sortedPosts, post)
   const uploadDate = formatDate(uploaded)
-  const updateDate = formatFullDate(new Date(updated))
   const readingMinutes = readingTime(post.content).minutes.toFixed()
-  const byline = generateByline(uploadDate, updateDate, readingMinutes)
+  const byline = generateByline(uploadDate, readingMinutes)
   return (
     <MainLayout>
       <div className='prose prose-sm sm:prose dark:prose-invert pt-4'>
@@ -38,10 +37,9 @@ export default function ExpandedPost({ params }: any) {
   )
 }
 
-function generateByline(uploadDate: string, updateDate: string, readingMinutes: string): string {
+function generateByline(uploadDate: string, readingMinutes: string): string {
   const readingText: string = ' • ' + (readingMinutes === '0' ? '<1' : readingMinutes) + ' min read'
-  const updateText: string = updateDate.split(" (")[0] === uploadDate ? '' : ` • Updated ${updateDate || 'now'}`
-  return uploadDate + readingText + updateText
+  return uploadDate + readingText
 }
 
 export async function generateStaticParams() {

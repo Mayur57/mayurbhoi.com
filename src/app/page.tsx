@@ -10,18 +10,24 @@ import { LastVisitor } from 'src/components/visitor'
 import { getPosts } from 'src/processor/posts'
 import { stagger } from 'src/utils/functions'
 
+type FeaturedProject = {
+  title: string
+  description: string
+  repo: string
+}
+
 export const metadata: Metadata = {}
 
-const featuredProjects = [
-  {
-    title: 'Reflect',
-    description: 'A safe space for people to look back at their year',
-    repo: 'https://reflectly.vercel.app?ref=mayurbhoi.com',
-  },
+const featuredProjects: Array<FeaturedProject> = [
   {
     title: 'Twitter Nuke',
     description: 'Tool to delete user tweets using Twitter Archive bypassing rate limits',
     repo: 'https://github.com/Mayur57/twitter-nuke',
+  },
+  {
+    title: 'Reflect',
+    description: 'A safe space for people to look back at their year',
+    repo: 'https://reflectly.vercel.app?ref=mayurbhoi.com',
   },
 ]
 
@@ -73,7 +79,8 @@ export default function Home() {
           <p className={`appear ${stagger(4)} pt-4`}>
             Based in{' '}
             <a href='https://www.google.com/maps/place/Bengaluru,+Karnataka'>Bengaluru, India</a>, I
-            have been working as Software Engineer at <a href='https://candescent.com'>Candescent</a>.
+            have been working as Software Engineer at{' '}
+            <a href='https://candescent.com'>Candescent</a>.
           </p>
 
           <div
@@ -86,11 +93,12 @@ export default function Home() {
                 {featuredProjects?.map((project, index) => (
                   <div key={index} className='pr-4'>
                     <a
+                      target='_blank'
                       href={project.repo}
                       className='underline decoration-from-font underline-offset-2 tracking-tight'>
                       {project.title}
                     </a>
-                    <p className='mt-1 opacity-60 not-prose leading-snug text-sm'>
+                    <p id='desc' className='mt-1 opacity-60 not-prose leading-[0.7] text-sm'>
                       {project.description}
                     </p>
                   </div>
@@ -112,7 +120,7 @@ export default function Home() {
                       className='underline decoration-from-font underline-offset-2 tracking-tight'>
                       {post.metadata.title}
                     </a>
-                    <p className='mt-1 opacity-60 not-prose leading-snug text-sm'>
+                    <p id='desc' className='mt-1 opacity-60 not-prose leading-tight text-sm'>
                       {post.metadata.description}
                     </p>
                   </div>

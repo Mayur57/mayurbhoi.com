@@ -283,3 +283,7 @@ h3 {
 .katex {
   @apply text-xl !important;
 }
+
+#desc {
+  @apply leading-[1.65] !important;
+}
