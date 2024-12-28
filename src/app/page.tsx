@@ -14,13 +14,13 @@ export const metadata: Metadata = {}
 
 const featuredProjects = [
   {
-    title: 'Countless',
-    description: 'A Chrome extension to disable Tweet View counts across the platform',
-    repo: 'https://github.com/Mayur57/countless',
+    title: 'Reflect',
+    description: 'A safe space for people to look back at their year',
+    repo: 'https://reflectly.vercel.app?ref=mayurbhoi.com',
   },
   {
     title: 'Twitter Nuke',
-    description: 'Tool to delete all user tweets using Twitter Archive to bypass rate limits',
+    description: 'Tool to delete user tweets using Twitter Archive bypassing rate limits',
     repo: 'https://github.com/Mayur57/twitter-nuke',
   },
 ]
