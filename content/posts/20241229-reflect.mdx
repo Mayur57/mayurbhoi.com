@@ -8,7 +8,9 @@ tag: tech
 
 _**"An unexamined life is not worth living"**_ - _Socrates_
 
-As much of my activity in the past few days must’ve indicated, I was quite busy every day of this December doing [Advent of Code](https://adventofcode.com/). It was a good habit to wake up and code every morning, except it ended on Christmas Day. I was upset since I wanted to keep this momentum going, and I am anyway on vacation with an unsatiated itch to code. I wanted something to occupy my time and challenge me.
+Evident from my activity over the past few days, I was quite busy every day of this December doing [Advent of Code](https://adventofcode.com/). It was a good habit to wake up and code every morning, except it ended on Christmas Day. I was upset since I wanted to keep this momentum going, and I am anyway on vacation with an unsatiated itch to code. I wanted something to occupy my time and challenge me.
+
+With this thought at the back of my mind, I sat down for one of my end-of-the-year rituals—answering a fixed set of questions that make me think and reflect on the year that has passed. By comparing what I answered last year to my answers now, I am able to gauge how well I have done to grow myself in every aspect. I have been doing it for the past two years, and it has been working out extremely well.
 
 <Image
   src='/images/posts/reflect/ss.jpeg'
@@ -18,9 +20,7 @@ As much of my activity in the past few days must’ve indicated, I was quite bus
   quality={100}
 />
 
-As this thought was at the back of my head, I sat down for one of my end-of-the-year rituals—answering a fixed set of questions that make me think and reflect on the year that has passed. By comparing what I answered last year to my answers now, I am able to gauge how well I have done to grow myself in every aspect. I have been doing it for the past two years, and it has been working out extremely well.
-
-## An Idea
+## The Idea
 
 Now, this idea of reflecting on the past is not a novel one. Specifically, I found out about answering same set of question every year from [this](https://stephango.com/40-questions) post by **Steph Ango** ([@kepano](https://x.com/kepano) on Twitter). Back then, I answered the question set by them. However, I felt that a few questions were really a misfit for the kind of life I am living. For example, no one in my close circle is getting married or giving birth to a baby, so question related to such events do not apply to me. At that point, I modified the questions for my own self.
 
@@ -48,28 +48,30 @@ When I was thinking about the design, I wanted it to be focused on simplicity. T
 
 <Image
   src='/images/posts/reflect/ui.jpeg'
-  alt='An attempt at clean minimal design'
+  alt='The design of Reflect'
   width={1280}
   height={728}
   quality={100}
 />
 
-There is no backend. Everything from PDF generation to AI generation to saving progress is done on the client side. The progress is saved in-browser, and AI-based insights are generated using an integration with the **[Groq API](https://www.groq.com)**. Groq provides a very easy experience with respect to interfacing with various large language models. I chose **[Llama 2 70B](https://ai.meta.com/llama/)** because it is a good balance of being fast and useful _(and it is open-source too!)_. The language model analyzes user responses to provide summaries and personality insights.
+There is **no** backend. Everything from PDF generation to AI overview to saving progress is done on the client side. This makes it everything you answer private. No servers can see what you answer except (only if explicitly allowed by you) the Groq servers.
 
-The app is hosted on **[Vercel](https://vercel.com)** for fast and reliable performance, and the entire system is optimized for scalability to handle a growing user base. Every decision in the tech stack was guided by the need for responsiveness, simplicity, and ease of use.
-
-All of the code for this site will be open sourced at some point after my new year break. Shipping software quickly comes at a cost. This cost is the quality of the code. The quality of code at the time of writing this post is not up to the mark where it might be useful for anybody. Hence, in some time, the code will be cleaned up and released for public.
+The progress is saved in-browser, and AI-based insights are generated using an integration with the **[Groq API](https://www.groq.com)**. Groq provides a very easy experience with respect to interfacing with various large language models. I chose **[Llama 2 70B](https://ai.meta.com/llama/)** because it is a good balance of being fast and useful _(and it is open-source too!)_. The language model analyzes user responses to provide summaries and personality insights.
 
 <Callout emoji='🚨' title='Note'>
   There is a good chance the site might run into API rate limits as it uses a free plan from Groq.
 </Callout>
 
+The app is hosted on **[Vercel](https://vercel.com)** for fast and reliable performance, and the entire system is optimized for scalability to handle a growing user base. Every decision in the tech stack was guided by the need for responsiveness, simplicity, and ease of use.
+
+I decided to work on this app on the evening of 26 December and the prime goal was to ship it as fast as possible before the new year. Shipping software fast comes at a cost; the cost of quality of the code. All of the code for this site will be open sourced at some point after my new year's break. The quality of code at the time of writing this post is not up to the mark where it might be useful for anybody. Hence, the codebase will be cleaned up and released for public in due time.
+
 ## Closing Thoughts
 
 Try it out here: [Reflect](https://reflectly.vercel.app?ref=mayurbhoi.com)
 
-I’ve always believed that small rituals and habits can have profound impacts on personal growth. Building this web app felt like an extension of that philosophy—not just for myself but for anyone who wants to take a step back and reflect. If this can help even a few people grow and bring about positive change in their lives, I’ll consider it a success.
+I’ve always believed that small rituals and habits can have profound impact on personal growth. Building this web app felt like an extension of that philosophy—not just for myself but for anyone who wants to do it.
 
-Will you use the app? What features would make you want to share it with others? I’d love to hear your thoughts—and who knows, maybe your feedback will inspire the next version. Tweet at me [@mayurbhoii](https://x.com/mayurbhoii) if you use the app or have any feedback to share.
+Will you use the app? What features would make you want to share it with others? I’d love to hear your thoughts because your feedback will inspire the versions to come. Tweet at me [@mayurbhoii](https://x.com/mayurbhoii) if you use the app or have any feedback to share.
 
 Whether you use the app or not, I hope you sit down to answer these questions for yourself as it has proven helpful as an year-in-review exercise. Many questions persist in our lives and I hope you find some answers by answering.
