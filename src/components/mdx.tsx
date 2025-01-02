@@ -9,6 +9,7 @@ import remarkMath from 'remark-math'
 import { TweetComponent } from './tweet'
 
 import 'src/app/marker.css'
+import Callout from './callout'
 
 function Table({ data }: any) {
   const headers = data.headers.map((header: any, index: any) => <th key={index}>{header}</th>)
@@ -54,18 +55,6 @@ function RoundedImage(props: any) {
         {...props}
       />
       <p className='opacity-70 text-xs text-center sm:px-16'>{props.alt}</p>
-    </div>
-  )
-}
-
-function Callout(props: any) {
-  return (
-    <div className='not-prose px-4 py-3 border border-neutral-200 dark:border-neutral-700 bg-[#F3F2F5] dark:bg-neutral-800 rounded-lg p-1 text-sm items-start text-neutral-900 dark:text-neutral-100 mb-8'>
-      <div className='leading-0 flex mt-1 mr-2 gap-2'>
-        {props.emoji}
-        <strong>{props.title}</strong>
-      </div>
-      <div className='w-full mt-1 callout'>{props.children}</div>
     </div>
   )
 }
