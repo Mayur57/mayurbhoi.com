@@ -86,8 +86,8 @@ const variants: Variants = {
     icon: BookOpen,
     colors: {
       light: {
-        bg: 'bg-neutral-200/50',
-        border: 'border-neutral-500/60',
+        bg: 'bg-neutral-200/60',
+        border: 'border-neutral-500/30',
         text: 'text-neutral-900/80',
         icon: 'text-neutral-500',
       },
