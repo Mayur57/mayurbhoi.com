@@ -116,13 +116,13 @@ function Code({ children }: any) {
   const language = children.props.className.replace('language-', '')
   const displayLanguage = language.split(' ')[1] === '' ? 'text' : language.split(' ')[1]
   return (
-    <div className=''>
+    <div>
       {
-        <div className='text-xs px-3 py-1.5 rounded-t-xl bg-[] dark:bg-[#37415144]  text-gray-400 border border-b-0 border-neutral-200 dark:border-gray-800'>
+        <div className='text-xs px-3 py-1.5 rounded-t-lg bg-[#f7f7f7] dark:bg-[#37415144]  text-gray-500 border border-b-0 border-neutral-200 dark:border-gray-800'>
           {displayLanguage}
         </div>
       }
-      <pre className='not-prose py-2 px-3 border border-neutral-200 dark:border-gray-800'>
+      <pre className='not-prose text-[12px] sm:text-base py-3 px-4 border border-neutral-200 dark:border-gray-800'>
         {children}
       </pre>
     </div>
@@ -156,10 +156,12 @@ const options = {
 
 export function MDX(props: any) {
   return (
-    <MDXRemote
-      {...props}
-      components={{ ...components, ...(props.components || {}) }}
-      options={options}
-    />
+    <div className={props.className}>
+      <MDXRemote
+        {...props}
+        components={{ ...components, ...(props.components || {}) }}
+        options={options}
+      />
+    </div>
   )
 }
