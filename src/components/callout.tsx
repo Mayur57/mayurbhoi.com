@@ -109,7 +109,7 @@ function Callout({ type = 'info', title, children }: CalloutProps) {
   return (
     <div
       className={`
-      not-prose px-4 py-3 rounded-lg mb-8
+      not-prose px-4 py-3 rounded-2xl mb-8
       ${colors.light.bg} ${colors.dark.bg}
       ${colors.light.border} ${colors.dark.border}
       border mt-4

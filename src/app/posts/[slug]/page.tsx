@@ -28,7 +28,7 @@ export default function ExpandedPost({ params }: any) {
           {byline}
         </div>
         <Divider />
-        <MDX className="pb-6" source={post.content} />
+        <MDX className="pt-4 pb-6" source={post.content} />
         <Divider />
         <Suggestions suggestions={suggestions} />
         <Socials />
