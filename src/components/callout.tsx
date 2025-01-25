@@ -116,11 +116,13 @@ function Callout({ type = 'info', title, children }: CalloutProps) {
     `}>
       <div className='flex flex-row items-center justify-start gap-1.5'>
         <Icon size={12} className={`${colors.light.icon} ${colors.dark.icon}`} />
-          {title && (
-              <div className={`font-medium text-sm ${colors.light.text} ${colors.dark.text}`}>{title}</div>
-            )}
-            </div>
-          <div className={`pt-1 text-[13px] ${colors.light.text} ${colors.dark.text}`}>{children}</div>
+        {title && (
+          <div className={`font-medium text-sm ${colors.light.text} ${colors.dark.text}`}>
+            {title}
+          </div>
+        )}
+      </div>
+      <div className={`pt-1 text-[13px] ${colors.light.text} ${colors.dark.text}`}>{children}</div>
     </div>
   )
 }

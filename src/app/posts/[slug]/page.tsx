@@ -8,7 +8,8 @@ import { Suggestions } from 'src/components/suggestions'
 import { getPosts } from 'src/processor/posts'
 import { formatDate, generateSuggestions, urlSafe } from 'src/utils/functions'
 
-export default function ExpandedPost({ params }: any) {
+export default async function ExpandedPost(props: any) {
+  const params = await props.params
   const sortedPosts = getPosts().sort((a, b) => {
     return new Date(a.metadata.uploaded) < new Date(b.metadata.uploaded) ? -1 : 1
   })
@@ -28,7 +29,7 @@ export default function ExpandedPost({ params }: any) {
           {byline}
         </div>
         <Divider />
-        <MDX className="pt-4 pb-6" source={post.content} />
+        <MDX className='pt-4 pb-6' source={post.content} />
         <Divider />
         <Suggestions suggestions={suggestions} />
         <Socials />
@@ -49,7 +50,8 @@ export async function generateStaticParams() {
   }))
 }
 
-export const generateMetadata = ({ params }: any) => {
+export const generateMetadata = async (props: any) => {
+  const params = await props.params
   const post = getPosts().find(post => post.metadata.slug === params.slug)
   if (!post) return
   const metadata: Metadata = {

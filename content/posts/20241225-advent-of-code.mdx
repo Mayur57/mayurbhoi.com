@@ -51,15 +51,15 @@ Here’s the function to parse the input into an adjacency list:
 
 ```javascript
 function parseNetworkMap(connections) {
-  const graph = {};
+  const graph = {}
   connections.forEach(connection => {
-    const [a, b] = connection.split('-');
-    if (!graph[a]) graph[a] = new Set();
-    if (!graph[b]) graph[b] = new Set();
-    graph[a].add(b);
-    graph[b].add(a);
-  });
-  return graph;
+    const [a, b] = connection.split('-')
+    if (!graph[a]) graph[a] = new Set()
+    if (!graph[b]) graph[b] = new Set()
+    graph[a].add(b)
+    graph[b].add(a)
+  })
+  return graph
 }
 ```
 
@@ -77,25 +77,25 @@ Here’s the JavaScript implementation:
 
 ```javascript
 function findTriangles(graph) {
-  const triangles = new Set();
+  const triangles = new Set()
 
   for (const node in graph) {
-    const neighbors = Array.from(graph[node]);
+    const neighbors = Array.from(graph[node])
 
     for (let i = 0; i < neighbors.length; i++) {
       for (let j = i + 1; j < neighbors.length; j++) {
-        const neighbor1 = neighbors[i];
-        const neighbor2 = neighbors[j];
+        const neighbor1 = neighbors[i]
+        const neighbor2 = neighbors[j]
 
         if (graph[neighbor1].has(neighbor2)) {
-          const triangle = [node, neighbor1, neighbor2].sort();
-          triangles.add(triangle.join(','));
+          const triangle = [node, neighbor1, neighbor2].sort()
+          triangles.add(triangle.join(','))
         }
       }
     }
   }
 
-  return Array.from(triangles).map(triangle => triangle.split(','));
+  return Array.from(triangles).map(triangle => triangle.split(','))
 }
 ```
 
@@ -110,11 +110,11 @@ Once triangles are identified, we filter those containing at least one node whos
 
 ```javascript
 function main(str) {
-  const connections = str.split('\n');
-  const graph = parseNetworkMap(connections);
-  const triangles = findTriangles(graph);
-  const result = triangles.filter(triangle => triangle.some(name => name.startsWith('t')));
-  return result.length;
+  const connections = str.split('\n')
+  const graph = parseNetworkMap(connections)
+  const triangles = findTriangles(graph)
+  const result = triangles.filter(triangle => triangle.some(name => name.startsWith('t')))
+  return result.length
 }
 ```
 
@@ -122,7 +122,7 @@ This completes Part 1—counting all relevant triangles.
 
 ## P2: Finding the Largest Clique (NP-hard)
 
-A [**clique**](https://en.wikipedia.org/wiki/Clique_(graph_theory)) (or a complete graph, as I learned it in grad school graph theory) is a subset of nodes where every pair of nodes is connected by an edge. The **largest clique** (or max clique) is the one with the most nodes in a graph. To identify the largest clique, we use a recursive implementation of the [Bron-Kerbosch algorithm](https://en.wikipedia.org/wiki/Bron%E2%80%93Kerbosch_algorithm), optimized with pivoting.
+A [**clique**](<https://en.wikipedia.org/wiki/Clique_(graph_theory)>) (or a complete graph, as I learned it in grad school graph theory) is a subset of nodes where every pair of nodes is connected by an edge. The **largest clique** (or max clique) is the one with the most nodes in a graph. To identify the largest clique, we use a recursive implementation of the [Bron-Kerbosch algorithm](https://en.wikipedia.org/wiki/Bron%E2%80%93Kerbosch_algorithm), optimized with pivoting.
 
 <Image
   src='/images/posts/advent/graphs.png'
@@ -148,7 +148,6 @@ The pivoting optimization reduces the number of recursive calls by choosing a pi
 
 Here’s the pseudocode for the algorithm:
 
-
 ```algorithm
 Function BronKerbosch(R, P, X):
     if P is empty and X is empty:
@@ -167,33 +166,33 @@ Here’s the implementation for finding the largest clique:
 
 ```javascript
 function findCliques(graph, minSize = 1, maxSize = Infinity) {
-  const nodes = Object.keys(graph);
-  const cliques = [];
+  const nodes = Object.keys(graph)
+  const cliques = []
 
   function bronKerbosch(R, P, X) {
     if (P.length === 0 && X.length === 0) {
       if (R.length >= minSize && R.length <= maxSize) {
-        cliques.push([...R]);
+        cliques.push([...R])
       }
-      return;
+      return
     }
 
-    const pivot = P.concat(X)[0];
-    const pivotNeighbors = graph[pivot];
+    const pivot = P.concat(X)[0]
+    const pivotNeighbors = graph[pivot]
 
     for (const node of P.filter(n => !pivotNeighbors.has(n))) {
       bronKerbosch(
         [...R, node],
         P.filter(n => graph[node].has(n)),
         X.filter(n => graph[node].has(n))
-      );
-      P = P.filter(n => n !== node);
-      X.push(node);
+      )
+      P = P.filter(n => n !== node)
+      X.push(node)
     }
   }
 
-  bronKerbosch([], nodes, []);
-  return cliques;
+  bronKerbosch([], nodes, [])
+  return cliques
 }
 ```
 
@@ -201,7 +200,6 @@ Once we get the cliques, we can determine the largest clique. Sorting the larges
 
 - **Time Complexity**: Bron-Kerbosch with pivoting is exponential in the size of the graph because it explores all maximal cliques. In the worst case, where the graph is dense, the complexity is $O(2^n)$, where $n$ is the number of nodes.
 - **Space Complexity**: The recursive stack and temporary lists used in each recursion step require space, with the worst-case space complexity for dense graphs being $O(n)$.
-
 
 I did not know about the Bron-Kerbosch algorithm before this puzzle. I got the insight from people sharing it on Reddit. Reading about it and implementing it was quite fun. Turns out it is a cornerstone of graph theory and is preferred for determining max cliques for a given network. Its recursive nature and the introduction of pivoting make it effective for practical applications.
 

@@ -22,7 +22,7 @@ function Shimmer() {
 function SpotifyWidgetLoading() {
   return (
     <div className='player not-prose flex flex-col bg-[#EAEEEA] dark:bg-[#0E0E0E] border dark:border-[#131313] p-1 rounded-2xl my-10'>
-      <a className='flex flex-row gap-4 p-2 bg-[#F7FCFE] dark:bg-[#18181A] rounded-xl shadow-sm'>
+      <a className='flex flex-row gap-4 p-2 bg-[#F7FCFE] dark:bg-[#18181A] rounded-xl shadow-xs'>
         {/** TODO: what the fuck is wrong with this width **/}
         <div className='w-[74px] h-16 rounded-md'>
           <Shimmer />
@@ -48,10 +48,10 @@ function SpotifyWidgetLoading() {
   )
 }
 
-function SpotifyWidgetError({message="Could not fetch data"}) {
+function SpotifyWidgetError({ message = 'Could not fetch data' }) {
   return (
     <div className='player not-prose flex flex-col bg-[#ff00000f] dark:bg-[#77222233] border border-[#ff000028] dark:border-[#ff000021] p-1 rounded-2xl my-10'>
-      <div className='flex flex-row gap-4 p-2 bg-[#F7FCFE] dark:bg-[#18181A] rounded-xl shadow-sm'>
+      <div className='flex flex-row gap-4 p-2 bg-[#F7FCFE] dark:bg-[#18181A] rounded-xl shadow-xs'>
         <div className='w-14 h-14 rounded-md bg-[#e4c1c1] dark:bg-[#342121]' />
         <div className='flex flex-col justify-center'>
           <h3 className='text-sm font-medium text-red-700 dark:text-red-300'>Error</h3>
@@ -78,7 +78,7 @@ function SpotifyWidgetLoaded({ data, error }: { data: Song; error?: boolean }) {
       }`}>
       <a
         href={data.url}
-        className='flex flex-row gap-4 p-2 bg-[#F7FCFE] dark:bg-[#18181A] rounded-[14px] shadow-sm'>
+        className='flex flex-row gap-4 p-2 bg-[#F7FCFE] dark:bg-[#18181A] rounded-[14px] shadow-xs'>
         <Image
           src={data.cover}
           height={64}
@@ -87,7 +87,7 @@ function SpotifyWidgetLoaded({ data, error }: { data: Song; error?: boolean }) {
           className='w-16 h-16 rounded-[8px]'
         />
         <div className='flex flex-col justify-center'>
-          <h3 className='text-sm font-medium'>{data.title}</h3>
+          <h3 className='text-sm !font-medium !tracking-tight'>{data.title}</h3>
           <p className='text-xs opacity-70'>{data.artist}</p>
           <p className='text-xs opacity-50'>{data.album}</p>
         </div>
@@ -119,7 +119,7 @@ function SpotifyWidgetLoaded({ data, error }: { data: Song; error?: boolean }) {
 export default function SpotifyWidget() {
   const [data, setData] = useState<Song | null>(null)
   const [loading, setLoading] = useState(true)
-  const [error, setError] = useState({status: false, message: null})
+  const [error, setError] = useState({ status: false, message: null })
 
   useEffect(() => {
     const fetchSpotifyData = async () => {
@@ -130,10 +130,10 @@ export default function SpotifyWidget() {
         }
         const result: Song = await res.json()
         setData(result)
-        setError({status: false, message: null})
+        setError({ status: false, message: null })
       } catch (err: any) {
         console.error(err)
-        setError({status: true, message: err.message})
+        setError({ status: true, message: err.message })
       } finally {
         setLoading(false)
       }
@@ -142,10 +142,14 @@ export default function SpotifyWidget() {
     fetchSpotifyData()
   }, [])
 
-
   if (loading) return <SpotifyWidgetLoading />
-  if (error.status) return <SpotifyWidgetError message={error.message ?? ""} />
+  if (error.status) return <SpotifyWidgetError message={error.message ?? ''} />
   if (!data) return <SpotifyWidgetError />
 
-  return <SpotifyWidgetLoaded data={data ?? { title: '', artist: '', cover: '', album: '', isPlaying: false, url: '' }} error={error.status} />
+  return (
+    <SpotifyWidgetLoaded
+      data={data ?? { title: '', artist: '', cover: '', album: '', isPlaying: false, url: '' }}
+      error={error.status}
+    />
+  )
 }
