@@ -48,7 +48,7 @@ function SpotifyWidgetLoading() {
   )
 }
 
-function SpotifyWidgetError({message="Could not fetch data"}) {
+function SpotifyWidgetError({ message = 'Could not fetch data' }) {
   return (
     <div className='player not-prose flex flex-col bg-[#ff00000f] dark:bg-[#77222233] border border-[#ff000028] dark:border-[#ff000021] p-1 rounded-2xl my-10'>
       <div className='flex flex-row gap-4 p-2 bg-[#F7FCFE] dark:bg-[#18181A] rounded-xl shadow-xs'>
@@ -119,7 +119,7 @@ function SpotifyWidgetLoaded({ data, error }: { data: Song; error?: boolean }) {
 export default function SpotifyWidget() {
   const [data, setData] = useState<Song | null>(null)
   const [loading, setLoading] = useState(true)
-  const [error, setError] = useState({status: false, message: null})
+  const [error, setError] = useState({ status: false, message: null })
 
   useEffect(() => {
     const fetchSpotifyData = async () => {
@@ -130,10 +130,10 @@ export default function SpotifyWidget() {
         }
         const result: Song = await res.json()
         setData(result)
-        setError({status: false, message: null})
+        setError({ status: false, message: null })
       } catch (err: any) {
         console.error(err)
-        setError({status: true, message: err.message})
+        setError({ status: true, message: err.message })
       } finally {
         setLoading(false)
       }
@@ -142,10 +142,14 @@ export default function SpotifyWidget() {
     fetchSpotifyData()
   }, [])
 
-
   if (loading) return <SpotifyWidgetLoading />
-  if (error.status) return <SpotifyWidgetError message={error.message ?? ""} />
+  if (error.status) return <SpotifyWidgetError message={error.message ?? ''} />
   if (!data) return <SpotifyWidgetError />
 
-  return <SpotifyWidgetLoaded data={data ?? { title: '', artist: '', cover: '', album: '', isPlaying: false, url: '' }} error={error.status} />
+  return (
+    <SpotifyWidgetLoaded
+      data={data ?? { title: '', artist: '', cover: '', album: '', isPlaying: false, url: '' }}
+      error={error.status}
+    />
+  )
 }

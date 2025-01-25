@@ -59,12 +59,12 @@ const getAccessToken = async () => {
 }
 
 const getNowPlaying = async () => {
-  let accessToken;
-  try{
+  let accessToken
+  try {
     accessToken = await getAccessToken()
   } catch (err) {
     // console.error("Error getting access token. Spotify service may not be available.")
-    throw new Error("Cannot get authentication token.")
+    throw new Error('Cannot get authentication token.')
   }
   const response = await fetch(NOW_PLAYING_ENDPOINT, {
     headers: {
@@ -110,11 +110,11 @@ export async function GET() {
   let nowPlaying
   try {
     nowPlaying = await getNowPlaying()
-  } catch (err : any) {
+  } catch (err: any) {
     // console.log("Internal service error", err)
     return NextResponse.json(
       {
-        error: "No healthy upstream. Spotify services are unavailable."
+        error: 'No healthy upstream. Spotify services are unavailable.',
       },
       { status: 500 }
     )
