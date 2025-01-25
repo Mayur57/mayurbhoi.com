@@ -106,7 +106,7 @@ export default function Home() {
                 <a
                   href='https://github.com/mayur57'
                   className='opacity-60 text-sm font-light tracking-tight'>
-                  All projects -&gt;
+                  All projects &#8594;
                 </a>
               </div>
             </div>
@@ -126,7 +126,7 @@ export default function Home() {
                   </div>
                 ))}
                 <Link href='/posts' className='opacity-60 text-sm font-medium tracking-tight'>
-                  All posts -&gt;
+                  All posts &#8594;
                 </Link>
               </div>
             </div>

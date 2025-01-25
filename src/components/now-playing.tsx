@@ -87,7 +87,7 @@ function SpotifyWidgetLoaded({ data, error }: { data: Song; error?: boolean }) {
           className='w-16 h-16 rounded-[8px]'
         />
         <div className='flex flex-col justify-center'>
-          <h3 className='text-sm font-medium'>{data.title}</h3>
+          <h3 className='text-sm !font-medium !tracking-tight'>{data.title}</h3>
           <p className='text-xs opacity-70'>{data.artist}</p>
           <p className='text-xs opacity-50'>{data.album}</p>
         </div>
