@@ -42,11 +42,11 @@ export default function Home() {
     <MainLayout>
       <div className='sm:prose dark:prose-invert prose prose-sm'>
         <div>
-          <div className={`appear ${stagger(1)} w-full flex justify-start items-center pb-4`}>
+          <div className={`${stagger(1)} w-full flex justify-start items-center pb-4`}>
             <Photo src={me} />
           </div>
 
-          <div className={`appear ${stagger(2)} not-prose`}>
+          <div className={`${stagger(2)} not-prose`}>
             <strong className='tracking-tight flex flex-row items-center'>
               Mayur Bhoi
               <span
@@ -70,13 +70,13 @@ export default function Home() {
             */}
           </div>
 
-          <p className={`appear ${stagger(3)} pt-4`}>
+          <p className={`${stagger(3)} pt-4`}>
             Writing impactful & elegant software. Relentlessly devoted to intricacy, efficiency, and
             detailed polish. Unsatisfiably curious about magical design and high performance
             systems.
           </p>
 
-          <p className={`appear ${stagger(4)} pt-4`}>
+          <p className={`${stagger(4)} pt-4`}>
             Based in{' '}
             <a href='https://www.google.com/maps/place/Bengaluru,+Karnataka'>Bengaluru, India</a>, I
             have been working as Software Engineer at{' '}
@@ -84,7 +84,7 @@ export default function Home() {
           </p>
 
           <div
-            className={`appear ${stagger(
+            className={`${stagger(
               5
             )} flex no-scrollbar overflow-scroll gap-2 py-8 sm:[mask-image:linear-gradient(to_right,#000_0,#000_100%)] [mask-image:linear-gradient(to_right,#000_0,#000_75%,transparent_100%)]`}>
             <div className='w-[260px] sm:w-[304px] pr-6 shrink-0'>
@@ -132,7 +132,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className={`appear ${stagger(6)}`}>
+          <div className={`${stagger(6)}`}>
             <strong>Now</strong>
             <p className='pb-6'>
               Figuring out how to be the best in the room, trying to improve by iterating and
@@ -153,7 +153,7 @@ export default function Home() {
             <SpotifyWidget />
           </div>
 
-          <div className={`appear ${stagger(7)}`}>
+          <div className={`${stagger(7)}`}>
             <strong>Connect</strong>
             <p>
               Find me on these sites:{' '}

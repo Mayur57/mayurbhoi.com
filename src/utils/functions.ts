@@ -18,7 +18,7 @@ export const toBase64 = (str: string) =>
   typeof window === 'undefined' ? Buffer.from(str).toString('base64') : window.btoa(str)
 
 // Stagger the element using the given rank for group animations
-export const stagger = (rank: number) => `stagger-${rank}`
+export const stagger = (rank: number) => `appear stagger-${rank}`
 
 // Capitalise the first letter of the given string
 export const capitalised = (str: string | undefined) => {
