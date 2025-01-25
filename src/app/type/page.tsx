@@ -19,7 +19,7 @@ export default function Home() {
       <div className='relative w-full max-w-lg'>
         <textarea
           ref={textareaRef}
-          className='w-full p-3 rounded-lg resize-none overflow-hidden bg-transparent focus:outline-none focus:border-blue-400 absolute bottom-0'
+          className='w-full p-3 rounded-lg resize-none overflow-hidden bg-transparent focus:outline-hidden focus:border-blue-400 absolute bottom-0'
           value={text}
           onChange={e => setText(e.target.value)}
           placeholder='Type something...'

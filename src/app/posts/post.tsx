@@ -8,7 +8,7 @@ const PostTile = ({ post }: { post: any; index: number }) => (
         <p className='font-medium text-md tracking-tight opacity-75 whitespace-nowrap'>
           {post.title}
         </p>
-        <div className='flex-grow h-[1px] mx-2 w-full dark:bg-[#BBB] bg-[#333] opacity-[0.15]' />
+        <div className='grow h-[1px] mx-2 w-full dark:bg-[#BBB] bg-[#333] opacity-[0.15]' />
         <p className='nums tracking-tighter text-xs opacity-50 text-right'>
           {format(new Date(post.uploaded), 'yyyyMMdd')}
         </p>

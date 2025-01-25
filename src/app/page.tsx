@@ -87,7 +87,7 @@ export default function Home() {
             className={`appear ${stagger(
               5
             )} flex no-scrollbar overflow-scroll gap-2 py-8 sm:[mask-image:linear-gradient(to_right,#000_0,#000_100%)] [mask-image:linear-gradient(to_right,#000_0,#000_75%,transparent_100%)]`}>
-            <div className='w-[260px] sm:w-[304px] pr-6 flex-shrink-0'>
+            <div className='w-[260px] sm:w-[304px] pr-6 shrink-0'>
               <p className='opacity-60 text-sm font-medium tracking-tight'>Projects</p>
               <div className='flex flex-col gap-6'>
                 {featuredProjects?.map((project, index) => (
@@ -110,7 +110,7 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            <div className='w-[260px] sm:[304px] flex-shrink-0 mr-8 sm:m-0'>
+            <div className='w-[260px] sm:[304px] shrink-0 mr-8 sm:m-0'>
               <p className='opacity-60 text-sm font-medium tracking-tight'>Writing</p>
               <div className='flex flex-col gap-6'>
                 {featuredPosts?.map((post, index) => (

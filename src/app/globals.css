@@ -1,45 +1,23 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
 
-/** TODO: Please just use Tailwind styles everywhere and uncomplicate things to the minimum **/
+@custom-variant dark (&:is(.dark *));
 
-@layer utilities {
-  /* Hide scrollbar for Chrome, Safari and Opera */
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-
-  /* Hide scrollbar for IE, Edge and Firefox */
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-
-  ::selection {
-    background-color: #ffcdb3;
-  }
-
-  .dark ::selection {
-    background-color: #ff5c0077;
-  }
-
-  * {
-    font-feature-settings:
-      'cpsp' 1,
-      'dlig' 1,
-      'cv01' 1,
-      'cv02',
-      'cv03' 1,
-      'cv04' 1,
-      'liga',
-      'clig',
-      'calt' !important;
-    letter-spacing: -0.005em;
-  }
+@theme {
+  --font-sans: var(--font-inter-var);
+  --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-newsreader);
 }
 
 @layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+
   .light .react-tweet-theme {
     --tweet-bg-color: #fcffff;
     --tweet-bg-color-hover: #f5f8fa;
@@ -47,8 +25,7 @@
     --tweet-color-blue-secondary: #657786;
     --tweet-body-font-size: 1rem;
     --tweet-actions-font-weight: 500;
-    --tweet-font-family: 'Inter var', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-      Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    --tweet-font-family: 'Inter var', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   }
 
   .dark .react-tweet-theme {
@@ -59,231 +36,208 @@
     --tweet-font-color-secondary: #777;
     --tweet-body-font-size: 1rem;
     --tweet-actions-font-weight: 500;
-    --tweet-font-family: 'Inter var', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-      Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    --tweet-font-family: 'Inter var', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  }
+
+  html {
+    scrollbar-gutter: stable;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --sh-class: #4c97f8;
+      --sh-identifier: white;
+      --sh-keyword: #f47067;
+      --sh-string: #0fa295;
+    }
   }
 }
 
-html {
-  scrollbar-gutter: stable;
-}
-
-@keyframes fadeInTranslate {
-  from {
-    filter: blur(8px);
+@layer utilities {
+  @keyframes show {
+    from {
+      filter: blur(8px);
+    }
+    to {
+      opacity: 1;
+      filter: blur(0px);
+      transform: translateY(0);
+    }
   }
-  to {
-    opacity: 1;
-    filter: blur(0px);
-    transform: translateY(0);
+
+  .show-up {
+    animation: show 0.5s ease forwards;
   }
-}
 
-.fade-in-translate {
-  animation: fadeInTranslate 0.5s ease forwards;
-}
+  .stagger-1 { animation-delay: 0.12s; }
+  .stagger-2 { animation-delay: 0.24s; }
+  .stagger-3 { animation-delay: 0.36s; }
+  .stagger-4 { animation-delay: 0.48s; }
+  .stagger-5 { animation-delay: 0.6s; }
+  .stagger-6 { animation-delay: 0.72s; }
+  .stagger-7 { animation-delay: 0.84s; }
+  .stagger-8 { animation-delay: 0.96s; }
+  .stagger-9 { animation-delay: 1.08s; }
+  .stagger-10 { animation-delay: 1.2s; }
 
-.stagger-1 {
-  animation-delay: 0.12s;
-}
-.stagger-2 {
-  animation-delay: 0.24s;
-}
-.stagger-3 {
-  animation-delay: 0.36s;
-}
-.stagger-4 {
-  animation-delay: 0.48s;
-}
-.stagger-5 {
-  animation-delay: 0.6s;
-}
-.stagger-6 {
-  animation-delay: 0.72s;
-}
-.stagger-7 {
-  animation-delay: 0.84s;
-}
-.stagger-8 {
-  animation-delay: 0.96s;
-}
-.stagger-9 {
-  animation-delay: 1.08s;
-}
-.stagger-10 {
-  animation-delay: 1.2s;
-}
-
-:root {
-  max-width: 100%;
-  display: block;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --sh-class: #4c97f8;
-    --sh-identifier: white;
-    --sh-keyword: #f47067;
-    --sh-string: #0fa295;
+  .no-scrollbar {
+    &::-webkit-scrollbar { display: none; }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
-}
 
-@layer components {
-  .appear {
-    @apply fade-in-translate transform opacity-0 translate-y-[12px];
+  .dark ::selection {
+    background-color: #ff5c0077;
   }
-}
 
-.prose .anchor {
-  @apply absolute invisible no-underline;
+  .prose .anchor {
+    @apply absolute invisible no-underline;
+    margin-left: -1em;
+    padding-right: 0.5em;
+    width: 80%;
+    max-width: 700px;
+    cursor: pointer;
+  }
 
-  margin-left: -1em;
-  padding-right: 0.5em;
-  width: 80%;
-  max-width: 700px;
-  cursor: pointer;
-}
+  .prose .anchor:hover {
+    @apply visible;
+  }
 
-.anchor:hover {
-  @apply visible;
-}
+  .prose a {
+    @apply transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em];
+  }
 
-.prose a {
-  @apply transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em];
-}
+  .prose a:hover {
+    @apply opacity-40;
+  }
 
-.prose a:hover {
-  @apply transition-all opacity-40;
-}
+  .prose .anchor:after {
+    @apply text-neutral-400! dark:text-neutral-600!;
+    content: '#';
+  }
 
-.prose .anchor:after {
-  @apply text-neutral-400 dark:text-neutral-600 !important;
-  content: '#';
-}
+  .prose *:hover > .anchor {
+    @apply visible;
+  }
 
-.prose *:hover > .anchor {
-  @apply visible;
-}
+  .prose pre {
+    @apply bg-neutral-50 dark:bg-neutral-900 rounded-b-xl overflow-x-auto;
+  }
 
-.prose pre {
-  @apply bg-neutral-50 dark:bg-neutral-900 rounded-b-xl overflow-x-auto;
-}
+  .prose code {
+    @apply px-1 py-0.5 rounded-lg;
+  }
 
-.prose code {
-  @apply px-1 py-0.5 rounded-lg;
-}
+  .prose pre code {
+    @apply p-0;
+    border: initial;
+    line-height: 1.5;
+  }
 
-.prose pre code {
-  @apply p-0;
-  border: initial;
-  line-height: 1.5;
-}
+  .prose code span {
+    @apply font-medium;
+  }
 
-.prose code span {
-  @apply font-medium;
-}
+  .prose h1 {
+    @apply m-0 font-medium tracking-tight text-[2.125rem] sm:text-[2.5rem];
+  }
 
-.prose h1 {
-  /* mb-0 prose-h6:my-0 pb-[7rem] prose-h1:font-medium prose-h1:tracking-tight prose-h1:text-3xl sm:prose-h1:text-4xl */
-  @apply m-0 font-medium tracking-tight text-[2.125rem] sm:text-[2.5rem] !important;
-}
+  .prose h2,
+  .prose h3,
+  .prose h4 {
+    @apply font-semibold tracking-tighter;
+  }
 
-.prose h2,
-h3,
-h4 {
-  @apply font-semibold tracking-tighter !important;
-}
+  .prose strong {
+    @apply font-medium;
+  }
 
-.prose strong {
-  @apply font-medium;
-}
+  pre::-webkit-scrollbar {
+    display: none;
+  }
 
-pre::-webkit-scrollbar {
-  display: none;
-}
+  pre {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 
-pre {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
+  input[type='text'],
+  input[type='email'] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
 
-/* Remove Safari input shadow on mobile */
-input[type='text'],
-input[type='email'] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
+  .prose .tweet a {
+    text-decoration: inherit;
+    font-weight: 500;
+  }
 
-.prose .tweet a {
-  text-decoration: inherit;
-  font-weight: 500;
-}
+  table {
+    display: block;
+    max-width: fit-content;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
 
-table {
-  display: block;
-  max-width: fit-content;
-  overflow-x: auto;
-  white-space: nowrap;
-}
+  .prose .callout > p {
+    margin: 0 !important;
+  }
 
-.prose .callout > p {
-  margin: 0 !important;
-}
+  .prose .callout a {
+    @apply transition-all decoration-neutral-400 dark:decoration-neutral-600 underline underline-offset-2 decoration-[0.1em];
+  }
 
-.prose .callout a {
-  @apply transition-all decoration-neutral-400 dark:decoration-neutral-600 underline underline-offset-2 decoration-[0.1em];
-}
+  .prose p {
+    word-spacing: -0.05em !important;
+    font-variant: common-ligatures contextual !important;
+    line-height: 1.8;
+  }
 
-.prose p {
-  word-spacing: -0.05em !important;
-  font-variant: common-ligatures contextual !important;
-  line-height: 1.8;
-}
+  .prose img {
+    @apply m-0;
+  }
 
-.prose img {
-  @apply m-0 !important;
-}
+  .article-img {
+    @apply rounded-xl;
+  }
 
-.article-img {
-  @apply rounded-xl !important;
-}
+  .suggestion {
+    line-height: 1.375 !important;
+  }
 
-.suggestion {
-  line-height: 1.375 !important;
-}
+  .title {
+    text-wrap: balance;
+  }
 
-.title {
-  text-wrap: balance;
-}
+  blockquote > p {
+    font-family: serif;
+    font-size: 36px;
+    opacity: 0.6;
+  }
 
-blockquote > p {
-  font-family: serif;
-  font-size: 36px;
-  opacity: 0.6;
-}
+  .nums {
+    font-variant-numeric: tabular-nums;
+  }
 
-.nums {
-  font-variant-numeric: tabular-nums;
-}
+  .thin {
+    font-weight: 300 !important;
+  }
 
-.thin {
-  font-weight: 300 !important;
-}
+  .player p,
+  .player h3 {
+    @apply leading-[18px] tracking-normal;
+  }
 
-.player p,
-h3 {
-  @apply leading-[18px] tracking-normal;
-}
+  .katex-html {
+    @apply hidden;
+  }
 
-.katex-html {
-  @apply hidden !important;
-}
+  .katex {
+    @apply text-xl;
+  }
 
-.katex {
-  @apply text-xl !important;
-}
-
-#desc {
-  @apply leading-[1.65] !important;
+  #desc {
+    @apply leading-[1.65];
+  }
 }
