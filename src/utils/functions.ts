@@ -99,3 +99,7 @@ export function generateSuggestions(sortedPosts: any, currPost: any) {
     previous: sortedPosts[curr - 1],
   }
 }
+
+export function cn(...inputs: (string | undefined)[]) {
+  return inputs.filter(Boolean).join(' ');
+}
