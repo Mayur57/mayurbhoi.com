@@ -6,7 +6,6 @@ import localFont from 'next/font/local'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { GeistMono } from 'geist/font'
-import GridBackdrop from 'src/components/backdrop'
 import { Providers } from 'src/utils/providers'
 
 const inter = localFont({
