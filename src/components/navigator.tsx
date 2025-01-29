@@ -10,6 +10,7 @@ const Navigator = () => (
   <nav className='flex w-full gap-4 pb-8 justify-end'>
     <NavigatorItem label='home' href='/' />
     <NavigatorItem label='posts' href='/posts' />
+    <NavigatorItem label='posters' href='/media' />
     <NavigatorItem label='resume' href='/resume.pdf' />
   </nav>
 )
