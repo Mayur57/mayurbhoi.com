@@ -68,7 +68,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         className={`w-full bg-[#F7FCFE] dark:bg-[#18181A] transition-all duration-300 antialiased`}>
         <Providers>
           <Analytics mode={'production'} />
-          <GridBackdrop />
           <SpeedInsights />
           <main className='max-w-7xl bg-[#F7FCFE] dark:bg-[#18181A] relative min-w-full scroll-smooth'>
             {children}

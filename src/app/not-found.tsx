@@ -41,7 +41,7 @@ export default function NotFound() {
         </defs>
       </svg>
       <h2 className='not-prose text-2xl font-medium tracking-tight py-4'>
-        Not Found—Unreachable Page
+        Not Found
       </h2>
       <p className='opacity-70 text-xs sm:text-sm'>
         What was this page that couldn&apos;t be found? An unfinished design, a half-written blog,
@@ -49,7 +49,7 @@ export default function NotFound() {
       </p>
       <Link className='pt-6 text-sm' href='/'>
         {'<- '}
-        <span className='underline underline-offset-2 decoration-from-font'>go back</span>
+        <span className='underline underline-offset-2 decoration-from-font'>go home</span>
       </Link>
     </div>
   )
