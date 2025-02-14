@@ -21,7 +21,7 @@ export const metadata: Metadata = {}
 const featuredProjects: Array<FeaturedProject> = [
   {
     title: 'Twitter Nuke',
-    description: 'Tool to delete user tweets using Twitter Archive bypassing rate limits',
+    description: 'Tool to bulk delete tweets using Twitter Archive',
     repo: 'https://github.com/Mayur57/twitter-nuke',
   },
   {
@@ -86,8 +86,24 @@ export default function Home() {
           <div
             className={`${stagger(
               5
-            )} flex no-scrollbar overflow-scroll gap-2 py-8 sm:[mask-image:linear-gradient(to_right,#000_0,#000_100%)] [mask-image:linear-gradient(to_right,#000_0,#000_75%,transparent_100%)]`}>
-            <div className='w-[260px] sm:w-[304px] pr-6 shrink-0'>
+            )} flex no-scrollbar overflow-x-scroll gap-2 py-8 xs:[mask-image:linear-gradient(to_right,#000_0,#000_100%)] [mask-image:linear-gradient(to_right,#000_0,#000_75%,transparent_100%)]`}>
+            <div className='w-[210px] sm:w-[250px] shrink-0 pr-10 sm:m-0'>
+              <p className='opacity-60 text-sm font-medium tracking-tight'>Building</p>
+              <div className='flex flex-col gap-6'>
+                <div className='pr-'>
+                  <a
+                    target='_blank'
+                    href='https://www.vrx.li'
+                    className='underline decoration-from-font underline-offset-2 tracking-tight'>
+                    Vertex
+                  </a>
+                  <p id='desc' className='mt-1 opacity-60 not-prose leading-[0.7] text-xs sm:text-sm'>
+                    Fast URL shortening service with intelligent tracking
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className='w-[210px] sm:w-[250px] shrink-0 pr-10'>
               <p className='opacity-60 text-sm font-medium tracking-tight'>Projects</p>
               <div className='flex flex-col gap-6'>
                 {featuredProjects?.map((project, index) => (
@@ -98,7 +114,7 @@ export default function Home() {
                       className='underline decoration-from-font underline-offset-2 tracking-tight'>
                       {project.title}
                     </a>
-                    <p id='desc' className='mt-1 opacity-60 not-prose leading-[0.7] text-sm'>
+                    <p id='desc' className='mt-1 opacity-60 not-prose leading-[0.7] text-xs sm:text-sm'>
                       {project.description}
                     </p>
                   </div>
@@ -110,7 +126,7 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            <div className='w-[260px] sm:[304px] shrink-0 mr-8 sm:m-0'>
+            <div className='w-[210px] sm:w-[250px] shrink-0 pr-10 mr-12'>
               <p className='opacity-60 text-sm font-medium tracking-tight'>Writing</p>
               <div className='flex flex-col gap-6'>
                 {featuredPosts?.map((post, index) => (
@@ -120,7 +136,7 @@ export default function Home() {
                       className='underline decoration-from-font underline-offset-2 tracking-tight'>
                       {post.metadata.title}
                     </a>
-                    <p id='desc' className='mt-1 opacity-60 not-prose leading-tight text-sm'>
+                    <p id='desc' className='mt-1 opacity-60 not-prose leading-tight text-xs sm:text-sm'>
                       {post.metadata.description}
                     </p>
                   </div>
