@@ -22,7 +22,7 @@ function Shimmer() {
 function SpotifyWidgetLoading() {
   return (
     <div className='player not-prose flex flex-col bg-[#EAEEEA] dark:bg-[#0E0E0E] border dark:border-[#131313] p-1 rounded-2xl my-10'>
-      <a className='flex flex-row gap-4 p-2 bg-[#F7FCFE] dark:bg-[#18181A] rounded-xl shadow-xs'>
+      <a className='flex flex-row gap-4 p-2 bg-white dark:bg-[#18181A] rounded-xl shadow-xs'>
         {/** TODO: what the fuck is wrong with this width **/}
         <div className='w-[74px] h-16 rounded-md'>
           <Shimmer />
@@ -51,7 +51,7 @@ function SpotifyWidgetLoading() {
 function SpotifyWidgetError({ message = 'Could not fetch data' }) {
   return (
     <div className='player not-prose flex flex-col bg-[#ff00000f] dark:bg-[#77222233] border border-[#ff000028] dark:border-[#ff000021] p-1 rounded-2xl my-10'>
-      <div className='flex flex-row gap-4 p-2 bg-[#F7FCFE] dark:bg-[#18181A] rounded-xl shadow-xs'>
+      <div className='flex flex-row gap-4 p-2 bg-white dark:bg-[#18181A] rounded-xl shadow-xs'>
         <div className='w-14 h-14 rounded-md bg-[#e4c1c1] dark:bg-[#342121]' />
         <div className='flex flex-col justify-center'>
           <h3 className='text-sm font-medium text-red-700 dark:text-red-300'>Error</h3>
@@ -78,7 +78,7 @@ function SpotifyWidgetLoaded({ data, error }: { data: Song; error?: boolean }) {
       }`}>
       <a
         href={data.url}
-        className='flex flex-row gap-4 p-2 bg-[#F7FCFE] dark:bg-[#18181A] rounded-[14px] shadow-xs'>
+        className='flex flex-row gap-4 p-2 bg-white dark:bg-[#18181A] rounded-[14px] shadow-xs'>
         <Image
           src={data.cover}
           height={64}

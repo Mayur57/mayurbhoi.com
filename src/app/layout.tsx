@@ -64,11 +64,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       suppressHydrationWarning
       className={`${inter.variable} ${newsreader.variable} ${GeistMono.variable}`}>
       <body
-        className={`w-full bg-[#F7FCFE] dark:bg-[#18181A] transition-all duration-300 antialiased`}>
+        className={`w-full bg-white dark:bg-[#18181A] transition-all duration-300 antialiased`}>
         <Providers>
           <Analytics mode={'production'} />
           <SpeedInsights />
-          <main className='max-w-7xl bg-[#F7FCFE] dark:bg-[#18181A] relative min-w-full scroll-smooth'>
+          <main className='max-w-7xl relative min-w-full scroll-smooth'>
             {children}
           </main>
         </Providers>
