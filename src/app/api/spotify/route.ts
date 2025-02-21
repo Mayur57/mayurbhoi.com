@@ -39,6 +39,14 @@ function convertDateFormat(inputDate: string) {
   return `${month} ${day}, ${hours}:${minutes} IST`
 }
 
+function dejunk(s: string) {
+  return s
+    .replace(/-\s*(Remastered|Live|From\s*\".*?\"|ft\.|feat\.).*/gi, '')
+    .replace(/\(.*?\)/g, '')
+    .replace(/\s{2,}/g, ' ')
+    .trim()
+}
+
 const getAccessToken = async () => {
   const response = await fetch(TOKEN_ENDPOINT, {
     method: 'POST',
@@ -123,9 +131,9 @@ export async function GET() {
   if (nowPlaying && nowPlaying.is_playing) {
     const { item } = nowPlaying
     return NextResponse.json({
-      title: item.name,
+      title: dejunk(item.name),
       artist: item.artists.map((artist: any) => artist.name).join(', '),
-      album: item.album.name,
+      album: dejunk(item.album.name),
       cover: item.album.images[0]?.url || '',
       isPlaying: true,
       lastPlayed: null,
@@ -138,9 +146,9 @@ export async function GET() {
   if (recentlyPlayed) {
     const { track, played_at } = recentlyPlayed
     return NextResponse.json({
-      title: track.name,
+      title: dejunk(track.name),
       artist: track.artists.map((artist: any) => artist.name).join(', '),
-      album: track.album.name,
+      album: dejunk(track.album.name),
       cover: track.album.images[0]?.url || '',
       isPlaying: false,
       lastPlayed: convertDateFormat(played_at),

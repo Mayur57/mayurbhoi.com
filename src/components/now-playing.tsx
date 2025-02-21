@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
+import { Spotify } from './spotify-logo'
 
 export const revalidate = 0
 
@@ -71,7 +72,7 @@ function SpotifyWidgetError({ message = 'Could not fetch data' }) {
 function SpotifyWidgetLoaded({ data, error }: { data: Song; error?: boolean }) {
   return (
     <div
-      className={`player not-prose flex flex-col p-1 rounded-[18px] my-10 ${
+      className={`player relative not-prose flex flex-col p-1 rounded-[18px] my-10 ${
         error
           ? 'bg-red-100 dark:bg-red-900 border border-red-500 dark:border-red-700'
           : 'bg-[#EAEEEA] dark:bg-[#0E0E0E] border dark:border-[#131313]'
@@ -92,6 +93,7 @@ function SpotifyWidgetLoaded({ data, error }: { data: Song; error?: boolean }) {
           <p className='text-xs opacity-50'>{data.album}</p>
         </div>
       </a>
+      <Spotify />
       <div>
         {error ? (
           <span className='flex items-center gap-2 pt-[6px] pb-[2px] pl-1.5 text-xs leading-normal text-red-600'>
@@ -105,8 +107,8 @@ function SpotifyWidgetLoaded({ data, error }: { data: Song; error?: boolean }) {
           </span>
         ) : (
           data.isPlaying && (
-            <span className='flex items-center gap-2 pt-[6px] pb-[2px] pl-1.5 text-xs leading-normal text-gray-500'>
-              <div className='h-2 w-2 bg-green-400 dark:bg-green-300 rounded-full' />
+            <span className='flex items-center gap-2 pt-[6px] pb-[2px] pl-2 text-xs leading-normal text-gray-500'>
+              <div className='h-2 w-2 bg-green-500 dark:bg-green-200 rounded-full' />
               Currently playing
             </span>
           )
