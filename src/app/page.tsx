@@ -97,7 +97,9 @@ export default function Home() {
                     className='underline decoration-from-font underline-offset-2 tracking-tight'>
                     Vertex
                   </a>
-                  <p id='desc' className='mt-1 opacity-60 not-prose leading-[0.7] text-xs sm:text-sm'>
+                  <p
+                    id='desc'
+                    className='mt-1 opacity-60 not-prose leading-[0.7] text-xs sm:text-sm'>
                     Fast URL shortening service with intelligent tracking
                   </p>
                 </div>
@@ -114,7 +116,9 @@ export default function Home() {
                       className='underline decoration-from-font underline-offset-2 tracking-tight'>
                       {project.title}
                     </a>
-                    <p id='desc' className='mt-1 opacity-60 not-prose leading-[0.7] text-xs sm:text-sm'>
+                    <p
+                      id='desc'
+                      className='mt-1 opacity-60 not-prose leading-[0.7] text-xs sm:text-sm'>
                       {project.description}
                     </p>
                   </div>
@@ -136,7 +140,9 @@ export default function Home() {
                       className='underline decoration-from-font underline-offset-2 tracking-tight'>
                       {post.metadata.title}
                     </a>
-                    <p id='desc' className='mt-1 opacity-60 not-prose leading-tight text-xs sm:text-sm'>
+                    <p
+                      id='desc'
+                      className='mt-1 opacity-60 not-prose leading-tight text-xs sm:text-sm'>
                       {post.metadata.description}
                     </p>
                   </div>

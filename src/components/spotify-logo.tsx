@@ -1,4 +1,4 @@
-export function Spotify() {
+export default function SpotifyLogo() {
   const size = '24px'
   return (
     <svg
