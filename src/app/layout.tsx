@@ -6,6 +6,7 @@ import localFont from 'next/font/local'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { GeistMono } from 'geist/font'
+import BlurHeader from 'src/components/blur-header'
 import { Providers } from 'src/utils/providers'
 
 const inter = localFont({
@@ -64,6 +65,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       suppressHydrationWarning
       className={`${inter.variable} ${newsreader.variable} ${GeistMono.variable}`}>
       <body className={`w-full bg-white dark:bg-[#18181A] transition-all duration-300 antialiased`}>
+        <BlurHeader />
         <Providers>
           <Analytics mode={'production'} />
           <SpeedInsights />

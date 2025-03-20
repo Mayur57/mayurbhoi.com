@@ -93,14 +93,14 @@ function SpotifyWidgetError({ message = 'Could not fetch data' }) {
 function SpotifyWidgetLoaded({ data, error }: { data: Song; error?: boolean }) {
   return (
     <div
-      className={`player relative not-prose flex flex-col p-1 rounded-[18px] my-10 max-h-[7.5rem] justify-center shadow-2xs ${
+      className={`player relative not-prose flex flex-col p-1 rounded-[18px] my-10 max-h-[7.5rem] justify-center ${
         error
           ? 'bg-red-100 dark:bg-red-900 border border-red-500 dark:border-red-700'
           : 'bg-[#EAEEEA] dark:bg-[#0E0E0E] border dark:border-[#131313]'
       }`}>
       <a
         href={data.url}
-        className='flex flex-row gap-4 p-2 bg-white dark:bg-[#18181A] rounded-[14px] overflow-hidden'>
+        className='flex flex-row gap-4 p-2 bg-white dark:bg-[#18181A] rounded-[14px] overflow-hidden shadow-sm'>
         {data.isPlaying ? (
           <VinylRecord
             className='-translate-x-12 -translate-y-5'
