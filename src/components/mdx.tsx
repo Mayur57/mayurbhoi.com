@@ -13,7 +13,9 @@ import 'src/app/marker.css'
 import Callout from './callout'
 
 function Table({ data }: any) {
-  const headers = data.headers.map((header: any, index: any) => <th key={index}>{header}</th>)
+  const headers = data.headers.map((header: any, index: any) => (
+    <th key={index}>{header}</th>
+  ))
   const rows = data.rows.map((row: any, index: number) => (
     <tr key={index}>
       {row.map((cell: string, cellIndex: number) => (

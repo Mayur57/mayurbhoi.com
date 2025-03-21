@@ -46,7 +46,8 @@ function VinylRecord({ size = 300, label, spin, className }: VinylRecordProps) {
       <div
         className='absolute inset-0 rounded-full'
         style={{
-          background: 'conic-gradient(from 30deg, transparent, white 10%, transparent 25%)',
+          background:
+            'conic-gradient(from 30deg, transparent, white 10%, transparent 25%)',
           opacity: 0.3,
           filter: 'blur(2px)',
         }}

@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   description: 'Blog by Mayur Bhoi on software development and other interesting things.',
   openGraph: {
     title: 'Posts',
-    description: 'Blog by Mayur Bhoi on software development and other interesting things.',
+    description:
+      'Blog by Mayur Bhoi on software development and other interesting things.',
     url: 'https://mayurbhoi.com/posts',
     type: 'website',
     images: [

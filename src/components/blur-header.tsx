@@ -25,7 +25,7 @@ export default function BlurHeader() {
           WebkitMaskImage:
             'linear-gradient(to top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%)',
         }}></div>
-              <div
+      <div
         className='fixed top-0 w-full h-14 backdrop-blur-sm z-40'
         style={{
           maskImage:

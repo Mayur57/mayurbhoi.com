@@ -39,7 +39,8 @@ export default async function ExpandedPost(props: any) {
 }
 
 function generateByline(uploadDate: string, readingMinutes: string): string {
-  const readingText: string = ' • ' + (readingMinutes === '0' ? '<1' : readingMinutes) + ' min read'
+  const readingText: string =
+    ' • ' + (readingMinutes === '0' ? '<1' : readingMinutes) + ' min read'
   return uploadDate + readingText
 }
 
@@ -75,7 +76,9 @@ export const generateMetadata = async (props: any) => {
       card: 'summary_large_image',
       title: post.metadata.title,
       description: post.metadata.description,
-      images: [`https://mayurbhoi.com/og?title=${urlSafe(post.metadata.title)}&twitter=true`],
+      images: [
+        `https://mayurbhoi.com/og?title=${urlSafe(post.metadata.title)}&twitter=true`,
+      ],
     },
   }
   return metadata

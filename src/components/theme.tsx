@@ -23,7 +23,13 @@ export const Theme = () => {
       className='flex flex-row gap-1 items-center font-medium'
       title='change theme'
       onClick={() =>
-        setTheme(theme == 'system' || theme == '' ? 'dark' : theme === 'dark' ? 'light' : 'system')
+        setTheme(
+          theme == 'system' || theme == ''
+            ? 'dark'
+            : theme === 'dark'
+              ? 'light'
+              : 'system'
+        )
       }>
       Theme:
       <span className='underline-offset-2 underline'>{capitalised(theme)}</span>

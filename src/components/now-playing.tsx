@@ -17,7 +17,9 @@ interface Song {
 }
 
 function Shimmer() {
-  return <div className='animate-pulse bg-gray-300 dark:bg-gray-700 h-full w-full rounded-md' />
+  return (
+    <div className='animate-pulse bg-gray-300 dark:bg-gray-700 h-full w-full rounded-md' />
+  )
 }
 
 function BlurFade({ children }: { children: React.ReactNode }) {
@@ -125,7 +127,8 @@ function SpotifyWidgetLoaded({ data, error }: { data: Song; error?: boolean }) {
             className='w-16 h-16 rounded-[8px]'
           />
         )}
-        <div className={`flex flex-col justify-center ${data.isPlaying && '-translate-x-10'}`}>
+        <div
+          className={`flex flex-col justify-center ${data.isPlaying && '-translate-x-10'}`}>
           <BlurFade>
             <h3 className='text-sm !font-medium !tracking-tight'>{data.title}</h3>
           </BlurFade>
