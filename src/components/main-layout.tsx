@@ -7,7 +7,7 @@ type LayoutProps = {
 }
 
 const MainLayout = ({ children }: LayoutProps) => (
-  <div className='mx-auto max-w-[44rem] pt-8 sm:pt-[3rem] px-6 xs:px-0 pb-36'>
+  <div className='mx-auto max-w-[44rem] pt-12 px-6 xs:px-0 pb-36'>
     <Navigator />
     {children}
     <Footer />
