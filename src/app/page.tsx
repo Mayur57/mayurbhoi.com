@@ -40,7 +40,7 @@ const featuredPosts = getPosts()
 export default function Home() {
   return (
     <MainLayout>
-      <div className='sm:prose dark:prose-invert prose prose-sm'>
+      <div className='sm:prose dark:prose-invert prose prose-sm -mt-4 sm:mt-0'>
         <div>
           <div className={`${stagger(1)} w-full flex justify-start items-center pb-4`}>
             <Photo src={me} />
