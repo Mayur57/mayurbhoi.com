@@ -1,3 +1,4 @@
+'use client'
 import { Metadata } from 'next'
 import Link from 'next/link'
 
@@ -14,7 +15,9 @@ export default function NotFound() {
         viewBox='0 0 270 270'
         fill='none'
         xmlns='http://www.w3.org/2000/svg'
-        href='http://www.w3.org/1999/xlink'>
+        href='http://www.w3.org/1999/xlink'
+        aria-hidden="true"
+        focusable="false">
         <mask
           id='mask0_216_4'
           style={{ maskType: 'alpha' }}

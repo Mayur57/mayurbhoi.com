@@ -169,12 +169,10 @@ function SpotifyWidgetLoaded({ data, error }: { data: Song; error?: boolean }) {
 }
 
 function SpotifyWidget() {
-  if (process.env.SPOTIFY_CLIENT_ID === null || process.env.SPOTIFY_CLIENT_SECRET === null)
-    return null
   const [data, setData] = useState<Song | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState({ status: false, message: null })
-
+  
   useEffect(() => {
     const fetchSpotifyData = async () => {
       try {
@@ -194,6 +192,8 @@ function SpotifyWidget() {
     }
     fetchSpotifyData()
   }, [])
+  if (process.env['SPOTIFY_CLIENT_ID'] === null || process.env['SPOTIFY_CLIENT_SECRET'] === null)
+    return null
   if (loading) return <SpotifyWidgetLoading />
   if (error.status)
     return <SpotifyWidgetError message={error.message ?? 'Error loading Spotify data'} />
