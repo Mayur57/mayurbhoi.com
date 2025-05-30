@@ -88,10 +88,7 @@ export function formatDate(dateString: string) {
 
 // Custom function to make a string URL safe
 export function urlSafe(str: string) {
-  return encodeURIComponent(str).replace(
-    /[!'()*]/g,
-    c => '%' + c.charCodeAt(0).toString(16)
-  )
+  return encodeURIComponent(str).replace(/[!'()*]/g, c => '%' + c.charCodeAt(0).toString(16))
 }
 
 // Return suggestions object for a give post

@@ -29,15 +29,8 @@ export default function NotFound() {
           <rect x='-568' y='-42' width='1595' height='848' fill='url(#pattern0)' />
         </g>
         <defs>
-          <pattern
-            id='pattern0'
-            patternContentUnits='objectBoundingBox'
-            width='1'
-            height='1'>
-            <use
-              href='#image0_216_4'
-              transform='matrix(0.005 0 0 0.00940448 0 -0.440448)'
-            />
+          <pattern id='pattern0' patternContentUnits='objectBoundingBox' width='1' height='1'>
+            <use href='#image0_216_4' transform='matrix(0.005 0 0 0.00940448 0 -0.440448)' />
           </pattern>
           <image
             id='image0_216_4'
@@ -49,9 +42,8 @@ export default function NotFound() {
       </svg>
       <h2 className='not-prose text-2xl font-medium tracking-tight py-4'>Not Found</h2>
       <p className='opacity-70 text-xs sm:text-sm'>
-        What was this page that couldn&apos;t be found? An unfinished design, a
-        half-written blog, an abandoned thought, or perhaps a private note to self? A
-        stroll into the unknown for sure.
+        What was this page that couldn&apos;t be found? An unfinished design, a half-written blog,
+        an abandoned thought, or perhaps a private note to self? A stroll into the unknown for sure.
       </p>
       <Link className='pt-6 text-sm' href='/'>
         {'<- '}

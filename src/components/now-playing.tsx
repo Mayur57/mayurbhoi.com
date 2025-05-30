@@ -17,9 +17,7 @@ interface Song {
 }
 
 function Shimmer() {
-  return (
-    <div className='animate-pulse bg-gray-300 dark:bg-gray-700 h-full w-full rounded-md' />
-  )
+  return <div className='animate-pulse bg-gray-300 dark:bg-gray-700 h-full w-full rounded-md' />
 }
 
 function BlurFade({ children }: { children: React.ReactNode }) {
@@ -127,8 +125,7 @@ function SpotifyWidgetLoaded({ data, error }: { data: Song; error?: boolean }) {
             className='w-16 h-16 rounded-[8px]'
           />
         )}
-        <div
-          className={`flex flex-col justify-center ${data.isPlaying && '-translate-x-10'}`}>
+        <div className={`flex flex-col justify-center ${data.isPlaying && '-translate-x-10'}`}>
           <BlurFade>
             <h3 className='text-sm !font-medium !tracking-tight'>{data.title}</h3>
           </BlurFade>
@@ -172,6 +169,8 @@ function SpotifyWidgetLoaded({ data, error }: { data: Song; error?: boolean }) {
 }
 
 function SpotifyWidget() {
+  if (process.env.SPOTIFY_CLIENT_ID === null || process.env.SPOTIFY_CLIENT_SECRET === null)
+    return null
   const [data, setData] = useState<Song | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState({ status: false, message: null })
@@ -195,7 +194,6 @@ function SpotifyWidget() {
     }
     fetchSpotifyData()
   }, [])
-
   if (loading) return <SpotifyWidgetLoading />
   if (error.status)
     return <SpotifyWidgetError message={error.message ?? 'Error loading Spotify data'} />

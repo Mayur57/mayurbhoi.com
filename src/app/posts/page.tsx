@@ -12,8 +12,7 @@ export const metadata: Metadata = {
   description: 'Blog by Mayur Bhoi on software development and other interesting things.',
   openGraph: {
     title: 'Posts',
-    description:
-      'Blog by Mayur Bhoi on software development and other interesting things.',
+    description: 'Blog by Mayur Bhoi on software development and other interesting things.',
     url: 'https://mayurbhoi.com/posts',
     type: 'website',
     images: [
@@ -28,9 +27,11 @@ export const metadata: Metadata = {
 }
 
 export default function PostsPage() {
-  const blogs = getPosts().sort((a, b) => {
-    return new Date(a.metadata.uploaded) > new Date(b.metadata.uploaded) ? -1 : 1
-  })
+  const blogs = getPosts()
+    .filter(post => post.metadata.delist === undefined)
+    .sort((a, b) => {
+      return new Date(a.metadata.uploaded) > new Date(b.metadata.uploaded) ? -1 : 1
+    })
   return (
     <MainLayout>
       <Title>posts</Title>

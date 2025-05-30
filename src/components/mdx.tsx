@@ -13,9 +13,7 @@ import 'src/app/marker.css'
 import Callout from './callout'
 
 function Table({ data }: any) {
-  const headers = data.headers.map((header: any, index: any) => (
-    <th key={index}>{header}</th>
-  ))
+  const headers = data.headers.map((header: any, index: any) => <th key={index}>{header}</th>)
   const rows = data.rows.map((row: any, index: number) => (
     <tr key={index}>
       {row.map((cell: string, cellIndex: number) => (
@@ -114,7 +112,7 @@ function Code({ children }: any) {
           {displayLanguage}
         </div>
       }
-      <pre className='not-prose text-[12px] sm:text-base py-3 px-4 border border-neutral-200 dark:border-gray-800'>
+      <pre className='not-prose text-[12px] sm:text-sm py-3 px-4 border border-neutral-200 dark:border-gray-800'>
         {children}
       </pre>
     </div>

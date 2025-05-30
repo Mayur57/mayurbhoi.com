@@ -8,6 +8,7 @@ type Metadata = {
   uploaded: string
   tag: string
   updated: string
+  delist?: boolean | string
 }
 
 function parseFrontmatter(fileContent: string) {

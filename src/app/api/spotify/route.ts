@@ -8,8 +8,7 @@ const refresh_token = process.env['SPOTIFY_REFRESH']
 
 const TOKEN_ENDPOINT = 'https://accounts.spotify.com/api/token'
 const NOW_PLAYING_ENDPOINT = 'https://api.spotify.com/v1/me/player/currently-playing'
-const RECENTLY_PLAYED_ENDPOINT =
-  'https://api.spotify.com/v1/me/player/recently-played?limit=1'
+const RECENTLY_PLAYED_ENDPOINT = 'https://api.spotify.com/v1/me/player/recently-played?limit=1'
 
 function convertDateFormat(inputDate: string) {
   const date = new Date(inputDate)

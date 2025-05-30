@@ -122,9 +122,7 @@ function Callout({ type = 'info', title, children }: CalloutProps) {
           </div>
         )}
       </div>
-      <div className={`pt-1 text-[13px] ${colors.light.text} ${colors.dark.text}`}>
-        {children}
-      </div>
+      <div className={`pt-1 text-[13px] ${colors.light.text} ${colors.dark.text}`}>{children}</div>
     </div>
   )
 }
