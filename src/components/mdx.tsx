@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { MDXRemote } from 'next-mdx-remote/rsc'
+import { MDXRemote } from 'next-mdx-remote-client/rsc'
 import rehypeHighlight from 'rehype-highlight'
 import rehypeKatex from 'rehype-katex'
 import remarkMath from 'remark-math'
@@ -11,6 +11,7 @@ import { TweetComponent } from './tweet'
 import 'src/app/marker.css'
 
 import Callout from './callout'
+import Code from './code'
 
 function Table({ data }: any) {
   const headers = data.headers.map((header: any, index: any) => <th key={index}>{header}</th>)
@@ -100,23 +101,6 @@ function Divider() {
 
 function Strong(props: any) {
   return <strong className='font-bold'>{props.children}</strong>
-}
-
-function Code({ children }: any) {
-  const language = children.props.className.replace('language-', '')
-  const displayLanguage = language.split(' ')[1] === '' ? 'text' : language.split(' ')[1]
-  return (
-    <div>
-      {
-        <div className='text-xs px-3 py-1.5 rounded-t-lg bg-[#f7f7f7] dark:bg-[#37415144]  text-gray-500 border border-b-0 border-neutral-200 dark:border-gray-800'>
-          {displayLanguage}
-        </div>
-      }
-      <pre className='not-prose text-[12px] sm:text-sm py-3 px-4 border border-neutral-200 dark:border-gray-800'>
-        {children}
-      </pre>
-    </div>
-  )
 }
 
 const components = {

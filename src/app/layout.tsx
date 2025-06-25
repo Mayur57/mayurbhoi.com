@@ -8,6 +8,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import { GeistMono } from 'geist/font'
 import BlurHeader from 'src/components/blur-header'
 import { Providers } from 'src/utils/providers'
+import { Toaster } from 'sonner'
 
 const inter = localFont({
   src: './fonts/Inter-Variable.ttf',
@@ -69,6 +70,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Providers>
           <Analytics mode={'production'} />
           <SpeedInsights />
+          <Toaster richColors />
           <main className='max-w-7xl relative min-w-full scroll-smooth'>{children}</main>
         </Providers>
       </body>
