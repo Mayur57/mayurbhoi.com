@@ -60,7 +60,7 @@
     from {
       filter: blur(8px);
       opacity: 0;
-      transform: translateY(6px) rotateX(20deg) scale(1.05);
+      transform: translateY(6px) rotateX(30deg) scale(1.15);
     }
     to {
       opacity: 1;
@@ -71,6 +71,7 @@
 
   .appear {
     opacity: 0;
+    will-change: opacity, transform;
     animation: show 0.5s ease forwards;
   }
 

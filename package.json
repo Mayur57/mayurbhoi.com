@@ -31,7 +31,7 @@
     "geist": "^1.2.0",
     "katex": "^0.16.18",
     "lucide-react": "^0.469.0",
-    "next": "^15.1.6",
+    "next": "^15.3.3",
     "next-mdx-remote": "^5.0.0",
     "next-themes": "^0.2.1",
     "postcss": "8.4.31",
