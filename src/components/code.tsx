@@ -6,7 +6,7 @@ import { handleError } from 'src/utils/errorHandler'
 export default function Code({ children }: any) {
     const [copied, setCopied] = useState(false)
 
-    const language = children.props.className.replace('language-', '')
+    const language = children.props?.className?.replace('language-', '')
     const displayLanguage = language.split(' ')[1] === '' ? 'text' : language.split(' ')[1]
 
     const extractText = (node: any): string => {
@@ -31,16 +31,16 @@ export default function Code({ children }: any) {
     return (
         <div>
             <div className='flex justify-between items-center text-xs px-3 py-1.5 rounded-t-lg bg-[#f7f7f7] dark:bg-[#37415144] text-gray-500 border border-b-0 border-neutral-200 dark:border-gray-800'>
-                <span>{displayLanguage}</span>
+                <span className='opacity-70'>{displayLanguage}</span>
                 <button
                     onClick={handleCopy}
-                    className='flex items-center gap-1 transition-colors'
+                    className='flex items-center gap-1 transition-colors cursor-pointer hover:text-black dark:hover:text-gray-200'
                     title='Copy code'
                 >
                     {copied ? (
                         <>
                             <svg
-                                className='w-3 h-3 text-green-500'
+                                className='w-3 h-3 text-green-500 dark:text-green-300'
                                 fill='none'
                                 stroke='currentColor'
                                 viewBox='0 0 24 24'
@@ -53,7 +53,7 @@ export default function Code({ children }: any) {
                                     d='M5 13l4 4L19 7'
                                 />
                             </svg>
-                            <span className='text-green-500'>Copied!</span>
+                            <span className='text-green-500 dark:text-green-300'>Copied!</span>
                         </>
                     ) : (
                         <>
