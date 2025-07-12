@@ -91,11 +91,19 @@ export function urlSafe(str: string) {
   return encodeURIComponent(str).replace(/[!'()*]/g, c => '%' + c.charCodeAt(0).toString(16))
 }
 
-// Return suggestions object for a give post
+// Generate suggestions object for a given post
+// Skips delisted posts. Delisted posts should only be available using direct links.
 export function generateSuggestions(sortedPosts: any, currPost: any) {
   const curr = sortedPosts.indexOf(currPost)
+
+  let next = curr + 1
+  let prev = curr - 1
+  
+  while(sortedPosts[next]?.metadata.delist) next++
+  while(sortedPosts[prev]?.metadata.delist) prev--
+  
   return {
-    next: curr === sortedPosts.length - 1 ? undefined : sortedPosts[curr + 1],
-    previous: sortedPosts[curr - 1],
+    next: sortedPosts[next],
+    previous: sortedPosts[prev],
   }
 }
