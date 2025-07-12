@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 const NavigatorItem = ({ label, href }: { label: string; href: string }) => (
-  <Link href={href} as={href} className={`text-sm sm:text-base tracking-tight`}>
+  <Link href={href} className={`text-sm sm:text-base tracking-tight`}>
     <p>{label}</p>
   </Link>
 )
