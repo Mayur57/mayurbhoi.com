@@ -48,7 +48,7 @@ export default function Home() {
           </div>
 
           <div className={`${stagger(2)} not-prose`}>
-            <strong className='tracking-tight flex flex-row items-center'>
+            <strong className='chroma-text tracking-tight flex flex-row items-center'>
               Mayur Bhoi
               <span
                 className='h-[0.9rem] w-[0.9rem] ml-1'
@@ -71,18 +71,23 @@ export default function Home() {
             */}
           </div>
 
-          <p className={`${stagger(3)} pt-4`}>
+          <div className={`${stagger(3)} pt-4`}>
+            <p className='chroma-text'>
             Writing impactful & elegant software. Relentlessly devoted to intricacy, efficiency, and
             detailed polish. Unsatisfiably curious about magical design and high performance
             systems.
-          </p>
+            </p>
+          </div>
 
-          <p className={`${stagger(4)} pt-4`}>
+          
+          <div className={`${stagger(4)} pt-4`}>
+            <p className='chroma-text'>
             Based in{' '}
             <a href='https://www.google.com/maps/place/Bengaluru,+Karnataka'>Bengaluru, India</a>, I
             have been working as Software Engineer at{' '}
             <a href='https://candescent.com'>Candescent</a>.
           </p>
+          </div>
 
           <div
             className={`${stagger(

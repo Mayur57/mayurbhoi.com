@@ -282,3 +282,82 @@
 .animate-spin-slow {
   animation: spin-slow 8s linear infinite;
 }
+@keyframes chroma-shift {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/* Base styles (light mode) */
+.chroma-text {
+  position: relative;
+  background-image: linear-gradient(
+    90deg,
+    #18181A 0,
+    #18181A 33.33%,
+    #c679c4 40%,
+    #fa3d1d 45%,
+    #ffb005 50%,
+    #e1e1fe 55%,
+    #0358f7 60%,
+    transparent 66.67%,
+    transparent
+  );
+  background-size: 300% 100%;
+  background-position: 100% 0;
+  animation: chroma-shift 1s linear forwards;
+  will-change: background-position;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Blur trail */
+.chroma-text::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-image: inherit;
+  background-size: inherit;
+  background-position: inherit;
+  animation: chroma-shift 1s linear forwards;
+  filter: blur(6px);
+  opacity: 0.6;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  color: transparent;
+  pointer-events: none;
+}
+
+/* Dark mode override */
+.dark .chroma-text {
+  background-image: linear-gradient(
+    90deg,
+    #ffffff 0,
+    #ffffff 33.33%,
+    #94f2e9 40%,
+    #ff4f4f 45%,
+    #ffe766 50%,
+    #b8b8ff 55%,
+    #7aa5ff 60%,
+    transparent 66.67%,
+    transparent
+  );
+}
+
+/* Dark mode blur adjustments */
+.dark .chroma-text::after {
+  filter: blur(8px);
+  opacity: 0.8;
+}
