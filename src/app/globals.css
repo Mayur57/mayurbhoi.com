@@ -291,7 +291,6 @@
   }
 }
 
-/* Base styles (light mode) */
 .chroma-text {
   position: relative;
   background-image: linear-gradient(
@@ -317,7 +316,6 @@
   color: transparent;
 }
 
-/* Blur trail */
 .chroma-text::after {
   content: attr(data-text);
   position: absolute;
@@ -340,7 +338,6 @@
   pointer-events: none;
 }
 
-/* Dark mode override */
 .dark .chroma-text {
   background-image: linear-gradient(
     90deg,
@@ -356,7 +353,6 @@
   );
 }
 
-/* Dark mode blur adjustments */
 .dark .chroma-text::after {
   filter: blur(8px);
   opacity: 0.8;
