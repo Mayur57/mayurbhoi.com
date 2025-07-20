@@ -31,6 +31,19 @@ const featuredProjects: Array<FeaturedProject> = [
   },
 ]
 
+const workingOn: Array<FeaturedProject> = [
+  {
+    title: 'Vertex',
+    description: 'Fast URL shortening service with intelligent tracking',
+    repo: 'https://www.vrx.li/waitlist',
+  },
+  {
+    title: 'statsd',
+    description: 'Real-time server metrics streaming daemon',
+    repo: 'https://github.com/Mayur57/statsd',
+  },
+]
+
 const featuredPosts = getPosts()
   .filter(post => post.metadata.delist === undefined)
   .sort((a, b) => {
@@ -73,20 +86,19 @@ export default function Home() {
 
           <div className={`${stagger(3)} pt-4`}>
             <p className='chroma-text'>
-            Writing impactful & elegant software. Relentlessly devoted to intricacy, efficiency, and
-            detailed polish. Unsatisfiably curious about magical design and high performance
-            systems.
+              Writing impactful & elegant software. Relentlessly devoted to intricacy, efficiency,
+              and detailed polish. Unsatisfiably curious about magical design and high performance
+              systems.
             </p>
           </div>
 
-          
           <div className={`${stagger(4)} pt-4`}>
             <p className='chroma-text'>
-            Based in{' '}
-            <a href='https://www.google.com/maps/place/Bengaluru,+Karnataka'>Bengaluru, India</a>, I
-            have been working as Software Engineer at{' '}
-            <a href='https://candescent.com'>Candescent</a>.
-          </p>
+              Based in{' '}
+              <a href='https://www.google.com/maps/place/Bengaluru,+Karnataka'>Bengaluru, India</a>,
+              I have been working as Software Engineer at{' '}
+              <a href='https://candescent.com'>Candescent</a>.
+            </p>
           </div>
 
           <div
@@ -96,19 +108,21 @@ export default function Home() {
             <div className='w-[210px] sm:w-[250px] shrink-0 pr-10 sm:m-0'>
               <p className='opacity-60 text-sm font-medium tracking-tight'>Building</p>
               <div className='flex flex-col gap-6'>
-                <div className='pr-'>
-                  <a
-                    target='_blank'
-                    href='https://www.vrx.li'
-                    className='underline decoration-from-font underline-offset-2 tracking-tight'>
-                    Vertex
-                  </a>
-                  <p
-                    id='desc'
-                    className='mt-1 opacity-60 not-prose leading-[0.7] text-xs sm:text-sm'>
-                    Fast URL shortening service with intelligent tracking
-                  </p>
-                </div>
+                {workingOn?.map((project, index) => (
+                  <div key={index} className='pr-4'>
+                    <a
+                      target='_blank'
+                      href={project.repo}
+                      className='underline decoration-from-font underline-offset-2 tracking-tight'>
+                      {project.title}
+                    </a>
+                    <p
+                      id='desc'
+                      className='mt-1 opacity-60 not-prose leading-[0.7] text-xs sm:text-sm'>
+                      {project.description}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
             <div className='w-[210px] sm:w-[250px] shrink-0 pr-10'>
