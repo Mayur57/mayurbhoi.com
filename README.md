@@ -1,8 +1,5 @@
-# mayurbhoi.com
+## hello
 
-Personal website for showcase and blogs.
+i am mayur bhoi (he/him/his). doing what i love as a full-stack developer.
 
-Read about it [here](https://mayurbhoi.com/posts/redesign).
-
-> [!NOTE]
-> Before usage and redistribution, please refer to the [license](/LICENSE.md) for granted permissions and limitations.
+see my work below and read my blog [here](https://mayurbhoi.com).
